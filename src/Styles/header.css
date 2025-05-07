@@ -1,0 +1,130 @@
+.header {
+  background: #FFFFFF;
+  color: #0F0F0F;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  border-bottom: 4px solid #98C01C;
+}
+
+.subTitle1 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 29.05px;
+  letter-spacing: 0.5px;
+  color: #347CCC;
+}
+
+.subTitle2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29.05px;
+  letter-spacing: 0.5px;
+  color: #1E1E1E;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  gap: 33px;
+}
+
+.navLink {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21.09px;
+  letter-spacing: 0.5px;
+  color: #0F0F0F;
+  text-decoration: none;
+  /* padding-bottom: 2px; */
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.navLink.active {
+  color: #347CCC;
+  border-bottom: 2px solid #347CCC;
+}
+
+.navLink:hover {
+  color: #347CCC;
+  border-bottom: 2px solid #347CCC;
+}
+
+.menu-icon {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .subTitle1 {
+    font-size: 20px;
+    line-height: 19.05px;
+  }
+
+  .subTitle2 {
+    font-size: 15px;
+    line-height: 19.05px;
+  }
+
+  .header-menu {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block !important;
+  }
+
+  .MuiDrawer-paper {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .drawer-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh;
+    align-items: center;
+    background-color: #ffffff;
+  }
+
+  .drawer-menu a {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  .drawer-menu a:hover,
+  .drawer-menu a.active {
+    border-bottom: 2px solid #347CCC;
+    color: #347CCC;
+  }
+
+  .menu-item {
+    position: relative;
+  }
+
+  .menu-item .MuiMenu-paper {
+    margin-top: 5px !important;
+  }
+
+}

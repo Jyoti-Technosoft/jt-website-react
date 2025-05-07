@@ -1,0 +1,1360 @@
+{
+  "home": {
+    "meetSection": {
+      "title": "Where imagination meets creativity",
+      "description": "At JYOTI Technosoft LLP, we transform ideas into reality with cutting-edge web, app, and product development. Our expert team delivers innovative digital solutions to help businesses grow and succeed. Let’s create something extraordinary together."
+    },
+    "WhyUs": {
+      "title": "Why Us",
+      "description": "The Numbers Speak for Themselves",
+      "data": [
+        {
+          "title": "22+",
+          "description": "Happy Clients",
+          "type": "Clients"
+        },
+        {
+          "title": "40+",
+          "description": "Projects",
+          "type": "Projects"
+        },
+        {
+          "title": "6+",
+          "description": "Year Experience",
+          "type": "Experience"
+        },
+        {
+          "title": "35",
+          "description": "Achievements",
+          "type": "Achievements"
+        }
+      ]
+    },
+    "WeOffer": {
+      "title": "What We Offer",
+      "description": "Comprehensive IT Solutions to Accelerate Your Business Growth",
+      "data": [
+        {
+          "id": 1,
+          "title": "Web Development",
+          "description": "Custom-built websites that are fast, responsive, and scalable.",
+          "imageSrc": "/assets/Programming.png"
+        },
+        {
+          "id": 2,
+          "title": "Angular Development",
+          "description": "Craft dynamic and scalable web applications with Angular.",
+          "imageSrc": "/assets/AngularJS.png"
+        },
+        {
+          "id": 3,
+          "title": "Java Development",
+          "description": "Deliver robust and efficient enterprise-grade Java solutions.",
+          "imageSrc": "/assets/offersection-Java.png"
+        },
+        {
+          "id": 4,
+          "title": "GWT Development",
+          "description": "Create seamless and optimized web applications using Google Web Toolkit.",
+          "imageSrc": "/assets/Source Code.png"
+        },
+        {
+          "id": 5,
+          "title": "WordPress Development",
+          "description": "Crafting feature-rich and visually stunning websites with WordPress.",
+          "imageSrc": "/assets/WordPress.png"
+        },
+        {
+          "id": 6,
+          "title": "UI/UX Designing",
+          "description": "Design intuitive and visually captivating user interfaces.",
+          "imageSrc": "/assets/Web.png"
+        }
+      ]
+    },
+    "HowWeWork": {
+      "data": [
+        {
+          "id": 1,
+          "title": "Requirement Gathering",
+          "description1": "Understanding Your Vision",
+          "description2": "We begin by thoroughly understanding your business needs, goals, and the unique challenges you face. By engaging in detailed and collaborative discussions, we dive deep into your vision to ensure every aspect is covered. This step allows us to gather precise and comprehensive requirements, creating a strong foundation for the success of your project and ensuring alignment with your expectations and objectives.",
+          "imageSrc": "/assets/Two Women Using Computer Laptops.png"
+        },
+        {
+          "id": 2,
+          "title": "UI/UX Development",
+          "description1": "Crafting Intuitive Designs",
+          "description2": "Our design team focuses on crafting intuitive, user-friendly, and visually appealing interfaces tailored to meet your specific needs. We ensure every design element is carefully aligned with user expectations and your brand identity. By combining functionality and aesthetics, we aim to deliver interfaces that engage users effectively and leave a lasting impression, providing a seamless and delightful experience across every platform and device.",
+          "imageSrc": "/assets/UiDevelopment.png"
+        },
+        {
+          "id": 3,
+          "title": "Development of Process",
+          "description1": "Building with Precision",
+          "description2": "Our skilled developers bring your vision to life by creating scalable, secure, and high-performance solutions tailored to your unique requirements. By leveraging the latest technologies and industry best practices, we ensure our solutions align with your goals. Every project is built with a focus on quality, reliability, and innovation, delivering exceptional results that drive success and meet your expectations.",
+          "imageSrc": "/assets/Team work, work colleagues, working together.png"
+        },
+        {
+          "id": 4,
+          "title": "Deployment of App",
+          "description1": "Launching with Confidence",
+          "description2": "Once development is complete, we deploy your app with precision. Our team ensures all components are meticulously configured, thoroughly tested, and fully optimized to guarantee seamless performance. We take extra care in ensuring the app functions flawlessly in a live environment, providing you with a smooth, efficient, and reliable experience that aligns perfectly with your business needs and goals.",
+          "imageSrc": "/assets/Deployment of App.png"
+        },
+        {
+          "id": 5,
+          "title": "Review from Clients",
+          "description1": "Perfecting with Feedback",
+          "description2": "Your feedback is invaluable to us. We collaborate closely with you to review the app thoroughly, making any necessary adjustments and addressing final changes. Our goal is to ensure the solution not only meets your expectations but exceeds them, delivering an app that’s fully aligned with your vision and requirements, providing the best possible experience for both you and your users.",
+          "imageSrc": "/assets/Crop colleagues shaking hands in office.png"
+        },
+        {
+          "id": 6,
+          "title": "UI/UX Designing2",
+          "description": "Design intuitive and visually captivating user interfaces.",
+          "imageSrc": "/assets/Web.png"
+        }
+      ]
+    },
+    "WeveBuilt": {
+      "title": "What We’ve Built",
+      "description1": "A showcase of our expertise and creativity.",
+      "description2": "See more",
+      "data": [
+        {
+          "id": 1,
+          "title": "Book Universe",
+          "imageSrc": "/assets/Book Universe.png"
+        },
+        {
+          "id": 2,
+          "title": "D3 Showcase",
+          "imageSrc": "/assets/D3 Showcase.png"
+        },
+        {
+          "id": 3,
+          "title": "LoomCart",
+          "imageSrc": "/assets/LoomCart.png"
+        }
+      ]
+    }
+  },
+  "servicesPage": {
+    "featuredServicesTitle": "Featured Services",
+    "featuredServicesSection": [
+      {
+        "id": 1,
+        "title": "UI/UX Development",
+        "imgSrc": "/assets/UIUXDevelopment.png"
+      },
+      {
+        "id": 2,
+        "title": "Web Services",
+        "imgSrc": "/assets/WebServices.png"
+      },
+      {
+        "id": 3,
+        "title": "Backend Development",
+        "imgSrc": "/assets/BackendDevelopment.png"
+      },
+      {
+        "id": 4,
+        "title": "Product Development",
+        "imgSrc": "/assets/ProductDevelopment.png"
+      }
+    ]
+  },
+  "hireUs": {
+    "technology": [
+      {
+        "id": "angular",
+        "label": "Angular developement",
+        "decription": "At Jyoti Technosoft LLP, we are dedicated to delivering exceptional Angular development solutions tailored to meet your business objectives. With a team of experienced and skilled Angular developers, we have extensive expertise in harnessing the power of Angular to build cutting-edge applications that drive business growth. Our Angular development services encompass the entire spectrum of the development process, from requirement analysis and architecture design to front-end and back-end development, testing, deployment, and ongoing support. ",
+        "image": "assets/images/angular.png",
+        "chooseUs": "Why Choose Us As Your Angular Development Company",
+        "whyChooseUs": [
+          {
+            "title": "Experienced Developers",
+            "description": "We have a team of experienced Angular developers who possess a deep understanding of Angular framework and its various features. We have successfully delivered numerous Angular projects, gaining expertise in building robust and scalable web applications."
+          },
+          {
+            "title": "Trusted Delivery Methods",
+            "description": "We have a strong focus on quality assurance and testing. Our Angular development process includes rigorous testing methodologies to identify and fix any issues early on. We perform unit testing, integration testing, and end-to-end testing to ensure that your application functions flawlessly across different platforms and devices."
+          },
+          {
+            "title": "Transparent Work Approach",
+            "description": "We believe in fostering transparent and effective communication throughout the project lifecycle. Our team maintains regular communication channels, providing updates on project progress, seeking your feedback, and addressing any concerns promptly. We value your input and strive to ensure a collaborative and seamless development experience."
+          },
+          {
+            "title": "Cost-Effective Solutions",
+            "description": "We offer competitive pricing without compromising on the quality of our services. Our aim is to provide cost-effective Angular solutions that meet your budgetary requirements while delivering exceptional results. We optimize our development process to maximize efficiency and minimize unnecessary expenses."
+          },
+          {
+            "title": "Customer Satisfaction",
+            "description": "We understand that every project has unique needs and objectives. We take the time to understand your specific requirements and tailor our solutions accordingly. Our team can create highly customized Angular applications that align with your business goals and deliver a seamless user experience."
+          },
+          {
+            "title": "Continuous Support and Maintenance",
+            "description": "Our commitment to client satisfaction extends beyond the development phase. We provide ongoing support and maintenance services to ensure that your Angular application remains up-to-date, secure, and performs optimally. We address any issues promptly and provide timely updates as needed."
+          }
+        ],
+        "servicesDescription": "At Jyoti Technosoft LLP, we are a trusted provider of comprehensive Angular services, specializing in custom development, plugin development, maintenance & support, and API integration. With our team of skilled Angular developers, we have the expertise to deliver tailored solutions that leverage Angular's power to meet your unique business requirements.",
+        "services": [
+          {
+            "header": "Custom Developement",
+            "icon": "assets/images/Custom-AngularJS-Web-Development.svg",
+            "decription": "We understand that every business has specific needs that off-the-shelf solutions may not address. Our custom development services for Angular enable us to create bespoke applications that align perfectly with your business goals. Our team works closely with you to analyze your requirements, design a solution architecture, and develop Angular applications that are tailored to your exact specifications. We leverage Angular's powerful features, such as component-based architecture, dependency injection, and reactive programming, to build scalable, secure, and high-performing applications."
+          },
+          {
+            "header": "Plugin Development",
+            "icon": "assets/images/Plugin-Development.svg",
+            "decription": "We recognize the importance of extending the functionality of Angular applications. Our plugin development services for Angular allow us to create custom plugins that seamlessly integrate with your existing Angular infrastructure. Whether you need plugins to enhance user experience, integrate with external services, or add specific features, our developers can design and develop plugins that seamlessly extend the capabilities of your Angular applications."
+          },
+          {
+            "header": "Maintenance & Support",
+            "icon": "assets/images/Support-Maintainence.svg",
+            "decription": "We believe in establishing long-term relationships with our clients. Our maintenance and support services for Angular ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Angular applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity."
+          },
+          {
+            "header": "API Integration and Development",
+            "icon": "assets/images/API-Integration-and-Development.svg",
+            "decription": " In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Angular developers have expertise in API integration and can seamlessly integrate your Angular applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Angular applications."
+          }
+        ],
+        "developmentServiceTitle": "Angular Developement Services"
+      },
+      {
+        "id": "react",
+        "label": "React developement",
+        "decription": "Jyoti Technosoft LLP is a name to reckon with when it comes to ReactJS development. Since its launch back in 2013, ReactJS continues to be a user-friendly, developer favorite and industry preferred platform for web development. An open-source, cross-platform, JavaScript-based library, ReactJS development allows developers to build responsive web and single-page applications that fulfill the unique requirements of businesses across the globe.",
+        "image": "assets/images/ReactJS.png",
+        "chooseUs": "Why Choose Us As Your ReactJS Development Company",
+        "whyChooseUs": [
+          {
+            "title": "Experienced Developers",
+            "description": "We have a team of experienced ReactJS developers who are well-versed in the latest trends and best practices in ReactJS development. Our developers have successfully completed numerous ReactJS projects, gaining expertise in building scalable and high-performing applications."
+          },
+          {
+            "title": "Trusted Delivery Methods",
+            "description": "ReactJS is known for its scalability and performance capabilities. We leverage the power of ReactJS to build applications that can handle high user loads, ensuring smooth performance even under heavy traffic. Our developers follow best practices to optimize the application's speed, responsiveness, and overall performance."
+          },
+          {
+            "title": "Transparent Work Approach",
+            "description": "We believe in fostering transparent and effective communication throughout the project lifecycle. Our team maintains regular communication channels, providing updates on project progress, seeking your feedback, and addressing any concerns promptly. We value your input and strive to ensure a collaborative and seamless development experience."
+          },
+          {
+            "title": "Cost-Effective Solutions",
+            "description": "We offer competitive pricing without compromising on the quality of our services. Our aim is to provide cost-effective solutions that meet your budgetary requirements while delivering exceptional results. We optimize our development process to maximize efficiency and minimize unnecessary expenses."
+          },
+          {
+            "title": "Customer Satisfaction",
+            "description": "We understand that every project has unique requirements. We take the time to understand your specific needs and tailor our solutions accordingly. Our team can create highly customized ReactJS applications that meet your business objectives and deliver the desired user experience."
+          },
+          {
+            "title": "Continuous Support and Maintenance",
+            "description": "Our commitment to client satisfaction extends beyond the development phase. We provide ongoing support and maintenance services to ensure that your ReactJS application remains up-to-date, secure, and performs optimally. We address any issues promptly and provide timely updates as needed"
+          }
+        ],
+        "servicesDescription": "At Jyoti Technosoft LLP, we are a leading provider of comprehensive React services, specializing in custom development, plugin development, maintenance & support, and API integration. With our team of skilled React developers, we have the expertise to deliver tailored solutions that leverage React's power to meet your unique business requirements.",
+        "services": [
+          {
+            "header": "Custom Developement",
+            "icon": "assets/images/Custom-AngularJS-Web-Development.svg",
+            "decription": "We understand that each business has its own set of challenges and requirements. Our custom development services for React allow us to create bespoke applications that cater to your specific needs. From conceptualization to development and deployment, we work closely with you to ensure that the resulting React application aligns perfectly with your business objectives. Leveraging React's component-based architecture and reusable UI components, we build scalable, interactive, and high-performing applications tailored to your exact specifications."
+          },
+          {
+            "header": "Plugin Development",
+            "icon": "assets/images/Plugin-Development.svg",
+            "decription": "We recognize the importance of extending the functionality of React applications. Our plugin development services for React enable us to create custom plugins that seamlessly integrate with your existing React infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your React applications."
+          },
+          {
+            "header": "Maintenance & Support",
+            "icon": "assets/images/Support-Maintainence.svg",
+            "decription": " We believe in establishing long-term partnerships with our clients. Our maintenance and support services for React ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your React applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity."
+          },
+          {
+            "header": "API Integration and Development",
+            "icon": "assets/images/API-Integration-and-Development.svg",
+            "decription": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our React developers have expertise in API integration and can seamlessly integrate your React applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your React applications."
+          }
+        ],
+        "developmentServiceTitle": "React Developement Services"
+      },
+      {
+        "id": "java",
+        "label": "Java developement",
+        "decription": "At Jyoti Technosoft LLP, we are a leading Java development company specializing in delivering top-notch Java-based solutions to our clients. With a team of skilled and experienced Java developers, we have a deep understanding of the Java programming language and its associated frameworks and tools. Our expertise lies in developing robust, scalable, and secure applications that meet the diverse needs of businesses across various industries.",
+        "image": "assets/images/hire-us-java.png",
+        "chooseUs": "Why Choose Us As Your Java Development Company",
+        "whyChooseUs": [
+          {
+            "title": "Experienced Developers",
+            "description": "We have a team of experienced Java developers who possess in-depth knowledge and expertise in Java programming language and its various frameworks. Our developers have successfully completed numerous Java projects, gaining experience in building robust and scalable applications."
+          },
+          {
+            "title": "Trusted Delivery Methods",
+            "description": "We leverage the power of Java to build applications that can handle high user loads and process large volumes of data efficiently. Our developers follow best practices and optimization techniques to ensure optimal performance, fast response times, and efficient memory management."
+          },
+          {
+            "title": "Transparent Work Approach",
+            "description": "We believe in fostering transparent and effective communication throughout the project lifecycle. Our team maintains regular communication channels, providing updates on project progress, seeking your feedback, and addressing any concerns promptly. We value your input and strive to ensure a collaborative and seamless development experience."
+          },
+          {
+            "title": "Cost-Effective Solutions",
+            "description": "We offer competitive pricing without compromising on the quality of our services. Our aim is to provide cost-effective Java solutions that meet your budgetary requirements while delivering exceptional results. We optimize our development process to maximize efficiency and minimize unnecessary expenses."
+          },
+          {
+            "title": "Customer Satisfaction",
+            "description": "We understand that every project has unique requirements. We take the time to understand your specific needs and tailor our solutions accordingly. Our team can create highly customized Java applications that align with your business objectives and deliver the desired functionality."
+          },
+          {
+            "title": "Continuous Support and Maintenance",
+            "description": "We provide ongoing support and maintenance services to ensure that your Java application remains up-to-date, secure, and performs optimally. We address any issues promptly, apply necessary updates and patches, and provide timely support to keep your application running smoothly."
+          }
+        ],
+        "servicesDescription": "At Jyoti Technosoft LLP, we are a trusted provider of comprehensive Java services, specializing in custom development, plugin development, maintenance & support, and API integration. With our team of skilled Java developers, we have the expertise to deliver tailored solutions that leverage Java's power to meet your unique business requirements.",
+        "services": [
+          {
+            "header": "Custom Developement",
+            "icon": "assets/images/Custom-AngularJS-Web-Development.svg",
+            "decription": " We understand that each business has its own set of challenges and requirements. Our custom development services for Java allow us to create bespoke applications that cater to your specific needs. From requirement analysis to design, development, and deployment, we work closely with you to ensure that the resulting Java application aligns perfectly with your business objectives. Leveraging Java's robustness, scalability, and platform independence, we build secure, high-performing applications tailored to your exact specifications."
+          },
+          {
+            "header": "Plugin Development",
+            "icon": "assets/images/Plugin-Development.svg",
+            "decription": " We recognize the importance of extending the functionality of Java applications. Our plugin development services for Java enable us to create custom plugins that seamlessly integrate with your existing Java infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your Java applications."
+          },
+          {
+            "header": "Maintenance & Support",
+            "icon": "assets/images/Support-Maintainence.svg",
+            "decription": "We believe in establishing long-term partnerships with our clients. Our maintenance and support services for Java ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Java applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity."
+          },
+          {
+            "header": "API Integration and Development",
+            "icon": "assets/images/API-Integration-and-Development.svg",
+            "decription": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Java developers have expertise in API integration and can seamlessly integrate your Java applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Java applications."
+          }
+        ],
+        "developmentServiceTitle": "Java Developement Services"
+      }
+    ]
+  },
+  "footer": {
+    "title": {
+      "trendingServices": {
+        "label": "Trending Services",
+        "data": [
+          {
+            "label": "Web Application Development",
+            "navigatelink": "services/web-development"
+          },
+          {
+            "label": "Mobile Apps Development",
+            "navigatelink": "services/mobile-development"
+          },
+          {
+            "label": "Product Development",
+            "navigatelink": "services/product-development"
+          },
+          {
+            "label": "App Customization",
+            "navigatelink": "services/customization"
+          },
+          {
+            "label": "Consulting",
+            "navigatelink": "services/consulting"
+          }
+        ]
+      },
+      "technologies": {
+        "label": "Technologies",
+        "data": [
+          {
+            "label": "Angular",
+            "navigatelink": "hire-us/angular"
+          },
+          {
+            "label": "React",
+            "navigatelink": "hire-us/react"
+          },
+          {
+            "label": "Java",
+            "navigatelink": "hire-us/java"
+          },
+          {
+            "label": "GWT",
+            "navigatelink": ""
+          },
+          {
+            "label": "NodeJS",
+            "navigatelink": ""
+          }
+        ]
+      },
+      "company": {
+        "label": "Company",
+        "data": [
+          {
+            "label": "About Us",
+            "navigatelink": "/about-us"
+          },
+          {
+            "label": "Jobs We are Hiring!",
+            "navigatelink": "/career"
+          },
+          {
+            "label": "Why Us?",
+            "navigatelink": ""
+          },
+          {
+            "label": "Showcase",
+            "navigatelink": "/show-case"
+          },
+          {
+            "label": "Blog",
+            "navigatelink": ""
+          }
+        ]
+      }
+    },
+    "copyright": "Copyright © 2023 Jyoti Technosoft LLP. All Rights Reserved by "
+  },
+  "technologyStack": {
+    "label": "Techonology",
+    "imgSrc": "assets/images/favicon.png",
+    "projects": "50+",
+    "children": [
+      {
+        "id": "Frontend",
+        "label": "Frontend Development",
+        "imgSrc": "assets/images/techology-stack/frontend.svg",
+        "children": [
+          {
+            "label": "D3.js",
+            "imgSrc": "/assets/D3.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "9+"
+          },
+          {
+            "label": "Angular",
+            "imgSrc": "/assets/angular.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "12+"
+          },
+          {
+            "label": "React",
+            "imgSrc": "/assets/react.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
+          },
+          {
+            "label": "JAVA",
+            "imgSrc": "/assets/java.png",
+            "id": "",
+            "tooltip": "",
+            "projects": ""
+          },
+          {
+            "label": "HTML",
+            "imgSrc": "/assets/html.png",
+            "id": "",
+            "tooltip": "",
+            "projects": ""
+          },
+          {
+            "label": "GWT",
+            "imgSrc": "/assets/GWT.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
+          }
+        ],
+        "active": true
+      },
+      {
+        "id": "Backend",
+        "label": "Backend Development",
+        "imgSrc": "assets/images/techology-stack/backend.svg",
+        "children": [
+          {
+            "label": "JAVA",
+            "imgSrc": "/assets/java.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "15+"
+          },
+          {
+            "label": "GWT",
+            "imgSrc": "/assets/GWT.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "20+"
+          },
+          {
+            "label": "Node JS",
+            "imgSrc": "/assets/node.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "4+"
+          },
+          {
+            "label": "SPRING",
+            "imgSrc": "/assets/spring.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
+          }
+        ],
+        "active": false
+      },
+      {
+        "id": "Database",
+        "label": "Database Integration",
+        "imgSrc": "assets/images/techology-stack/database.svg",
+        "children": [
+          {
+            "label": "MySQL",
+            "imgSrc": "/assets/mysql.png",
+            "id": "",
+            "tooltip": ""
+          },
+          {
+            "label": "Influx",
+            "imgSrc": "/assets/influx.png",
+            "id": "",
+            "tooltip": ""
+          },
+          {
+            "label": "Postgress sql",
+            "imgSrc": "/assets/postgresql.png",
+            "id": "",
+            "tooltip": ""
+          },
+          {
+            "label": "MongoDB",
+            "imgSrc": "/assets/mongodb.png",
+            "id": "",
+            "tooltip": ""
+          }
+        ],
+        "active": false
+      },
+      {
+        "id": "Mobile",
+        "label": "Mobile Apps Development",
+        "imgSrc": "assets/images/techology-stack/mobile.svg",
+        "children": [
+          {
+            "label": "React Native",
+            "imgSrc": "/assets/react.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "5+"
+          }
+        ],
+        "active": false
+      }
+    ]
+  },
+  "developmentProcess": [
+    {
+      "index": 1,
+      "title": "Requirement Gethering",
+      "description": "Requirement gathering is a crucial initial phase in the software development life cycle (SDLC) or project management process. It involves the systematic collection and analysis of information to understand the needs, objectives, and constraints of a project or system that is being developed. The primary goal of requirement gathering is to elicit, document, and prioritize the requirements that will guide the development team throughout the project.",
+      "imageSrc": "assets/images/development-process/workflow1.svg"
+    },
+    {
+      "index": 2,
+      "title": "Ui/Ux Development",
+      "description": "UI/UX Development is crucial as it focuses on enhancing user satisfaction and engagement. A well-crafted user interface (UI) ensures seamless interaction, intuitive navigation, and visual appeal, while user experience (UX) considers user needs, goals, and emotions. Effective UI/UX creates positive impressions, promotes user retention, increases conversions, and fosters brand loyalty. It ultimately results in user-friendly and enjoyable digital experiences, driving business success and customer satisfaction.",
+      "imageSrc": "assets/images/development-process/workflowStep2.svg"
+    },
+    {
+      "index": 3,
+      "title": "Development of Process",
+      "description": "The development of processes is vital as it enables streamlined operations, improved efficiency, and consistent outcomes. Well-defined processes establish clear guidelines, eliminate ambiguity, and promote effective collaboration among team members. They enhance productivity, reduce errors, and provide a structured approach to completing tasks. By optimizing workflows and identifying areas for improvement, process development drives organizational growth, enhances customer satisfaction, and ensures consistent delivery of high-quality products or services.",
+      "imageSrc": "assets/images/development-process/workflowStep3.svg"
+    },
+    {
+      "index": 4,
+      "title": "Deployment of App",
+      "description": "App deployment is crucial as it enables the transformation of ideas into functional products that reach users. Deploying an app makes it accessible to the target audience, allowing them to benefit from its features and capabilities. It validates the development efforts, gathers user feedback, and facilitates iteration and improvement. App deployment is a critical step in realizing the value of an application, maximizing its reach, and achieving business goals.",
+      "imageSrc": "assets/images/development-process/workflowStep4.svg"
+    },
+    {
+      "index": 4,
+      "title": "Review from Clients",
+      "description": "Client reviews are vital as they provide valuable insights into the satisfaction and perception of your products or services. Reviews serve as social proof, influencing potential customers' decision-making process. They build trust, credibility, and reputation for your business. Client feedback helps identify areas for improvement, enhances customer experience, and strengthens relationships. Positive reviews also act as powerful marketing tools, attracting new customers and fostering loyalty among existing ones.",
+      "imageSrc": "assets/images/development-process/workflowStep5.svg"
+    }
+  ],
+  "portfolio": [
+    {
+      "technology": "All"
+    },
+    {
+      "projectName": "Progress Maker",
+      "technology": "angular",
+      "description": "The comprehensive platform for Tool Optimization and progress management",
+      "logo": "assets/images/portfolio/ProgressMaker_Logo.png",
+      "Images": [
+        "assets/images/portfolio/progressmaker_background.png",
+        "assets/images/portfolio/pm1.png",
+        "assets/images/portfolio/pm2.png",
+        "assets/images/portfolio/pm3.png"
+      ]
+    },
+    {
+      "projectName": "Pratibha herbal",
+      "technology": "WordPress",
+      "description": "Our company offers wide range of Herbal Liquid Extracts for use as ingredients in Herbal Cosmetics & Toiletries. Our products are available in two forms – Water Soluble & Oil Soluble",
+      "logo": "assets/images/portfolio/pratibhalogo.png",
+      "Images": [
+        "assets/images/portfolio/Pratibha01.png",
+        "assets/images/portfolio/Pratibha02.png",
+        "assets/images/portfolio/Pratibha03.png",
+        "assets/images/portfolio/Pratibha04.png",
+        "assets/images/portfolio/Pratibha05.png"
+      ]
+    },
+    {
+      "projectName": "CX Group",
+      "technology": "GWT",
+      "description": "Big Data Customer Retention & Experience Management SaaS",
+      "logo": "assets/images/portfolio/CX-Group-Logo-Color.png",
+      "Images": [
+        "assets/images/portfolio/EngageDetailView.png",
+        "assets/images/portfolio/EngageDetailView2.png",
+        "assets/images/portfolio/EngageDetailView3.png"
+      ]
+    },
+    {
+      "projectName": "Renacline Consultancy",
+      "technology": "React",
+      "description": "Big Data Customer Retention & Experience Management SaaS",
+      "Images": [
+        "assets/images/portfolio/Renacline.png",
+        "assets/images/portfolio/Renacline2.png",
+        "assets/images/portfolio/Renacline3.png"
+      ]
+    },
+    {
+      "projectName": "Yacht closer Web Application",
+      "technology": "React",
+      "description": "Big Data Customer Retention & Experience Management SaaS",
+      "Images": [
+        "assets/images/portfolio/Yacht.png",
+        "assets/images/portfolio/Yacht2.png",
+        "assets/images/portfolio/Yacht2.png"
+      ]
+    },
+    {
+      "projectName": "Online Chat Web Application",
+      "technology": "React",
+      "description": "Big Data Customer Retention & Experience Management SaaS",
+      "Images": [
+        "assets/images/portfolio/chatapp.png",
+        "assets/images/portfolio/chatapp2.png",
+        "assets/images/portfolio/chatapp3.png"
+      ]
+    },
+    {
+      "projectName": "Real Estate Web Application",
+      "technology": "React",
+      "description": "An interactive, effective and revenue-generating website designed for the Real Estate.",
+      "logo": "assets/images/portfolio/tlc_engine-removebg-preview.png",
+      "Images": [
+        "assets/images/portfolio/tlc-engine.png",
+        "assets/images/portfolio/tlc-engine2.png",
+        "assets/images/portfolio/tlc-engine3.png"
+      ]
+    },
+    {
+      "projectName": "E-commerce Web Application",
+      "technology": "WordPress",
+      "description": "An interactive, effective and revenue-generating website designed for the Real Estate.",
+      "Images": [
+        "assets/images/portfolio/navdurva.png",
+        "assets/images/portfolio/navdurva2.png",
+        "assets/images/portfolio/navdurva3.png"
+      ]
+    }
+  ],
+  "clientlogos": [
+    {
+      "imagePath": "assets/images/portfolio/ProgressMaker_Logo.svg"
+    },
+    {
+      "imagePath": "assets/images/portfolio/CX-Group-Logo-Color.png"
+    },
+    {
+      "imagePath": "assets/images/portfolio/tlc_engine-removebg-preview.png"
+    },
+    {
+      "imagePath": "assets/images/portfolio/eneros-removebg-preview.png"
+    },
+    {
+      "imagePath": "assets/images/portfolio/boatsground.png"
+    },
+    {
+      "imagePath": "assets/images/portfolio/pratibhalogo.png"
+    }
+  ],
+  "careers": {
+    "title": "CAREER",
+    "careerSubTitle": "Why You’ll Love Working With Us",
+    "careerSubTitleSecond": "Find the Role That Fits You",
+    "subTitle": "Let's Discuss your project details in dept with our experts and get quick solutions for your technical problems",
+    "items": [
+      {
+        "id": 1,
+        "imageUrl": "/assets/leaves&holidays-img.png",
+        "title": "12 Paid Leaves + 12 Holidays"
+      },
+      {
+        "id": 2,
+        "imageUrl": "/assets/flexible-working-hours-img.png",
+        "title": "Flexible Working Hours"
+      },
+      {
+        "id": 3,
+        "imageUrl": "/assets/collobrative-work-env-img.png",
+        "title": "Collaborative work environment"
+      },
+      {
+        "id": 4,
+        "imageUrl": "/assets/growth&developement-img.png",
+        "title": "Professional growth & development "
+      },
+      {
+        "id": 5,
+        "imageUrl": "/assets/celebration-img.png",
+        "title": "Celebration"
+      },
+      {
+        "id": 6,
+        "imageUrl": "/assets/team-building-act-img.png",
+        "title": "Team Building Activities"
+      }
+    ]
+  },
+  "hireDevCard": [
+    {
+      "cardHeader": "Expertise in Multiple Technologies",
+      "cardData": "Whether you need an Angular expert, a React.js specialist, a Java nerd, or a Node.js wizard, we have developers proficient in a variety of technologies. Our talented pool of developers is equipped with the skills to tackle any project requirement.",
+      "icon": "bi-pc-display-horizontal"
+    },
+    {
+      "cardHeader": "Dedicated Resources",
+      "cardData": "When you hire a developer from Jyoti Technosoft LLP, you get a dedicated resource solely focused on your project. This ensures undivided attention and maximum productivity, leading to faster development cycles and efficient project execution.",
+      "icon": "bi-bar-chart-fill"
+    },
+    {
+      "cardHeader": "Flexibility and Scalability",
+      "cardData": "We understand that project needs can change over time. Our flexible hiring models allow you to scale up or down the development team as per your requirements. Whether you need a developer for a short-term assignment or a long-term engagement, we can tailor our services to match your project timeline and budget.",
+      "icon": "bi-bar-chart-fill"
+    },
+    {
+      "cardHeader": "Seamless Collaboration",
+      "cardData": "Communication and collaboration are key to successful project execution. Our developers are adept at working in distributed teams and can seamlessly integrate with your existing workflows. We ensure smooth coordination and timely updates throughout the development process.",
+      "icon": "bi-bar-chart-fill"
+    },
+    {
+      "cardHeader": "Quality and Reliability",
+      "cardData": "At Jyoti Technosoft LLP, we prioritize quality and adhere to industry best practices. Our developers follow coding standards, conduct rigorous testing, and maintain high-quality coding practices to deliver robust and reliable solutions. We strive for excellence in every aspect of our development process.",
+      "icon": "bi-bar-chart-fill"
+    },
+    {
+      "cardHeader": "Cost-Effectiveness",
+      "cardData": "Hiring a dedicated developer from us can be a cost-effective solution compared to maintaining an in-house development team. You can save on overhead expenses while still benefiting from the expertise and skills of our developers. We offer competitive rates without compromising on the quality of work.",
+      "icon": "bi-bar-chart-fill"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "imagePath": "assets/images/Angular.svg",
+      "jobName": "Angular Developer",
+      "jobPost": "Lead Engineer - Front End",
+      "jobDescription": "We are looking to hire a dynamic Angular Developer to join our global team. As an Angular developer, you will be required to build a top-quality coding base. You will also be required to create amazing user interfaces for desktop and mobile apps.",
+      "jobNature": "Full Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "Angular",
+      "jobCatagory": "Technology",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Determine the functional, non-functional requirements and scope working with the business analysts and engineering managers</li><li>Design and develop multi-tier, cloud-native, high performance, and scalable solutions</li><li>Apply software engineering principles, design patterns and best practices to build solutions that are testable, secure, and robust</li><li>Lead cross functional agile teams across the software development lifecycle</li><li>Lead cross functional agile teams across the software development lifecycle</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Web technologies - JavaScript, HTML5, CSS3</li><li>Web frameworks – Angular / React JS</li><li>Mobile frameworks – React Native</li><li>Web server technologies - Node.js / Nginx</li></ul>"
+    },
+    {
+      "id": 2,
+      "imagePath": "assets/images/Angular.svg",
+      "jobName": "Angular Developer",
+      "jobDescription": "We are looking to hire a dynamic Angular Developer to join our global team. As an Angular developer, you will be required to build a top-quality coding base. You will also be required to create amazing user interfaces for desktop and mobile apps.",
+      "jobNature": "Part Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "Angular",
+      "jobCatagory": "Technology",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Determine the functional, non-functional requirements and scope working with the business analysts and engineering managers</li><li>Design and develop multi-tier, cloud-native, high performance, and scalable solutions</li><li>Apply software engineering principles, design patterns and best practices to build solutions that are testable, secure, and robust</li><li>Lead cross functional agile teams across the software development lifecycle</li><li>Lead cross functional agile teams across the software development lifecycle</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Web technologies - JavaScript, HTML5, CSS3</li><li>Web frameworks – Angular / React JS</li><li>Mobile frameworks – React Native</li><li>Web server technologies - Node.js / Nginx</li></ul>"
+    },
+    {
+      "id": 3,
+      "imagePath": "assets/images/javascript.png",
+      "jobName": "JavaScript Developer",
+      "jobDescription": "We are looking for a JavaScript Developer who is motivated to combine the art of design with the art of programming Responsibilities will include implementing visual elements and their behaviors with user interactions.",
+      "jobNature": "Full Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "Javascript",
+      "jobCatagory": "Technology",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Determine the functional, non-functional requirements and scope working with the business analysts and engineering managers</li><li>Design and develop multi-tier, cloud-native, high performance, and scalable solutions</li><li>Apply software engineering principles, design patterns and best practices to build solutions that are testable, secure, and robust</li><li>Lead cross functional agile teams across the software development lifecycle</li><li>Lead cross functional agile teams across the software development lifecycle</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Web technologies - JavaScript, HTML5, CSS3</li><li>Web frameworks – Angular / React JS</li><li>Mobile frameworks – React Native</li><li>Web server technologies - Node.js / Nginx</li></ul>"
+    },
+    {
+      "id": 4,
+      "imagePath": "assets/images/java.svg",
+      "jobName": "Java Developer",
+      "jobDescription": "We are looking to hire a dynamic Java Developer to join our global team. As an Java developer, you will be required to build a top-quality coding base. You will also be required to create amazing user interfaces for desktop and mobile apps.",
+      "jobNature": "Full Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "Java",
+      "jobCatagory": "Technology",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Determine the functional, non-functional requirements and scope working with the business analysts and engineering managers</li><li>Design and develop multi-tier, cloud-native, high performance, and scalable solutions</li><li>Apply software engineering principles, design patterns and best practices to build solutions that are testable, secure, and robust</li><li>Lead cross functional agile teams across the software development lifecycle</li><li>Lead cross functional agile teams across the software development lifecycle</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Web technologies - JavaScript, HTML5, CSS3</li><li>Web frameworks – Angular / React JS</li><li>Mobile frameworks – React Native</li><li>Web server technologies - Node.js / Nginx</li></ul>"
+    },
+    {
+      "id": 5,
+      "imagePath": "assets/images/React.svg",
+      "jobName": "ReactJS Developer",
+      "jobDescription": "We are looking for a ReactJS Developer who is motivated to combine the art of design with the art of programming Responsibilities will include implementing visual elements and their behaviors with user interactions.",
+      "jobNature": "Full Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "ReactJS",
+      "jobCatagory": "Technology",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Determine the functional, non-functional requirements and scope working with the business analysts and engineering managers</li><li>Design and develop multi-tier, cloud-native, high performance, and scalable solutions</li><li>Apply software engineering principles, design patterns and best practices to build solutions that are testable, secure, and robust</li><li>Lead cross functional agile teams across the software development lifecycle</li><li>Lead cross functional agile teams across the software development lifecycle</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Web technologies - JavaScript, HTML5, CSS3</li><li>Web frameworks – Angular / React JS</li><li>Mobile frameworks – React Native</li><li>Web server technologies - Node.js / Nginx</li></ul>"
+    },
+    {
+      "id": 6,
+      "imagePath": "assets/images/wordpress.png",
+      "jobName": "WordPress Developer",
+      "jobDescription": "We are looking to hire a dynamic WordPress Developer to join our global team. As an WordPress developer, you will be required to build a top-quality coding base. You will also be required to create amazing user interfaces for desktop and mobile apps.",
+      "jobNature": "Full Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "WordPress",
+      "jobCatagory": "Technology",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Determine the functional, non-functional requirements and scope working with the business analysts and engineering managers</li><li>Design and develop multi-tier, cloud-native, high performance, and scalable solutions</li><li>Apply software engineering principles, design patterns and best practices to build solutions that are testable, secure, and robust</li><li>Lead cross functional agile teams across the software development lifecycle</li><li>Lead cross functional agile teams across the software development lifecycle</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Web technologies - JavaScript, HTML5, CSS3</li><li>Web frameworks – Angular / React JS</li><li>Mobile frameworks – React Native</li><li>Web server technologies - Node.js / Nginx</li></ul>"
+    },
+    {
+      "id": 7,
+      "imagePath": "assets/images/GWT.svg",
+      "jobName": "GWT Developer",
+      "jobDescription": "We are looking for a GWT Developer who is motivated to combine the art of design with the art of programming Responsibilities will include implementing visual elements and their behaviors with user interactions.",
+      "jobNature": "Full Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "GWT",
+      "jobCatagory": "Technology",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Determine the functional, non-functional requirements and scope working with the business analysts and engineering managers</li><li>Design and develop multi-tier, cloud-native, high performance, and scalable solutions</li><li>Apply software engineering principles, design patterns and best practices to build solutions that are testable, secure, and robust</li><li>Lead cross functional agile teams across the software development lifecycle</li><li>Lead cross functional agile teams across the software development lifecycle</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Web technologies - JavaScript, HTML5, CSS3</li><li>Web frameworks – Angular / React JS</li><li>Mobile frameworks – React Native</li><li>Web server technologies - Node.js / Nginx</li></ul>"
+    },
+    {
+      "id": 8,
+      "imagePath": "assets/images/GWT.svg",
+      "jobName": "GWT Developer",
+      "jobDescription": "We are looking for a GWT Developer who is motivated to combine the art of design with the art of programming Responsibilities will include implementing visual elements and their behaviors with user interactions.",
+      "jobNature": "Intern",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "GWT",
+      "jobCatagory": "Technology",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Determine the functional, non-functional requirements and scope working with the business analysts and engineering managers</li><li>Design and develop multi-tier, cloud-native, high performance, and scalable solutions</li><li>Apply software engineering principles, design patterns and best practices to build solutions that are testable, secure, and robust</li><li>Lead cross functional agile teams across the software development lifecycle</li><li>Lead cross functional agile teams across the software development lifecycle</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Web technologies - JavaScript, HTML5, CSS3</li><li>Web frameworks – Angular / React JS</li><li>Mobile frameworks – React Native</li><li>Web server technologies - Node.js / Nginx</li></ul>"
+    },
+    {
+      "id": 9,
+      "imagePath": "assets/images/bde.png",
+      "jobName": "Business Development Engineer",
+      "jobDescription": "We are looking for a Business Development Engineer who is Coordinate with Business development Manager in problem solving, resourcing and budgeting activities.",
+      "jobNature": "Full Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "Business Development Engineer",
+      "jobCatagory": "Business Development Engineer",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Assist marketing team in preparing market plans and strategies to promote company’s products.</li><li>Analyze existing and potential markets to identify and secure business development opportunities.</li><li>Establish and maintain a customer relations management database.</li><li>Maintain strong relationship with customers for future business growth.</li><li>Work with internal teams to achieve targeted business goals.</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Experience in sales, marketing or related field.</li><li>Excellent organizational skills.</li><li>Proficient in Word, Excel, Outlook, and PowerPoint.</li><li>Strong communication skills and IT fluency.</li></ul>"
+    },
+    {
+      "id": 10,
+      "imagePath": "assets/images/hr.png",
+      "jobName": "Human Resources",
+      "jobDescription": "We are looking for a HR Manager to oversee all aspects of human resources practices and processes and who is Develop and implement HR strategies and initiatives aligned with the overall business strategy.",
+      "jobNature": "Full Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "Human Resources",
+      "jobCatagory": "Human Resources",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Manage the recruitment and selection process.</li><li>Bridge management and employee relations by addressing demands, grievances or other issues</li><li>Nurture a positive working environment</li><li>Maintain pay plan and benefits program</li><li>Assess training needs to apply and monitor training programs</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Knowledge of HR systems and databases</li><li>Degree in Human Resources or related field</li><li>Ability to architect strategy along with leadership skills</li><li>Excellent active listening, negotiation and presentation skills</li></ul>"
+    },
+    {
+      "id": 11,
+      "imagePath": "assets/images/content-writer.png",
+      "jobName": "Content Writer",
+      "jobDescription": "We are looking for a Content Writer to join our editorial team and enrich our websites with new blog posts, guides and marketing copy.",
+      "jobNature": "Full Time",
+      "address": "417, Sumerru Business Corner, Nr. Somchintamani Appt., B/H Rajhans Multiplex, Pal Gam, Surat 395009, Gujarat, India",
+      "salary": "15k-25k",
+      "technology": "Content Writer",
+      "jobCatagory": "Content Writer",
+      "openings": 1,
+      "experience": "1-3 years",
+      "briefJobDescription": "<ul><li>Write clear marketing copy to promote our products/services</li><li>Prepare well-structured drafts using Content Management Systems</li><li>Proofread and edit blog posts before publication</li><li>Submit work to editors for input and approval</li><li>Coordinate with marketing and design teams to illustrate articles</li></ul>",
+      "jobRequirement": "Years of Experience: 5+ years <br> Relevant hands-on experience with one of more of the following: <br> <ul> <li>Portfolio of published articles</li><li>Experience doing research using multiple sources</li><li>Familiarity with web publications</li><li>BSc in Marketing, English, Journalism or related field</li></ul>"
+    }
+  ],
+  "clientReview": [
+    {
+      "clientName": "Sean Miller",
+      "review": "He has fair amount of knowledge in some of the Java frameworks. Used him for a quick fix. He is affordable and quick to respond. Decent resource if you are looking to hire someone affordable."
+    },
+    {
+      "clientName": "Jason",
+      "review": "I have been working with Dipesh since many months. His skills, hard-work, patience, perseverance, tolerance to accommodate change requests make him a start studded performer in my team. Waiting to hire him back again on my next project."
+    },
+    {
+      "clientName": "Ron Warshawsky",
+      "review": "Very professional and good developer"
+    },
+    {
+      "clientName": "Vipul",
+      "review": "Extremely happy to work with him. He is tech person so job don't have take time to complete. Highly Recommended and will definitely work with him in future."
+    },
+    {
+      "clientName": "Justin",
+      "review": "Very happy with Dipesh. Good work ethic and communicated well. He knows React well and I can recommend him to other companies"
+    },
+    {
+      "clientName": "OXOS Medical, Inc team",
+      "review": "Dipesh was a wonderful asset to our development team. He is a GWT expert and I would not hesitate to work with him in the future on any UI/UX front end development."
+    }
+  ],
+  "hireUsCard": [
+    {
+      "cardHeader": "Web development",
+      "cardData": "Unlock the potential of the web with expert web development services that create captivating designs, seamless user experiences, and robust functionality, delivering your vision to a global audience . Know More about our web development services",
+      "routerlink": "/services/web-development",
+      "icon": "fa-solid fa-desktop"
+    },
+    {
+      "cardHeader": "Anuglar Development",
+      "cardData": "Elevate your web applications with Angular development, harnessing its powerful features and flexibility to create high-performance, scalable, and interactive experiences that engage your users and drive business success.",
+      "routerlink": "/hire-us/angular",
+      "icon": "fa-brands fa-angular"
+    },
+    {
+      "cardHeader": "Java development",
+      "cardData": "Transform your ideas into robust and secure software solutions with Java development. Leverage its versatility, scalability, and vast ecosystem to build enterprise-grade applications that power your business and drive innovation.",
+      "routerlink": "/hire-us/java",
+      "icon": "fa-brands fa-java"
+    },
+    {
+      "cardHeader": "GWT development",
+      "cardData": "Supercharge your web development with GWT. Leverage its powerful tools and libraries to build high-performance, cross-platform applications, empowering you to deliver robust solutions with optimized performance and enhanced user experiences.",
+      "icon": "fa-solid fa-code"
+    },
+    {
+      "cardHeader": "WordPress development",
+      "cardData": "Empower your digital presence with WordPress development. Create dynamic, customizable websites with ease, utilizing a vast array of plugins and themes, to showcase your brand, engage your audience, and achieve online success.",
+      "icon": "fa-brands fa-wordpress"
+    },
+    {
+      "cardHeader": "UI Desiging",
+      "cardData": "Craft captivating user experiences with our UI design expertise. We combine aesthetics, functionality, and user-centric principles to create visually stunning interfaces that delight users, enhance engagement, and elevate your brand in the digital landscape.",
+      "icon": "fa-brands fa-uikit"
+    }
+  ],
+  "serviceDetails": [
+    {
+      "id": "web-development",
+      "imgSrc": "/assets/web.png",
+      "technology": "Web Development",
+      "tagline": "   Our mission is to <br /> make your life easier.",
+      "sortdescription": "Unlock the potential of your online presence with Jyoti Technosoft LLP - your trusted partner in web development, delivering dynamic and innovative solutions tailored to your business needs.",
+      "description": "Welcome to  Jyoti Technosoft LLP, your trusted partner for seamless API integration. We offer a comprehensive suite of services to help you securely connect and exchange data with various applications, platforms, and services. With our API Integration Solutions, you can unlock the full potential of your business while ensuring the utmost data protection.",
+      "whyUs": [
+        {
+          "header": "Business Expansion",
+          "decription": "We understand the importance of growth for your business. Our web development tools are designed to support your expansion plans by providing you with scalable solutions. Whether you need to add new features, integrate third-party services, or handle increasing traffic, our web development services will ensure your website can adapt to your evolving needs."
+        },
+        {
+          "header": "Data Management",
+          "decription": "In today's digital era, managing large amounts of data efficiently is crucial. Our web development solutions include robust frameworks and technologies that enable seamless data management. From organizing information to implementing databases and content management systems, we ensure your website can handle and process data effectively, saving you time and effort."
+        },
+        {
+          "header": "Ease of Maintenance",
+          "decription": "We believe in making your life easier. Our web development services focus on creating websites that are simple to maintain. We leverage modern coding practices, modular architecture, and user-friendly interfaces, allowing you to update and manage your website with minimal technical expertise. This means you can focus on your core business activities while we take care of the technical aspects."
+        },
+        {
+          "header": "SEO-Friendly",
+          "decription": "Achieving high visibility in search engine rankings is vital for attracting organic traffic to your website. Our web development team follows industry best practices to optimize your website for search engines. We ensure that your website's structure, code, and content are all optimized to enhance your online presence, driving more targeted traffic and potential customers to your business."
+        },
+        {
+          "header": "Security",
+          "decription": "We prioritize the security of your website and your customers' data. Our web development services include robust security measures to protect your website from potential threats and vulnerabilities. We implement encryption, secure authentication, and regular security audits to ensure your website remains secure and instill trust in your users."
+        }
+      ],
+      "images": {
+        "image600x401": "assets/images/service/webDevelopment/image600x401.svg",
+        "image337x450": "assets/images/service/webDevelopment/image337x450.svg",
+        "image241x362": "assets/images/service/webDevelopment/image241x362.svg"
+      },
+      "deatils": "Choose our web development services to experience the benefits of a well-designed, scalable, SEO-friendly, and secure website. Our team of experienced professionals is dedicated to delivering exceptional results that align with your business goals. Contact us today to discuss how we can help you achieve success in the digital realm."
+    },
+    {
+      "id": "mobile-development",
+      "imgSrc": "/assets/app.png",
+      "technology": "Mobile Development",
+      "sortdescription": "Empower your business with Jyoti Technosoft LLP's cutting-edge mobile development expertise, creating seamless and captivating experiences that engage and delight users on the go.",
+      "tagline": "Bringing Limitless Possibilities to Your Fingertips",
+      "description": "In this fast-paced world, everyone desires to transcend the boundaries of physical presence and reach their target audience effortlessly. Mobile development emerges as the game-changer, enabling individuals and businesses to create customized mobile applications at a fraction of the cost. At Jyoti Technosoft LLP, we are dedicated to empowering you with increased sales and enhanced branding opportunities. Our team of experienced professionals is ready to accompany you on this transformative journey.",
+      "whyUs": [
+        {
+          "header": "Expand Your Reach",
+          "decription": "With mobile development, you can effortlessly tap into a global audience, transcending geographical limitations. Whether you need a Shopify app to boost your e-commerce store or a WooCommerce app to streamline your online business, we have got you covered. Additionally, we specialize in developing captivating gaming applications that engage and entertain users."
+        },
+        {
+          "header": "From Small Business to Enterprise",
+          "decription": "Irrespective of your business's scale, mobile development is your key to success. Whether you are a budding startup or an established enterprise, our solutions cater to businesses of all sizes. By harnessing the power of mobile apps, you can accelerate your growth and stay ahead of the competition."
+        },
+        {
+          "header": "Embrace Digital Accessibility",
+          "decription": "Smartphones and tablets have become an integral part of our lives, granting us access to a world of information and services. Mobile development enables you to leverage this digital revolution, making your products and services accessible to users at their fingertips. By seamlessly integrating your offerings into the mobile ecosystem, you can engage your target audience wherever they are."
+        },
+        {
+          "header": "Affordable and Inclusive",
+          "decription": "At Jyoti Technosoft LLP, we understand the importance of cost-effectiveness without compromising quality. Our mobile development services are affordable for both Android and iOS users, ensuring that you can reach the widest possible audience. We strive to make your mobile app dreams a reality, regardless of your budget constraints."
+        }
+      ],
+      "images": {
+        "image600x401": "assets/images/service/mobileDev/image600x401.svg",
+        "image337x450": "assets/images/service/mobileDev/image337x450.svg",
+        "image241x362": "assets/images/service/mobileDev/image241x362.svg"
+      },
+      "deatils": "In a world where connectivity and convenience reign supreme, mobile development serves as the bridge between your vision and success. Let Jyoti Technosoft LLP be your trusted partner on this transformative journey, leveraging our expertise to unlock the full potential of mobile applications. Contact us today to take the first step towards realizing your mobile development goals. Together, we can reshape the future of your business."
+    },
+    {
+      "id": "api-integration",
+      "imgSrc": "/assets/api.png",
+      "technology": "API Integration",
+      "sortdescription": "Streamline your systems and amplify your business capabilities with Jyoti Technosoft LLP's expert API integration solutions, seamlessly connecting your applications and unlocking new levels of efficiency and collaboration.",
+      "tagline": "Safeguarding Your Data with Confidence",
+      "description": "Welcome to  Jyoti Technosoft LLP, your trusted partner for seamless API integration. We offer a comprehensive suite of services to help you securely connect and exchange data with various applications, platforms, and services. With our API Integration Solutions, you can unlock the full potential of your business while ensuring the utmost data protection.",
+      "whyUs": [
+        {
+          "header": "Custom API Development",
+          "decription": "Our experienced team of developers can design and build custom APIs tailored to your specific business requirements. Whether you need to integrate with third-party applications or develop an API for internal use, we have the expertise to deliver efficient and reliable solutions.          "
+        },
+        {
+          "header": "API Integration Consulting",
+          "decription": "Not sure where to start or how to optimize your existing API integration? Our seasoned consultants will work closely with you to assess your needs, identify opportunities for improvement, and provide strategic guidance to ensure a seamless integration process.          "
+        },
+        {
+          "header": "Data Security and Privacy",
+          "decription": "We prioritize the security and privacy of your data. Our API Integration Solutions incorporate industry-leading security measures, including robust encryption protocols, secure authentication mechanisms, and regular security audits. You can trust us to keep your sensitive information safe and protected at all times.          "
+        },
+        {
+          "header": "Scalable and Reliable Architecture",
+          "decription": "Our API Integration Solutions are designed to handle high volumes of data and accommodate future growth. We employ scalable architecture and implement best practices to ensure optimal performance, reliability, and uptime."
+        },
+        {
+          "header": "Streamlined Workflow Automation",
+          "decription": "Save time and improve efficiency by automating repetitive tasks and workflows through API integration. Our solutions enable seamless data exchange between systems, eliminating manual data entry and reducing the risk of errors."
+        },
+        {
+          "header": "Comprehensive Documentation and Support",
+          "decription": "We provide detailed API documentation and comprehensive support to help you integrate our solutions seamlessly into your existing infrastructure. Our team is readily available to assist you with any questions or issues you may encounter along the way."
+        }
+      ],
+      "images": {
+        "image600x401": "assets/images/service/apiIntegration/image600x401.svg",
+        "image337x450": "assets/images/service/apiIntegration/image337x450.svg",
+        "image241x362": "assets/images/service/apiIntegration/image241x362.svg"
+      },
+      "deatils": "Unlock new possibilities for your business with our API Integration Solutions. Whether you're looking to connect your e-commerce platform to payment gateways, streamline your CRM processes, or integrate with other essential applications, we have the expertise and technology to make it happen. Contact us today to learn more about how our API Integration Solutions can empower your business and drive success in the digital world. Together, let's harness the power of secure and seamless data exchange."
+    },
+    {
+      "id": "customization",
+      "imgSrc": "/assets/customization.png",
+      "technology": "Customization",
+      "sortdescription": "Tailor-made solutions for your unique business needs - Jyoti Technosoft LLP specializes in customization, empowering you with personalized software and applications that align perfectly with your vision and objectives.",
+      "tagline": "Unleash Your Imagination, Define Your Style, Embrace Limitless Customization!",
+      "description": "In a world where individuality reigns supreme, no one wants to blend in with the crowd. We all yearn to stand out and be special in our own right. At Jyoti Technosoft LLP, we understand this desire for uniqueness, especially when it comes to your online presence. That's why we are here to offer you unparalleled customization options for your website.",
+      "whyUs": [
+        {
+          "header": "Personal Website Builder",
+          "decription": "Gone are the days of settling for cookie-cutter websites that look like every other site out there. With Jyoti Technosoft LLP, you have the power to tailor your website to your exact specifications. We believe that your website should reflect your vision and cater to your specific needs. Whether you're an entrepreneur, a business owner, or an individual looking to establish a personal brand, we have got you covered."
+        },
+        {
+          "header": "Reason Why Us",
+          "decription": "The answer lies in our commitment to helping you customize your web application. We recognize that your time is precious, and we aim to make the most of it by providing you with tailor-made solutions. By customizing your web app, you not only save time but also gain access to vital business insights that can elevate your success."
+        },
+        {
+          "header": "A Guide to We Pride",
+          "decription": "At Jyoti Technosoft LLP, we pride ourselves on our versatility. Our expertise extends across various fields, including but not limited to food, health, travel, and education. Whatever your niche or industry, we have the knowledge and skills to create a customized web application that aligns perfectly with your objectives."
+        },
+        {
+          "header": "Strategic Planning",
+          "decription": "Give us the opportunity to propel your business to new heights through our best practices. We are dedicated to providing you with top-notch service and ensuring that your unique requirements are met. With Jyoti Technosoft LLP, you can unlock the true potential of customization and watch your online presence thrive. Choose us and experience the difference that personalized customization can make. Let Jyoti Technosoft LLP be your trusted partner on the journey to digital success."
+        }
+      ],
+      "images": {
+        "image600x401": "assets/images/service/customization/image600x401.svg",
+        "image337x450": "assets/images/service/customization/image337x450.svg",
+        "image241x362": "assets/images/service/customization/image241x362.svg"
+      }
+    },
+    {
+      "id": "product-development",
+      "imgSrc": "/assets/product development.png",
+      "technology": "Product Development",
+      "sortdescription": "From concept to launch, Jyoti Technosoft LLP is your trusted partner in product development, turning ideas into reality with precision and innovation, driving your business forward in the competitive digital landscape.",
+      "tagline": "Transforming Ideas into Reality",
+      "description": "At Jyoti Technosoft LLP, we understand the significance of product development in today's competitive business landscape. That's why we have devised a systematic approach to guide you through the entire journey of bringing your product to life. Whether you're a startup or an established company, our experienced team is here to assist you every step of the way.",
+      "whyUs": [
+        {
+          "header": "Road to Success",
+          "decription": "We understand that the journey from a simple idea to a successful product is filled with crucial steps. That's why we follow a comprehensive approach to ensure your product's success. We start with ideation, helping you refine and validate your concept to ensure its market viability. From there, we move on to prototyping, bringing your vision to life in a tangible form. With a solid foundation in place, we focus on strategic marketing to create awareness and generate demand. But we don't stop there. Our experienced team of developers will work tirelessly to bring your product to life, ensuring it meets your exact specifications. We strive for complete client satisfaction and security, providing you with a dedicated team that will go above and beyond to make your vision a reality."
+        },
+        {
+          "header": "Long Term Vision",
+          "decription": "Our responsibility doesn't end at the product launch. We believe in nurturing long-term relationships with our clients, which is why our in-house team is always ready to support you in maintaining and enhancing your product's performance. We understand the importance of productivity and are committed to helping you achieve optimal results."
+        },
+        {
+          "header": "Quality of Product",
+          "decription": "With Jyoti Technosoft LLP by your side, you can rest assured that your product is in capable hands. Our expertise, combined with our commitment to quality, ensures that your journey from idea to market success is smooth and rewarding. Take the first step towards product development excellence and unlock the potential of your ideas. Trust Jyoti Technosoft LLP to be your reliable partner in transforming your vision into a remarkable reality."
+        }
+      ],
+      "images": {
+        "image600x401": "assets/images/service/productDevelopment/image600x401.svg",
+        "image337x450": "assets/images/service/productDevelopment/image337x450.svg",
+        "image241x362": "assets/images/service/productDevelopment/image241x362.svg"
+      }
+    },
+    {
+      "id": "deployment",
+      "imgSrc": "/assets/deployment.png",
+      "technology": "Deployment",
+      "sortdescription": "Simplify and accelerate your deployment process with Jyoti Technosoft LLP's expert deployment services, ensuring smooth transitions, optimal performance, and uninterrupted operations for your software applications",
+      "tagline": "Turning Websites into Live Solutions",
+      "description": "At Jyoti Technosoft LLP, we specialize in delivering seamless deployment solutions for websites, ensuring that your digital presence is up and running smoothly. Whether you have a fully developed website or are in the process of building one, our expert team is here to assist you every step of the way.",
+      "whyUs": [
+        {
+          "header": "Our Deployment",
+          "decription": "Website deployment refers to the process of implementing changes and updates to your website's code, transitioning them from source control to a specific environment. This can include anything from minor bug fixes and feature enhancements to launching an entirely new website on a live platform."
+        },
+        {
+          "header": "Streamlined Deployment Process",
+          "decription": "To ensure efficient website development, it is crucial to follow a well-defined deployment process flow and leverage effective version control systems like Git. When working on your website, our developers adhere to a common workflow, where they retrieve the latest version of the code from the version control system and clone it locally for modifications. Once the development stage is complete and the changes have been thoroughly tested on the local environment, our team commits the updates, pushes them to the source control system, and initiates the deployment process to the targeted environment."
+        },
+        {
+          "header": "Smooth Transition to Live Environment",
+          "decription": "Our deployment services seamlessly bridge the gap between various environments, with a particular focus on live deployment. This means that when someone mentions deploying to live,they are referring to the process of making changes visible on the live website, ensuring that your audience can access and interact with your updated platform."
+        },
+        {
+          "header": "Expert Deployment Assistance",
+          "decription": "Whether you already have a fully developed website or are in need of assistance with deployment, Jyoti Technosoft LLP is here to support you. Our team is well-versed in deploying websites of all sizes and complexities, and we are committed to delivering outstanding results."
+        },
+        {
+          "header": "Partner with us for Hassle-free Deployment",
+          "decription": "When you choose Jyoti Technosoft LLP, you gain access to reliable and efficient deployment services. We prioritize the success of your digital initiatives and work closely with you to ensure a smooth transition from development to the live environment. Contact us today and let our experts handle the deployment of your website, turning it into a fully functional and accessible solution for your users."
+        }
+      ],
+      "images": {
+        "image600x401": "assets/images/service/deployment/image600x401.svg",
+        "image337x450": "assets/images/service/deployment/image337x450.svg",
+        "image241x362": "assets/images/service/deployment/image241x362.svg"
+      }
+    },
+    {
+      "id": "consulting",
+      "imgSrc": "/assets/consulting.png",
+      "technology": "Consulting",
+      "sortdescription": "Gain strategic insights and leverage industry expertise with Jyoti Technosoft LLP's comprehensive consulting services, empowering your business to make informed decisions, drive growth, and stay ahead in the ever-evolving digital landscape.",
+      "tagline": "Unlocking Potential, Guiding Success, Transforming Businesses with Expert Consulting.",
+      "description": "Jyoti Technosoft LLP is an industry-leading IT company that specializes in providing top-notch consulting services tailored to meet the unique needs of businesses like yours. With our deep expertise and comprehensive understanding of the IT landscape, we are dedicated to helping you navigate the complexities of the digital world and achieve your goals with confidence.",
+      "whyUs": [
+        {
+          "header": "Unparalleled IT Consulting Expertise",
+          "decription": "Our team of highly skilled consultants possesses a wealth of knowledge and hands-on experience in various IT domains. Whether you require assistance with technology strategy, digital transformation, cloud solutions, cybersecurity, or software development, we have the expertise to guide you towards optimal solutions."
+        },
+        {
+          "header": "Customized Solutions for Your Business",
+          "decription": "At Jyoti Technosoft LLP, we understand that each business is unique, with its own set of challenges and requirements. That's why our consulting approach is highly personalized. We take the time to understand your business objectives, analyze your current IT infrastructure, and identify areas where improvements can be made. Our consultants work closely with you to develop customized strategies and solutions that align perfectly with your business goals."
+        },
+        {
+          "header": "Comprehensive IT Consulting Services",
+          "decription": "Our comprehensive range of IT consulting services covers every aspect of your technology needs. From conducting in-depth IT assessments to developing robust IT roadmaps, we provide end-to-end solutions that empower your business to thrive in today's digital landscape. "
+        },
+        {
+          "header": "Reliable Partnership for Success",
+          "decription": "At Jyoti Technosoft LLP, we believe in building long-lasting partnerships with our clients. We are committed to providing exceptional customer service, honest communication, and delivering measurable results. Our goal is to empower your business with the right IT solutions, enabling you to stay ahead of the competition and achieve sustainable growth."
+        },
+        {
+          "header": "Experience the Difference",
+          "decription": "Experience the Jyoti Technosoft LLP difference and unlock the true potential of your business. Contact us today to schedule a consultation with our expert IT consultants and embark on a transformative journey towards IT excellence."
+        }
+      ],
+      "images": {
+        "image600x401": "assets/images/service/consulting/image600x401.svg",
+        "image337x450": "assets/images/service/consulting/image337x450.svg",
+        "image241x362": "assets/images/service/consulting/image241x362.svg"
+      }
+    }
+  ],
+  "services": [
+    {
+      "name": "Web Developement",
+      "description": "We are having 6+ years of development experience in the web development. We are mainly working with Java and Javascript Scripting based Technologies.React Js, Angular Js, Full Stack developmet is our main interest area."
+    },
+    {
+      "name": "Mobile Developement",
+      "description": "We are having 6+ years of development experience in the web development. We are mainly working with Java and Javascript Scripting based Technologies.React Js, Angular Js, Full Stack developmet is our main interest area."
+    },
+    {
+      "name": "CMS Solutions",
+      "description": "We are having 6+ years of development experience in the web development. We are mainly working with Java and Javascript Scripting based Technologies.React Js, Angular Js, Full Stack developmet is our main interest area."
+    },
+    {
+      "name": "FREELANCING",
+      "description": "We are having 6+ years of development experience in the web development. We are mainly working with Java and Javascript Scripting based Technologies.React Js, Angular Js, Full Stack developmet is our main interest area."
+    },
+    {
+      "name": "It Consultancy",
+      "description": "We are having 6+ years of development experience in the web development. We are mainly working with Java and Javascript Scripting based Technologies.React Js, Angular Js, Full Stack developmet is our main interest area."
+    },
+    {
+      "name": "Software Support and Maintenance",
+      "description": "We are having 6+ years of development experience in the web development. We are mainly working with Java and Javascript Scripting based Technologies.React Js, Angular Js, Full Stack developmet is our main interest area."
+    }
+  ],
+  "projectReports": [
+    {
+      "label": "Year of Experience",
+      "totals": "5",
+      "icons": "flag"
+    },
+    {
+      "label": "Total projects",
+      "totals": "150",
+      "icons": "computer"
+    },
+    {
+      "label": "Worldwide",
+      "totals": "65",
+      "icons": "language"
+    },
+    {
+      "label": "Team members",
+      "totals": "50",
+      "icons": "groups"
+    }
+  ],
+  "aboutUs": {
+    "pageTitle": "ABOUT US",
+    "aboutUsdescription": " <ul class=\"aboutus-top-text list\" style=\"letter-spacing: 1px;\"> <li><span>Jyoti Technosoft LLP</span> is a Surat-based company delivering top of the line services to clients when it comes to web development, open source customization, custom software development services.</li> <li>We are fully aware of the current trends and practices of the IT industry and we always strive to present our clients with better services and make a difference in their lives. </li> <li>We understand that not all our clients are tech savvy, and gently guide them through the ever changing realm of the internet to their desired destination.We have created, launched and revamped many web sites and web applications. This experience has led us to a deep understanding of what makes software projects successful.</li> </ul>",
+    "goalsTitle": "Our Goal",
+    "goalsContent": "Our support team will get assistance from AI-powered suggestions, making it quicker than ever to handle support requests. Our support team will get assistance from AI-powered suggestions.",
+    "ourGoal": [
+      {
+        "id": 1,
+        "cardHeader": "MISSION",
+        "cardData": "Our mission is to deliver maximum value to our clients. We accomplish this by helping them progress and thrive in the constantly changing and challenging competitive market.",
+        "imageSrc": "/assets/Goal.png"
+      },
+      {
+        "id": 2,
+        "cardHeader": "AIM",
+        "cardData": "Our goal is to achieve 100% customer trust. We do this by providing personalized attention and working closely with you to cultivate a long-term business relationship",
+        "imageSrc": "/assets/My Location.png"
+      },
+      {
+        "id": 3,
+        "cardHeader": "VISION",
+        "cardData": "Our vision is to provide our clients with the best quality services. We achieve this by harnessing the power of the latest technologies, enabling businesses to thrive and expand on a global scale.",
+        "imageSrc": "/assets/Eye.png"
+      }
+    ],
+    "gettoKnowUsTitle": "Get to Know Us",
+    "gettoKnowUs": [
+      {
+        "id": 1,
+        "description": "Jyoti Technosoft LLP  is a Surat-based company delivering top of the line services to clients when it comes to web development, open source customization, custom software development services."
+      },
+      {
+        "id": 2,
+        "description": "We are fully aware of the current trends and practices of the IT industry and we always strive to present our clients with better services and make a difference in their lives."
+      },
+      {
+        "id": 3,
+        "description": "We understand that not all our clients are tech savvy, and gently guide them through the ever changing realm of the internet to their desired destination. We have created, launched and revamped many web sites and web applications. This experience has led us to a deep understanding of what makes software projects successful."
+      }
+    ],
+    "valuesAboutSection": [
+      {
+        "id": 1,
+        "title": "Legitimacy:",
+        "description": "Conformity to the law or to rules of Information."
+      },
+      {
+        "id": 2,
+        "title": "Excellence:",
+        "description": "In the sense, working passionate and provide quality of work."
+      },
+      {
+        "id": 3,
+        "title": "Innovation:",
+        "description": "Everyday new changes required."
+      },
+      {
+        "id": 4,
+        "title": "Integrity:",
+        "description": "We will be fair, honest, transparent and ethical in our conduct everything."
+      },
+      {
+        "id": 5,
+        "title": "Unity:",
+        "description": "To build hard based on tolerance, understanding and mutual co-operation, work as cohesively with our colleagues across the group and with our customers and partners."
+      }
+    ]
+  }
+}

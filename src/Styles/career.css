@@ -1,0 +1,218 @@
+.career-first-section {
+    display: flex;
+    height: 325px;
+}
+
+.career-first-section .career-content {
+    background: #1F5795;
+    width: 50%;
+    position: relative;
+}
+
+.career-first-section .career-content .career-gif {
+    z-index: 1;
+    position: absolute;
+    right: 1rem;
+    bottom: 6rem;
+    width: 22%;
+    height: 30%;
+    background: url("/public/assets/contact_page.gif") no-repeat center center/cover;
+}
+
+.career-first-section .career-content .career-wave {
+    position: absolute;
+    right: -1.3rem;
+    top: 0;
+    width: 20%;
+    height: 325px;
+    background: url("/public/assets/Wave.png") no-repeat center center/cover;
+}
+
+.career-first-section .career-content .career-first-content {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    padding: 4rem 0px 0px 11rem;
+}
+
+.career-first-section .career-content .career-title {
+    font-family: Roboto Slab;
+    padding: 2rem 0px 0px 11rem;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 84px;
+    letter-spacing: 0.5%;
+    color: #FFFBFB;
+}
+
+.career-first-section .career-image {
+    width: 50%;
+    overflow: hidden;
+}
+
+.career-first-section .career-image img {
+    height: 325px;
+    width: 100%;
+}
+
+.career-working-section,
+.career-role-section {
+    padding: 2rem 6rem 3rem;
+}
+
+.career-second-section .career-title-section {
+    padding: 1rem 0 1rem 0;
+}
+
+.career-second-section .career-role-section {
+    background-color: #F5F8FB;
+}
+
+.career-title-section .career-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28.13px;
+    letter-spacing: 0.5px;
+    color: #347CCC;
+}
+
+.career-item-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.color-0 {
+    background-color: #FAEFF0;
+}
+
+.color-1 {
+    background-color: #F4F7ED;
+}
+
+.color-2 {
+    background-color: #FAEFF0;
+}
+
+.color-3 {
+    background-color: #FFEEC2;
+}
+
+.color-4 {
+    background-color: #E2E4FF;
+}
+
+.color-5 {
+    background-color: #C5EDFF;
+}
+
+.career-item-container .item-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.career-main-container .item-title {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 18px;
+    color: #333333;
+    line-height: 100%;
+    letter-spacing: 0.5%;
+}
+
+.career-second-section .job-filters {
+    margin-bottom: 16px;
+}
+
+.career-second-section .job-search,
+.career-second-section .job-dropdown {
+    background-color: white;
+}
+
+.career-second-section .job-container .job-card {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.career-second-section .job-detail {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.career-second-section .job-card .job-title {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.5%;
+}
+
+.career-second-section .apply-button {
+    font-family: Roboto;
+    background-color: #437CCC;
+    color: white;
+    min-width: 92px;
+    min-height: 35px;
+    border-radius: 10px;
+    padding: 6px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .career-first-section .career-content .career-title {
+        padding: 1rem 0px 0px 0rem;
+        font-size: 45px;
+        line-height: unset;
+    }
+
+    .career-first-section {
+        height: 230px;
+    }
+
+    .career-first-section .career-content .career-first-content {
+        padding: 1.5rem 0px 0px 1rem;
+    }
+
+    .career-first-section .career-content {
+        width: 100%;
+    }
+
+    .career-first-section .career-content .career-gif {
+        display: none;
+    }
+
+    .career-first-section .career-content .career-wave {
+        display: none;
+    }
+
+    .career-first-section .career-image {
+        display: none;
+    }
+
+    .career-working-section,
+    .career-role-section {
+        padding: 2rem 2rem 3rem;
+    }
+
+    .career-content {
+        width: 100%;
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .career-image {
+        width: 100%;
+    }
+}

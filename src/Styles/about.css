@@ -1,0 +1,161 @@
+.main-container .gettoKnowUsTitle {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: 1.5px;
+    color: #347CCC;
+    margin: 1rem 0px 0rem;
+}
+
+.main-container .gettoKnowUsDesc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: justify;
+    color: #333333;
+    margin: 2.3rem 0px 0rem;
+}
+
+.values-section .values-data-main-section .values-title {
+    margin: 0rem 0px 1.8rem;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: 1.5px;
+    text-align: justify;
+    color: #347CCC;
+}
+
+.values-section .values-data-main-section .values-data-section {
+    display: flex;
+    align-items: flex-start;
+    margin: 0.1rem 0px 0px 0px;
+}
+
+.values-data-main-section .values-data-section .values-data-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: justify;
+    color: #347CCC;
+    margin: 0px 1rem 0px 0px;
+    width: 80px;
+}
+
+.values-data-main-section .values-data-section .values-data-description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    text-align: justify;
+    color: #333333;
+    width: 384px;
+}
+
+.ourGoal-section {
+    width: 100%;
+    background: #F5F8FB;
+    margin: 2rem 0px 1rem;
+}
+
+.ourGoal-section .main-container .ourGoal-title {
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 24px;
+    letter-spacing: 1.5px;
+    text-align: justify;
+    color: #347CCC;
+    padding: 2rem 0px 1rem 0rem;
+}
+
+.ourGoal-section .main-container .ourGoal-card {
+    height: 250px;
+    width: 330px;
+    padding: 0;
+    background: #F5F8FB;
+    box-shadow: none;
+    margin-bottom: 2.5rem;
+}
+
+.ourGoal-section .main-container .ourGoal-card:hover {
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 0px #2361A833;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.ourGoal-section .main-container .ourGoal-card .cardMedia {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    padding: 10px 0px 0px 10px;
+}
+
+.ourGoal-section .main-container .ourGoal-card .cardContent {
+    padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.ourGoal-section .main-container .ourGoal-card .cardHeader {
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #333333;
+}
+
+.ourGoal-section .main-container .ourGoal-card .cardData {
+    margin: 0.5rem 0px 0px 0px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: 0.5px;
+    color: #333333;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .main-container .gettoKnowUsTitle {
+        margin: 0rem;
+    }
+
+    .main-container .gettoKnowUsDesc {
+        margin: 1.5rem 0px 0rem;
+    }
+
+    .values-section {
+        padding: 10px 0px 0px 30px !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .values-section .values-second-img {
+        padding-left: 0px !important;
+    }
+
+    .values-section .values-data-main-section {
+        padding-left: 0px !important;
+    }
+
+    .values-section .values-data-main-section .values-data-section {
+        margin: 0rem;
+    }
+
+    .values-data-main-section .values-data-section .values-data-title {
+        width: 100px;
+    }
+
+    .ourGoal-section .main-container .ourGoal-card {
+        width: 100%;
+        height: 90%;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 0px #2361A833;
+        background: #FFFFFF;
+    }
+
+    .ourGoal-section .main-container .ourGoal-card .cardMedia {
+        width: 43px;
+        height: 43px;
+    }
+}
