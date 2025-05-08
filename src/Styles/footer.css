@@ -1,0 +1,156 @@
+.footer {
+  background-color: #212529;
+  text-align: center;
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.subFooter2 {
+  margin: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subFooter2-title1 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18.75px;
+  letter-spacing: 0px;
+  color: #CDCDCD;
+}
+
+.subFooter2-title2 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18.75px !important;
+  letter-spacing: 0px;
+  text-align: right;
+  color: #CDCDCD !important;
+}
+
+.subFooter1 {
+  padding: 25px 0px;
+}
+
+.company-logo {
+  width: 220px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.followus {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18.75px;
+  letter-spacing: 0px;
+  color: #F3F3F3;
+}
+
+.social-media {
+  background-color: #D9D9D9 !important;
+  margin-right: 0.5rem !important;
+  margin-top: 5px !important;
+  padding: 6px !important;
+}
+
+.social-media svg {
+  font-size: 18px;
+  color: #212529;
+}
+
+.footermenu-header {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28.13px;
+  letter-spacing: 0px;
+  color: #F3F3F3;
+  text-align: left;
+  margin-bottom: 0.8rem !important;
+}
+
+.footermenu {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23.44px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #F3F3F3 !important;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 5px !important;
+  width: fit-content;
+}
+
+.footermenu::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #347CCC;
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.footermenu:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    position: relative;
+    text-align: left;
+  }
+
+  .company-logo {
+    width: 163px;
+    height: 75px;
+  }
+
+  .footermenu-header {
+    width: fit-content;
+    border-bottom: 2px solid #F3F3F3;
+    transition: border-color 0.3s ease-in-out;
+    margin: 1rem 0px !important;
+    font-size: 17px !important;
+  }
+
+  .footermenu {
+    font-size: 14px !important;
+  }
+
+  .footermenu:last-child {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .subFooter1 {
+    margin: 0px 0px 0px 0.6rem !important;
+  }
+
+  .subFooter2 {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subFooter2-title1 {
+    font-size: 12px !important;
+  }
+
+  .subFooter2-title2 {
+    font-size: 12px !important;
+  }
+
+  .social-media svg {
+    font-size: 15px;
+  }
+
+  .social-media {
+    margin-right: 0.8rem !important;
+  }
+}
