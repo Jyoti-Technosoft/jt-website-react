@@ -195,7 +195,7 @@ const Contact: React.FC = () => {
                                     }}
                                 />
                                 <Box my={2}>
-                                    <img width="55%" height="80%" src="/assets/captcha image.png" alt="captcha" />
+                                    <img width="55%" height="80%" src="/assets/captcha-image.png" alt="captcha" />
                                 </Box>
                                 <button className="submit-btn">
                                     SUBMIT

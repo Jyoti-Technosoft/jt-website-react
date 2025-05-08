@@ -38,31 +38,31 @@
           "id": 1,
           "title": "Web Development",
           "description": "Custom-built websites that are fast, responsive, and scalable.",
-          "imageSrc": "/assets/Programming.png"
+          "imageSrc": "/assets/programming.png"
         },
         {
           "id": 2,
           "title": "Angular Development",
           "description": "Craft dynamic and scalable web applications with Angular.",
-          "imageSrc": "/assets/AngularJS.png"
+          "imageSrc": "/assets/angular-js.png"
         },
         {
           "id": 3,
           "title": "Java Development",
           "description": "Deliver robust and efficient enterprise-grade Java solutions.",
-          "imageSrc": "/assets/offersection-Java.png"
+          "imageSrc": "/assets/offersection-java.png"
         },
         {
           "id": 4,
           "title": "GWT Development",
           "description": "Create seamless and optimized web applications using Google Web Toolkit.",
-          "imageSrc": "/assets/Source Code.png"
+          "imageSrc": "/assets/source-code.png"
         },
         {
           "id": 5,
           "title": "WordPress Development",
           "description": "Crafting feature-rich and visually stunning websites with WordPress.",
-          "imageSrc": "/assets/WordPress.png"
+          "imageSrc": "/assets/wordpress.png"
         },
         {
           "id": 6,
@@ -79,35 +79,35 @@
           "title": "Requirement Gathering",
           "description1": "Understanding Your Vision",
           "description2": "We begin by thoroughly understanding your business needs, goals, and the unique challenges you face. By engaging in detailed and collaborative discussions, we dive deep into your vision to ensure every aspect is covered. This step allows us to gather precise and comprehensive requirements, creating a strong foundation for the success of your project and ensuring alignment with your expectations and objectives.",
-          "imageSrc": "/assets/Two Women Using Computer Laptops.png"
+          "imageSrc": "/assets/computer-laptop.png"
         },
         {
           "id": 2,
           "title": "UI/UX Development",
           "description1": "Crafting Intuitive Designs",
           "description2": "Our design team focuses on crafting intuitive, user-friendly, and visually appealing interfaces tailored to meet your specific needs. We ensure every design element is carefully aligned with user expectations and your brand identity. By combining functionality and aesthetics, we aim to deliver interfaces that engage users effectively and leave a lasting impression, providing a seamless and delightful experience across every platform and device.",
-          "imageSrc": "/assets/UiDevelopment.png"
+          "imageSrc": "/assets/ui-development.png"
         },
         {
           "id": 3,
           "title": "Development of Process",
           "description1": "Building with Precision",
           "description2": "Our skilled developers bring your vision to life by creating scalable, secure, and high-performance solutions tailored to your unique requirements. By leveraging the latest technologies and industry best practices, we ensure our solutions align with your goals. Every project is built with a focus on quality, reliability, and innovation, delivering exceptional results that drive success and meet your expectations.",
-          "imageSrc": "/assets/Team work, work colleagues, working together.png"
+          "imageSrc": "/assets/working-together.png"
         },
         {
           "id": 4,
           "title": "Deployment of App",
           "description1": "Launching with Confidence",
           "description2": "Once development is complete, we deploy your app with precision. Our team ensures all components are meticulously configured, thoroughly tested, and fully optimized to guarantee seamless performance. We take extra care in ensuring the app functions flawlessly in a live environment, providing you with a smooth, efficient, and reliable experience that aligns perfectly with your business needs and goals.",
-          "imageSrc": "/assets/Deployment of App.png"
+          "imageSrc": "/assets/deployment-of-app.png"
         },
         {
           "id": 5,
           "title": "Review from Clients",
           "description1": "Perfecting with Feedback",
           "description2": "Your feedback is invaluable to us. We collaborate closely with you to review the app thoroughly, making any necessary adjustments and addressing final changes. Our goal is to ensure the solution not only meets your expectations but exceeds them, delivering an app that’s fully aligned with your vision and requirements, providing the best possible experience for both you and your users.",
-          "imageSrc": "/assets/Crop colleagues shaking hands in office.png"
+          "imageSrc": "/assets/shaking-hands.png"
         },
         {
           "id": 6,
@@ -125,17 +125,17 @@
         {
           "id": 1,
           "title": "Book Universe",
-          "imageSrc": "/assets/Book Universe.png"
+          "imageSrc": "/assets/book-universe.png"
         },
         {
           "id": 2,
           "title": "D3 Showcase",
-          "imageSrc": "/assets/D3 Showcase.png"
+          "imageSrc": "/assets/d3-Showcase.png"
         },
         {
           "id": 3,
           "title": "LoomCart",
-          "imageSrc": "/assets/LoomCart.png"
+          "imageSrc": "/assets/loom-cart.png"
         }
       ]
     }
@@ -146,22 +146,22 @@
       {
         "id": 1,
         "title": "UI/UX Development",
-        "imgSrc": "/assets/UIUXDevelopment.png"
+        "imgSrc": "/assets/ui-ux-development.png"
       },
       {
         "id": 2,
         "title": "Web Services",
-        "imgSrc": "/assets/WebServices.png"
+        "imgSrc": "/assets/web-services.png"
       },
       {
         "id": 3,
         "title": "Backend Development",
-        "imgSrc": "/assets/BackendDevelopment.png"
+        "imgSrc": "/assets/backend-development.png"
       },
       {
         "id": 4,
         "title": "Product Development",
-        "imgSrc": "/assets/ProductDevelopment.png"
+        "imgSrc": "/assets/products-development.png"
       }
     ]
   },
@@ -171,7 +171,7 @@
         "id": "angular",
         "label": "Angular developement",
         "decription": "At Jyoti Technosoft LLP, we are dedicated to delivering exceptional Angular development solutions tailored to meet your business objectives. With a team of experienced and skilled Angular developers, we have extensive expertise in harnessing the power of Angular to build cutting-edge applications that drive business growth. Our Angular development services encompass the entire spectrum of the development process, from requirement analysis and architecture design to front-end and back-end development, testing, deployment, and ongoing support. ",
-        "image": "assets/images/angular.png",
+        "image": "assets/angular.png",
         "chooseUs": "Why Choose Us As Your Angular Development Company",
         "whyChooseUs": [
           {
@@ -467,7 +467,7 @@
           },
           {
             "label": "GWT",
-            "imgSrc": "/assets/GWT.png",
+            "imgSrc": "/assets/gwt.png",
             "id": "",
             "tooltip": "",
             "projects": "10+"
@@ -489,7 +489,7 @@
           },
           {
             "label": "GWT",
-            "imgSrc": "/assets/GWT.png",
+            "imgSrc": "/assets/gwt.png",
             "id": "",
             "tooltip": "",
             "projects": "20+"
@@ -712,7 +712,7 @@
     "items": [
       {
         "id": 1,
-        "imageUrl": "/assets/leaves&holidays-img.png",
+        "imageUrl": "/assets/leaves-holidays.png",
         "title": "12 Paid Leaves + 12 Holidays"
       },
       {
@@ -727,7 +727,7 @@
       },
       {
         "id": 4,
-        "imageUrl": "/assets/growth&developement-img.png",
+        "imageUrl": "/assets/growth-development.png",
         "title": "Professional growth & development "
       },
       {
@@ -853,7 +853,7 @@
     },
     {
       "id": 6,
-      "imagePath": "assets/images/wordpress.png",
+      "imagePath": "assets/wordpress.png",
       "jobName": "WordPress Developer",
       "jobDescription": "We are looking to hire a dynamic WordPress Developer to join our global team. As an WordPress developer, you will be required to build a top-quality coding base. You will also be required to create amazing user interfaces for desktop and mobile apps.",
       "jobNature": "Full Time",
@@ -1145,7 +1145,7 @@
     },
     {
       "id": "product-development",
-      "imgSrc": "/assets/product development.png",
+      "imgSrc": "/assets/products-development.png",
       "technology": "Product Development",
       "sortdescription": "From concept to launch, Jyoti Technosoft LLP is your trusted partner in product development, turning ideas into reality with precision and innovation, driving your business forward in the competitive digital landscape.",
       "tagline": "Transforming Ideas into Reality",
@@ -1299,19 +1299,19 @@
         "id": 1,
         "cardHeader": "MISSION",
         "cardData": "Our mission is to deliver maximum value to our clients. We accomplish this by helping them progress and thrive in the constantly changing and challenging competitive market.",
-        "imageSrc": "/assets/Goal.png"
+        "imageSrc": "/assets/goal.png"
       },
       {
         "id": 2,
         "cardHeader": "AIM",
         "cardData": "Our goal is to achieve 100% customer trust. We do this by providing personalized attention and working closely with you to cultivate a long-term business relationship",
-        "imageSrc": "/assets/My Location.png"
+        "imageSrc": "/assets/my-location.png"
       },
       {
         "id": 3,
         "cardHeader": "VISION",
         "cardData": "Our vision is to provide our clients with the best quality services. We achieve this by harnessing the power of the latest technologies, enabling businesses to thrive and expand on a global scale.",
-        "imageSrc": "/assets/Eye.png"
+        "imageSrc": "/assets/eye.png"
       }
     ],
     "gettoKnowUsTitle": "Get to Know Us",
