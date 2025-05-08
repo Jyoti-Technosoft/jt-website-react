@@ -2,11 +2,11 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 
 import HomeWhyUs from "../Pages/HomeWhyUs.tsx";
-import OurTechnology from "./ReusableComponents/OurTechnology.tsx";
-import WeOffer from "./ReusableComponents/WeOffer.tsx";
-import WeveBuilt from "./ReusableComponents/WeveBuilt.tsx";
-import OurNewsletter from "./ReusableComponents/OurNewsletter.tsx";
-import HowWeWork from "./ReusableComponents/HowWeWork.tsx";
+import OurTechnology from "./shared/OurTechnology.tsx";
+import WeOffer from "./shared/WeOffer.tsx";
+import WeveBuilt from "./shared/WeveBuilt.tsx";
+import OurNewsletter from "./shared/OurNewsletter.tsx";
+import HowWeWork from "./shared/HowWeWork.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/home.css";
 

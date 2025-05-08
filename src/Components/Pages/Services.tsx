@@ -2,9 +2,9 @@ import React from 'react';
 import { Box, Grid, Typography, Container, useMediaQuery } from '@mui/material';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
-import HeaderCommon from "../Pages/ReusableComponents/HeaderCommonPage.tsx";
-import FooterCommonPage from "./ReusableComponents/FooterCommonPage.tsx";
-import OurTechnology from "./ReusableComponents/OurTechnology.tsx";
+import HeaderCommon from "./shared/HeaderCommonPage.tsx";
+import FooterCommonPage from "./shared/FooterCommonPage.tsx";
+import OurTechnology from "./shared/OurTechnology.tsx";
 import dataArray from "../../jt-website.json"
 import "../../styles/services.css"
 import "../../styles/home.css";

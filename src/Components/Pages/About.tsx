@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Grid, Typography, Card, CardContent, CardMedia, Box } from "@mui/material";
 
-import HeaderCommon from "../Pages/ReusableComponents/HeaderCommonPage.tsx";
-import FooterCommonPage from "./ReusableComponents/FooterCommonPage.tsx";
+import HeaderCommon from "./shared/HeaderCommonPage.tsx";
+import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/about.css";
 
