@@ -19,7 +19,7 @@ const WeOffer: React.FC = () => {
                 </Box>
                 <Grid container spacing={3} className="weOffer-main-container">
                     {WeOffer?.data?.map((offer) => (
-                        <Grid item xs={12} sm={6} md={3} key={offer?.id}>
+                        <Grid size={{ xs: 12, sm:6, md:3 }} key={offer?.id}>
                             <Card className="weOffer-card">
                                 <CardMedia
                                     component="img"

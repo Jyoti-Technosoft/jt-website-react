@@ -55,7 +55,7 @@ const HomeWhyUs: React.FC = () => {
                     className='main-container'
                 >
                     {WhyUs?.data?.map((value, index) => (
-                        <Grid className='whyus-card' item xs={12} sm={6} md={4} lg={3} key={index}>
+                        <Grid className='whyus-card' size={{ xs: 12, sm:6, md:6, lg:3 }} key={index}>
                             <Box className="main-numbercard">
                                 <Typography className="number">
                                     {value?.type === "Clients" || value?.type === "Projects" || value?.type === "Experience"

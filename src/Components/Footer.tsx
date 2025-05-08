@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         <Box className="footer">
             <Container>
                 <Grid className='subFooter1' container spacing={1} justifyContent="space-between" alignItems="flex-start">
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid size={{ xs:12, sm:6, md:3 }}>
                         <img className='company-logo' src={"/assets/company-logo.png"} alt="Company Logo"/>
                         <Box className='subFooter1-first-col'>
                             <Typography className='followus' variant="body2" component="p">
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                         </Box>
                     </Grid>
 
-                    <Grid item xs={6} sm={6} md={2}>
+                    <Grid size={{ xs:6, sm:6, md:2 }}>
                         <Typography className='footermenu-header' variant="h6" component="h6" gutterBottom >Our Services</Typography>
                         <Stack spacing={1}>
                             <Link className='footermenu' href="#" underline="none">Product Development</Link>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                         </Stack>
                     </Grid>
 
-                    <Grid item xs={6} sm={6} md={2}>
+                    <Grid size={{ xs:6, sm:6, md:2 }}>
                         <Typography className='footermenu-header' variant="h6" component="h6" gutterBottom>Technology</Typography>
                         <Stack spacing={1}>
                             <Link className='footermenu' href="#" underline="none">Angular</Link>
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
                         </Stack>
                     </Grid>
 
-                    <Grid item xs={6} sm={6} md={2}>
+                    <Grid size={{ xs:6, sm:6, md:2 }}>
                         <Typography className='footermenu-header' variant="h6" component="h6" gutterBottom >Quick Links</Typography>
                         <Stack spacing={1}>
                             <Link className='footermenu' href="/about" underline="none">About Us</Link>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                 </Grid>
             </Container>
 
-            <Grid sx={{ borderTop: "1px solid #FFFFFF", paddingTop: "9px !important" }} item xs={12} md={12}>
+            <Grid size={{ xs:12, md:12 }}>
                 <Container>
                     <Box className="subFooter2">
                         <Typography className='subFooter2-title1' variant="body2" component="p" sx={{ mb: 1 }}>

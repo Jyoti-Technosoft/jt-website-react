@@ -83,7 +83,7 @@ const Career: React.FC = () => {
           <Box className="career-main-container">
             <Grid container spacing={4}>
               {items.map((item, index) => (
-                <Grid item xs={12} sm={6} md={4} key={item.id}>
+                <Grid size={{ xs: 12, sm:6, md:4 }} key={item.id}>
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Box className={`career-item-container color-${index % 6}`}>
                       <Box
@@ -111,7 +111,7 @@ const Career: React.FC = () => {
           <Box className="job-container">
             <Box className="job-filters" mb={4}>
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{ xs: 12, sm:6 }}>
                   <TextField
                     className="job-search"
                     variant="outlined"
@@ -122,7 +122,7 @@ const Career: React.FC = () => {
                     onChange={(e) => setSearch(e.target.value)}
                   />
                 </Grid>
-                <Grid item xs={6} sm={3}>
+                <Grid size={{ xs: 6, sm:3 }}>
                   <TextField
                     className="job-dropdown"
                     select
@@ -140,7 +140,7 @@ const Career: React.FC = () => {
                     ))}
                   </TextField>
                 </Grid>
-                <Grid item xs={6} sm={3}>
+                <Grid size={{ xs:6, sm:3 }}>
                   <TextField
                     className="job-dropdown"
                     select
@@ -163,7 +163,7 @@ const Career: React.FC = () => {
 
             <Grid container spacing={2.5}>
               {paginatedJobs.map((job) => (
-                <Grid item xs={12} sm={6} md={6} lg={6} xl={6} key={job.id}>
+                <Grid size={{ xs: 12, sm:6, md:6, lg:6, xl:6 }} key={job.id}>
                   <Card className="job-card">
                     <CardContent>
                       <Box

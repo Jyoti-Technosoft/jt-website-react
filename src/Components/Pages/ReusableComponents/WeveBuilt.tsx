@@ -24,7 +24,7 @@ const WeveBuilt: React.FC = () => {
                 </Box>
                 <Grid container spacing={3} className="weveBuilt-main-container">
                     {WeveBuilt?.data?.map((item) => (
-                        <Grid item xs={12} sm={6} md={4} key={item?.id} className="weveBuilt-grid-item">
+                        <Grid size={{ xs: 12, sm:6, md:4 }} key={item?.id} className="weveBuilt-grid-item">
                             <Box className="weveBuilt-card">
                                 <img src={item?.imageSrc} alt={item?.title} className="weveBuilt-image" />
                                 <Typography className="weveBuilt-text">{item?.title}</Typography>

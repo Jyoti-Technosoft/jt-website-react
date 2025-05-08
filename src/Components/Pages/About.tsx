@@ -13,10 +13,10 @@ const About: React.FC = () => {
             <HeaderCommon smallTitle="About" page="About Us" />
             <Container className="main-container" maxWidth="lg">
                 <Grid mt={2} container spacing={4}>
-                    <Grid item xs={12} md={6}>
+                    <Grid size={{ xs: 12, md:6 }}>
                         <img src="/assets/about-first-section.png" alt="Teamwork" style={{ width: "100%", borderRadius: "8px" }} />
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid size={{ xs: 12, md:6 }}>
                         <Typography className="gettoKnowUsTitle" align="left" gutterBottom>
                             {aboutUs.gettoKnowUsTitle}
                         </Typography>
@@ -37,7 +37,7 @@ const About: React.FC = () => {
                     </Typography>
                     <Grid container spacing={1} justifyContent="center">
                         {aboutUs?.ourGoal?.map((goal) => (
-                            <Grid item xs={12} sm={4} key={goal?.id}>
+                            <Grid size={{ xs: 12, sm:4 }} key={goal?.id}>
                                 <Card className="ourGoal-card">
                                     <CardMedia
                                         component="img"
@@ -59,20 +59,20 @@ const About: React.FC = () => {
             {/* Values Section */}
             <Container className="main-container" maxWidth="lg">
                 <Grid container className="values-section" spacing={4} alignItems="center" sx={{ padding: 5 }}>
-                    <Grid className="values-second-img" item xs={12} md={6}>
+                    <Grid className="values-second-img" size={{ xs: 12, md:6 }}>
                         <img
                             src="/assets/about-second-section.png"
                             alt="Teamwork"
                             style={{ width: "100%", borderRadius: "10px" }}
                         />
                     </Grid>
-                    <Grid className="values-data-main-section" item xs={12} md={6}>
+                    <Grid className="values-data-main-section" size={{ xs: 12, md:6 }}>
                         <Typography className="values-title">
                             Values
                         </Typography>
                         <Grid container spacing={2}>
                             {aboutUs?.valuesAboutSection?.map((value) => (
-                                <Grid item xs={12} key={value?.id}>
+                                <Grid size={{ xs: 12 }} key={value?.id}>
                                     <Box className="values-data-section">
                                         <Typography className="values-data-title">
                                             {value?.title}
