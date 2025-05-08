@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Container, Grid, Typography } from '@mui/material';
 
 import dataArray from "../../jt-website.json";
-import "../../Styles/home.css";
+import "../../styles/home.css";
 
 const HomeWhyUs: React.FC = () => {
     const { WhyUs } = dataArray?.home;

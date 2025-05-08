@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 
 import HeaderCommon from "../Pages/ReusableComponents/HeaderCommonPage.tsx";
 import dataArray from '../../jt-website.json';
-import "../../Styles/career-details.css";
+import "../../styles/career-details.css";
 
 const CareerDetails: React.FC = () => {
   const location = useLocation();

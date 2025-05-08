@@ -4,7 +4,7 @@ import { Container, Grid, Typography, Card, CardContent, CardMedia, Box } from "
 import HeaderCommon from "../Pages/ReusableComponents/HeaderCommonPage.tsx";
 import FooterCommonPage from "./ReusableComponents/FooterCommonPage.tsx";
 import dataArray from "../../jt-website.json";
-import "../../Styles/about.css";
+import "../../styles/about.css";
 
 const About: React.FC = () => {
     const { aboutUs } = dataArray;

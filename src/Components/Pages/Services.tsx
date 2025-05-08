@@ -6,8 +6,8 @@ import HeaderCommon from "../Pages/ReusableComponents/HeaderCommonPage.tsx";
 import FooterCommonPage from "./ReusableComponents/FooterCommonPage.tsx";
 import OurTechnology from "./ReusableComponents/OurTechnology.tsx";
 import dataArray from "../../jt-website.json"
-import "../../Styles/services.css"
-import "../../Styles/home.css";
+import "../../styles/services.css"
+import "../../styles/home.css";
 
 const Services: React.FC = () => {
     const isNotSmallScreen = useMediaQuery("(min-width: 768px)");

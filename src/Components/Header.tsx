@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Toolbar, Typography, Box, IconButton, Menu, MenuItem, Drawer } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import "../Styles/header.css";
+import "../styles/header.css";
 
 const Header: React.FC = () => {
   // const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(null);

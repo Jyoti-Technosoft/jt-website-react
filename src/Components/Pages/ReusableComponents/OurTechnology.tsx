@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 
 import dataArray from "../../../jt-website.json";
-import "../../../Styles/home.css";
+import "../../../styles/home.css";
 
 const OurTechnology: React.FC = () => {
     const theme = useTheme();

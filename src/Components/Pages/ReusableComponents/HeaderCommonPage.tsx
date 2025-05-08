@@ -1,7 +1,7 @@
 import React from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-import "../../../Styles/header-common.css";
+import "../../../styles/header-common.css";
 
 interface HeaderCommonProps {
     page: string;

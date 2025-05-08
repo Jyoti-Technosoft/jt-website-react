@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
 
-import "../../../Styles/footer-common.css";
+import "../../../styles/footer-common.css";
 
 interface FooterCommonProps {
     title: string;

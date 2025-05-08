@@ -13,7 +13,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 
-import "../../Styles/contact.css";
+import "../../styles/contact.css";
 
 const branches = [
     {

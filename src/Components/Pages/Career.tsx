@@ -16,7 +16,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import TablePagination from "@mui/material/TablePagination";
 
 import dataArray from "../../jt-website.json";
-import "../../Styles/career.css";
+import "../../styles/career.css";
 
 const Career: React.FC = () => {
   const [search, setSearch] = useState("");

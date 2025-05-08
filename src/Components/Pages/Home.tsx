@@ -8,7 +8,7 @@ import WeveBuilt from "./ReusableComponents/WeveBuilt.tsx";
 import OurNewsletter from "./ReusableComponents/OurNewsletter.tsx";
 import HowWeWork from "./ReusableComponents/HowWeWork.tsx";
 import dataArray from "../../jt-website.json";
-import "../../Styles/home.css";
+import "../../styles/home.css";
 
 const Home: React.FC = () => {
     const { meetSection } = dataArray?.home;

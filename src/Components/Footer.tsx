@@ -6,7 +6,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-import "../Styles/footer.css";
+import "../styles/footer.css";
 
 const Footer: React.FC = () => {
     return (

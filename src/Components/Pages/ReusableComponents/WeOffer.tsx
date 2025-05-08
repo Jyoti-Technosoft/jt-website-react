@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia } from '@mui/material';
 
 import dataArray from "../../../jt-website.json";
-import "../../../Styles/home.css";
+import "../../../styles/home.css";
 
 const WeOffer: React.FC = () => {
     const { WeOffer } = dataArray?.home;
