@@ -6,6 +6,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
+import ScrollToTopButton from './ScrollToTopButton.tsx';
 import "../styles/footer.css";
 
 const Footer: React.FC = () => {
@@ -81,6 +82,8 @@ const Footer: React.FC = () => {
                     </Box>
                 </Container>
             </Grid>
+
+            <ScrollToTopButton />
         </Box>
     );
 };

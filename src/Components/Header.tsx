@@ -31,7 +31,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <Box position="static" className="header">
+    <Box className="header">
       <Toolbar className="container">
         <Typography className="title">
           <span className='subTitle1'>JYOTI </span>
