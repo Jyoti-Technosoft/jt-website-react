@@ -403,7 +403,7 @@
 
 /* Join Our Newsletter section */
 .ourNewsletter-section {
-    background: url("../../public/assets/our-news-letter-bg.png") no-repeat center center;
+    background: url("/public/assets/our-news-letter-bg.png") no-repeat center center;
     text-align: center;
     background-size: cover;
 }

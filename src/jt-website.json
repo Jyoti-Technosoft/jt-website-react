@@ -598,89 +598,915 @@
     },
     {
       "projectName": "Progress Maker",
-      "technology": "angular",
-      "description": "The comprehensive platform for Tool Optimization and progress management",
+      "technology": "Angular",
+      "typesOfTechnologies": ["Angular", "d3"],
+      "description": "Enterprise Resource Planning (ERP) systems using a powerful technology stack that includes Angular with NGXS Store for frontend development, D3 for data visualization, Pptgenx for dynamic presentations.",
       "logo": "assets/images/portfolio/ProgressMaker_Logo.png",
+      "viewDemo": "",
       "Images": [
         "assets/images/portfolio/progressmaker_background.png",
         "assets/images/portfolio/pm1.png",
         "assets/images/portfolio/pm2.png",
         "assets/images/portfolio/pm3.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/Typescript.svg",
+          "technologyName" : "TypeScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/ngxs.svg",
+          "technologyName" : "ngxs"
+        },
+        {
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "d3"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/Typescript.svg",
+          "technologyName" : "TypeScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/ngxs.svg",
+          "technologyName" : "ngxs"
+        },
+        {
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "d3"
+        },
+        {
+          "images" : "assets/images/technology-badges/primeng.svg",
+          "technologyName" : "primeng"
+        },
+        {
+          "images" : "assets/images/technology-badges/syncfusion.svg",
+          "technologyName" : "syncfusion"
+        },
+        {
+          "images" : "assets/images/technology-badges/pptgenx.svg",
+          "technologyName" : "pptgenx"
+        },
+        {
+          "images" : "assets/images/technology-badges/bootstrap.svg",
+          "technologyName" : "Bootstrap"
+        },
+        {
+          "images" : "assets/images/technology-badges/lodash.svg",
+          "technologyName" : "lodash"
+        },
+        {
+          "images" : "assets/images/technology-badges/momentjs.svg",
+          "technologyName" : "moment.js"
+        }
       ]
     },
     {
-      "projectName": "Pratibha herbal",
+      "projectName": "Pratibha Herbal",
       "technology": "WordPress",
-      "description": "Our company offers wide range of Herbal Liquid Extracts for use as ingredients in Herbal Cosmetics & Toiletries. Our products are available in two forms – Water Soluble & Oil Soluble",
+      "typesOfTechnologies": ["WordPress"],
+      "description": "Our expertise in building e-commerce websites using WordPress and MySQL. Our team of skilled developers has successfully created feature-rich and scalable online stores that drive business growth and enhance customer experiences.",
       "logo": "assets/images/portfolio/pratibhalogo.png",
+      "viewDemo": "https://pratibhaherbal.com/",
       "Images": [
         "assets/images/portfolio/Pratibha01.png",
         "assets/images/portfolio/Pratibha02.png",
         "assets/images/portfolio/Pratibha03.png",
         "assets/images/portfolio/Pratibha04.png",
-        "assets/images/portfolio/Pratibha05.png"
-      ]
-    },
-    {
-      "projectName": "CX Group",
-      "technology": "GWT",
-      "description": "Big Data Customer Retention & Experience Management SaaS",
-      "logo": "assets/images/portfolio/CX-Group-Logo-Color.png",
-      "Images": [
-        "assets/images/portfolio/EngageDetailView.png",
-        "assets/images/portfolio/EngageDetailView2.png",
-        "assets/images/portfolio/EngageDetailView3.png"
+        "assets/images/portfolio/Pratibha05.png",
+        "assets/images/portfolio/Pratibha06.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/wordpress.svg",
+          "technologyName" : "WordPress"
+        },
+        {
+          "images" : "assets/images/technology-badges/mysql.svg",
+          "technologyName" : "MySql"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/wordpress.svg",
+          "technologyName" : "WordPress"
+        },
+        {
+          "images" : "assets/images/technology-badges/mysql.svg",
+          "technologyName" : "MySql"
+        },
+        {
+          "images" : "assets/images/technology-badges/google-font-api.svg",
+          "technologyName" : "Google Font Api"
+        },
+        {
+          "images" : "assets/images/technology-badges/lodash.svg",
+          "technologyName" : "lodash"
+        },
+        {
+          "images" : "assets/images/technology-badges/momentjs.svg",
+          "technologyName" : "moment.js"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        }
       ]
     },
     {
       "projectName": "Renacline Consultancy",
       "technology": "React",
-      "description": "Big Data Customer Retention & Experience Management SaaS",
+      "typesOfTechnologies": ["React"],
+      "description": "E-commerce websites for astrology enthusiasts using React (class-based components), Redux, and MySQL. We have successfully created engaging and personalized online platforms that cater to the unique needs of astrology enthusiasts.",
+      "logo": "",
+      "viewDemo": "",
       "Images": [
         "assets/images/portfolio/Renacline.png",
         "assets/images/portfolio/Renacline2.png",
         "assets/images/portfolio/Renacline3.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/django.jpg",
+          "technologyName" : "django"
+        },
+        {
+          "images" : "assets/images/technology-badges/Material_UI.png",
+          "technologyName" : "Material UI"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/django.jpg",
+          "technologyName" : "django"
+        },
+        {
+          "images" : "assets/images/technology-badges/Material_UI.png",
+          "technologyName" : "Material UI"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        }
       ]
     },
     {
-      "projectName": "Yacht closer Web Application",
-      "technology": "React",
-      "description": "Big Data Customer Retention & Experience Management SaaS",
+      "projectName": "E-Commerce Web Application",
+      "technology": "WordPress",
+      "typesOfTechnologies": ["WordPress"],
+      "description": "Our expertise in designing and developing e-commerce websites specifically tailored for the textile industry using WordPress. We have successfully created visually stunning and highly functional online stores that cater to the unique requirements of textile businesses.",
+      "logo": "",
+      "viewDemo": "",
       "Images": [
-        "assets/images/portfolio/Yacht.png",
-        "assets/images/portfolio/Yacht2.png",
-        "assets/images/portfolio/Yacht2.png"
+        "assets/images/portfolio/navdurva.png",
+        "assets/images/portfolio/navdurva2.png",
+        "assets/images/portfolio/navdurva3.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/wordpress.svg",
+          "technologyName" : "WordPress"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/wordpress.svg",
+          "technologyName" : "WordPress"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        }
+      ]
+    },
+    {
+      "projectName": "Real Estate Web Application",
+      "technology": "Angular",
+      "typesOfTechnologies": ["Angular"],
+      "description": "An interactive, effective and revenue-generating website designed for the Real Estate.",
+      "logo": "assets/images/portfolio/tlc_engine-removebg-preview.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/TLC-Detail.jpg",
+        "assets/images/portfolio/TLC-Results-Wide.jpg",
+        "assets/images/portfolio/TLC-EditProfile.jpg",
+        "assets/images/portfolio/TLC-Results-PropertyMarker.jpg"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/jquery.svg",
+          "technologyName" : "jQuery"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "technologyName" : "Landing Page"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML5"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS3"
+        },
+        {
+          "images" : "assets/images/technology-badges/jquery.svg",
+          "technologyName" : "jQuery"
+        },
+        {
+          "images" : "assets/images/technology-badges/bootstrap.svg",
+          "technologyName" : "Bootstrap"
+        }
+      ]
+    },
+    {
+      "projectName": "Micro-C",
+      "technology": "GWT",
+      "typesOfTechnologies": ["GWT", "Java"],
+      "description": "We developed a web-based photo browser for a client, specifically focusing on the UI for an X-ray machine. Users can view X-ray images captured by the machine and perform operations such as zooming, panning, and adjusting brightness, contrast, and sharpness",
+      "logo": "assets/images/portfolio/Micro_logo.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/Micro-C1.png",
+        "assets/images/portfolio/Micro-C2.png",
+        "assets/images/portfolio/Micro-C3.png",
+        "assets/images/portfolio/Micro-C4.png",
+        "assets/images/portfolio/Micro-C5.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/java.png",
+          "technologyName" : "Java"
+        },
+        {
+          "images" : "assets/images/technology-badges/GWT.svg",
+          "technologyName" : "GWT"
+        },
+        {
+          "images" : "assets/images/technology-badges/canva.svg",
+          "technologyName" : "Canvas"
+        },
+        {
+          "images" : "assets/images/technology-badges/servlet.svg",
+          "technologyName" : "Servlet"
+        },
+        {
+          "images": "assets/images/technology-badges/springboot.png",
+          "technologyName": "Spring, Spring Boot"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/java.png",
+          "technologyName" : "Java"
+        },
+        {
+          "images" : "assets/images/technology-badges/GWT.svg",
+          "technologyName" : "GWT"
+        },
+        {
+          "images" : "assets/images/technology-badges/gae.jpg",
+          "technologyName" : "GAE"
+        },
+        {
+          "images" : "assets/images/technology-badges/springboot.png",
+          "technologyName" : "Spring Boot"
+        },
+        {
+          "images" : "assets/images/technology-badges/gwtp.png",
+          "technologyName" : "GWTP"
+        },
+        {
+          "images" : "assets/images/technology-badges/web_socket.png",
+          "technologyName" : "Web Socket"
+        },
+        {
+          "images" : "assets/images/technology-badges/servlet.svg",
+          "technologyName" : "Servlet"
+        },
+        {
+          "images" : "assets/images/technology-badges/canva.svg",
+          "technologyName" : "Canvas"
+        }
+      ]
+    },
+    {
+      "projectName": "Yacht Closer Brochure Application",
+      "technology": "React",
+      "typesOfTechnologies": ["React", "Java"],
+      "description": "Yacht Closer Brochure App' is one of the modules for the 'Yacht closer Web Application' of Boats Group. The purpose of this app is to generate brochures for the Yacht Brokers.",
+      "logo": "assets/images/portfolio/boatsground.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/yacht-brochure-1.png",
+        "assets/images/portfolio/yacht-brochure-2.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/redux.svg",
+          "technologyName" : "Redux"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/react-bootstrap.svg",
+          "technologyName" : "React Bootstrap"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/redux.svg",
+          "technologyName" : "Redux"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        }
+      ]
+    },
+    {
+      "projectName": "Yacht Closer Web Application",
+      "technology": "Java",
+      "typesOfTechnologies": ["GWT", "Java"],
+      "description": "Yacht Closer Web Application is the SaaS Platform to manage Yacht Sales/Purchase/Rent Deal with Yacht Brocker and the Customer.",
+      "logo": "assets/images/portfolio/boatsground.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/yatch-1.png",
+        "assets/images/portfolio/yatch-2.png",
+        "assets/images/portfolio/yatch-3.png",
+        "assets/images/portfolio/yatch-4.png",
+        "assets/images/portfolio/yatch-5.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/java.png",
+          "technologyName" : "Java"
+        },
+        {
+          "images" : "assets/images/technology-badges/GWT.svg",
+          "technologyName" : "GWT"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/java.png",
+          "technologyName" : "Java"
+        },
+        {
+          "images" : "assets/images/technology-badges/GWT.svg",
+          "technologyName" : "GWT"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        }
+      ]
+    },
+    {
+      "projectName": "CX Group",
+      "technology": "Java",
+      "typesOfTechnologies": ["GWT", "Java"],
+      "description": "We have successfully integrated the insignia theme and its plugin into the GWT framework. Our expertise with GWT native, JavaScript native, JQuery, Jasper Reports, Google Charts, chart.js, and Bootstrap has allowed us to build and improve the user experience.",
+      "logo": "assets/images/portfolio/CX-Group-Logo-Color.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/EngageDetailView1.png",
+        "assets/images/portfolio/EngageDetailView2.png",
+        "assets/images/portfolio/EngageDetailView3.png",
+        "assets/images/portfolio/EngageDetailView4.png",
+        "assets/images/portfolio/EngageDetailView.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/java.png",
+          "technologyName" : "Java"
+        },
+        {
+          "images" : "assets/images/technology-badges/GWT.svg",
+          "technologyName" : "GWT"
+        },
+        {
+          "images" : "assets/images/technology-badges/jenkins.svg",
+          "technologyName" : "Jenkins"
+        },
+        {
+          "images" : "assets/images/technology-badges/web_scraper.png",
+          "technologyName" : "Web Scraper"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/java.png",
+          "technologyName" : "Java"
+        },
+        {
+          "images" : "assets/images/technology-badges/GWT.svg",
+          "technologyName" : "GWT"
+        },
+        {
+          "images" : "assets/images/technology-badges/jenkins.svg",
+          "technologyName" : "Jenkins"
+        },
+        {
+          "images" : "assets/images/technology-badges/web_scraper.png",
+          "technologyName" : "Web Scraper"
+        },
+        {
+          "images" : "assets/images/technology-badges/ajax.svg",
+          "technologyName" : "Ajax"
+        },
+        {
+          "technologyName" : "Facebook JavaScript"
+        },
+        {
+          "technologyName" : "Landing Page"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML5"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS3"
+        },
+        {
+          "images" : "assets/images/technology-badges/bootstrap.svg",
+          "technologyName" : "Bootstrap"
+        }
       ]
     },
     {
       "projectName": "Online Chat Web Application",
       "technology": "React",
+      "typesOfTechnologies": ["React", "Node"],
       "description": "Big Data Customer Retention & Experience Management SaaS",
+      "logo": "assets/images/portfolio/favicon.png",
+      "viewDemo": "",
       "Images": [
         "assets/images/portfolio/chatapp.png",
         "assets/images/portfolio/chatapp2.png",
-        "assets/images/portfolio/chatapp3.png"
+        "assets/images/portfolio/chatapp3.png",
+        "assets/images/portfolio/chatapp4.png",
+        "assets/images/portfolio/chatapp5.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/nodejs.svg",
+          "technologyName" : "Node Js"
+        },
+        {
+          "images" : "assets/images/technology-badges/mongodb.png",
+          "technologyName" : "Mongo DB"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/nodejs.svg",
+          "technologyName" : "Node Js"
+        },
+        {
+          "images" : "assets/images/technology-badges/mongodb.png",
+          "technologyName" : "Mongo DB"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        },
+        {
+          "images" : "assets/images/technology-badges/bootstrap.svg",
+          "technologyName" : "Bootstrap"
+        }
       ]
     },
     {
-      "projectName": "Real Estate Web Application",
+      "projectName": "Jyoti Technosoft Website",
+      "technology": "Angular",
+      "typesOfTechnologies": ["Angular", "D3"],
+      "description": "Jyoti Technosoft's website displaying the organization's overview, achievements, projects. The website offers valuable insights into the company's expertise, showcasing its success stories.",
+      "logo": "assets/images/portfolio/favicon.png",
+      "viewDemo": "https://www.jyotitechnosoft.com/",
+      "Images": [
+        "assets/images/portfolio/jt-main.png",
+        "assets/images/portfolio/jt-website1.png",
+        "assets/images/portfolio/jt-website2.png",
+        "assets/images/portfolio/jt-website3.png",
+        "assets/images/portfolio/jt-website4.png",
+        "assets/images/portfolio/jt-website5.png",
+        "assets/images/portfolio/jt-website6.png",
+        "assets/images/portfolio/jt-website7.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/Typescript.svg",
+          "technologyName" : "TypeScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/nodejs.svg",
+          "technologyName" : "Node Js"
+        },
+        {
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "d3"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/Typescript.svg",
+          "technologyName" : "TypeScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/nodejs.svg",
+          "technologyName" : "Node Js"
+        },
+        {
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "d3"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        },
+        {
+          "images" : "assets/images/technology-badges/bootstrap.svg",
+          "technologyName" : "Bootstrap"
+        }
+      ]
+    },
+    {
+      "projectName": "D3 Showcase",
+      "technology":"D3",
+      "typesOfTechnologies": ["React", "d3"],
+      "description": "D3 Showcase is a data visualization project built with HTML, SCSS, React, and D3.js. It features six chart types: Pie Chart, Stacked Chart, Donut Chart, Bar Chart, India Map Chart, and Candlestick Chart. The user can perform CRUD operations, making it an interactive and dynamic data exploration tool.",
+      "logo": "assets/images/portfolio/favicon.png",
+      "viewDemo": "https://d3showcase.jyotitechnosoft.com/dashboard",
+      "Images": [
+        "assets/images/portfolio/d3-home.png",
+        "assets/images/portfolio/d3-showcase1.png",
+        "assets/images/portfolio/d3-showcase2.png",
+        "assets/images/portfolio/d3-showcase3.png",
+        "assets/images/portfolio/d3-showcase4.png",
+        "assets/images/portfolio/d3-showcase5.png",
+        "assets/images/portfolio/d3-showcase6.png",
+        "assets/images/portfolio/d3-showcase7.png",
+        "assets/images/portfolio/d3-showcase8.png",
+        "assets/images/portfolio/d3-showcase9.png",
+        "assets/images/portfolio/d3-showcase10.png",
+        "assets/images/portfolio/d3-showcase11.png",
+        "assets/images/portfolio/d3-showcase12.png",
+        "assets/images/portfolio/d3-showcase13.png",
+        "assets/images/portfolio/d3-showcase14.png",
+        "assets/images/portfolio/d3-showcase15.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "d3"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "d3"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        },
+        {
+          "images" : "assets/images/technology-badges/bootstrap.svg",
+          "technologyName" : "Bootstrap"
+        }
+      ]
+    },
+    {
+      "projectName": "Quiz Application",
+      "technology":"Angular",
+      "typesOfTechnologies": ["Angular", "d3"],
+      "description": "Technical Assistant is a cutting-edge test app built using Angular, TypeScript, and Laravel. It leverages D3.js for captivating data visualization, offering dynamic questions, real-time leaderboards, and rich multimedia support for an engaging your experience. At the heart of Technical Assistant is Laravel, our robust backend ensuring secure user authentication, efficient database management, and scalability for future enhancements. Track your progress, compete with others, and dive into a world of knowledge and fun with Technical Assistant",
+      "logo": "assets/images/portfolio/favicon.png",
+      "viewDemo": "https://recruitment-test.jyotitechnosoft.com/",
+      "Images": [
+        "assets/images/portfolio/quiz-2.png",
+        "assets/images/portfolio/quiz-5.png",
+        "assets/images/portfolio/quiz-7.png",
+        "assets/images/portfolio/quiz-8.png",
+        "assets/images/portfolio/quiz-9.png",
+        "assets/images/portfolio/quiz-10.png",
+        "assets/images/portfolio/quiz-11.png",
+        "assets/images/portfolio/quiz-12.png",
+        "assets/images/portfolio/quiz-13.png",
+        "assets/images/portfolio/quiz-14.png",
+        "assets/images/portfolio/quiz-15.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/Typescript.svg",
+          "technologyName" : "TypeScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "d3"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/Typescript.svg",
+          "technologyName" : "TypeScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "d3"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        },
+        {
+          "images" : "assets/images/technology-badges/bootstrap.svg",
+          "technologyName" : "Bootstrap"
+        }
+      ]
+    },
+    {
+      "projectName": "Office Management Application",
       "technology": "React",
-      "description": "An interactive, effective and revenue-generating website designed for the Real Estate.",
-      "logo": "assets/images/portfolio/tlc_engine-removebg-preview.png",
+      "typesOfTechnologies": ["React", "Node"],
+      "description": "This application is a comprehensive office management web application designed to streamline various administrative tasks within an organization. It provides functionalities for managing employee data, tracking employee activities, and handling attendance, leave of the employees along with Tasks Management feature.",
+      "logo": "assets/images/portfolio/favicon.png",
+      "viewDemo": "",
       "Images": [
-        "assets/images/portfolio/tlc-engine.png",
-        "assets/images/portfolio/tlc-engine2.png",
-        "assets/images/portfolio/tlc-engine3.png"
+        "assets/images/portfolio/office-app1.jpg",
+        "assets/images/portfolio/office-app2.jpg",
+        "assets/images/portfolio/office-app4.jpg",
+        "assets/images/portfolio/office-app5.jpg",
+        "assets/images/portfolio/office-app6.jpg"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/nodejs.svg",
+          "technologyName" : "Node"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "d3"
+        },
+        {
+          "images": "assets/images/technology-badges/html.svg",
+          "technologyName": "HTML"
+        },
+        {
+          "images": "assets/images/technology-badges/css.svg",
+          "technologyName": "CSS"
+        },
+        {
+          "images": "assets/images/technology-badges/bootstrap.svg",
+          "technologyName": "Bootstrap"
+        },
+        {
+          "images" : "assets/images/technology-badges/Material_UI.png",
+          "technologyName" : "Material UI"
+        },
+        {
+          "images" : "assets/images/techology-stack/mongodb-icon.svg",
+          "technologyName" : "Mongo DB"
+        }
       ]
     },
     {
-      "projectName": "E-commerce Web Application",
-      "technology": "WordPress",
-      "description": "An interactive, effective and revenue-generating website designed for the Real Estate.",
+      "projectName": "Book Universe",
+      "technology": "React",
+      "typesOfTechnologies": ["React", "Next"],
+      "description": "The application gives platform to share the content of any books to users. It contains book name, category, author name, date of published, link to the content or attached pdf. One can save the books to the saved list and explore the books via categories. Also one can add the book and its details in order to share to any users.",
+      "logo": "assets/images/portfolio/favicon.png",
+      "viewDemo": "https://books-universe.vercel.app/",
       "Images": [
-        "assets/images/portfolio/navdurva.png",
-        "assets/images/portfolio/navdurva2.png",
-        "assets/images/portfolio/navdurva3.png"
+        "assets/images/portfolio/book1.png",
+        "assets/images/portfolio/book2.png",
+        "assets/images/portfolio/book3.png",
+        "assets/images/portfolio/book4.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/next.png",
+          "technologyName" : "Next"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images": "assets/images/technology-badges/html.svg",
+          "technologyName": "HTML"
+        },
+        {
+          "images": "assets/images/technology-badges/css.svg",
+          "technologyName": "CSS"
+        },
+        {
+          "images": "assets/images/technology-badges/bootstrap.svg",
+          "technologyName": "Bootstrap"
+        },
+        {
+          "images" : "assets/images/techology-stack/mongodb-icon.svg",
+          "technologyName" : "Mongo DB"
+        }
       ]
     }
   ],
