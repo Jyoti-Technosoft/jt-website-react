@@ -9,6 +9,7 @@ const Header: React.FC = () => {
   // const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(null);
   const [developersAnchorEl, setDevelopersAnchorEl] = useState<null | HTMLElement>(null);
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
 
   // const handleServicesOpen = (event: React.MouseEvent<HTMLElement>) => {
   //   setServicesAnchorEl(event.currentTarget);
@@ -18,12 +19,28 @@ const Header: React.FC = () => {
   //   setServicesAnchorEl(null);
   // };
 
-  const handleDevelopersOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setDevelopersAnchorEl(event.currentTarget);
+  const handleDevelopersHover = (event: React.MouseEvent<HTMLElement>) => {
+    if (hoverTimeout) clearTimeout(hoverTimeout);
+    const timeout = setTimeout(() => {
+      setDevelopersAnchorEl(event.currentTarget);
+    }, 200);
+    setHoverTimeout(timeout);
   };
 
-  const handleDevelopersClose = () => {
+  const handleDevelopersLeave = () => {
+    if (hoverTimeout) clearTimeout(hoverTimeout);
     setDevelopersAnchorEl(null);
+  };
+
+  const handleMenuCloseWithDelay = () => {
+    const timeout = setTimeout(() => {
+      setDevelopersAnchorEl(null);
+    }, 200);
+    setHoverTimeout(timeout);
+  };
+
+  const handleMenuEnter = () => {
+    if (hoverTimeout) clearTimeout(hoverTimeout);
   };
 
   const handleDrawerToggle = () => {
@@ -92,26 +109,53 @@ const Header: React.FC = () => {
 
           <NavLink to="/our-work" className={({ isActive }) => (isActive ? "navLink active" : "navLink")}>Our Work</NavLink>
           {/* Hire Developers Dropdown */}
-          <div
+          <Box
             className="menu-item"
-            onMouseEnter={handleDevelopersOpen}
-            onMouseLeave={handleDevelopersClose}
+            onMouseEnter={handleDevelopersHover}
+            onMouseLeave={handleMenuCloseWithDelay}
+            sx={{ position: 'relative' }}
           >
-            <NavLink to="/hire-developers" className={({ isActive }) => (isActive ? "navLink active" : "navLink")}>Hire Developers</NavLink>
+            <NavLink
+              to="/hire-developers"
+              className={({ isActive }) => (isActive ? "navLink active" : "navLink")}
+              onClick={() => setDevelopersAnchorEl(null)}
+              style={{ zIndex: 2, position: 'relative' }}
+            >
+              Hire Developers
+            </NavLink>
+
+            {/* <Menu
+              anchorEl={developersAnchorEl}
+              open={Boolean(developersAnchorEl)}
+              onClose={() => setDevelopersAnchorEl(null)}
+              MenuListProps={{
+                onMouseEnter: handleMenuEnter,
+                onMouseLeave: handleMenuCloseWithDelay,
+                autoFocusItem: false,
+              }}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+              transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+              sx={{ marginTop: "5px", zIndex: 1 }}
+            >
+              <MenuItem onClick={() => setDevelopersAnchorEl(null)}>Hire Angular Developer</MenuItem>
+              <MenuItem onClick={() => setDevelopersAnchorEl(null)}>Hire React Developer</MenuItem>
+              <MenuItem onClick={() => setDevelopersAnchorEl(null)}>Hire Java Developer</MenuItem>
+            </Menu> */}
             <Menu
               anchorEl={developersAnchorEl}
               open={Boolean(developersAnchorEl)}
-              onClose={handleDevelopersClose}
-              MenuListProps={{ onMouseLeave: handleDevelopersClose }}
+              onClose={() => setDevelopersAnchorEl(null)}
+              onMouseEnter={handleMenuEnter}
+              onMouseLeave={handleMenuCloseWithDelay}
               anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
               transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-              sx={{ marginTop: "5px" }}
+              sx={{ marginTop: '5px', zIndex: 1 }}
             >
-              <MenuItem onClick={handleDevelopersClose}>Hire Angular Developer</MenuItem>
-              <MenuItem onClick={handleDevelopersClose}>Hire React Developer</MenuItem>
-              <MenuItem onClick={handleDevelopersClose}>Hire Java Developer</MenuItem>
+              <MenuItem onClick={() => setDevelopersAnchorEl(null)}>Hire Angular Developer</MenuItem>
+              <MenuItem onClick={() => setDevelopersAnchorEl(null)}>Hire React Developer</MenuItem>
+              <MenuItem onClick={() => setDevelopersAnchorEl(null)}>Hire Java Developer</MenuItem>
             </Menu>
-          </div>
+          </Box>
           <NavLink to="/career" className={({ isActive }) => (isActive ? "navLink active" : "navLink")}>Career</NavLink>
           <NavLink to="/about" className={({ isActive }) => (isActive ? "navLink active" : "navLink")}>About</NavLink>
           <NavLink to="/contact" className={({ isActive }) => (isActive ? "navLink active" : "navLink")}>Contact</NavLink>

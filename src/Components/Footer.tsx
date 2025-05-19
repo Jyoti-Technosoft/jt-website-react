@@ -3,6 +3,7 @@ import { Box, Typography, Link, Grid, IconButton, Stack, Container } from '@mui/
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import XIcon from '@mui/icons-material/X';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
@@ -17,7 +18,7 @@ const Footer: React.FC = () => {
                     <Grid size={{ xs:12, sm:6, md:3 }}>
                         <img className='company-logo' src={"/assets/company-logo.png"} alt="Company Logo"/>
                         <Box className='subFooter1-first-col'>
-                            <Typography className='followus' variant="body2" component="p">
+                            <Typography className='followus' variant="body2" component="p" sx={{ textAlign: 'left', paddingLeft: '3rem' }}>
                                 Follow Us
                             </Typography>
                             <IconButton className='social-media' aria-label="facebook" href="#" target="_blank">
@@ -33,12 +34,12 @@ const Footer: React.FC = () => {
                                 <LinkedInIcon />
                             </IconButton>
                             <IconButton className='social-media' aria-label="twitter" href="#" target="_blank">
-                                <TwitterIcon />
+                                <XIcon />
                             </IconButton>
                         </Box>
                     </Grid>
 
-                    <Grid size={{ xs:6, sm:6, md:2 }}>
+                    <Grid mt={1} size={{ xs:6, sm:6, md:2 }}>
                         <Typography className='footermenu-header' variant="h6" component="h6" gutterBottom >Our Services</Typography>
                         <Stack spacing={1}>
                             <Link className='footermenu' href="#" underline="none">Product Development</Link>
@@ -49,7 +50,7 @@ const Footer: React.FC = () => {
                         </Stack>
                     </Grid>
 
-                    <Grid size={{ xs:6, sm:6, md:2 }}>
+                    <Grid mt={1} size={{ xs:6, sm:6, md:2 }}>
                         <Typography className='footermenu-header' variant="h6" component="h6" gutterBottom>Technology</Typography>
                         <Stack spacing={1}>
                             <Link className='footermenu' href="#" underline="none">Angular</Link>
@@ -58,7 +59,7 @@ const Footer: React.FC = () => {
                         </Stack>
                     </Grid>
 
-                    <Grid size={{ xs:6, sm:6, md:2 }}>
+                    <Grid mt={1} size={{ xs:6, sm:6, md:2 }}>
                         <Typography className='footermenu-header' variant="h6" component="h6" gutterBottom >Quick Links</Typography>
                         <Stack spacing={1}>
                             <Link className='footermenu' href="/about" underline="none">About Us</Link>
@@ -70,9 +71,9 @@ const Footer: React.FC = () => {
                 </Grid>
             </Container>
 
-            <Grid size={{ xs:12, md:12 }}>
+            <Grid size={{ xs:12, md:12 }} sx={{ borderTop: "1px solid #FFFFFF" }}>
                 <Container>
-                    <Box className="subFooter2">
+                    <Box mt={1} className="subFooter2">
                         <Typography className='subFooter2-title1' variant="body2" component="p" sx={{ mb: 1 }}>
                             Copyright © 2025 Jyoti Technosoft LLP.  All Rights Reserved.
                         </Typography>

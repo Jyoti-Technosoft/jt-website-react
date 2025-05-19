@@ -36,6 +36,7 @@
     letter-spacing: 0.5px;
     box-shadow: 3px 4px 4px 0px #B2B2B240;
     padding: 8px 17px 7px;
+    min-height: 52px;
 }
 
 .main-footer .footer-btn:hover {

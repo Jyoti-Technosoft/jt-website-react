@@ -70,7 +70,7 @@ const OurTechnology: React.FC = () => {
                             className="technology-tabs"
                         >
                             {technologyStack?.children?.map((item, index) => (
-                                <Tab className="technology-tab" key={item?.id} label={item?.id} />
+                                <Tab className="technology-tab" key={item?.id} label={item?.id} disableRipple/>
                             ))}
                         </Tabs>
                     )}
@@ -81,7 +81,7 @@ const OurTechnology: React.FC = () => {
                                 <Box key={item?.id} className="technology-content">
                                     <Grid justifyContent={isMobile && item?.children?.length > 1 ? "flex-start" : "center"} container spacing={3}>
                                         {item?.children?.map((tech, techIndex) => (
-                                            <Grid item xs={4} sm={4} md={3} lg={2} key={techIndex}>
+                                            <Grid size={{ xs: 4, sm: 4, md: 3, lg: 2 }} key={techIndex}>
                                                 <Box className="tech-item" textAlign="center">
                                                     <img className="tech-img" src={tech?.imgSrc} alt={tech?.label} />
                                                     <Typography className="tech-label" variant="body2">{tech?.label}</Typography>

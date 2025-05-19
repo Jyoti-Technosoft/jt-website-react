@@ -11,6 +11,8 @@ import OurWork from './Components/Pages/OurWork.tsx';
 import HireDevelopers from './Components/Pages/HireDevelopers.tsx';
 import Career from './Components/Pages/Career.tsx';
 import CareerDetails from './Components/Pages/CareerDetails.tsx';
+import HireDevelopersDetails from './Components/Pages/HireDevelopersDetails.tsx';
+import ServiceDetails from './Components/Pages/ServiceDetails.tsx';
 
 const App: React.FC = () => {
   return (
@@ -21,9 +23,11 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/:id" element={<ServiceDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/our-work" element={<OurWork />} />
           <Route path="/hire-developers" element={<HireDevelopers />} />
+          <Route path="/hire-developers/:id" element={<HireDevelopersDetails />} />
           <Route path="/career" element={<Career />} />
           <Route path="/career-details" element={<CareerDetails />} />
         </Routes>

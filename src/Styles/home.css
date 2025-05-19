@@ -53,6 +53,8 @@
 }
 
 .first-section-home-content .build-together {
+    min-width: 231px;
+    min-height: 47px;
     border-radius: 10px;
     gap: 10px;
     background: #FFFFFF;
@@ -195,7 +197,7 @@
 .ourTechnology-main-container .technology-content {
     margin: 2.4rem 0 0;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .technology-content .tech-item {
@@ -256,6 +258,7 @@
 }
 
 .main-numbercard {
+    min-height: 95px;
     border-radius: 15px;
     text-align: center;
     padding: 1.7rem;
@@ -360,6 +363,7 @@
 
 .howWeWorkMainContainer .card .card-content {
     width: 50%;
+    padding-right: 2rem;
 }
 
 .howWeWorkMainContainer .card .description {
@@ -440,6 +444,8 @@
 
 .ourNewsletter-section .ourNewsletter-main-container .ourNewsletter-button {
     border-radius: 10px;
+    min-width: 133px;
+    min-height: 52px;
     gap: 10px;
     background: #FFFFFF;
     color: #4B7AB7;
@@ -788,4 +794,10 @@
         font-size: 18px;
         margin-top: 0.5rem;
     }
+}
+
+@media (min-width: 767px) {
+  .main-numbercard {
+    min-height: auto;
+  }
 }

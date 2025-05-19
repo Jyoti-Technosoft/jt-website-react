@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import {
   Box,
@@ -20,6 +20,10 @@ const CareerDetails: React.FC = () => {
   const jobId = queryParams.get("job");
 
   const job = dataArray.jobs.find((job) => job.id === Number(jobId));
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   if (!job) {
     return <Typography>Job not found</Typography>;

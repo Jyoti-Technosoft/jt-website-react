@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Box, Grid, Typography, Container, useMediaQuery } from '@mui/material';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
@@ -18,14 +19,14 @@ const Services: React.FC = () => {
         "#F7E4EA",
         "#D9DFFF",
         "#C5EDFF",
-        "#FEC79F",
+        "#FFDABF",
         "#FFEEC2",
         "#E9D0D7",
         "#D1F1E0"
     ];
 
     return (
-        <>
+        <Box>
             {/* Top Header */}
             <HeaderCommon smallTitle="Services" page="Our Services" />
 
@@ -35,7 +36,7 @@ const Services: React.FC = () => {
                     <Typography className="featured-services-title">
                         {featuredServicesTitle}
                     </Typography>
-                    <Grid mt={2} container spacing={2} justifyContent="center">
+                    <Grid mt={5} container spacing={2} justifyContent="center">
                         {featuredServicesSection?.map((service) => (
                             <Grid className='main-service-card' size={{ xs: 12, sm:6, md:3 }} key={service?.id}>
                                 <Box className="service-card">
@@ -60,34 +61,33 @@ const Services: React.FC = () => {
                     <Typography className="more-services-title">
                         More Services
                     </Typography>
-                    <Grid mt={isNotSmallScreen ? 4 : 2} mx={"auto"} maxWidth="900px" container spacing={2} justifyContent="flex-start">
+                    <Grid mt={isNotSmallScreen ? 8 : 2} mx={"auto"} maxWidth="900px" container spacing={2} justifyContent="flex-start">
                         {moreServicesData.map((service, index) => {
                             const bgColor = backgroundColors[index % backgroundColors.length];
                             return (
                                 <Grid px={"0px"} size={{ xs: 12, sm:6, md:4 }} key={service?.id}>
-                                    <Box style={{ backgroundColor: bgColor }} className="more-service-card">
-                                        <div
-                                            className="card-img"
-                                            style={{ backgroundColor: bgColor }}
-                                        >
-                                            <span className='up-right'>
-                                                <TrendingFlatIcon />
-                                            </span>
-                                            <img
-                                                src={service?.imgSrc}
-                                                alt={service?.id}
-                                                className="more-service-image"
-                                            />
-                                        </div>
-                                        <div className="more-card-content">
-                                            <Typography className="more-service-title">
-                                                {service?.technology}
-                                            </Typography>
-                                            <Typography className="more-service-description">
-                                                {service?.sortdescription}
-                                            </Typography>
-                                        </div>
-                                    </Box>
+                                    <Link to={`/services/${service.id}`} style={{ textDecoration: 'none' }}>
+                                        <Box style={{ backgroundColor: bgColor }} className="more-service-card">
+                                            <div className="card-img" style={{ backgroundColor: bgColor }}>
+                                                <span className='up-right'>
+                                                   <TrendingFlatIcon style={{ color: 'black' }}/>
+                                                </span>
+                                                <img
+                                                    src={service?.imgSrc}
+                                                    alt={service?.id}
+                                                    className="more-service-image"
+                                                />
+                                            </div>
+                                            <div className="more-card-content">
+                                                <Typography className="more-service-title">
+                                                    {service?.technology}
+                                                </Typography>
+                                                <Typography className="more-service-description">
+                                                    {service?.sortdescription}
+                                                </Typography>
+                                            </div>
+                                        </Box>
+                                    </Link>
                                 </Grid>
                             );
                         })}
@@ -95,12 +95,13 @@ const Services: React.FC = () => {
                 </Container>
             </Box>
 
-            {/* Existing Technology Section */}
-            <OurTechnology />
+            <Box mb={8}>
+              <OurTechnology />
+            </Box>
 
             {/* Footer */}
             <FooterCommonPage title="Let’s Build Dynamic Solutions for Your Business" buttonText="Let’s Get Started" />
-        </>
+        </Box>
     )
 }
 

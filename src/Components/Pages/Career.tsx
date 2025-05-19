@@ -15,6 +15,7 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import TablePagination from "@mui/material/TablePagination";
 
+import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/career.css";
 
@@ -55,7 +56,7 @@ const Career: React.FC = () => {
   );
 
   return (
-    <>
+    <Box className="career">
       <Box className="career-first-section">
         <Box className="career-content">
           <div className="career-first-content">
@@ -76,12 +77,12 @@ const Career: React.FC = () => {
       <Box className="career-second-section">
         <Box className="career-working-section">
           <Box className="career-title-section">
-            <Box maxWidth="lg">
+            <Box maxWidth="lg" mb={4}>
               <Typography className="career-title">{careerSubTitle}</Typography>
             </Box>
           </Box>
           <Box className="career-main-container">
-            <Grid container spacing={4}>
+            <Grid container rowSpacing={6} columnSpacing={4}>
               {items.map((item, index) => (
                 <Grid size={{ xs: 12, sm:6, md:4 }} key={item.id}>
                   <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -102,7 +103,7 @@ const Career: React.FC = () => {
         </Box>
         <Box className="career-role-section">
           <Box className="career-title-section">
-            <Box maxWidth="lg">
+            <Box maxWidth="lg" mb={4}>
               <Typography className="career-title">
                 {careerSubTitleSecond}
               </Typography>
@@ -164,12 +165,12 @@ const Career: React.FC = () => {
             <Grid container spacing={2.5}>
               {paginatedJobs.map((job) => (
                 <Grid size={{ xs: 12, sm:6, md:6, lg:6, xl:6 }} key={job.id}>
-                  <Card className="job-card">
+                  <Box className="job-card">
                     <CardContent>
                       <Box
                         display="flex"
                         justifyContent="space-between"
-                        alignItems="center"
+                        alignItems="center" mb={2}
                       >
                         <Typography className="job-title">
                           {job.jobName}
@@ -203,7 +204,7 @@ const Career: React.FC = () => {
                         <Typography>{job.jobNature}</Typography>
                       </Box>
                     </CardContent>
-                  </Card>
+                  </Box>
                 </Grid>
               ))}
             </Grid>
@@ -224,7 +225,8 @@ const Career: React.FC = () => {
           </Box>
         </Box>
       </Box>
-    </>
+      <FooterCommonPage title="Get Notified for Future Job Openings" buttonText="Notify me" />
+    </Box>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Typography,
   Box,
@@ -10,6 +10,8 @@ import {
   Button,
   TablePagination,
   Tooltip,
+  Tabs,
+  Tab,
 } from "@mui/material";
 
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
@@ -42,6 +44,10 @@ const OurWork: React.FC = () => {
             project.technology?.toLowerCase() === selectedTech.toLowerCase()
         );
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage + 1);
   };
@@ -59,7 +65,10 @@ const OurWork: React.FC = () => {
   return (
     <>
       <HeaderCommon smallTitle="Our Work" page="Explore Our Work" />
-      <Box sx={{ px: { xs: 2, sm: 4, md: 6 }, pt: 2, overflow: "hidden" }}>
+      <Box
+        className="our-work"
+        sx={{ px: { xs: 2, sm: 4, md: 6 }, pt: 2, overflow: "hidden" }}
+      >
         <Box sx={{ width: "100%", display: "flex" }}>
           <Box
             sx={{
@@ -95,52 +104,61 @@ const OurWork: React.FC = () => {
           </Box>
         </Box>
       </Box>
-      <Typography sx={{ textAlign: "center", mt: 4 }}>
+      <Typography sx={{ textAlign: "center", mt: 8 }}>
         Some of our work is protected by NDAs, but we’ve prepared demo projects
         to showcase our expertise and quality.
       </Typography>
 
       <Box
         sx={{
-          width: "100%",
-          paddingLeft: "6rem",
-          paddingRight: "6rem",
-          boxSizing: "border-box",
+          px: "6rem",
+          mt: 4,
+          mb: 3,
         }}
       >
         <Box
           sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 3,
-            overflowX: "auto",
-            mb: 3,
-            mt: 2,
-            fontSize: "18px",
             borderBottom: "1px solid #ACACAC",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
-          {uniqueTechnologies.map((tech, index) => (
-            <Button
-              key={index}
-              onClick={() => {
-                setSelectedTech(tech);
-                setPage(1);
-              }}
-              sx={{
-                color: "black",
-                borderRadius: "unset",
-                borderBottom:
-                  selectedTech === tech ? "2px solid #1976d2" : "none",
-                padding: "8px 16px",
-                textTransform: "capitalize",
-                fontWeight: selectedTech === tech ? "bold" : "normal",
-              }}
-            >
-              {tech}
-            </Button>
-          ))}
+          <Tabs
+            value={selectedTech}
+            onChange={(event, newValue) => {
+              setSelectedTech(newValue);
+              setPage(1);
+            }}
+            variant="scrollable"
+            scrollButtons="auto"
+            sx={{
+              maxWidth: "fit-content",
+              minHeight: "unset",
+            }}
+          >
+            {uniqueTechnologies.map((tech, index) => (
+              <Tab
+                key={index}
+                value={tech}
+                label={tech}
+                disableRipple
+                sx={{
+                  fontWeight: "600",
+                  fontSize: "19px",
+                  lineHeight: "28.13px",
+                  letterSpacing: "0.5px",
+                  color: "#333333",
+                  textTransform: "capitalize",
+                  margin: "0 0.5rem",
+                  whiteSpace: "nowrap",
+                  "&.Mui-selected": {
+                    color: "#333333",
+                  },
+                }}
+              />
+            ))}
+          </Tabs>
         </Box>
       </Box>
 
@@ -205,7 +223,6 @@ const OurWork: React.FC = () => {
                     />
                   </Box>
 
-                  {/* Dots selector below fixed container */}
                   <Box
                     sx={{ display: "flex", justifyContent: "center", mt: 2 }}
                   >
@@ -294,6 +311,27 @@ const OurWork: React.FC = () => {
                         </Tooltip>
                       ))}
                   </Box>
+                  {project.viewDemo && (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        mt: 3,
+                        cursor: "pointer",
+                        color: "#1976d2",
+                        fontWeight: 500,
+                        "&:hover": { textDecoration: "underline" },
+                      }}
+                      onClick={() => window.open(project.viewDemo, "_blank")}
+                    >
+                      <Typography variant="body2" sx={{ mr: 1 }}>
+                        Preview
+                      </Typography>
+                      <Box component="span" sx={{ fontSize: "1rem" }}>
+                        ➜
+                      </Box>
+                    </Box>
+                  )}
                 </CardContent>
               </Box>
             </Grid>
@@ -301,7 +339,12 @@ const OurWork: React.FC = () => {
         })}
       </Grid>
       <Box
-        sx={{ display: "flex", justifyContent: "flex-end", pr: "5rem", mt: 2 }}
+        sx={{
+          px: { xs: 2, sm: 4, md: 6 },
+          display: "flex",
+          justifyContent: "flex-end",
+          mt: 2,
+        }}
       >
         <TablePagination
           component="div"

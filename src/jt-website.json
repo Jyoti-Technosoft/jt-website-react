@@ -68,7 +68,7 @@
           "id": 6,
           "title": "UI/UX Designing",
           "description": "Design intuitive and visually captivating user interfaces.",
-          "imageSrc": "/assets/Web.png"
+          "imageSrc": "/assets/designer.png"
         }
       ]
     },
@@ -125,17 +125,17 @@
         {
           "id": 1,
           "title": "Book Universe",
-          "imageSrc": "/assets/book-universe.png"
+          "imageSrc": "/assets/images/portfolio/booksite-mockup.png"
         },
         {
           "id": 2,
           "title": "D3 Showcase",
-          "imageSrc": "/assets/d3-Showcase.png"
+          "imageSrc": "/assets/images/portfolio/d3-showcase-mockup.png"
         },
         {
           "id": 3,
           "title": "LoomCart",
-          "imageSrc": "/assets/loom-cart.png"
+          "imageSrc":  "/assets/images/portfolio/navdurva-mockup.png"
         }
       ]
     }
@@ -228,7 +228,7 @@
         "id": "react",
         "label": "React developement",
         "decription": "Jyoti Technosoft LLP is a name to reckon with when it comes to ReactJS development. Since its launch back in 2013, ReactJS continues to be a user-friendly, developer favorite and industry preferred platform for web development. An open-source, cross-platform, JavaScript-based library, ReactJS development allows developers to build responsive web and single-page applications that fulfill the unique requirements of businesses across the globe.",
-        "image": "assets/images/ReactJS.png",
+        "image": "assets/react.png",
         "chooseUs": "Why Choose Us As Your ReactJS Development Company",
         "whyChooseUs": [
           {
@@ -285,7 +285,7 @@
         "id": "java",
         "label": "Java developement",
         "decription": "At Jyoti Technosoft LLP, we are a leading Java development company specializing in delivering top-notch Java-based solutions to our clients. With a team of skilled and experienced Java developers, we have a deep understanding of the Java programming language and its associated frameworks and tools. Our expertise lies in developing robust, scalable, and secure applications that meet the diverse needs of businesses across various industries.",
-        "image": "assets/images/hire-us-java.png",
+        "image": "assets/java.png",
         "chooseUs": "Why Choose Us As Your Java Development Company",
         "whyChooseUs": [
           {
@@ -604,6 +604,7 @@
       "logo": "assets/images/portfolio/ProgressMaker_Logo.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/progressmaker-mockup.png",
         "assets/images/portfolio/progressmaker_background.png",
         "assets/images/portfolio/pm1.png",
         "assets/images/portfolio/pm2.png",
@@ -678,6 +679,7 @@
       "logo": "assets/images/portfolio/pratibhalogo.png",
       "viewDemo": "https://pratibhaherbal.com/",
       "Images": [
+        "assets/images/portfolio/pratibha-mockup.png",
         "assets/images/portfolio/Pratibha01.png",
         "assets/images/portfolio/Pratibha02.png",
         "assets/images/portfolio/Pratibha03.png",
@@ -742,6 +744,7 @@
       "logo": "",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/renacline-mockup.png",
         "assets/images/portfolio/Renacline.png",
         "assets/images/portfolio/Renacline2.png",
         "assets/images/portfolio/Renacline3.png"
@@ -799,6 +802,7 @@
       "logo": "",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/navdurva-mockup.png",
         "assets/images/portfolio/navdurva.png",
         "assets/images/portfolio/navdurva2.png",
         "assets/images/portfolio/navdurva3.png"
@@ -840,6 +844,7 @@
       "logo": "assets/images/portfolio/tlc_engine-removebg-preview.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/tlc-mockup.png",
         "assets/images/portfolio/TLC-Detail.jpg",
         "assets/images/portfolio/TLC-Results-Wide.jpg",
         "assets/images/portfolio/TLC-EditProfile.jpg",
@@ -897,6 +902,7 @@
       "logo": "assets/images/portfolio/Micro_logo.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/micro-c-mockup.png",
         "assets/images/portfolio/Micro-C1.png",
         "assets/images/portfolio/Micro-C2.png",
         "assets/images/portfolio/Micro-C3.png",
@@ -968,6 +974,7 @@
       "logo": "assets/images/portfolio/boatsground.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/.png",
         "assets/images/portfolio/yacht-brochure-1.png",
         "assets/images/portfolio/yacht-brochure-2.png"
       ],
@@ -1020,6 +1027,7 @@
       "logo": "assets/images/portfolio/boatsground.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/yatch-mockup.png",
         "assets/images/portfolio/yatch-1.png",
         "assets/images/portfolio/yatch-2.png",
         "assets/images/portfolio/yatch-3.png",
@@ -1071,6 +1079,7 @@
       "logo": "assets/images/portfolio/CX-Group-Logo-Color.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/cx-group-mockup.png",
         "assets/images/portfolio/EngageDetailView1.png",
         "assets/images/portfolio/EngageDetailView2.png",
         "assets/images/portfolio/EngageDetailView3.png",
@@ -1152,6 +1161,7 @@
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/chatapp-mockup.png",
         "assets/images/portfolio/chatapp.png",
         "assets/images/portfolio/chatapp2.png",
         "assets/images/portfolio/chatapp3.png",
@@ -1281,6 +1291,7 @@
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "https://d3showcase.jyotitechnosoft.com/dashboard",
       "Images": [
+        "assets/images/portfolio/d3-showcase-mockup.png",
         "assets/images/portfolio/d3-home.png",
         "assets/images/portfolio/d3-showcase1.png",
         "assets/images/portfolio/d3-showcase2.png",
@@ -1347,6 +1358,7 @@
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "https://recruitment-test.jyotitechnosoft.com/",
       "Images": [
+        "assets/images/portfolio/quiz-mockup.png",
         "assets/images/portfolio/quiz-2.png",
         "assets/images/portfolio/quiz-5.png",
         "assets/images/portfolio/quiz-7.png",
@@ -1408,6 +1420,7 @@
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/officemanagemnt-mockup.png",
         "assets/images/portfolio/office-app1.jpg",
         "assets/images/portfolio/office-app2.jpg",
         "assets/images/portfolio/office-app4.jpg",
@@ -1467,6 +1480,7 @@
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "https://books-universe.vercel.app/",
       "Images": [
+        "assets/images/portfolio/booksite-mockup.png",
         "assets/images/portfolio/book1.png",
         "assets/images/portfolio/book2.png",
         "assets/images/portfolio/book3.png",
@@ -1572,32 +1586,32 @@
     {
       "cardHeader": "Expertise in Multiple Technologies",
       "cardData": "Whether you need an Angular expert, a React.js specialist, a Java nerd, or a Node.js wizard, we have developers proficient in a variety of technologies. Our talented pool of developers is equipped with the skills to tackle any project requirement.",
-      "icon": "bi-pc-display-horizontal"
+      "icon": "fa-solid fa-code-branch"
     },
     {
       "cardHeader": "Dedicated Resources",
       "cardData": "When you hire a developer from Jyoti Technosoft LLP, you get a dedicated resource solely focused on your project. This ensures undivided attention and maximum productivity, leading to faster development cycles and efficient project execution.",
-      "icon": "bi-bar-chart-fill"
+      "icon": "fa-solid fa-users"
     },
     {
       "cardHeader": "Flexibility and Scalability",
       "cardData": "We understand that project needs can change over time. Our flexible hiring models allow you to scale up or down the development team as per your requirements. Whether you need a developer for a short-term assignment or a long-term engagement, we can tailor our services to match your project timeline and budget.",
-      "icon": "bi-bar-chart-fill"
+      "icon": "fa-solid fa-scale-balanced"
     },
     {
       "cardHeader": "Seamless Collaboration",
       "cardData": "Communication and collaboration are key to successful project execution. Our developers are adept at working in distributed teams and can seamlessly integrate with your existing workflows. We ensure smooth coordination and timely updates throughout the development process.",
-      "icon": "bi-bar-chart-fill"
+      "icon": "fa-solid fa-handshake-simple"
     },
     {
       "cardHeader": "Quality and Reliability",
       "cardData": "At Jyoti Technosoft LLP, we prioritize quality and adhere to industry best practices. Our developers follow coding standards, conduct rigorous testing, and maintain high-quality coding practices to deliver robust and reliable solutions. We strive for excellence in every aspect of our development process.",
-      "icon": "bi-bar-chart-fill"
+      "icon": "fa-solid fa-user-lock"
     },
     {
       "cardHeader": "Cost-Effectiveness",
       "cardData": "Hiring a dedicated developer from us can be a cost-effective solution compared to maintaining an in-house development team. You can save on overhead expenses while still benefiting from the expertise and skills of our developers. We offer competitive rates without compromising on the quality of work.",
-      "icon": "bi-bar-chart-fill"
+      "icon": "fa-solid fa-wallet"
     }
   ],
   "jobs": [
@@ -1834,9 +1848,10 @@
       "id": "web-development",
       "imgSrc": "/assets/web.png",
       "technology": "Web Development",
-      "tagline": "   Our mission is to <br /> make your life easier.",
+      "image":"/assets/service/web-dev.png",
+      "tagline": "   Our mission is to make your life easier.",
       "sortdescription": "Unlock the potential of your online presence with Jyoti Technosoft LLP - your trusted partner in web development, delivering dynamic and innovative solutions tailored to your business needs.",
-      "description": "Welcome to  Jyoti Technosoft LLP, your trusted partner for seamless API integration. We offer a comprehensive suite of services to help you securely connect and exchange data with various applications, platforms, and services. With our API Integration Solutions, you can unlock the full potential of your business while ensuring the utmost data protection.",
+      "description": "<p>At our company, we are dedicated to offering you a comprehensive range of powerful tools and innovative solutions designed to propel your business towards unprecedented growth. With our expertise and industry knowledge, we specialize in equipping you with the necessary resources to establish a robust presence in the market.</p> </br> <p>One of our primary areas of focus is the development of highly functional and user-friendly websites. We understand the pivotal role a website plays in today's digital landscape, and our team of skilled professionals excels at crafting online platforms that meet your specific business requirements. By employing cutting-edge technologies and adhering to industry best practices, we ensure that your website is not only visually appealing but also optimized for search engines, increasing your online visibility.</p> </br><p>Through our meticulous approach to website development, we guarantee seamless navigation, intuitive user interfaces, and efficient performance. Our goal is to provide your customers with an engaging online experience that drives conversions and encourages repeat visits. By leveraging our expertise, you can harness the power of a well-crafted website to attract, engage, and retain customers, ultimately strengthening your brand's position in the market.</p>",
       "whyUs": [
         {
           "header": "Business Expansion",
@@ -1870,9 +1885,10 @@
       "id": "mobile-development",
       "imgSrc": "/assets/app.png",
       "technology": "Mobile Development",
+      "image":"/assets/service/mobile-development.png",
       "sortdescription": "Empower your business with Jyoti Technosoft LLP's cutting-edge mobile development expertise, creating seamless and captivating experiences that engage and delight users on the go.",
       "tagline": "Bringing Limitless Possibilities to Your Fingertips",
-      "description": "In this fast-paced world, everyone desires to transcend the boundaries of physical presence and reach their target audience effortlessly. Mobile development emerges as the game-changer, enabling individuals and businesses to create customized mobile applications at a fraction of the cost. At Jyoti Technosoft LLP, we are dedicated to empowering you with increased sales and enhanced branding opportunities. Our team of experienced professionals is ready to accompany you on this transformative journey.",
+      "description": "<p>In today's fast-paced world, where connectivity and accessibility are paramount, the ability to transcend physical boundaries and effortlessly reach a target audience has become a crucial objective for individuals and businesses alike. This is where mobile development emerges as a game-changer, offering a powerful solution to create customized mobile applications at a fraction of the cost.</p></br><p>At Jyoti Technosoft LLP, we understand the importance of leveraging mobile technology to empower our clients with increased sales and enhanced branding opportunities. With our dedicated team of experienced professionals, we are committed to accompanying you on this transformative journey towards mobile success.</p></br><p>Join us at Jyoti Technosoft LLP and embark on a transformative journey towards mobile excellence. Together, we can unlock new opportunities, expand your reach, and achieve remarkable success in this dynamic digital landscape.</p>",
       "whyUs": [
         {
           "header": "Expand Your Reach",
@@ -1902,9 +1918,10 @@
       "id": "api-integration",
       "imgSrc": "/assets/api.png",
       "technology": "API Integration",
+      "image":"/assets/service/api.png",
       "sortdescription": "Streamline your systems and amplify your business capabilities with Jyoti Technosoft LLP's expert API integration solutions, seamlessly connecting your applications and unlocking new levels of efficiency and collaboration.",
       "tagline": "Safeguarding Your Data with Confidence",
-      "description": "Welcome to  Jyoti Technosoft LLP, your trusted partner for seamless API integration. We offer a comprehensive suite of services to help you securely connect and exchange data with various applications, platforms, and services. With our API Integration Solutions, you can unlock the full potential of your business while ensuring the utmost data protection.",
+      "description": "<p>Welcome to Jyoti Technosoft LLP, a trusted partner in providing seamless API integration services. We understand the critical importance of secure data exchange and offer a comprehensive suite of solutions to facilitate the connection between your applications, platforms, and services.</p></br><p>Our API Integration Solutions are designed to empower your business by unlocking its full potential. Whether you need to integrate your website with third-party applications, streamline internal processes, or enable data sharing across multiple systems, our team of experts is here to assist you every step of the way.</p></br><p>Partnering with us means gaining access to a wealth of knowledge and expertise in API integration. Our dedicated team will work closely with you to understand your unique business requirements and tailor a solution that meets your specific needs. With our services, you can streamline workflows, enhance efficiency, and foster seamless collaboration across your entire ecosystem.</p>",
       "whyUs": [
         {
           "header": "Custom API Development",
@@ -1942,9 +1959,10 @@
       "id": "customization",
       "imgSrc": "/assets/customization.png",
       "technology": "Customization",
+      "image":"/assets/service/customization.png",
       "sortdescription": "Tailor-made solutions for your unique business needs - Jyoti Technosoft LLP specializes in customization, empowering you with personalized software and applications that align perfectly with your vision and objectives.",
       "tagline": "Unleash Your Imagination, Define Your Style, Embrace Limitless Customization!",
-      "description": "In a world where individuality reigns supreme, no one wants to blend in with the crowd. We all yearn to stand out and be special in our own right. At Jyoti Technosoft LLP, we understand this desire for uniqueness, especially when it comes to your online presence. That's why we are here to offer you unparalleled customization options for your website.",
+      "description": "<p>In a world where individuality is celebrated, blending in with the crowd is no longer enough. We all aspire to stand out and be distinctive in our own remarkable ways. Recognizing this innate desire for uniqueness, Jyoti Technosoft LLP is committed to providing you with unrivaled customization options for your website, ensuring that it truly reflects your identity and brand.</p></br><p>We understand that your online presence is a powerful tool for capturing attention and leaving a lasting impression on your target audience. That's why our team of skilled professionals is dedicated to transforming your vision into a captivating reality. By leveraging our expertise in web design and development, we can create a website that is as exceptional and extraordinary as you are.</p></br><p>Embrace your individuality and let Jyoti Technosoft LLP empower your online presence with unprecedented customization options. Stand out, be extraordinary, and leave a lasting impression on the digital landscape.</p>",
       "whyUs": [
         {
           "header": "Personal Website Builder",
@@ -1971,11 +1989,12 @@
     },
     {
       "id": "product-development",
-      "imgSrc": "/assets/products-development.png",
+      "imgSrc": "/assets/product-development.png",
       "technology": "Product Development",
+      "image":"/assets/service/product-dev.png",
       "sortdescription": "From concept to launch, Jyoti Technosoft LLP is your trusted partner in product development, turning ideas into reality with precision and innovation, driving your business forward in the competitive digital landscape.",
       "tagline": "Transforming Ideas into Reality",
-      "description": "At Jyoti Technosoft LLP, we understand the significance of product development in today's competitive business landscape. That's why we have devised a systematic approach to guide you through the entire journey of bringing your product to life. Whether you're a startup or an established company, our experienced team is here to assist you every step of the way.",
+      "description": "<p>At Jyoti Technosoft LLP, we recognize the immense importance of product development in the dynamic and fiercely competitive business landscape of today. That's why we have meticulously devised a systematic approach to accompany you on the entire journey of transforming your product idea into a reality. Irrespective of whether you are a startup venturing into uncharted territories or an established company seeking to innovate, our team of seasoned professionals is fully equipped to support you at every step.</p></br><p>From conceptualization to market launch, we provide comprehensive assistance throughout the product development process. Our experienced team collaborates closely with you to understand your vision, goals, and target market, ensuring that every decision aligns with your strategic objectives. We employ industry best practices, market research, and cutting-edge technologies to turn your concept into a tangible, market-ready product.</p></br><p>Partnering with Jyoti Technosoft LLP means having a dedicated team by your side, offering valuable insights, technical proficiency, and unwavering support. Let us help you navigate the intricate landscape of product development and pave the way for your success in the market. Together, we can transform your ideas into innovative solutions that captivate the market and propel your business forward.</p>",
       "whyUs": [
         {
           "header": "Road to Success",
@@ -2000,9 +2019,10 @@
       "id": "deployment",
       "imgSrc": "/assets/deployment.png",
       "technology": "Deployment",
+      "image":"/assets/service/deployment.png",
       "sortdescription": "Simplify and accelerate your deployment process with Jyoti Technosoft LLP's expert deployment services, ensuring smooth transitions, optimal performance, and uninterrupted operations for your software applications",
       "tagline": "Turning Websites into Live Solutions",
-      "description": "At Jyoti Technosoft LLP, we specialize in delivering seamless deployment solutions for websites, ensuring that your digital presence is up and running smoothly. Whether you have a fully developed website or are in the process of building one, our expert team is here to assist you every step of the way.",
+      "description": "<p>At Jyoti Technosoft LLP, we are experts in providing seamless deployment solutions for websites, ensuring that your digital presence is up and running smoothly. Whether you have a fully developed website ready for deployment or are in the process of building one, our dedicated team is here to assist you at every stage of the journey.</p></br><p>We understand the critical importance of a flawless website deployment in today's fast-paced digital landscape. Our experienced professionals have extensive knowledge and expertise in deploying websites across various platforms and hosting environments. We meticulously handle the technical intricacies, ensuring that your website is seamlessly launched, configured, and optimized for optimal performance.</p></br><p>With Jyoti Technosoft LLP as your deployment partner, you can have peace of mind knowing that your website will be launched with precision and care. We are committed to delivering exceptional results and providing ongoing support to ensure the continued success of your digital presence.</p>",
       "whyUs": [
         {
           "header": "Our Deployment",
@@ -2035,9 +2055,10 @@
       "id": "consulting",
       "imgSrc": "/assets/consulting.png",
       "technology": "Consulting",
+      "image":"/assets/service/consulting.png",
       "sortdescription": "Gain strategic insights and leverage industry expertise with Jyoti Technosoft LLP's comprehensive consulting services, empowering your business to make informed decisions, drive growth, and stay ahead in the ever-evolving digital landscape.",
       "tagline": "Unlocking Potential, Guiding Success, Transforming Businesses with Expert Consulting.",
-      "description": "Jyoti Technosoft LLP is an industry-leading IT company that specializes in providing top-notch consulting services tailored to meet the unique needs of businesses like yours. With our deep expertise and comprehensive understanding of the IT landscape, we are dedicated to helping you navigate the complexities of the digital world and achieve your goals with confidence.",
+      "description": "<p>Jyoti Technosoft LLP is a distinguished IT company at the forefront of the industry, offering exceptional consulting services designed specifically to cater to the distinct requirements of businesses like yours. With our profound expertise and in-depth understanding of the ever-evolving IT landscape, we are committed to guiding you through the complexities of the digital world, empowering you to achieve your objectives with unwavering confidence.</p></br><p>We recognize that every business is unique, with its own set of challenges and aspirations. That's why our consulting services are meticulously tailored to address your specific needs. Our experienced consultants work closely with you to gain a comprehensive understanding of your organization, industry, and goals. This enables us to provide you with strategic guidance and practical solutions that align with your vision, ensuring optimal outcomes.</p></br><p>At Jyoti Technosoft LLP, we are not just consultants; we are trusted partners committed to your success. We are dedicated to building long-term relationships based on integrity, reliability, and a shared commitment to excellence. Let us be your guiding force in the digital world, as you navigate the challenges and unlock the vast potential of IT to drive your business forward.</p>",
       "whyUs": [
         {
           "header": "Unparalleled IT Consulting Expertise",

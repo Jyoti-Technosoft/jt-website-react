@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Box, Container, Grid, Typography } from '@mui/material';
 
 import dataArray from "../../../jt-website.json";
@@ -17,9 +18,21 @@ const WeveBuilt: React.FC = () => {
                         <Typography className="weveBuilt-description">
                             {WeveBuilt?.description1}
                         </Typography>
-                        <Typography className="weveBuilt-description">
+                    <Link to="/our-work" style={{ textDecoration: 'none' }}>
+                        <Typography
+                            sx={{
+                            cursor: 'pointer',
+                            fontWeight: 500,
+                            fontSize: "18px",
+                            color: '#333333',
+                            '&:hover': {
+                                color: '#347CCC',
+                            },
+                            }}
+                        >
                             {WeveBuilt?.description2}
                         </Typography>
+                    </Link>
                     </Box>
                 </Box>
                 <Grid container spacing={3} className="weveBuilt-main-container">
