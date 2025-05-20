@@ -14,6 +14,7 @@ import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 
 import "../../styles/contact.css";
+import { Link } from "react-router-dom";
 
 const branches = [
     {
@@ -41,7 +42,7 @@ const Contact: React.FC = () => {
             <Box className="contact-first-section">
                 <Box className="contact-content">
                     <div className="contact-first-content">
-                        <span>Home</span>
+                        <Link to="/" className="breadcrumb-link">Home</Link>
                         <ChevronRightIcon className="chevron-icon" />
                         <span>{"Contact"}</span>
                     </div>

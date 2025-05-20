@@ -12,9 +12,9 @@ const About: React.FC = () => {
         <>
             <HeaderCommon smallTitle="About" page="About Us" />
             <Container className="main-container" maxWidth="lg">
-                <Grid mt={2} container spacing={4}>
+                <Grid mt={10} container spacing={4}>
                     <Grid size={{ xs: 12, md:6 }}>
-                        <img src="/assets/about-first-section.png" alt="Teamwork" style={{ width: "100%", borderRadius: "8px" }} />
+                        <img src="/assets/about-first-section.png" alt="Teamwork" style={{ width: "100%" }} />
                     </Grid>
                     <Grid size={{ xs: 12, md:6 }}>
                         <Typography className="gettoKnowUsTitle" align="left" gutterBottom>
@@ -63,7 +63,7 @@ const About: React.FC = () => {
                         <img
                             src="/assets/about-second-section.png"
                             alt="Teamwork"
-                            style={{ width: "100%", borderRadius: "10px" }}
+                            style={{ width: "100%" }}
                         />
                     </Grid>
                     <Grid className="values-data-main-section" size={{ xs: 12, md:6 }}>

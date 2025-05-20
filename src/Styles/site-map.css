@@ -1,0 +1,22 @@
+.site-map-main .sitemap-header {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+  margin-bottom: 8px;
+  color: #333333;
+}
+
+.site-map-main .sitemap-list-text {
+  gap: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+  color: #333333;
+}
+
+.site-map-main .sitemap-list-text .sitemap-dot {
+  color: #333333;
+  font-size: 18px;
+}

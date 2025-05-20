@@ -1,4 +1,47 @@
 .active {
-    cursor: grabbing !important;
-    font-size: "20px",
-  }
+  cursor: grabbing !important;
+  font-size: "20px",
+}
+
+.ourTechnology-main-container .mobile-tab-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.ourTechnology-main-container .mobile-tab-navigation .technology-tabs .MuiTabs-indicator {
+  background: #347CCC;
+  height: 3px;
+  width: 100% !important;
+  left: 0px !important;
+}
+
+.ourTechnology-main-container .technology-tabs {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.ourTechnology-main-container .technology-tabs {
+  width: 1200px;
+  border-bottom: 1px solid #ACACAC;
+}
+
+.ourTechnology-main-container .technology-tabs .technology-tab {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 28.13px;
+  letter-spacing: 0.5px;
+  color: #333333;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  white-space: nowrap;
+}
+
+.ourTechnology-main-container .technology-tabs .MuiTabs-indicator {
+  background: #347CCC;
+  height: 3px;
+}

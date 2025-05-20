@@ -9,9 +9,7 @@ const BuildVision: React.FC = () => {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        justifyContent: "center",
         alignItems: "center",
-        minHeight: "100vh",
         paddingBottom: "unset",
         bgcolor: "#FFFFFF",
       }}

@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Typography, Link, Grid, IconButton, Stack, Container } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import XIcon from '@mui/icons-material/X';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -66,6 +65,7 @@ const Footer: React.FC = () => {
                             <Link className='footermenu' href="#" underline="none">Career</Link>
                             <Link className='footermenu' href="#" underline="none">Our Work</Link>
                             <Link className='footermenu' href="/contact" underline="none">Contact Us</Link>
+                            <Link className='footermenu' href="/site-map" underline="none">Site Map</Link>
                         </Stack>
                     </Grid>
                 </Grid>

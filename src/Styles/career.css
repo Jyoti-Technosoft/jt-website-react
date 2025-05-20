@@ -3,6 +3,16 @@
     height: 325px;
 }
 
+.career-first-section .breadcrumb-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.career-first-section .breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
 .career-first-section .career-content {
     background: #1F5795;
     width: 50%;
@@ -177,6 +187,10 @@
 
 .career .main-footer-common {
   background-color: white;
+}
+
+.career .main-footer .footer-btn {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 @media (max-width: 768px) {

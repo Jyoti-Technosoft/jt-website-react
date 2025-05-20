@@ -42,7 +42,7 @@ const HireDevelopers: React.FC = () => {
       <Box className="hire-first-section">
         <Box className="hire-content">
           <div className="hire-first-content">
-            <span>Home</span>
+            <Link to="/" className="breadcrumb-link">Home</Link>
             <ChevronRightIcon className="chevron-icon" />
             <span>{"Hire Developer"}</span>
           </div>

@@ -7,12 +7,16 @@ import {
   CardMedia,
   CardContent,
   Chip,
-  Button,
   TablePagination,
   Tooltip,
   Tabs,
   Tab,
+  IconButton,
+  useMediaQuery
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+
 
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
@@ -25,6 +29,8 @@ const scroll = keyframes`
 `;
 
 const OurWork: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const logos = dataArray?.clientlogos || [];
   const projects = dataArray?.portfolio.filter((p) => p.projectName) || [];
   const [selectedTech, setSelectedTech] = useState("All");
@@ -111,31 +117,97 @@ const OurWork: React.FC = () => {
 
       <Box
         sx={{
-          px: "6rem",
+          px: isMobile ? "1rem" : "6rem",
           mt: 4,
           mb: 3,
         }}
       >
-        <Box
-          sx={{
-            borderBottom: "1px solid #ACACAC",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-          }}
+        <Box margin={isMobile ? "auto" : "0"}
+        className="ourTechnology-main-container"
         >
+        {isMobile ? (
+          <Box
+            className="mobile-tab-navigation"
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            width="100%"
+          >
+            <IconButton
+              onClick={() => {
+                const currentIndex = uniqueTechnologies.indexOf(selectedTech);
+                if (currentIndex > 0) {
+                  setSelectedTech(uniqueTechnologies[currentIndex - 1]);
+                  setPage(1);
+                }
+              }}
+              disabled={uniqueTechnologies.indexOf(selectedTech) === 0}
+            >
+              <ChevronLeft />
+            </IconButton>
+
+            <Tabs
+              value={selectedTech}
+              onChange={(event, newValue) => {
+                setSelectedTech(newValue);
+                setPage(1);
+              }}
+              centered
+              className="technology-tabs"
+            >
+              <Tab
+                key={selectedTech}
+                value={selectedTech}
+                label={selectedTech}
+                disableRipple
+                className="technology-tab"
+                // sx={{
+                //   fontWeight: "600",
+                //   fontSize: "19px",
+                //   lineHeight: "28.13px",
+                //   letterSpacing: "0.5px",
+                //   color: "#333333",
+                //   textTransform: "capitalize",
+                //   margin: "0 0.5rem",
+                //   whiteSpace: "nowrap",
+                //   px: 2,
+                //   "&.Mui-selected": {
+                //     color: "#333333",
+                //   },
+                // }}
+              />
+            </Tabs>
+            <IconButton
+              onClick={() => {
+                const currentIndex = uniqueTechnologies.indexOf(selectedTech);
+                if (currentIndex < uniqueTechnologies.length - 1) {
+                  setSelectedTech(uniqueTechnologies[currentIndex + 1]);
+                  setPage(1);
+                }
+              }}
+              disabled={
+                uniqueTechnologies.indexOf(selectedTech) ===
+                uniqueTechnologies.length - 1
+              }
+            >
+              <ChevronRight />
+            </IconButton>
+          </Box>
+        ) : (
           <Tabs
             value={selectedTech}
             onChange={(event, newValue) => {
               setSelectedTech(newValue);
               setPage(1);
             }}
-            variant="scrollable"
-            scrollButtons="auto"
-            sx={{
-              maxWidth: "fit-content",
-              minHeight: "unset",
-            }}
+            // variant="scrollable"
+            // scrollButtons="auto"
+            // sx={{
+            //   maxWidth: "fit-content",
+            //   minHeight: "unset",
+            // }}
+            centered
+            className="technology-tabs"
           >
             {uniqueTechnologies.map((tech, index) => (
               <Tab
@@ -143,22 +215,24 @@ const OurWork: React.FC = () => {
                 value={tech}
                 label={tech}
                 disableRipple
-                sx={{
-                  fontWeight: "600",
-                  fontSize: "19px",
-                  lineHeight: "28.13px",
-                  letterSpacing: "0.5px",
-                  color: "#333333",
-                  textTransform: "capitalize",
-                  margin: "0 0.5rem",
-                  whiteSpace: "nowrap",
-                  "&.Mui-selected": {
-                    color: "#333333",
-                  },
-                }}
+                className="technology-tab"
+                // sx={{
+                //   fontWeight: "600",
+                //   fontSize: "19px",
+                //   lineHeight: "28.13px",
+                //   letterSpacing: "0.5px",
+                //   color: "#333333",
+                //   textTransform: "capitalize",
+                //   margin: "0 0.5rem",
+                //   whiteSpace: "nowrap",
+                //   "&.Mui-selected": {
+                //     color: "#333333",
+                //   },
+                // }}
               />
             ))}
           </Tabs>
+        )}
         </Box>
       </Box>
 
@@ -170,7 +244,7 @@ const OurWork: React.FC = () => {
           )
             ? imageIndexes[project.projectName]
             : 0;
-          const totalImages = project.Images?.length || 1;
+          // const totalImages = project.Images?.length || 1;
 
           return (
             <Grid size={{ xs: 12 }} key={index}>
@@ -183,7 +257,7 @@ const OurWork: React.FC = () => {
                     md: index % 2 === 0 ? "row" : "row-reverse",
                   },
                   px: {
-                    xs: "16px",
+                    xs: "0px",
                     sm: "24px",
                     md: "32px",
                     lg: "45px",
@@ -192,7 +266,7 @@ const OurWork: React.FC = () => {
               >
                 <Box
                   sx={{
-                    width: "50%",
+                    width: { xs: "100%", md: "50%" },
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -253,13 +327,15 @@ const OurWork: React.FC = () => {
                     ))}
                   </Box>
                 </Box>
-
                 <CardContent
                   sx={{
                     flex: 1,
+                    width: { xs: "100%", md: "50%" },
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
+                    px: { xs: 1, sm: 2 },
+                    pt: { xs: 2, sm: 2 },
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>

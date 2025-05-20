@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Box, Grid, Typography } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
@@ -24,9 +24,9 @@ const HireDevelopersDetails = () => {
       <Box className="hire-detail-first-section">
         <Box className="hire-detail-content">
           <div className="hire-detail-first-content">
-            <span>Home</span>
+            <Link to="/" className="breadcrumb-link">Home</Link>
             <ChevronRightIcon className="chevron-icon" />
-            <span>{"Hire Developer"}</span>
+            <Link to="/hire-developers" className="breadcrumb-link">Hire Developer</Link>
             <ChevronRightIcon className="chevron-icon" />
             <span>{technologyData.label}</span>
           </div>

@@ -7,10 +7,15 @@
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1200;
+  padding-bottom: 8px;
 }
 
-.container {
+.header-shadow {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.container {    
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;

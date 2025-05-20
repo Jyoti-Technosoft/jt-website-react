@@ -3,6 +3,18 @@
     height: 325px;
 }
 
+.hire-first-section .breadcrumb-link,
+.hire-detail-section .breadcrumb-link{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.hire-first-section .breadcrumb-link:hover,
+.hire-detail-section .breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
 .hire-first-section .hire-content {
     z-index: 3;
     background: #1F5795;
@@ -524,7 +536,6 @@ background: linear-gradient(149.47deg, rgb(30, 39, 69) 19.826%,rgba(81, 122, 222
   height: auto;
   z-index: 2;
 }
-
 
 .hire-detail-section .hire-detail-image img {
   max-width: 100%;

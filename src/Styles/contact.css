@@ -3,6 +3,16 @@
     height: 325px;
 }
 
+.contact-first-section .breadcrumb-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.contact-first-section .breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
 .contact-first-section .contact-content {
     background: #1F5795;
     width: 50%;
