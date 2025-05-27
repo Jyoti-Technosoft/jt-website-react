@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Grid, Typography, Card, CardContent, CardMedia, Box } from "@mui/material";
 
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
@@ -7,6 +7,11 @@ import dataArray from "../../jt-website.json";
 import "../../styles/about.css";
 
 const About: React.FC = () => {
+
+    useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+
     const { aboutUs } = dataArray;
     return (
         <>
@@ -57,7 +62,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Values Section */}
-            <Container className="main-container" maxWidth="lg">
+            <Container className="main-container">
                 <Grid container className="values-section" spacing={4} alignItems="center" sx={{ padding: 5 }}>
                     <Grid className="values-second-img" size={{ xs: 12, md:6 }}>
                         <img
@@ -85,7 +90,7 @@ const About: React.FC = () => {
                     </Grid>
                 </Grid>
             </Container>
-            <FooterCommonPage title="Partner with Us for Your Next Big Idea" buttonText="Contact Now" />
+            <FooterCommonPage title="Partner with Us for Your Next Big Idea" buttonText="Contact Now"  buttonLink="/contact"/>
         </>
     );
 };

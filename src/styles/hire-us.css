@@ -1,5 +1,4 @@
 .hire-first-section {
-    display: flex;
     height: 325px;
 }
 
@@ -17,7 +16,6 @@
 
 .hire-first-section .hire-content {
     z-index: 3;
-    background: #1F5795;
     width: 50%;
     position: relative;
     flex: 1;
@@ -28,19 +26,10 @@
     z-index: 1;
     position: absolute;
     right: 1rem;
-    bottom: 6rem;
-    width: 22%;
+    bottom: 4rem;
+    width: 30%;
     height: 30%;
     background: url("/public/assets/contact-page.gif") no-repeat center center/cover;
-}
-
-.hire-first-section .hire-content .hire-wave {
-    position: absolute;
-    right: -1.3rem;
-    top: 0;
-    width: 20%;
-    height: 325px;
-    background: url("/public/assets/wave.png") no-repeat center center/cover;
 }
 
 .hire-first-section .hire-content .hire-first-content {
@@ -51,52 +40,26 @@
     line-height: 16.41px;
     letter-spacing: 0.5px;
     color: #FFFFFF;
-    padding: 2rem 0px 0px 11rem;
 }
 
 .hire-first-section .hire-content .hire-title {
-    font-family: Roboto Slab;
-    padding: 0rem 0px 0px 11rem;
     font-weight: 600;
-    font-size: 58px;
+    font-size: 60px;
     line-height: 84px;
     letter-spacing: 0.5%;
     color: #FFFBFB;
+    z-index: 1;
+    position: relative;
 }
 
 .hire-first-section .hire-image {
-    width: 50%;
+    width: 45%;
     overflow: hidden;
 }
 
 .hire-first-section .hire-image img {
-    height: 325px;
+    height: 278px;
     width: 100%;
-}
-
-/* .career-first-section .career-content .career-first-content {
-  padding: 2rem 0px 0px 11rem;
-}
-
-.career-first-section .career-content {
-  flex: 1;
-  padding-right: 2rem;
-}
-
-.career-first-section .career-content .career-title {
-  font-size: 58px;
-  font-weight: 600;
-  padding: 0rem 0px 0px 11rem;
-}
-
-.career-image img {
-  max-width: 100%;
-  height: auto;
-} */
-
-.hire-middle-section .why-our-dev,
-.hire-contact-section .build-your-version {
-  padding: 2rem 6rem 3rem
 }
 
 .hire-middle-section .card-header {
@@ -151,7 +114,7 @@
 .timeline-container {
   position: relative;
   padding: 80px 20px;
-  background-color: #f8fafc;
+  background-color: #F5F8FB;
   overflow: hidden;
 }
 
@@ -256,13 +219,12 @@
 
 .hire-contact-section .contact-card {
     max-width: 410px;
-    height: 505px;
     width: 100%;
     z-index: 1;
     border-radius: 20px;
     background-color: #FFFFFF;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
-    padding: 1rem 2rem 1rem;
+    padding: 1rem 2rem 2rem;
 }
 
 .hire-contact-section .contact-card .contact-card-title {
@@ -343,77 +305,74 @@
 }
 
 .services-section {
-  margin: auto;
   position: relative;
-  padding: 2rem 6rem 3rem;
+  margin: auto;
+  padding: 2rem 0;
+  scroll-behavior: smooth;
+  background-color: #F5F8FB;
 }
 
-.services-section .services-grid {
-  padding: 1.5rem 4rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5rem;
+.choose-us-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.services-section .services-right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scrollbar-width: none;
+}
+
+.services-section .services-right-column::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.services-section .services-right-column::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
 
 .services-section .service-card {
-  max-width: 450px;
-  position: relative;
+  width: 90%;
   padding: 1.5rem;
-  border: 2px solid #d1d5db;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   background-color: #fff;
+  border: 1px solid #DBDBDB;
   transition: box-shadow 0.3s ease;
+  flex-shrink: 0;
 }
 
-.services-section .service-card .background {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: calc(100% + 20px);
-  height: calc(100% + 20px);
-background: linear-gradient(149.47deg, rgb(30, 39, 69) 19.826%,rgba(81, 122, 222, 0.8) 33.957%,rgb(155, 211, 246) 49.01%,rgb(154, 214, 251) 52.081%,rgb(95, 151, 241) 62.833%,rgba(81, 122, 222, 0.8) 72.663%,rgb(30, 39, 69) 83.722%);  border-radius: 12px;
-  z-index: -1;
-  transition: transform 0.5s ease;
-}
-
-.services-section .service-card .content {
-  position: relative;
-  z-index: 1;
-}
-
-.services-section .service-card:hover .background {
-  transform: rotate(-6deg);
-}
-
-.services-section .service-card h4 {
-  font-weight: 600; 
-  font-size: 24px;
-  color: #347CCC;
-  margin-top: 0.5rem;
+.service-card .service-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
   margin-bottom: 1rem;
-  letter-spacing: 1.5%;
 }
 
-.services-section .service-card p {
+.service-card .service-decription {
   font-size: 14px;
   line-height: 1.5;
+  color: #333;
 }
 
-.choose-us-section {
-  padding: 2rem 6rem 3rem;
-  
-}
 
 .hire-detail-section .choose-us-heading {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
   color: #347CCC;
   letter-spacing: 1.5%;
   line-height: 24px;
 }
 
-.feature-card {
+.choose-us-section .feature-card {
   position: relative;
   border: 2px solid #347CCC;
   padding: 24px;
@@ -423,12 +382,12 @@ background: linear-gradient(149.47deg, rgb(30, 39, 69) 19.826%,rgba(81, 122, 222
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.feature-card:hover {
+.choose-us-section .feature-card:hover {
   background-color: #DDEDFF;
   cursor: pointer;
 }
 
-.feature-card .corner-badge {
+.choose-us-section .feature-card .corner-badge {
   position: absolute;
   top: -12px;
   right: -12px;
@@ -445,44 +404,40 @@ background: linear-gradient(149.47deg, rgb(30, 39, 69) 19.826%,rgba(81, 122, 222
   box-shadow: 0 0 0 3px white;
 }
 
-.feature-card:hover .corner-badge {
+.choose-us-section .feature-card:hover .corner-badge {
   background: #F3F9FF;
 }
 
-.feature-card .feature-title {
-  margin-top: 16px;
+.choose-us-section .feature-card .feature-title {
   font-weight: 700;
   font-size: 20px;
   line-height: 100%;
   letter-spacing: 0.5%;
 }
 
-.feature-card .feature-description {
+.choose-us-section .feature-card .feature-description {
   font-size: 14px;
   line-height: 23px;
   letter-spacing: 0.5%;
   font-weight: 500;
-  /* color: #333333; */
 }
 
 .hire-detail-section .hire-detail-first-section {
   display: flex;
   flex-direction: column;
-  background-color: #1F5795;
   color: #FFFFFF;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-.hire-detail-section .hire-detail-content,
-.hire-detail-section .hire-detail-image {
+.hire-detail-section .hire-detail-content {
   flex: 1 1 100%;
   padding: 0;
 }
 
 .hire-detail-section .hire-detail-content {
-  padding: 0 80px;
+  padding: 30px 0px;
 }
 
 .hire-detail-section .hire-detail-first-content {
@@ -502,11 +457,8 @@ background: linear-gradient(149.47deg, rgb(30, 39, 69) 19.826%,rgba(81, 122, 222
 }
 
 .hire-detail-section .hire-detail-image {
-  flex: 1 1 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 20px;
+  justify-content: flex-start;
+  padding-left: 0;
 }
 
 .hire-detail-section .combined-image {
@@ -524,14 +476,14 @@ background: linear-gradient(149.47deg, rgb(30, 39, 69) 19.826%,rgba(81, 122, 222
 .image-wrapper .main-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
 .image-wrapper .tech-icon {
   position: absolute;
-  top: 130px;
-  left: 90px;
+  top: 40px;
+  left: 40px;
   width: 100px;
   height: auto;
   z-index: 2;
@@ -580,11 +532,6 @@ background: linear-gradient(149.47deg, rgb(30, 39, 69) 19.826%,rgba(81, 122, 222
     display: none;
   }
 
-  .hire-middle-section .why-our-dev,
-  .hire-contact-section .build-your-version {
-    padding: 2rem 2rem 3rem
-  }
-
   .hire-contact-section .contact-card {
     max-width: 100%;
     height: auto;
@@ -610,17 +557,13 @@ background: linear-gradient(149.47deg, rgb(30, 39, 69) 19.826%,rgba(81, 122, 222
     padding: 30px 40px; 
   }
 
-  .choose-us-section {
-    padding: 2rem 2rem 3rem
-  }
-
-  .services-section {
-    padding: 2rem 2rem 3rem
-  }
-
   .services-section .services-grid {  
     padding: 0;
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .services-section .service-card {
+    width: 83%;
   }
 
   .timeline-container {
@@ -642,13 +585,8 @@ background: linear-gradient(149.47deg, rgb(30, 39, 69) 19.826%,rgba(81, 122, 222
   .hire-detail-section .hire-detail-first-section {
     flex-direction: row;
     text-align: left;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-  }
-
-  .hire-detail-section .hire-detail-content {
-    flex: 1 1 50%;
-    padding-right: 20px;
   }
 
   .hire-detail-section .hire-detail-image {

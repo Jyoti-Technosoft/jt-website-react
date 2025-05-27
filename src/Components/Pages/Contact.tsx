@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Box,
+    keyframes,
     Grid,
     Stack,
     TextField,
     useMediaQuery,
-    Typography
+    Typography,
+    Container
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import "../../styles/contact.css";
 import { Link } from "react-router-dom";
@@ -33,215 +36,306 @@ const branches = [
     },
 ];
 
+const scroll = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+`;
+
 const Contact: React.FC = () => {
     const isNotSmallScreen = useMediaQuery("(min-width: 768px)");
     const [activeBranch, setActiveBranch] = useState(branches[1]);
+    const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+
+    const handleCaptchaChange = (value: string | null) => {
+        setCaptchaValue(value);
+    };
+
+    useEffect(() => {
+       window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
 
     return (
-        <>
-            <Box className="contact-first-section">
-                <Box className="contact-content">
-                    <div className="contact-first-content">
-                        <Link to="/" className="breadcrumb-link">Home</Link>
-                        <ChevronRightIcon className="chevron-icon" />
-                        <span>{"Contact"}</span>
-                    </div>
-                    <Typography className="contact-title">
-                        Contact Us
-                    </Typography>
-                    <div className="contact-gif" ></div>
-                    <div className="contact-wave" ></div>
-                </Box>
-                <Box className="contact-image">
-                    <img src="/assets/contact-img.png" alt="Contact Us" />
-                </Box>
+      <>
+        <Box
+          className="contact-first-section"
+          sx={{ backgroundColor: "#1F5795" }}
+        >
+           <Container sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Box className="contact-content">
+              <Box
+                className="contact-first-content"
+                sx={{
+                  mt: {
+                    xs: 0,
+                    sm: 0,
+                    md: 3,
+                  },
+                }}
+              >
+                <Link to="/" className="breadcrumb-link">
+                  Home
+                </Link>
+                <ChevronRightIcon className="chevron-icon" />
+                <span>{"Contact"}</span>
+              </Box>
+              <Typography
+                className="contact-title"
+                sx={{
+                  mt: {
+                    xs: 1,
+                    sm: 4,
+                  },
+                }}
+              >
+                Let’s Build Together
+              </Typography>
+              <Box className="contact-gif"></Box>
+              {/* <Box className="contact-wave"></Box> */}
             </Box>
-            <div id="contact2">
-                <Box pt={isNotSmallScreen ? 1 : 3} px={{ xs: 2, md: 10, lg: 20 }}>
-                    <Grid
-                        spacing={isNotSmallScreen ? 3 : 1}
-                        sx={{
-                            py: isNotSmallScreen ? 8 : 0,
-                            position: "relative",
-                            width: "100%",
-                            mx: "auto",
-                            maxWidth: "1100px"
-                        }}
-                    >
-                        <Stack spacing={5} pt={0} px={isNotSmallScreen ? 6 : 1}>
-                            <p className="contact-headertext2">
-                                Let’s discuss
-                            </p>
-                            <p className="contact-smallHeader">
-                                Your project details in depth with our experts and get quick solutions for your technical problems.
-                            </p>
+            <Box className="contact-image" sx={{ py: 3 }}>
+              <img
+                src="/assets/contact-img.png"
+                alt="Contact Us"
+                style={{
+                  borderRadius: "10px",
+                }}
+              />
+            </Box>
+          </Container>
+        </Box>
+        <div id="contact2">
+          <Box pt={isNotSmallScreen ? 1 : 3} px={{ xs: 2, md: 10, lg: 20 }}>
+            <Grid
+              spacing={isNotSmallScreen ? 3 : 1}
+              sx={{
+                py: isNotSmallScreen ? 8 : 0,
+                position: "relative",
+                width: "100%",
+                mx: "auto",
+                maxWidth: "1100px",
+              }}
+            >
+              <Stack spacing={5} pt={0} px={isNotSmallScreen ? 6 : 1}>
+                <p className="contact-headertext2">Let’s discuss</p>
+                <p className="contact-smallHeader">
+                  Your project details in depth with our experts and get quick
+                  solutions for your technical problems.
+                </p>
 
-                            {/* Email Section */}
-                            <Box className="contact-details-section" >
-                                <p className="contact-details-title">
-                                    <EmailIcon /> Drop us a line
-                                </p>
-                                <p style={{ marginTop: "0px" }} className="contact-details-text">
-                                    <span className="contact-dash">-</span> info@jyotitechnosoft.com
-                                </p>
-                                <p className="contact-details-text">
-                                    <span className="contact-dash">-</span> business@jyotitechnosoft.com
-                                </p>
-                            </Box>
-
-                            {/* Phone Section */}
-                            <Box className="contact-details-section" position={"relative"}>
-                                <div className="circle-2"></div>
-                                <Box mt={3}>
-                                    <p className="contact-details-title"><CallIcon />Let's talk</p>
-                                    <p style={{ marginTop: "13px" }} className="contact-details-text"><span className="contact-dash">-</span>+91 92657 12724</p>
-                                    <p className="contact-details-text"><span className="contact-dash">-</span>+91 92657 12724</p>
-                                </Box>
-                            </Box>
-                        </Stack>
-
-                        {/* Contact Form */}
-                        <Stack position={"relative"}>
-                            <div className="circle-1"></div>
-                            <Stack mt={isNotSmallScreen ? 14 : 5} px={isNotSmallScreen ? 12 : 8} pb={8} pt={8} className="contact-card">
-                                <p className="contact-card-title">Drop us a Message</p>
-                                <Grid className="grid-container" spacing={isNotSmallScreen ? 3 : 0}>
-                                    <TextField
-                                        id="First Name"
-                                        label="First Name"
-                                        placeholder="First Name"
-                                        type="text"
-                                        variant="outlined"
-                                        className="form-input1"
-                                        slotProps={{
-                                            inputLabel: {
-                                                shrink: true,
-                                            },
-                                        }}
-                                    />
-                                    <TextField
-                                        id="Last Name"
-                                        label="Last Name"
-                                        placeholder="Last Name"
-                                        type="text"
-                                        variant="outlined"
-                                        className="form-input1"
-                                        slotProps={{
-                                            inputLabel: {
-                                                shrink: true,
-                                            },
-                                        }}
-                                    />
-                                </Grid>
-                                <Grid className="grid-container" spacing={isNotSmallScreen ? 3 : 0}>
-                                    <TextField
-                                        id="Email"
-                                        label="Email"
-                                        placeholder="Email"
-                                        type="text"
-                                        variant="outlined"
-                                        className="form-input1"
-                                        slotProps={{
-                                            inputLabel: {
-                                                shrink: true,
-                                            },
-                                        }}
-                                    />
-                                    <TextField
-                                        id="Mobile No"
-                                        label="Mobile No"
-                                        placeholder="91+"
-                                        type="text"
-                                        variant="outlined"
-                                        className="form-input1"
-                                        slotProps={{
-                                            inputLabel: {
-                                                shrink: true,
-                                            },
-                                        }}
-                                    />
-                                </Grid>
-                                <TextField
-                                    id="Enter Subject"
-                                    label="Subject"
-                                    placeholder="Enter Subject"
-                                    type="text"
-                                    variant="outlined"
-                                    className="form-input2"
-                                    slotProps={{
-                                        inputLabel: {
-                                            shrink: true,
-                                        },
-                                    }}
-                                />
-                                <TextField
-                                    id="Message"
-                                    label="Message"
-                                    type="text"
-                                    variant="outlined"
-                                    className="form-input2"
-                                    placeholder="Message"
-                                    multiline
-                                    rows={1}
-                                    slotProps={{
-                                        inputLabel: {
-                                            shrink: true,
-                                        },
-                                    }}
-                                    style={{ marginBottom: "0px" }}
-                                    sx={{
-                                        "& .MuiInputBase-root": {
-                                            padding: "2px 14px 25.5px 1px",
-                                        }
-                                    }}
-                                />
-                                <Box my={2}>
-                                    <img width="55%" height="80%" src="/assets/captcha-image.png" alt="captcha" />
-                                </Box>
-                                <button className="submit-btn">
-                                    SUBMIT
-                                </button>
-                            </Stack>
-                        </Stack>
-                    </Grid>
+                {/* Email Section */}
+                <Box className="contact-details-section">
+                  <p className="contact-details-title">
+                    <EmailIcon /> Drop us a line
+                  </p>
+                  <p
+                    style={{ marginTop: "0px" }}
+                    className="contact-details-text"
+                  >
+                    <span className="contact-dash">-</span>{" "}
+                    info@jyotitechnosoft.com
+                  </p>
+                  <p className="contact-details-text">
+                    <span className="contact-dash">-</span>{" "}
+                    business@jyotitechnosoft.com
+                  </p>
                 </Box>
 
-                {/* Google Map */}
-                <div>
-                    <iframe
-                        title="Jyoti Technosoft LLP Location"
-                        src={activeBranch?.mapUrl}
-                        width="100%"
-                        height="450"
-                        style={{
-                            border: 0,
-                            boxShadow: "md",
-                        }}
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                </div>
+                {/* Phone Section */}
+                <Box className="contact-details-section" position={"relative"}>
+                  <div className="circle-2"></div>
+                  <Box mt={3}>
+                    <p className="contact-details-title">
+                      <CallIcon />
+                      Let's talk
+                    </p>
+                    <p
+                      style={{ marginTop: "13px" }}
+                      className="contact-details-text"
+                    >
+                      <span className="contact-dash">-</span>+91 92657 12724
+                    </p>
+                    <p className="contact-details-text">
+                      <span className="contact-dash">-</span>+91 92657 12724
+                    </p>
+                  </Box>
+                </Box>
+              </Stack>
 
-                {/* Office Locations */}
-                <Grid p={2} maxWidth={"1040px"} spacing={isNotSmallScreen ? 16 : 6} display={"flex"} flexDirection={{ xs: "column", md: "row" }} justifyContent={"space-between"} columns={[1, 1, 2]} mx="auto">
-                    {branches?.map((branch, index) => (
-                        <div
-                            key={branch.id}
-                            className={`office-address ${index === 1 ? "relative" : ""}`}
-                            onClick={() => setActiveBranch(branch)}
-                        >
-                            {index === 1 && <div className="circle-3"></div>}
-                            <p className={`office-branch ${activeBranch?.id === branch?.id ? "active" : ""}`}>
-                                {branch?.icon} {branch?.name}
-                            </p>
-                            <p className={`branch-address ${activeBranch?.id === branch?.id ? "active" : ""}`}>
-                                {branch?.address}
-                            </p>
-                        </div>
-                    ))}
-                </Grid>
-            </div >
-        </>
+              {/* Contact Form */}
+              <Stack position={"relative"}>
+                <div className="circle-1"></div>
+                <Stack
+                  mt={isNotSmallScreen ? 14 : 5}
+                  px={isNotSmallScreen ? 12 : 8}
+                  pb={8}
+                  pt={8}
+                  className="contact-card"
+                >
+                  <p className="contact-card-title">Drop us a Message</p>
+                  <Grid
+                    className="grid-container"
+                    spacing={isNotSmallScreen ? 3 : 0}
+                  >
+                    <TextField
+                      id="First Name"
+                      label="First Name"
+                      placeholder="First Name"
+                      type="text"
+                      variant="outlined"
+                      className="form-input1"
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true,
+                        },
+                      }}
+                    />
+                    <TextField
+                      id="Last Name"
+                      label="Last Name"
+                      placeholder="Last Name"
+                      type="text"
+                      variant="outlined"
+                      className="form-input1"
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true,
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <Grid
+                    className="grid-container"
+                    spacing={isNotSmallScreen ? 3 : 0}
+                  >
+                    <TextField
+                      id="Email"
+                      label="Email"
+                      placeholder="Email"
+                      type="text"
+                      variant="outlined"
+                      className="form-input1"
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true,
+                        },
+                      }}
+                    />
+                    <TextField
+                      id="Mobile No"
+                      label="Mobile No"
+                      placeholder="91+"
+                      type="text"
+                      variant="outlined"
+                      className="form-input1"
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true,
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <TextField
+                    id="Enter Subject"
+                    label="Subject"
+                    placeholder="Enter Subject"
+                    type="text"
+                    variant="outlined"
+                    className="form-input2"
+                    slotProps={{
+                      inputLabel: {
+                        shrink: true,
+                      },
+                    }}
+                  />
+                  <TextField
+                    id="Message"
+                    label="Message"
+                    type="text"
+                    variant="outlined"
+                    className="form-input2"
+                    placeholder="Message"
+                    multiline
+                    rows={1}
+                    slotProps={{
+                      inputLabel: {
+                        shrink: true,
+                      },
+                    }}
+                    style={{ marginBottom: "0px" }}
+                    sx={{
+                      "& .MuiInputBase-root": {
+                        padding: "2px 14px 25.5px 1px",
+                      },
+                    }}
+                  />
+                  {/* <Box my={2}>
+                                    <img width="55%" height="80%" src="/assets/captcha-image.png" alt="captcha" />
+                                </Box> */}
+                  <Box my={2}>
+                    <ReCAPTCHA
+                      sitekey="6LfmNKMZAAAAAKrDxRn2_NcHoRPW9-uFuWs98XCx"
+                      onChange={handleCaptchaChange}
+                    />
+                  </Box>
+                  <button className="submit-btn">SUBMIT</button>
+                </Stack>
+              </Stack>
+            </Grid>
+          </Box>
+
+          {/* Google Map */}
+          <div>
+            <iframe
+              title="Jyoti Technosoft LLP Location"
+              src={activeBranch?.mapUrl}
+              width="100%"
+              height="450"
+              style={{
+                border: 0,
+                boxShadow: "md",
+              }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          {/* Office Locations */}
+          <Grid
+            p={2}
+            maxWidth={"1040px"}
+            spacing={isNotSmallScreen ? 16 : 6}
+            display={"flex"}
+            flexDirection={{ xs: "column", md: "row" }}
+            justifyContent={"space-between"}
+            columns={[1, 1, 2]}
+            mx="auto"
+          >
+            {branches?.map((branch, index) => (
+              <div
+                key={branch.id}
+                className={`office-address ${index === 1 ? "relative" : ""}`}
+                onClick={() => setActiveBranch(branch)}
+              >
+                {index === 1 && <div className="circle-3"></div>}
+                <p
+                  className={`office-branch ${
+                    activeBranch?.id === branch?.id ? "active" : ""
+                  }`}
+                >
+                  {branch?.icon} {branch?.name}
+                </p>
+                <p
+                  className={`branch-address ${
+                    activeBranch?.id === branch?.id ? "active" : ""
+                  }`}
+                >
+                  {branch?.address}
+                </p>
+              </div>
+            ))}
+          </Grid>
+        </div>
+      </>
     );
 };
 

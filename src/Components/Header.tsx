@@ -8,12 +8,19 @@ import {
   Menu,
   MenuItem,
   Drawer,
+  useMediaQuery 
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from '@mui/icons-material/Close'
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 import "../styles/header.css";
 
 const Header: React.FC = () => {
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -35,6 +42,8 @@ const Header: React.FC = () => {
     typeof setTimeout
   > | null>(null);
   const [showShadow, setShowShadow] = useState(false);
+  const [expandServices, setExpandServices] = useState(false);
+  const [expandDevelopers, setExpandDevelopers] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -134,6 +143,12 @@ const Header: React.FC = () => {
     setDevelopersAnchorEl(null);
   };
 
+  useEffect(() => {
+  if (isDesktop && openDrawer) {
+    handleDrawerToggle();
+  }
+}, [isDesktop]);
+
   return (
     <Box className={`header ${showShadow ? "header-shadow" : ""}`}>
       <Toolbar className="container">
@@ -153,104 +168,69 @@ const Header: React.FC = () => {
             onClick={handleDrawerToggle}
             onKeyDown={handleDrawerToggle}
           >
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "navLink active" : "navLink"
-              }
-            >
-              Home
-            </NavLink>
-            <Box
-              className="menu-item"
-              onMouseEnter={openServicesMenu}
-              onMouseLeave={closeServicesMenu}
-              sx={{ position: "relative" }}
-            >
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  isActive ? "navLink active" : "navLink"
-                }
-                onClick={handleServicesClick}
-                style={{ zIndex: 2, position: "relative" }}
-              >
-                Services
-              </NavLink>
-
-              <Menu
-                anchorEl={servicesAnchorEl}
-                open={Boolean(servicesAnchorEl) && isServicesTabActive}
-                onClose={() => setServicesAnchorEl(null)}
-                onMouseEnter={cancelCloseServicesMenu}
-                onMouseLeave={closeServicesMenu}
-                anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-                transformOrigin={{ vertical: "top", horizontal: "left" }}
-                sx={{ marginTop: "5px", zIndex: 1300 }}
-              ></Menu>
+            <Box className="drawer-close" onClick={(e) => { e.stopPropagation(); handleDrawerToggle(); }}>
+              <CloseIcon fontSize="medium" />
             </Box>
 
-            <NavLink
-              to="/our-work"
-              className={({ isActive }) =>
-                isActive ? "navLink active" : "navLink"
-              }
-            >
-              Our Work
-            </NavLink>
-            <Box
-              className="menu-item"
-              onMouseEnter={openDevelopersMenu}
-              onMouseLeave={closeDevelopersMenu}
-              sx={{ position: "relative" }}
-            >
-              <NavLink
-                to="/hire-developers"
-                className={({ isActive }) =>
-                  isActive ? "navLink active" : "navLink"
-                }
-                onClick={handleDevelopersClick}
-                style={{ zIndex: 2, position: "relative" }}
-              >
-                Hire Developers
-              </NavLink>
+            <NavLink to="/" className={({ isActive }) => isActive ? "navLink active" : "navLink"}>Home</NavLink>
 
-              <Menu
-                anchorEl={developersAnchorEl}
-                open={Boolean(developersAnchorEl)}
-                onClose={() => setDevelopersAnchorEl(null)}
-                onMouseEnter={cancelCloseDevelopersMenu}
-                onMouseLeave={closeDevelopersMenu}
-                anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-                transformOrigin={{ vertical: "top", horizontal: "left" }}
-                sx={{ marginTop: "5px", zIndex: 1300 }}
-              >
-              </Menu>
+            <Box className="navLink" onClick={(e) => { e.stopPropagation(); setExpandServices(prev => !prev); }}>
+              <span>Services</span>
+              <span className="toggle-icon">
+                {expandServices ? <RemoveIcon fontSize="small" color="primary" /> : <AddIcon fontSize="small" color="primary" />}
+              </span>
             </Box>
-            <NavLink
-              to="/career"
-              className={({ isActive }) =>
-                isActive ? "navLink active" : "navLink"
-              }
-            >
-              Career
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive ? "navLink active" : "navLink"
-              }
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                isActive ? "navLink active" : "navLink"
-              }
-            >
-              Contact
-            </NavLink>
+            {expandServices && (
+            <Box className="subLinks" onClick={(e) => e.stopPropagation()}>
+              <NavLink to="/services/web-development" className="navLink" onClick={handleDrawerToggle}>
+                Web Development
+              </NavLink>
+              <NavLink to="/services/mobile-development" className="navLink" onClick={handleDrawerToggle}>
+                App Development
+              </NavLink>
+              <NavLink to="/services/api-integration" className="navLink" onClick={handleDrawerToggle}>
+                API Integration
+              </NavLink>
+              <NavLink to="/services/customization" className="navLink" onClick={handleDrawerToggle}>
+                Customization
+              </NavLink>
+              <NavLink to="/services/product-development" className="navLink" onClick={handleDrawerToggle}>
+                Product Development
+              </NavLink>
+              <NavLink to="/services/deployment" className="navLink" onClick={handleDrawerToggle}>
+                Deployment
+              </NavLink>
+              <NavLink to="/services/consulting" className="navLink" onClick={handleDrawerToggle}>
+                Consulting
+              </NavLink>
+            </Box>
+            )}
+
+            <NavLink to="/our-work" className={({ isActive }) => isActive ? "navLink active" : "navLink"}>Our Work</NavLink>
+
+            <Box className="navLink" onClick={(e) => { e.stopPropagation(); setExpandDevelopers(prev => !prev); }}>
+              <span>Hire Developers</span>
+              <span className="toggle-icon">
+                {expandDevelopers ? <RemoveIcon fontSize="small" color="primary" /> : <AddIcon fontSize="small" color="primary" />}
+              </span>
+            </Box>
+            {expandDevelopers && (
+            <Box className="subLinks" onClick={(e) => e.stopPropagation()}>
+              <NavLink to="/hire-developers/angular" className="navLink" onClick={handleDrawerToggle}>
+                Hire Angular Developer
+              </NavLink>
+              <NavLink to="/hire-developers/react" className="navLink" onClick={handleDrawerToggle}>
+                Hire React Developer
+              </NavLink>
+              <NavLink to="/hire-developers/java" className="navLink" onClick={handleDrawerToggle}>
+                Hire Java Developer
+              </NavLink>
+            </Box>
+            )}
+
+            <NavLink to="/career" className={({ isActive }) => isActive ? "navLink active" : "navLink"}>Career</NavLink>
+            <NavLink to="/about" className={({ isActive }) => isActive ? "navLink active" : "navLink"}>About</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? "navLink active" : "navLink"}>Contact</NavLink>
           </Box>
         </Drawer>
 
@@ -308,7 +288,7 @@ const Header: React.FC = () => {
               <MenuItem
                 onClick={() => {
                   setServicesAnchorEl(null);
-                  navigate("/services/app-development");
+                  navigate("/services/mobile-development");
                 }}
               >
                 App Development

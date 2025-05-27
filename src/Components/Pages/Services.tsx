@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Grid, Typography, Container, useMediaQuery } from '@mui/material';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
@@ -25,10 +25,14 @@ const Services: React.FC = () => {
         "#D1F1E0"
     ];
 
+    useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+
     return (
         <Box>
             {/* Top Header */}
-            <HeaderCommon smallTitle="Services" page="Our Services" />
+            <HeaderCommon smallTitle="Services" page="Tailored Solutions for Every Digital Need" />
 
             {/* Featured Services Section */}
             <Box className="featured-services-section">
@@ -78,6 +82,7 @@ const Services: React.FC = () => {
                                                     className="more-service-image"
                                                 />
                                             </div>
+                                            <div className="hover-title">{service?.technology}</div>
                                             <div className="more-card-content">
                                                 <Typography className="more-service-title">
                                                     {service?.technology}
@@ -100,7 +105,7 @@ const Services: React.FC = () => {
             </Box>
 
             {/* Footer */}
-            <FooterCommonPage title="Let’s Build Dynamic Solutions for Your Business" buttonText="Let’s Get Started" />
+            <FooterCommonPage title="Let’s Build Dynamic Solutions for Your Business" buttonText="Let’s Get Started" buttonLink="/contact"/>
         </Box>
     )
 }

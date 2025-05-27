@@ -169,7 +169,7 @@
     "technology": [
       {
         "id": "angular",
-        "label": "Angular developement",
+        "label": "Angular Developement",
         "decription": "At Jyoti Technosoft LLP, we are dedicated to delivering exceptional Angular development solutions tailored to meet your business objectives. With a team of experienced and skilled Angular developers, we have extensive expertise in harnessing the power of Angular to build cutting-edge applications that drive business growth. Our Angular development services encompass the entire spectrum of the development process, from requirement analysis and architecture design to front-end and back-end development, testing, deployment, and ongoing support. ",
         "image": "assets/angular.png",
         "chooseUs": "Why Choose Us As Your Angular Development Company",
@@ -204,29 +204,33 @@
           {
             "header": "Custom Developement",
             "icon": "assets/images/Custom-AngularJS-Web-Development.svg",
-            "decription": "We understand that every business has specific needs that off-the-shelf solutions may not address. Our custom development services for Angular enable us to create bespoke applications that align perfectly with your business goals. Our team works closely with you to analyze your requirements, design a solution architecture, and develop Angular applications that are tailored to your exact specifications. We leverage Angular's powerful features, such as component-based architecture, dependency injection, and reactive programming, to build scalable, secure, and high-performing applications."
+            "decription": "We understand that every business has specific needs that off-the-shelf solutions may not address. Our custom development services for Angular enable us to create bespoke applications that align perfectly with your business goals. Our team works closely with you to analyze your requirements, design a solution architecture, and develop Angular applications that are tailored to your exact specifications. We leverage Angular's powerful features, such as component-based architecture, dependency injection, and reactive programming, to build scalable, secure, and high-performing applications.",
+            "image": "/assets/images/hire-us-details/custom-developement.png"
           },
           {
             "header": "Plugin Development",
             "icon": "assets/images/Plugin-Development.svg",
-            "decription": "We recognize the importance of extending the functionality of Angular applications. Our plugin development services for Angular allow us to create custom plugins that seamlessly integrate with your existing Angular infrastructure. Whether you need plugins to enhance user experience, integrate with external services, or add specific features, our developers can design and develop plugins that seamlessly extend the capabilities of your Angular applications."
+            "decription": "We recognize the importance of extending the functionality of Angular applications. Our plugin development services for Angular allow us to create custom plugins that seamlessly integrate with your existing Angular infrastructure. Whether you need plugins to enhance user experience, integrate with external services, or add specific features, our developers can design and develop plugins that seamlessly extend the capabilities of your Angular applications.",
+            "image": "/assets/images/hire-us-details/plugin-developement.png"
           },
           {
             "header": "Maintenance & Support",
             "icon": "assets/images/Support-Maintainence.svg",
-            "decription": "We believe in establishing long-term relationships with our clients. Our maintenance and support services for Angular ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Angular applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity."
+            "decription": "We believe in establishing long-term relationships with our clients. Our maintenance and support services for Angular ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Angular applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity.",
+            "image": "/assets/images/hire-us-details/maintenance&supports.png"
           },
           {
             "header": "API Integration and Development",
             "icon": "assets/images/API-Integration-and-Development.svg",
-            "decription": " In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Angular developers have expertise in API integration and can seamlessly integrate your Angular applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Angular applications."
+            "decription": " In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Angular developers have expertise in API integration and can seamlessly integrate your Angular applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Angular applications.",
+            "image": "/assets/images/hire-us-details/api-integration-developement.png"
           }
         ],
         "developmentServiceTitle": "Angular Developement Services"
       },
       {
         "id": "react",
-        "label": "React developement",
+        "label": "React Developement",
         "decription": "Jyoti Technosoft LLP is a name to reckon with when it comes to ReactJS development. Since its launch back in 2013, ReactJS continues to be a user-friendly, developer favorite and industry preferred platform for web development. An open-source, cross-platform, JavaScript-based library, ReactJS development allows developers to build responsive web and single-page applications that fulfill the unique requirements of businesses across the globe.",
         "image": "assets/react.png",
         "chooseUs": "Why Choose Us As Your ReactJS Development Company",
@@ -261,29 +265,33 @@
           {
             "header": "Custom Developement",
             "icon": "assets/images/Custom-AngularJS-Web-Development.svg",
-            "decription": "We understand that each business has its own set of challenges and requirements. Our custom development services for React allow us to create bespoke applications that cater to your specific needs. From conceptualization to development and deployment, we work closely with you to ensure that the resulting React application aligns perfectly with your business objectives. Leveraging React's component-based architecture and reusable UI components, we build scalable, interactive, and high-performing applications tailored to your exact specifications."
+            "decription": "We understand that each business has its own set of challenges and requirements. Our custom development services for React allow us to create bespoke applications that cater to your specific needs. From conceptualization to development and deployment, we work closely with you to ensure that the resulting React application aligns perfectly with your business objectives. Leveraging React's component-based architecture and reusable UI components, we build scalable, interactive, and high-performing applications tailored to your exact specifications.",
+            "image": "/assets/images/hire-us-details/custom-developement.png"
           },
           {
             "header": "Plugin Development",
             "icon": "assets/images/Plugin-Development.svg",
-            "decription": "We recognize the importance of extending the functionality of React applications. Our plugin development services for React enable us to create custom plugins that seamlessly integrate with your existing React infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your React applications."
+            "decription": "We recognize the importance of extending the functionality of React applications. Our plugin development services for React enable us to create custom plugins that seamlessly integrate with your existing React infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your React applications.",
+            "image": "/assets/images/hire-us-details/plugin-developement.png"
           },
           {
             "header": "Maintenance & Support",
             "icon": "assets/images/Support-Maintainence.svg",
-            "decription": " We believe in establishing long-term partnerships with our clients. Our maintenance and support services for React ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your React applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity."
+            "decription": " We believe in establishing long-term partnerships with our clients. Our maintenance and support services for React ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your React applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity.",
+            "image": "/assets/images/hire-us-details/maintenance&supports.png"
           },
           {
             "header": "API Integration and Development",
             "icon": "assets/images/API-Integration-and-Development.svg",
-            "decription": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our React developers have expertise in API integration and can seamlessly integrate your React applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your React applications."
+            "decription": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our React developers have expertise in API integration and can seamlessly integrate your React applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your React applications.",
+            "image": "/assets/images/hire-us-details/api-integration-developement.png"
           }
         ],
         "developmentServiceTitle": "React Developement Services"
       },
       {
         "id": "java",
-        "label": "Java developement",
+        "label": "Java Developement",
         "decription": "At Jyoti Technosoft LLP, we are a leading Java development company specializing in delivering top-notch Java-based solutions to our clients. With a team of skilled and experienced Java developers, we have a deep understanding of the Java programming language and its associated frameworks and tools. Our expertise lies in developing robust, scalable, and secure applications that meet the diverse needs of businesses across various industries.",
         "image": "assets/java.png",
         "chooseUs": "Why Choose Us As Your Java Development Company",
@@ -318,22 +326,26 @@
           {
             "header": "Custom Developement",
             "icon": "assets/images/Custom-AngularJS-Web-Development.svg",
-            "decription": " We understand that each business has its own set of challenges and requirements. Our custom development services for Java allow us to create bespoke applications that cater to your specific needs. From requirement analysis to design, development, and deployment, we work closely with you to ensure that the resulting Java application aligns perfectly with your business objectives. Leveraging Java's robustness, scalability, and platform independence, we build secure, high-performing applications tailored to your exact specifications."
+            "decription": " We understand that each business has its own set of challenges and requirements. Our custom development services for Java allow us to create bespoke applications that cater to your specific needs. From requirement analysis to design, development, and deployment, we work closely with you to ensure that the resulting Java application aligns perfectly with your business objectives. Leveraging Java's robustness, scalability, and platform independence, we build secure, high-performing applications tailored to your exact specifications.",
+            "image": "/assets/images/hire-us-details/custom-developement.png"
           },
           {
             "header": "Plugin Development",
             "icon": "assets/images/Plugin-Development.svg",
-            "decription": " We recognize the importance of extending the functionality of Java applications. Our plugin development services for Java enable us to create custom plugins that seamlessly integrate with your existing Java infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your Java applications."
+            "decription": " We recognize the importance of extending the functionality of Java applications. Our plugin development services for Java enable us to create custom plugins that seamlessly integrate with your existing Java infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your Java applications.",
+            "image": "/assets/images/hire-us-details/plugin-developement.png"
           },
           {
             "header": "Maintenance & Support",
             "icon": "assets/images/Support-Maintainence.svg",
-            "decription": "We believe in establishing long-term partnerships with our clients. Our maintenance and support services for Java ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Java applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity."
+            "decription": "We believe in establishing long-term partnerships with our clients. Our maintenance and support services for Java ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Java applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity.",
+            "image": "/assets/images/hire-us-details/maintenance&supports.png"
           },
           {
             "header": "API Integration and Development",
             "icon": "assets/images/API-Integration-and-Development.svg",
-            "decription": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Java developers have expertise in API integration and can seamlessly integrate your Java applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Java applications."
+            "decription": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Java developers have expertise in API integration and can seamlessly integrate your Java applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Java applications.",
+            "image": "/assets/images/hire-us-details/api-integration-developement.png"
           }
         ],
         "developmentServiceTitle": "Java Developement Services"
@@ -1849,6 +1861,7 @@
       "imgSrc": "/assets/web.png",
       "technology": "Web Development",
       "image":"/assets/service/web-dev.png",
+      "headerImage":"/assets/service-header/web-dev.png",
       "tagline": "   Our mission is to make your life easier.",
       "sortdescription": "Unlock the potential of your online presence with Jyoti Technosoft LLP - your trusted partner in web development, delivering dynamic and innovative solutions tailored to your business needs.",
       "description": "<p>At our company, we are dedicated to offering you a comprehensive range of powerful tools and innovative solutions designed to propel your business towards unprecedented growth. With our expertise and industry knowledge, we specialize in equipping you with the necessary resources to establish a robust presence in the market.</p> </br> <p>One of our primary areas of focus is the development of highly functional and user-friendly websites. We understand the pivotal role a website plays in today's digital landscape, and our team of skilled professionals excels at crafting online platforms that meet your specific business requirements. By employing cutting-edge technologies and adhering to industry best practices, we ensure that your website is not only visually appealing but also optimized for search engines, increasing your online visibility.</p> </br><p>Through our meticulous approach to website development, we guarantee seamless navigation, intuitive user interfaces, and efficient performance. Our goal is to provide your customers with an engaging online experience that drives conversions and encourages repeat visits. By leveraging our expertise, you can harness the power of a well-crafted website to attract, engage, and retain customers, ultimately strengthening your brand's position in the market.</p>",
@@ -1886,6 +1899,7 @@
       "imgSrc": "/assets/app.png",
       "technology": "Mobile Development",
       "image":"/assets/service/mobile-development.png",
+      "headerImage":"/assets/service-header/mobile-dev.png",
       "sortdescription": "Empower your business with Jyoti Technosoft LLP's cutting-edge mobile development expertise, creating seamless and captivating experiences that engage and delight users on the go.",
       "tagline": "Bringing Limitless Possibilities to Your Fingertips",
       "description": "<p>In today's fast-paced world, where connectivity and accessibility are paramount, the ability to transcend physical boundaries and effortlessly reach a target audience has become a crucial objective for individuals and businesses alike. This is where mobile development emerges as a game-changer, offering a powerful solution to create customized mobile applications at a fraction of the cost.</p></br><p>At Jyoti Technosoft LLP, we understand the importance of leveraging mobile technology to empower our clients with increased sales and enhanced branding opportunities. With our dedicated team of experienced professionals, we are committed to accompanying you on this transformative journey towards mobile success.</p></br><p>Join us at Jyoti Technosoft LLP and embark on a transformative journey towards mobile excellence. Together, we can unlock new opportunities, expand your reach, and achieve remarkable success in this dynamic digital landscape.</p>",
@@ -1919,6 +1933,7 @@
       "imgSrc": "/assets/api.png",
       "technology": "API Integration",
       "image":"/assets/service/api.png",
+      "headerImage":"/assets/service-header/api.png",
       "sortdescription": "Streamline your systems and amplify your business capabilities with Jyoti Technosoft LLP's expert API integration solutions, seamlessly connecting your applications and unlocking new levels of efficiency and collaboration.",
       "tagline": "Safeguarding Your Data with Confidence",
       "description": "<p>Welcome to Jyoti Technosoft LLP, a trusted partner in providing seamless API integration services. We understand the critical importance of secure data exchange and offer a comprehensive suite of solutions to facilitate the connection between your applications, platforms, and services.</p></br><p>Our API Integration Solutions are designed to empower your business by unlocking its full potential. Whether you need to integrate your website with third-party applications, streamline internal processes, or enable data sharing across multiple systems, our team of experts is here to assist you every step of the way.</p></br><p>Partnering with us means gaining access to a wealth of knowledge and expertise in API integration. Our dedicated team will work closely with you to understand your unique business requirements and tailor a solution that meets your specific needs. With our services, you can streamline workflows, enhance efficiency, and foster seamless collaboration across your entire ecosystem.</p>",
@@ -1960,6 +1975,7 @@
       "imgSrc": "/assets/customization.png",
       "technology": "Customization",
       "image":"/assets/service/customization.png",
+      "headerImage":"/assets/service-header/customization.png",
       "sortdescription": "Tailor-made solutions for your unique business needs - Jyoti Technosoft LLP specializes in customization, empowering you with personalized software and applications that align perfectly with your vision and objectives.",
       "tagline": "Unleash Your Imagination, Define Your Style, Embrace Limitless Customization!",
       "description": "<p>In a world where individuality is celebrated, blending in with the crowd is no longer enough. We all aspire to stand out and be distinctive in our own remarkable ways. Recognizing this innate desire for uniqueness, Jyoti Technosoft LLP is committed to providing you with unrivaled customization options for your website, ensuring that it truly reflects your identity and brand.</p></br><p>We understand that your online presence is a powerful tool for capturing attention and leaving a lasting impression on your target audience. That's why our team of skilled professionals is dedicated to transforming your vision into a captivating reality. By leveraging our expertise in web design and development, we can create a website that is as exceptional and extraordinary as you are.</p></br><p>Embrace your individuality and let Jyoti Technosoft LLP empower your online presence with unprecedented customization options. Stand out, be extraordinary, and leave a lasting impression on the digital landscape.</p>",
@@ -1992,6 +2008,7 @@
       "imgSrc": "/assets/product-development.png",
       "technology": "Product Development",
       "image":"/assets/service/product-dev.png",
+      "headerImage":"/assets/service-header/product-dev.png",
       "sortdescription": "From concept to launch, Jyoti Technosoft LLP is your trusted partner in product development, turning ideas into reality with precision and innovation, driving your business forward in the competitive digital landscape.",
       "tagline": "Transforming Ideas into Reality",
       "description": "<p>At Jyoti Technosoft LLP, we recognize the immense importance of product development in the dynamic and fiercely competitive business landscape of today. That's why we have meticulously devised a systematic approach to accompany you on the entire journey of transforming your product idea into a reality. Irrespective of whether you are a startup venturing into uncharted territories or an established company seeking to innovate, our team of seasoned professionals is fully equipped to support you at every step.</p></br><p>From conceptualization to market launch, we provide comprehensive assistance throughout the product development process. Our experienced team collaborates closely with you to understand your vision, goals, and target market, ensuring that every decision aligns with your strategic objectives. We employ industry best practices, market research, and cutting-edge technologies to turn your concept into a tangible, market-ready product.</p></br><p>Partnering with Jyoti Technosoft LLP means having a dedicated team by your side, offering valuable insights, technical proficiency, and unwavering support. Let us help you navigate the intricate landscape of product development and pave the way for your success in the market. Together, we can transform your ideas into innovative solutions that captivate the market and propel your business forward.</p>",
@@ -2020,6 +2037,7 @@
       "imgSrc": "/assets/deployment.png",
       "technology": "Deployment",
       "image":"/assets/service/deployment.png",
+      "headerImage":"/assets/service-header/deployment.png",
       "sortdescription": "Simplify and accelerate your deployment process with Jyoti Technosoft LLP's expert deployment services, ensuring smooth transitions, optimal performance, and uninterrupted operations for your software applications",
       "tagline": "Turning Websites into Live Solutions",
       "description": "<p>At Jyoti Technosoft LLP, we are experts in providing seamless deployment solutions for websites, ensuring that your digital presence is up and running smoothly. Whether you have a fully developed website ready for deployment or are in the process of building one, our dedicated team is here to assist you at every stage of the journey.</p></br><p>We understand the critical importance of a flawless website deployment in today's fast-paced digital landscape. Our experienced professionals have extensive knowledge and expertise in deploying websites across various platforms and hosting environments. We meticulously handle the technical intricacies, ensuring that your website is seamlessly launched, configured, and optimized for optimal performance.</p></br><p>With Jyoti Technosoft LLP as your deployment partner, you can have peace of mind knowing that your website will be launched with precision and care. We are committed to delivering exceptional results and providing ongoing support to ensure the continued success of your digital presence.</p>",
@@ -2056,6 +2074,7 @@
       "imgSrc": "/assets/consulting.png",
       "technology": "Consulting",
       "image":"/assets/service/consulting.png",
+      "headerImage":"/assets/service-header/consulting.png",
       "sortdescription": "Gain strategic insights and leverage industry expertise with Jyoti Technosoft LLP's comprehensive consulting services, empowering your business to make informed decisions, drive growth, and stay ahead in the ever-evolving digital landscape.",
       "tagline": "Unlocking Potential, Guiding Success, Transforming Businesses with Expert Consulting.",
       "description": "<p>Jyoti Technosoft LLP is a distinguished IT company at the forefront of the industry, offering exceptional consulting services designed specifically to cater to the distinct requirements of businesses like yours. With our profound expertise and in-depth understanding of the ever-evolving IT landscape, we are committed to guiding you through the complexities of the digital world, empowering you to achieve your objectives with unwavering confidence.</p></br><p>We recognize that every business is unique, with its own set of challenges and aspirations. That's why our consulting services are meticulously tailored to address your specific needs. Our experienced consultants work closely with you to gain a comprehensive understanding of your organization, industry, and goals. This enables us to provide you with strategic guidance and practical solutions that align with your vision, ensuring optimal outcomes.</p></br><p>At Jyoti Technosoft LLP, we are not just consultants; we are trusted partners committed to your success. We are dedicated to building long-term relationships based on integrity, reliability, and a shared commitment to excellence. Let us be your guiding force in the digital world, as you navigate the challenges and unlock the vast potential of IT to drive your business forward.</p>",

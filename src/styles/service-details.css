@@ -1,6 +1,60 @@
+.service-details-first-section {
+    /* display: flex; */
+    height: 254px;
+}
+
+.service-details-first-section .breadcrumb-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.service-details-first-section .breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.service-details-first-section .service-details-content {
+    z-index: 3;
+    width: 50%;
+    position: relative;
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.service-details-first-section .service-details-content .service-details-first-content {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    /* padding: 2rem 0px 0px 7rem; */
+}
+
+.service-details-first-section .service-details-content .service-details-title {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 84px;
+    letter-spacing: 0.5%;
+    color: #FFFBFB;
+    z-index: 1;
+    position: relative;
+}
+
+.service-details-first-section .service-details-image {
+    width: 42%;
+    overflow: hidden;
+}
+
+.service-details-first-section .service-details-image img {
+    height: 230px;
+    width: 100%;
+}
+
 .service-details .service-details-second-title {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     color: #347CCC;
     letter-spacing: 1.5%;
     line-height: 24px;
@@ -8,9 +62,36 @@
 
 .service-details-second .card-header {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 18px;
     color: #347CCC;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     letter-spacing: 1.5%;
+}
+
+@media (max-width: 767px) {
+
+  .service-details-first-section .service-details-content .service-details-title {
+    font-size: 45px;
+    line-height: unset;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+
+  .service-details-first-section {
+    height: 230px;
+  }
+
+  .service-details-first-section .hire-content .service-details-first-content {
+    padding: 1rem 0px 0px 1rem;
+  }
+
+  .service-details-first-section .service-details-content {
+    width: 100%;
+  }
+
+  .service-details-first-section .service-details-image {
+    display: none;
+  }
 }

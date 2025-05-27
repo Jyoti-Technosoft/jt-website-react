@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography, Button } from "@mui/material";
 
 import HomeWhyUs from "../Pages/HomeWhyUs.tsx";

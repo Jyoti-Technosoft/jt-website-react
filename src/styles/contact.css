@@ -1,5 +1,4 @@
 .contact-first-section {
-    display: flex;
     height: 325px;
 }
 
@@ -14,7 +13,6 @@
 }
 
 .contact-first-section .contact-content {
-    background: #1F5795;
     width: 50%;
     position: relative;
 }
@@ -22,20 +20,11 @@
 .contact-first-section .contact-content .contact-gif {
     z-index: 1;
     position: absolute;
-    right: 3rem;
-    bottom: 6rem;
-    width: 22%;
+    right: 0rem;
+    bottom: 4rem;
+    width: 30%;
     height: 30%;
     background: url("/public/assets/contact-page.gif") no-repeat center center/cover;
-}
-
-.contact-first-section .contact-content .contact-wave {
-    position: absolute;
-    right: -1.3rem;
-    top: 0;
-    width: 20%;
-    height: 325px;
-    background: url("/public/assets/wave.png") no-repeat center center/cover;
 }
 
 .contact-first-section .contact-content .contact-first-content {
@@ -46,26 +35,28 @@
     line-height: 16.41px;
     letter-spacing: 0.5px;
     color: #FFFFFF;
-    padding: 4rem 0px 0px 11rem;
 }
 
 .contact-first-section .contact-content .contact-title {
-    padding: 2rem 0px 0px 11rem;
     font-weight: 600;
     font-size: 60px;
-    line-height: 84.41px;
-    letter-spacing: 0.5px;
+    line-height: 84px;
+    letter-spacing: 0.5%;
     color: #FFFBFB;
+    z-index: 1;
+    position: relative;
 }
 
 .contact-first-section .contact-image {
-    width: 50%;
+    width: 45%;
     overflow: hidden;
 }
 
 .contact-first-section .contact-image img {
-    height: 325px;
+    height: 278px;
     width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 #contact2 {
@@ -191,7 +182,6 @@
 
 #contact2 .contact-card {
     max-width: 410px;
-    height: 505px;
     width: 100%;
     z-index: 1;
     border-radius: 20px;
@@ -200,7 +190,7 @@
     position: absolute;
     bottom: -9rem;
     right: 0;
-    padding: 0.6rem 2rem 1rem;
+    padding: 0.6rem 2rem 2rem;
 }
 
 #contact2 .contact-card .contact-card-title {

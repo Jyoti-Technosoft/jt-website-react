@@ -14,25 +14,29 @@ import CareerDetails from './Components/Pages/CareerDetails.tsx';
 import HireDevelopersDetails from './Components/Pages/HireDevelopersDetails.tsx';
 import ServiceDetails from './Components/Pages/ServiceDetails.tsx';
 import SiteMap from './Components/Pages/SiteMap.tsx';
+import AdminPortal from './Components/Pages/AdminPortal.tsx';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:id" element={<ServiceDetails />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/site-map" element={<SiteMap />} />
-          <Route path="/our-work" element={<OurWork />} />
-          <Route path="/hire-developers" element={<HireDevelopers />} />
-          <Route path="/hire-developers/:id" element={<HireDevelopersDetails />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/career-details" element={<CareerDetails />} />
-        </Routes>
+        <div style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:id" element={<ServiceDetails />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/site-map" element={<SiteMap />} />
+            <Route path="/our-work" element={<OurWork />} />
+            <Route path="/hire-developers" element={<HireDevelopers />} />
+            <Route path="/hire-developers/:id" element={<HireDevelopersDetails />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/career-details" element={<CareerDetails />} />
+            <Route path="/jt-admin" element={<AdminPortal />} />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </Router>

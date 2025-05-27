@@ -10,7 +10,7 @@ const HowWeWork: React.FC = () => {
 
     return (
         <Box className="howWeWork-section">
-            <Container className="howWeWork-container">
+            <Box className="howWeWork-container">
                 <Box>
                     <Typography className="howWeWork-title">
                         How We Work
@@ -51,7 +51,7 @@ const HowWeWork: React.FC = () => {
                         </Box>
                     ))}
                 </Grid>
-            </Container>
+            </Box>
         </Box>
     )
 }

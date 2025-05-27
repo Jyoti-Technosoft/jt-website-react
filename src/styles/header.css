@@ -103,25 +103,79 @@
   .drawer-menu {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 24px 16px;
     height: 100vh;
+    background-color: #f9fafc;
+    position: relative;
+  }
+
+  .drawer-close {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1976d2;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 24px;
+    transition: transform 0.2s ease;
+  }
+
+  .drawer-close:hover {
+    transform: rotate(90deg);
+  }
+
+  .drawer-menu .navLink {
+    display: flex;
     align-items: center;
-    background-color: #ffffff;
-  }
-
-  .drawer-menu a {
-    margin-bottom: 15px;
+    justify-content: space-between;
     font-size: 16px;
-    text-align: center;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease-in-out;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease;
   }
 
-  .drawer-menu a:hover,
-  .drawer-menu a.active {
-    border-bottom: 2px solid #347CCC;
-    color: #347CCC;
+  .drawer-menu .navLink:hover {
+    color: #1976d2;
+  }
+
+  .drawer-menu .navLink.active {
+    color: #1976d2;
+    font-weight: 600;
+  }
+
+  .drawer-menu .subLinks {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+    transition: transform 0.4s ease;
+  }
+
+  .drawer-menu .subLinks .navLink {
+    font-size: 14px;
+    padding: 8px 12px;
+    background-color: transparent;
+  }
+
+  .drawer-menu .toggle-icon {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 8px;
+    color: #1976d2;
+      transition: transform 0.3s ease;
+  }
+
+  .drawer-menu .navLink,
+  .drawer-menu .navLink:active,
+  .drawer-menu .navLink:focus,
+  .drawer-menu .navLink:visited {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background: none;
   }
 
   .menu-item {

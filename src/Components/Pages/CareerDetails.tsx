@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
   Box,
@@ -7,7 +7,9 @@ import {
   useMediaQuery,
   Typography,
   Button,
+  Container,
 } from "@mui/material";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import dataArray from "../../jt-website.json";
@@ -18,8 +20,13 @@ const CareerDetails: React.FC = () => {
   const queryParams = new URLSearchParams(location.search);
   const isNotSmallScreen = useMediaQuery("(min-width: 768px)");
   const jobId = queryParams.get("job");
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
 
   const job = dataArray.jobs.find((job) => job.id === Number(jobId));
+
+  const handleCaptchaChange = (value: string | null) => {
+    setCaptchaValue(value);
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -36,48 +43,67 @@ const CareerDetails: React.FC = () => {
         subTitle={job.jobName}
         page={job.jobName}
       />
-      <Box className="career-details-container">
-        <Typography className="career-details-title" mb={2} gutterBottom>
-          Roles and Responsibilities
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          {job.jobDescription}
-        </Typography>
-        <div
-          className="job-requirement"
-          dangerouslySetInnerHTML={{ __html: job.briefJobDescription }}
-        />
+      <Container>
+        <Box className="career-details-container">
+          <Typography
+            className="career-details-title"
+            mt={4}
+            mb={2}
+            gutterBottom
+          >
+            Roles and Responsibilities
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            {job.jobDescription}
+          </Typography>
+          <div
+            className="job-requirement"
+            dangerouslySetInnerHTML={{ __html: job.briefJobDescription }}
+          />
 
-        <Typography className="career-details-title" mb={2} mt={4} gutterBottom>
-          Skills And Requirements
-        </Typography>
-        <div
-          className="job-requirement"
-          dangerouslySetInnerHTML={{ __html: job.jobRequirement }}
-        />
+          <Typography
+            className="career-details-title"
+            mb={2}
+            mt={4}
+            gutterBottom
+          >
+            Skills And Requirements
+          </Typography>
+          <div
+            className="job-requirement"
+            dangerouslySetInnerHTML={{ __html: job.jobRequirement }}
+          />
 
-        <Typography className="career-details-title" mb={2} mt={4} gutterBottom>
-          Address
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          {job.address}
-        </Typography>
-      </Box>
+          <Typography
+            className="career-details-title"
+            mb={2}
+            mt={4}
+            gutterBottom
+          >
+            Address
+          </Typography>
+          <Typography mb={6} variant="body1" gutterBottom>
+            {job.address}
+          </Typography>
+        </Box>
+      </Container>
       <Box
         px={{ xs: 2, md: 10, lg: 20 }}
         className="join-our-team-container"
-        sx={{ position: "relative" }}
+        sx={{
+          position: "relative",
+          mt: { xs: 4, md: 0 },
+        }}
       >
         <Box
           sx={{
             position: "absolute",
             top: 0,
             right: 0,
-            width: "250px",
-            height: "250px",
+            width: 250,
+            height: 250,
             background:
               "radial-gradient(circle at top right, #4B7AB7 0%, transparent 70%)",
-            zIndex: 0,
           }}
         />
 
@@ -86,22 +112,21 @@ const CareerDetails: React.FC = () => {
             position: "absolute",
             bottom: 0,
             left: 0,
-            width: "250px",
-            height: "250px",
+            width: 250,
+            height: 250,
             background:
               "radial-gradient(circle at bottom left, #4B7AB7 0%, transparent 70%)",
-            zIndex: 0,
           }}
         />
+
         <Box
           sx={{
             display: "flex",
-            flexDirection: isNotSmallScreen ? "row" : "column",
+            flexDirection: { xs: "column", md: "row" },
             width: "100%",
-            maxWidth: "1100px",
-            maxHeight: "754px",
+            maxWidth: 1100,
             mx: "auto",
-            py: isNotSmallScreen ? 8 : 0,
+            py: { xs: 2, md: 8 },
           }}
         >
           <Box
@@ -118,16 +143,18 @@ const CareerDetails: React.FC = () => {
               sx={{
                 width: "100%",
                 height: "100%",
-                borderTopLeftRadius: isNotSmallScreen ? 20 : 0,
-                borderBottomLeftRadius: isNotSmallScreen ? 20 : 0,
-                borderTopRightRadius: 0,
+                borderTopLeftRadius: { md: 20, xs: 0 },
+                borderBottomLeftRadius: { md: 20, xs: 0 },
+                borderTopRightRadius: { xs: 10, md: 0 },
                 borderBottomRightRadius: 0,
                 objectFit: "cover",
               }}
             />
           </Box>
+
           <Box
-            px= {6}
+            px={{ xs: 2, sm: 4, md: 6 }}
+            py={{ xs: 3, md: 0 }}
             className="join-our-team-card"
             sx={{
               flex: 1,
@@ -135,11 +162,8 @@ const CareerDetails: React.FC = () => {
               flexDirection: "column",
             }}
           >
-            <Stack position={"relative"} mt={2}>
-              <Stack
-                className="contact-card"
-                sx={{ position: "relative", zIndex: 1 }}
-              >
+            <Stack mt={2}>
+              <Stack className="contact-card" sx={{ zIndex: 1 }}>
                 <p className="contact-card-title">Join Our Team</p>
 
                 <Box
@@ -150,113 +174,69 @@ const CareerDetails: React.FC = () => {
                     gap: 2,
                   }}
                 >
-                  <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 45%" } }}>
-                    <TextField
-                      id="First Name"
-                      label="First Name"
-                      placeholder="First Name"
-                      fullWidth
-                      variant="outlined"
-                      className="form-input1"
-                      slotProps={{ inputLabel: { shrink: true } }}
-                    />
-                  </Box>
-                  <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 45%" } }}>
-                    <TextField
-                      id="Last Name"
-                      label="Last Name"
-                      placeholder="Last Name"
-                      fullWidth
-                      variant="outlined"
-                      className="form-input1"
-                      slotProps={{ inputLabel: { shrink: true } }}
-                    />
-                  </Box>
-                  <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 45%" } }}>
-                    <TextField
-                      id="Email"
-                      label="Email"
-                      placeholder="Email"
-                      fullWidth
-                      variant="outlined"
-                      className="form-input1"
-                      slotProps={{ inputLabel: { shrink: true } }}
-                    />
-                  </Box>
-                  <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 45%" } }}>
-                    <TextField
-                      id="Mobile No"
-                      label="Mobile No"
-                      placeholder="91+"
-                      fullWidth
-                      variant="outlined"
-                      className="form-input1"
-                      slotProps={{ inputLabel: { shrink: true } }}
-                    />
-                  </Box>
-                  <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 45%" } }}>
-                    <TextField
-                      id="Salary"
-                      label="Current Salary"
-                      placeholder="Salary"
-                      fullWidth
-                      variant="outlined"
-                      className="form-input1"
-                      slotProps={{ inputLabel: { shrink: true } }}
-                    />
-                  </Box>
-                  <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 45%" } }}>
-                    <TextField
-                      id="Notice Period"
-                      label="Notice Period"
-                      placeholder="Notice Period"
-                      fullWidth
-                      variant="outlined"
-                      className="form-input1"
-                      slotProps={{ inputLabel: { shrink: true } }}
-                    />
-                  </Box>
+                  {[
+                    { label: "First Name" },
+                    { label: "Last Name" },
+                    { label: "Email" },
+                    { label: "Mobile No", placeholder: "91+" },
+                    { label: "Current Salary", id: "Salary" },
+                    { label: "Notice Period" },
+                  ].map((field, index) => (
+                    <Box
+                      key={index}
+                      sx={{
+                        flex: { xs: "1 1 100%", sm: "1 1 45%" },
+                      }}
+                    >
+                      <TextField
+                        id={field.id || field.label}
+                        label={field.label}
+                        placeholder={field.placeholder || field.label}
+                        fullWidth
+                        variant="outlined"
+                        className="form-input1"
+                        slotProps={{ inputLabel: { shrink: true } }}
+                      />
+                    </Box>
+                  ))}
                 </Box>
 
                 <Box
                   sx={{
                     border: "1px dashed #49454F",
-                    borderRadius: "4px",
+                    borderRadius: 2,
                     p: 2,
                     textAlign: "center",
                     position: "relative",
-                    mt: 2,
+                    mt: 3,
                   }}
                 >
                   <Box
                     sx={{
                       position: "absolute",
-                      top: "-10px",
-                      left: "16px",
+                      top: -10,
+                      left: 16,
                       backgroundColor: "#fff",
-                      px: "4px",
-                      fontSize: "12px",
+                      px: 1,
+                      fontSize: 12,
                       color: "#49454F",
                     }}
                   >
                     Upload Here
                   </Box>
-                  <Typography
-                    variant="body1"
-                    sx={{ display: "inline", color: "#49454F" }}
-                  >
+                  <Typography variant="body2" color="#49454F" display="inline">
                     Drag and drop file here or
                   </Typography>
                   <Button
                     component="label"
                     sx={{
-                      ml: "8px",
+                      ml: 1,
                       textTransform: "none",
                       borderRadius: "10px",
                       backgroundColor: "#4B7AB7",
                       color: "white",
-                      px: "15px",
-                      py: "5px",
+                      px: 3,
+                      py: 1,
                     }}
                   >
                     Browse for file
@@ -264,16 +244,14 @@ const CareerDetails: React.FC = () => {
                   </Button>
                 </Box>
 
-                <Box mt={2} py={1}>
-                  <img
-                    width="55%"
-                    height="80%"
-                    src="/assets/captcha-image.png"
-                    alt="captcha"
+                <Box mt={4} textAlign="center">
+                  <ReCAPTCHA
+                    sitekey="6LfmNKMZAAAAAKrDxRn2_NcHoRPW9-uFuWs98XCx"
+                    onChange={handleCaptchaChange}
                   />
                 </Box>
 
-                <Box mt={2}>
+                <Box mt={4} textAlign="center">
                   <button className="submit-btn">SUBMIT</button>
                 </Box>
               </Stack>

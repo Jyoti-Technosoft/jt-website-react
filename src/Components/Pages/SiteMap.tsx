@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -15,10 +15,13 @@ import "../../styles/site-map.css";
 
 const SiteMap: React.FC = () => {
   const jobs = dataArray?.jobs || [];
+  const middleIndex = Math.ceil(jobs.length / 2);
+  const leftColumn = jobs.slice(0, middleIndex);
+  const rightColumn = jobs.slice(middleIndex);
 
-const middleIndex = Math.ceil(jobs.length / 2);
-const leftColumn = jobs.slice(0, middleIndex);
-const rightColumn = jobs.slice(middleIndex);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <Box className="site-map-main">
