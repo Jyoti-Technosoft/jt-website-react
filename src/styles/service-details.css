@@ -1,3 +1,7 @@
+:root {
+    --text-blue: #347CCC;
+}
+
 .service-details-first-section {
     /* display: flex; */
     height: 254px;
@@ -34,12 +38,13 @@
 
 .service-details-first-section .service-details-content .service-details-title {
     font-weight: 600;
-    font-size: 60px;
+    font-size: 50px;
     line-height: 84px;
     letter-spacing: 0.5%;
     color: #FFFBFB;
     z-index: 1;
     position: relative;
+    font-family: "Roboto";
 }
 
 .service-details-first-section .service-details-image {
@@ -49,13 +54,13 @@
 
 .service-details-first-section .service-details-image img {
     height: 230px;
-    width: 100%;
+    width: 85%;
 }
 
 .service-details .service-details-second-title {
     font-weight: 600;
     font-size: 20px;
-    color: #347CCC;
+    color: var(--text-blue);
     letter-spacing: 1.5%;
     line-height: 24px;
 }
@@ -63,7 +68,7 @@
 .service-details-second .card-header {
     font-weight: 600;
     font-size: 18px;
-    color: #347CCC;
+    color: var(--text-blue);
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     letter-spacing: 1.5%;

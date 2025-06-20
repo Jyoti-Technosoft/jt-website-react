@@ -1,3 +1,8 @@
+:root {
+    --text-dark: #333333;
+    --text-blue: #347CCC;
+}
+
 /* meet Section */
 .first-section-home {
     position: relative;
@@ -90,7 +95,7 @@
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 0.5px;
-    color: #347CCC;
+    color: var(--text-blue);
 }
 
 .we-offer-section .weOffer-container .weOffer-description {
@@ -98,7 +103,7 @@
     font-size: 15px;
     line-height: 22.09px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .weOffer-main-container {
@@ -123,12 +128,17 @@
     padding: 0px 15px;
 }
 
+.weOffer-main-container .weOffer-card .weOffer-card-image1 {
+    width: 50px;
+    height: 50px;
+}
+
 .weOffer-main-container .weOffer-card .weOffer-card-title {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 23.44px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .weOffer-main-container .weOffer-card .weOffer-card-description {
@@ -162,7 +172,7 @@
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 0.5px;
-    color: #347CCC;
+    color: var(--text-blue);
 }
 
 .our-technology-section .container .ourTechnology-description {
@@ -170,7 +180,7 @@
     font-size: 15px;
     line-height: 22.09px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .ourTechnology-main-container .technology-tabs {
@@ -183,14 +193,14 @@
     font-size: 19px;
     line-height: 28.13px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
     text-transform: capitalize;
     margin: 0 0.5rem;
     white-space: nowrap;
 }
 
 .ourTechnology-main-container .technology-tabs .MuiTabs-indicator {
-    background: #347CCC;
+    background: var(--text-blue);
     height: 3px;
 }
 
@@ -255,7 +265,7 @@
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 0.5px;
-    color: #347CCC;
+    color: var(--text-blue);
 }
 
 .why-us-section .container .whyUs-description {
@@ -263,7 +273,7 @@
     font-size: 15px;
     line-height: 22.09px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .main-numbercard {
@@ -317,7 +327,7 @@
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 0.5px;
-    color: #347CCC;
+    color: var(--text-blue);
 }
 
 .howWeWork-section .howWeWork-container .howWeWork-description {
@@ -325,8 +335,8 @@
     font-size: 15px;
     line-height: 22.09px;
     letter-spacing: 0.5px;
-    color: #333333;
-    margin: 0rem 0px 2rem;
+    color: var(--text-dark);
+    /* margin: 0rem 0px 2rem; */
 }
 
 .howWeWork-section .howWeWork-container .howWeWorkMainContainer {
@@ -360,7 +370,7 @@
     font-size: 26px;
     line-height: 37.5px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
     margin: 1rem 0px 0px 1rem;
 }
 
@@ -376,7 +386,7 @@
 }
 
 .howWeWorkMainContainer .card .description {
-    color: #333333;
+    color: var(--text-dark);
     margin: 2rem 0px 0px 1rem;
 }
 
@@ -438,7 +448,7 @@
     font-size: 33px;
     line-height: 46.88px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .ourNewsletter-section .ourNewsletter-main-container .ourNewsletter-description {
@@ -447,7 +457,7 @@
     line-height: 19px;
     letter-spacing: 0.5px;
     text-align: center;
-    color: #333333;
+    color: var(--text-dark);
     padding: 1.5rem 0px 1.7rem;
 }
 
@@ -499,7 +509,7 @@
 
 .ourNewsletter-section .ourNewsletter-main-container .input-container .email-input {
     flex: 1;
-    border: 1px solid #347CCC;
+    border: 1px solid var(--text-blue);;
     border-radius: 8px;
     outline: none;
     width: 300px;
@@ -510,7 +520,7 @@
     font-size: 13px;
     line-height: 20px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .ourNewsletter-section .ourNewsletter-main-container .input-container .MuiOutlinedInput-notchedOutline {
@@ -525,17 +535,14 @@
 }
 
 .weveBuilt-section .weveBuilt-container {
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    /* align-items: flex-start; */
+  max-width: 1200px;
 }
 
 .weveBuilt-section .weveBuilt-container .weveBuilt-title {
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 0.5px;
-    color: #347CCC;
+    color: var(--text-blue);
 }
 
 .weveBuilt-section .weveBuilt-container .weveBuilt-description-container {
@@ -549,7 +556,7 @@
     font-size: 15px;
     line-height: 22.09px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .weveBuilt-main-container {
@@ -581,8 +588,28 @@
     line-height: 30px;
     letter-spacing: 1.5px;
     text-align: center;
-    color: #333333;
+    color: var(--text-dark);
     margin-top: 1rem;
+}
+
+.weveBuilt-container .weveBuilt-description-container .seemore-button {
+    border-radius: 10px;
+    min-width: 133px;
+    min-height: 52px;
+    gap: 10px;
+    background: #FFFFFF;
+    color: #4B7AB7;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 23.44px;
+    letter-spacing: 0.5px;
+    box-shadow: 3px 4px 4px 0px #B2B2B240;
+    padding: 7px 17px 6px;
+}
+
+.weveBuilt-container .weveBuilt-description-container .seemore-button:hover {
+    color: #FFFFFF;
+    background-color: #4B7AB7;
 }
 
 @media (max-width: 768px) {
@@ -637,7 +664,7 @@
     }
 
     .ourTechnology-main-container .mobile-tab-navigation .technology-tabs .MuiTabs-indicator {
-        background: #347CCC;
+        background: var(--text-blue);
         height: 3px;
         width: 100% !important;
         left: 0px !important;
@@ -705,6 +732,8 @@
 
     .howWeWork-section .howWeWork-container .howWeWork-title {
         font-size: 22px;
+        /* font-size: 18px;
+        text-align: center; */
     }
 
     .howWeWork-section .howWeWork-container .howWeWork-description {
@@ -713,7 +742,11 @@
     }
 
     .howWeWork-container .howWeWorkMainContainer .card {
-        height: fit-content;
+        /* height: fit-content; */
+        flex-direction: column;
+        width: 100%;
+        margin: 1rem 0;
+        height: auto;
     }
 
     .howWeWorkMainContainer .card .description {
@@ -722,19 +755,22 @@
     }
 
     .howWeWorkMainContainer .card .cardTitle {
+        /* margin: 0px; */
         font-size: 20px;
-        margin: 0px;
+        margin: 1rem 0 0 0;
+        text-align: center;
     }
 
     .howWeWorkMainContainer .card .description .description1,
     .howWeWorkMainContainer .card .description .description2 {
+        /* line-height: 28px; */
         font-size: 15px;
         text-align: justify;
-        line-height: 28px;
     }
 
     .howWeWorkMainContainer .card .card-content {
         width: 100%;
+        padding: 0 1rem;
     }
 
     .howWeWorkMainContainer .card .imageContainer {
@@ -775,6 +811,9 @@
     .weveBuilt-section .weveBuilt-container {
         max-width: 98%;
         width: 98%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .weveBuilt-section .weveBuilt-container .weveBuilt-title {

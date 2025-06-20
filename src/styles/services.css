@@ -1,3 +1,8 @@
+:root {
+    --text-dark: #333333;
+    --text-blue: #347CCC;
+}
+
 .featured-services-section {
     padding: 2rem 0 3rem;
 }
@@ -7,7 +12,7 @@
     font-size: 20px;
     line-height: 28.13px;
     letter-spacing: 0.5px;
-    color: #347CCC;
+    color: var(--text-blue);
 }
 
 .featured-services-section .service-card {
@@ -22,7 +27,7 @@
     font-size: 18px;
     line-height: 28.13px;
     letter-spacing: 0.6px;
-    color: #333333;
+    color: var(--text-dark);
     margin: 0.3rem 0px 0px 0px;
 }
 
@@ -48,7 +53,7 @@
     font-size: 20px;
     line-height: 28.13px;
     letter-spacing: 0.5px;
-    color: #347CCC;
+    color: var(--text-blue);
     text-align: left;
 }
 
@@ -75,7 +80,7 @@
     transition: all 0.3s ease;
     font-weight: 700;
     font-size: 20px;
-    color: #333;
+    color: var(--text-dark);
     z-index: 2;
 }
 
@@ -140,7 +145,7 @@
     font-size: 16px;
     line-height: 18.75px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
     text-align: left;
     padding-bottom: 0.5rem;
 }
@@ -150,7 +155,7 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
     text-align: left;
 }
 
@@ -165,6 +170,7 @@
 
 .more-service-card:hover .more-service-image {
     height: 124px;
+    width: 124px;
 }
 
 @media (max-width: 768px) {

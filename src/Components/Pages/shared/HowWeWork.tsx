@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, } from '@mui/material';
+import { Box, Grid, Typography, } from '@mui/material';
 
 import dataArray from "../../../jt-website.json";
 import "../../../styles/home.css";
@@ -15,7 +15,7 @@ const HowWeWork: React.FC = () => {
                     <Typography className="howWeWork-title">
                         How We Work
                     </Typography>
-                    <Typography className="howWeWork-description">
+                    <Typography className="howWeWork-description" mt={1}>
                         Step-by-step process to deliver exceptional results
                     </Typography>
                 </Box>

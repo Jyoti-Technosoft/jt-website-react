@@ -1,62 +1,6 @@
-.career-first-section {
-    height: 325px;
-}
-
-.career-first-section .breadcrumb-link {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-}
-
-.career-first-section .breadcrumb-link:hover {
-  text-decoration: underline;
-}
-
-.career-first-section .career-content {
-    width: 50%;
-    position: relative;
-}
-
-.career-first-section .career-content .career-gif {
-    z-index: 1;
-    position: absolute;
-    right: 0rem;
-    bottom: 2.5rem;
-    width: 30%;
-    height: 30%;
-    background: url("/public/assets/contact-page.gif") no-repeat center center/cover;
-}
-
-.career-first-section .career-content .career-first-content {
-    display: flex;
-    align-items: center;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16.41px;
-    letter-spacing: 0.5px;
-    color: #FFFFFF;
-}
-
-.career-first-section .career-content .career-title {
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 84px;
-    letter-spacing: 0.5%;
-    color: #FFFBFB;
-    z-index: 1;
-    position: relative;
-}
-
-.career-first-section .career-image {
-    width: 45%;
-    overflow: hidden;
-}
-
-.career-first-section .career-image img {
-    height: 278px;
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
+:root {
+    --text-dark: #333333;
+    --text-blue: #347CCC;
 }
 
 .career-second-section .career-title-section {
@@ -72,7 +16,7 @@
     font-size: 20px;
     line-height: 28.13px;
     letter-spacing: 0.5%;
-    color: #347CCC;
+    color: var(--text-blue);
 }
 
 .career-second-section .career-title-section .career-subtitle {
@@ -80,7 +24,7 @@
     font-size: 15px;
     line-height: 100%;
     letter-spacing: 0.5%;
-    color: #333333
+    color: var(--text-dark);
 }
 
 .career-item-container {
@@ -128,7 +72,7 @@
     font-family: Roboto;
     font-weight: 500;
     font-size: 18px;
-    color: #333333;
+    color: var(--text-dark);
     line-height: 100%;
     letter-spacing: 0.5%;
 }
@@ -152,7 +96,7 @@
 }
 
 .career-second-section .job-container .no-job-card .no-job-header {
-   color: #333333;
+   color: var(--text-dark);
    font-size: 25px;
    line-height: 100%;
    letter-spacing: 0.5%;
@@ -160,7 +104,7 @@
 }
 
 .career-second-section .job-container .no-job-card .no-job-text {
-   color: #333333;
+   color: var(--text-dark);
    font-size: 16px;
    line-height: 30px;
    letter-spacing: 0.5%;
@@ -197,7 +141,7 @@
 .career-second-section .job-detail {
     font-size: 14px;
     margin-top: 4px;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .career-second-section .job-card .job-title {
@@ -206,7 +150,7 @@
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0.5%;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .career-second-section .apply-button {
@@ -228,45 +172,4 @@
 
 .career .main-footer .footer-btn {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-@media (max-width: 768px) {
-    .career-first-section .career-content .career-title {
-        padding: 1rem 0px 0px 0rem;
-        font-size: 45px;
-        line-height: unset;
-    }
-
-    .career-first-section {
-        height: 230px;
-    }
-
-    .career-first-section .career-content .career-first-content {
-        padding: 1.5rem 0px 0px 1rem;
-    }
-
-    .career-first-section .career-content {
-        width: 100%;
-    }
-
-    .career-first-section .career-content .career-gif {
-        display: none;
-    }
-
-    .career-first-section .career-content .career-wave {
-        display: none;
-    }
-
-    .career-first-section .career-image {
-        display: none;
-    }
-
-    .career-content {
-        width: 100%;
-        border-radius: 0;
-    }
-
-    .career-image {
-        width: 100%;
-    }
 }

@@ -1,62 +1,5 @@
-.contact-first-section {
-    height: 325px;
-}
-
-.contact-first-section .breadcrumb-link {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-}
-
-.contact-first-section .breadcrumb-link:hover {
-  text-decoration: underline;
-}
-
-.contact-first-section .contact-content {
-    width: 50%;
-    position: relative;
-}
-
-.contact-first-section .contact-content .contact-gif {
-    z-index: 1;
-    position: absolute;
-    right: 0rem;
-    bottom: 4rem;
-    width: 30%;
-    height: 30%;
-    background: url("/public/assets/contact-page.gif") no-repeat center center/cover;
-}
-
-.contact-first-section .contact-content .contact-first-content {
-    display: flex;
-    align-items: center;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16.41px;
-    letter-spacing: 0.5px;
-    color: #FFFFFF;
-}
-
-.contact-first-section .contact-content .contact-title {
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 84px;
-    letter-spacing: 0.5%;
-    color: #FFFBFB;
-    z-index: 1;
-    position: relative;
-}
-
-.contact-first-section .contact-image {
-    width: 45%;
-    overflow: hidden;
-}
-
-.contact-first-section .contact-image img {
-    height: 278px;
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
+:root {
+    --text-dark: #333333;
 }
 
 #contact2 {
@@ -116,7 +59,7 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: #2C2C2C;
+    color: var(--text-dark);
 }
 
 .contact-smallHeader {
@@ -129,7 +72,7 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin-right: 10px;
-    color: #161616;
+    color: var(--text-dark);
     margin-top: 20px !important;
 }
 
@@ -165,7 +108,7 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin: 2px !important;
-    color: #161616;
+    color: var(--text-dark);
 }
 
 .contact-details-section .contact-details-text .contact-dash {
@@ -177,7 +120,7 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin: 0px 1rem;
-    color: #161616;
+    color: var(--text-dark);
 }
 
 #contact2 .contact-card {
@@ -190,7 +133,7 @@
     position: absolute;
     bottom: -9rem;
     right: 0;
-    padding: 0.6rem 2rem 2rem;
+    padding: 2rem 2rem;
 }
 
 #contact2 .contact-card .contact-card-title {
@@ -199,11 +142,11 @@
     line-height: 16px;
     letter-spacing: 0.4px;
     margin-bottom: 2rem;
-    color: #000000;
+    color: var(--text-dark);
 }
 
 .contact-card .form-input1 {
-    max-width: 205px;
+    max-width: 100%;
     width: 100%;
     position: relative;
 }
@@ -270,6 +213,17 @@
     cursor: pointer;
 }
 
+.contact-card .thank-you-title {
+    font-weight: 600;
+    color: #347CCC;
+    font-size: 25px;
+}
+
+.contact-card .thank-you-subtitle {
+    font-size: 16px;
+    color: #333333;
+}
+
 .office-address {
     max-width: 400px;
     width: 100%;
@@ -293,7 +247,7 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: #161616;
+    color: var(--text-dark);
     margin-bottom: 0.4rem;
 }
 
@@ -322,48 +276,10 @@
     text-align: justify;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: #161616;
+    color: var(--text-dark);
 }
 
 @media (max-width: 768px) {
-    .contact-first-section .contact-content .contact-title {
-        padding: 1rem 0px 0px 1rem;
-        font-size: 45px;
-    }
-
-    .contact-first-section {
-        height: 230px;
-    }
-
-    .contact-first-section .contact-content .contact-first-content {
-        padding: 1.5rem 0px 0px 1rem;
-    }
-
-    .contact-first-section .contact-content {
-        width: 100%;
-    }
-
-    .contact-first-section .contact-content .contact-gif {
-        display: none;
-    }
-
-    .contact-first-section .contact-content .contact-wave {
-        display: none;
-    }
-
-    .contact-first-section .contact-image {
-        display: none;
-    }
-
-    .contact-content {
-        width: 100%;
-        border-radius: 0;
-        padding: 20px;
-    }
-
-    .contact-image {
-        width: 100%;
-    }
 
     .contact-headertext2 {
         font-size: 24px;
@@ -425,7 +341,7 @@
         height: 100%;
     }
 
-    .form-input1 {
-        max-width: 410px;
+    .contact-card .form-input1 {
+         max-width: unset;
     }
 }

@@ -41,7 +41,7 @@ const HomeWhyUs: React.FC = () => {
       <Container className="container">
         <Box>
           <Typography className="whyUs-title">{WhyUs?.title}</Typography>
-          <Typography className="whyUs-description">
+          <Typography className="whyUs-description" mt={1}>
             {WhyUs?.description}
           </Typography>
         </Box>

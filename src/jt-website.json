@@ -6,7 +6,7 @@
     },
     "WhyUs": {
       "title": "Why Us",
-      "description": "The Numbers Speak for Themselves",
+      "description": "The numbers speak for themselves",
       "data": [
         {
           "title": "22+",
@@ -32,43 +32,57 @@
     },
     "WeOffer": {
       "title": "What We Offer",
-      "description": "Comprehensive IT Solutions to Accelerate Your Business Growth",
+      "description": "Comprehensive IT solutions to accelerate your business growth",
       "data": [
         {
           "id": 1,
-          "title": "Web Development",
-          "description": "Custom-built websites that are fast, responsive, and scalable.",
-          "imageSrc": "/assets/programming.png"
+          "title": "AI Agent Integration",
+          "description": "Empowering digital experiences with intelligent, conversational AI solutions.",
+          "imageSrc": "/assets/ai.png"
         },
         {
           "id": 2,
-          "title": "Angular Development",
-          "description": "Craft dynamic and scalable web applications with Angular.",
-          "imageSrc": "/assets/angular-js.png"
-        },
-        {
-          "id": 3,
-          "title": "Java Development",
-          "description": "Deliver robust and efficient enterprise-grade Java solutions.",
-          "imageSrc": "/assets/offersection-java.png"
-        },
-        {
-          "id": 4,
-          "title": "GWT Development",
-          "description": "Create seamless and optimized web applications using Google Web Toolkit.",
-          "imageSrc": "/assets/source-code.png"
-        },
-        {
-          "id": 5,
           "title": "WordPress Development",
           "description": "Crafting feature-rich and visually stunning websites with WordPress.",
           "imageSrc": "/assets/wordpress.png"
         },
         {
-          "id": 6,
+          "id": 3,
+          "title": "Shopify Development",
+          "description": "Design intuitive and visually captivating user interfaces.",
+          "imageSrc": "/assets/shopify.png"
+        },
+        {
+          "id": 4,
           "title": "UI/UX Designing",
           "description": "Design intuitive and visually captivating user interfaces.",
           "imageSrc": "/assets/designer.png"
+        },
+        {
+          "id": 5,
+          "title": "Mobile App Development",
+          "description": "Create seamless and optimized web applications using Google Web Toolkit.",
+          "imageSrc": "/assets/mobile.png"
+        },
+        {
+          "id": 6,
+          "title": "Web Development",
+          "description": "Custom-built websites that are fast, responsive, and scalable.",
+          "imageSrc": "/assets/programming.png"
+        },
+        {
+          "id": 7,
+          "title": "Java - GWT Development",
+          "description": "Crafting high-performance web applications with Java and GWT.",
+          "imageSrc": "/assets/offersection-java.png",
+          "imageSrc1": "/assets/source-code.png"
+        },
+        {
+          "id": 8,
+          "title": "Angular - React Development",
+          "description": "Developing modern, dynamic front-end solutions with Angular and React.",
+          "imageSrc": "/assets/angular-js.png",
+          "imageSrc1": "/assets/react-js.png"
         }
       ]
     },
@@ -172,6 +186,7 @@
         "label": "Angular Developement",
         "decription": "At Jyoti Technosoft LLP, we are dedicated to delivering exceptional Angular development solutions tailored to meet your business objectives. With a team of experienced and skilled Angular developers, we have extensive expertise in harnessing the power of Angular to build cutting-edge applications that drive business growth. Our Angular development services encompass the entire spectrum of the development process, from requirement analysis and architecture design to front-end and back-end development, testing, deployment, and ongoing support. ",
         "image": "assets/angular.png",
+        "mainImage": "/assets/angular-main-img.png",
         "chooseUs": "Why Choose Us As Your Angular Development Company",
         "whyChooseUs": [
           {
@@ -233,6 +248,7 @@
         "label": "React Developement",
         "decription": "Jyoti Technosoft LLP is a name to reckon with when it comes to ReactJS development. Since its launch back in 2013, ReactJS continues to be a user-friendly, developer favorite and industry preferred platform for web development. An open-source, cross-platform, JavaScript-based library, ReactJS development allows developers to build responsive web and single-page applications that fulfill the unique requirements of businesses across the globe.",
         "image": "assets/react.png",
+        "mainImage": "/assets/react-main-img.png",
         "chooseUs": "Why Choose Us As Your ReactJS Development Company",
         "whyChooseUs": [
           {
@@ -294,6 +310,7 @@
         "label": "Java Developement",
         "decription": "At Jyoti Technosoft LLP, we are a leading Java development company specializing in delivering top-notch Java-based solutions to our clients. With a team of skilled and experienced Java developers, we have a deep understanding of the Java programming language and its associated frameworks and tools. Our expertise lies in developing robust, scalable, and secure applications that meet the diverse needs of businesses across various industries.",
         "image": "assets/java.png",
+        "mainImage": "/assets/java-main-img.png",
         "chooseUs": "Why Choose Us As Your Java Development Company",
         "whyChooseUs": [
           {
@@ -443,13 +460,6 @@
         "imgSrc": "assets/images/techology-stack/frontend.svg",
         "children": [
           {
-            "label": "D3.js",
-            "imgSrc": "/assets/D3.png",
-            "id": "",
-            "tooltip": "",
-            "projects": "9+"
-          },
-          {
             "label": "Angular",
             "imgSrc": "/assets/angular.png",
             "id": "",
@@ -463,12 +473,19 @@
             "tooltip": "",
             "projects": "10+"
           },
-          {
-            "label": "JAVA",
-            "imgSrc": "/assets/java.png",
+                    {
+            "label": "Next",
+            "imgSrc": "/assets/next-js.png",
             "id": "",
             "tooltip": "",
-            "projects": ""
+            "projects": "10+"
+          },
+          {
+            "label": "Vue",
+            "imgSrc": "/assets/vue.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
           },
           {
             "label": "HTML",
@@ -478,8 +495,43 @@
             "projects": ""
           },
           {
+            "label": "JavaScript",
+            "imgSrc": "/assets/js.svg",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
+          },
+          {
+            "label": "TypeScript",
+            "imgSrc": "/assets/typescript.webp",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
+          },
+          {
             "label": "GWT",
             "imgSrc": "/assets/gwt.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
+          },
+          {
+            "label": "Material UI",
+            "imgSrc": "/assets/materialui.webp",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
+          },
+          {
+            "label": "Bootstrap",
+            "imgSrc": "/assets/bootstrap.svg",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
+          },
+          {
+            "label": "Tailwind",
+            "imgSrc": "/assets/tailwind.svg",
             "id": "",
             "tooltip": "",
             "projects": "10+"
@@ -493,11 +545,18 @@
         "imgSrc": "assets/images/techology-stack/backend.svg",
         "children": [
           {
-            "label": "JAVA",
+            "label": "Java",
             "imgSrc": "/assets/java.png",
             "id": "",
             "tooltip": "",
             "projects": "15+"
+          },
+          {
+            "label": "Spring",
+            "imgSrc": "/assets/spring.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "10+"
           },
           {
             "label": "GWT",
@@ -508,17 +567,31 @@
           },
           {
             "label": "Node JS",
-            "imgSrc": "/assets/node.png",
+            "imgSrc": "/assets/node-js.png",
             "id": "",
             "tooltip": "",
             "projects": "4+"
           },
+                    {
+            "label": "Express",
+            "imgSrc": "/assets/express.webp",
+            "id": "",
+            "tooltip": "",
+            "projects": "5+"
+          },
           {
-            "label": "SPRING",
-            "imgSrc": "/assets/spring.png",
+            "label": "Groovy Grails",
+            "imgSrc": "/assets/groovy-grails.webp",
             "id": "",
             "tooltip": "",
             "projects": "10+"
+          },
+          {
+            "label": "Python",
+            "imgSrc": "/assets/python.webp",
+            "id": "",
+            "tooltip": "",
+            "projects": "15+"
           }
         ],
         "active": false
@@ -535,13 +608,13 @@
             "tooltip": ""
           },
           {
-            "label": "Influx",
+            "label": "Influx DB",
             "imgSrc": "/assets/influx.png",
             "id": "",
             "tooltip": ""
           },
           {
-            "label": "Postgress sql",
+            "label": "PostgreSQL",
             "imgSrc": "/assets/postgresql.png",
             "id": "",
             "tooltip": ""
@@ -549,6 +622,24 @@
           {
             "label": "MongoDB",
             "imgSrc": "/assets/mongodb.png",
+            "id": "",
+            "tooltip": ""
+          },
+          {
+            "label": "HsqlDB",
+            "imgSrc": "/assets/hsqldb.webp",
+            "id": "",
+            "tooltip": ""
+          },
+          {
+            "label": "Derby DB",
+            "imgSrc": "/assets/derby.png",
+            "id": "",
+            "tooltip": ""
+          },
+          {
+            "label": "Oracle",
+            "imgSrc": "/assets/oracle.png",
             "id": "",
             "tooltip": ""
           }
@@ -561,11 +652,168 @@
         "imgSrc": "assets/images/techology-stack/mobile.svg",
         "children": [
           {
+            "label": "Android",
+            "imgSrc": "/assets/android.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "5+"
+          },
+          {
             "label": "React Native",
             "imgSrc": "/assets/react.png",
             "id": "",
             "tooltip": "",
             "projects": "5+"
+          },
+          {
+            "label": "Flutter",
+            "imgSrc": "/assets/flutter.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "5+"
+          },
+          {
+            "label": "Ionic",
+            "imgSrc": "/assets/ionic.webp",
+            "id": "",
+            "tooltip": "",
+            "projects": "5+"
+          }
+        ],
+        "active": false
+      },
+      {
+        "id": "Charts",
+        "label": "Charts",
+        "imgSrc": "assets/images/techology-stack/backend.svg",
+        "children": [
+          {
+            "label": "D3.js",
+            "imgSrc": "/assets/D3.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "9+"
+          },
+          {
+            "label": "High Charts",
+            "imgSrc": "/assets/highcharts.webp",
+            "id": "",
+            "tooltip": "",
+            "projects": "20+"
+          },
+          {
+            "label": "Apex Charts",
+            "imgSrc": "/assets/apex-charts.webp",
+            "id": "",
+            "tooltip": "",
+            "projects": "4+"
+          },
+          {
+            "label": "Chart.js",
+            "imgSrc": "/assets/chart-js.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "9+"
+          },
+          {
+            "label": "JFreeChart",
+            "imgSrc": "/assets/jfree-chart.webp",
+            "id": "",
+            "tooltip": "",
+            "projects": "9+"
+          }
+        ],
+        "active": false
+      },
+      {
+        "id": "Specialized DBs",
+        "label": "Specialized Databases",
+        "imgSrc": "assets/images/techology-stack/backend.svg",
+        "children": [
+          {
+            "label": "Firebase",
+            "imgSrc": "/assets/firebase.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "9+"
+          },
+          {
+            "label": "Redis",
+            "imgSrc": "/assets/redis.svg",
+            "id": "",
+            "tooltip": "",
+            "projects": "20+"
+          },
+          {
+            "label": "Appwrite",
+            "imgSrc": "/assets/appwrite.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "4+"
+          },
+          {
+            "label": "SQLite",
+            "imgSrc": "/assets/sqlite.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "4+"
+          },
+          {
+            "label": "Realm",
+            "imgSrc": "/assets/realm.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "4+"
+          }
+        ],
+        "active": false
+      },
+      {
+        "id": "Generative AI",
+        "label": "Generative AI",
+        "imgSrc": "assets/images/techology-stack/backend.svg",
+        "children": [
+          {
+            "label": "OpenAI",
+            "imgSrc": "/assets/openai.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "9+"
+          },
+          {
+            "label": "LLaMA (Meta AI)",
+            "imgSrc": "/assets/meta-ai.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "20+"
+          },
+          {
+            "label": "Claude 3.5",
+            "imgSrc": "/assets/claude.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "4+"
+          },
+          {
+            "label": "DeepSeek AI",
+            "imgSrc": "/assets/deepseek.webp",
+            "id": "",
+            "tooltip": "",
+            "projects": "4+"
+          },
+          {
+            "label": "Grok AI",
+            "imgSrc": "/assets/grok-ai.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "4+"
+          },
+          {
+            "label": "Gemini",
+            "imgSrc": "/assets/gemini.png",
+            "id": "",
+            "tooltip": "",
+            "projects": "4+"
           }
         ],
         "active": false
@@ -986,7 +1234,7 @@
       "logo": "assets/images/portfolio/boatsground.png",
       "viewDemo": "",
       "Images": [
-        "assets/images/portfolio/.png",
+        "assets/images/portfolio/yatch-brochure-mockup.png",
         "assets/images/portfolio/yacht-brochure-1.png",
         "assets/images/portfolio/yacht-brochure-2.png"
       ],
@@ -1237,6 +1485,7 @@
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "https://www.jyotitechnosoft.com/",
       "Images": [
+        "assets/images/portfolio/jt-website-mockup.png",
         "assets/images/portfolio/jt-main.png",
         "assets/images/portfolio/jt-website1.png",
         "assets/images/portfolio/jt-website2.png",
@@ -2098,6 +2347,43 @@
         {
           "header": "Experience the Difference",
           "decription": "Experience the Jyoti Technosoft LLP difference and unlock the true potential of your business. Contact us today to schedule a consultation with our expert IT consultants and embark on a transformative journey towards IT excellence."
+        }
+      ],
+      "images": {
+        "image600x401": "assets/images/service/consulting/image600x401.svg",
+        "image337x450": "assets/images/service/consulting/image337x450.svg",
+        "image241x362": "assets/images/service/consulting/image241x362.svg"
+      }
+    },
+    {
+      "id": "ai-integration",
+      "imgSrc": "/assets/ai-integration.png",
+      "technology": "AI Agent Integration",
+      "image":"/assets/service/ai.png",
+      "headerImage":"/assets/service-header/ai-generation.png",
+      "sortdescription": "Automate conversations and elevate user experience with Jyoti Technosoft LLP’s intelligent AI agent solutions — delivering smart, responsive, and scalable support across your digital platforms.",
+      "tagline": "Empower Your Business with Smart AI Agents",
+      "description": "<p>At Jyoti Technosoft LLP, we specialize in seamlessly integrating intelligent AI agents that automate, engage, and elevate your customer experience. In an era where users expect instant and accurate responses, our AI-powered solutions help businesses stay ahead by enabling smart, real-time conversations across platforms.</p></br><p>Our AI Agent Integration service focuses on embedding advanced chatbots and virtual assistants into your existing systems — leveraging technologies like OpenAI, LLaMA (Meta AI), Claude 3.5, DeepSeek AI, Grok AI and Gemini. These agents are capable of understanding natural language, handling complex queries, and improving over time through real-world interactions.</p></br><p>Whether it’s customer support, lead generation, appointment scheduling, or internal automation, we tailor each integration to align with your specific goals and workflows. Our team ensures smooth deployment, platform compatibility, and high data privacy standards — enabling intelligent conversations without disruption.</p>",
+      "whyUs": [
+        {
+          "header": "Intelligent Automation",
+          "decription": "We help you automate everyday interactions and internal processes by integrating AI agents into your digital platforms. From answering FAQs to managing bookings and lead capture, our solutions reduce manual workload while maintaining accuracy and consistency — allowing your team to focus on high-value tasks."
+        },
+        {
+          "header": "Natural Language Understanding",
+          "decription": "Our integrations utilize industry-leading NLP models like OpenAI, LLaMA (Meta AI), Claude 3.5, DeepSeek AI, Grok AI and Gemini to interpret human language with context and intent. This ensures that your users experience smart, human-like conversations that improve satisfaction and reduce frustration across customer touchpoints."
+        },
+        {
+          "header": "Omnichannel Integration",
+          "decription": "We implement AI agents that function seamlessly across multiple channels — including websites, mobile apps, messaging platforms, and even voice interfaces. Whether it’s WhatsApp, Facebook Messenger, or your in-app chat, we ensure your customers get unified support wherever they engage with your brand."
+        },
+        {
+          "header": "Custom-Tailored Workflows",
+          "decription": "No two businesses operate the same way — that’s why we focus on custom AI agent configurations. We align conversation flows, automation triggers, and backend logic to match your exact business requirements, ensuring a smooth and personalized experience for every user interaction."
+        },
+        {
+          "header": "Real-Time Learning & Analytics",
+          "decription": "We don’t just integrate AI — we also empower you with tools to monitor, analyze, and optimize agent performance. Track conversation metrics, identify user behavior trends, and continuously improve responses based on real-time feedback. Your AI agent becomes smarter with every interaction."
         }
       ],
       "images": {

@@ -9,6 +9,7 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
+import GamepadIcon from '@mui/icons-material/Gamepad';
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/site-map.css";
@@ -23,14 +24,36 @@ const SiteMap: React.FC = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  const BulletIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      style={{ marginRight: 8 }}
+    >
+      <rect x="11" y="1" width="2.5" height="6" fill="#347CCC" />
+      <rect x="11" y="17" width="2.5" height="6" fill="#347CCC" />
+      <rect x="17" y="11" width="6" height="2.5" fill="#347CCC" />
+      <rect x="1" y="11" width="6" height="2.5" fill="#347CCC" />
+      <rect x="11" y="11" width="2.5" height="2.5" fill="#347CCC" />
+    </svg>
+  );
+
   return (
     <Box className="site-map-main">
       <HeaderCommon smallTitle="Site Map" page="Site Map" />
 
-      <Box p={4} sx={{ backgroundColor: "#fff" }}>
+      <Box
+        sx={{
+          backgroundColor: "#fff",
+          p: { xs: 2, sm: 4 },
+        }}
+      >
         <Container>
           <Typography
-            className="sitemap-list-text"
+            className="sitemap-main-description"
             align="center"
             sx={{ mb: 4 }}
           >
@@ -51,8 +74,8 @@ const SiteMap: React.FC = () => {
             <Grid size={{ xs: 12 }}>
               <Typography className="sitemap-header">Services</Typography>
               <Grid container>
-                <Grid size={{ xs: 6 }}>
-                  <List dense sx={{ pl: 5 }}>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <List sx={{ pl: { xs: 2, sm: 5 } }}>
                     {[
                       {
                         label: "Web Development",
@@ -81,8 +104,14 @@ const SiteMap: React.FC = () => {
                                 color: "inherit",
                               }}
                             >
-                              <span className="sitemap-list-text">
+                              {/* <span className="sitemap-list-text">
                                 <span className="sitemap-dot">•</span> {label}
+                              </span> */}
+                              <span className="sitemap-list-text">
+                                <GamepadIcon
+                                  sx={{ fontSize: 14, color: "#347CCC" }}
+                                />{" "}
+                                {label}
                               </span>
                             </Link>
                           }
@@ -91,8 +120,8 @@ const SiteMap: React.FC = () => {
                     ))}
                   </List>
                 </Grid>
-                <Grid size={{ xs: 6 }}>
-                  <List dense>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <List dense sx={{ pl: { xs: 2, sm: 5 } }}>
                     {[
                       {
                         label: "Product Development",
@@ -100,6 +129,7 @@ const SiteMap: React.FC = () => {
                       },
                       { label: "Deployment", path: "/services/deployment" },
                       { label: "Consulting", path: "/services/consulting" },
+                      { label: "AI Agent Integration", path: "/services/ai-integration" },
                     ].map(({ label, path }) => (
                       <ListItem key={label} disablePadding>
                         <ListItemText
@@ -112,7 +142,10 @@ const SiteMap: React.FC = () => {
                               }}
                             >
                               <span className="sitemap-list-text">
-                                <span className="sitemap-dot">•</span> {label}
+                                <GamepadIcon
+                                  sx={{ fontSize: 14, color: "#347CCC" }}
+                                />{" "}
+                                {label}
                               </span>
                             </Link>
                           }
@@ -132,11 +165,11 @@ const SiteMap: React.FC = () => {
           </Grid>
 
           <Grid container sx={{ mb: 3 }}>
-            <Grid size={{ xs: 12, sm: 3 }}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <Typography className="sitemap-header">
                 Hire Developers
               </Typography>
-              <List dense sx={{ pl: 5 }}>
+              <List dense sx={{ pl: { xs: 2, sm: 5 } }}>
                 {[
                   "Hire Angular Developer",
                   "Hire React Developer",
@@ -151,8 +184,14 @@ const SiteMap: React.FC = () => {
                             to={`/hire-developers/${tech}`}
                             style={{ textDecoration: "none", color: "inherit" }}
                           >
-                            <span className="sitemap-list-text">
+                            {/* <span className="sitemap-list-text">
                               <span className="sitemap-dot">•</span> {item}
+                            </span> */}
+                            <span className="sitemap-list-text">
+                              <GamepadIcon
+                                sx={{ fontSize: 14, color: "#347CCC" }}
+                              />{" "}
+                              {item}
                             </span>
                           </Link>
                         }
@@ -168,8 +207,8 @@ const SiteMap: React.FC = () => {
             <Grid size={{ xs: 12 }}>
               <Typography className="sitemap-header">Career</Typography>
               <Grid container>
-                <Grid size={{ xs: 6 }}>
-                  <List dense sx={{ pl: 5 }}>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <List dense sx={{ pl: { xs: 2, sm: 5 } }}>
                     {leftColumn.map((job) => (
                       <ListItem key={job.id} disablePadding>
                         <ListItemText
@@ -181,8 +220,14 @@ const SiteMap: React.FC = () => {
                                 color: "inherit",
                               }}
                             >
-                              <span className="sitemap-list-text">
+                              {/* <span className="sitemap-list-text">
                                 <span className="sitemap-dot">•</span>{" "}
+                                {job.jobName}
+                              </span> */}
+                              <span className="sitemap-list-text">
+                                <GamepadIcon
+                                  sx={{ fontSize: 14, color: "#347CCC" }}
+                                />{" "}
                                 {job.jobName}
                               </span>
                             </Link>
@@ -192,8 +237,8 @@ const SiteMap: React.FC = () => {
                     ))}
                   </List>
                 </Grid>
-                <Grid size={{ xs: 6 }}>
-                  <List dense>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <List dense sx={{ pl: { xs: 2, sm: 0 } }}>
                     {rightColumn.map((job) => (
                       <ListItem key={job.id} disablePadding>
                         <ListItemText
@@ -205,8 +250,14 @@ const SiteMap: React.FC = () => {
                                 color: "inherit",
                               }}
                             >
-                              <span className="sitemap-list-text">
+                              {/* <span className="sitemap-list-text">
                                 <span className="sitemap-dot">•</span>{" "}
+                                {job.jobName}
+                              </span> */}
+                              <span className="sitemap-list-text">
+                                <GamepadIcon
+                                  sx={{ fontSize: 14, color: "#347CCC" }}
+                                />{" "}
                                 {job.jobName}
                               </span>
                             </Link>

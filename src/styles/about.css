@@ -1,9 +1,14 @@
+:root {
+    --text-dark: #333333;
+    --text-blue: #347CCC;
+}
+
 .main-container .gettoKnowUsTitle {
     font-weight: 600;
     font-size: 22px;
     line-height: 24px;
     letter-spacing: 1.5px;
-    color: #347CCC;
+    color: var(--text-blue);
     margin: 1rem 0px 0rem;
 }
 
@@ -13,7 +18,7 @@
     line-height: 24px;
     letter-spacing: 0.5px;
     text-align: justify;
-    color: #333333;
+    color: var(--text-dark);
     margin: 2.3rem 0px 0rem;
 }
 
@@ -24,7 +29,7 @@
     line-height: 24px;
     letter-spacing: 1.5px;
     text-align: justify;
-    color: #347CCC;
+    color: var(--text-blue);
 }
 
 .values-section .values-data-main-section .values-data-section {
@@ -39,7 +44,7 @@
     line-height: 24px;
     letter-spacing: 0.5px;
     text-align: justify;
-    color: #347CCC;
+    color: var(--text-blue);
     margin: 0px 1rem 0px 0px;
     width: 80px;
 }
@@ -50,7 +55,7 @@
     line-height: 22px;
     letter-spacing: 0.5px;
     text-align: justify;
-    color: #333333;
+    color: var(--text-dark);
     width: 384px;
 }
 
@@ -66,7 +71,7 @@
     line-height: 24px;
     letter-spacing: 1.5px;
     text-align: justify;
-    color: #347CCC;
+    color: var(--text-blue);
     padding: 2rem 0px 1rem 0rem;
 }
 
@@ -103,7 +108,7 @@
     line-height: 30px;
     letter-spacing: 1.5px;
     text-align: left;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .ourGoal-section .main-container .ourGoal-card .cardData {
@@ -112,7 +117,7 @@
     font-size: 14px;
     line-height: 23px;
     letter-spacing: 0.5px;
-    color: #333333;
+    color: var(--text-dark);
     text-align: left;
 }
 

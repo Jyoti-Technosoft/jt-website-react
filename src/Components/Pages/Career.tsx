@@ -14,15 +14,16 @@ import {
   IconButton
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/career.css";
+import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 
   type Job = {
   id: number;
@@ -99,7 +100,7 @@ const Career: React.FC = () => {
 
   return (
     <Box className="career">
-      <Box className="career-first-section" sx={{ backgroundColor: "#1F5795" }}>
+      {/* <Box className="career-first-section" sx={{ backgroundColor: "#1F5795" }}>
         <Container sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box className="career-content">
             <Box
@@ -141,7 +142,13 @@ const Career: React.FC = () => {
             />
           </Box>
         </Container>
-      </Box>
+      </Box> */}
+      <HeaderMainPage
+        smallTitle="Career"
+        page="Shape a Future You’re Proud Of"
+        imageSrc="/assets/career-img.png"
+        showGif={true}
+      />
       <Box className="career-second-section">
         <Box className="career-working-section">
           <Container>
@@ -155,7 +162,7 @@ const Career: React.FC = () => {
                 </Typography>
               </Box>
             </Box>
-            <Box className="career-main-container">
+            <Box className="career-main-container" mb={4}>
               <Grid container rowSpacing={6} columnSpacing={4}>
                 {items.map((item, index) => (
                   <Grid size={{ xs: 12, sm: 6, md: 4 }} key={item.id}>
@@ -180,10 +187,10 @@ const Career: React.FC = () => {
             </Box>
           </Container>
         </Box>
-        <Box className="career-role-section">
+        <Box className="career-role-section" pb={1}>
           <Container>
             <Box mt={2} className="career-title-section">
-              <Box mb={4}>
+              <Box>
                 <Typography className="career-title">
                   {jobs.length > 0
                     ? careerSubTitleSecond
@@ -363,8 +370,9 @@ const Career: React.FC = () => {
                 justifyContent="center"
                 alignItems="center"
                 mt={4}
-                mb={4}
                 gap={2}
+                mb={4}
+                sx = {{backgroundColor: "#F5F8FB"}}
               >
                 <IconButton
                   onClick={() => {
@@ -373,9 +381,9 @@ const Career: React.FC = () => {
                   sx={{
                     backgroundColor: "#1976d2",
                     color: "#fff",
-                    width: 28,
-                    height: 28,
-                    borderRadius: "8px",
+                    width: 36,
+                    height: 36,
+                    borderRadius: "12px",
                     opacity: totalPages === 0 || page === 0 ? 0.5 : 1,
                     pointerEvents:
                       totalPages === 0 || page === 0 ? "none" : "auto",
@@ -384,7 +392,7 @@ const Career: React.FC = () => {
                     },
                   }}
                 >
-                  <ChevronLeftIcon sx={{ fontSize: "16px" }} />
+                  <ChevronLeftIcon sx={{ fontSize: "20px" }} />
                 </IconButton>
                 {totalPages > 0 &&
                   Array.from({ length: totalPages }).map((_, index) => (
@@ -392,11 +400,12 @@ const Career: React.FC = () => {
                       key={index}
                       onClick={() => setPage(index)}
                       sx={{
-                        width: 8,
-                        height: 8,
-                        borderRadius: "50%",
+                        width: 14,
+                        height: 14,
+                        borderRadius: "4px",
                         backgroundColor: page === index ? "#1976d2" : "#ccc",
                         cursor: "pointer",
+                        marginRight: 1,
                       }}
                     />
                   ))}
@@ -408,9 +417,9 @@ const Career: React.FC = () => {
                   sx={{
                     backgroundColor: "#1976d2",
                     color: "#fff",
-                    width: 28,
-                    height: 28,
-                    borderRadius: "8px",
+                    width: 36,
+                    height: 36,
+                    borderRadius: "12px",
                     opacity:
                       totalPages === 0 || page === totalPages - 1 ? 0.5 : 1,
                     pointerEvents:
@@ -422,7 +431,7 @@ const Career: React.FC = () => {
                     },
                   }}
                 >
-                  <ChevronRightIcon sx={{ fontSize: "16px" }} />
+                  <ChevronRightIcon sx={{ fontSize: "20px" }} />
                 </IconButton>
               </Box>
             )}

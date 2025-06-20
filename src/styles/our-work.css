@@ -1,3 +1,7 @@
+:root {
+    --text-blue: #347CCC;
+}
+
 .active {
   cursor: grabbing !important;
   font-size: "20px",
@@ -11,7 +15,7 @@
 }
 
 .ourTechnology-main-container .mobile-tab-navigation .technology-tabs .MuiTabs-indicator {
-  background: #347CCC;
+  background: var(--text-blue);
   height: 3px;
   width: 100% !important;
   left: 0px !important;
@@ -42,6 +46,6 @@
 }
 
 .ourTechnology-main-container .technology-tabs .MuiTabs-indicator {
-  background: #347CCC;
+  background: var(--text-blue);
   height: 3px;
 }

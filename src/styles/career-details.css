@@ -1,15 +1,32 @@
+:root {
+    --text-dark: #333333;
+    --text-blue: #347CCC;
+}
+
 .career-details-container .career-details-title {
   font: Roboto;
   font-weight: 600;
   font-size: 20px;
   line-height: 100%;
   letter-spacing: 0.5%;
-  color: #333333;
+  color: var(--text-dark);
+}
+
+.career-details-container .address {
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 100%;
+  color: var(--text-dark);
+}
+
+.career-details-container .career-details-description {
+  color: var(--text-dark);
+  font-size: 15px;
 }
 
 .career-details-container .job-requirement ul li::marker {
     color: #347CCC;
-    font-size: 24px;
+    color: var(--text-blue);
 }
 
 .join-our-team-container {
@@ -29,6 +46,27 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   z-index: 1;
+  box-shadow: 
+    0px 5px 3px 0px #C2C2C240,
+    0px -5px 3px 0px #C2C2C240,
+    5px 0px 3px 0px #C2C2C240,
+    -5px 0px 3px 0px #C2C2C240;
+}
+
+.contact-card .submit-btn {
+  max-width: unset;
+  padding: 5px 0px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #4B7AB7;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+}
+
+.contact-card .submit-btn:hover {
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -50,4 +88,3 @@
     font-size: 16px;
   }
 }
-

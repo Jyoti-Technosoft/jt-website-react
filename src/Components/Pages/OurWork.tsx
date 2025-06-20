@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import {
   Typography,
   Box,
@@ -7,7 +8,6 @@ import {
   CardMedia,
   CardContent,
   Chip,
-  TablePagination,
   Tooltip,
   Tabs,
   Tab,
@@ -17,9 +17,10 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-
-import HeaderCommon from "./shared/HeaderCommonPage.tsx";
+import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/career.css";
@@ -31,6 +32,8 @@ const scroll = keyframes`
 
 const OurWork: React.FC = () => {
   const theme = useTheme();
+  const projectSectionRef = React.useRef<HTMLDivElement>(null);
+  const location = useLocation();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const logos = dataArray?.clientlogos || [];
   const projects = dataArray?.portfolio.filter((p) => p.projectName) || [];
@@ -39,41 +42,57 @@ const OurWork: React.FC = () => {
   const [rowsPerPage, setRowsPerPage] = useState(4);
   const [imageIndexes, setImageIndexes] = useState({});
 
-  const rawTechnologies =
-    dataArray?.portfolio.map((project) => project.technology) || [];
-  const uniqueTechnologies = Array.from(new Set(rawTechnologies));
+  const rawTechnologies = dataArray?.portfolio.flatMap(
+    (project) => project.typesOfTechnologies || []
+  ) || [];
+
+  const uniqueTechnologies = ["All", ...Array.from(new Set(rawTechnologies))];
 
   const filteredProjects =
     selectedTech === "All"
       ? projects
-      : projects.filter(
-          (project) =>
-            project.technology?.toLowerCase() === selectedTech.toLowerCase()
+      : projects.filter((project) =>
+          project.typesOfTechnologies?.some(
+            (tech) => tech.toLowerCase() === selectedTech.toLowerCase()
+          )
         );
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  }, [location.pathname]);
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage + 1);
-  };
+  useEffect(() => {
+    if (projectSectionRef.current) {
+      projectSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [page]);
 
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(1);
-  };
+  // const handleChangePage = (event, newPage) => {
+  //   setPage(newPage + 1);
+  // };
+
+  // const handleChangeRowsPerPage = (event) => {
+  //   setRowsPerPage(parseInt(event.target.value, 10));
+  //   setPage(1);
+  // };
 
   const paginatedProjects = filteredProjects.slice(
     (page - 1) * rowsPerPage,
     page * rowsPerPage
   );
 
+ const totalPages = Math.ceil(filteredProjects.length / rowsPerPage);
+
   return (
     <>
-      <HeaderCommon smallTitle="Our Work" page="Explore Our Work" />
+      <HeaderMainPage
+        smallTitle="Our Work"
+        page="Solutions That Drive Success"
+        imageSrc="/assets/our-work-img.png"
+        showGif={true}
+      />
       <Container>
-        <Box className="our-work" sx={{ pt: 2, overflow: "hidden" }}>
+        <Box className="our-work" sx={{ pt: 8, overflow: "hidden" }}>
           <Box sx={{ width: "100%", display: "flex" }}>
             <Box
               sx={{
@@ -109,7 +128,7 @@ const OurWork: React.FC = () => {
             </Box>
           </Box>
         </Box>
-        <Typography sx={{ textAlign: "center", mt: 8 }}>
+        <Typography sx={{ textAlign: "center", mt: 8, color: "#333333" }} ref={projectSectionRef}>
           Some of our work is protected by NDAs, but we’ve prepared demo
           projects to showcase our expertise and quality.
         </Typography>
@@ -204,222 +223,301 @@ const OurWork: React.FC = () => {
             )}
           </Box>
         </Box>
+        <Box>
+          <Grid container spacing={6} sx={{ py: 3 }}>
+            {paginatedProjects.map((project, index) => {
+              if (!project.projectName) return null;
+              const currentImageIndex = imageIndexes.hasOwnProperty(
+                project.projectName
+              )
+                ? imageIndexes[project.projectName]
+                : 0;
+              // const totalImages = project.Images?.length || 1;
 
-        <Grid container spacing={6} sx={{ py: 3 }}>
-          {paginatedProjects.map((project, index) => {
-            if (!project.projectName) return null;
-            const currentImageIndex = imageIndexes.hasOwnProperty(
-              project.projectName
-            )
-              ? imageIndexes[project.projectName]
-              : 0;
-            // const totalImages = project.Images?.length || 1;
-
-            return (
-              <Grid size={{ xs: 12 }} key={index}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    gap: 3,
-                    flexDirection: {
-                      xs: "column",
-                      md: index % 2 === 0 ? "row" : "row-reverse",
-                    },
-                  }}
-                >
+              return (
+                <Grid size={{ xs: 12 }} key={index}>
                   <Box
                     sx={{
-                      width: { xs: "100%", md: "50%" },
                       display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
+                      gap: 3,
+                      flexDirection: {
+                        xs: "column",
+                        md: index % 2 === 0 ? "row" : "row-reverse",
+                      },
                     }}
                   >
                     <Box
                       sx={{
-                        width: "100%",
-                        height: { xs: 240, sm: 360, md: 400 },
+                        width: { xs: "100%", md: "50%" },
                         display: "flex",
-                        justifyContent: "center",
-                        alignItems: "flex-start",
-                        overflow: "hidden",
+                        flexDirection: "column",
+                        alignItems: "center",
                       }}
                     >
-                      <CardMedia
-                        component="img"
-                        image={
-                          project.Images?.[currentImageIndex] ||
-                          "assets/images/portfolio/default.png"
-                        }
-                        alt={project.projectName}
+                      <Box
                         sx={{
-                          maxHeight: "100%",
-                          width: "auto",
-                          objectFit: "contain",
+                          width: "100%",
+                          height: { xs: 240, sm: 360, md: 400 },
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "flex-start",
+                          overflow: "hidden",
                         }}
-                      />
-                    </Box>
-
-                    <Box
-                      sx={{ display: "flex", justifyContent: "center", mt: 2 }}
-                    >
-                      {project.Images?.map((_, imgIndex) => (
-                        <Box
-                          key={imgIndex}
-                          sx={{
-                            width:
-                              currentImageIndex === imgIndex ? "24px" : "10px",
-                            height: "10px",
-                            borderRadius:
-                              currentImageIndex === imgIndex ? "4px" : "50%",
-                            backgroundColor:
-                              currentImageIndex === imgIndex
-                                ? "#1976d2"
-                                : "#c4c4c4",
-                            margin: "0 4px",
-                            cursor: "pointer",
-                            transition: "all 0.3s ease",
-                          }}
-                          onClick={() =>
-                            setImageIndexes((prev) => ({
-                              ...prev,
-                              [project.projectName]: imgIndex,
-                            }))
-                          }
-                        />
-                      ))}
-                    </Box>
-                  </Box>
-                  <CardContent
-                    sx={{
-                      flex: 1,
-                      width: { xs: "100%", md: "50%" },
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      px: { xs: 1, sm: 2 },
-                      pt: { xs: 2, sm: 2 },
-                    }}
-                  >
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                      {project.logo && (
-                        <Box
+                      >
+                        <CardMedia
                           component="img"
-                          src={project.logo}
-                          alt={`${project.projectName} Logo`}
-                          sx={{ height: 30, mr: 1 }}
+                          image={
+                            project.Images?.[currentImageIndex] ||
+                            "assets/images/portfolio/default.png"
+                          }
+                          alt={project.projectName}
+                          sx={{
+                            maxHeight: "100%",
+                            width: "auto",
+                            objectFit: "contain",
+                          }}
                         />
-                      )}
-                      <Typography variant="h5"  sx={{ fontSize: "20px" }}>
-                        {project.projectName}
-                      </Typography>
-                    </Box>
-                    <Typography variant="body2" sx={{ mb: 2, mt: 2 }}>
-                      {project.description}
-                    </Typography>
-                    <Typography sx={{ mt: 2, mb: 2, fontSize: "18px" }}>
-                      Technologies
-                    </Typography>
-                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                      {[
-                        ...(project.mainTechnology || []),
-                        ...(project.useTechnology || []),
-                      ]
-                        .filter(
-                          (tech, index, self) =>
-                            index ===
-                            self.findIndex(
-                              (t) => t.technologyName === tech.technologyName
-                            )
-                        )
-                        .map((tech, idx) => (
-                          <Tooltip title={tech.technologyName} key={idx}>
-                            <Chip
-                              label={tech.technologyName}
-                              size="small"
-                              sx={{
-                                px: 1,
-                                py: 2,
-                                border: "1px solid #D9D9D9",
-                                width: "calc(25% - 8px)",
-                                minWidth: "100px",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                whiteSpace: "nowrap",
-                                cursor: "pointer",
-                              }}
-                            />
-                          </Tooltip>
-                        ))}
-                    </Box>
-                    {project.viewDemo && (
+                      </Box>
+
                       <Box
                         sx={{
                           display: "flex",
-                          alignItems: "center",
-                          mt: 4,
-                          cursor: "pointer",
-                          color: "#1976d2",
-                          fontWeight: 500,
+                          justifyContent: "center",
+                          mt: 2,
                         }}
-                        onClick={() => window.open(project.viewDemo, "_blank")}
                       >
-                        <Typography variant="body2" sx={{ mr: 1, fontWeight: 500 }}>
-                          Preview
-                        </Typography>
-                        <Box component="span" sx={{ fontSize: "1rem" }}>
-                          ➜
-                        </Box>
+                        {project.Images?.map((_, imgIndex) => (
+                          <Box
+                            key={imgIndex}
+                            sx={{
+                              width:
+                                currentImageIndex === imgIndex
+                                  ? "24px"
+                                  : "10px",
+                              height: "10px",
+                              borderRadius:
+                                currentImageIndex === imgIndex ? "4px" : "50%",
+                              backgroundColor:
+                                currentImageIndex === imgIndex
+                                  ? "#1976d2"
+                                  : "#c4c4c4",
+                              margin: "0 4px",
+                              cursor: "pointer",
+                              transition: "all 0.3s ease",
+                            }}
+                            onClick={() =>
+                              setImageIndexes((prev) => ({
+                                ...prev,
+                                [project.projectName]: imgIndex,
+                              }))
+                            }
+                          />
+                        ))}
                       </Box>
-                    )}
-                  </CardContent>
-                </Box>
-              </Grid>
-            );
-          })}
-        </Grid>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-            mt: 2,
-          }}
-        >
-          {isMobile ? (
-            <TablePagination
-              component="div"
-              count={filteredProjects.length}
-              page={page - 1}
-              onPageChange={handleChangePage}
-              rowsPerPage={rowsPerPage}
-              onRowsPerPageChange={() => {}}
-              labelRowsPerPage=""
-              rowsPerPageOptions={[]}
-              showFirstButton
-              showLastButton
-              SelectProps={{ native: true }}
-            />
-          ) : (
-            <TablePagination
-              component="div"
-              count={filteredProjects.length}
-              page={page - 1}
-              onPageChange={handleChangePage}
-              rowsPerPage={rowsPerPage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-              rowsPerPageOptions={[4, 8, 12]}
-              labelRowsPerPage="Projects per page:"
-              showFirstButton
-              showLastButton
-            />
-          )}
+                    </Box>
+                    <CardContent
+                      sx={{
+                        flex: 1,
+                        width: { xs: "100%", md: "50%" },
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        px: { xs: 1, sm: 2 },
+                        pt: { xs: 2, sm: 2 },
+                      }}
+                    >
+                      <Box
+                        sx={{ display: "flex", alignItems: "center", mb: 1 }}
+                      >
+                        {project.logo && (
+                          <Box
+                            component="img"
+                            src={project.logo}
+                            alt={`${project.projectName} Logo`}
+                            sx={{ height: 30, mr: 1 }}
+                          />
+                        )}
+                        <Typography
+                          sx={{
+                            fontSize: "20px",
+                            color: "#333333",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {project.projectName}
+                        </Typography>
+                      </Box>
+                      <Typography
+                        sx={{
+                          mb: 2,
+                          mt: 2,
+                          fontSize: "15px",
+                          color: "#333333",
+                          fontWeight: 400,
+                        }}
+                      >
+                        {project.description}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          mt: 2,
+                          mb: 2,
+                          fontSize: "18px",
+                          color: "#333333",
+                        }}
+                      >
+                        Technologies
+                      </Typography>
+                      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+                        {[
+                          ...(project.mainTechnology || []),
+                          ...(project.useTechnology || []),
+                        ]
+                          .filter(
+                            (tech, index, self) =>
+                              index ===
+                              self.findIndex(
+                                (t) => t.technologyName === tech.technologyName
+                              )
+                          )
+                          .map((tech, idx) => (
+                            <Tooltip
+                              title={tech.technologyName}
+                              key={idx}
+                              slotProps={{
+                                popper: {
+                                  modifiers: [
+                                    {
+                                      name: "offset",
+                                      options: {
+                                        offset: [0, -12],
+                                      },
+                                    },
+                                  ],
+                                },
+                              }}
+                            >
+                              <Chip
+                                label={tech.technologyName}
+                                size="small"
+                                sx={{
+                                  px: 1,
+                                  py: 2,
+                                  border: "1px solid #D9D9D9",
+                                  width: "calc(25% - 8px)",
+                                  minWidth: "100px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                  cursor: "pointer",
+                                  color: "#333333",
+                                  backgroundColor: "#F7F7F7",
+                                }}
+                              />
+                            </Tooltip>
+                          ))}
+                      </Box>
+                      {project.viewDemo && (
+                        <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            mt: 4,
+                            cursor: "pointer",
+                            color: "#1976d2",
+                            fontWeight: 500,
+                          }}
+                          onClick={() =>
+                            window.open(project.viewDemo, "_blank")
+                          }
+                        >
+                          <Typography
+                            variant="body2"
+                            sx={{ mr: 1, fontWeight: 500 }}
+                          >
+                            Preview
+                          </Typography>
+                          <Box component="span" sx={{ fontSize: "1rem" }}>
+                            ➜
+                          </Box>
+                        </Box>
+                      )}
+                    </CardContent>
+                  </Box>
+                </Grid>
+              );
+            })}
+          </Grid>
         </Box>
-        </Container>
-        <FooterCommonPage
-          title="Inspired by Our Work? Let’s Create Yours!"
-          buttonText="GET IN TOUCH"
-           buttonLink="/contact"
-        />
+        {filteredProjects.length > 0 && (
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            mt={4}
+            gap={2}
+            mb={4}
+          >
+            <IconButton
+              onClick={() => {
+                if (page > 1) setPage((prev) => Math.max(prev - 1, 1));
+              }}
+              sx={{
+                backgroundColor: "#1976d2",
+                color: "#fff",
+                width: 36,
+                height: 36,
+                borderRadius: "12px",
+                opacity: totalPages === 0 || page === 1 ? 0.5 : 1,
+                pointerEvents: totalPages === 0 || page === 1 ? "none" : "auto",
+                "&:hover": {
+                  backgroundColor: "#1565c0",
+                },
+              }}
+            >
+              <ChevronLeftIcon sx={{ fontSize: "20px" }} />
+            </IconButton>
+            {totalPages > 0 &&
+              Array.from({ length: totalPages }).map((_, index) => (
+                <Box
+                  key={index}
+                  onClick={() => setPage(index + 1)}
+                  sx={{
+                    width: 14,
+                    height: 14,
+                    borderRadius: "4px",
+                    backgroundColor: page === index + 1 ? "#1976d2" : "#F2F2F4",
+                    cursor: "pointer",
+                    marginRight: 1,
+                  }}
+                />
+              ))}
+            <IconButton
+              onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+              sx={{
+                backgroundColor: "#1976d2",
+                color: "#fff",
+                width: 36,
+                height: 36,
+                borderRadius: "12px",
+                opacity: totalPages === 0 || page === totalPages ? 0.5 : 1,
+                pointerEvents:
+                  totalPages === 0 || page === totalPages ? "none" : "auto",
+                "&:hover": {
+                  backgroundColor: "#1565c0",
+                },
+              }}
+            >
+              <ChevronRightIcon sx={{ fontSize: "20px" }} />
+            </IconButton>
+          </Box>
+        )}
+      </Container>
+      <FooterCommonPage
+        title="Inspired by Our Work? Let’s Create Yours!"
+        buttonText="GET IN TOUCH"
+        buttonLink="/contact"
+      />
     </>
   );
 };

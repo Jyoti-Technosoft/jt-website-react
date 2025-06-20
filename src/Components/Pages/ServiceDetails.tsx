@@ -13,7 +13,7 @@ const ServiceDetails: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  }, [id]);
 
   if (!selectedService) {
     return <Typography>Service not found.</Typography>;
@@ -31,7 +31,10 @@ const ServiceDetails: React.FC = () => {
 
   return (
     <Box className="service-details">
-      <Box className="service-details-first-section" sx={{ backgroundColor: "#1F5795" }}>
+      <Box
+        className="service-details-first-section"
+        sx={{ backgroundColor: "#1F5795" }}
+      >
         <Container sx={{ display: "flex" }}>
           <Box className="service-details-content">
             <Box
@@ -107,30 +110,45 @@ const ServiceDetails: React.FC = () => {
             />
           </Box>
 
-          <Box mt={2} sx={{ flex: 1 }}>
-            <Typography
-              className="service-details-second-title"
-              gutterBottom
-              sx={{ whiteSpace: "pre-line" }}
-            >
-              {selectedService.tagline
-                .replace(/<br\s*\/?>/g, "\n")
-                .split(" ")
-                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ")}
-            </Typography>
+        <Box
+          mt={2}
+          sx={{
+            flex: 1,
+            px: { xs: 2, sm: 3, md: 0 },
+          }}
+        >
+          <Typography
+            className="service-details-second-title"
+            gutterBottom
+            sx={{
+              whiteSpace: "pre-line",
+              fontSize: { xs: "18px", sm: "20px", md: "22px" },
+              fontWeight: 600,
+              color: "#222222",
+              textAlign: { xs: "center", md: "left" },
+            }}
+          >
+            {selectedService.tagline
+              .replace(/<br\s*\/?>/g, "\n")
+              .split(" ")
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ")}
+          </Typography>
 
-            <Box
-              mt={4}
-              sx={{
-                "& p": {
-                  fontSize: "14px",
-                  lineHeight: 1.6,
-                },
-              }}
-              dangerouslySetInnerHTML={{ __html: selectedService.description }}
-            />
-          </Box>
+          <Box
+            mt={4}
+            sx={{
+              "& p": {
+                fontSize: { xs: "14px", md: "15px" },
+                lineHeight: 1.6,
+                color: "#333333",
+                textAlign: "justify",
+                wordBreak: "break-word",
+              },
+            }}
+            dangerouslySetInnerHTML={{ __html: selectedService.description }}
+          />
+        </Box>
         </Container>
       </Box>
 
@@ -142,6 +160,18 @@ const ServiceDetails: React.FC = () => {
         <Container>
           <Typography className="mt-4 sm:mt-6 service-details-second-title">
             What Sets Us Apart
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "15px",
+              fontWeight: 500,
+              lineHeight: "22px",
+              letterSpacing: "0.5px",
+              color: "#333333",
+            }}
+            mt={1}
+          >
+             Driven by quality, defined by innovation.
           </Typography>
           <Grid container spacing={8} mt={6} mb={4}>
             {selectedService.whyUs.map((item, idx) => (
@@ -156,7 +186,7 @@ const ServiceDetails: React.FC = () => {
                     backgroundColor:
                       backgroundColors[idx % backgroundColors.length],
                     padding: "12px",
-                    boxShadow: 1,
+                    boxShadow: "0px 4px 4px 0px #00000040",
                     width: "100%",
                     display: "flex",
                     flexDirection: "column",

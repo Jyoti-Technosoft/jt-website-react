@@ -7,17 +7,21 @@ import {
     TextField,
     useMediaQuery,
     Typography,
-    Container
+    Button
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios"
 
+import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import "../../styles/contact.css";
-import { Link } from "react-router-dom";
+const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
+const API_ENDPOINTS = {
+  contactUs: `${BASE_URL}/contactus.php`
+};
 
 const branches = [
     {
@@ -45,64 +49,123 @@ const Contact: React.FC = () => {
     const isNotSmallScreen = useMediaQuery("(min-width: 768px)");
     const [activeBranch, setActiveBranch] = useState(branches[1]);
     const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState<string | null>(null);
+    const [isSuccess, setIsSuccess] = useState(false);
+
+    const [formData, setFormData] = useState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      mobileNo: "",
+      subject: "",
+      message: "",
+    });
 
     const handleCaptchaChange = (value: string | null) => {
         setCaptchaValue(value);
     };
 
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { id, value } = e.target;
+      let key: string;
+      switch (id) {
+          case "First Name": key = "firstName"; break;
+          case "Last Name": key = "lastName"; break;
+          case "Email": key = "email"; break;
+          case "Mobile No": key = "mobileNo"; break;
+          case "Enter Subject": key = "subject"; break;
+          case "Message": key = "message"; break;
+          default: key = id; break;
+      }
+
+      setFormData((prevData) => ({
+        ...prevData,
+        [key]: value,
+      }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setLoading(true);
+      setSubmitMessage(null);
+
+      if (!captchaValue) {
+        setSubmitMessage("Please complete the reCAPTCHA verification.");
+        setIsSuccess(false);
+        setLoading(false);
+        return;
+      }
+
+      if (!formData.firstName || !formData.email || !formData.message) {
+          setSubmitMessage("Please fill in all required fields (First Name, Email, Message).");
+          setIsSuccess(false);
+          setLoading(false);
+          return;
+      }
+
+      try {
+        const response = await axios.post(API_ENDPOINTS.contactUs, {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          emailAddress: formData.email,
+          mobileNo: formData.mobileNo,
+          subject: formData.subject,
+          message: formData.message,
+          recaptcha: captchaValue,
+        });
+
+        if (response.data.success) {
+          setSubmitMessage("Your message has been sent successfully!");
+          setIsSuccess(true);
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            mobileNo: "",
+            subject: "",
+            message: "",
+          });
+          setCaptchaValue(null);
+          } else {
+            setSubmitMessage(response.data.message || "Failed to send message. Please try again.");
+            setIsSuccess(true);
+          }
+        } catch (error) {
+          console.error("Error submitting contact form:", error);
+          if (axios.isAxiosError(error) && error.response) {
+            setSubmitMessage(`Failed to send message: ${error.response.status} - ${error.response.data?.message || 'Server error'}`);
+          } else {
+            setSubmitMessage("An unexpected error occurred. Please try again later.");
+          }
+          setIsSuccess(false);
+        } finally {
+          setLoading(false);
+        }
+      };
+
     useEffect(() => {
        window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
+    useEffect(() => {
+      console.log("isSuccess changed:", isSuccess);
+      if (isSuccess) {
+        const timer = setTimeout(() => {
+          setIsSuccess(false);
+        }, 10000);
+        return () => clearTimeout(timer);
+      }
+    }, [isSuccess]);
+
     return (
       <>
-        <Box
-          className="contact-first-section"
-          sx={{ backgroundColor: "#1F5795" }}
-        >
-           <Container sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Box className="contact-content">
-              <Box
-                className="contact-first-content"
-                sx={{
-                  mt: {
-                    xs: 0,
-                    sm: 0,
-                    md: 3,
-                  },
-                }}
-              >
-                <Link to="/" className="breadcrumb-link">
-                  Home
-                </Link>
-                <ChevronRightIcon className="chevron-icon" />
-                <span>{"Contact"}</span>
-              </Box>
-              <Typography
-                className="contact-title"
-                sx={{
-                  mt: {
-                    xs: 1,
-                    sm: 4,
-                  },
-                }}
-              >
-                Let’s Build Together
-              </Typography>
-              <Box className="contact-gif"></Box>
-              {/* <Box className="contact-wave"></Box> */}
-            </Box>
-            <Box className="contact-image" sx={{ py: 3 }}>
-              <img
-                src="/assets/contact-img.png"
-                alt="Contact Us"
-                style={{
-                  borderRadius: "10px",
-                }}
-              />
-            </Box>
-          </Container>
-        </Box>
+        <HeaderMainPage
+          smallTitle="Contact"
+          page="Let’s Build Together"
+          imageSrc="/assets/contact-img.png"
+          showGif={true}
+        />
         <div id="contact2">
           <Box pt={isNotSmallScreen ? 1 : 3} px={{ xs: 2, md: 10, lg: 20 }}>
             <Grid
@@ -122,7 +185,6 @@ const Contact: React.FC = () => {
                   solutions for your technical problems.
                 </p>
 
-                {/* Email Section */}
                 <Box className="contact-details-section">
                   <p className="contact-details-title">
                     <EmailIcon /> Drop us a line
@@ -140,7 +202,6 @@ const Contact: React.FC = () => {
                   </p>
                 </Box>
 
-                {/* Phone Section */}
                 <Box className="contact-details-section" position={"relative"}>
                   <div className="circle-2"></div>
                   <Box mt={3}>
@@ -161,17 +222,69 @@ const Contact: React.FC = () => {
                 </Box>
               </Stack>
 
-              {/* Contact Form */}
               <Stack position={"relative"}>
                 <div className="circle-1"></div>
-                <Stack
-                  mt={isNotSmallScreen ? 14 : 5}
-                  px={isNotSmallScreen ? 12 : 8}
-                  pb={8}
-                  pt={8}
-                  className="contact-card"
+                {isSuccess ? (
+                    <Box
+                      mt={isNotSmallScreen ? 14 : 5}
+                      px={isNotSmallScreen ? 12 : 8}
+                      pb={8}
+                      pt={12}
+                      className="contact-card"
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="left"
+                      justifyContent="center"
+                      textAlign="left"
+                    >
+                      <Typography className="thank-you-title">
+                        Thank you for getting in touch.
+                      </Typography>
+                      <Typography className="thank-you-subtitle" mt={4}>
+                        We have successfully received your message, our pros will get back to you shortly.
+                      </Typography>
+
+                      <Grid container spacing={2} justifyContent="center" mt={4} mb={3}>
+                        <Grid>
+                          <Box
+                            component="img"
+                            src="/assets/images/portfolio/yatch-mockup.png"
+                            alt="Success 1"
+                            width={180}
+                            sx={{ borderRadius: 2 }}
+                          />
+                        </Grid>
+                        <Grid>
+                          <Box
+                            component="img"
+                            src="/assets/images/portfolio/pratibha-mockup.png"
+                            alt="Success 2"
+                            width={180}
+                            sx={{ borderRadius: 2 }}
+                          />
+                        </Grid>
+                      </Grid>
+
+                      <Typography className="thank-you-subtitle" mt={4}>
+                        Until then, take a look at what we’ve built with other forward-thinking clients.
+                      </Typography>
+                      <Typography className="thank-you-subtitle" mt={1}>
+                        <a href="/our-work" style={{ color: "#333333", textDecoration: "underline" }}>
+                          See success stories
+                        </a>
+                      </Typography>
+                    </Box>
+                  ) : ( 
+                  <Stack
+                    mt={isNotSmallScreen ? 14 : 5}
+                    px={isNotSmallScreen ? 12 : 8}
+                    pb={8}
+                    pt={8}
+                    className="contact-card"
+                    component="form"
+                    onSubmit={handleSubmit}
                 >
-                  <p className="contact-card-title">Drop us a Message</p>
+                  <Typography className="contact-card-title">Drop us a Message</Typography>
                   <Grid
                     className="grid-container"
                     spacing={isNotSmallScreen ? 3 : 0}
@@ -183,6 +296,9 @@ const Contact: React.FC = () => {
                       type="text"
                       variant="outlined"
                       className="form-input1"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      required
                       slotProps={{
                         inputLabel: {
                           shrink: true,
@@ -196,6 +312,8 @@ const Contact: React.FC = () => {
                       type="text"
                       variant="outlined"
                       className="form-input1"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       slotProps={{
                         inputLabel: {
                           shrink: true,
@@ -211,9 +329,12 @@ const Contact: React.FC = () => {
                       id="Email"
                       label="Email"
                       placeholder="Email"
-                      type="text"
+                      type="email"
                       variant="outlined"
                       className="form-input1"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                       slotProps={{
                         inputLabel: {
                           shrink: true,
@@ -224,9 +345,11 @@ const Contact: React.FC = () => {
                       id="Mobile No"
                       label="Mobile No"
                       placeholder="91+"
-                      type="text"
+                      type="tel"
                       variant="outlined"
                       className="form-input1"
+                      value={formData.mobileNo}
+                      onChange={handleInputChange} 
                       slotProps={{
                         inputLabel: {
                           shrink: true,
@@ -241,6 +364,8 @@ const Contact: React.FC = () => {
                     type="text"
                     variant="outlined"
                     className="form-input2"
+                    value={formData.subject}
+                    onChange={handleInputChange}
                     slotProps={{
                       inputLabel: {
                         shrink: true,
@@ -256,6 +381,8 @@ const Contact: React.FC = () => {
                     placeholder="Message"
                     multiline
                     rows={1}
+                    value={formData.message}
+                    onChange={handleInputChange}
                     slotProps={{
                       inputLabel: {
                         shrink: true,
@@ -269,21 +396,31 @@ const Contact: React.FC = () => {
                     }}
                   />
                   {/* <Box my={2}>
-                                    <img width="55%" height="80%" src="/assets/captcha-image.png" alt="captcha" />
-                                </Box> */}
+                      <img width="55%" height="80%" src="/assets/captcha-image.png" alt="captcha" />
+                  </Box> */}
                   <Box my={2}>
                     <ReCAPTCHA
                       sitekey="6LfmNKMZAAAAAKrDxRn2_NcHoRPW9-uFuWs98XCx"
                       onChange={handleCaptchaChange}
                     />
                   </Box>
-                  <button className="submit-btn">SUBMIT</button>
+                  <Button 
+                  type="submit"
+                  className="submit-btn" variant="contained" disabled={loading || !captchaValue}>{loading ? "SUBMITTING..." : "SUBMIT"}</Button>
+                  {/* {submitMessage && (
+                  <Typography
+                    color={isSuccess ? "success.main" : "error.main"}
+                    sx={{ mt: 2 }}
+                  >
+                    {submitMessage}
+                  </Typography>
+                )} */}
                 </Stack>
+                )}
               </Stack>
             </Grid>
           </Box>
 
-          {/* Google Map */}
           <div>
             <iframe
               title="Jyoti Technosoft LLP Location"
@@ -299,7 +436,6 @@ const Contact: React.FC = () => {
             ></iframe>
           </div>
 
-          {/* Office Locations */}
           <Grid
             p={2}
             maxWidth={"1040px"}

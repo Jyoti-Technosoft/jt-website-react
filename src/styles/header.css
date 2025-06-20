@@ -28,6 +28,11 @@
   border-bottom: 4px solid #98C01C;
 }
 
+.subtitle {
+  font-size: 14px;
+  color: #333333
+}
+
 .subTitle1 {
   font-weight: 700;
   font-size: 30px;

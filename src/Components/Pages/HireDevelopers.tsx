@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography, Grid, Divider, Paper, Container } from "@mui/material";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import dataArray from "../../jt-website.json";
 
 import BuildVision from "./shared/BuildVision.tsx";
 import "../../styles/hire-us.css";
+import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 
 const HireDevelopers: React.FC = () => {
   const hireDevCards = dataArray?.hireDevCard || [];
@@ -43,49 +43,12 @@ const HireDevelopers: React.FC = () => {
 
   return (
     <>
-      <Box className="hire-first-section" sx={{ backgroundColor: "#1F5795" }}>
-        <Container sx={{ display: "flex" }}>
-          <Box className="hire-content">
-            <Box
-              className="hire-first-content"
-              sx={{
-                mt: {
-                  xs: 0,
-                  sm: 0,
-                  md: 3,
-                },
-              }}
-            >
-              <Link to="/" className="breadcrumb-link">
-                Home
-              </Link>
-              <ChevronRightIcon className="chevron-icon" />
-              <span>{"Hire Developer"}</span>
-            </Box>
-            <Typography
-              className="hire-title"
-              sx={{
-                mt: {
-                  xs: 1,
-                  sm: 4,
-                },
-              }}
-            >
-              Hire Our Dedicated Developers
-            </Typography>
-            <Box className="hire-gif"></Box>
-          </Box>
-          <Box className="hire-image" sx={{ py: 3 }}>
-            <img
-              src="/assets/hire-us.png"
-              alt="hire"
-              style={{
-                borderRadius: "10px",
-              }}
-            />
-          </Box>
-        </Container>
-      </Box>
+      <HeaderMainPage
+        smallTitle="Hire Developer"
+        page="Hire Our Dedicated Developers"
+        imageSrc="/assets/hire-us.png"
+        showGif={true}
+      />
       <Box
         sx={{ bgcolor: "#f9fbfd", paddingTop: "60px" }}
         className="hire-middle-section"
@@ -103,7 +66,7 @@ const HireDevelopers: React.FC = () => {
               <Typography variant="h4" fontWeight={600} color="#1F5795">
                 100+
               </Typography>
-              <Typography>Delivered Projects</Typography>
+              <Typography color="#333333">Delivered Projects</Typography>
             </Grid>
             <Divider
               orientation="vertical"
@@ -118,7 +81,7 @@ const HireDevelopers: React.FC = () => {
               <Typography variant="h4" fontWeight={600} color="#1F5795">
                 40+
               </Typography>
-              <Typography>Expert Developers</Typography>
+              <Typography color="#333333">Expert Developers</Typography>
             </Grid>
             <Divider
               orientation="vertical"
@@ -133,7 +96,7 @@ const HireDevelopers: React.FC = () => {
               <Typography variant="h4" fontWeight={600} color="#1F5795">
                 2M+
               </Typography>
-              <Typography>Users Of Code</Typography>
+              <Typography color="#333333">Users Of Code</Typography>
             </Grid>
             <Divider
               orientation="vertical"
@@ -148,7 +111,7 @@ const HireDevelopers: React.FC = () => {
               <Typography variant="h4" fontWeight={600} color="#1F5795">
                 2M+
               </Typography>
-              <Typography>Usages</Typography>
+              <Typography color="#333333">Usages</Typography>
             </Grid>
           </Grid>
         </Container>
@@ -158,6 +121,18 @@ const HireDevelopers: React.FC = () => {
             <Box className="why-our-dev" pt={6}>
               <Typography fontWeight={600} fontSize={"20px"} color="#347CCC">
                 Why Our Developers Are the Right Choice
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontWeight: 500,
+                  lineHeight: "22px",
+                  letterSpacing: "0.5px",
+                  color: "#333333",
+                }}
+                mt={1}
+              >
+                Your success, powered by the right talent
               </Typography>
               <Grid container spacing={3} mt={4} alignItems="stretch">
                 {hireDevCards.map((item, index) => (
@@ -242,6 +217,7 @@ const HireDevelopers: React.FC = () => {
                       transition: "border 0.3s ease",
                       "&:hover": {
                         border: "1px solid #1976d2",
+                         boxShadow: "0 0 12px rgba(25, 118, 210, 0.3)", 
                       },
                     }}
                   >
@@ -251,7 +227,7 @@ const HireDevelopers: React.FC = () => {
                       width={25}
                       height={25}
                     />
-                    <Typography fontWeight={500}>{label}</Typography>
+                    <Typography fontWeight={500} color={"#333333"}>{label}</Typography>
                   </Paper>
                 </Grid>
               ))}
@@ -265,10 +241,22 @@ const HireDevelopers: React.FC = () => {
                 fontWeight={600}
                 fontSize={"20px"}
                 color="#347CCC"
-                mb={2}
+                mb={1}
                 className="why-our-dev"
               >
                 Hire Developers in 3 Easy Steps
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontWeight: 500,
+                  lineHeight: "22px",
+                  letterSpacing: "0.5px",
+                  color: "#333333",
+                }}
+                mt={1}
+              >
+                Skip the hassle—hire top developers quickly and effortlessly
               </Typography>
               <Box className="timeline-container">
                 <svg

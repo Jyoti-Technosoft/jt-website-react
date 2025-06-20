@@ -1,0 +1,114 @@
+:root {
+    --text-white: #FFFFFF;
+}
+
+.header-main-first-section {
+    height: 325px;
+}
+
+.header-main-first-section .breadcrumb-link {
+  text-decoration: none;
+  color: var(--text-white);
+  font-weight: 500;
+}
+
+.header-main-first-section .breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.header-main-first-section .header-main-content {
+    width: 50%;
+    position: relative;
+}
+
+.header-main-first-section .header-main-content .header-main-gif {
+    z-index: 1;
+    position: absolute;
+    right: 0rem;
+    bottom: 2rem;
+    width: 30%;
+    height: 30%;
+    background: url("/public/assets/contact-page.gif") no-repeat center center/cover;
+}
+
+.header-main-first-section .header-main-content .header-main-first-content {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    letter-spacing: 0.5px;
+    color: var(--text-white);
+}
+
+.header-main-first-section .header-main-content .header-main-title {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 84px;
+    letter-spacing: 0.5%;
+    color: #FFFBFB;
+    z-index: 1;
+    position: relative;
+    font-family: "Roboto Slap";
+}
+
+.header-main-first-section .header-main-image {
+    width: 45%;
+    overflow: hidden;
+}
+
+.header-main-first-section .header-main-image img {
+    height: 278px;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .header-main-first-section .header-main-content .header-main-title {
+        /* padding: 1rem 0px 0px 0rem; */
+        font-size: 40px;
+        line-height: unset;
+    }
+
+    .header-main-first-section {
+        height: 230px;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    }
+
+    .header-main-first-section .header-main-content .header-main-first-content {
+        padding: 1.5rem 0 0;
+        justify-content: center;
+    }
+
+    .header-main-first-section .header-main-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .header-main-first-section .header-main-content .header-main-gif {
+        display: none;
+    }
+
+    .header-main-first-section .header-main-content .header-main-wave {
+        display: none;
+    }
+
+    .header-main-first-section .header-main-image {
+        display: none;
+    }
+
+    .header-main-content {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .header-main-image {
+        width: 100%;
+    }
+}

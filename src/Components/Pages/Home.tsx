@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Typography, Button } from "@mui/material";
 
 import HomeWhyUs from "../Pages/HomeWhyUs.tsx";
@@ -11,46 +12,117 @@ import dataArray from "../../jt-website.json";
 import "../../styles/home.css";
 
 const Home: React.FC = () => {
-    const { meetSection } = dataArray?.home;
+  const navigate = useNavigate();
+  const { meetSection } = dataArray?.home;
 
-    return (
-        <Box>
-            {/* meet Section  */}
-            <Box className="first-section-home">
-                <Box className="first-section-home-content">
-                    <Typography variant="h2" className="first-section-title">
-                        {meetSection?.title}
-                    </Typography>
-                    <Typography variant="body1" className="first-section-description">
-                        {meetSection?.description}
-                    </Typography>
-                    <Button
-                        variant="contained"
-                        className="build-together"
-                    >
-                        LET’S BUILD TOGETHER
-                    </Button>
-                </Box>
-            </Box>
-            {/* What We Offer */}
-            <WeOffer />
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
-            {/* Our Technology */}
-            <OurTechnology />
-
-            {/* WhyUs section  */}
-            <HomeWhyUs />
-
-            {/* How We Work section  */}
-            <HowWeWork/>
-
-            {/* Join Our Newsletter */}
-            <OurNewsletter />
-
-            {/* What We’ve Built section */}
-            <WeveBuilt />
+  return (
+    <Box>
+      <Box className="first-section-home" sx={{ position: "relative" }}>
+        <Box className="first-section-home-content">
+          <Typography variant="h2" className="first-section-title">
+            {meetSection?.title}
+          </Typography>
+          <Typography variant="body1" className="first-section-description">
+            {meetSection?.description}
+          </Typography>
+          <Button
+            variant="contained"
+            className="build-together"
+            onClick={() => navigate("/contact")}
+          >
+            LET’S BUILD TOGETHER
+          </Button>
         </Box>
-    );
+        <Box
+          sx={{
+            position: "absolute",
+            width: { xs: "80%", md: "22%" },
+            bottom: { xs: "1.5%", md: 30 },
+            right: { xs: "auto", md: 40 },
+            left: { xs: "50%", md: "auto" },
+            transform: { xs: "translateX(-50%)", md: "none" },
+            zIndex: 1,
+            display: "block",
+            backgroundImage: 'url("/assets/video-ai-asset-background.png")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            borderRadius: "12px",
+            padding: { xs: "10px", md: "20px" },
+            color: "#fff",
+            border: "1px solid #ffffff",
+            textAlign: "left",
+          }}
+        >
+          <Box>
+            <Box
+              component="img"
+              src="/assets/star-img.png"
+              alt="Star"
+              sx={{
+                position: "absolute",
+                top: "-21px",
+                right: "-28px",
+                width: "30px",
+                height: "30px",
+                display: { xs: "none", md: "block" }
+              }}
+            />
+          </Box>
+          <Box sx={{ position: "relative", paddingBottom: "30px" }}>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
+              Transform Your Business with AI
+            </Typography>
+            <Typography variant="body2" sx={{ mt: 1 }}>
+              Now offering powerful AI Integration for smarter automation &
+              customer experience.
+            </Typography>
+            <Typography
+              component="a"
+              href="/our-work"
+              variant="body2"
+              sx={{
+                position: "absolute",
+                bottom: 0,
+                right: 0,
+                fontWeight: 500,
+                fontSize: "0.9rem",
+                textDecoration: "underline",
+                cursor: "pointer",
+                color: "#ffffff",
+                transition: "color 0.3s ease",
+                "&:hover": {
+                  color: "#F99286",
+                },
+              }}
+            >
+              see more
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+      {/* What We Offer */}
+      <WeOffer />
+
+      {/* Our Technology */}
+      <OurTechnology />
+
+      {/* WhyUs section  */}
+      <HomeWhyUs />
+
+      {/* How We Work section  */}
+      <HowWeWork />
+
+      {/* Join Our Newsletter */}
+      <OurNewsletter />
+
+      {/* What We’ve Built section */}
+      <WeveBuilt />
+    </Box>
+  );
 };
 
 export default Home;

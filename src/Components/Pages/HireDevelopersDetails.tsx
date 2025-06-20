@@ -39,7 +39,7 @@ const HireDevelopersDetails = () => {
       <Box sx={{ backgroundColor: "#1F5795" }}>
         <Container className="hire-detail-first-section">
           <Box className="hire-detail-content">
-            <div className="hire-detail-first-content">
+            <Box className="hire-detail-first-content">
               <Link to="/" className="breadcrumb-link">
                 Home
               </Link>
@@ -49,18 +49,28 @@ const HireDevelopersDetails = () => {
               </Link>
               <ChevronRightIcon className="chevron-icon" />
               <span>{technologyData.label}</span>
-            </div>
+            </Box>
             <Typography mt={4} className="hire-detail-title">
               {technologyData.label}
             </Typography>
-            <Typography mt={4}>{technologyData.decription}</Typography>
+            <Typography
+              mt={4}
+              sx={{
+                fontSize: { xs: "14px", sm: "16px" },
+                px: { xs: 2, sm: 0 },
+                wordBreak: "break-word",
+                textAlign: "justify",
+              }}
+            >
+              {technologyData.decription}
+            </Typography>
           </Box>
           <Box className="hire-detail-image">
             <div className="image-wrapper">
               <img
                 className="main-image"
-                src="/assets/hire-us-details-img.png"
-                alt="hire-us-details"
+                src={technologyData.mainImage || "/assets/angular-main-img.png"}
+                alt={technologyData.label}
               />
               <img
                 className="tech-icon"
@@ -94,7 +104,7 @@ const HireDevelopersDetails = () => {
           >
             {`Expert ${
               technologyData.label.split(" ")[0]
-            } Developers. Reliable Results.`}
+            } developers. reliable results.`}
           </Typography>
           <Grid container>
             {technologyData.whyChooseUs.map((feature, index) => {
@@ -160,6 +170,7 @@ const HireDevelopersDetails = () => {
                         fontSize: "15px",
                         lineHeight: "22px",
                         color: "#333333",
+                        textAlign: "justify",
                       }}
                     >
                       {feature.description}
@@ -188,7 +199,12 @@ const HireDevelopersDetails = () => {
               height: "fit-content",
             }}
           >
-            <Typography className="choose-us-heading" mt={2} variant="h4" gutterBottom>
+            <Typography
+              className="choose-us-heading"
+              mt={2}
+              variant="h4"
+              gutterBottom
+            >
               {technologyData.developmentServiceTitle}
             </Typography>
 
@@ -196,7 +212,9 @@ const HireDevelopersDetails = () => {
               variant="h5"
               sx={{ fontWeight: 600, mt: 5, mb: 1, color: "#333333" }}
             >
-              {`Robust ${technologyData.label.split(" ")[0]} Development Solutions`}
+              {`Robust ${
+                technologyData.label.split(" ")[0]
+              } Development Solutions`}
             </Typography>
 
             <Typography
@@ -242,7 +260,14 @@ const HireDevelopersDetails = () => {
                   />
                   {service.header}
                 </Box>
-                <Box className="service-decription">{service.decription}</Box>
+                <Box
+                  className="service-decription"
+                  sx={{
+                    textAlign: "justify",
+                  }}
+                >
+                  {service.decription}
+                </Box>
               </Box>
             ))}
           </Box>
