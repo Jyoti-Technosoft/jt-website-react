@@ -1,6 +1,7 @@
 :root {
-    --text-dark: #333333;
+    --text-dark: #522222;
     --text-blue: #347CCC;
+    --button-color: #F76336;
 }
 
 .career-details-container .career-details-title {
@@ -58,7 +59,7 @@
   padding: 5px 0px;
   width: 100%;
   border-radius: 4px;
-  background-color: #4B7AB7;
+  background-color: var(--button-color);
   color: #FFFFFF;
   font-weight: 700;
   font-size: 18px;

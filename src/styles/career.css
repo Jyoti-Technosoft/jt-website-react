@@ -1,6 +1,7 @@
 :root {
     --text-dark: #333333;
     --text-blue: #347CCC;
+    --button-color: #F76336;
 }
 
 .career-second-section .career-title-section {
@@ -117,7 +118,7 @@
     border-radius: 10px;
     padding: 8px 17px 7px;
     background-color: #FFFFFF;
-    color: #4B7AB7;
+    color: var(--button-color);
     font-weight: 600;
     font-size: 14px;
     line-height: 100%;
@@ -126,7 +127,7 @@
 }
 
 .career-second-section .job-container .no-job-card .no-job-button:hover {
-    background-color: #4B7AB7;
+    background-color: var(--button-color);
     color: #FFFFFF;
 }
 

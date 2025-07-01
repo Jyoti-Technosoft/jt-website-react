@@ -1480,7 +1480,7 @@
     {
       "projectName": "Jyoti Technosoft Website",
       "technology": "Angular",
-      "typesOfTechnologies": ["Angular", "D3"],
+      "typesOfTechnologies": ["Angular", "d3"],
       "description": "Jyoti Technosoft's website displaying the organization's overview, achievements, projects. The website offers valuable insights into the company's expertise, showcasing its success stories.",
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "https://www.jyotitechnosoft.com/",
@@ -1781,6 +1781,190 @@
         {
           "images" : "assets/images/techology-stack/mongodb-icon.svg",
           "technologyName" : "Mongo DB"
+        }
+      ]
+    },
+    {
+      "projectName": "Pub Audit",
+      "technology": "Angular",
+      "typesOfTechnologies": ["Angular", "Java"],
+      "description": "Developed the Quality module to enhance the quality of Audited reports for equipment. implemented steps to improve quality and manage notifications for doctors/authors.",
+      "logo": "assets/images/portfolio/boatsground.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/yatch-brochure-mockup.png",
+        "assets/images/portfolio/yacht-brochure-1.png",
+        "assets/images/portfolio/yacht-brochure-2.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images": "assets/images/technology-badges/html.svg",
+          "technologyName": "HTML"
+        },
+        {
+          "images": "assets/images/technology-badges/css.svg",
+          "technologyName": "CSS"
+        },
+        {
+          "images" : "assets/images/technology-badges/Typescript.svg",
+          "technologyName" : "TypeScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/primeng.svg",
+          "technologyName" : "Primeng"
+        },
+        {
+          "images": "assets/images/technology-badges/bootstrap.svg",
+          "technologyName": "Bootstrap"
+        }
+      ]
+    },
+    {
+      "projectName": "Virtual CRM & Circle CRM",
+      "technology": "Angular",
+      "typesOfTechnologies": ["Angular"],
+      "description": "It is a Customer Relationship Management System. Developed interactive components such as execution dashboards, drag-and-drop features, etc. Focused on creating responsive UI. It is a sales and customer management tool used for tracking business transactions, customer interactions and analytics, useful for businesses managing customer relationships, orders and communication.",
+      "logo": "assets/images/portfolio/boatsground.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/yatch-brochure-mockup.png",
+        "assets/images/portfolio/yacht-brochure-1.png",
+        "assets/images/portfolio/yacht-brochure-2.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images": "assets/images/technology-badges/html.svg",
+          "technologyName": "HTML"
+        },
+        {
+          "images": "assets/images/technology-badges/css.svg",
+          "technologyName": "CSS"
+        },
+        {
+          "images": "assets/images/technology-badges/bootstrap.svg",
+          "technologyName": "Bootstrap"
+        }
+      ]
+    },
+    {
+      "projectName": "Property Vista",
+      "technology": "GWT ",
+      "typesOfTechnologies": ["GWT"],
+      "description": "Yacht Closer Brochure App' is one of the modules for the 'Yacht closer Web Application' of Boats Group. The purpose of this app is to generate brochures for the Yacht Brokers.",
+      "logo": "assets/images/portfolio/boatsground.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/yatch-brochure-mockup.png",
+        "assets/images/portfolio/yacht-brochure-1.png",
+        "assets/images/portfolio/yacht-brochure-2.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/react-bootstrap.svg",
+          "technologyName" : "React Bootstrap"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/redux.svg",
+          "technologyName" : "Redux"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
+        }
+      ]
+    },
+    {
+      "projectName": "Antthink",
+      "technology": "AI",
+      "typesOfTechnologies": ["AI"],
+      "description": "Yacht Closer Brochure App' is one of the modules for the 'Yacht closer Web Application' of Boats Group. The purpose of this app is to generate brochures for the Yacht Brokers.",
+      "logo": "assets/images/portfolio/boatsground.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/yatch-brochure-mockup.png",
+        "assets/images/portfolio/yacht-brochure-1.png",
+        "assets/images/portfolio/yacht-brochure-2.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images" : "assets/images/technology-badges/react-bootstrap.svg",
+          "technologyName" : "React Bootstrap"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "JavaScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/redux.svg",
+          "technologyName" : "Redux"
+        },
+        {
+          "images" : "assets/images/technology-badges/html.svg",
+          "technologyName" : "HTML"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "CSS"
         }
       ]
     }

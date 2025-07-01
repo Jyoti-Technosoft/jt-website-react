@@ -2,6 +2,7 @@
     --text-dark: #333333;
     --text-blue: #347CCC;
     --text-white: #FFFFFF;
+    --button-color: #F76336;
 }
 
 .hire-detail-section .breadcrumb-link {
@@ -245,7 +246,7 @@
     padding: 9px 0px;
     width: 100%;
     border-radius: 4px;
-    background-color: #4B7AB7;
+    background-color: var(--button-color);
     color: var(--text-white);
     font-weight: 700;
     font-size: 18px;

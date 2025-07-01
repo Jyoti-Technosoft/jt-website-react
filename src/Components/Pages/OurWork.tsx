@@ -299,7 +299,7 @@ const OurWork: React.FC = () => {
                                 currentImageIndex === imgIndex ? "4px" : "50%",
                               backgroundColor:
                                 currentImageIndex === imgIndex
-                                  ? "#1976d2"
+                                  ? "#F76336"
                                   : "#c4c4c4",
                               margin: "0 4px",
                               cursor: "pointer",
@@ -424,7 +424,7 @@ const OurWork: React.FC = () => {
                             alignItems: "center",
                             mt: 4,
                             cursor: "pointer",
-                            color: "#1976d2",
+                            color: "#F76336",
                             fontWeight: 500,
                           }}
                           onClick={() =>
@@ -463,7 +463,7 @@ const OurWork: React.FC = () => {
                 if (page > 1) setPage((prev) => Math.max(prev - 1, 1));
               }}
               sx={{
-                backgroundColor: "#1976d2",
+                backgroundColor: "#F76336",
                 color: "#fff",
                 width: 36,
                 height: 36,
@@ -471,7 +471,7 @@ const OurWork: React.FC = () => {
                 opacity: totalPages === 0 || page === 1 ? 0.5 : 1,
                 pointerEvents: totalPages === 0 || page === 1 ? "none" : "auto",
                 "&:hover": {
-                  backgroundColor: "#1565c0",
+                  backgroundColor: "#d94d24",
                 },
               }}
             >
@@ -486,7 +486,7 @@ const OurWork: React.FC = () => {
                     width: 14,
                     height: 14,
                     borderRadius: "4px",
-                    backgroundColor: page === index + 1 ? "#1976d2" : "#F2F2F4",
+                    backgroundColor: page === index + 1 ? "#F76336" : "#F2F2F4",
                     cursor: "pointer",
                     marginRight: 1,
                   }}
@@ -495,7 +495,7 @@ const OurWork: React.FC = () => {
             <IconButton
               onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
               sx={{
-                backgroundColor: "#1976d2",
+                backgroundColor: "#F76336",
                 color: "#fff",
                 width: 36,
                 height: 36,
@@ -504,7 +504,7 @@ const OurWork: React.FC = () => {
                 pointerEvents:
                   totalPages === 0 || page === totalPages ? "none" : "auto",
                 "&:hover": {
-                  backgroundColor: "#1565c0",
+                  backgroundColor: "#d94d24",
                 },
               }}
             >

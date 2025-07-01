@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
                 component="h6"
                 gutterBottom
               >
-                Technology
+                 Hire Developers
               </Typography>
               <Stack spacing={1}>
                 <Link

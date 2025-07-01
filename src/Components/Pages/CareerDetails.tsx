@@ -507,7 +507,7 @@ const CareerDetails: React.FC = () => {
                           ml: 1,
                           textTransform: "none",
                           borderRadius: "10px",
-                          backgroundColor: "#4B7AB7",
+                          backgroundColor: "#F76336",
                           color: "white",
                           px: 3,
                           py: 1,

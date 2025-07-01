@@ -1,6 +1,7 @@
 :root {
     --text-dark: #333333;
     --text-blue: #347CCC;
+    --button-color: #F76336;
 }
 
 /* meet Section */
@@ -63,7 +64,7 @@
     border-radius: 10px;
     gap: 10px;
     background: #FFFFFF;
-    color: #4B7AB7;
+    color: var(--button-color);
     font-weight: 600;
     font-size: 14px;
     line-height: 23.44px;
@@ -74,7 +75,7 @@
 
 .first-section-home-content .build-together:hover {
     color: #FFFFFF;
-    background-color: #4B7AB7;
+    background-color: var(--button-color);
 }
 
 /* What We Offer section */
@@ -159,6 +160,7 @@
 
 .ourTechnology-main-container {
     padding: 2.2rem 0 1rem;
+    /* min-height: 230px; */
 }
 
 .our-technology-section .container {
@@ -207,6 +209,7 @@
 .ourTechnology-main-container .technology-content {
     margin: 2.4rem 0 0;
     width: 100%;
+    min-height: "1500px";
     overflow: hidden;
 }
 
@@ -311,7 +314,40 @@
     color: #1C1C1C;
 }
 
+/* IndustryExpertise section */
+.industry-expertise .industry-expertise-title {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--text-blue);
+}
+
+.industry-expertise .industry-expertise-description {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22.09px;
+    letter-spacing: 0.5px;
+    color: var(--text-dark);
+}
+
+.industry-expertise .industry-expertise-card .industry-expertise-card-title {
+    font-weight: 400;
+    font-size: '24px';
+    letter-spacing: 0.5%;
+    line-height: 100%;
+}
+
+.industry-expertise .industry-expertise-card .industry-expertise-card-description {
+    font-weight: 400;
+    font-size: '24px';
+    letter-spacing: 0.5%;
+    line-height: '25px';
+}
+
+
 /* How We Work section */
+
+
 .howWeWork-section {
     background: #FFFFFF;
     margin: 3rem 0;
@@ -467,7 +503,7 @@
     min-height: 52px;
     gap: 10px;
     background: #FFFFFF;
-    color: #4B7AB7;
+    color: var(--button-color);
     font-weight: 600;
     font-size: 14px;
     line-height: 23.44px;
@@ -478,20 +514,20 @@
 
 .ourNewsletter-section .ourNewsletter-main-container .ourNewsletter-button.youreIn-btn {
     color: #FFFFFF;
-    background-color: #4B7AB7;
+    background-color: var(--button-color);
     padding: 10px 17px 8px;
 }
 
 .ourNewsletter-section .ourNewsletter-main-container .ourNewsletter-button:hover {
     color: #FFFFFF;
-    background-color: #4B7AB7;
+    background-color: var(--button-color);
 }
 
 .ourNewsletter-section .ourNewsletter-main-container .input-container .submit-btn {
     width: 30px;
     height: 40px;
     border-radius: 6px;
-    background: #4B7AB7;
+    background: var(--button-color);
     box-shadow: 0px 1px 3px 0px #0000004D;
     color: #FFFFFF;
     min-width: 42px;
@@ -509,7 +545,7 @@
 
 .ourNewsletter-section .ourNewsletter-main-container .input-container .email-input {
     flex: 1;
-    border: 1px solid var(--text-blue);;
+    border: 1px solid var(--button-color);
     border-radius: 8px;
     outline: none;
     width: 300px;
@@ -598,7 +634,7 @@
     min-height: 52px;
     gap: 10px;
     background: #FFFFFF;
-    color: #4B7AB7;
+    color: var(--button-color);
     font-weight: 600;
     font-size: 14px;
     line-height: 23.44px;
@@ -609,7 +645,7 @@
 
 .weveBuilt-container .weveBuilt-description-container .seemore-button:hover {
     color: #FFFFFF;
-    background-color: #4B7AB7;
+    background-color: var(--button-color);;
 }
 
 @media (max-width: 768px) {
@@ -654,6 +690,7 @@
 
     .our-technology-section .ourTechnology-main-container{
         width: 100%;
+        min-height: "400px";
     }
 
     .ourTechnology-main-container .mobile-tab-navigation {

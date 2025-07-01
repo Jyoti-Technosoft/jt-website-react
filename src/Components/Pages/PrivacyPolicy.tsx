@@ -8,7 +8,7 @@ import "../../styles/privacy-policy.css";
 const PrivacyPolicy: React.FC = () => {
   return (
     <Box className="privacy-policy" mb={4}>
-      <HeaderCommonPage smallTitle="Privacy Policy" page="Privacy Policy" />
+      <HeaderCommonPage smallTitle="Privacy Policy" page="Privacy Policy" subHeader="Here’s how we handle your info  clearly and responsibly." />
       <Container className="privacy-policy-container">
         <Typography className="last-updated-date" mt={4}>
           Last updated: April 02, 2024

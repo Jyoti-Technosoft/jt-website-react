@@ -7,6 +7,7 @@ import OurTechnology from "./shared/OurTechnology.tsx";
 import WeOffer from "./shared/WeOffer.tsx";
 import WeveBuilt from "./shared/WeveBuilt.tsx";
 import OurNewsletter from "./shared/OurNewsletter.tsx";
+import IndustryExpertise from "./shared/IndustryExpertise.tsx";
 import HowWeWork from "./shared/HowWeWork.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/home.css";
@@ -68,7 +69,7 @@ const Home: React.FC = () => {
                 right: "-28px",
                 width: "30px",
                 height: "30px",
-                display: { xs: "none", md: "block" }
+                display: { xs: "none", md: "block" },
               }}
             />
           </Box>
@@ -82,8 +83,9 @@ const Home: React.FC = () => {
             </Typography>
             <Typography
               component="a"
-              href="/our-work"
+              href="/services/ai-integration"
               variant="body2"
+              mt={4}
               sx={{
                 position: "absolute",
                 bottom: 0,
@@ -96,10 +98,11 @@ const Home: React.FC = () => {
                 transition: "color 0.3s ease",
                 "&:hover": {
                   color: "#F99286",
+                  // boxShadow: "0px 0px 0px 1px #A9A9A9 inset"
                 },
               }}
             >
-              see more
+              SEE MORE
             </Typography>
           </Box>
         </Box>
@@ -112,6 +115,8 @@ const Home: React.FC = () => {
 
       {/* WhyUs section  */}
       <HomeWhyUs />
+
+      <IndustryExpertise />
 
       {/* How We Work section  */}
       <HowWeWork />

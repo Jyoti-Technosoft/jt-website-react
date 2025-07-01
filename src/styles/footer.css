@@ -47,6 +47,7 @@
   width: 220px;
   height: 100px;
   margin-bottom: 1rem;
+  object-fit: contain;
 }
 
 .followus {

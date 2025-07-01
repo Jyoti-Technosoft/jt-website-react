@@ -3,11 +3,13 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Link } from "react-router-dom";
 
 import "../../../styles/header-common.css";
+import { Box } from "@mui/material";
 
 interface HeaderCommonProps {
   page: string;
   smallTitle?: string;
   subTitle?: string;
+  subHeader?: string;
 }
 
 const generatePath = (title: string) => {
@@ -18,6 +20,7 @@ const HeaderCommonPage: React.FC<HeaderCommonProps> = ({
   page,
   smallTitle,
   subTitle,
+  subHeader,
 }) => {
   const smallTitlePath = smallTitle ? generatePath(smallTitle) : "";
   const subTitlePath =
@@ -26,9 +29,9 @@ const HeaderCommonPage: React.FC<HeaderCommonProps> = ({
       : "";
 
   return (
-    <div className="main-header-common">
-      <div className="main-header">
-        <div className="first-content-about-header">
+    <Box className="main-header-common">
+      <Box className="main-header">
+        <Box className="first-content-about-header">
           <Link to="/" className="breadcrumb-link">
             Home
           </Link>
@@ -52,10 +55,13 @@ const HeaderCommonPage: React.FC<HeaderCommonProps> = ({
               <span>{subTitle}</span>
             </>
           )}
-        </div>
-        <div className="header-pageName">{page}</div>
-      </div>
-    </div>
+        </Box>
+        <Box className="header-pageName">{page}</Box>
+        {subHeader && (
+          <Box className="header-subTitle" mt={2}>{subHeader}</Box>
+        )}
+      </Box>
+    </Box>
   );
 };
 
