@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Jyoti Technosoft",
+  "name": "Jyoti Technosoft",
+  "description": "Jyoti Technosoft is a leading provider of innovative web and software development solutions, delivering high-quality digital products and services to clients worldwide.",
   "icons": [
     {
       "src": "favicon.ico",

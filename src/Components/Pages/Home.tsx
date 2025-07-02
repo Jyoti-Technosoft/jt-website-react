@@ -29,7 +29,7 @@ const Home: React.FC = () => {
           loop
           muted
           playsInline
-          src="/assets/home-meets.mp4"
+          src="/assets/jyoti-technosoft-web-development.mp4"
         />
         <Box className="first-section-home-content">
           <Typography variant="h2" className="first-section-title">
