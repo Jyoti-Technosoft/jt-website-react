@@ -5,8 +5,6 @@ import {
   Typography,
   Box,
   IconButton,
-  Menu,
-  MenuItem,
   Drawer,
   useMediaQuery,
 } from "@mui/material";
@@ -24,27 +22,27 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isServicesTabActive = location.pathname.startsWith("/services");
-  const isDevelopersTabActive =
-    location.pathname.startsWith("/hire-developers");
+  // const isServicesTabActive = location.pathname.startsWith("/services");
+  // const isDevelopersTabActive =
+  //   location.pathname.startsWith("/hire-developers");
 
-  const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(
+  const [, setServicesAnchorEl] = useState<null | HTMLElement>(
     null
   );
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isDevelopersDropdownOpen, setIsDevelopersDropdownOpen] =
     useState(false);
-  const [developersAnchorEl, setDevelopersAnchorEl] =
+  const [, setDevelopersAnchorEl] =
     useState<null | HTMLElement>(null);
-  const [servicesHoverTimeout, setServicesHoverTimeout] = useState<ReturnType<
-    typeof setTimeout
-  > | null>(null);
-  const [developersHoverTimeout, setDevelopersHoverTimeout] =
-    useState<ReturnType<typeof setTimeout> | null>(null);
+  // const [servicesHoverTimeout,] = useState<ReturnType<
+  //   typeof setTimeout
+  // > | null>(null);
+  // const [developersHoverTimeout, setDevelopersHoverTimeout] =
+  //   useState<ReturnType<typeof setTimeout> | null>(null);
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [hoverTimeout, setHoverTimeout] = useState<ReturnType<
-    typeof setTimeout
-  > | null>(null);
+  // const [hoverTimeout, setHoverTimeout] = useState<ReturnType<
+  //   typeof setTimeout
+  // > | null>(null);
   const [showShadow, setShowShadow] = useState(false);
   const [expandServices, setExpandServices] = useState(false);
   const [expandDevelopers, setExpandDevelopers] = useState(false);
@@ -57,17 +55,17 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleServicesHover = (event: React.MouseEvent<HTMLElement>) => {
-    if (hoverTimeout) clearTimeout(hoverTimeout);
-    setServicesAnchorEl(event.currentTarget);
-  };
+  // const handleServicesHover = (event: React.MouseEvent<HTMLElement>) => {
+  //   if (hoverTimeout) clearTimeout(hoverTimeout);
+  //   setServicesAnchorEl(event.currentTarget);
+  // };
 
-  const handleServicesLeave = () => {
-    const timeout = setTimeout(() => {
-      setServicesAnchorEl(null);
-    }, 200);
-    setHoverTimeout(timeout);
-  };
+  // const handleServicesLeave = () => {
+  //   const timeout = setTimeout(() => {
+  //     setServicesAnchorEl(null);
+  //   }, 200);
+  //   setHoverTimeout(timeout);
+  // };
 
   // const handleServicesMenuEnter = () => {
   //   if (hoverTimeout) clearTimeout(hoverTimeout);
@@ -80,28 +78,28 @@ const Header: React.FC = () => {
   //   setHoverTimeout(timeout);
   // };
 
-  const handleDevelopersHover = (event: React.MouseEvent<HTMLElement>) => {
-    if (hoverTimeout) clearTimeout(hoverTimeout);
-    setDevelopersAnchorEl(event.currentTarget);
-  };
+  // const handleDevelopersHover = (event: React.MouseEvent<HTMLElement>) => {
+  //   if (hoverTimeout) clearTimeout(hoverTimeout);
+  //   setDevelopersAnchorEl(event.currentTarget);
+  // };
 
-  const handleDevelopersLeave = () => {
-    const timeout = setTimeout(() => {
-      setDevelopersAnchorEl(null);
-    }, 200);
-    setHoverTimeout(timeout);
-  };
+  // const handleDevelopersLeave = () => {
+  //   const timeout = setTimeout(() => {
+  //     setDevelopersAnchorEl(null);
+  //   }, 200);
+  //   setHoverTimeout(timeout);
+  // };
 
-  const handleDevelopersMenuEnter = () => {
-    if (hoverTimeout) clearTimeout(hoverTimeout);
-  };
+  // const handleDevelopersMenuEnter = () => {
+  //   if (hoverTimeout) clearTimeout(hoverTimeout);
+  // };
 
-  const handleDevelopersMenuLeave = () => {
-    const timeout = setTimeout(() => {
-      setDevelopersAnchorEl(null);
-    }, 200);
-    setHoverTimeout(timeout);
-  };
+  // const handleDevelopersMenuLeave = () => {
+  //   const timeout = setTimeout(() => {
+  //     setDevelopersAnchorEl(null);
+  //   }, 200);
+  //   setHoverTimeout(timeout);
+  // };
 
   const handleDrawerToggle = () => {
     setOpenDrawer(!openDrawer);
@@ -112,43 +110,43 @@ const Header: React.FC = () => {
   //   setServicesAnchorEl(event.currentTarget);
   // };
 
-  const closeServicesMenu = () => {
-    const timeout = setTimeout(() => {
-      setServicesAnchorEl(null);
-    }, 200);
-    setServicesHoverTimeout(timeout);
-  };
+  // const closeServicesMenu = () => {
+  //   const timeout = setTimeout(() => {
+  //     setServicesAnchorEl(null);
+  //   }, 200);
+  //   setServicesHoverTimeout(timeout);
+  // };
 
-  const cancelCloseServicesMenu = () => {
-    if (servicesHoverTimeout) clearTimeout(servicesHoverTimeout);
-  };
+  // const cancelCloseServicesMenu = () => {
+  //   if (servicesHoverTimeout) clearTimeout(servicesHoverTimeout);
+  // };
 
   // const openDevelopersMenu = (event: React.MouseEvent<HTMLElement>) => {
   //   if (developersHoverTimeout) clearTimeout(developersHoverTimeout);
   //   setDevelopersAnchorEl(event.currentTarget);
   // };
 
-  const closeDevelopersMenu = () => {
-    const timeout = setTimeout(() => {
-      setDevelopersAnchorEl(null);
-    }, 200);
-    setDevelopersHoverTimeout(timeout);
-  };
+  // const closeDevelopersMenu = () => {
+  //   const timeout = setTimeout(() => {
+  //     setDevelopersAnchorEl(null);
+  //   }, 200);
+  //   setDevelopersHoverTimeout(timeout);
+  // };
 
-  const cancelCloseDevelopersMenu = () => {
-    if (developersHoverTimeout) clearTimeout(developersHoverTimeout);
-  };
+  // const cancelCloseDevelopersMenu = () => {
+  //   if (developersHoverTimeout) clearTimeout(developersHoverTimeout);
+  // };
 
-  const handleServicesClick = (event: React.MouseEvent<HTMLElement>) => {
-    setServicesAnchorEl(event.currentTarget);
-  };
+  // const handleServicesClick = (event: React.MouseEvent<HTMLElement>) => {
+  //   setServicesAnchorEl(event.currentTarget);
+  // };
 
   // const handleDevelopersClick = () => {
   //   setDevelopersAnchorEl(null);
   // };
-  const handleDevelopersClick = (event: React.MouseEvent<HTMLElement>) => {
-    setDevelopersAnchorEl(event.currentTarget);
-  };
+  // const handleDevelopersClick = (event: React.MouseEvent<HTMLElement>) => {
+  //   setDevelopersAnchorEl(event.currentTarget);
+  // };
 
   useEffect(() => {
     if (isDesktop && openDrawer) {

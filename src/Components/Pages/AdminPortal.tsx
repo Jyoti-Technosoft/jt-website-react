@@ -73,7 +73,7 @@ const itemsPerPage = 5;
 useEffect(() => {
   if (isLoggedIn) {
     axios
-      .get("http://192.168.0.135:5000/api/jobs")
+      .get("http://localhost:5007/api/jobs")
       .then((res) => {
         console.log("API Response Data:", res.data);
         setJobs(res.data.jobs);
@@ -139,7 +139,7 @@ useEffect(() => {
 
   const handleDelete = (id: number) => {
     axios
-      .delete(`http://192.168.0.135:5000/api/jobs/${id}`)
+      .delete(`http://localhost:5007/api/jobs/${id}`)
       .then(() => setJobs(jobs.filter((job) => job.id !== id)))
       .catch((err) => console.error("Delete failed", err));
   };
@@ -147,7 +147,7 @@ useEffect(() => {
   const handleDialogSave = () => {
     if (editingJob) {
       axios
-        .put(`http://192.168.0.135:5000/api/jobs/${editingJob.id}`, {
+        .put(`http://localhost:5007/api/jobs/${editingJob.id}`, {
           ...editingJob,
           ...formValues,
         })
@@ -162,7 +162,7 @@ useEffect(() => {
         ...formValues,
       };
       axios
-        .post("http://192.168.0.135:5000/api/jobs", newJob)
+        .post("http://localhost:5007/api/jobs", newJob)
         .then((response) => {
           setJobs([...jobs, response.data]);
           setOpenDialog(false);

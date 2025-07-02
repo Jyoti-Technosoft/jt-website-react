@@ -44,7 +44,7 @@
           "id": 2,
           "title": "WordPress Development",
           "description": "Crafting feature-rich and visually stunning websites with WordPress.",
-          "imageSrc": "/assets/wordpress.png"
+          "imageSrc": "/assets/WordPress.png"
         },
         {
           "id": 3,
@@ -68,13 +68,13 @@
           "id": 6,
           "title": "Web Development",
           "description": "Custom-built websites that are fast, responsive, and scalable.",
-          "imageSrc": "/assets/programming.png"
+          "imageSrc": "/assets/Programming.png"
         },
         {
           "id": 7,
           "title": "Java - GWT Development",
           "description": "Crafting high-performance web applications with Java and GWT.",
-          "imageSrc": "/assets/offersection-java.png",
+          "imageSrc": "/assets/offersection-Java.png",
           "imageSrc1": "/assets/source-code.png"
         },
         {
@@ -510,7 +510,7 @@
           },
           {
             "label": "GWT",
-            "imgSrc": "/assets/gwt.png",
+            "imgSrc": "/assets/GWT.png",
             "id": "",
             "tooltip": "",
             "projects": "10+"
@@ -560,7 +560,7 @@
           },
           {
             "label": "GWT",
-            "imgSrc": "/assets/gwt.png",
+            "imgSrc": "/assets/GWT.png",
             "id": "",
             "tooltip": "",
             "projects": "20+"
@@ -574,7 +574,7 @@
           },
                     {
             "label": "Express",
-            "imgSrc": "/assets/express.webp",
+            "imgSrc": "/assets/express.png",
             "id": "",
             "tooltip": "",
             "projects": "5+"
@@ -2138,7 +2138,7 @@
     },
     {
       "id": 6,
-      "imagePath": "assets/wordpress.png",
+      "imagePath": "assets/WordPress.png",
       "jobName": "WordPress Developer",
       "jobDescription": "We are looking to hire a dynamic WordPress Developer to join our global team. As an WordPress developer, you will be required to build a top-quality coding base. You will also be required to create amazing user interfaces for desktop and mobile apps.",
       "jobNature": "Full Time",
@@ -2635,7 +2635,7 @@
         "id": 1,
         "cardHeader": "MISSION",
         "cardData": "Our mission is to deliver maximum value to our clients. We accomplish this by helping them progress and thrive in the constantly changing and challenging competitive market.",
-        "imageSrc": "/assets/goal.png"
+        "imageSrc": "/assets/Goal.png"
       },
       {
         "id": 2,
@@ -2647,7 +2647,7 @@
         "id": 3,
         "cardHeader": "VISION",
         "cardData": "Our vision is to provide our clients with the best quality services. We achieve this by harnessing the power of the latest technologies, enabling businesses to thrive and expand on a global scale.",
-        "imageSrc": "/assets/eye.png"
+        "imageSrc": "/assets/Eye.png"
       }
     ],
     "gettoKnowUsTitle": "Get to Know Us",

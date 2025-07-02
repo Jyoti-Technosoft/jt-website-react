@@ -62,5 +62,5 @@ app.delete("/api/jobs/:id", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://192.168.0.135:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });

@@ -89,7 +89,7 @@ const Career: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get("http://192.168.0.135:5000/api/jobs")
+      .get("http://localhost:5007/api/jobs")
       .then((res) => {
         setJobs(res.data.jobs);
       })
