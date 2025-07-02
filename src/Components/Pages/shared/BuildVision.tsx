@@ -214,7 +214,7 @@ const BuildVision: React.FC = () => {
                 alt="placeholder"
                 style={{
                   width: "740px",
-                  height: "585px",
+                  height: "574px",
                   marginBottom: "0",
                 }}
               />

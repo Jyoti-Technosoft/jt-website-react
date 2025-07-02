@@ -859,7 +859,7 @@
     {
       "projectName": "Progress Maker",
       "technology": "Angular",
-      "typesOfTechnologies": ["Angular", "d3"],
+      "typesOfTechnologies": ["Angular", "D3"],
       "description": "Enterprise Resource Planning (ERP) systems using a powerful technology stack that includes Angular with NGXS Store for frontend development, D3 for data visualization, Pptgenx for dynamic presentations.",
       "logo": "assets/images/portfolio/ProgressMaker_Logo.png",
       "viewDemo": "",
@@ -885,7 +885,7 @@
         },
         {
           "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "d3"
+          "technologyName" : "D3"
         }
       ],
       "useTechnology": [
@@ -903,7 +903,7 @@
         },
         {
           "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "d3"
+          "technologyName" : "D3"
         },
         {
           "images" : "assets/images/technology-badges/primeng.svg",
@@ -1480,7 +1480,7 @@
     {
       "projectName": "Jyoti Technosoft Website",
       "technology": "Angular",
-      "typesOfTechnologies": ["Angular", "d3"],
+      "typesOfTechnologies": ["Angular", "D3"],
       "description": "Jyoti Technosoft's website displaying the organization's overview, achievements, projects. The website offers valuable insights into the company's expertise, showcasing its success stories.",
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "https://www.jyotitechnosoft.com/",
@@ -1510,7 +1510,7 @@
         },
         {
           "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "d3"
+          "technologyName" : "D3"
         }
       ],
       "useTechnology": [
@@ -1528,7 +1528,7 @@
         },
         {
           "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "d3"
+          "technologyName" : "D3"
         },
         {
           "images" : "assets/images/technology-badges/html.svg",
@@ -1547,7 +1547,7 @@
     {
       "projectName": "D3 Showcase",
       "technology":"D3",
-      "typesOfTechnologies": ["React", "d3"],
+      "typesOfTechnologies": ["React", "D3"],
       "description": "D3 Showcase is a data visualization project built with HTML, SCSS, React, and D3.js. It features six chart types: Pie Chart, Stacked Chart, Donut Chart, Bar Chart, India Map Chart, and Candlestick Chart. The user can perform CRUD operations, making it an interactive and dynamic data exploration tool.",
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "https://d3showcase.jyotitechnosoft.com/dashboard",
@@ -1577,7 +1577,7 @@
         },
         {
           "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "d3"
+          "technologyName" : "D3"
         },
         {
           "images" : "assets/images/technology-badges/JavasScript.svg",
@@ -1591,7 +1591,7 @@
         },
         {
           "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "d3"
+          "technologyName" : "D3"
         },
         {
           "images" : "assets/images/technology-badges/JavasScript.svg",
@@ -1614,7 +1614,7 @@
     {
       "projectName": "Quiz Application",
       "technology":"Angular",
-      "typesOfTechnologies": ["Angular", "d3"],
+      "typesOfTechnologies": ["Angular", "D3"],
       "description": "Technical Assistant is a cutting-edge test app built using Angular, TypeScript, and Laravel. It leverages D3.js for captivating data visualization, offering dynamic questions, real-time leaderboards, and rich multimedia support for an engaging your experience. At the heart of Technical Assistant is Laravel, our robust backend ensuring secure user authentication, efficient database management, and scalability for future enhancements. Track your progress, compete with others, and dive into a world of knowledge and fun with Technical Assistant",
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "https://recruitment-test.jyotitechnosoft.com/",
@@ -1643,7 +1643,7 @@
         },
         {
           "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "d3"
+          "technologyName" : "D3"
         }
       ],
       "useTechnology": [
@@ -1657,7 +1657,7 @@
         },
         {
           "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "d3"
+          "technologyName" : "D3"
         },
         {
           "images" : "assets/images/technology-badges/html.svg",
@@ -1709,7 +1709,7 @@
         },
         {
           "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "d3"
+          "technologyName" : "D3"
         },
         {
           "images": "assets/images/technology-badges/html.svg",
@@ -1785,16 +1785,17 @@
       ]
     },
     {
-      "projectName": "Pub Audit",
+      "projectName": "Health Audit Management",
       "technology": "Angular",
       "typesOfTechnologies": ["Angular", "Java"],
       "description": "Developed the Quality module to enhance the quality of Audited reports for equipment. implemented steps to improve quality and manage notifications for doctors/authors.",
-      "logo": "assets/images/portfolio/boatsground.png",
+      "logo": "assets/images/portfolio/pubaudit.png",
       "viewDemo": "",
       "Images": [
-        "assets/images/portfolio/yatch-brochure-mockup.png",
-        "assets/images/portfolio/yacht-brochure-1.png",
-        "assets/images/portfolio/yacht-brochure-2.png"
+        "assets/images/portfolio/pub-audit-1.png",
+        "assets/images/portfolio/pub-audit-2.png",
+        "assets/images/portfolio/pub-audit-3.png",
+        "assets/images/portfolio/pub-audit-4.png"
       ],
       "mainTechnology": [
         {
@@ -1830,16 +1831,17 @@
       ]
     },
     {
-      "projectName": "Virtual CRM & Circle CRM",
+      "projectName": "VirtualCRM & CircleCRM",
       "technology": "Angular",
       "typesOfTechnologies": ["Angular"],
       "description": "It is a Customer Relationship Management System. Developed interactive components such as execution dashboards, drag-and-drop features, etc. Focused on creating responsive UI. It is a sales and customer management tool used for tracking business transactions, customer interactions and analytics, useful for businesses managing customer relationships, orders and communication.",
-      "logo": "assets/images/portfolio/boatsground.png",
+      "logo": "assets/images/portfolio/virtual-crm.png",
       "viewDemo": "",
       "Images": [
-        "assets/images/portfolio/yatch-brochure-mockup.png",
-        "assets/images/portfolio/yacht-brochure-1.png",
-        "assets/images/portfolio/yacht-brochure-2.png"
+        "assets/images/portfolio/virtualcrm-1.png",
+        "assets/images/portfolio/virtualcrm-2.png",
+        "assets/images/portfolio/virtualcrm-3.png",
+        "assets/images/portfolio/virtualcrm-4.png"
       ],
       "mainTechnology": [
         {
@@ -1874,40 +1876,49 @@
       "projectName": "Property Vista",
       "technology": "GWT ",
       "typesOfTechnologies": ["GWT"],
-      "description": "Yacht Closer Brochure App' is one of the modules for the 'Yacht closer Web Application' of Boats Group. The purpose of this app is to generate brochures for the Yacht Brokers.",
-      "logo": "assets/images/portfolio/boatsground.png",
+      "description": "The application is tenant-related, serving as a single portal to manage tenant-related tasks such as rent, insurances, payment module etc. Project involves a complete reskin of an existing application built with Google Web Toolkit (GWT) using Figma for design updates. Sass is introduced for custom styles, and a toggle switch allows users to switch between the legacy and new themes. The project includes bug fixes for both themes and the development of new functionalities to improve the application.",
+      "logo": "assets/images/portfolio/property-vista.png",
       "viewDemo": "",
       "Images": [
-        "assets/images/portfolio/yatch-brochure-mockup.png",
-        "assets/images/portfolio/yacht-brochure-1.png",
-        "assets/images/portfolio/yacht-brochure-2.png"
+        "assets/images/portfolio/pvista-1.png",
+        "assets/images/portfolio/pvista-2.png",
+        "assets/images/portfolio/pvista-3.png",
+        "assets/images/portfolio/pvista-3.png",
+        "assets/images/portfolio/pvista-3.png",
+        "assets/images/portfolio/pvista-3.png",
+        "assets/images/portfolio/pvista-3.png",
+        "assets/images/portfolio/pvista-3.png"
       ],
       "mainTechnology": [
         {
-          "images" : "assets/images/technology-badges/Angular.svg",
-          "technologyName" : "Angular"
+          "images": "assets/images/technology-badges/GWT.svg",
+          "technologyName": "GWT"
         },
         {
-          "images" : "assets/images/technology-badges/JavasScript.svg",
-          "technologyName" : "JavaScript"
+          "images": "assets/images/technology-badges/maven.svg",
+          "technologyName": "Maven"
+        },
+        {
+          "images": "assets/images/technology-badges/java.webp",
+          "technologyName": "Java"
         }
       ],
       "useTechnology": [
         {
-          "images" : "assets/images/technology-badges/Angular.svg",
-          "technologyName" : "Angular"
+          "images": "assets/images/technology-badges/GWT.svg",
+          "technologyName": "GWT"
         },
         {
-          "images" : "assets/images/technology-badges/react-bootstrap.svg",
-          "technologyName" : "React Bootstrap"
+          "images": "assets/images/technology-badges/maven.svg",
+          "technologyName": "Maven"
+        },
+        {
+          "images": "assets/images/technology-badges/java.webp",
+          "technologyName": "Java"
         },
         {
           "images" : "assets/images/technology-badges/JavasScript.svg",
           "technologyName" : "JavaScript"
-        },
-        {
-          "images" : "assets/images/technology-badges/redux.svg",
-          "technologyName" : "Redux"
         },
         {
           "images" : "assets/images/technology-badges/html.svg",
@@ -1920,21 +1931,27 @@
       ]
     },
     {
-      "projectName": "Antthink",
+      "projectName": "AnteThink",
       "technology": "AI",
-      "typesOfTechnologies": ["AI"],
-      "description": "Yacht Closer Brochure App' is one of the modules for the 'Yacht closer Web Application' of Boats Group. The purpose of this app is to generate brochures for the Yacht Brokers.",
-      "logo": "assets/images/portfolio/boatsground.png",
+      "typesOfTechnologies": ["AI", "D3", "React"],
+      "description": "Event Decision Support System is an advanced application that integrates user management, Stripe Subscription and Payment processing, and AI-driven decision-making. The system gathers input from users regarding specific events and contexts, then uses AI to generate a decision tree visualized with D3.js, displaying all possible suggestions for the given scenario. Additionally, the system allows users to interact with the decision tree, generating detailed action plans for each node they select. This dynamic and interactive tool supports informed decision- making and strategic planning for various events and contexts.",
+      "logo": "assets/images/portfolio/ante-think.png",
       "viewDemo": "",
       "Images": [
-        "assets/images/portfolio/yatch-brochure-mockup.png",
-        "assets/images/portfolio/yacht-brochure-1.png",
-        "assets/images/portfolio/yacht-brochure-2.png"
+        "assets/images/portfolio/ante-think-1.png"
       ],
       "mainTechnology": [
         {
-          "images" : "assets/images/technology-badges/Angular.svg",
-          "technologyName" : "Angular"
+          "images" : "assets/openai.png",
+          "technologyName": "Open AI"
+        },
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "React"
+        },
+        {
+          "images": "assets/images/technology-badges/D3.svg",
+          "technologyName": "D3"
         },
         {
           "images" : "assets/images/technology-badges/JavasScript.svg",
@@ -1943,20 +1960,16 @@
       ],
       "useTechnology": [
         {
-          "images" : "assets/images/technology-badges/Angular.svg",
-          "technologyName" : "Angular"
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
         },
         {
-          "images" : "assets/images/technology-badges/react-bootstrap.svg",
-          "technologyName" : "React Bootstrap"
+          "images" : "assets/images/technology-badges/D3.svg",
+          "technologyName" : "D3"
         },
         {
           "images" : "assets/images/technology-badges/JavasScript.svg",
           "technologyName" : "JavaScript"
-        },
-        {
-          "images" : "assets/images/technology-badges/redux.svg",
-          "technologyName" : "Redux"
         },
         {
           "images" : "assets/images/technology-badges/html.svg",
@@ -1965,6 +1978,10 @@
         {
           "images" : "assets/images/technology-badges/css.svg",
           "technologyName" : "CSS"
+        },
+        {
+          "images" : "assets/images/technology-badges/bootstrap.svg",
+          "technologyName" : "Bootstrap"
         }
       ]
     }
