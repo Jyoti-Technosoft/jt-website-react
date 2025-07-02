@@ -9,10 +9,22 @@
     position: relative;
     width: 100%;
     height: 600px;
-    background: url("/public/assets/home-meets.gif") no-repeat center center/cover;
+    /* background: url("/public/assets/home-meets.gif") no-repeat center center/cover; */
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.first-section-home video.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .first-section-home::before {

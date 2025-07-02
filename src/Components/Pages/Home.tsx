@@ -23,6 +23,14 @@ const Home: React.FC = () => {
   return (
     <Box>
       <Box className="first-section-home" sx={{ position: "relative" }}>
+        <video
+          className="bg-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          src="/assets/home-meets.mp4"
+        />
         <Box className="first-section-home-content">
           <Typography variant="h2" className="first-section-title">
             {meetSection?.title}
@@ -35,7 +43,7 @@ const Home: React.FC = () => {
             className="build-together"
             onClick={() => navigate("/contact")}
           >
-            LET’S BUILD TOGETHER
+            LET'S BUILD TOGETHER
           </Button>
         </Box>
         <Box
@@ -124,7 +132,7 @@ const Home: React.FC = () => {
       {/* Join Our Newsletter */}
       <OurNewsletter />
 
-      {/* What We’ve Built section */}
+      {/* What We've Built section */}
       <WeveBuilt />
     </Box>
   );
