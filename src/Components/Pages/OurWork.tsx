@@ -36,7 +36,7 @@ const OurWork: React.FC = () => {
   const location = useLocation();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const logos = dataArray?.clientlogos || [];
-  const projects = dataArray?.portfolio.filter((p) => p.projectName) || [];
+  const projects = (dataArray?.portfolio.filter((p) => p.projectName) || []).sort((a, b) => (b.priority || 0) - (a.priority || 0));
   const [selectedTech, setSelectedTech] = useState("All");
   const [page, setPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(4);
@@ -129,7 +129,7 @@ const OurWork: React.FC = () => {
           </Box>
         </Box>
         <Typography sx={{ textAlign: "center", mt: 8, color: "#333333" }} ref={projectSectionRef}>
-          Some of our work is protected by NDAs, but we’ve prepared demo
+          Some of our work is protected by NDAs, but we've prepared demo
           projects to showcase our expertise and quality.
         </Typography>
 
@@ -275,45 +275,82 @@ const OurWork: React.FC = () => {
                             maxHeight: "100%",
                             width: "auto",
                             objectFit: "contain",
+                            borderRadius: "10px",
+                            border: "4px solid #CFCFCF",
+                            margin: "auto"
                           }}
                         />
                       </Box>
 
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "center",
-                          mt: 2,
-                        }}
-                      >
-                        {project.Images?.map((_, imgIndex) => (
-                          <Box
-                            key={imgIndex}
-                            sx={{
-                              width:
-                                currentImageIndex === imgIndex
-                                  ? "24px"
-                                  : "10px",
-                              height: "10px",
-                              borderRadius:
-                                currentImageIndex === imgIndex ? "4px" : "50%",
-                              backgroundColor:
-                                currentImageIndex === imgIndex
-                                  ? "#F76336"
-                                  : "#c4c4c4",
-                              margin: "0 4px",
-                              cursor: "pointer",
-                              transition: "all 0.3s ease",
-                            }}
-                            onClick={() =>
+                      {/* Slider dots with left/right arrows below the image */}
+                      {project.Images && project.Images.length > 1 && (
+                        <Box
+                          sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            mt: 2,
+                          }}
+                        >
+                          <IconButton
+                            size="small"
+                            sx={{ mx: 1 }}
+                            onClick={() => {
                               setImageIndexes((prev) => ({
                                 ...prev,
-                                [project.projectName]: imgIndex,
-                              }))
-                            }
-                          />
-                        ))}
-                      </Box>
+                                [project.projectName]:
+                                  (currentImageIndex - 1 + project.Images.length) % project.Images.length,
+                              }));
+                            }}
+                            disabled={project.Images.length <= 1}
+                            aria-label="Previous image"
+                          >
+                            <ChevronLeftIcon />
+                          </IconButton>
+                          {project.Images?.map((_, imgIndex) => (
+                            <Box
+                              key={imgIndex}
+                              sx={{
+                                width:
+                                  currentImageIndex === imgIndex
+                                    ? "24px"
+                                    : "10px",
+                                height: "10px",
+                                borderRadius:
+                                  currentImageIndex === imgIndex ? "4px" : "50%",
+                                backgroundColor:
+                                  currentImageIndex === imgIndex
+                                    ? "#F76336"
+                                    : "#c4c4c4",
+                                margin: "0 4px",
+                                cursor: "pointer",
+                                transition: "all 0.3s ease",
+                              }}
+                              onClick={() =>
+                                setImageIndexes((prev) => ({
+                                  ...prev,
+                                  [project.projectName]: imgIndex,
+                                }))
+                              }
+                            />
+                          ))}
+                          <IconButton
+                            size="small"
+                            sx={{ mx: 1 }}
+                            onClick={() => {
+                              setImageIndexes((prev) => ({
+                                ...prev,
+                                [project.projectName]:
+                                  (currentImageIndex + 1) % project.Images.length,
+                              }));
+                            }}
+                            disabled={project.Images.length <= 1}
+                            aria-label="Next image"
+                          >
+                            <ChevronRightIcon />
+                          </IconButton>
+                        </Box>
+                      )}
                     </Box>
                     <CardContent
                       sx={{
@@ -514,7 +551,7 @@ const OurWork: React.FC = () => {
         )}
       </Container>
       <FooterCommonPage
-        title="Inspired by Our Work? Let’s Create Yours!"
+        title="Inspired by Our Work? Let's Create Yours!"
         buttonText="GET IN TOUCH"
         buttonLink="/contact"
       />

@@ -858,6 +858,7 @@
     },
     {
       "projectName": "Progress Maker",
+      "priority": 0,
       "technology": "Angular",
       "typesOfTechnologies": ["Angular", "D3"],
       "description": "Enterprise Resource Planning (ERP) systems using a powerful technology stack that includes Angular with NGXS Store for frontend development, D3 for data visualization, Pptgenx for dynamic presentations.",
@@ -933,6 +934,7 @@
     },
     {
       "projectName": "Pratibha Herbal",
+      "priority": 9,
       "technology": "WordPress",
       "typesOfTechnologies": ["WordPress"],
       "description": "Our expertise in building e-commerce websites using WordPress and MySQL. Our team of skilled developers has successfully created feature-rich and scalable online stores that drive business growth and enhance customer experiences.",
@@ -998,6 +1000,7 @@
     },
     {
       "projectName": "Renacline Consultancy",
+      "priority": 8,
       "technology": "React",
       "typesOfTechnologies": ["React"],
       "description": "E-commerce websites for astrology enthusiasts using React (class-based components), Redux, and MySQL. We have successfully created engaging and personalized online platforms that cater to the unique needs of astrology enthusiasts.",
@@ -1056,6 +1059,7 @@
     },
     {
       "projectName": "E-Commerce Web Application",
+      "priority": 7,
       "technology": "WordPress",
       "typesOfTechnologies": ["WordPress"],
       "description": "Our expertise in designing and developing e-commerce websites specifically tailored for the textile industry using WordPress. We have successfully created visually stunning and highly functional online stores that cater to the unique requirements of textile businesses.",
@@ -1098,6 +1102,7 @@
     },
     {
       "projectName": "Real Estate Web Application",
+      "priority": 6,
       "technology": "Angular",
       "typesOfTechnologies": ["Angular"],
       "description": "An interactive, effective and revenue-generating website designed for the Real Estate.",
@@ -1156,6 +1161,7 @@
     },
     {
       "projectName": "Micro-C",
+      "priority": 5,
       "technology": "GWT",
       "typesOfTechnologies": ["GWT", "Java"],
       "description": "We developed a web-based photo browser for a client, specifically focusing on the UI for an X-ray machine. Users can view X-ray images captured by the machine and perform operations such as zooming, panning, and adjusting brightness, contrast, and sharpness",
@@ -1228,6 +1234,7 @@
     },
     {
       "projectName": "Yacht Closer Brochure Application",
+      "priority": 4,
       "technology": "React",
       "typesOfTechnologies": ["React", "Java"],
       "description": "Yacht Closer Brochure App' is one of the modules for the 'Yacht closer Web Application' of Boats Group. The purpose of this app is to generate brochures for the Yacht Brokers.",
@@ -1281,6 +1288,7 @@
     },
     {
       "projectName": "Yacht Closer Web Application",
+      "priority": 3,
       "technology": "Java",
       "typesOfTechnologies": ["GWT", "Java"],
       "description": "Yacht Closer Web Application is the SaaS Platform to manage Yacht Sales/Purchase/Rent Deal with Yacht Brocker and the Customer.",
@@ -1333,6 +1341,7 @@
     },
     {
       "projectName": "CX Group",
+      "priority": 2,
       "technology": "Java",
       "typesOfTechnologies": ["GWT", "Java"],
       "description": "We have successfully integrated the insignia theme and its plugin into the GWT framework. Our expertise with GWT native, JavaScript native, JQuery, Jasper Reports, Google Charts, chart.js, and Bootstrap has allowed us to build and improve the user experience.",
@@ -1415,6 +1424,7 @@
     },
     {
       "projectName": "Online Chat Web Application",
+      "priority": 1,
       "technology": "React",
       "typesOfTechnologies": ["React", "Node"],
       "description": "Big Data Customer Retention & Experience Management SaaS",
@@ -1792,6 +1802,7 @@
       "logo": "assets/images/portfolio/pubaudit.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/pub-audit-mockup.png",
         "assets/images/portfolio/pub-audit-1.png",
         "assets/images/portfolio/pub-audit-2.png",
         "assets/images/portfolio/pub-audit-3.png",
@@ -1838,6 +1849,7 @@
       "logo": "assets/images/portfolio/virtual-crm.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/virtualcrm-mockup.png",
         "assets/images/portfolio/virtualcrm-1.png",
         "assets/images/portfolio/virtualcrm-2.png",
         "assets/images/portfolio/virtualcrm-3.png",
@@ -1880,6 +1892,7 @@
       "logo": "assets/images/portfolio/property-vista.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/pvista-mockup.png",
         "assets/images/portfolio/pvista-1.png",
         "assets/images/portfolio/pvista-2.png",
         "assets/images/portfolio/pvista-3.png",
@@ -1938,6 +1951,7 @@
       "logo": "assets/images/portfolio/ante-think.png",
       "viewDemo": "",
       "Images": [
+        "assets/images/portfolio/ante-think-mockup.png",
         "assets/images/portfolio/ante-think-1.png"
       ],
       "mainTechnology": [

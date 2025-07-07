@@ -601,15 +601,41 @@ const PrivacyPolicy: React.FC = () => {
         </Typography>
         <Typography className="privacy-first-section-header" mt={4}>Contact Us</Typography>
         <Typography mt={2} className="header-description">
-          If you have any questions about this Privacy Policy, You can go to our
-          page to contact us:
-          <Link
-            href="https://jyotitechnosoft.com/contact-us"
-            rel="external nofollow noopener"
-            target="_blank"
-          >
-            https://jyotitechnosoft.com/contact-us
-          </Link>
+          If you have any questions about this Privacy Policy, You can contact us:
+          <List>
+          <ListItem disableGutters>
+              <Box display="flex" alignItems="flex-start" gap={1}>
+                <GamepadIcon sx={{ fontSize: 14, color: "#347CCC", mt: "4px" }} />
+                <Typography className="header-description">
+                    By email: <Link href="mailto:info.jyotitechnosoft@gmail.com" underline="hover" color="inherit">info.jyotitechnosoft@gmail.com</Link>
+                </Typography>
+              </Box>
+          </ListItem>
+          <ListItem disableGutters>
+              <Box display="flex" alignItems="flex-start" gap={1}>
+                <GamepadIcon sx={{ fontSize: 14, color: "#347CCC", mt: "4px" }} />
+                <Typography className="header-description">
+                Through our website: by visiting the <Link href="https://jyotitechnosoft.com/contact">Contact Us</Link> page
+                </Typography>
+              </Box>
+          </ListItem>
+          <ListItem disableGutters>
+              <Box display="flex" alignItems="flex-start" gap={1}>
+                <GamepadIcon sx={{ fontSize: 14, color: "#347CCC", mt: "4px" }} />
+                <Typography className="header-description">
+                By phone number: <Link href="tel:+919265712724" underline="hover" color="inherit">+91 92657 12724</Link>
+                </Typography>
+              </Box>
+          </ListItem>
+          <ListItem disableGutters>
+              <Box display="flex" alignItems="flex-start" gap={1}>
+                <GamepadIcon sx={{ fontSize: 14, color: "#347CCC", mt: "4px" }} />
+                <Typography className="header-description">
+                By mail: 228, Second Floor, Green Elina, Nr. Sneh Sankul's Vadi, Anand Mahal Rd, Giriraj Society, Adajan, Surat 395009, Gujarat, India
+                </Typography>
+              </Box>
+          </ListItem>
+          </List>
         </Typography>
       </Container>
     </Box>
