@@ -25,7 +25,8 @@
 .privacy-policy .privacy-policy-container .privacy-first-section-header {
    font-weight: 600;
    font-size: 26px;
-   line-height: 22px;
+   /* line-height: 22px; */
+   text-align: left;
    color: var(--text-blue);
 }
 

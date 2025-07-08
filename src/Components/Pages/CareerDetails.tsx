@@ -15,12 +15,22 @@ import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
-import dataArray from "../../jt-website.json";
+// import dataArray from "../../jt-website.json"; // No longer needed
 import "../../styles/career-details.css";
 const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
 const API_ENDPOINTS = {
   career: `${BASE_URL}/career.php`,
+  jobs: `${BASE_URL}/jobs.php`,
 };
+
+interface Job {
+  id: number;
+  jobName: string;
+  jobDescription: string;
+  briefJobDescription: string;
+  jobRequirement: string;
+  address: string;
+}
 
 const CareerDetails: React.FC = () => {
   const location = useLocation();
@@ -31,7 +41,18 @@ const CareerDetails: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
-  const job = dataArray.jobs.find((job) => job.id === Number(jobId));
+  const [job, setJob] = useState<Job | null>(null);
+
+  useEffect(() => {
+    if (!jobId) return;
+    axios.get(API_ENDPOINTS.jobs)
+      .then(res => {
+        const found = res.data.jobs.find((j: Job) => j.id === Number(jobId));
+        setJob(found || null);
+      })
+      .catch(() => setJob(null));
+  }, [jobId]);
+
   const fieldMap: Record<string, keyof typeof formData> = {
     "First Name": "firstName",
     "Last Name": "lastName",

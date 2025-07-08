@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
   CardContent,
@@ -25,6 +25,11 @@ import dataArray from "../../jt-website.json";
 import "../../styles/career.css";
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 
+const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
+const API_ENDPOINTS = {
+  jobs: `${BASE_URL}/jobs.php`,
+};
+
   type Job = {
   id: number;
   imagePath: string;
@@ -43,6 +48,7 @@ import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 };
 
 const Career: React.FC = () => {
+  const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [search, setSearch] = useState("");
@@ -89,7 +95,7 @@ const Career: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5007/api/jobs")
+      .get(API_ENDPOINTS.jobs)
       .then((res) => {
         setJobs(res.data.jobs);
       })
@@ -289,7 +295,7 @@ const Career: React.FC = () => {
                       lookout for great talent. Share your details, and we’ll
                       reach out when an opportunity comes up!
                     </Typography>
-                    <Button className="no-job-button">
+                    <Button className="no-job-button" onClick={() => navigate("/contact")}>
                       Let’s Stay in Touch
                     </Button>
                   </Box>

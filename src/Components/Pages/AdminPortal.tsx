@@ -22,6 +22,11 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
+const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
+const API_ENDPOINTS = {
+  jobs: `${BASE_URL}/jobs.php`,
+};
+
 const itemsPerPage = 5;
   type Job = {
     id: number;
@@ -73,7 +78,7 @@ const itemsPerPage = 5;
 useEffect(() => {
   if (isLoggedIn) {
     axios
-      .get("http://localhost:5007/api/jobs")
+      .get(API_ENDPOINTS.jobs)
       .then((res) => {
         console.log("API Response Data:", res.data);
         setJobs(res.data.jobs);
@@ -139,7 +144,7 @@ useEffect(() => {
 
   const handleDelete = (id: number) => {
     axios
-      .delete(`http://localhost:5007/api/jobs/${id}`)
+      .delete(`${API_ENDPOINTS.jobs}?id=${id}`)
       .then(() => setJobs(jobs.filter((job) => job.id !== id)))
       .catch((err) => console.error("Delete failed", err));
   };
@@ -147,7 +152,7 @@ useEffect(() => {
   const handleDialogSave = () => {
     if (editingJob) {
       axios
-        .put(`http://localhost:5007/api/jobs/${editingJob.id}`, {
+        .put(`${API_ENDPOINTS.jobs}?id=${editingJob.id}`, {
           ...editingJob,
           ...formValues,
         })
@@ -162,7 +167,7 @@ useEffect(() => {
         ...formValues,
       };
       axios
-        .post("http://localhost:5007/api/jobs", newJob)
+        .post(API_ENDPOINTS.jobs, newJob)
         .then((response) => {
           setJobs([...jobs, response.data]);
           setOpenDialog(false);
