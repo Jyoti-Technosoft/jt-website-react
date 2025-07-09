@@ -19,6 +19,7 @@ import { useTheme } from "@mui/material/styles";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { Helmet } from 'react-helmet';
 
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
@@ -85,6 +86,16 @@ const OurWork: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Our Work | Jyoti Technosoft LLP</title>
+        <meta name="description" content="See our portfolio of successful IT projects and digital solutions delivered by Jyoti Technosoft LLP." />
+        <meta property="og:title" content="Our Work | Jyoti Technosoft LLP" />
+        <meta property="og:description" content="See our portfolio of successful IT projects and digital solutions delivered by Jyoti Technosoft LLP." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jyotitechnosoft.com/our-work" />
+        <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
+        <link rel="canonical" href="https://jyotitechnosoft.com/our-work" />
+      </Helmet>
       <HeaderMainPage
         smallTitle="Our Work"
         page="Solutions That Drive Success"
@@ -277,7 +288,8 @@ const OurWork: React.FC = () => {
                             objectFit: "contain",
                             borderRadius: "10px",
                             border: "4px solid #CFCFCF",
-                            margin: "auto"
+                            margin: "auto",
+                            loading: "lazy"
                           }}
                         />
                       </Box>

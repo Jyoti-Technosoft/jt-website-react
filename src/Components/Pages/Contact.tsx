@@ -15,6 +15,7 @@ import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios"
+import { Helmet } from 'react-helmet';
 
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import "../../styles/contact.css";
@@ -160,6 +161,16 @@ const Contact: React.FC = () => {
 
     return (
       <>
+        <Helmet>
+          <title>Contact Us | Jyoti Technosoft LLP</title>
+          <meta name="description" content="Contact Jyoti Technosoft LLP for IT solutions, web development, and digital transformation services." />
+          <meta property="og:title" content="Contact Us | Jyoti Technosoft LLP" />
+          <meta property="og:description" content="Contact Jyoti Technosoft LLP for IT solutions, web development, and digital transformation services." />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://jyotitechnosoft.com/contact" />
+          <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
+          <link rel="canonical" href="https://jyotitechnosoft.com/contact" />
+        </Helmet>
         <HeaderMainPage
           smallTitle="Contact"
           page="Let’s Build Together"

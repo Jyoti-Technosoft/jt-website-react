@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jyotitechnosoft.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jyotitechnosoft.com/about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jyotitechnosoft.com/services</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jyotitechnosoft.com/contact</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jyotitechnosoft.com/career</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jyotitechnosoft.com/our-work</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jyotitechnosoft.com/privacy-policy</loc>
+    <priority>0.5</priority>
+  </url>
+</urlset> 

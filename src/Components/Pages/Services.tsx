@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Grid, Typography, Container, useMediaQuery } from '@mui/material';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
+import { Helmet } from 'react-helmet';
 
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
@@ -31,7 +32,17 @@ const Services: React.FC = () => {
     }, []);
 
     return (
-      <Box>
+      <>
+        <Helmet>
+          <title>Services | Jyoti Technosoft LLP</title>
+          <meta name="description" content="Explore IT services by Jyoti Technosoft LLP: web development, mobile apps, AI integration, and more." />
+          <meta property="og:title" content="Services | Jyoti Technosoft LLP" />
+          <meta property="og:description" content="Explore IT services by Jyoti Technosoft LLP: web development, mobile apps, AI integration, and more." />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://jyotitechnosoft.com/services" />
+          <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
+          <link rel="canonical" href="https://jyotitechnosoft.com/services" />
+        </Helmet>
         {/* <HeaderCommon smallTitle="Services" page="Tailored Solutions for Every Digital Need" /> */}
         <HeaderMainPage
           smallTitle="Services"
@@ -69,6 +80,7 @@ const Services: React.FC = () => {
                       src={service?.imgSrc}
                       alt={service?.title}
                       className="service-image"
+                      loading="lazy"
                     />
                     <Typography className="service-title">
                       {service?.title}
@@ -133,6 +145,7 @@ const Services: React.FC = () => {
                             src={service?.imgSrc}
                             alt={service?.id}
                             className="more-service-image"
+                            loading="lazy"
                           />
                         </div>
                         <div className="hover-title">{service?.technology}</div>
@@ -162,7 +175,7 @@ const Services: React.FC = () => {
           buttonText="Let’s Get Started"
           buttonLink="/contact"
         />
-      </Box>
+      </>
     );
 }
 

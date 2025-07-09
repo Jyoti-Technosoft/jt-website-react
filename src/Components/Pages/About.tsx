@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Container, Grid, Typography, Card, CardContent, CardMedia, Box } from "@mui/material";
+import { Helmet } from 'react-helmet';
 
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
@@ -16,6 +17,16 @@ const About: React.FC = () => {
     const { aboutUs } = dataArray;
     return (
       <>
+        <Helmet>
+          <title>About Us | Jyoti Technosoft LLP</title>
+          <meta name="description" content="Learn more about Jyoti Technosoft LLP, our mission, vision, and team of IT experts." />
+          <meta property="og:title" content="About Us | Jyoti Technosoft LLP" />
+          <meta property="og:description" content="Learn more about Jyoti Technosoft LLP, our mission, vision, and team of IT experts." />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://jyotitechnosoft.com/about" />
+          <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
+          <link rel="canonical" href="https://jyotitechnosoft.com/about" />
+        </Helmet>
         {/* <HeaderCommon smallTitle="About" page="About Us" /> */}
         <HeaderMainPage
           smallTitle="About"
@@ -30,6 +41,7 @@ const About: React.FC = () => {
                 src="/assets/about-first-section.png"
                 alt="Teamwork"
                 style={{ width: "100%" }}
+                loading="lazy"
               />
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
@@ -64,6 +76,7 @@ const About: React.FC = () => {
                       image={goal?.imageSrc}
                       alt={goal?.cardHeader}
                       className="cardMedia"
+                      loading="lazy"
                     />
                     <CardContent className="cardContent">
                       <Typography className="cardHeader">
@@ -94,6 +107,7 @@ const About: React.FC = () => {
                 src="/assets/about-second-section.png"
                 alt="Teamwork"
                 style={{ width: "100%" }}
+                loading="lazy"
               />
             </Grid>
             <Grid className="values-data-main-section" size={{ xs: 12, md: 6 }}>
