@@ -89,11 +89,22 @@ useEffect(() => {
   }
 }, [isLoggedIn]);
 
-  const handleLogin = () => {
-    if (email === "admin@example.com" && password === "password123") {
-      setIsLoggedIn(true);
-    } else {
-      alert("Invalid credentials");
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('/assets/backend/login.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+        credentials: 'include', // important for session cookies
+      });
+      const result = await response.json();
+      if (result.success) {
+        setIsLoggedIn(true);
+      } else {
+        alert(result.message || 'Invalid credentials');
+      }
+    } catch (err) {
+      alert('Login failed');
     }
   };
 
