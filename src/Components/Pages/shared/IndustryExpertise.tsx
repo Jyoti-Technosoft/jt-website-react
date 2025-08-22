@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Grid, Chip, Container } from "@mui/material";
+import { Box, Typography, Chip, Container } from "@mui/material";
 
 import "../../../styles/home.css";
 
@@ -43,7 +43,7 @@ const IndustryExpertise: React.FC = () => {
     <Box mb={2}>
       <Container>
         <Box sx={{ px: 2 }} className="industry-expertise">
-          <Typography className="industry-expertise-title">
+          <Typography variant="h2" className="industry-expertise-title">
             Our Industry Expertise
           </Typography>
           <Typography className="industry-expertise-description" mt={1}>

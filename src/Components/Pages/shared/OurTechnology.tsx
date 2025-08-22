@@ -33,7 +33,7 @@ const OurTechnology: React.FC = () => {
       <Box className="our-technology-section">
         <Container className="container">
           <Box>
-            <Typography className="ourTechnology-title">
+            <Typography variant="h2" className="ourTechnology-title">
               Our Technology
             </Typography>
             <Typography className="ourTechnology-description" mt={1}>

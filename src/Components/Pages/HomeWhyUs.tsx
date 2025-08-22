@@ -40,7 +40,7 @@ const HomeWhyUs: React.FC = () => {
     <Box className="why-us-section">
       <Container className="container">
         <Box>
-          <Typography className="whyUs-title">{WhyUs?.title}</Typography>
+          <Typography variant="h2" className="whyUs-title">{WhyUs?.title}</Typography>
           <Typography className="whyUs-description" mt={1}>
             {WhyUs?.description}
           </Typography>

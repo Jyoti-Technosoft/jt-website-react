@@ -156,8 +156,8 @@
 
 .career-second-section .apply-button {
     font-family: Roboto;
-    background-color: #437CCC;
-    color: white;
+    background-color: #F76336;
+    color: #fff;
     min-width: 92px;
     min-height: 35px;
     border-radius: 10px;
@@ -165,6 +165,15 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10), 0 0 0 2px #F76336;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.career-second-section .apply-button:hover {
+    background-color: #d94d24;
+    color: #fff;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.15), 0 0 0 2px #d94d24;
 }
 
 .career .main-footer-common {

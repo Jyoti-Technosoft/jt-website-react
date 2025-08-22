@@ -63,7 +63,7 @@ const WeveBuilt: React.FC = () => {
       <Box className="weveBuilt-section">
         <Container className="weveBuilt-container">
           <Box>
-            <Typography className="weveBuilt-title">
+            <Typography variant="h2" className="weveBuilt-title">
               {WeveBuilt?.title}
             </Typography>
             <Box

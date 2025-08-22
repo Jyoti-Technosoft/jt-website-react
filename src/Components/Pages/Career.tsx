@@ -399,20 +399,19 @@ const Career: React.FC = () => {
                       if (page > 0) setPage((prev) => Math.max(prev - 1, 0));
                     }}
                     sx={{
-                      backgroundColor: "#1976d2",
-                      color: "#fff",
+                      backgroundColor: '#F76336',
+                      color: '#fff',
                       width: 36,
                       height: 36,
-                      borderRadius: "12px",
+                      borderRadius: '12px',
                       opacity: totalPages === 0 || page === 0 ? 0.5 : 1,
-                      pointerEvents:
-                        totalPages === 0 || page === 0 ? "none" : "auto",
-                      "&:hover": {
-                        backgroundColor: "#1565c0",
+                      pointerEvents: totalPages === 0 || page === 0 ? 'none' : 'auto',
+                      '&:hover': {
+                        backgroundColor: '#d94d24',
                       },
                     }}
                   >
-                    <ChevronLeftIcon sx={{ fontSize: "20px" }} />
+                    <ChevronLeftIcon sx={{ fontSize: '20px' }} />
                   </IconButton>
                   {totalPages > 0 &&
                     Array.from({ length: totalPages }).map((_, index) => (
@@ -422,36 +421,37 @@ const Career: React.FC = () => {
                         sx={{
                           width: 14,
                           height: 14,
-                          borderRadius: "4px",
-                          backgroundColor: page === index ? "#1976d2" : "#ccc",
-                          cursor: "pointer",
+                          borderRadius: '4px',
+                          backgroundColor: page === index ? '#F76336' : '#F2F2F4',
+                          cursor: 'pointer',
                           marginRight: 1,
+                          transition: 'background 0.2s',
+                          display: 'inline-block',
                         }}
                       />
                     ))}
-
                   <IconButton
                     onClick={() =>
                       setPage((prev) => Math.min(prev + 1, totalPages - 1))
                     }
                     sx={{
-                      backgroundColor: "#1976d2",
-                      color: "#fff",
+                      backgroundColor: '#F76336',
+                      color: '#fff',
                       width: 36,
                       height: 36,
-                      borderRadius: "12px",
+                      borderRadius: '12px',
                       opacity:
                         totalPages === 0 || page === totalPages - 1 ? 0.5 : 1,
                       pointerEvents:
                         totalPages === 0 || page === totalPages - 1
-                          ? "none"
-                          : "auto",
-                      "&:hover": {
-                        backgroundColor: "#1565c0",
+                          ? 'none'
+                          : 'auto',
+                      '&:hover': {
+                        backgroundColor: '#d94d24',
                       },
                     }}
                   >
-                    <ChevronRightIcon sx={{ fontSize: "20px" }} />
+                    <ChevronRightIcon sx={{ fontSize: '20px' }} />
                   </IconButton>
                 </Box>
               )}

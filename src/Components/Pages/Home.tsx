@@ -53,7 +53,7 @@ const Home: React.FC = () => {
             src="/assets/jyoti-technosoft-web-development.mp4"
           />
           <Box className="first-section-home-content">
-            <Typography variant="h2" className="first-section-title">
+            <Typography variant="h1" className="first-section-title">
               {meetSection?.title}
             </Typography>
             <Typography variant="body1" className="first-section-description">

@@ -23,10 +23,10 @@ const HeaderCommonPage: React.FC<HeaderCommonProps> = ({
   subHeader,
 }) => {
   const smallTitlePath = smallTitle ? generatePath(smallTitle) : "";
-  const subTitlePath =
-    smallTitle && subTitle
-      ? `${smallTitlePath}${generatePath("/" + subTitle)}`
-      : "";
+  // const subTitlePath =
+  //   smallTitle && subTitle
+  //     ? `${smallTitlePath}${generatePath("/" + subTitle)}`
+  //     : "";
 
   return (
     <Box className="main-header-common">

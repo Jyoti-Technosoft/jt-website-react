@@ -12,7 +12,7 @@ const HowWeWork: React.FC = () => {
         <Box className="howWeWork-section">
             <Box className="howWeWork-container">
                 <Box>
-                    <Typography className="howWeWork-title">
+                    <Typography variant="h2" className="howWeWork-title">
                         How We Work
                     </Typography>
                     <Typography className="howWeWork-description" mt={1}>

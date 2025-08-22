@@ -10,7 +10,7 @@ const WeOffer: React.FC = () => {
         <Box className="we-offer-section">
             <Container className="weOffer-container">
                 <Box>
-                    <Typography className="weOffer-title">
+                    <Typography variant="h2" className="weOffer-title">
                         {WeOffer?.title}
                     </Typography>
                     <Typography className="weOffer-description" mt={1}>
