@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import {
   Typography,
@@ -13,7 +13,9 @@ import {
   Tab,
   IconButton,
   useMediaQuery,
-  Container
+  Container,
+  Button,
+  ButtonGroup
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
@@ -38,25 +40,40 @@ const OurWork: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const logos = dataArray?.clientlogos || [];
   const projects = (dataArray?.portfolio.filter((p) => p.projectName) || []).sort((a, b) => (b.priority || 0) - (a.priority || 0));
-  const [selectedTech, setSelectedTech] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedTech, setSelectedTech] = useState<string>("");
   const [page, setPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(4);
   const [imageIndexes, setImageIndexes] = useState({});
 
-  const rawTechnologies = dataArray?.portfolio.flatMap(
-    (project) => project.typesOfTechnologies || []
-  ) || [];
+  // Get all unique technologies from projects in the selected category
+  const rawTechnologies = useMemo(() => {
+    const techs = new Set<string>();
+    projects.forEach(project => {
+      if (selectedCategory === "All" || project.category.includes(selectedCategory)) {
+        project.typesOfTechnologies?.forEach(tech => techs.add(tech));
+      }
+    });
+    return Array.from(techs).sort();
+  }, [projects, selectedCategory]);
 
-  const uniqueTechnologies = ["All", ...Array.from(new Set(rawTechnologies))];
-
-  const filteredProjects =
-    selectedTech === "All"
-      ? projects
-      : projects.filter((project) =>
-          project.typesOfTechnologies?.some(
-            (tech) => tech.toLowerCase() === selectedTech.toLowerCase()
-          )
+  // Get all categories from the data
+  const categories = dataArray?.portfolioCategories || ["All"];
+  
+  // Filter projects based on selected category and technology
+  const filteredProjects = useMemo(() => {
+    return projects.filter(project => {
+      const matchesCategory = selectedCategory === "All" || 
+        project.category.includes(selectedCategory);
+        
+      // If no technology is selected, show all projects in the category
+      const matchesTech = !selectedTech || 
+        project.typesOfTechnologies?.some(
+          tech => tech.toLowerCase() === selectedTech.toLowerCase()
         );
+      return matchesCategory && matchesTech;
+    });
+  }, [projects, selectedCategory, selectedTech]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -68,14 +85,17 @@ const OurWork: React.FC = () => {
     }
   }, [page]);
 
-  // const handleChangePage = (event, newPage) => {
-  //   setPage(newPage + 1);
-  // };
+  const handleCategoryChange = (newCategory: string) => {
+    setSelectedCategory(newCategory);
+    setSelectedTech("");
+    setPage(1);
+  };
 
-  // const handleChangeRowsPerPage = (event) => {
-  //   setRowsPerPage(parseInt(event.target.value, 10));
-  //   setPage(1);
-  // };
+  const handleTechChange = (tech: string) => {
+    // Toggle the selected technology
+    setSelectedTech(prevTech => prevTech === tech ? '' : tech);
+    setPage(1);
+  };
 
   const paginatedProjects = filteredProjects.slice(
     (page - 1) * rowsPerPage,
@@ -144,17 +164,9 @@ const OurWork: React.FC = () => {
           projects to showcase our expertise and quality.
         </Typography>
 
-        <Box
-          sx={{
-            // px: isMobile ? "1rem" : "6rem",
-            mt: 4,
-            mb: 3,
-          }}
-        >
-          <Box
-            margin={isMobile ? "auto" : "0"}
-            className="ourTechnology-main-container"
-          >
+        <Box sx={{ mt: 4, mb: 3 }}>
+          {/* Category Tabs */}
+          <Box margin={isMobile ? "auto" : "0"} className="ourTechnology-main-container">
             {isMobile ? (
               <Box
                 className="mobile-tab-navigation"
@@ -162,77 +174,152 @@ const OurWork: React.FC = () => {
                 alignItems="center"
                 justifyContent="space-between"
                 width="100%"
+                mb={4}
               >
                 <IconButton
                   onClick={() => {
-                    const currentIndex =
-                      uniqueTechnologies.indexOf(selectedTech);
+                    const currentIndex = categories.indexOf(selectedCategory);
                     if (currentIndex > 0) {
-                      setSelectedTech(uniqueTechnologies[currentIndex - 1]);
-                      setPage(1);
+                      handleCategoryChange(categories[currentIndex - 1]);
                     }
                   }}
-                  disabled={uniqueTechnologies.indexOf(selectedTech) === 0}
+                  disabled={categories.indexOf(selectedCategory) === 0}
                 >
                   <ChevronLeft />
                 </IconButton>
 
                 <Tabs
-                  value={selectedTech}
-                  onChange={(event, newValue) => {
-                    setSelectedTech(newValue);
-                    setPage(1);
-                  }}
+                  value={selectedCategory}
+                  onChange={(e, newValue) => handleCategoryChange(newValue)}
                   centered
                   className="technology-tabs"
                 >
                   <Tab
-                    key={selectedTech}
-                    value={selectedTech}
-                    label={selectedTech}
+                    key={selectedCategory}
+                    value={selectedCategory}
+                    label={selectedCategory}
                     disableRipple
                     className="technology-tab"
                   />
                 </Tabs>
+
                 <IconButton
                   onClick={() => {
-                    const currentIndex =
-                      uniqueTechnologies.indexOf(selectedTech);
-                    if (currentIndex < uniqueTechnologies.length - 1) {
-                      setSelectedTech(uniqueTechnologies[currentIndex + 1]);
-                      setPage(1);
+                    const currentIndex = categories.indexOf(selectedCategory);
+                    if (currentIndex < categories.length - 1) {
+                      handleCategoryChange(categories[currentIndex + 1]);
                     }
                   }}
-                  disabled={
-                    uniqueTechnologies.indexOf(selectedTech) ===
-                    uniqueTechnologies.length - 1
-                  }
+                  disabled={categories.indexOf(selectedCategory) === categories.length - 1}
                 >
                   <ChevronRight />
                 </IconButton>
               </Box>
             ) : (
-              <Tabs
-                value={selectedTech}
-                onChange={(event, newValue) => {
-                  setSelectedTech(newValue);
-                  setPage(1);
-                }}
-                centered
-                className="technology-tabs"
-              >
-                {uniqueTechnologies.map((tech, index) => (
-                  <Tab
-                    key={index}
-                    value={tech}
-                    label={tech}
-                    disableRipple
-                    className="technology-tab"
-                  />
-                ))}
-              </Tabs>
+              <Box sx={{ mb: 4, py: 2, margin: 0 }}>
+                <Tabs
+                  value={selectedCategory}
+                  onChange={(e, newValue) => {
+                    handleCategoryChange(newValue);
+                    setPage(1);
+                  }}
+                  centered
+                  className="technology-tabs"
+                >
+                  {categories.map((category, index) => (
+                    <Tab 
+                      key={index}
+                      label={category} 
+                      value={category}
+                      disableRipple
+                      className="technology-tab"
+                    />
+                  ))}
+                </Tabs>
+              </Box>
             )}
           </Box>
+
+          {/* Technology Filters */}
+          <Box sx={{ mb: 4, textAlign: 'center', display: 'flex', margin: 0 }}>
+            <ButtonGroup
+              variant="outlined"
+              size={isMobile ? 'small' : 'medium'}
+              sx={{
+                flexWrap: 'wrap',
+                gap: 1,
+                justifyContent: 'center',
+                '& .MuiButtonGroup-grouped': {
+                  borderRadius: '20px !important',
+                  margin: '0.25rem',
+                },
+              }}
+            >
+              {rawTechnologies.map((tech) => (
+                <Button
+                  key={tech}
+                  variant={selectedTech === tech ? 'contained' : 'outlined'}
+                  onClick={() => handleTechChange(tech)}
+                  sx={{
+                    textTransform: 'none',
+                    borderRadius: '20px',
+                    border: '1px solid #D9D9D9 !important',
+                    color: selectedTech === tech ? "#ffffff" : '#333333',
+                    '&.MuiButton-contained': {
+                      '&:hover': {
+                        backgroundColor: theme.palette.primary.dark,
+                      },
+                    },
+                  }}
+                >
+                  {tech}
+                </Button>
+              ))}
+            </ButtonGroup>
+          </Box>
+
+          {/* <Box
+            margin={isMobile ? "auto" : "0"}
+          >
+            {isMobile && (
+              <Box
+                className="mobile-tab-navigation"
+                display="flex"
+                alignItems="center"
+                justifyContent="space-between"
+                width="100%"
+                mb={2}
+              >
+                <IconButton
+                  onClick={() => {
+                    const currentIndex = categories.indexOf(selectedCategory);
+                    if (currentIndex > 0) {
+                      handleCategoryChange(categories[currentIndex - 1]);
+                    }
+                  }}
+                  disabled={categories.indexOf(selectedCategory) === 0}
+                >
+                  <ChevronLeft />
+                </IconButton>
+
+                <Typography variant="h6" sx={{ px: 2 }}>
+                  {selectedCategory}
+                </Typography>
+
+                <IconButton
+                  onClick={() => {
+                    const currentIndex = categories.indexOf(selectedCategory);
+                    if (currentIndex < categories.length - 1) {
+                      handleCategoryChange(categories[currentIndex + 1]);
+                    }
+                  }}
+                  disabled={categories.indexOf(selectedCategory) === categories.length - 1}
+                >
+                  <ChevronRight />
+                </IconButton>
+              </Box>
+            )}
+          </Box> */}
         </Box>
         <Box>
           <Grid container spacing={6} sx={{ py: 3 }}>

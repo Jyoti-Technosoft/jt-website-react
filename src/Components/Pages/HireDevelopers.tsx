@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography, Grid, Divider, Paper, Container } from "@mui/material";
 import dataArray from "../../jt-website.json";
@@ -41,6 +41,65 @@ const HireDevelopers: React.FC = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  // -------------------------
+  // ANIMATED NUMBERS
+  // -------------------------
+  const stats = [
+    { label: "Delivered Projects", value: 40, suffix: "+" },
+    { label: "Expert Developers", value: 20, suffix: "+" },
+    { label: "Upwork Hours", value: 16473, suffix: "+" },
+  ];
+
+  const [counts, setCounts] = useState(stats.map(() => 0));
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting && !hasAnimated) {
+          animateCounts();
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  const animateCounts = () => {
+    stats.forEach((stat, index) => {
+      let start = 0;
+      const end = stat.value;
+      const duration = 2000; // ms
+      const stepTime = 30;
+      const increment = end / (duration / stepTime);
+
+      const counter = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          start = end;
+          clearInterval(counter);
+        }
+        setCounts((prev) => {
+          const newCounts = [...prev];
+          newCounts[index] = Math.floor(start);
+          return newCounts;
+        });
+      }, stepTime);
+    });
+  };
+
   return (
     <>
       <HeaderMainPage
@@ -53,7 +112,7 @@ const HireDevelopers: React.FC = () => {
         sx={{ bgcolor: "#f9fbfd", paddingTop: "60px" }}
         className="hire-middle-section"
       >
-        <Container>
+        <Container ref={sectionRef}>
           <Grid
             container
             spacing={2}
@@ -62,57 +121,28 @@ const HireDevelopers: React.FC = () => {
             textAlign="center"
             gap="unset"
           >
-            <Grid size={{ xs: 6, md: 3 }}>
-              <Typography variant="h4" fontWeight={600} color="#1F5795">
-                100+
-              </Typography>
-              <Typography color="#333333">Delivered Projects</Typography>
-            </Grid>
-            <Divider
-              orientation="vertical"
-              flexItem
-              sx={{
-                display: { xs: "none", md: "block" },
-                height: "100px",
-                alignSelf: "center",
-              }}
-            />
-            <Grid size={{ xs: 6, md: 3 }}>
-              <Typography variant="h4" fontWeight={600} color="#1F5795">
-                40+
-              </Typography>
-              <Typography color="#333333">Expert Developers</Typography>
-            </Grid>
-            <Divider
-              orientation="vertical"
-              flexItem
-              sx={{
-                display: { xs: "none", md: "block" },
-                height: "100px",
-                alignSelf: "center",
-              }}
-            />
-            <Grid size={{ xs: 6, md: 3 }} sx={{ mt: { xs: 3, md: 0 } }}>
-              <Typography variant="h4" fontWeight={600} color="#1F5795">
-                2M+
-              </Typography>
-              <Typography color="#333333">Users Of Code</Typography>
-            </Grid>
-            <Divider
-              orientation="vertical"
-              flexItem
-              sx={{
-                display: { xs: "none", md: "block" },
-                height: "100px",
-                alignSelf: "center",
-              }}
-            />
-            <Grid size={{ xs: 6, md: 3 }} sx={{ mt: { xs: 3, md: 0 } }}>
-              <Typography variant="h4" fontWeight={600} color="#1F5795">
-                2M+
-              </Typography>
-              <Typography color="#333333">Usages</Typography>
-            </Grid>
+            {stats.map((stat, i) => (
+              <React.Fragment key={i}>
+                <Grid size={{ xs: 6, md: 3 }}>
+                  <Typography variant="h4" fontWeight={600} color="#1F5795">
+                    {counts[i]}
+                    {stat.suffix}
+                  </Typography>
+                  <Typography color="#333333">{stat.label}</Typography>
+                </Grid>
+                {i < stats.length - 1 && (
+                  <Divider
+                    orientation="vertical"
+                    flexItem
+                    sx={{
+                      display: { xs: "none", md: "block" },
+                      height: "100px",
+                      alignSelf: "center",
+                    }}
+                  />
+                )}
+              </React.Fragment>
+            ))}
           </Grid>
         </Container>
 

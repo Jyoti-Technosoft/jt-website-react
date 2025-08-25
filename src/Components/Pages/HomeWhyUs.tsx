@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import React, { useEffect, useRef, useState } from "react";
+import { Box, Container, Typography } from "@mui/material";
 
 import dataArray from "../../jt-website.json";
 import "../../styles/home.css";
@@ -7,11 +7,39 @@ import "../../styles/home.css";
 const HomeWhyUs: React.FC = () => {
   const { WhyUs } = dataArray?.home;
   const [animatedNumbers, setAnimatedNumbers] = useState<number[]>([]);
+  const [startAnimation, setStartAnimation] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setStartAnimation(true);
+          observer.disconnect(); // run only once
+        }
+      },
+      { threshold: 0.3 } // 30% visible before animating
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!startAnimation) return;
+
+    const currentYear = new Date().getFullYear();
+
     const intervals = WhyUs?.data?.map((item, index) => {
-      const targetValue = parseInt(item.title, 10);
-      const duration = 2;
+      let targetValue = parseInt(item.title, 10);
+      if (item?.type === "Experience" && item?.year) {
+        targetValue = currentYear - item.year;
+      }
+
+      const duration = 2; // seconds
       const step = targetValue / ((duration * 1000) / 30);
       let currentValue = 0;
 
@@ -27,20 +55,24 @@ const HomeWhyUs: React.FC = () => {
           clearInterval(interval);
         }
       }, 30);
+
       return interval;
     });
+
     return () => intervals.forEach(clearInterval);
-  }, [WhyUs?.data]);
+  }, [startAnimation, WhyUs?.data]);
 
   useEffect(() => {
     setAnimatedNumbers(WhyUs?.data?.map(() => 0));
   }, [WhyUs?.data]);
 
   return (
-    <Box className="why-us-section">
+    <Box className="why-us-section" ref={sectionRef}>
       <Container className="container">
         <Box>
-          <Typography variant="h2" className="whyUs-title">{WhyUs?.title}</Typography>
+          <Typography variant="h2" className="whyUs-title">
+            {WhyUs?.title}
+          </Typography>
           <Typography className="whyUs-description" mt={1}>
             {WhyUs?.description}
           </Typography>
@@ -60,22 +92,22 @@ const HomeWhyUs: React.FC = () => {
             },
           }}
         >
-          {WhyUs?.data?.map((value, index) => (
-          <Box className="whyus-card" key={index}>
-              <Box className="main-numbercard">
-                <Typography className="number">
-                  {value?.type === "Clients" ||
-                  value?.type === "Projects" ||
-                  value?.type === "Experience"
-                    ? `${animatedNumbers[index]}+`
-                    : animatedNumbers[index]}
-                </Typography>
-                <Typography className="number-text">
-                  {value?.description}
-                </Typography>
+          {WhyUs?.data?.map((value, index) => {
+            const displayNumber = animatedNumbers[index] ?? 0;
+
+            return (
+              <Box className="whyus-card" key={index}>
+                <Box className="main-numbercard">
+                  <Typography className="number">
+                    {`${displayNumber}+`}
+                  </Typography>
+                  <Typography className="number-text">
+                    {value?.description}
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
-          ))}
+            );
+          })}
         </Box>
       </Container>
     </Box>

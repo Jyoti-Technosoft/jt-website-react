@@ -19,9 +19,10 @@
           "type": "Projects"
         },
         {
-          "title": "6+",
+          "title": "3+",
           "description": "Year Experience",
-          "type": "Experience"
+          "type": "Experience",
+          "year": 2022
         },
         {
           "title": "35",
@@ -852,14 +853,13 @@
       "imageSrc": "assets/images/development-process/workflowStep5.svg"
     }
   ],
+  "portfolioCategories": ["All", "Custom Software Development", "Mobile App", "Generative AI", "Visualization"],
   "portfolio": [
-    {
-      "technology": "All"
-    },
     {
       "projectName": "Progress Maker",
       "priority": 0,
       "technology": "Angular",
+      "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["Angular", "D3"],
       "description": "Enterprise Resource Planning (ERP) systems using a powerful technology stack that includes Angular with NGXS Store for frontend development, D3 for data visualization, Pptgenx for dynamic presentations.",
       "logo": "assets/images/portfolio/ProgressMaker_Logo.png",
@@ -936,6 +936,7 @@
       "projectName": "Pratibha Herbal",
       "priority": 9,
       "technology": "WordPress",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["WordPress"],
       "description": "Our expertise in building e-commerce websites using WordPress and MySQL. Our team of skilled developers has successfully created feature-rich and scalable online stores that drive business growth and enhance customer experiences.",
       "logo": "assets/images/portfolio/pratibhalogo.png",
@@ -1002,6 +1003,7 @@
       "projectName": "Renacline Consultancy",
       "priority": 8,
       "technology": "React",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["React"],
       "description": "E-commerce websites for astrology enthusiasts using React (class-based components), Redux, and MySQL. We have successfully created engaging and personalized online platforms that cater to the unique needs of astrology enthusiasts.",
       "logo": "",
@@ -1061,6 +1063,7 @@
       "projectName": "E-Commerce Web Application",
       "priority": 7,
       "technology": "WordPress",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["WordPress"],
       "description": "Our expertise in designing and developing e-commerce websites specifically tailored for the textile industry using WordPress. We have successfully created visually stunning and highly functional online stores that cater to the unique requirements of textile businesses.",
       "logo": "",
@@ -1104,6 +1107,7 @@
       "projectName": "Real Estate Web Application",
       "priority": 6,
       "technology": "Angular",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["Angular"],
       "description": "An interactive, effective and revenue-generating website designed for the Real Estate.",
       "logo": "assets/images/portfolio/tlc_engine-removebg-preview.png",
@@ -1163,6 +1167,7 @@
       "projectName": "Micro-C",
       "priority": 5,
       "technology": "GWT",
+      "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["GWT", "Java"],
       "description": "We developed a web-based photo browser for a client, specifically focusing on the UI for an X-ray machine. Users can view X-ray images captured by the machine and perform operations such as zooming, panning, and adjusting brightness, contrast, and sharpness",
       "logo": "assets/images/portfolio/Micro_logo.png",
@@ -1236,6 +1241,7 @@
       "projectName": "Yacht Closer Brochure Application",
       "priority": 4,
       "technology": "React",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["React", "Java"],
       "description": "Yacht Closer Brochure App' is one of the modules for the 'Yacht closer Web Application' of Boats Group. The purpose of this app is to generate brochures for the Yacht Brokers.",
       "logo": "assets/images/portfolio/boatsground.png",
@@ -1290,6 +1296,7 @@
       "projectName": "Yacht Closer Web Application",
       "priority": 3,
       "technology": "Java",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["GWT", "Java"],
       "description": "Yacht Closer Web Application is the SaaS Platform to manage Yacht Sales/Purchase/Rent Deal with Yacht Brocker and the Customer.",
       "logo": "assets/images/portfolio/boatsground.png",
@@ -1343,6 +1350,7 @@
       "projectName": "CX Group",
       "priority": 2,
       "technology": "Java",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["GWT", "Java"],
       "description": "We have successfully integrated the insignia theme and its plugin into the GWT framework. Our expertise with GWT native, JavaScript native, JQuery, Jasper Reports, Google Charts, chart.js, and Bootstrap has allowed us to build and improve the user experience.",
       "logo": "assets/images/portfolio/CX-Group-Logo-Color.png",
@@ -1426,6 +1434,7 @@
       "projectName": "Online Chat Web Application",
       "priority": 1,
       "technology": "React",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["React", "Node"],
       "description": "Big Data Customer Retention & Experience Management SaaS",
       "logo": "assets/images/portfolio/favicon.png",
@@ -1490,6 +1499,7 @@
     {
       "projectName": "Jyoti Technosoft Website",
       "technology": "Angular",
+      "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["Angular", "D3"],
       "description": "Jyoti Technosoft's website displaying the organization's overview, achievements, projects. The website offers valuable insights into the company's expertise, showcasing its success stories.",
       "logo": "assets/images/portfolio/favicon.png",
@@ -1557,6 +1567,7 @@
     {
       "projectName": "D3 Showcase",
       "technology":"D3",
+      "category": ["Visualization", "Custom Software Development"],
       "typesOfTechnologies": ["React", "D3"],
       "description": "D3 Showcase is a data visualization project built with HTML, SCSS, React, and D3.js. It features six chart types: Pie Chart, Stacked Chart, Donut Chart, Bar Chart, India Map Chart, and Candlestick Chart. The user can perform CRUD operations, making it an interactive and dynamic data exploration tool.",
       "logo": "assets/images/portfolio/favicon.png",
@@ -1624,6 +1635,7 @@
     {
       "projectName": "Quiz Application",
       "technology":"Angular",
+      "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["Angular", "D3"],
       "description": "Technical Assistant is a cutting-edge test app built using Angular, TypeScript, and Laravel. It leverages D3.js for captivating data visualization, offering dynamic questions, real-time leaderboards, and rich multimedia support for an engaging your experience. At the heart of Technical Assistant is Laravel, our robust backend ensuring secure user authentication, efficient database management, and scalability for future enhancements. Track your progress, compete with others, and dive into a world of knowledge and fun with Technical Assistant",
       "logo": "assets/images/portfolio/favicon.png",
@@ -1686,6 +1698,7 @@
     {
       "projectName": "Office Management Application",
       "technology": "React",
+      "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["React", "Node"],
       "description": "This application is a comprehensive office management web application designed to streamline various administrative tasks within an organization. It provides functionalities for managing employee data, tracking employee activities, and handling attendance, leave of the employees along with Tasks Management feature.",
       "logo": "assets/images/portfolio/favicon.png",
@@ -1746,6 +1759,7 @@
     {
       "projectName": "Book Universe",
       "technology": "React",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["React", "Next"],
       "description": "The application gives platform to share the content of any books to users. It contains book name, category, author name, date of published, link to the content or attached pdf. One can save the books to the saved list and explore the books via categories. Also one can add the book and its details in order to share to any users.",
       "logo": "assets/images/portfolio/favicon.png",
@@ -1795,55 +1809,9 @@
       ]
     },
     {
-      "projectName": "Health Audit Management",
-      "technology": "Angular",
-      "typesOfTechnologies": ["Angular", "Java"],
-      "description": "Developed the Quality module to enhance the quality of Audited reports for equipment. implemented steps to improve quality and manage notifications for doctors/authors.",
-      "logo": "assets/images/portfolio/pubaudit.png",
-      "viewDemo": "",
-      "Images": [
-        "assets/images/portfolio/pub-audit-mockup.png",
-        "assets/images/portfolio/pub-audit-1.png",
-        "assets/images/portfolio/pub-audit-2.png",
-        "assets/images/portfolio/pub-audit-3.png",
-        "assets/images/portfolio/pub-audit-4.png"
-      ],
-      "mainTechnology": [
-        {
-          "images" : "assets/images/technology-badges/Angular.svg",
-          "technologyName" : "Angular"
-        }
-      ],
-      "useTechnology": [
-        {
-          "images" : "assets/images/technology-badges/Angular.svg",
-          "technologyName" : "Angular"
-        },
-        {
-          "images": "assets/images/technology-badges/html.svg",
-          "technologyName": "HTML"
-        },
-        {
-          "images": "assets/images/technology-badges/css.svg",
-          "technologyName": "CSS"
-        },
-        {
-          "images" : "assets/images/technology-badges/Typescript.svg",
-          "technologyName" : "TypeScript"
-        },
-        {
-          "images" : "assets/images/technology-badges/primeng.svg",
-          "technologyName" : "Primeng"
-        },
-        {
-          "images": "assets/images/technology-badges/bootstrap.svg",
-          "technologyName": "Bootstrap"
-        }
-      ]
-    },
-    {
       "projectName": "VirtualCRM & CircleCRM",
       "technology": "Angular",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["Angular"],
       "description": "It is a Customer Relationship Management System. Developed interactive components such as execution dashboards, drag-and-drop features, etc. Focused on creating responsive UI. It is a sales and customer management tool used for tracking business transactions, customer interactions and analytics, useful for businesses managing customer relationships, orders and communication.",
       "logo": "assets/images/portfolio/virtual-crm.png",
@@ -1887,6 +1855,7 @@
     {
       "projectName": "Property Vista",
       "technology": "GWT ",
+      "category": ["Custom Software Development"],
       "typesOfTechnologies": ["GWT"],
       "description": "The application is tenant-related, serving as a single portal to manage tenant-related tasks such as rent, insurances, payment module etc. Project involves a complete reskin of an existing application built with Google Web Toolkit (GWT) using Figma for design updates. Sass is introduced for custom styles, and a toggle switch allows users to switch between the legacy and new themes. The project includes bug fixes for both themes and the development of new functionalities to improve the application.",
       "logo": "assets/images/portfolio/property-vista.png",
@@ -1946,6 +1915,7 @@
     {
       "projectName": "AnteThink",
       "technology": "AI",
+      "category": ["Custom Software Development", "Visualization", "Generative AI"],
       "typesOfTechnologies": ["AI", "D3", "React"],
       "description": "Event Decision Support System is an advanced application that integrates user management, Stripe Subscription and Payment processing, and AI-driven decision-making. The system gathers input from users regarding specific events and contexts, then uses AI to generate a decision tree visualized with D3.js, displaying all possible suggestions for the given scenario. Additionally, the system allows users to interact with the decision tree, generating detailed action plans for each node they select. This dynamic and interactive tool supports informed decision- making and strategic planning for various events and contexts.",
       "logo": "assets/images/portfolio/ante-think.png",
