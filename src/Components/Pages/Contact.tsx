@@ -206,14 +206,14 @@ const Contact: React.FC = () => {
                     className="contact-details-text"
                   >
                     <span className="contact-dash">-</span>{" "}
-                    <Link href="mailto:info@jyotitechnosoft.com" underline="hover" color="inherit">
-                      info@jyotitechnosoft.com
+                    <Link href="mailto:business@jyotitechnosoft.com" underline="hover" color="inherit">
+                      business@jyotitechnosoft.com
                     </Link>
                   </p>
                   <p className="contact-details-text">
                     <span className="contact-dash">-</span>{" "}
-                    <Link href="mailto:business@jyotitechnosoft.com" underline="hover" color="inherit">
-                      business@jyotitechnosoft.com
+                    <Link href="mailto:info@jyotitechnosoft.com" underline="hover" color="inherit">
+                      info@jyotitechnosoft.com
                     </Link>
                   </p>
                 </Box>
@@ -230,11 +230,11 @@ const Contact: React.FC = () => {
                       className="contact-details-text"
                     >
                       <span className="contact-dash">-</span>
-                      <Link href="tel:+919265712724" underline="hover" color="inherit">+91 92657 12724</Link>
+                      <Link href="tel:+919054551083" underline="hover" color="inherit">+91 90545 51083</Link>
                     </p>
                     <p className="contact-details-text">
                       <span className="contact-dash">-</span>
-                      <Link href="tel:+919054551083" underline="hover" color="inherit">+91 90545 51083</Link>
+                      <Link href="tel:+919265712724" underline="hover" color="inherit">+91 92657 12724</Link>
                     </p>
                   </Box>
                 </Box>

@@ -139,18 +139,18 @@
       "data": [
         {
           "id": 1,
-          "title": "Book Universe",
-          "imageSrc": "/assets/images/portfolio/booksite-mockup.png"
+          "title": "Office Management Application",
+          "imageSrc": "/assets/images/portfolio/officemanagemnt-mockup.png"
         },
         {
           "id": 2,
-          "title": "D3 Showcase",
-          "imageSrc": "/assets/images/portfolio/d3-showcase-mockup.png"
+          "title": "Property Vista",
+          "imageSrc": "/assets/images/portfolio/pvista-mockup.png"
         },
         {
           "id": 3,
-          "title": "LoomCart",
-          "imageSrc":  "/assets/images/portfolio/navdurva-mockup.png"
+          "title": "SiteSync",
+          "imageSrc":  "/assets/images/portfolio/SiteSync-mockup.png"
         }
       ]
     }
@@ -1499,6 +1499,7 @@
     {
       "projectName": "Jyoti Technosoft Website",
       "technology": "Angular",
+      "priority": 0,
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["Angular", "D3"],
       "description": "Jyoti Technosoft's website displaying the organization's overview, achievements, projects. The website offers valuable insights into the company's expertise, showcasing its success stories.",
@@ -1761,6 +1762,7 @@
     },
     {
       "projectName": "Book Universe",
+      "priority": 0,
       "technology": "React",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["React", "Next"],
@@ -1858,6 +1860,7 @@
     },
     {
       "projectName": "Property Vista",
+      "priority": 0,
       "technology": "GWT ",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["GWT"],
@@ -1869,11 +1872,11 @@
         "assets/images/portfolio/pvista-1.png",
         "assets/images/portfolio/pvista-2.png",
         "assets/images/portfolio/pvista-3.png",
-        "assets/images/portfolio/pvista-3.png",
-        "assets/images/portfolio/pvista-3.png",
-        "assets/images/portfolio/pvista-3.png",
-        "assets/images/portfolio/pvista-3.png",
-        "assets/images/portfolio/pvista-3.png"
+        "assets/images/portfolio/pvista-4.png",
+        "assets/images/portfolio/pvista-5.png",
+        "assets/images/portfolio/pvista-6.png",
+        "assets/images/portfolio/pvista-7.png",
+        "assets/images/portfolio/pvista-8.png"
       ],
       "mainTechnology": [
         {
@@ -1918,6 +1921,7 @@
     },
     {
       "projectName": "AnteThink",
+      "priority": 0,
       "technology": "AI",
       "category": ["Custom Software Development", "Visualization", "Generative AI"],
       "typesOfTechnologies": ["AI", "D3", "React"],
@@ -1975,6 +1979,7 @@
     },
     {
       "projectName": "BookSkill",
+      "priority": 0,
       "technology": "React Native",
       "category": ["Mobile App"],
       "typesOfTechnologies": ["React Native", "Node.js", "MongoDB"],
@@ -2063,6 +2068,7 @@
     },
     {
       "projectName": "SiteSync",
+      "priority": 0,
       "technology": "Flutter",
       "category": ["Mobile App"],
       "typesOfTechnologies": ["Flutter", "Firebase", "Provider", "Firebase Notification"],
@@ -2105,6 +2111,7 @@
     },
     {
       "projectName": "FreshMart",
+      "priority": 0,
       "technology": "Flutter",
       "category": ["Mobile App"],
       "typesOfTechnologies": ["Flutter"],
@@ -2130,6 +2137,7 @@
     },
     {
       "projectName": "VisualCharts",
+      "priority": 0,
       "technology": "D3",
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["D3", "React"],
