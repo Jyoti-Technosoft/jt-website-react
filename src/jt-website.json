@@ -934,7 +934,7 @@
     },
     {
       "projectName": "Pratibha Herbal",
-      "priority": 9,
+      "priority": 8,
       "technology": "WordPress",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["WordPress"],
@@ -1061,7 +1061,7 @@
     },
     {
       "projectName": "E-Commerce Web Application",
-      "priority": 7,
+      "priority": 9,
       "technology": "WordPress",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["WordPress"],
@@ -1165,7 +1165,7 @@
     },
     {
       "projectName": "Micro-C",
-      "priority": 5,
+      "priority": 6,
       "technology": "GWT",
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["GWT", "Java"],
@@ -1566,6 +1566,7 @@
     },
     {
       "projectName": "D3 Showcase",
+      "priority": 3,
       "technology":"D3",
       "category": ["Visualization", "Custom Software Development"],
       "typesOfTechnologies": ["React", "D3"],
@@ -1634,6 +1635,7 @@
     },
     {
       "projectName": "Quiz Application",
+      "priority": 4,
       "technology":"Angular",
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["Angular", "D3"],
@@ -1697,6 +1699,7 @@
     },
     {
       "projectName": "Office Management Application",
+      "priority": 5,
       "technology": "React",
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["React", "Node"],
@@ -1810,6 +1813,7 @@
     },
     {
       "projectName": "VirtualCRM & CircleCRM",
+      "priority": 7,
       "technology": "Angular",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["Angular"],
@@ -1966,6 +1970,199 @@
         {
           "images" : "assets/images/technology-badges/bootstrap.svg",
           "technologyName" : "Bootstrap"
+        }
+      ]
+    },
+    {
+      "projectName": "BookSkill",
+      "technology": "React Native",
+      "category": ["Mobile App"],
+      "typesOfTechnologies": ["React Native", "Node.js", "MongoDB"],
+      "description": "Our expertise in mobile application development is reflected in BookSkill, a dynamic React Native app that connects users with professional trainers for a variety of skills. Users can browse trainer profiles, view and leave ratings, and book appointments seamlessly. With an intuitive interface and smooth navigation, the app ensures a hassle-free booking experience and fosters better engagement between trainers and learners.",
+      "logo": "assets/images/portfolio/bookskill.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/BookSkill-Mockup.png",
+        "assets/images/portfolio/BookSkill1.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "React Native"
+        },
+        {
+          "images": "assets/images/technology-badges/D3.svg",
+          "technologyName": "Node.js"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "MongoDB"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "React Native"
+        },
+        {
+          "images": "assets/images/technology-badges/D3.svg",
+          "technologyName": "Node.js"
+        },
+        {
+          "images" : "assets/images/technology-badges/JavasScript.svg",
+          "technologyName" : "MongoDB"
+        }
+      ]
+    },
+    {
+      "projectName": "QuickMart",
+      "priority": 11,
+      "technology": "WordPress",
+      "category": ["Custome Software Development"],
+      "typesOfTechnologies": ["WordPress", "WooCommerce", "MySQL"],
+      "description": "Our expertise in creating modern e-commerce platforms is showcased in QuickMart, a sleek shopping application built using WordPress and WooCommerce. Designed for a smooth and engaging customer journey, QuickMart offers a complete shopping experience with intuitive navigation, a responsive mega-menu. The store is optimized for speed, scalability, and mobile responsiveness, ensuring customers can browse and purchase effortlessly.",
+      "logo": "assets/images/portfolio/Quickmart.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/quickmartWeb-mockup.png",
+        "assets/images/portfolio/quickmartWeb1.png",
+        "assets/images/portfolio/quickmartWeb2.png",
+        "assets/images/portfolio/quickmartWeb3.png",
+        "assets/images/portfolio/quickmartWeb4.png",
+        "assets/images/portfolio/quickmartWeb5.png",
+        "assets/images/portfolio/quickmartWeb6.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "WordPress"
+        },
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "WooCommerce"
+        },
+        {
+          "images": "assets/images/technology-badges/D3.svg",
+          "technologyName": "MySQL"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "WordPress"
+        },
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "WooCommerce"
+        },
+        {
+          "images": "assets/images/technology-badges/D3.svg",
+          "technologyName": "MySQL"
+        }
+      ]
+    },
+    {
+      "projectName": "SiteSync",
+      "technology": "Flutter",
+      "category": ["Mobile App"],
+      "typesOfTechnologies": ["Flutter", "Firebase", "Provider", "Firebase Notification"],
+      "description": "SiteSync is a construction project management app where builders create sites, assign agencies, and track progress. Agency heads manage workers, allocate tasks, and log daily work. This ensures real-time visibility, accountability, and organized tracking of all construction activities across multiple sites.",
+      "logo": "assets/images/portfolio/SiteSync.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/SiteSync-mockup.png",
+        "assets/images/portfolio/SiteSync1.png",
+        "assets/images/portfolio/SiteSync2.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "Flutter"
+        },
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "Firebase"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "Flutter"
+        },
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "Firebase"
+        },
+        {
+          "images" : "assets/images/technology-badges/css.svg",
+          "technologyName" : "Firebase Notification"
+        },
+        {
+          "images" : "assets/images/technology-badges/bootstrap.svg",
+          "technologyName" : "Provider"
+        }
+      ]
+    },
+    {
+      "projectName": "FreshMart",
+      "technology": "Flutter",
+      "category": ["Mobile App"],
+      "typesOfTechnologies": ["Flutter"],
+      "description": "FreshMart is a core Flutter-based grocery store app designed for seamless shopping experiences. It offers a clean, responsive interface, optimized performance, and cross-platform support, making it easy for customers to browse, order, and manage groceries on the go.",
+      "logo": "assets/images/portfolio/freshmart.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/FreshMart-mockup.png",
+        "assets/images/portfolio/FreshMart1.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "Flutter"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "Flutter"
+        }
+      ]
+    },
+    {
+      "projectName": "VisualCharts",
+      "technology": "D3",
+      "category": ["Custom Software Development", "Visualization"],
+      "typesOfTechnologies": ["D3", "React"],
+      "description": "VisualCharts is a responsive React + D3-based charting dashboard that includes Histogram, Gauge, Gantt, S-Curve, and Bar charts. It supports both dark and light themes, adapts seamlessly to different screen sizes, and provides interactive visuals for effective project tracking and analysis.",
+      "logo": "assets/images/portfolio/visual-charts-1.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/VisualCharts-mockup.png",
+        "assets/images/portfolio/VisualCharts1.png",
+        "assets/images/portfolio/VisualCharts2.png",
+        "assets/images/portfolio/VisualCharts3.png",
+        "assets/images/portfolio/VisualCharts4.png",
+        "assets/images/portfolio/VisualCharts5.png",
+        "assets/images/portfolio/VisualCharts6.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "D3"
+        },
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "React"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "D3"
+        },
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "React"
         }
       ]
     }
