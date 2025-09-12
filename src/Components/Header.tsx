@@ -26,26 +26,22 @@ const Header: React.FC = () => {
   // const isDevelopersTabActive =
   //   location.pathname.startsWith("/hire-developers");
 
-  const [, setServicesAnchorEl] = useState<null | HTMLElement>(
-    null
-  );
+  const [, setServicesAnchorEl] = useState<null | HTMLElement>(null);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isDevelopersDropdownOpen, setIsDevelopersDropdownOpen] =
-    useState(false);
-  const [, setDevelopersAnchorEl] =
-    useState<null | HTMLElement>(null);
-  // const [servicesHoverTimeout,] = useState<ReturnType<
-  //   typeof setTimeout
-  // > | null>(null);
-  // const [developersHoverTimeout, setDevelopersHoverTimeout] =
-  //   useState<ReturnType<typeof setTimeout> | null>(null);
+  const [isDevelopersDropdownOpen, setIsDevelopersDropdownOpen] = useState(false);
+  const [, setDevelopersAnchorEl] = useState<null | HTMLElement>(null);
+  // const [servicesHoverTimeout,] = useState<ReturnType<typeof setTimeout> | null>(null);
+  // const [developersHoverTimeout, setDevelopersHoverTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
   const [openDrawer, setOpenDrawer] = useState(false);
-  // const [hoverTimeout, setHoverTimeout] = useState<ReturnType<
-  //   typeof setTimeout
-  // > | null>(null);
+  // const [hoverTimeout, setHoverTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
   const [showShadow, setShowShadow] = useState(false);
   const [expandServices, setExpandServices] = useState(false);
   const [expandDevelopers, setExpandDevelopers] = useState(false);
+
+  // Memoized drawer toggle to satisfy exhaustive-deps
+  const handleDrawerToggle = React.useCallback(() => {
+    setOpenDrawer((prev) => !prev);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,9 +97,7 @@ const Header: React.FC = () => {
   //   setHoverTimeout(timeout);
   // };
 
-  const handleDrawerToggle = () => {
-    setOpenDrawer(!openDrawer);
-  };
+  // Removed old non-memoized duplicate of handleDrawerToggle
 
   // const openServicesMenu = (event: React.MouseEvent<HTMLElement>) => {
   //   if (servicesHoverTimeout) clearTimeout(servicesHoverTimeout);
@@ -152,7 +146,7 @@ const Header: React.FC = () => {
     if (isDesktop && openDrawer) {
       handleDrawerToggle();
     }
-  }, [isDesktop]);
+  }, [isDesktop, openDrawer, handleDrawerToggle]);
 
   useEffect(() => {
     setServicesAnchorEl(null);
@@ -551,9 +545,8 @@ const Header: React.FC = () => {
           </Box>
 
           {["Career", "About", "Contact"].map((label) => (
-            <Box>
+            <Box key={label}>
               <NavLink
-                key={label}
                 to={`/${label.toLowerCase()}`}
                 className={({ isActive }) =>
                   isActive ? "navLink active" : "navLink"

@@ -1,58 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 import Header from './Components/Header.tsx';
 import Footer from './Components/Footer.tsx';
-import Home from './Components/Pages/Home.tsx';
-import About from './Components/Pages/About.tsx';
-import Services from './Components/Pages/Services.tsx';
-import Contact from './Components/Pages/Contact.tsx';
-import OurWork from './Components/Pages/OurWork.tsx';
-import HireDevelopers from './Components/Pages/HireDevelopers.tsx';
-import Career from './Components/Pages/Career.tsx';
-import CareerDetails from './Components/Pages/CareerDetails.tsx';
-import HireDevelopersDetails from './Components/Pages/HireDevelopersDetails.tsx';
-import ServiceDetails from './Components/Pages/ServiceDetails.tsx';
-import SiteMap from './Components/Pages/SiteMap.tsx';
-import AdminPortal from './Components/Pages/AdminPortal.tsx';
-import PrivacyPolicy from './Components/Pages/PrivacyPolicy.tsx';
 import Loader from './Components/Pages/Loader.tsx';
 import ProjectDetail from './Components/Pages/ProjectDetail.tsx';
 
+// Lazily loaded pages
+const Home = lazy(() => import('./Components/Pages/Home.tsx'));
+const About = lazy(() => import('./Components/Pages/About.tsx'));
+const Services = lazy(() => import('./Components/Pages/Services.tsx'));
+const Contact = lazy(() => import('./Components/Pages/Contact.tsx'));
+const OurWork = lazy(() => import('./Components/Pages/OurWork.tsx'));
+const HireDevelopers = lazy(() => import('./Components/Pages/HireDevelopers.tsx'));
+const Career = lazy(() => import('./Components/Pages/Career.tsx'));
+const CareerDetails = lazy(() => import('./Components/Pages/CareerDetails.tsx'));
+const HireDevelopersDetails = lazy(() => import('./Components/Pages/HireDevelopersDetails.tsx'));
+const ServiceDetails = lazy(() => import('./Components/Pages/ServiceDetails.tsx'));
+const SiteMap = lazy(() => import('./Components/Pages/SiteMap.tsx'));
+const AdminPortal = lazy(() => import('./Components/Pages/AdminPortal.tsx'));
+const PrivacyPolicy = lazy(() => import('./Components/Pages/PrivacyPolicy.tsx'));
+
 const AppContent = () => {
   const location = useLocation();
-  const [loading, setLoading] = useState(false);
 
+  // Scroll to top on route change
   useEffect(() => {
-    setLoading(true);
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timeout);
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, [location.pathname]);
 
   return (
     <>
-      {loading && <Loader />}
       <Header />
       <div style={{ flex: 1 }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:id" element={<ServiceDetails />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/site-map" element={<SiteMap />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/our-work" element={<OurWork />} />
-          <Route path="/our-work/:projectName" element={<ProjectDetail />} />
-          <Route path="/hire-developers" element={<HireDevelopers />} />
-          <Route path="/hire-developers/:id" element={<HireDevelopersDetails />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/career-details" element={<CareerDetails />} />
-          <Route path="/jt-admin" element={<AdminPortal />} />
-        </Routes>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:id" element={<ServiceDetails />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/site-map" element={<SiteMap />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/our-work" element={<OurWork />} />
+            <Route path="/hire-developers" element={<HireDevelopers />} />
+            <Route path="/hire-developers/:id" element={<HireDevelopersDetails />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/career-details" element={<CareerDetails />} />
+            <Route path="/jt-admin" element={<AdminPortal />} />
+          </Routes>
+        </Suspense>
       </div>
       <Footer />
     </>
