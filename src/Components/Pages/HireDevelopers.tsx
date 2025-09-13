@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography, Grid, Divider, Paper, Container } from "@mui/material";
 import dataArray from "../../jt-website.json";
 
 import BuildVision from "./shared/BuildVision.tsx";
+import IconByName from "../icons/IconByName.tsx";
 import "../../styles/hire-us.css";
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 
@@ -44,40 +45,20 @@ const HireDevelopers: React.FC = () => {
   // -------------------------
   // ANIMATED NUMBERS
   // -------------------------
-  const stats = [
-    { label: "Delivered Projects", value: 40, suffix: "+" },
-    { label: "Expert Developers", value: 20, suffix: "+" },
-    { label: "Upwork Hours", value: 16473, suffix: "+" },
-  ];
+  const stats = useMemo(
+    () => [
+      { label: "Delivered Projects", value: 40, suffix: "+" },
+      { label: "Expert Developers", value: 20, suffix: "+" },
+      { label: "Upwork Hours", value: 16473, suffix: "+" },
+    ],
+    []
+  );
 
   const [counts, setCounts] = useState(stats.map(() => 0));
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting && !hasAnimated) {
-          animateCounts();
-          setHasAnimated(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [hasAnimated]);
-
-  const animateCounts = () => {
+  const animateCounts = useCallback(() => {
     stats.forEach((stat, index) => {
       let start = 0;
       const end = stat.value;
@@ -98,7 +79,33 @@ const HireDevelopers: React.FC = () => {
         });
       }, stepTime);
     });
-  };
+  }, [stats]);
+
+  useEffect(() => {
+    const el = sectionRef.current; // snapshot the node for consistent cleanup
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting && !hasAnimated) {
+          animateCounts();
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (el) {
+      observer.observe(el);
+    }
+
+    return () => {
+      if (el) {
+        observer.unobserve(el);
+      }
+      observer.disconnect();
+    };
+  }, [hasAnimated, animateCounts]);
+
 
   return (
     <>
@@ -185,10 +192,12 @@ const HireDevelopers: React.FC = () => {
                       }}
                     >
                       <Box mb={3}>
-                        <i
-                          className={item.icon}
-                          style={{ fontSize: "2rem", color: "#1F5795" }}
-                        ></i>
+                        <IconByName
+                          name={item.icon}
+                          color="primary"
+                          sx={{ fontSize: "2rem", color: "#1F5795" }}
+                          aria-label={item.cardHeader || item.icon}
+                        />
                       </Box>
 
                       <Box sx={{ flexGrow: 1 }}>
@@ -247,7 +256,7 @@ const HireDevelopers: React.FC = () => {
                       transition: "border 0.3s ease",
                       "&:hover": {
                         border: "1px solid #1976d2",
-                         boxShadow: "0 0 12px rgba(25, 118, 210, 0.3)", 
+                        boxShadow: "0 0 12px rgba(25, 118, 210, 0.3)",
                       },
                     }}
                   >
