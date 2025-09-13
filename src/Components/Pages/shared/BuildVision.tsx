@@ -23,6 +23,8 @@ const BuildVision: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
+  const recaptchaRef = React.useRef<ReCAPTCHA>(null);
+
 
   const [formData, setFormData] = useState({
     name: "",
@@ -37,36 +39,14 @@ const BuildVision: React.FC = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { id, value } = e.target;
-    let key: string;
-    switch (id) {
-      case "name":
-        key = "name";
-        break;
-      case "Company Name":
-        key = "companyName";
-        break;
-      case "Email":
-        key = "email";
-        break;
-      case "Mobile No":
-        key = "contact";
-        break;
-      case "Enter Tech Requirement":
-        key = "hire";
-        break;
-      case "Message":
-        key = "description";
-        break;
-      default:
-        key = id;
-        break;
-    }
-
-    setFormData((prevData) => ({
-      ...prevData,
-      [key]: value,
-    }));
+    // Map only special cases; otherwise use the id as-is
+    const idToKey: Record<string, keyof typeof formData> = {
+      Email: "email",
+    };
+    const key = (idToKey[id] ?? id) as keyof typeof formData;
+    setFormData((prev) => ({ ...prev, [key]: value }));
   };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,8 +81,9 @@ const BuildVision: React.FC = () => {
         recaptcha: captchaValue,
       });
 
-      if (response.data.success) {
-        setSubmitMessage("Your message has been sent successfully!");
+      // Accept both "success" and misspelled "sucess" from backend
+      if (response.data.success === true || response.data.sucess === true) {
+        setSubmitMessage(response.data.message || "Your message has been sent successfully!");
         setIsSuccess(true);
         setFormData({
           name: "",
@@ -113,18 +94,19 @@ const BuildVision: React.FC = () => {
           description: "",
         });
         setCaptchaValue(null);
+        recaptchaRef.current?.reset();
+
       } else {
         setSubmitMessage(
           response.data.message || "Failed to send message. Please try again."
         );
-        setIsSuccess(true);
+        setIsSuccess(false);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       if (axios.isAxiosError(error) && error.response) {
         setSubmitMessage(
-          `Failed to send message: ${error.response.status} - ${
-            error.response.data?.message || "Server error"
+          `Failed to send message: ${error.response.status} - ${error.response.data?.message || "Server error"
           }`
         );
       } else {
@@ -143,10 +125,10 @@ const BuildVision: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log("isSuccess changed:", isSuccess);
     if (isSuccess) {
       const timer = setTimeout(() => {
-        setIsSuccess(false);
+        setIsSuccess(null);
+        setSubmitMessage(null);
       }, 10000);
       return () => clearTimeout(timer);
     }
@@ -221,8 +203,8 @@ const BuildVision: React.FC = () => {
             </Box>
           </Box>
           <Stack
-            position={"relative"}
             sx={{
+              position: "relative",
               width: { xs: "80%", md: "50%" },
               px: { xs: 2, md: 4 },
               display: "flex",
@@ -406,6 +388,7 @@ const BuildVision: React.FC = () => {
                 />
                 <Box my={2}>
                   <ReCAPTCHA
+                    ref={recaptchaRef}
                     sitekey="6LfmNKMZAAAAAKrDxRn2_NcHoRPW9-uFuWs98XCx"
                     onChange={handleCaptchaChange}
                   />
@@ -418,14 +401,14 @@ const BuildVision: React.FC = () => {
                 >
                   {loading ? "SUBMITTING..." : "SUBMIT"}
                 </Button>
-                {/* {submitMessage && (
+                {submitMessage && isSuccess === false && (
                   <Typography
                     color={isSuccess ? "success.main" : "error.main"}
                     sx={{ mt: 2 }}
                   >
                     {submitMessage}
                   </Typography>
-                )} */}
+                )}
               </Stack>
             )}
           </Stack>
