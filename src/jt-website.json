@@ -2285,32 +2285,32 @@
     {
       "cardHeader": "Expertise in Multiple Technologies",
       "cardData": "Whether you need an Angular expert, a React.js specialist, a Java nerd, or a Node.js wizard, we have developers proficient in a variety of technologies. Our talented pool of developers is equipped with the skills to tackle any project requirement.",
-      "icon": "fa-solid fa-code-branch"
+      "icon": "devices"
     },
     {
       "cardHeader": "Dedicated Resources",
       "cardData": "When you hire a developer from Jyoti Technosoft LLP, you get a dedicated resource solely focused on your project. This ensures undivided attention and maximum productivity, leading to faster development cycles and efficient project execution.",
-      "icon": "fa-solid fa-users"
+      "icon": "groups"
     },
     {
       "cardHeader": "Flexibility and Scalability",
       "cardData": "We understand that project needs can change over time. Our flexible hiring models allow you to scale up or down the development team as per your requirements. Whether you need a developer for a short-term assignment or a long-term engagement, we can tailor our services to match your project timeline and budget.",
-      "icon": "fa-solid fa-scale-balanced"
+      "icon": "balance"
     },
     {
       "cardHeader": "Seamless Collaboration",
       "cardData": "Communication and collaboration are key to successful project execution. Our developers are adept at working in distributed teams and can seamlessly integrate with your existing workflows. We ensure smooth coordination and timely updates throughout the development process.",
-      "icon": "fa-solid fa-handshake-simple"
+      "icon": "handshake"
     },
     {
       "cardHeader": "Quality and Reliability",
       "cardData": "At Jyoti Technosoft LLP, we prioritize quality and adhere to industry best practices. Our developers follow coding standards, conduct rigorous testing, and maintain high-quality coding practices to deliver robust and reliable solutions. We strive for excellence in every aspect of our development process.",
-      "icon": "fa-solid fa-user-lock"
+      "icon": "verified"
     },
     {
       "cardHeader": "Cost-Effectiveness",
       "cardData": "Hiring a dedicated developer from us can be a cost-effective solution compared to maintaining an in-house development team. You can save on overhead expenses while still benefiting from the expertise and skills of our developers. We offer competitive rates without compromising on the quality of work.",
-      "icon": "fa-solid fa-wallet"
+      "icon": "wallet"
     }
   ],
   "jobs": [
