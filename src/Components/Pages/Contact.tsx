@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
-import {
-    Box,
-    keyframes,
-    Grid,
-    Stack,
-    TextField,
-    useMediaQuery,
-    Typography,
-    Button,
-    Link
-} from "@mui/material";
+import React, { useEffect, useState, useCallback } from "react";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
@@ -42,11 +39,6 @@ const branches = [
     },
 ];
 
-const scroll = keyframes`
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-`;
-
 const Contact: React.FC = () => {
     const isNotSmallScreen = useMediaQuery("(min-width: 768px)");
     const [activeBranch, setActiveBranch] = useState(branches[1]);
@@ -64,11 +56,12 @@ const Contact: React.FC = () => {
       message: "",
     });
 
-    const handleCaptchaChange = (value: string | null) => {
+    // Memoize handlers to prevent recreation on every render
+    const handleCaptchaChange = useCallback((value: string | null) => {
         setCaptchaValue(value);
-    };
+    }, []);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { id, value } = e.target;
       let key: string;
       switch (id) {
@@ -81,13 +74,33 @@ const Contact: React.FC = () => {
           default: key = id; break;
       }
 
+      // Clear error messages when user starts typing
+      if (submitMessage && !submitMessage.includes("successfully")) {
+        setSubmitMessage(null);
+      }
+
       setFormData((prevData) => ({
         ...prevData,
         [key]: value,
       }));
-    };
+    }, [submitMessage]);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    // Function to reset form data
+    const resetForm = useCallback(() => {
+      setIsSuccess(false);
+      setSubmitMessage(null);
+      setCaptchaValue(null);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        mobileNo: "",
+        subject: "",
+        message: "",
+      });
+    }, []);
+
+    const handleSubmit = useCallback(async (e: React.FormEvent) => {
       e.preventDefault();
       setLoading(true);
       setSubmitMessage(null);
@@ -117,9 +130,9 @@ const Contact: React.FC = () => {
           recaptcha: captchaValue,
         });
 
-        if (response.data.success) {
+        if (response.data.success || response.data.sucess) {
           setSubmitMessage("Your message has been sent successfully!");
-          setIsSuccess(true);
+          // Clear form immediately
           setFormData({
             firstName: "",
             lastName: "",
@@ -129,36 +142,39 @@ const Contact: React.FC = () => {
             message: "",
           });
           setCaptchaValue(null);
-          } else {
-            setSubmitMessage(response.data.message || "Failed to send message. Please try again.");
-            setIsSuccess(true);
-          }
-        } catch (error) {
-          console.error("Error submitting contact form:", error);
-          if (axios.isAxiosError(error) && error.response) {
-            setSubmitMessage(`Failed to send message: ${error.response.status} - ${error.response.data?.message || 'Server error'}`);
-          } else {
-            setSubmitMessage("An unexpected error occurred. Please try again later.");
-          }
+          // Show success page immediately
+          setIsSuccess(true);
+          setSubmitMessage(null); // Clear the success message when transitioning to success page
+        } else {
+          setSubmitMessage(response.data.message || "Failed to send message. Please try again.");
           setIsSuccess(false);
-        } finally {
-          setLoading(false);
         }
-      };
+      } catch (error) {
+        if (axios.isAxiosError(error) && error.response) {
+          setSubmitMessage(`Failed to send message: ${error.response.status} - ${error.response.data?.message || 'Server error'}`);
+        } else {
+          setSubmitMessage("An unexpected error occurred. Please try again later.");
+        }
+        setIsSuccess(false);
+      } finally {
+        setLoading(false);
+      }
+    }, [formData, captchaValue]);
 
     useEffect(() => {
        window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
     useEffect(() => {
-      console.log("isSuccess changed:", isSuccess);
       if (isSuccess) {
         const timer = setTimeout(() => {
           setIsSuccess(false);
+          setSubmitMessage(null);
         }, 10000);
         return () => clearTimeout(timer);
       }
     }, [isSuccess]);
+
 
     return (
       <>
@@ -269,6 +285,7 @@ const Contact: React.FC = () => {
                             src="/assets/images/portfolio/yatch-mockup.png"
                             alt="Success 1"
                             width={180}
+                            loading="lazy"
                             sx={{ borderRadius: 2 }}
                           />
                         </Grid>
@@ -278,6 +295,7 @@ const Contact: React.FC = () => {
                             src="/assets/images/portfolio/pratibha-mockup.png"
                             alt="Success 2"
                             width={180}
+                            loading="lazy"
                             sx={{ borderRadius: 2 }}
                           />
                         </Grid>
@@ -291,6 +309,23 @@ const Contact: React.FC = () => {
                           See success stories
                         </a>
                       </Typography>
+                      
+                      <Box mt={3} textAlign="center">
+                        <Button 
+                          variant="outlined" 
+                          onClick={resetForm}
+                          sx={{ 
+                            borderColor: "#333333", 
+                            color: "#333333",
+                            '&:hover': {
+                              borderColor: "#333333",
+                              backgroundColor: "rgba(51, 51, 51, 0.04)"
+                            }
+                          }}
+                        >
+                          Send Another Message
+                        </Button>
+                      </Box>
                     </Box>
                   ) : ( 
                   <Stack
@@ -413,26 +448,25 @@ const Contact: React.FC = () => {
                       },
                     }}
                   />
-                  {/* <Box my={2}>
-                      <img width="55%" height="80%" src="/assets/captcha-image.png" alt="captcha" />
-                  </Box> */}
                   <Box my={2}>
                     <ReCAPTCHA
                       sitekey="6LfmNKMZAAAAAKrDxRn2_NcHoRPW9-uFuWs98XCx"
                       onChange={handleCaptchaChange}
                     />
                   </Box>
+                  
+                  {submitMessage && (
+                    <Typography
+                      color={submitMessage.includes("successfully") ? "success.main" : "error.main"}
+                      sx={{ mt: 2, mb: 2, textAlign: 'center', fontWeight: submitMessage.includes("successfully") ? 'bold' : 'normal' }}
+                    >
+                      {submitMessage}
+                    </Typography>
+                  )}
+                  
                   <Button 
                   type="submit"
                   className="submit-btn" variant="contained" disabled={loading || !captchaValue}>{loading ? "SUBMITTING..." : "SUBMIT"}</Button>
-                  {/* {submitMessage && (
-                  <Typography
-                    color={isSuccess ? "success.main" : "error.main"}
-                    sx={{ mt: 2 }}
-                  >
-                    {submitMessage}
-                  </Typography>
-                )} */}
                 </Stack>
                 )}
               </Stack>
@@ -493,4 +527,4 @@ const Contact: React.FC = () => {
     );
 };
 
-export default Contact;
+export default React.memo(Contact);

@@ -1,5 +1,11 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Card, CardContent, CardMedia } from '@mui/material';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 
 import dataArray from "../../../jt-website.json";
 import "../../../styles/home.css";
@@ -28,6 +34,7 @@ const WeOffer: React.FC = () => {
                             image={offer.imageSrc}
                             alt={offer.title}
                             className="weOffer-card-image"
+                            loading="lazy"
                             style={{ width: 40, height: 40, objectFit: 'contain' }}
                             />
                         )}
@@ -37,6 +44,7 @@ const WeOffer: React.FC = () => {
                             image={offer.imageSrc1}
                             alt={offer.title + ' (1)'}
                             className="weOffer-card-image1"
+                            loading="lazy"
                             style={{ width: 40, height: 40, objectFit: 'contain' }}
                             />
                         )}
@@ -58,4 +66,4 @@ const WeOffer: React.FC = () => {
     )
 }
 
-export default WeOffer;
+export default React.memo(WeOffer);

@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Box, Typography, Grid, Container } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 import dataArray from "../../jt-website.json";
@@ -8,18 +11,15 @@ import "../../styles/service-details.css";
 
 const ServiceDetails: React.FC = () => {
   const { id } = useParams();
-  const serviceDetails = dataArray?.serviceDetails || [];
-  const selectedService = serviceDetails.find((service) => service.id === id);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  
+  // Memoize service lookup to prevent recalculation
+  const selectedService = useMemo(() => {
+    const serviceDetails = dataArray?.serviceDetails || [];
+    return serviceDetails.find((service) => service.id === id);
   }, [id]);
 
-  if (!selectedService) {
-    return <Typography>Service not found.</Typography>;
-  }
-
-  const backgroundColors = [
+  // Memoize background colors
+  const backgroundColors = useMemo(() => [
     "#F7E4EA",
     "#D9DFFF",
     "#C5EDFF",
@@ -27,7 +27,24 @@ const ServiceDetails: React.FC = () => {
     "#FFEEC2",
     "#E9D0D7",
     "#D1F1E0",
-  ];
+  ], []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [id]);
+
+  if (!selectedService) {
+    return (
+      <Container sx={{ py: 4, textAlign: 'center' }}>
+        <Typography variant="h4" color="error">
+          Service not found.
+        </Typography>
+        <Typography variant="body1" sx={{ mt: 2 }}>
+          The service you're looking for doesn't exist.
+        </Typography>
+      </Container>
+    );
+  }
 
   return (
     <Box className="service-details">
@@ -73,6 +90,7 @@ const ServiceDetails: React.FC = () => {
             <img
               src={selectedService.headerImage}
               alt="services"
+              loading="lazy"
               style={{
                 borderRadius: "10px",
               }}
@@ -101,6 +119,7 @@ const ServiceDetails: React.FC = () => {
               component="img"
               src={selectedService.image}
               alt={selectedService.technology}
+              loading="lazy"
               sx={{
                 width: "100%",
                 height: "100%",
@@ -248,4 +267,4 @@ const ServiceDetails: React.FC = () => {
   );
 };
 
-export default ServiceDetails;
+export default React.memo(ServiceDetails);

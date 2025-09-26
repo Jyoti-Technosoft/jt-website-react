@@ -28,7 +28,7 @@ function initFunction()
     } else {
         $myObj = new stdClass();
         $myObj->message = "Not Post Request";
-        $myObj->sucess = false;
+        $myObj->success = false;
         http_response_code(404);
         echo json_encode($myObj);
         exit();
@@ -50,7 +50,7 @@ function validateRecaptcha()
         } else {
             $replyObject = new stdClass();
             $replyObject->message = "Robot Verification Falied :(";
-            $replyObject->sucess = false;
+            $replyObject->success = false;
             http_response_code(401);
             echo json_encode($replyObject);
             exit();
@@ -58,7 +58,7 @@ function validateRecaptcha()
     } else {
         $replyObject = new stdClass();
         $replyObject->message = "Please enter details properly";
-        $replyObject->sucess = false;
+        $replyObject->success = false;
         http_response_code(403);
         echo json_encode($replyObject);
         exit();
@@ -90,7 +90,7 @@ function sendMail($data)
     $replyObject = new stdClass();
     if ($success) {
         $replyObject->message = "Thank you for connecting Us will get back to you";
-        $replyObject->sucess = true;
+        $replyObject->success = true;
         http_response_code(201);
         echo json_encode($replyObject);
         $replace = array('{name}');
@@ -103,7 +103,7 @@ function sendMail($data)
         exit();
     } else {
         $replyObject->message = "Error while sending mail";
-        $replyObject->sucess = false;
+        $replyObject->success = false;
         http_response_code(400);
         echo json_encode($replyObject);
         exit();

@@ -1,15 +1,11 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
-import {
-  Box,
-  Stack,
-  TextField,
-  useMediaQuery,
-  Typography,
-  Button,
-  Container,
-  Grid,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 import GamepadIcon from "@mui/icons-material/Gamepad";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
@@ -35,23 +31,39 @@ interface Job {
 const CareerDetails: React.FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const isNotSmallScreen = useMediaQuery("(min-width: 768px)");
   const jobId = queryParams.get("job");
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
   const [job, setJob] = useState<Job | null>(null);
+  const [jobLoading, setJobLoading] = useState(true);
+  const [jobError, setJobError] = useState<string | null>(null);
+
+  // Memoize job fetching
+  const fetchJob = useCallback(async () => {
+    if (!jobId) return;
+    
+    try {
+      setJobLoading(true);
+      setJobError(null);
+      const response = await axios.get(API_ENDPOINTS.jobs);
+      const found = response.data.jobs.find((j: Job) => j.id === Number(jobId));
+      setJob(found || null);
+      if (!found) {
+        setJobError("Job not found");
+      }
+    } catch (error) {
+      setJobError("Failed to load job details");
+      setJob(null);
+    } finally {
+      setJobLoading(false);
+    }
+  }, [jobId]);
 
   useEffect(() => {
-    if (!jobId) return;
-    axios.get(API_ENDPOINTS.jobs)
-      .then(res => {
-        const found = res.data.jobs.find((j: Job) => j.id === Number(jobId));
-        setJob(found || null);
-      })
-      .catch(() => setJob(null));
-  }, [jobId]);
+    fetchJob();
+  }, [fetchJob]);
 
   const fieldMap: Record<string, keyof typeof formData> = {
     "First Name": "firstName",
@@ -71,12 +83,11 @@ const CareerDetails: React.FC = () => {
     resume: null as File | null,
     position: job ? job.jobName : "Angular Developer",
   });
-  const GamepadSvg = `<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 24 24" width="14" fill="#347CCC"><path d="M0 0h24v24H0z" fill="none"/><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
-  const handleCaptchaChange = (value: string | null) => {
+  const handleCaptchaChange = useCallback((value: string | null) => {
     setCaptchaValue(value);
-  };
+  }, []);
 
-  const handleInputChange = (
+  const handleInputChange = useCallback((
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { id, value } = e.target;
@@ -105,13 +116,36 @@ const CareerDetails: React.FC = () => {
         key = id;
         break;
     }
+
+    // Clear error messages when user starts typing
+    if (submitMessage && !submitMessage.includes("successfully")) {
+      setSubmitMessage(null);
+    }
+
     setFormData((prevData) => ({
       ...prevData,
       [key]: value,
     }));
-  };
+  }, [submitMessage]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Reset form function
+  const resetForm = useCallback(() => {
+    setIsSuccess(false);
+    setSubmitMessage(null);
+    setCaptchaValue(null);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      mobileNo: "",
+      currentSalary: "",
+      noticePeriod: "",
+      resume: null,
+      position: job ? job.jobName : "Angular Developer",
+    });
+  }, [job]);
+
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setSubmitMessage(null);
@@ -151,9 +185,9 @@ const CareerDetails: React.FC = () => {
         },
       });
 
-      if (response.data.success) {
+      if (response.data.success || response.data.sucess) { // Handle server typo 'sucess'
         setSubmitMessage("Your application has been submitted successfully!");
-        setIsSuccess(true);
+        // Clear form immediately so users can see it's cleared
         setFormData({
           firstName: "",
           lastName: "",
@@ -165,14 +199,16 @@ const CareerDetails: React.FC = () => {
           position: job ? job.jobName : "Angular Developer",
         });
         setCaptchaValue(null);
+        // Show success page immediately
+        setIsSuccess(true);
+        setSubmitMessage(null); // Clear the success message when transitioning to success page
       } else {
         setSubmitMessage(
           response.data.message || "Failed to submit. Please try again."
         );
-        setIsSuccess(true);
+        setIsSuccess(false);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
       if (axios.isAxiosError(error) && error.response) {
         setSubmitMessage(
           `Failed to submit: ${error.response.status} - ${
@@ -188,7 +224,7 @@ const CareerDetails: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [formData, captchaValue, job]);
 
   const descriptionItems = useMemo(() => {
     if (!job?.briefJobDescription) return [];
@@ -206,8 +242,31 @@ const CareerDetails: React.FC = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  if (!job) {
-    return <Typography>Job not found</Typography>;
+  if (jobLoading) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" minHeight="50vh">
+        <Typography variant="h6" color="text.secondary">
+          Loading job details...
+        </Typography>
+      </Box>
+    );
+  }
+
+  if (jobError || !job) {
+    return (
+      <Box display="flex" flexDirection="column" alignItems="center" minHeight="50vh" justifyContent="center">
+        <Typography variant="h6" color="error" mb={2}>
+          {jobError || "Job not found"}
+        </Typography>
+        <Button 
+          variant="contained" 
+          onClick={fetchJob}
+          sx={{ backgroundColor: '#F76336', '&:hover': { backgroundColor: '#d94d24' } }}
+        >
+          Retry
+        </Button>
+      </Box>
+    );
   }
 
   return (
@@ -346,12 +405,12 @@ const CareerDetails: React.FC = () => {
               component="img"
               src="/assets/career-details-img.png"
               alt="Career Related Contact"
+              loading="lazy"
               sx={{
                 width: "100%",
                 height: "100%",
                 borderTopLeftRadius: { md: 20, xs: 0 },
                 borderBottomLeftRadius: { md: 20, xs: 0 },
-                // borderTopRightRadius: { xs: 10, md: 0 },
                 borderBottomRightRadius: 0,
                 objectFit: "cover",
               }}
@@ -398,6 +457,7 @@ const CareerDetails: React.FC = () => {
                         src="/assets/right.png"
                         alt="Success"
                         width={74}
+                        loading="lazy"
                         sx={{ borderRadius: 2, mb: 4 }}
                       />
 
@@ -413,7 +473,7 @@ const CareerDetails: React.FC = () => {
                           textDecoration: "underline",
                           cursor: "pointer",
                         }}
-                        onClick={() => setIsSuccess(false)}
+                        onClick={resetForm}
                       >
                         Back to Form
                       </Typography>
@@ -556,6 +616,14 @@ const CareerDetails: React.FC = () => {
                         onChange={handleCaptchaChange}
                       />
                     </Box>
+                    {submitMessage && (
+                      <Typography
+                        color={submitMessage.includes("successfully") ? "success.main" : "error.main"}
+                        sx={{ mt: 2, mb: 2, textAlign: 'center', fontWeight: submitMessage.includes("successfully") ? 'bold' : 'normal' }}
+                      >
+                        {submitMessage}
+                      </Typography>
+                    )}
                     <Box mt={2}>
                       <Button
                         type="submit"
@@ -565,14 +633,6 @@ const CareerDetails: React.FC = () => {
                       >
                         {loading ? "SUBMITTING..." : "SUBMIT"}
                       </Button>
-                      {submitMessage && (
-                        <Typography
-                          color={isSuccess ? "success.main" : "error.main"}
-                          sx={{ mt: 2 }}
-                        >
-                          {submitMessage}
-                        </Typography>
-                      )}
                     </Box>
                   </Stack>
                 )}
@@ -585,4 +645,4 @@ const CareerDetails: React.FC = () => {
   );
 };
 
-export default CareerDetails;
+export default React.memo(CareerDetails);

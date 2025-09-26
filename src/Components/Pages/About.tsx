@@ -1,20 +1,25 @@
-import React, { useEffect } from "react";
-import { Container, Grid, Typography, Card, CardContent, CardMedia, Box } from "@mui/material";
+import React, { useEffect, useMemo } from "react";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Box from "@mui/material/Box";
 import { Helmet } from 'react-helmet';
 
-import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/about.css";
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 
 const About: React.FC = () => {
+    // Memoize data access to prevent recalculation
+    const aboutUs = useMemo(() => dataArray?.aboutUs, []);
 
     useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
-
-    const { aboutUs } = dataArray;
     return (
       <>
         <Helmet>
@@ -27,7 +32,6 @@ const About: React.FC = () => {
           <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
           <link rel="canonical" href="https://jyotitechnosoft.com/about" />
         </Helmet>
-        {/* <HeaderCommon smallTitle="About" page="About Us" /> */}
         <HeaderMainPage
           smallTitle="About"
           page="Innovate, Implement & Inspire"
@@ -50,9 +54,9 @@ const About: React.FC = () => {
                 align="left"
                 gutterBottom
               >
-                {aboutUs.gettoKnowUsTitle}
+                {aboutUs?.gettoKnowUsTitle}
               </Typography>
-              {aboutUs.gettoKnowUs.map((item) => (
+              {aboutUs?.gettoKnowUs?.map((item) => (
                 <Typography className="gettoKnowUsDesc" key={item.id} paragraph>
                   {item.description}
                 </Typography>
@@ -138,4 +142,4 @@ const About: React.FC = () => {
     );
 };
 
-export default About;
+export default React.memo(About);
