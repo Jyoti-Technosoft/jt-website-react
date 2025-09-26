@@ -82,4 +82,4 @@ const WeOffer: React.FC = memo(() => {
 
 WeOffer.displayName = 'WeOffer';
 
-export default WeOffer;
+export default React.memo(WeOffer);
