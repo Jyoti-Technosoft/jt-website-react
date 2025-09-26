@@ -39,12 +39,7 @@ const WeOffer: React.FC = memo(() => {
                             alt={offer.title}
                             className="weOffer-card-image"
                             loading="lazy"
-                            style={{ 
-                                objectFit: 'contain',
-                                imageRendering: 'auto',
-                                transform: 'translateZ(0)',
-                                backfaceVisibility: 'hidden'
-                            }}
+                            style={{ width: 40, height: 40, objectFit: 'contain' }}
                             />
                         )}
                         {offer?.imageSrc1 && (
@@ -54,12 +49,7 @@ const WeOffer: React.FC = memo(() => {
                             alt={offer.title + ' (1)'}
                             className="weOffer-card-image1"
                             loading="lazy"
-                            style={{ 
-                                objectFit: 'contain',
-                                imageRendering: 'auto',
-                                transform: 'translateZ(0)',
-                                backfaceVisibility: 'hidden'
-                            }}
+                            style={{ width: 40, height: 40, objectFit: 'contain' }}
                             />
                         )}
                         </div>
@@ -82,4 +72,4 @@ const WeOffer: React.FC = memo(() => {
 
 WeOffer.displayName = 'WeOffer';
 
-export default WeOffer;
+export default React.memo(WeOffer);
