@@ -24,22 +24,6 @@ const SiteMap: React.FC = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const BulletIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      style={{ marginRight: 8 }}
-    >
-      <rect x="11" y="1" width="2.5" height="6" fill="#347CCC" />
-      <rect x="11" y="17" width="2.5" height="6" fill="#347CCC" />
-      <rect x="17" y="11" width="6" height="2.5" fill="#347CCC" />
-      <rect x="1" y="11" width="6" height="2.5" fill="#347CCC" />
-      <rect x="11" y="11" width="2.5" height="2.5" fill="#347CCC" />
-    </svg>
-  );
 
   return (
     <Box className="site-map-main">
