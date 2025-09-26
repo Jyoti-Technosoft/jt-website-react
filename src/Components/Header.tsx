@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   Toolbar,
   Typography,
@@ -20,7 +20,6 @@ const Header: React.FC = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const navigate = useNavigate();
-  const location = useLocation();
 
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isDevelopersDropdownOpen, setIsDevelopersDropdownOpen] = useState(false);
