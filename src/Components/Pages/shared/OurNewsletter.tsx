@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
-import { Box, Button, Typography, TextField } from '@mui/material';
+import React, { useState, useCallback } from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
 import EastIcon from '@mui/icons-material/East';
 
 const OurNewsletter: React.FC = () => {
@@ -7,15 +10,15 @@ const OurNewsletter: React.FC = () => {
     const [email, setEmail] = useState('');
     const [subscribed, setSubscribed] = useState(false);
 
-    const handleSubscribeClick = () => {
+    const handleSubscribeClick = useCallback(() => {
         setShowInput(true);
-    };
+    }, []);
 
-    const handleSubmitClick = () => {
+    const handleSubmitClick = useCallback(() => {
         if (email.trim() !== '') {
             setSubscribed(true);
         }
-    };
+    }, [email]);
 
     return (
         <Box className="ourNewsletter-section">
@@ -65,4 +68,4 @@ const OurNewsletter: React.FC = () => {
     );
 };
 
-export default OurNewsletter;
+export default React.memo(OurNewsletter);

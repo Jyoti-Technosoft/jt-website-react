@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Grid, Typography, } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
 import dataArray from "../../../jt-website.json";
 import "../../../styles/home.css";
@@ -44,6 +46,7 @@ const HowWeWork: React.FC = () => {
                                         <img
                                             src={step?.imageSrc}
                                             alt={step?.title}
+                                            loading="lazy"
                                         />
                                     </div>
                                 </Box>
@@ -56,4 +59,4 @@ const HowWeWork: React.FC = () => {
     )
 }
 
-export default HowWeWork;
+export default React.memo(HowWeWork);

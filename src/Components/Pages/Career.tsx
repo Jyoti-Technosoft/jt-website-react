@@ -1,19 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  Box,
-  CardContent,
-  Grid,
-  Typography,
-  MenuItem,
-  TextField,
-  Button,
-  Container,
-  useMediaQuery,
-  IconButton
-} from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import CardContent from "@mui/material/CardContent";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
@@ -50,60 +46,77 @@ const API_ENDPOINTS = {
 
 const Career: React.FC = () => {
   const navigate = useNavigate();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [search, setSearch] = useState("");
   const [technology, setTechnology] = useState("");
   const [type, setType] = useState("");
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(8);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage] = useState(8);
   const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  
   const { careerSubTitle, careerSubTitleSecond, items } = dataArray?.careers;
-  // const jobs = dataArray?.jobs || [];
-  const technologies = [...new Set(jobs.map((job) => job.technology))];
-  const jobNatures = [...new Set(jobs.map((job) => job.jobNature))];
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
-  };
-
-  const filteredJobs = jobs.filter((job) => {
-    const searchMatch = job.jobName
-      .toLowerCase()
-      .includes(search.toLowerCase());
-    const techMatch = technology
-      ? job.jobName.toLowerCase().includes(technology.toLowerCase())
-      : true;
-    const typeMatch = type ? job.jobNature === type : true;
-    return searchMatch && techMatch && typeMatch;
-  });
-
-  const paginatedJobs = filteredJobs.slice(
-    page * rowsPerPage,
-    page * rowsPerPage + rowsPerPage
+  
+  // Memoize expensive computations
+  const technologies = useMemo(() => 
+    [...new Set(jobs.map((job) => job.technology))], 
+    [jobs]
+  );
+  
+  const jobNatures = useMemo(() => 
+    [...new Set(jobs.map((job) => job.jobNature))], 
+    [jobs]
   );
 
-  const totalPages = Math.ceil(filteredJobs.length / rowsPerPage);
+  // Memoize filtered jobs to prevent unnecessary recalculations
+  const filteredJobs = useMemo(() => {
+    return jobs.filter((job) => {
+      const searchMatch = job.jobName
+        .toLowerCase()
+        .includes(search.toLowerCase());
+      const techMatch = technology
+        ? job.jobName.toLowerCase().includes(technology.toLowerCase())
+        : true;
+      const typeMatch = type ? job.jobNature === type : true;
+      return searchMatch && techMatch && typeMatch;
+    });
+  }, [jobs, search, technology, type]);
+
+  // Memoize paginated jobs
+  const paginatedJobs = useMemo(() => {
+    return filteredJobs.slice(
+      page * rowsPerPage,
+      page * rowsPerPage + rowsPerPage
+    );
+  }, [filteredJobs, page, rowsPerPage]);
+
+  const totalPages = useMemo(() => 
+    Math.ceil(filteredJobs.length / rowsPerPage), 
+    [filteredJobs.length, rowsPerPage]
+  );
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(API_ENDPOINTS.jobs)
-      .then((res) => {
-        setJobs(res.data.jobs);
-      })
-      .catch((err) => {
-        console.error("Failed to fetch jobs", err);
-      });
+  // Memoize API call handler
+  const fetchJobs = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await axios.get(API_ENDPOINTS.jobs);
+      setJobs(response.data.jobs || []);
+    } catch (err) {
+      setError("Failed to load job listings. Please try again later.");
+      setJobs([]);
+    } finally {
+      setLoading(false);
+    }
   }, []);
+
+  useEffect(() => {
+    fetchJobs();
+  }, [fetchJobs]);
 
   return (
     <>
@@ -223,7 +236,26 @@ const Career: React.FC = () => {
                 </Box>
               </Box>
               <Box className="job-container">
-                {jobs.length > 0 && (
+                {loading ? (
+                  <Box display="flex" justifyContent="center" alignItems="center" py={8}>
+                    <Typography variant="h6" color="text.secondary">
+                      Loading job listings...
+                    </Typography>
+                  </Box>
+                ) : error ? (
+                  <Box display="flex" flexDirection="column" alignItems="center" py={8}>
+                    <Typography variant="h6" color="error" mb={2}>
+                      {error}
+                    </Typography>
+                    <Button 
+                      variant="contained" 
+                      onClick={fetchJobs}
+                      sx={{ backgroundColor: '#F76336', '&:hover': { backgroundColor: '#d94d24' } }}
+                    >
+                      Retry
+                    </Button>
+                  </Box>
+                ) : jobs.length > 0 ? (
                   <Box className="job-filters" mb={4}>
                     <Grid container spacing={2}>
                       <Grid size={{ xs: 12, sm: 6 }}>
@@ -275,7 +307,7 @@ const Career: React.FC = () => {
                       </Grid>
                     </Grid>
                   </Box>
-                )}
+                ) : null}
 
                 <Grid container spacing={2.5}>
                   {jobs.length === 0 ? (
@@ -472,4 +504,4 @@ const Career: React.FC = () => {
   );
 };
 
-export default Career;
+export default React.memo(Career);
