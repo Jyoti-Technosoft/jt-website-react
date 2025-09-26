@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, Button } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 import { Helmet } from 'react-helmet';
 
 import HomeWhyUs from "../Pages/HomeWhyUs.tsx";
@@ -16,6 +18,11 @@ import "../../styles/home.css";
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const { meetSection } = dataArray?.home;
+
+  // Memoize navigation handler
+  const handleContactNavigation = useCallback(() => {
+    navigate("/contact");
+  }, [navigate]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -50,6 +57,7 @@ const Home: React.FC = () => {
             loop
             muted
             playsInline
+            preload="metadata"
             src="/assets/jyoti-technosoft-web-development.mp4"
           />
           <Box className="first-section-home-content">
@@ -62,7 +70,7 @@ const Home: React.FC = () => {
             <Button
               variant="contained"
               className="build-together"
-              onClick={() => navigate("/contact")}
+              onClick={handleContactNavigation}
             >
               LET'S BUILD TOGETHER
             </Button>
@@ -92,6 +100,7 @@ const Home: React.FC = () => {
                 component="img"
                 src="/assets/star-img.png"
                 alt="Star"
+                loading="lazy"
                 sx={{
                   position: "absolute",
                   top: "-21px",
@@ -160,4 +169,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default React.memo(Home);

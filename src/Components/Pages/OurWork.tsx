@@ -1,26 +1,23 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import {
-  Typography,
-  Box,
-  keyframes,
-  Grid,
-  CardMedia,
-  CardContent,
-  Chip,
-  Tooltip,
-  Tabs,
-  Tab,
-  IconButton,
-  useMediaQuery,
-  Container,
-  Button,
-  ButtonGroup
-} from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { keyframes } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import Chip from "@mui/material/Chip";
+import Tooltip from "@mui/material/Tooltip";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import IconButton from "@mui/material/IconButton";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 import { useTheme } from "@mui/material/styles";
-import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { useMediaQuery } from "@mui/material";
 import { Helmet } from 'react-helmet';
 
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
@@ -231,12 +228,39 @@ const OurWork: React.FC = () => {
     });
   };
 
-  const paginatedProjects = filteredProjects.slice(
-    (page - 1) * rowsPerPage,
-    page * rowsPerPage
+  // Memoize paginated projects
+  const paginatedProjects = useMemo(() => {
+    return filteredProjects.slice(
+      (page - 1) * rowsPerPage,
+      page * rowsPerPage
+    );
+  }, [filteredProjects, page, rowsPerPage]);
+
+  const totalPages = useMemo(() => 
+    Math.ceil(filteredProjects.length / rowsPerPage), 
+    [filteredProjects.length, rowsPerPage]
   );
 
- const totalPages = Math.ceil(filteredProjects.length / rowsPerPage);
+  // Memoize image navigation handlers
+  const handleImageNavigation = useCallback((projectName: string, direction: 'prev' | 'next' | number, totalImages: number) => {
+    setImageIndexes((prev) => {
+      const currentIndex = prev[projectName] || 0;
+      let newIndex: number;
+      
+      if (typeof direction === 'number') {
+        newIndex = direction;
+      } else if (direction === 'prev') {
+        newIndex = (currentIndex - 1 + totalImages) % totalImages;
+      } else {
+        newIndex = (currentIndex + 1) % totalImages;
+      }
+      
+      return {
+        ...prev,
+        [projectName]: newIndex,
+      };
+    });
+  }, []);
 
   const handlePageChange = (newPage: number) => {
     if (newPage !== page) {
@@ -330,7 +354,7 @@ const OurWork: React.FC = () => {
                   }}
                   disabled={categories.indexOf(selectedCategory) === 0}
                 >
-                  <ChevronLeft />
+                  <ChevronLeftIcon />
                 </IconButton>
 
                 <Tabs
@@ -357,7 +381,7 @@ const OurWork: React.FC = () => {
                   }}
                   disabled={categories.indexOf(selectedCategory) === categories.length - 1}
                 >
-                  <ChevronRight />
+                  <ChevronRightIcon />
                 </IconButton>
               </Box>
             ) : (
@@ -426,48 +450,6 @@ const OurWork: React.FC = () => {
             </ButtonGroup>
           </Box>
 
-          {/* <Box
-            margin={isMobile ? "auto" : "0"}
-          >
-            {isMobile && (
-              <Box
-                className="mobile-tab-navigation"
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
-                width="100%"
-                mb={2}
-              >
-                <IconButton
-                  onClick={() => {
-                    const currentIndex = categories.indexOf(selectedCategory);
-                    if (currentIndex > 0) {
-                      handleCategoryChange(categories[currentIndex - 1]);
-                    }
-                  }}
-                  disabled={categories.indexOf(selectedCategory) === 0}
-                >
-                  <ChevronLeft />
-                </IconButton>
-
-                <Typography variant="h6" sx={{ px: 2 }}>
-                  {selectedCategory}
-                </Typography>
-
-                <IconButton
-                  onClick={() => {
-                    const currentIndex = categories.indexOf(selectedCategory);
-                    if (currentIndex < categories.length - 1) {
-                      handleCategoryChange(categories[currentIndex + 1]);
-                    }
-                  }}
-                  disabled={categories.indexOf(selectedCategory) === categories.length - 1}
-                >
-                  <ChevronRight />
-                </IconButton>
-              </Box>
-            )}
-          </Box> */}
         </Box>
         <Box>
           <Grid container spacing={6} sx={{ py: 3 }}>
@@ -517,6 +499,7 @@ const OurWork: React.FC = () => {
                             "assets/images/portfolio/default.png"
                           }
                           alt={project.projectName}
+                          loading="lazy"
                           sx={{
                             maxHeight: "100%",
                             width: "auto",
@@ -524,7 +507,6 @@ const OurWork: React.FC = () => {
                             borderRadius: "10px",
                             border: "4px solid #CFCFCF",
                             margin: "auto",
-                            loading: "lazy"
                           }}
                         />
                       </Box>
@@ -542,13 +524,7 @@ const OurWork: React.FC = () => {
                           <IconButton
                             size="small"
                             sx={{ mx: 1 }}
-                            onClick={() => {
-                              setImageIndexes((prev) => ({
-                                ...prev,
-                                [project.projectName]:
-                                  (currentImageIndex - 1 + project.Images.length) % project.Images.length,
-                              }));
-                            }}
+                            onClick={() => handleImageNavigation(project.projectName, 'prev', project.Images.length)}
                             disabled={project.Images.length <= 1}
                             aria-label="Previous image"
                           >
@@ -573,24 +549,13 @@ const OurWork: React.FC = () => {
                                 cursor: "pointer",
                                 transition: "all 0.3s ease",
                               }}
-                              onClick={() =>
-                                setImageIndexes((prev) => ({
-                                  ...prev,
-                                  [project.projectName]: imgIndex,
-                                }))
-                              }
+                              onClick={() => handleImageNavigation(project.projectName, imgIndex, project.Images.length)}
                             />
                           ))}
                           <IconButton
                             size="small"
                             sx={{ mx: 1 }}
-                            onClick={() => {
-                              setImageIndexes((prev) => ({
-                                ...prev,
-                                [project.projectName]:
-                                  (currentImageIndex + 1) % project.Images.length,
-                              }));
-                            }}
+                            onClick={() => handleImageNavigation(project.projectName, 'next', project.Images.length)}
                             disabled={project.Images.length <= 1}
                             aria-label="Next image"
                           >
@@ -618,6 +583,7 @@ const OurWork: React.FC = () => {
                             component="img"
                             src={project.logo}
                             alt={`${project.projectName} Logo`}
+                            loading="lazy"
                             sx={{ height: 30, mr: 1 }}
                           />
                         )}
@@ -810,4 +776,4 @@ const OurWork: React.FC = () => {
   );
 };
 
-export default OurWork;
+export default React.memo(OurWork);

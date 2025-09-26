@@ -37,7 +37,7 @@ function initFunction()
     } else {
         $myObj = new stdClass();
         $myObj->message = "Not Post Request";
-        $myObj->sucess = false;
+        $myObj->success = false;
         http_response_code(404);
         echo json_encode($myObj);
         exit();
@@ -58,7 +58,7 @@ function validateRecaptcha()
         } else {
             $replyObject = new stdClass();
             $replyObject->message = "Robot Verification Falied :(";
-            $replyObject->sucess = false;
+            $replyObject->success = false;
             http_response_code(401);
             echo json_encode($replyObject);
             exit();
@@ -66,7 +66,7 @@ function validateRecaptcha()
     } else {
         $replyObject = new stdClass();
         $replyObject->message = "Please enter details properly";
-        $replyObject->sucess = false;
+        $replyObject->success = false;
         http_response_code(403);
         echo json_encode($replyObject);
         exit();
@@ -133,7 +133,7 @@ function sendMail()
             if ($mail) {
                 $replyObject = new stdClass();
                 $replyObject->message = "Thank you for applying in Jyoti Technosoft LLP";
-                $replyObject->sucess = true;
+                $replyObject->success = true;
                 http_response_code(201);
                 echo json_encode($replyObject);
                 $header = 'From: info.jyotitechnosoft@gmail.com' . "\r\n" .
@@ -152,7 +152,7 @@ function sendMail()
             } else {
                 $replyObject = new stdClass();
                 $replyObject->message = "Error While Sending Mail";
-                $replyObject->sucess = false;
+                $replyObject->success = false;
                 http_response_code(501);
                 echo json_encode($replyObject);
                 exit();
@@ -160,7 +160,7 @@ function sendMail()
         } else {
             $replyObject = new stdClass();
             $replyObject->message = "Please upload file with pdf extention";
-            $replyObject->sucess = false;
+            $replyObject->success = false;
             http_response_code(501);
             echo json_encode($replyObject);
             exit();

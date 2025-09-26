@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
+import React, { useState, useCallback } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 
@@ -35,7 +33,7 @@ const BuildVision: React.FC = () => {
     description: "",
   });
 
-  const handleInputChange = (
+  const handleInputChange = useCallback((
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { id, value } = e.target;
@@ -44,11 +42,17 @@ const BuildVision: React.FC = () => {
       Email: "email",
     };
     const key = (idToKey[id] ?? id) as keyof typeof formData;
+    
+    // Clear error messages when user starts typing
+    if (submitMessage && !submitMessage.includes("successfully")) {
+      setSubmitMessage(null);
+    }
+    
     setFormData((prev) => ({ ...prev, [key]: value }));
-  };
+  }, [submitMessage]);
 
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setSubmitMessage(null);
@@ -63,7 +67,7 @@ const BuildVision: React.FC = () => {
 
     if (!formData.name || !formData.email || !formData.description) {
       setSubmitMessage(
-        "Please fill in all required fields (First Name, Email, Message)."
+        "Please fill in all required fields (Name, Email, Message)."
       );
       setIsSuccess(false);
       setLoading(false);
@@ -84,7 +88,7 @@ const BuildVision: React.FC = () => {
       // Accept both "success" and misspelled "sucess" from backend
       if (response.data.success === true || response.data.sucess === true) {
         setSubmitMessage(response.data.message || "Your message has been sent successfully!");
-        setIsSuccess(true);
+        // Clear form immediately so users can see it's cleared
         setFormData({
           name: "",
           companyName: "",
@@ -95,7 +99,9 @@ const BuildVision: React.FC = () => {
         });
         setCaptchaValue(null);
         recaptchaRef.current?.reset();
-
+        // Show success page immediately
+        setIsSuccess(true);
+        setSubmitMessage(null); // Clear the success message when transitioning to success page
       } else {
         setSubmitMessage(
           response.data.message || "Failed to send message. Please try again."
@@ -103,7 +109,6 @@ const BuildVision: React.FC = () => {
         setIsSuccess(false);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
       if (axios.isAxiosError(error) && error.response) {
         setSubmitMessage(
           `Failed to send message: ${error.response.status} - ${error.response.data?.message || "Server error"
@@ -118,21 +123,27 @@ const BuildVision: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [formData, captchaValue]);
 
-  const handleCaptchaChange = (value: string | null) => {
+  const handleCaptchaChange = useCallback((value: string | null) => {
     setCaptchaValue(value);
-  };
+  }, []);
 
-  useEffect(() => {
-    if (isSuccess) {
-      const timer = setTimeout(() => {
-        setIsSuccess(null);
-        setSubmitMessage(null);
-      }, 10000);
-      return () => clearTimeout(timer);
-    }
-  }, [isSuccess]);
+  // Reset form function
+  const resetForm = useCallback(() => {
+    setIsSuccess(false);
+    setSubmitMessage(null);
+    setCaptchaValue(null);
+    setFormData({
+      name: "",
+      companyName: "",
+      email: "",
+      contact: "",
+      hire: "",
+      description: "",
+    });
+    recaptchaRef.current?.reset();
+  }, []);
 
   return (
     <Box sx={{ backgroundColor: "#FFFFFF" }}>
@@ -194,6 +205,7 @@ const BuildVision: React.FC = () => {
               <img
                 src="/assets/hire-us-contact-img.png"
                 alt="placeholder"
+                loading="lazy"
                 style={{
                   width: "740px",
                   height: "574px",
@@ -244,6 +256,7 @@ const BuildVision: React.FC = () => {
                       src="/assets/images/portfolio/yatch-mockup.png"
                       alt="Success 1"
                       width={180}
+                      loading="lazy"
                       sx={{ borderRadius: 2 }}
                     />
                   </Grid>
@@ -253,6 +266,7 @@ const BuildVision: React.FC = () => {
                       src="/assets/images/portfolio/pratibha-mockup.png"
                       alt="Success 2"
                       width={180}
+                      loading="lazy"
                       sx={{ borderRadius: 2 }}
                     />
                   </Grid>
@@ -269,6 +283,17 @@ const BuildVision: React.FC = () => {
                   >
                     See success stories
                   </a>
+                </Typography>
+                <Typography
+                  mt={2}
+                  sx={{
+                    color: "#333333",
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                  }}
+                  onClick={resetForm}
+                >
+                  Back to Form
                 </Typography>
               </Box>
             ) : (
@@ -393,6 +418,14 @@ const BuildVision: React.FC = () => {
                     onChange={handleCaptchaChange}
                   />
                 </Box>
+                {submitMessage && (
+                  <Typography
+                    color={submitMessage.includes("successfully") ? "success.main" : "error.main"}
+                    sx={{ mt: 2, mb: 2, textAlign: 'center', fontWeight: submitMessage.includes("successfully") ? 'bold' : 'normal' }}
+                  >
+                    {submitMessage}
+                  </Typography>
+                )}
                 <Button
                   type="submit"
                   className="submit-btn"
@@ -401,14 +434,6 @@ const BuildVision: React.FC = () => {
                 >
                   {loading ? "SUBMITTING..." : "SUBMIT"}
                 </Button>
-                {submitMessage && isSuccess === false && (
-                  <Typography
-                    color={isSuccess ? "success.main" : "error.main"}
-                    sx={{ mt: 2 }}
-                  >
-                    {submitMessage}
-                  </Typography>
-                )}
               </Stack>
             )}
           </Stack>
@@ -418,4 +443,4 @@ const BuildVision: React.FC = () => {
   );
 };
 
-export default BuildVision;
+export default React.memo(BuildVision);

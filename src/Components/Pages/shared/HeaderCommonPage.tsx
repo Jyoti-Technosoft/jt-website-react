@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useMemo } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
 
 import "../../../styles/header-common.css";
-import { Box } from "@mui/material";
 
 interface HeaderCommonProps {
   page: string;
@@ -12,21 +12,17 @@ interface HeaderCommonProps {
   subHeader?: string;
 }
 
-const generatePath = (title: string) => {
-  return `/${title.toLowerCase().replace(/\s+/g, "-")}`;
-};
-
 const HeaderCommonPage: React.FC<HeaderCommonProps> = ({
   page,
   smallTitle,
   subTitle,
   subHeader,
 }) => {
-  const smallTitlePath = smallTitle ? generatePath(smallTitle) : "";
-  // const subTitlePath =
-  //   smallTitle && subTitle
-  //     ? `${smallTitlePath}${generatePath("/" + subTitle)}`
-  //     : "";
+  // Memoize path generation to prevent recalculation
+  const smallTitlePath = useMemo(() => 
+    smallTitle ? `/${smallTitle.toLowerCase().replace(/\s+/g, "-")}` : "", 
+    [smallTitle]
+  );
 
   return (
     <Box className="main-header-common">
@@ -65,4 +61,4 @@ const HeaderCommonPage: React.FC<HeaderCommonProps> = ({
   );
 };
 
-export default HeaderCommonPage;
+export default React.memo(HeaderCommonPage);

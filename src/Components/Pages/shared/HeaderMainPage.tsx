@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Box, Container, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
 import "../../../styles/header-main.css";
 
@@ -63,6 +65,7 @@ const HeaderMainPage: React.FC<HeaderMainPageProps> = ({
             <img
               src={imageSrc}
               alt={smallTitle || "Header"}
+              loading="lazy"
               style={{
                 borderRadius: "10px",
               }}
@@ -74,5 +77,5 @@ const HeaderMainPage: React.FC<HeaderMainPageProps> = ({
   );
 };
 
-export default HeaderMainPage;
+export default React.memo(HeaderMainPage);
 

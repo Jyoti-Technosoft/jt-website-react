@@ -1,5 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Box, Container, Typography } from "@mui/material";
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
 import dataArray from "../../jt-website.json";
 import "../../styles/home.css";
@@ -10,23 +12,23 @@ const HomeWhyUs: React.FC = () => {
   const [startAnimation, setStartAnimation] = useState(false);
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
+  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
+    if (entries[0].isIntersecting) {
+      setStartAnimation(true);
+    }
+  }, []);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setStartAnimation(true);
-          observer.disconnect(); // run only once
-        }
-      },
-      { threshold: 0.3 } // 30% visible before animating
-    );
+    const observer = new IntersectionObserver(handleIntersection, { 
+      threshold: 0.3 // 30% visible before animating
+    });
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [handleIntersection]);
 
   useEffect(() => {
     if (!startAnimation) return;
@@ -114,4 +116,4 @@ const HomeWhyUs: React.FC = () => {
   );
 };
 
-export default HomeWhyUs;
+export default React.memo(HomeWhyUs);

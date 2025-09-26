@@ -1,5 +1,5 @@
-import React from "react";
-import { Button } from "@mui/material";
+import React, { useCallback } from "react";
+import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 
 import "../../../styles/footer-common.css";
@@ -16,11 +16,16 @@ const FooterCommonPage: React.FC<FooterCommonProps> = ({
   buttonLink,
 }) => {
   const navigate = useNavigate();
+  
+  const handleButtonClick = useCallback(() => {
+    navigate(buttonLink);
+  }, [navigate, buttonLink]);
+
   return (
     <div className="main-footer-common">
       <div className="main-footer">
         <span className="footer-title">{title}</span>
-        <Button className="footer-btn" onClick={() => navigate(buttonLink)}>
+        <Button className="footer-btn" onClick={handleButtonClick}>
           {buttonText}
         </Button>
       </div>
@@ -28,4 +33,4 @@ const FooterCommonPage: React.FC<FooterCommonProps> = ({
   );
 };
 
-export default FooterCommonPage;
+export default React.memo(FooterCommonPage);

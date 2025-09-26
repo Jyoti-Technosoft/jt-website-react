@@ -1,7 +1,15 @@
-import React, { useState } from "react";
-import { Box, Container, Tab, Tabs, Grid, Typography, useMediaQuery, IconButton } from "@mui/material";
+import React, { useState, useCallback } from "react";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
-import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import ChevronLeft from "@mui/icons-material/ChevronLeft";
+import ChevronRight from "@mui/icons-material/ChevronRight";
 
 import dataArray from "../../../jt-website.json";
 import "../../../styles/home.css";
@@ -13,21 +21,21 @@ const OurTechnology: React.FC = () => {
     const { technologyStack } = dataArray;
     const [selectedTab, setSelectedTab] = useState(0);
 
-    const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+    const handleTabChange = useCallback((event: React.SyntheticEvent, newValue: number) => {
         setSelectedTab(newValue);
-    };
+    }, []);
 
-    const handlePrev = () => {
+    const handlePrev = useCallback(() => {
         if (selectedTab > 0) {
             setSelectedTab(selectedTab - 1);
         }
-    };
+    }, [selectedTab]);
 
-    const handleNext = () => {
+    const handleNext = useCallback(() => {
         if (selectedTab < technologyStack?.children?.length - 1) {
             setSelectedTab(selectedTab + 1);
         }
-    };
+    }, [selectedTab, technologyStack?.children?.length]);
 
     return (
       <Box className="our-technology-section">
@@ -68,6 +76,7 @@ const OurTechnology: React.FC = () => {
                 component="img"
                 src="/assets/ai-technology.png"
                 alt="AI Agent"
+                loading="lazy"
                 sx={{
                 height: 120,
                 width: 144,
@@ -156,6 +165,7 @@ const OurTechnology: React.FC = () => {
                                 className="tech-img"
                                 src={tech?.imgSrc}
                                 alt={tech?.label}
+                                loading="lazy"
                               />
                               <Typography
                                 className="tech-label"
@@ -177,4 +187,4 @@ const OurTechnology: React.FC = () => {
     );
 };
 
-export default OurTechnology;
+export default React.memo(OurTechnology);

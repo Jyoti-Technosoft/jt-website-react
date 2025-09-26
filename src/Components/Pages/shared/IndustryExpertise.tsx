@@ -1,5 +1,8 @@
 import React from "react";
-import { Box, Typography, Chip, Container } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Chip from "@mui/material/Chip";
+import Container from "@mui/material/Container";
 
 import "../../../styles/home.css";
 
@@ -12,7 +15,7 @@ interface IndustryCardProps {
 
 const industries: IndustryCardProps[] = [
   {
-    image: "assets/ecommerce-img.png",
+    image: "/assets/ecommerce-img.png",
     title: "Ecommerce",
     description: "We build custom e-commerce platforms that drive sales and growth.",
     chips: ["Shopping"],
@@ -88,6 +91,7 @@ const IndustryExpertise: React.FC = () => {
                   <img
                     src={industry.image}
                     alt={industry.title}
+                    loading="lazy"
                     style={{
                       width: "100%",
                       height: "100%",
@@ -130,4 +134,4 @@ const IndustryExpertise: React.FC = () => {
   );
 };
 
-export default IndustryExpertise;
+export default React.memo(IndustryExpertise);

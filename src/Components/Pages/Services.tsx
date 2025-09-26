@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Grid, Typography, Container, useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import { Helmet } from 'react-helmet';
 
-import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import OurTechnology from "./shared/OurTechnology.tsx";
 import dataArray from "../../jt-website.json"
@@ -17,7 +20,8 @@ const Services: React.FC = () => {
     const { featuredServicesTitle, featuredServicesSection } = dataArray?.servicesPage;
     const moreServicesData = dataArray?.serviceDetails || [];
 
-    const backgroundColors = [
+    // Memoize background colors to prevent recreation on every render
+    const backgroundColors = useMemo(() => [
         "#F7E4EA",
         "#D9DFFF",
         "#C5EDFF",
@@ -25,10 +29,11 @@ const Services: React.FC = () => {
         "#FFEEC2",
         "#E9D0D7",
         "#D1F1E0"
-    ];
+    ], []);
 
+    // Memoize scroll to top effect
     useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
     return (
@@ -43,7 +48,6 @@ const Services: React.FC = () => {
           <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
           <link rel="canonical" href="https://jyotitechnosoft.com/services" />
         </Helmet>
-        {/* <HeaderCommon smallTitle="Services" page="Tailored Solutions for Every Digital Need" /> */}
         <HeaderMainPage
           smallTitle="Services"
           page="Tailored Solutions for Every Digital Need"
@@ -179,4 +183,4 @@ const Services: React.FC = () => {
     );
 }
 
-export default Services;
+export default React.memo(Services);
