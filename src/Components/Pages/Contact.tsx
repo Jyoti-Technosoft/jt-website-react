@@ -13,7 +13,7 @@ import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios"
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import "../../styles/contact.css";

@@ -6,7 +6,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import dataArray from "../../jt-website.json";
