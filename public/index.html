@@ -31,7 +31,132 @@
     <meta name="twitter:image" content="https://jyotitechnosoft.com/og-image.jpg" />
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" />
+    <!-- ✅ Critical CSS inline -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      .first-section-home {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      .bg-video {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      
+      .first-section-home-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        padding: 0 20px;
+        color: white;
+      }
+      
+      .first-section-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      
+      .first-section-description {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+      
+      .build-together {
+        background-color: #F76336 !important;
+        color: white !important;
+        padding: 12px 32px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .build-together:hover {
+        background-color: #d94d24 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(247, 99, 54, 0.4) !important;
+      }
+      
+      /* Prevent layout shift */
+      * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      }
+      
+      /* Loading state to prevent CLS */
+      .loading-placeholder {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+      
+      @keyframes loading {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+    </style>
+
+    <!-- ✅ Optimized font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"></noscript>
+    
+    <!-- ✅ Resource hints -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//www.google.com">
+    <link rel="dns-prefetch" href="//www.gstatic.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    
+    <!-- ✅ Preload critical resources -->
+    <link rel="preload" href="%PUBLIC_URL%/assets/logo192.png" as="image">
+    <link rel="preload" href="%PUBLIC_URL%/assets/company-logo.png" as="image">
+    <link rel="preload" href="%PUBLIC_URL%/assets/hire-us.png" as="image">
+    <link rel="preload" href="%PUBLIC_URL%/assets/our-work-img.png" as="image">
+    <link rel="preload" href="%PUBLIC_URL%/assets/career-img.png" as="image">
+    <link rel="preload" href="%PUBLIC_URL%/assets/about-img.png" as="image">
+    <link rel="preload" href="%PUBLIC_URL%/assets/contact-img.png" as="image">
+    
+    <!-- ✅ Preload critical video -->
+    <link rel="preload" href="%PUBLIC_URL%/assets/jyoti-technosoft-web-development.mp4" as="video" type="video/mp4">
+    
+    <!-- ✅ Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   </head>
   <body>

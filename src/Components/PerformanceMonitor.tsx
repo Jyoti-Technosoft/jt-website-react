@@ -1,27 +1,16 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { onCLS, onFID, onFCP, onLCP, onTTFB } from 'web-vitals';
 
-interface PerformanceMetrics {
-  name: string;
-  value: number;
-  delta: number;
-  id: string;
-  entries: PerformanceEntry[];
+interface PerformanceMonitorProps {
+  onMetric?: (metric: any) => void;
 }
 
-// Declare gtag function for TypeScript
-declare global {
-  interface Window {
-    gtag: (...args: any[]) => void;
-  }
-}
-
-const PerformanceMonitor: React.FC = () => {
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ onMetric }) => {
   useEffect(() => {
-    // Function to send metrics to analytics (replace with your analytics service)
-    const sendToAnalytics = (metric: PerformanceMetrics) => {
-      // Example: Google Analytics 4
-      if (typeof window !== 'undefined' && window.gtag) {
+    // Track Core Web Vitals
+    const trackMetric = (metric: any) => {
+      // Send to analytics service
+      if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
         window.gtag('event', metric.name, {
           event_category: 'Web Vitals',
           event_label: metric.id,
@@ -29,43 +18,105 @@ const PerformanceMonitor: React.FC = () => {
           non_interaction: true,
         });
       }
-      
-      // Example: Custom analytics
+
+      // Log to console in development
       if (process.env.NODE_ENV === 'development') {
         console.log('Performance Metric:', metric);
-        // Send to your analytics service here
       }
+
+      // Callback for custom handling
+      onMetric?.(metric);
     };
 
     // Measure Core Web Vitals
-    onCLS(sendToAnalytics);
-    onFID(sendToAnalytics);
-    onFCP(sendToAnalytics);
-    onLCP(sendToAnalytics);
-    onTTFB(sendToAnalytics);
+    onCLS(trackMetric);
+    onFID(trackMetric);
+    onFCP(trackMetric);
+    onLCP(trackMetric);
+    onTTFB(trackMetric);
 
-    // Additional performance monitoring
-    const observer = new PerformanceObserver((list) => {
-      for (const entry of list.getEntries()) {
-        if (entry.entryType === 'navigation') {
-          const navEntry = entry as PerformanceNavigationTiming;
-          console.log('Navigation timing:', {
-            domContentLoaded: navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart,
-            loadComplete: navEntry.loadEventEnd - navEntry.loadEventStart,
-            totalTime: navEntry.loadEventEnd - navEntry.fetchStart,
-          });
+    // Track additional performance metrics
+    const trackNavigationTiming = () => {
+      if ('performance' in window && 'getEntriesByType' in performance) {
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        
+        if (navigation) {
+          const metrics = {
+            name: 'Navigation Timing',
+            value: navigation.loadEventEnd - navigation.fetchStart,
+            delta: navigation.loadEventEnd - navigation.fetchStart,
+            id: 'navigation-timing',
+            navigation: {
+              domContentLoaded: navigation.domContentLoadedEventEnd - navigation.fetchStart,
+              loadComplete: navigation.loadEventEnd - navigation.fetchStart,
+              firstByte: navigation.responseStart - navigation.fetchStart,
+              domInteractive: navigation.domInteractive - navigation.fetchStart,
+              domComplete: navigation.domComplete - navigation.fetchStart,
+            }
+          };
+          
+          trackMetric(metrics);
         }
       }
-    });
+    };
 
-    observer.observe({ entryTypes: ['navigation'] });
+    // Track memory usage
+    const trackMemoryUsage = () => {
+      if ('memory' in performance) {
+        const memory = (performance as any).memory;
+        trackMetric({
+          name: 'Memory Usage',
+          value: memory.usedJSHeapSize / 1024 / 1024, // Convert to MB
+          delta: memory.usedJSHeapSize / 1024 / 1024,
+          id: 'memory-usage',
+          memory: {
+            used: memory.usedJSHeapSize,
+            total: memory.totalJSHeapSize,
+            limit: memory.jsHeapSizeLimit,
+          }
+        });
+      }
+    };
+
+    // Track when page is fully loaded
+    if (document.readyState === 'complete') {
+      trackNavigationTiming();
+      trackMemoryUsage();
+    } else {
+      window.addEventListener('load', () => {
+        trackNavigationTiming();
+        trackMemoryUsage();
+      });
+    }
+
+    // Track resource loading performance
+    const trackResourceTiming = () => {
+      if ('performance' in window && 'getEntriesByType' in performance) {
+        const resources = performance.getEntriesByType('resource');
+        
+        resources.forEach((resource: PerformanceResourceTiming) => {
+          if (resource.initiatorType === 'img' && resource.duration > 1000) {
+            trackMetric({
+              name: 'Slow Image Load',
+              value: resource.duration,
+              delta: resource.duration,
+              id: `slow-image-${resource.name}`,
+              url: resource.name,
+            });
+          }
+        });
+      }
+    };
+
+    // Track resource timing after a delay
+    setTimeout(trackResourceTiming, 2000);
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener('load', trackNavigationTiming);
     };
-  }, []);
+  }, [onMetric]);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default PerformanceMonitor;
