@@ -17,8 +17,8 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import { useTheme } from "@mui/material/styles";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { useMediaQuery } from "@mui/material";
-import { Helmet } from 'react-helmet';
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { Helmet } from 'react-helmet-async';
 
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
@@ -183,7 +183,7 @@ const OurWork: React.FC = () => {
             </Box>
           </Box>
         </Box>
-        <Typography sx={{ textAlign: "center", mt: 8, color: "#333333" }} ref={projectSectionRef}>
+        <Typography sx={{ textAlign: "center", mt: 8, color: "#1a1a1a" }} ref={projectSectionRef}>
           Some of our work is protected by NDAs, but we've prepared demo
           projects to showcase our expertise and quality.
         </Typography>
@@ -288,7 +288,7 @@ const OurWork: React.FC = () => {
                     textTransform: 'none',
                     borderRadius: '20px',
                     border: '1px solid #D9D9D9 !important',
-                    color: selectedTech === tech ? "#ffffff" : '#333333',
+                    color: selectedTech === tech ? "#ffffff" : '#1a1a1a',
                     '&.MuiButton-contained': {
                       '&:hover': {
                         backgroundColor: theme.palette.primary.dark,

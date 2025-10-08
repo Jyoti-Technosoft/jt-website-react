@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  Box,
-  Container,
-  Grid,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import Typography from "@mui/material/Typography";
 import GamepadIcon from '@mui/icons-material/Gamepad';
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import dataArray from "../../jt-website.json";

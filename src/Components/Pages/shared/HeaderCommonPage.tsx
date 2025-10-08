@@ -3,7 +3,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Link } from "react-router-dom";
 
 import "../../../styles/header-common.css";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 
 interface HeaderCommonProps {
   page: string;

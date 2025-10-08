@@ -82,7 +82,9 @@ const Analytics: React.FC = () => {
 
   useEffect(() => {
     // Track page views on route changes
-    trackPageView(location.pathname + location.search);
+    if (location) {
+      trackPageView(location.pathname + location.search);
+    }
   }, [location]);
 
   return null; // This component doesn't render anything

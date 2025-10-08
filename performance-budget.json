@@ -5,67 +5,83 @@
       "timings": [
         {
           "metric": "first-contentful-paint",
-          "budget": 2000
+          "budget": 1500
         },
         {
           "metric": "largest-contentful-paint",
-          "budget": 2500
+          "budget": 2000
         },
         {
           "metric": "cumulative-layout-shift",
-          "budget": 0.1
+          "budget": 0.05
         },
         {
           "metric": "first-input-delay",
-          "budget": 100
+          "budget": 50
         },
         {
           "metric": "speed-index",
+          "budget": 2000
+        },
+        {
+          "metric": "interactive",
           "budget": 3000
+        },
+        {
+          "metric": "total-blocking-time",
+          "budget": 200
         }
       ],
       "resourceSizes": [
         {
           "resourceType": "script",
-          "budget": 300
+          "budget": 250
         },
         {
           "resourceType": "total",
-          "budget": 500
+          "budget": 400
         },
         {
           "resourceType": "stylesheet",
-          "budget": 50
+          "budget": 40
         },
         {
           "resourceType": "image",
-          "budget": 100
+          "budget": 80
         },
         {
           "resourceType": "font",
-          "budget": 30
+          "budget": 25
+        },
+        {
+          "resourceType": "document",
+          "budget": 50
         }
       ],
       "resourceCounts": [
         {
           "resourceType": "script",
-          "budget": 20
+          "budget": 15
         },
         {
           "resourceType": "total",
-          "budget": 50
+          "budget": 40
         },
         {
           "resourceType": "stylesheet",
-          "budget": 5
+          "budget": 3
         },
         {
           "resourceType": "image",
-          "budget": 20
+          "budget": 15
         },
         {
           "resourceType": "font",
-          "budget": 5
+          "budget": 3
+        },
+        {
+          "resourceType": "document",
+          "budget": 1
         }
       ]
     }
