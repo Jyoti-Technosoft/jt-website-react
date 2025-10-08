@@ -138,12 +138,22 @@
 .weOffer-main-container .weOffer-card .weOffer-card-image {
     width: 50px;
     height: 50px;
-    padding: 0px 15px;
+    margin: 0px 15px;
+    image-rendering: auto;
+    image-rendering: smooth;
+    image-rendering: smooth;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .weOffer-main-container .weOffer-card .weOffer-card-image1 {
     width: 50px;
     height: 50px;
+    image-rendering: auto;
+    image-rendering: smooth;
+    image-rendering: smooth;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .weOffer-main-container .weOffer-card .weOffer-card-title {
@@ -435,7 +445,7 @@
 
 .howWeWorkMainContainer .card .description {
     color: var(--text-dark);
-    margin: 2rem 0px 0px 1rem;
+    margin: 1rem 0px 0px 1rem;
 }
 
 .howWeWorkMainContainer .card .description .description1 {
@@ -447,18 +457,23 @@
 
 .howWeWorkMainContainer .card .description .description2 {
     font-weight: 500;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 29px;
     letter-spacing: 0.5px;
     margin-top: 0.8rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .howWeWorkMainContainer .card .imageContainer {
     position: relative;
     width: 634px;
-    height: 390px;
+    height: 350px;
     border-radius: 10px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .howWeWorkMainContainer .card .imageContainer .inner {
@@ -769,7 +784,26 @@
         font-size: 15px;
     }
 
-    /* How We Work section */
+    /* How We Work section - Tablet */
+    @media (max-width: 1200px) and (min-width: 768px) {
+        .howWeWorkMainContainer .card .imageContainer {
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+        }
+        
+        .howWeWorkMainContainer .card .body {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .howWeWorkMainContainer .card .card-content {
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+
+    /* How We Work section - Mobile */
     .howWeWork-section {
         margin: 1rem;
     }
@@ -828,11 +862,14 @@
     }
 
     .howWeWorkMainContainer .card .body {
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .howWeWorkMainContainer .card .imageContainer .inner img {
-        width: 98%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     /* Join Our Newsletter section */

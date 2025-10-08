@@ -8,6 +8,8 @@ import ErrorBoundary from './Components/ErrorBoundary.tsx';
 import PerformanceMonitor from './Components/PerformanceMonitor.tsx';
 import Analytics from './Components/Analytics.tsx';
 import AccessibilityEnhancer from './Components/Accessibility.tsx';
+import { initializeAdvancedOptimizations } from './utils/advancedOptimizations.ts';
+import webVitalsReporter from './utils/webVitalsReporter.ts';
 
 // Lazily loaded pages
 const Home = lazy(() => import('./Components/Pages/Home.tsx'));
@@ -30,24 +32,16 @@ const AppContent = () => {
 
   // Initialize global optimizations
   useEffect(() => {
-    // Preload critical resources
-    const criticalResources = [
-      '/assets/logo192.png',
-      '/assets/company-logo.png',
-      '/assets/hire-us.png',
-      '/assets/our-work-img.png',
-      '/assets/career-img.png',
-      '/assets/about-img.png',
-      '/assets/contact-img.png',
-    ];
-
-    criticalResources.forEach((resource) => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.href = resource;
-      link.as = 'image';
-      document.head.appendChild(link);
-    });
+    // Initialize advanced optimizations
+    initializeAdvancedOptimizations();
+    
+    // Start Web Vitals reporting
+    webVitalsReporter.startReporting();
+    
+    // Cleanup function
+    return () => {
+      // Any cleanup if needed
+    };
   }, []);
 
   // Scroll to top on route change
