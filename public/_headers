@@ -1,0 +1,31 @@
+# Cache headers for better performance
+# Static assets - cache for 1 year
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - cache for 6 months
+/assets/*
+  Cache-Control: public, max-age=15552000
+
+# HTML files - cache for 1 hour
+/*.html
+  Cache-Control: public, max-age=3600
+
+# Service worker - no cache
+/service-worker.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Manifest - cache for 1 week
+/manifest.json
+  Cache-Control: public, max-age=604800
+
+# Favicon - cache for 1 month
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+
+# CSS and JS - cache for 1 year with versioning
+/static/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/static/js/*
+  Cache-Control: public, max-age=31536000, immutable

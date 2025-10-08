@@ -122,8 +122,104 @@ export const initializeOptimizations = () => {
   // Optimize images on scroll
   window.addEventListener('scroll', optimizeImagesForViewport, { passive: true });
   
+  // Preload critical fonts
+  preloadCriticalFonts();
+  
+  // Initialize performance monitoring
+  initializePerformanceMonitoring();
+  
   return () => {
     observer.disconnect();
     window.removeEventListener('scroll', optimizeImagesForViewport);
   };
 };
+
+// Preload critical fonts
+export const preloadCriticalFonts = () => {
+  const criticalFonts = [
+    'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap',
+  ];
+
+  criticalFonts.forEach((fontUrl) => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.href = fontUrl;
+    link.as = 'style';
+    link.crossOrigin = 'anonymous';
+    document.head.appendChild(link);
+  });
+};
+
+// Performance monitoring utilities
+export const initializePerformanceMonitoring = () => {
+  // Monitor long tasks
+  if ('PerformanceObserver' in window) {
+    const longTaskObserver = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (entry.duration > 50) {
+          console.warn('Long task detected:', entry);
+        }
+      }
+    });
+    
+    try {
+      longTaskObserver.observe({ entryTypes: ['longtask'] });
+    } catch (e) {
+      // Long task API not supported
+    }
+  }
+
+  // Monitor layout shifts
+  if ('PerformanceObserver' in window) {
+    const clsObserver = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (!(entry as any).hadRecentInput) {
+          console.warn('Layout shift detected:', entry);
+        }
+      }
+    });
+    
+    try {
+      clsObserver.observe({ entryTypes: ['layout-shift'] });
+    } catch (e) {
+      // Layout shift API not supported
+    }
+  }
+};
+
+// Resource prioritization
+export const prioritizeResources = () => {
+  // High priority resources
+  const highPrioritySelectors = [
+    'link[rel="preload"]',
+    'script[src*="critical"]',
+    'img[loading="eager"]',
+  ];
+
+  highPrioritySelectors.forEach((selector) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => {
+      if (element instanceof HTMLElement) {
+        element.setAttribute('fetchpriority', 'high');
+      }
+    });
+  });
+
+  // Low priority resources
+  const lowPrioritySelectors = [
+    'img[loading="lazy"]',
+    'script[src*="analytics"]',
+    'script[src*="ads"]',
+  ];
+
+  lowPrioritySelectors.forEach((selector) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => {
+      if (element instanceof HTMLElement) {
+        element.setAttribute('fetchpriority', 'low');
+      }
+    });
+  });
+};
+
+
