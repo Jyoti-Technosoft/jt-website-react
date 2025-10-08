@@ -1,5 +1,10 @@
 import React from "react";
-import { Box, Container, Typography, List, ListItem, Link } from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Link from "@mui/material/Link";
 import GamepadIcon from '@mui/icons-material/Gamepad'
 
 import HeaderCommonPage from "./shared/HeaderCommonPage.tsx";

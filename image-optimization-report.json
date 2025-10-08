@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-10-08T13:41:46.862Z",
+  "stats": {
+    "total": 308,
+    "processed": 308,
+    "webpCreated": 308,
+    "avifCreated": 307,
+    "errors": 1,
+    "originalSize": 26259478,
+    "optimizedSize": 7104575
+  },
+  "savings": {
+    "total": 19154903,
+    "percent": 72.9
+  }
+}

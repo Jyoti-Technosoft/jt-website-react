@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import HomeWhyUs from "../Pages/HomeWhyUs.tsx";
 import OurTechnology from "./shared/OurTechnology.tsx";
@@ -59,7 +59,17 @@ const Home: React.FC = () => {
             playsInline
             preload="metadata"
             src="/assets/jyoti-technosoft-web-development.mp4"
-          />
+            aria-label="Background video showcasing web development services"
+          >
+            <track
+              kind="captions"
+              src="/assets/captions.vtt"
+              srcLang="en"
+              label="English captions"
+              default
+            />
+            Your browser does not support the video tag.
+          </video>
           <Box className="first-section-home-content">
             <Typography variant="h1" className="first-section-title">
               {meetSection?.title}

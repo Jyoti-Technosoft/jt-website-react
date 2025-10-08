@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-10-08T13:41:56.601Z",
+  "buildSuccess": true,
+  "bundleAnalysis": {
+    "totalSize": 1093106,
+    "jsFileCount": 27,
+    "cssFileCount": 14,
+    "imageFileCount": 127,
+    "fontFileCount": 0,
+    "bundleSizePassed": false,
+    "jsCountPassed": false,
+    "cssCountPassed": false,
+    "imageCountPassed": false,
+    "fontCountPassed": true,
+    "allPassed": false
+  },
+  "optimizationCheck": {
+    "optimizationsFound": 5,
+    "totalChecks": 5,
+    "score": 100
+  },
+  "overall": false
+}

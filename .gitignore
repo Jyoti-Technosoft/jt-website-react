@@ -39,6 +39,16 @@ bower_components
 build/Release
 build/
 
+# Image optimization temporary directories
+public/assets/optimized/
+public/assets/webp/
+public/assets/avif/
+
+# Performance test reports
+performance-test-report.json
+lighthouse-report.json
+optimization-report.json
+
 # Dependency directories
 node_modules/
 jspm_packages/

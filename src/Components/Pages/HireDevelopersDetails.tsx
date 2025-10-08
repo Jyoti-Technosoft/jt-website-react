@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 import BuildVision from "./shared/BuildVision.tsx";

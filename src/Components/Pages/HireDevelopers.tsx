@@ -1,6 +1,11 @@
 import React, { useEffect, useState, useRef, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { Box, Typography, Grid, Divider, Paper, Container } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Divider from "@mui/material/Divider";
+import Paper from "@mui/material/Paper";
+import Container from "@mui/material/Container";
 import dataArray from "../../jt-website.json";
 
 import BuildVision from "./shared/BuildVision.tsx";
@@ -135,7 +140,7 @@ const HireDevelopers: React.FC = () => {
                     {counts[i]}
                     {stat.suffix}
                   </Typography>
-                  <Typography color="#333333">{stat.label}</Typography>
+                  <Typography color="#1a1a1a">{stat.label}</Typography>
                 </Grid>
                 {i < stats.length - 1 && (
                   <Divider
@@ -322,7 +327,7 @@ const HireDevelopers: React.FC = () => {
                         <Box className="white-circle" />
                       </Box>
                       <Box className="step-text">
-                        <h3 className="step-title">{step.title}</h3>
+                        <h5 className="step-title">{step.title}</h5>
                         <p className="step-description">{step.description}</p>
                       </Box>
                     </Box>
