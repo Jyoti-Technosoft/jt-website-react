@@ -172,7 +172,7 @@ const Header: React.FC = () => {
             <span className="subTitle2">Technosoft LLP</span>
           </Typography>
           <Box className="subtitle" sx={{ textAlign: "right" }}>
-            Innovate, Inspire And Services
+            Innovate, Implement & Inspire
           </Box>
         </Box>
 
