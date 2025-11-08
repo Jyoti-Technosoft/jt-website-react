@@ -1435,7 +1435,7 @@
       "priority": 1,
       "technology": "React",
       "category": ["Custom Software Development"],
-      "typesOfTechnologies": ["React", "Node"],
+      "typesOfTechnologies": ["React", "Node.js"],
       "description": "Big Data Customer Retention & Experience Management SaaS",
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "",
@@ -1703,7 +1703,7 @@
       "priority": 5,
       "technology": "React",
       "category": ["Custom Software Development", "Visualization"],
-      "typesOfTechnologies": ["React", "Node"],
+      "typesOfTechnologies": ["React", "Node.js"],
       "description": "This application is a comprehensive office management web application designed to streamline various administrative tasks within an organization. It provides functionalities for managing employee data, tracking employee activities, and handling attendance, leave of the employees along with Tasks Management feature.",
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "",
@@ -1810,6 +1810,54 @@
         {
           "images" : "assets/images/techology-stack/mongodb-icon.svg",
           "technologyName" : "Mongo DB"
+        }
+      ]
+    },
+    {
+      "projectName": "Health Audit Management",
+      "technology": "Angular",
+      "category": ["Custom Software Development"],
+      "typesOfTechnologies": ["Angular", "Java"],
+      "description": "Developed the Quality module to enhance the quality of Audited reports for equipment. implemented steps to improve quality and manage notifications for doctors/authors.",
+      "logo": "assets/images/portfolio/pubaudit.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/pub-audit-mockup.png",
+        "assets/images/portfolio/pub-audit-1.png",
+        "assets/images/portfolio/pub-audit-2.png",
+        "assets/images/portfolio/pub-audit-3.png",
+        "assets/images/portfolio/pub-audit-4.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/Angular.svg",
+          "technologyName" : "Angular"
+        },
+        {
+          "images": "assets/images/technology-badges/html.svg",
+          "technologyName": "HTML"
+        },
+        {
+          "images": "assets/images/technology-badges/css.svg",
+          "technologyName": "CSS"
+        },
+        {
+          "images" : "assets/images/technology-badges/Typescript.svg",
+          "technologyName" : "TypeScript"
+        },
+        {
+          "images" : "assets/images/technology-badges/primeng.svg",
+          "technologyName" : "Primeng"
+        },
+        {
+          "images": "assets/images/technology-badges/bootstrap.svg",
+          "technologyName": "Bootstrap"
         }
       ]
     },

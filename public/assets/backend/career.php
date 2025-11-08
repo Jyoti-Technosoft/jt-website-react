@@ -92,10 +92,10 @@ function sendMail()
 
             $to = CAREER_MAIL_TO;
             $from = CAREER_MAIL_FROM;
-            $subject = 'Recived one Inquirey on Career portal';
+            $subject = 'Received one Inquiry on Career portal';
 
             $replace = array('{name}', '{email}', '{hire}', '{contact}','{current_salary}','{notice_priod}');
-            $with = array($_POST['firstName'] . " " . (isset($_POST['lastName']) ? $_POST['lastName'] : ""), $_POST['emailAddress'], $_POST['position'], $_POST['mobileNo'], $_POST['currentSalary'], $_POST['currentSalary']);
+            $with = array($_POST['firstName'] . " " . (isset($_POST['lastName']) ? $_POST['lastName'] : ""), $_POST['emailAddress'], $_POST['position'], $_POST['mobileNo'], $_POST['currentSalary'], $_POST['noticePeriod']);
             $contents = file_get_contents('careerinternal.html');
             $message =   str_replace($replace, $with, $contents);
 

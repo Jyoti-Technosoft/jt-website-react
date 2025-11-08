@@ -69,7 +69,7 @@ function sendMail($data)
 {
     $to   = CONTACT_US_MAIL_TO;
     $from = CONTACT_US_MAIL_FROM;
-    $subject = "Recived Mail From Website ";
+    $subject = "Received Mail From Website ";
 
     $headers = 'From: '. $from . "\r\n" .
         'Reply-To: '. $from .',=' . "\r\n" .
