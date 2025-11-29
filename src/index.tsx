@@ -5,7 +5,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import reportWebVitals from "./reportWebVitals.ts";
 import App from "./App.tsx";
 import "./index.css";
-import * as serviceWorkerRegistration from './serviceWorkerRegistration.ts';
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
@@ -17,4 +16,3 @@ root.render(
 );
 
 reportWebVitals();
-serviceWorkerRegistration.register();
