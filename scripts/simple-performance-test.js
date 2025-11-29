@@ -238,16 +238,6 @@ function checkOptimizations() {
     logWarning('No enhanced performance monitoring found');
   }
   
-  // Check for service worker
-  totalChecks++;
-  const swFile = path.join(__dirname, '..', 'public', 'sw-enhanced.js');
-  if (fs.existsSync(swFile)) {
-    logSuccess('Enhanced service worker found');
-    optimizationsFound++;
-  } else {
-    logWarning('No enhanced service worker found');
-  }
-  
   const optimizationScore = Math.round((optimizationsFound / totalChecks) * 100);
   log(`\nOptimization Score: ${optimizationScore}% (${optimizationsFound}/${totalChecks})`);
   

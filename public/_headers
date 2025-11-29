@@ -11,14 +11,6 @@
 /*.html
   Cache-Control: public, max-age=3600
 
-# Service worker - no cache
-/service-worker.js
-  Cache-Control: no-cache, no-store, must-revalidate
-
-# Manifest - cache for 1 week
-/manifest.json
-  Cache-Control: public, max-age=604800
-
 # Favicon - cache for 1 month
 /favicon.ico
   Cache-Control: public, max-age=2592000
