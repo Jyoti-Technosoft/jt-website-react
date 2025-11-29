@@ -51,8 +51,6 @@ const SEO: React.FC<SEOProps> = ({
       
       {/* Favicon */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="192x192" href="/logo192.png" />
-      <link rel="apple-touch-icon" sizes="512x512" href="/logo512.png" />
       
       {/* Structured Data */}
       {structuredData && (
