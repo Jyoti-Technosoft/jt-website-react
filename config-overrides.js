@@ -1,8 +1,6 @@
 // Webpack configuration overrides for Create React App
 // This file provides additional optimizations for better performance
 
-const path = require('path');
-
 module.exports = function override(config, env) {
   // Only apply optimizations in production
   if (env === 'production') {
@@ -54,14 +52,6 @@ module.exports = function override(config, env) {
     // Enable tree shaking
     config.optimization.usedExports = true;
     config.optimization.sideEffects = false;
-
-    // Optimize module resolution
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      // Alias for optimized imports
-      '@mui/material': path.resolve(__dirname, 'node_modules/@mui/material'),
-      '@mui/icons-material': path.resolve(__dirname, 'node_modules/@mui/icons-material'),
-    };
 
     // Add compression plugin
     const CompressionPlugin = require('compression-webpack-plugin');
