@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { keyframes } from "@mui/material/styles";
@@ -34,6 +34,7 @@ const OurWork: React.FC = () => {
   const theme = useTheme();
   const projectSectionRef = React.useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const logos = dataArray?.clientlogos || [];
   const projects = (dataArray?.portfolio.filter((p) => p.projectName) || []).sort((a, b) => (b.priority || 0) - (a.priority || 0));
@@ -73,6 +74,13 @@ const OurWork: React.FC = () => {
   }, [projects, selectedCategory, selectedTech]);
 
   useEffect(() => {
+    const techParam = searchParams.get('tech');
+    if (techParam) {
+      setSelectedTech(techParam);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
 
@@ -90,9 +98,17 @@ const OurWork: React.FC = () => {
 
   const handleTechChange = useCallback((tech: string) => {
     // Toggle the selected technology
-    setSelectedTech(prevTech => prevTech === tech ? '' : tech);
+    const newTech = selectedTech === tech ? '' : tech;
+    setSelectedTech(newTech);
     setPage(1);
-  }, []);
+    
+    if (newTech) {
+      searchParams.set('tech', newTech);
+    } else {
+      searchParams.delete('tech');
+    }
+    setSearchParams(searchParams);
+  }, [selectedTech, searchParams, setSearchParams]);
 
   // Memoize paginated projects
   const paginatedProjects = useMemo(() => {

@@ -52,37 +52,55 @@ const OurTechnology: React.FC = () => {
             mt={4}
             sx={{
                 width: "100%",
-                minHeight: "70px",
+                minHeight: { xs: "auto", sm: "80px" },
                 backgroundColor: "#9DC0DA",
                 color: "#1F5795",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
-                px: 4,
                 borderRadius: "6px",
                 position: "relative",
+                overflow: "hidden",
+                py: { xs: 2, sm: 1.5 },
+                px: { xs: 2, sm: 3 },
+                [theme.breakpoints.down('sm')]: {
+                  flexDirection: 'column',
+                  textAlign: 'center',
+                }
             }}
-            >
-            <Typography
-                sx={{
-                fontSize: "20px",
-                fontWeight: 600,
-                textAlign: "center",
-                }}
-            >
-                Now integrating AI Agents for automation and intelligent workflows
-            </Typography>
+          >
+            <Box sx={{
+              flex: 1,
+              pr: 2,
+              [theme.breakpoints.down('sm')]: {
+                pr: 0,
+                mb: 2,
+                textAlign: 'center'
+              }
+            }}>
+              <Typography
+                  sx={{
+                    fontSize: { xs: "18px", sm: "20px" },
+                    fontWeight: 600,
+                    lineHeight: 1.3
+                  }}
+              >
+                  Now integrating AI Agents for automation and intelligent workflows
+              </Typography>
+            </Box>
             <Box
                 component="img"
                 src="/assets/ai-technology.png"
                 alt="AI Agent"
                 loading="lazy"
                 sx={{
-                height: 120,
-                width: 144,
-                objectFit: "contain",
-                position: "absolute",
-                right: 4,
+                  height: { xs: 80, sm: 100 },
+                  width: 'auto',
+                  objectFit: 'contain',
+                  flexShrink: 0,
+                  [theme.breakpoints.down('sm')]: {
+                    height: 70,
+                    margin: '0 auto'
+                  }
                 }}
             />
           </Box>

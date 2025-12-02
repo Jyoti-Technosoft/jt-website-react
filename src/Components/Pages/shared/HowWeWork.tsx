@@ -29,7 +29,7 @@ const HowWeWork: React.FC = () => {
                             style={{
                                 opacity: index === HowWeWork?.data?.length - 1 ? 0 : 1, 
                                 pointerEvents: index === HowWeWork?.data?.length - 1 ? "none" : "auto",
-                                top: "40px",
+                                top: "20px",
                                 backgroundColor: backgroundColors[index % backgroundColors?.length]
                             }}
                         >
