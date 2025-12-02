@@ -56,7 +56,7 @@
 }
 .breadcrumb-current {
     font-weight: bold;
-    color: #555;
+    color: #333333; /* Improved contrast from #555 */
 }
 
 @media (max-width: 768px) {
