@@ -209,14 +209,15 @@ const Header: React.FC = () => {
             sx={{ position: "relative" }}
             onMouseEnter={() => setIsServicesDropdownOpen(true)}
             onMouseLeave={() => setIsServicesDropdownOpen(false)}
-            aria-haspopup="true"
-            aria-expanded={isServicesDropdownOpen}
           >
             <NavLink
               to="/services"
               className={({ isActive }) =>
                 isActive ? "navLink active" : "navLink"
               }
+              aria-haspopup="true"
+              aria-expanded={isServicesDropdownOpen}
+              aria-controls="services-menu"
             >
               Services
             </NavLink>
@@ -236,8 +237,10 @@ const Header: React.FC = () => {
 
             {isServicesDropdownOpen && (
               <Box
+                id="services-menu"
                 className="custom-dropdown"
                 role="menu"
+                aria-label="Services menu"
                 sx={{
                   position: "absolute",
                   top: "170%",
@@ -253,17 +256,34 @@ const Header: React.FC = () => {
                 {servicesMenu.map(({ label, path }) => (
                   <Box
                     key={path}
+                    component="a"
                     role="menuitem"
+                    tabIndex={0}
                     onClick={() => {
                       setIsServicesDropdownOpen(false);
                       navigate(path);
                     }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setIsServicesDropdownOpen(false);
+                        navigate(path);
+                      }
+                    }}
                     sx={{
+                      display: 'block',
                       px: 2,
                       py: 1,
                       cursor: "pointer",
+                      textDecoration: 'none',
+                      color: 'inherit',
                       "&:hover": {
                         backgroundColor: "#f5f5f5",
+                      },
+                      "&:focus": {
+                        backgroundColor: "#f5f5f5",
+                        outline: "2px solid #347CCC",
+                        outlineOffset: "-2px",
                       },
                     }}
                   >
@@ -288,14 +308,15 @@ const Header: React.FC = () => {
             sx={{ position: "relative" }}
             onMouseEnter={() => setIsDevelopersDropdownOpen(true)}
             onMouseLeave={() => setIsDevelopersDropdownOpen(false)}
-            aria-haspopup="true"
-            aria-expanded={isDevelopersDropdownOpen}
           >
             <NavLink
               to="/hire-developers"
               className={({ isActive }) =>
                 isActive ? "navLink active" : "navLink"
               }
+              aria-haspopup="true"
+              aria-expanded={isDevelopersDropdownOpen}
+              aria-controls="developers-menu"
             >
               Hire Developers
             </NavLink>
@@ -315,8 +336,10 @@ const Header: React.FC = () => {
 
             {isDevelopersDropdownOpen && (
               <Box
+                id="developers-menu"
                 className="custom-dropdown"
                 role="menu"
+                aria-label="Hire Developers menu"
                 sx={{
                   position: "absolute",
                   top: "170%",
@@ -332,17 +355,34 @@ const Header: React.FC = () => {
                 {developersMenu.map(({ label, path }) => (
                   <Box
                     key={path}
+                    component="a"
                     role="menuitem"
+                    tabIndex={0}
                     onClick={() => {
                       setIsDevelopersDropdownOpen(false);
                       navigate(path);
                     }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setIsDevelopersDropdownOpen(false);
+                        navigate(path);
+                      }
+                    }}
                     sx={{
+                      display: 'block',
                       px: 2,
                       py: 1,
                       cursor: "pointer",
+                      textDecoration: 'none',
+                      color: 'inherit',
                       "&:hover": {
                         backgroundColor: "#f5f5f5",
+                      },
+                      "&:focus": {
+                        backgroundColor: "#f5f5f5",
+                        outline: "2px solid #347CCC",
+                        outlineOffset: "-2px",
                       },
                     }}
                   >

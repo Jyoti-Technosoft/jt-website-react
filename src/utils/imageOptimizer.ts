@@ -65,7 +65,7 @@ class ImageOptimizer {
   // Generate optimized image paths
   private generateOptimizedPaths(src: string): OptimizedImage {
     const baseName = src.replace(/\.(png|jpg|jpeg)$/i, '');
-    const extension = src.match(/\.(png|jpg|jpeg)$/i)?.[1] || 'png';
+    //const extension = src.match(/\.(png|jpg|jpeg)$/i)?.[1] || 'png';
     
     return {
       original: src,

@@ -46,6 +46,8 @@ const HeaderMainPage: React.FC<HeaderMainPageProps> = ({
           </Box>
 
           <Typography
+            component="h1"
+            variant="h1"
             className="header-main-title"
             sx={{
               mt: {

@@ -62,7 +62,7 @@
     line-height: 24px;
     letter-spacing: 0.3px;
     text-align: center;
-    color: #D7D5D5;
+    color: #E8E8E8; /* Improved contrast from #D7D5D5 */
     max-width: 631px;
     margin: 0.6rem 0px 2rem;
     display: flex;

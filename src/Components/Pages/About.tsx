@@ -50,6 +50,8 @@ const About: React.FC = () => {
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography
+                component="h2"
+                variant="h2"
                 className="gettoKnowUsTitle"
                 align="left"
                 gutterBottom
@@ -68,7 +70,7 @@ const About: React.FC = () => {
         {/* Our Goal Section */}
         <div className="ourGoal-section">
           <Container className="main-container" maxWidth="lg">
-            <Typography align="left" gutterBottom className="ourGoal-title">
+            <Typography component="h2" variant="h2" align="left" gutterBottom className="ourGoal-title">
               Our Goal
             </Typography>
             <Grid container spacing={1} justifyContent="center">
@@ -83,7 +85,7 @@ const About: React.FC = () => {
                       loading="lazy"
                     />
                     <CardContent className="cardContent">
-                      <Typography className="cardHeader">
+                      <Typography component="h3" variant="h3" className="cardHeader">
                         {goal?.cardHeader}
                       </Typography>
                       <Typography className="cardData">
@@ -115,12 +117,12 @@ const About: React.FC = () => {
               />
             </Grid>
             <Grid className="values-data-main-section" size={{ xs: 12, md: 6 }}>
-              <Typography className="values-title">Values</Typography>
+              <Typography component="h2" variant="h2" className="values-title">Values</Typography>
               <Grid container spacing={2}>
                 {aboutUs?.valuesAboutSection?.map((value) => (
                   <Grid size={{ xs: 12 }} key={value?.id}>
                     <Box className="values-data-section">
-                      <Typography className="values-data-title">
+                      <Typography component="h3" variant="h3" className="values-data-title">
                         {value?.title}
                       </Typography>
                       <Typography className="values-data-description">

@@ -25,7 +25,7 @@ const NotFound: React.FC = () => {
           <Typography variant="h1" color="primary" sx={{ fontSize: '6rem', fontWeight: 'bold', mb: 2 }}>
             404
           </Typography>
-          <Typography variant="h4" gutterBottom>
+          <Typography component="h2" variant="h2" gutterBottom>
             Page Not Found
           </Typography>
           <Typography variant="body1" color="text.secondary" mb={4} maxWidth="sm">

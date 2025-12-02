@@ -1,24 +1,30 @@
 import React, { Suspense, lazy, memo, useCallback, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import { Box, CircularProgress } from '@mui/material';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 import Header from './Header.tsx';
 import Footer from './Footer.tsx';
 
 // Lazy load components with better error boundaries
-const Home = lazy(() => import('./Pages/Home.tsx'));
-const About = lazy(() => import('./Pages/About.tsx'));
-const Services = lazy(() => import('./Pages/Services.tsx'));
-const Contact = lazy(() => import('./Pages/Contact.tsx'));
-const OurWork = lazy(() => import('./Pages/OurWork.tsx'));
-const HireDevelopers = lazy(() => import('./Pages/HireDevelopers.tsx'));
-const Career = lazy(() => import('./Pages/Career.tsx'));
-const CareerDetails = lazy(() => import('./Pages/CareerDetails.tsx'));
-const HireDevelopersDetails = lazy(() => import('./Pages/HireDevelopersDetails.tsx'));
-const ServiceDetails = lazy(() => import('./Pages/ServiceDetails.tsx'));
-const SiteMap = lazy(() => import('./Pages/SiteMap.tsx'));
-const AdminPortal = lazy(() => import('./Pages/AdminPortal.tsx'));
-const PrivacyPolicy = lazy(() => import('./Pages/PrivacyPolicy.tsx'));
-const NotFound = lazy(() => import('./Pages/NotFound.tsx'));
+// Group related routes to reduce chunk count
+const Home = lazy(() => import(/* webpackChunkName: "main-pages" */ './Pages/Home.tsx'));
+const About = lazy(() => import(/* webpackChunkName: "main-pages" */ './Pages/About.tsx'));
+const Services = lazy(() => import(/* webpackChunkName: "main-pages" */ './Pages/Services.tsx'));
+const Contact = lazy(() => import(/* webpackChunkName: "main-pages" */ './Pages/Contact.tsx'));
+
+const OurWork = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/OurWork.tsx'));
+const HireDevelopers = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/HireDevelopers.tsx'));
+const Career = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/Career.tsx'));
+
+const ServiceDetails = lazy(() => import(/* webpackChunkName: "detail-pages" */ './Pages/ServiceDetails.tsx'));
+const HireDevelopersDetails = lazy(() => import(/* webpackChunkName: "detail-pages" */ './Pages/HireDevelopersDetails.tsx'));
+const CareerDetails = lazy(() => import(/* webpackChunkName: "detail-pages" */ './Pages/CareerDetails.tsx'));
+
+const SiteMap = lazy(() => import(/* webpackChunkName: "utility-pages" */ './Pages/SiteMap.tsx'));
+const PrivacyPolicy = lazy(() => import(/* webpackChunkName: "utility-pages" */ './Pages/PrivacyPolicy.tsx'));
+const NotFound = lazy(() => import(/* webpackChunkName: "utility-pages" */ './Pages/NotFound.tsx'));
+
+const AdminPortal = lazy(() => import(/* webpackChunkName: "admin" */ './Pages/AdminPortal.tsx'));
 
 // Optimized loading component
 const LoadingSpinner = memo(() => (
