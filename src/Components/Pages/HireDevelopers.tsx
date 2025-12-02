@@ -178,38 +178,80 @@ const HireDevelopers: React.FC = () => {
               </Typography>
               <Grid container spacing={3} mt={4} alignItems="stretch">
                 {hireDevCards.map((item, index) => (
-                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index} sx={{ display: 'flex' }}>
                     <Box
                       sx={{
-                        minHeight: "240px",
-                        display: "flex",
-                        flexDirection: "column",
-                        border: "1px solid #1F5795",
-                        borderRadius: "5px",
+                        width: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        border: '1px solid #1F5795',
+                        borderRadius: '5px',
                         boxShadow: 1,
-                        p: 3,
-                        transition: "border 0.3s ease, box-shadow 0.3s ease",
-                        "&:hover": {
-                          border: "1.5px solid #1F5795",
-                          boxShadow: "0px 4px 12px rgba(35, 97, 168, 0.2)",
-                          cursor: "pointer",
+                        p: 2,
+                        transition: 'all 0.3s ease',
+                        minHeight: '220px',
+                        '&:hover': {
+                          border: '1.5px solid #1F5795',
+                          boxShadow: '0px 4px 12px rgba(35, 97, 168, 0.2)',
+                          transform: 'translateY(-4px)',
                         },
                       }}
                     >
-                      <Box mb={3}>
+                      <Box 
+                        sx={{ 
+                          mb: 1,
+                          minHeight: '40px',
+                          display: 'flex',
+                          alignItems: 'center'
+                        }}
+                      >
                         <IconByName
                           name={item.icon}
                           color="primary"
-                          sx={{ fontSize: "2rem", color: "#1F5795" }}
+                          sx={{ 
+                            fontSize: '2rem', 
+                            color: '#1F5795',
+                            width: '48px',
+                            height: '48px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
                           aria-label={item.cardHeader || item.icon}
                         />
                       </Box>
 
-                      <Box sx={{ flexGrow: 1 }}>
-                        <Typography className="card-header">
+                      <Box sx={{ 
+                        flex: '1 0 auto',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100%'
+                      }}>
+                        <Typography 
+                          variant="h6" 
+                          sx={{
+                            fontWeight: 600,
+                            color: '#1F5795',
+                            mb: 1,
+                            minHeight: '2.5em',
+                            display: 'flex',
+                            alignItems: 'center',
+                            fontSize: '1rem'
+                          }}
+                        >
                           {item.cardHeader}
                         </Typography>
-                        <Typography className="card-data" sx={{ mt: 3 }}>
+                        <Typography 
+                          variant="body1"
+                          sx={{
+                            color: '#333',
+                            lineHeight: 1.5,
+                            flex: '1 0 auto',
+                            display: 'flex',
+                            alignItems: 'flex-start',
+                            fontSize: '0.9rem'
+                          }}
+                        >
                           {item.cardData}
                         </Typography>
                       </Box>
