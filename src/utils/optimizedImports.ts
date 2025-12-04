@@ -161,14 +161,14 @@ export const otherOptimizedImports = {
   // Axios
   axios: {
     default: () => import('axios'),
-    get: () => import('axios').then(m => ({ default: m.get })),
-    post: () => import('axios').then(m => ({ default: m.post })),
+    get: () => import('axios').then(m => ({ default: m.default.get })),
+    post: () => import('axios').then(m => ({ default: m.default.post })),
   },
   
   // Web Vitals
   webVitals: {
     onCLS: () => import('web-vitals').then(m => ({ default: m.onCLS })),
-    onFID: () => import('web-vitals').then(m => ({ default: m.onFID })),
+    onINP: () => import('web-vitals').then(m => ({ default: m.onINP })),
     onFCP: () => import('web-vitals').then(m => ({ default: m.onFCP })),
     onLCP: () => import('web-vitals').then(m => ({ default: m.onLCP })),
     onTTFB: () => import('web-vitals').then(m => ({ default: m.onTTFB })),

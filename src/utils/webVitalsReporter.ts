@@ -1,5 +1,11 @@
 // Web Vitals reporting utility
-import { onCLS, onFID, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
+import { onCLS, onINP, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
+
+declare global {
+  interface Window {
+    gtag: (command: string, eventName: string, eventParams: Record<string, unknown>) => void;
+  }
+}
 
 interface WebVitalsConfig {
   debug?: boolean;
@@ -67,7 +73,7 @@ class WebVitalsReporter {
   public startReporting() {
     // Core Web Vitals
     onCLS(this.handleMetric);
-    onFID(this.handleMetric);
+    onINP(this.handleMetric);
     onFCP(this.handleMetric);
     onLCP(this.handleMetric);
     onTTFB(this.handleMetric);
