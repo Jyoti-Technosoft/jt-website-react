@@ -16,7 +16,6 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import dataArray from "../../jt-website.json";

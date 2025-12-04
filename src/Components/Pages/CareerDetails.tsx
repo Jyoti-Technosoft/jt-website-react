@@ -14,7 +14,6 @@ import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import { API_ENDPOINTS } from "../../config/api.ts";
 import "../../styles/career-details.css";
 
-
 interface Job {
   id: number;
   jobName: string;

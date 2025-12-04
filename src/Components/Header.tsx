@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
@@ -49,26 +48,25 @@ const Header: React.FC = () => {
   return (
     <Box className={`header ${showShadow ? "header-shadow" : ""}`}>
       <Toolbar className="container">
-        <Box>
-          <Typography
+        <div>
+          <div
             className="title"
             onClick={() => navigate("/")}
-            sx={{ cursor: "pointer" }}
           >
             <span className="subTitle1">JYOTI </span>
             <span className="subTitle2">Technosoft LLP</span>
-          </Typography>
-          <Box className="subtitle" sx={{ textAlign: "right" }}>
+          </div>
+          <div className="subtitle">
             Innovate, Implement & Inspire
-          </Box>
-        </Box>
+          </div>
+        </div>
 
         <IconButton className="menu-icon" onClick={handleDrawerToggle}>
           <MenuIcon />
         </IconButton>
 
         <Drawer anchor="right" open={openDrawer} onClose={handleDrawerToggle}>
-          <Box
+          <div
             role="presentation"
             className="drawer-menu"
             onClick={handleDrawerToggle}
@@ -190,10 +188,10 @@ const Header: React.FC = () => {
             >
               Contact
             </NavLink>
-          </Box>
+          </div>
         </Drawer>
 
-        <Box className="header-menu">
+        <div className="header-menu">
           <Box>
             <NavLink
               to="/"
@@ -405,7 +403,7 @@ const Header: React.FC = () => {
                 </NavLink>
               </Box>
             ))}
-        </Box>
+        </div>
       </Toolbar>
     </Box>
   );
