@@ -50,17 +50,16 @@ const Home: React.FC = () => {
         `}</script>
       </Helmet>
       <Box>
-        <Box className="first-section-home" sx={{ position: "relative" }}>
+        <div className="first-section-home">
           <video
             className="bg-video"
             autoPlay
             loop
             muted
             playsInline
-            preload="metadata"
-            src="/assets/jyoti-technosoft-web-development.mp4"
-            aria-label="Background video showcasing web development services"
+            preload="none"
           >
+            <source src="/assets/jyoti-technosoft-web-development.mp4" type="video/mp4" />
             <track
               kind="captions"
               src="/assets/captions.vtt"
@@ -71,10 +70,10 @@ const Home: React.FC = () => {
             Your browser does not support the video tag.
           </video>
           <Box className="first-section-home-content">
-            <Typography variant="h1" className="first-section-title">
+            <Typography className="first-section-title">
               {meetSection?.title}
             </Typography>
-            <Typography variant="body1" className="first-section-description">
+            <Typography className="first-section-description">
               {meetSection?.description}
             </Typography>
             <Button
@@ -88,7 +87,7 @@ const Home: React.FC = () => {
           <Box
             sx={{
               position: "absolute",
-              width: { xs: "80%", md: "22%" },
+              width: { xs: "80%", md: "26%" },
               bottom: { xs: "1.5%", md: 30 },
               right: { xs: "auto", md: 40 },
               left: { xs: "50%", md: "auto" },
@@ -154,7 +153,7 @@ const Home: React.FC = () => {
               </Typography>
             </Box>
           </Box>
-        </Box>
+        </div>
         {/* What We Offer */}
         <WeOffer />
 

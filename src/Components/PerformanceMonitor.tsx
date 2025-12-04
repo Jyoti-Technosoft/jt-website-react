@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useRef } from 'react';
-import { onCLS, onFID, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
+import { onCLS, onINP, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
 
 interface PerformanceMonitorProps {
   onMetric?: (metric: Metric) => void;
@@ -43,7 +43,7 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
   useEffect(() => {
     // Measure Core Web Vitals
     onCLS(trackMetric);
-    onFID(trackMetric);
+    onINP(trackMetric);
     onFCP(trackMetric);
     onLCP(trackMetric);
     onTTFB(trackMetric);

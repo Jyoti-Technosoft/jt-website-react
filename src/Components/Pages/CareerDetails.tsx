@@ -13,7 +13,7 @@ import axios from "axios";
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 // import dataArray from "../../jt-website.json"; // No longer needed
 import "../../styles/career-details.css";
-const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
+const BASE_URL = "http://192.168.0.197:8000";
 const API_ENDPOINTS = {
   career: `${BASE_URL}/career.php`,
   jobs: `${BASE_URL}/jobs.php`,

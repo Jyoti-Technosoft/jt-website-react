@@ -86,7 +86,6 @@ const Footer: React.FC = () => {
             <Typography
               className="footermenu-header"
               variant="h6"
-              component="h6"
               gutterBottom
             >
               Our Services
@@ -112,7 +111,6 @@ const Footer: React.FC = () => {
             <Typography
               className="footermenu-header"
               variant="h6"
-              component="h6"
               gutterBottom
             >
               Hire Developers
@@ -137,7 +135,6 @@ const Footer: React.FC = () => {
             <Typography
               className="footermenu-header"
               variant="h6"
-              component="h6"
               gutterBottom
             >
               Quick Links

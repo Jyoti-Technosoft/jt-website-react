@@ -92,6 +92,8 @@ const OurTechnology: React.FC = () => {
                 src="/assets/ai-technology.png"
                 alt="AI Agent"
                 loading="lazy"
+                width={800}
+                height={600}
                 sx={{
                   height: { xs: 80, sm: 100 },
                   width: 'auto',
