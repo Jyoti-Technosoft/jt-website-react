@@ -4,6 +4,14 @@
     --button-color: #F76336;
 }
 
+.job-not-found {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  min-height: 30vh;
+  align-items: center;
+}
+
 .career-details-container .career-details-title {
   font: Roboto;
   font-weight: 600;
@@ -71,6 +79,10 @@
 }
 
 @media (max-width: 768px) {
+
+  .job-not-found {
+    padding: 0px 5px;
+  }
 
   .join-our-team-container .contact-card-title {
     font-size: 20px;

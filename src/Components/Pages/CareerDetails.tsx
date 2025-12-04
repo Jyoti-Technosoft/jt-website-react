@@ -207,7 +207,9 @@ const CareerDetails: React.FC = () => {
   }, []);
 
   if (!job) {
-    return <Typography>Job not found</Typography>;
+    return <Typography variant="h6" color="error" mb={2} className="job-not-found">
+      We're not hiring at the moment, but we're always on the lookout for great talent.
+    </Typography>
   }
 
   return (
