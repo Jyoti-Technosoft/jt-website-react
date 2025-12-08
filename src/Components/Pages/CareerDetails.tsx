@@ -290,7 +290,7 @@ const CareerDetails: React.FC = () => {
   return (
     <Box>
       <HeaderCommon
-        smallTitle="Car eer"
+        smallTitle="Career"
         subTitle={job.jobName}
         page={job.jobName}
       />
