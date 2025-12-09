@@ -110,7 +110,7 @@ This document outlines the comprehensive performance optimizations implemented f
 // Automatic Core Web Vitals tracking
 onCLS(trackMetric);
 onLCP(trackMetric);
-onFID(trackMetric);
+onINP(trackMetric);
 ```
 
 ## Expected Performance Gains
