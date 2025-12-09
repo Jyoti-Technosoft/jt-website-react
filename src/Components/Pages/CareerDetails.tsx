@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState, useCallback } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
@@ -39,22 +39,36 @@ const CareerDetails: React.FC = () => {
   const [job, setJob] = useState<Job | null>(null);
   const [jobLoading, setJobLoading] = useState(true);
   const [jobError, setJobError] = useState<string | null>(null);
-
+  const navigate = useNavigate();
+  
   // Memoize job fetching
   const fetchJob = useCallback(async () => {
-    if (!jobId) return;
+    if (!jobId) {
+      setJobError("No job ID provided");
+      setJobLoading(false);
+      return;
+    }
     
     try {
       setJobLoading(true);
       setJobError(null);
       const response = await axios.get(API_ENDPOINTS.jobs);
       const found = response.data.jobs.find((j: Job) => j.id === Number(jobId));
-      setJob(found || null);
+
       if (!found) {
         setJobError("Job not found");
+        setJob(null);
+        return;
       }
+      
+      setJob(found);
+      setFormData(prev => ({
+        ...prev,
+        position: found.jobName
+      }));
     } catch (error) {
-      setJobError("Failed to load job details");
+      console.error("Error fetching job details:", error);
+      setJobError("We're having trouble loading this job listing. Please try again later or check our current openings.");
       setJob(null);
     } finally {
       setJobLoading(false);
@@ -255,16 +269,20 @@ const CareerDetails: React.FC = () => {
   if (jobError || !job) {
     return (
       <Box display="flex" flexDirection="column" alignItems="center" minHeight="50vh" justifyContent="center">
-        <Typography variant="h6" color="error" mb={2} className="job-not-found">
-          We're not hiring at the moment, but we're always on the lookout for great talent.
-        </Typography>
-        <Button 
-          variant="contained" 
-          onClick={fetchJob}
-          sx={{ backgroundColor: '#F76336', '&:hover': { backgroundColor: '#d94d24' } }}
-        >
-          Retry
-        </Button>
+        <Container maxWidth="md" sx={{ py: 8, textAlign: 'center' }}>
+          <Typography variant="h4" gutterBottom>
+            We're not hiring at the moment
+          </Typography>
+          <Typography variant="body1" paragraph>
+            We're always on the lookout for great talent. Please check back later for new opportunities.
+          </Typography>
+          <Button 
+            variant="contained" 
+            onClick={() => navigate('/career')}
+            sx={{ backgroundColor: '#F76336', '&:hover': { backgroundColor: '#d94d24' } }}>
+            Back to career page
+          </Button>
+        </Container>
       </Box>
     );
   }

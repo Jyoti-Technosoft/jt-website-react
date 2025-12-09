@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import OurTechnology from "./shared/OurTechnology.tsx";

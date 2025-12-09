@@ -1,16 +1,16 @@
 {
-  "timestamp": "2025-12-02T07:32:33.036Z",
+  "timestamp": "2025-12-03T13:05:56.741Z",
   "stats": {
     "total": 308,
     "processed": 308,
     "webpCreated": 308,
-    "avifCreated": 307,
-    "errors": 1,
+    "avifCreated": 0,
+    "errors": 0,
     "originalSize": 26259478,
-    "optimizedSize": 7104575
+    "optimizedSize": 3479970
   },
   "savings": {
-    "total": 19154903,
-    "percent": 72.9
+    "total": 22779508,
+    "percent": 86.7
   }
 }
