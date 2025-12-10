@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
@@ -7,17 +9,11 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import GamepadIcon from "@mui/icons-material/Gamepad";
-import ReCAPTCHA from "react-google-recaptcha";
-import axios from "axios";
 
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
-// import dataArray from "../../jt-website.json"; // No longer needed
+import { API_ENDPOINTS } from "../../config/api.ts";
 import "../../styles/career-details.css";
-const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
-const API_ENDPOINTS = {
-  career: `${BASE_URL}/career.php`,
-  jobs: `${BASE_URL}/jobs.php`,
-};
+
 
 interface Job {
   id: number;
@@ -82,7 +78,7 @@ const CareerDetails: React.FC = () => {
   const fieldMap: Record<string, keyof typeof formData> = {
     "First Name": "firstName",
     "Last Name": "lastName",
-    Email: "email",
+    "Email": "email",
     "Mobile No": "mobileNo",
     "Current Salary": "currentSalary",
     "Notice Period": "noticePeriod",
@@ -193,15 +189,18 @@ const CareerDetails: React.FC = () => {
       form.append("resume", formData.resume);
       form.append("position", formData.position);
 
-      const response = await axios.post(API_ENDPOINTS.career, form, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post(API_ENDPOINTS.career, form);
+      const data = response.data;
 
-      if (response.data.success || response.data.sucess) { // Handle server typo 'sucess'
-        setSubmitMessage("Your application has been submitted successfully!");
-        // Clear form immediately so users can see it's cleared
+      const isSuccess =
+        data?.success === true ||
+        data?.success === "true" ||
+        response.status === 201;
+
+      if (isSuccess) {
+        setIsSuccess(true);
+        setSubmitMessage(null);
+
         setFormData({
           firstName: "",
           lastName: "",
@@ -212,27 +211,19 @@ const CareerDetails: React.FC = () => {
           resume: null,
           position: job ? job.jobName : "Angular Developer",
         });
+
         setCaptchaValue(null);
-        // Show success page immediately
-        setIsSuccess(true);
-        setSubmitMessage(null); // Clear the success message when transitioning to success page
       } else {
-        setSubmitMessage(
-          response.data.message || "Failed to submit. Please try again."
-        );
+        setSubmitMessage(data?.message || "Submission failed");
         setIsSuccess(false);
       }
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
         setSubmitMessage(
-          `Failed to submit: ${error.response.status} - ${
-            error.response.data?.message || "Server error"
-          }`
+          error.response.data?.message || "Server error"
         );
       } else {
-        setSubmitMessage(
-          "An unexpected error occurred. Please try again later."
-        );
+        setSubmitMessage("Unexpected error occurred");
       }
       setIsSuccess(false);
     } finally {
@@ -520,14 +511,16 @@ const CareerDetails: React.FC = () => {
                           type: "tel",
                         },
                         {
-                          label: "Current Salary",
+                          label: "Current Salary (per month)",
                           id: "Current Salary",
                           type: "number",
+                          placeholder: "e.g. 10,000",
                         },
                         {
-                          label: "Notice Period",
+                          label: "Notice Period (in months)",
                           id: "Notice Period",
-                          type: "text",
+                          type: "number",
+                          placeholder: "e.g. 0, 1, 2, 3",
                         },
                       ].map((field, index) => (
                         <Box
@@ -540,7 +533,7 @@ const CareerDetails: React.FC = () => {
                             id={field.id || field.label}
                             type={field.type || "text"}
                             label={field.label}
-                            placeholder={field.placeholder || field.label}
+                            placeholder={field.placeholder}
                             fullWidth
                             variant="outlined"
                             className="form-input1"

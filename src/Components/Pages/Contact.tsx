@@ -16,11 +16,8 @@ import axios from "axios"
 import { Helmet } from 'react-helmet-async';
 
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
+import { API_ENDPOINTS } from "../../config/api.ts";
 import "../../styles/contact.css";
-const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
-const API_ENDPOINTS = {
-  contactUs: `${BASE_URL}/contactus.php`
-};
 
 const branches = [
     {

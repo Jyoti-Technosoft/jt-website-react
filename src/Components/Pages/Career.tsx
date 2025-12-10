@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { Helmet } from 'react-helmet-async';
 import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
@@ -15,19 +16,15 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import { Helmet } from 'react-helmet';
 
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
-import dataArray from "../../jt-website.json";
-import "../../styles/career.css";
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
+import dataArray from "../../jt-website.json";
+import { API_ENDPOINTS } from "../../config/api.ts";
+import "../../styles/career.css";
 
-const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
-const API_ENDPOINTS = {
-  jobs: `${BASE_URL}/jobs.php`,
-};
 
-  type Job = {
+type Job = {
   id: number;
   imagePath: string;
   jobName: string;

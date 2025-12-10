@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 function FileTypeEnum()
 {
     return (object) array(
@@ -57,7 +61,7 @@ function validateRecaptcha()
             sendMail();
         } else {
             $replyObject = new stdClass();
-            $replyObject->message = "Robot Verification Falied :(";
+            $replyObject->message = "Robot Verification Failed :(";
             $replyObject->success = false;
             http_response_code(401);
             echo json_encode($replyObject);
@@ -91,7 +95,7 @@ function sendMail()
             $file_content = file_get_contents($file_tmp);
 
             $to = CAREER_MAIL_TO;
-            $from = CAREER_MAIL_FROM;
+            $from = $_POST['emailAddress'];
             $subject = 'Received one Inquiry on Career portal';
 
             $replace = array('{name}', '{email}', '{hire}', '{contact}','{current_salary}','{notice_priod}');
@@ -107,11 +111,11 @@ function sendMail()
             $headers .= "MIME-Version: 1.0\r\n";
 
             // Content-Type header for the HTML part
-            $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n\r\n";
+            $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 
             // Message body
             $body = "--$boundary\r\n";
-            $body .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            $body .= "Content-Type: text/html; charset=UTF-8\r\n";
             $body .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
             $body .= $message . "\r\n";
 
@@ -137,7 +141,7 @@ function sendMail()
                 http_response_code(201);
                 echo json_encode($replyObject);
                 $header = 'From: info.jyotitechnosoft@gmail.com' . "\r\n" .
-                    'Reply-To: info.jyotitechnosoft@gmail.com,=' . "\r\n" .
+                    'Reply-To: info.jyotitechnosoft@gmail.com' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-Type: text/html";

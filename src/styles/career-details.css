@@ -78,6 +78,11 @@
     cursor: pointer;
 }
 
+.join-our-team-container .form-input1 .MuiOutlinedInput-input::placeholder {
+    color: #D3D3D3;
+    font-size: 12px;
+}
+
 @media (max-width: 768px) {
 
   .job-not-found {
