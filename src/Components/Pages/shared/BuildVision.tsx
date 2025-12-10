@@ -18,7 +18,7 @@ const BuildVision: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
-  const recaptchaRef = React.useRef<typeof ReCAPTCHA>(null);
+  const recaptchaRef = React.useRef<ReCAPTCHA>(null);
 
 
   const [formData, setFormData] = useState({
