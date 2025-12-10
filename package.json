@@ -32,7 +32,7 @@
     "performance:full": "npm run performance:test && npm run performance:audit && npm run performance:budget",
     "optimize:images": "node scripts/enhanced-image-optimizer.js",
     "image:guide": "node scripts/image-conversion-guide.js",
-    "build:full": "npm run optimize:images && npm run build && npm run performance:test",
+    "build:full": "NODE_ENV=production && npm run optimize:images && npm run build && npm run performance:test",
     "optimize:all": "npm run optimize:images && npm run build && npm run performance:test",
     "test:changes": "node scripts/test-changes.js"
   },

@@ -20,10 +20,7 @@ import IconButton from "@mui/material/IconButton";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
-const API_ENDPOINTS = {
-  jobs: `${BASE_URL}/jobs.php`,
-};
+import { API_ENDPOINTS } from "../../config/api.ts";
 
 const itemsPerPage = 5;
   type Job = {

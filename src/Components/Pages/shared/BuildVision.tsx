@@ -9,12 +9,9 @@ import Typography from "@mui/material/Typography";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 
+import { API_ENDPOINTS } from "../../../config/api.ts";
 import "../../../styles/hire-us.css";
 
-const BASE_URL = "https://jyotitechnosoft.com/assets/backend";
-const API_ENDPOINTS = {
-  business: `${BASE_URL}/bussiness.php`,
-};
 
 const BuildVision: React.FC = () => {
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
