@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import {
   Typography,
   Box,
@@ -37,13 +37,17 @@ const OurWork: React.FC = () => {
   const theme = useTheme();
   const projectSectionRef = React.useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const logos = dataArray?.clientlogos || [];
   const projects = (dataArray?.portfolio.filter((p) => p.projectName) || []).sort((a, b) => (b.priority || 0) - (a.priority || 0));
+  
+  // Initialize state from URL params or use defaults
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedTech, setSelectedTech] = useState<string>("");
+  const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const [page, setPage] = useState(1);
-  const [rowsPerPage, setRowsPerPage] = useState(4);
+  const [rowsPerPage] = useState(4);
   const [imageIndexes, setImageIndexes] = useState({});
 
   // Get all unique technologies from projects in the selected category
@@ -60,41 +64,171 @@ const OurWork: React.FC = () => {
   // Get all categories from the data
   const categories = dataArray?.portfolioCategories || ["All"];
   
-  // Filter projects based on selected category and technology
+  // Filter and sort projects based on selected category and technologies
   const filteredProjects = useMemo(() => {
-    return projects.filter(project => {
-      const matchesCategory = selectedCategory === "All" || 
-        project.category.includes(selectedCategory);
-        
-      // If no technology is selected, show all projects in the category
-      const matchesTech = !selectedTech || 
+    // First filter by category
+    const categoryFiltered = projects.filter(project => 
+      selectedCategory === "All" || project.category.includes(selectedCategory)
+    );
+
+    // If no technologies are selected, return all projects in the category
+    if (selectedTechs.length === 0) {
+      return categoryFiltered;
+    }
+
+    // For each project, count how many selected technologies it matches
+    const projectsWithMatchCount = categoryFiltered.map(project => {
+      const matchedTechs = selectedTechs.filter(selectedTech => 
         project.typesOfTechnologies?.some(
           tech => tech.toLowerCase() === selectedTech.toLowerCase()
-        );
-      return matchesCategory && matchesTech;
+        )
+      );
+      
+      return {
+        ...project,
+        matchedTechs,
+        matchCount: matchedTechs.length,
+        // Check if it matches all selected technologies
+        matchesAll: matchedTechs.length === selectedTechs.length,
+        // Check if it matches the most recently selected technology
+        matchesLatest: selectedTechs.length > 0 && 
+          project.typesOfTechnologies?.some(
+            tech => tech.toLowerCase() === selectedTechs[selectedTechs.length - 1].toLowerCase()
+          )
+      };
     });
-  }, [projects, selectedCategory, selectedTech]);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]);
+    // Filter out projects that don't match any selected technology
+    const techFiltered = projectsWithMatchCount.filter(project => project.matchCount > 0);
 
+    // Sort projects by:
+    // 1. Projects that match ALL selected technologies
+    // 2. Projects that match the most recently selected technology
+    // 3. All other matching projects
+    return techFiltered.sort((a, b) => {
+      // First sort by whether it matches all selected techs
+      if (a.matchesAll !== b.matchesAll) {
+        return a.matchesAll ? -1 : 1;
+      }
+      
+      // Then sort by whether it matches the latest selected tech
+      if (a.matchesLatest !== b.matchesLatest) {
+        return a.matchesLatest ? -1 : 1;
+      }
+      
+      // Then sort by number of matching technologies (descending)
+      if (a.matchCount !== b.matchCount) {
+        return b.matchCount - a.matchCount;
+      }
+      
+      // Finally, maintain original order (by priority) for projects with same match count
+      return (b.priority || 0) - (a.priority || 0);
+    });
+  }, [projects, selectedCategory, selectedTechs]);
+
+  // Initialize state from URL on component mount - only runs once
   useEffect(() => {
-    if (projectSectionRef.current) {
-      projectSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    const category = searchParams.get('category') || 'All';
+    const techs = searchParams.getAll('tech') || [];
+    const pageNum = parseInt(searchParams.get('page') || '1');
+    
+    // Only update state if the URL values are different from current state
+    if (categories.includes(category) && category !== selectedCategory) {
+      setSelectedCategory(category);
     }
-  }, [page]);
+    
+    // Update technologies from URL
+    if (techs.length > 0) {
+      setSelectedTechs(techs);
+      
+      // Scroll to projects after a short delay
+      if (projectSectionRef.current) {
+        const timer = setTimeout(() => {
+          projectSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        
+        return () => clearTimeout(timer);
+      }
+    }
+    
+    const newPage = isNaN(pageNum) ? 1 : Math.max(1, pageNum);
+    if (newPage !== page) {
+      setPage(newPage);
+    }
+  }, []); // Empty dependency array means this runs once on mount
+
+  // Update URL when filters change - without triggering re-renders
+  useEffect(() => {
+    // Skip the initial render and only run when dependencies change
+    if (!projectSectionRef.current) return;
+
+    const params = new URLSearchParams();
+    
+    if (selectedCategory !== 'All') {
+      params.set('category', selectedCategory);
+    }
+    
+    // Add all selected technologies to the URL
+    selectedTechs.forEach(tech => {
+      params.append('tech', tech);
+    });
+    
+    if (page > 1) {
+      params.set('page', page.toString());
+    }
+    
+    const newSearch = params.toString();
+    const currentSearch = location.search.slice(1);
+    
+    // Only update URL if something actually changed
+    if (newSearch !== currentSearch) {
+      // Use replace to avoid adding to browser history
+      navigate(`?${newSearch}`, { 
+        replace: true,
+        state: { preventScrollReset: true } // Prevent React Router from scrolling to top
+      });
+    }
+    
+    // Only scroll if we're changing pages
+    if (projectSectionRef.current && location.state?.scrollToProjects) {
+      projectSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [selectedCategory, selectedTechs, page, navigate, location.search]);
 
   const handleCategoryChange = (newCategory: string) => {
-    setSelectedCategory(newCategory);
-    setSelectedTech("");
-    setPage(1);
+    // Only update if category is actually changing
+    if (newCategory !== selectedCategory) {
+      setSelectedCategory(newCategory);
+      setSelectedTechs([]);
+      setPage(1);
+      
+      // Scroll to projects after a short delay to allow the component to update
+      if (projectSectionRef.current) {
+        setTimeout(() => {
+          projectSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
   };
 
   const handleTechChange = (tech: string) => {
-    // Toggle the selected technology
-    setSelectedTech(prevTech => prevTech === tech ? '' : tech);
-    setPage(1);
+    setSelectedTechs(prevTechs => {
+      // Toggle the selected technology
+      const newTechs = prevTechs.includes(tech)
+        ? prevTechs.filter(t => t !== tech) // Remove if already selected
+        : [...prevTechs, tech]; // Add if not selected
+      
+      setPage(1);
+      
+      // Scroll to projects after a short delay to allow the component to update
+      if (projectSectionRef.current) {
+        setTimeout(() => {
+          projectSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+      
+      return newTechs;
+    });
   };
 
   const paginatedProjects = filteredProjects.slice(
@@ -103,6 +237,17 @@ const OurWork: React.FC = () => {
   );
 
  const totalPages = Math.ceil(filteredProjects.length / rowsPerPage);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage !== page) {
+      setPage(newPage);
+      
+      // Add scroll behavior when changing pages
+      if (projectSectionRef.current) {
+        projectSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <>
@@ -258,17 +403,20 @@ const OurWork: React.FC = () => {
               {rawTechnologies.map((tech) => (
                 <Button
                   key={tech}
-                  variant={selectedTech === tech ? 'contained' : 'outlined'}
+                  variant={selectedTechs.includes(tech) ? 'contained' : 'outlined'}
                   onClick={() => handleTechChange(tech)}
                   sx={{
                     textTransform: 'none',
                     borderRadius: '20px',
                     border: '1px solid #D9D9D9 !important',
-                    color: selectedTech === tech ? "#ffffff" : '#333333',
-                    '&.MuiButton-contained': {
-                      '&:hover': {
-                        backgroundColor: theme.palette.primary.dark,
-                      },
+                    color: selectedTechs.includes(tech) ? "#ffffff" : '#333333',
+                    backgroundColor: selectedTechs.includes(tech) 
+                      ? theme.palette.primary.main 
+                      : 'transparent',
+                    '&:hover': {
+                      backgroundColor: selectedTechs.includes(tech)
+                        ? theme.palette.primary.dark
+                        : 'rgba(0, 0, 0, 0.04)',
                     },
                   }}
                 >
@@ -595,9 +743,7 @@ const OurWork: React.FC = () => {
             mb={4}
           >
             <IconButton
-              onClick={() => {
-                if (page > 1) setPage((prev) => Math.max(prev - 1, 1));
-              }}
+              onClick={() => handlePageChange(Math.max(page - 1, 1))}
               sx={{
                 backgroundColor: "#F76336",
                 color: "#fff",
@@ -617,7 +763,7 @@ const OurWork: React.FC = () => {
               Array.from({ length: totalPages }).map((_, index) => (
                 <Box
                   key={index}
-                  onClick={() => setPage(index + 1)}
+                  onClick={() => handlePageChange(index + 1)}
                   sx={{
                     width: 14,
                     height: 14,
@@ -629,7 +775,7 @@ const OurWork: React.FC = () => {
                 />
               ))}
             <IconButton
-              onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+              onClick={() => handlePageChange(Math.min(page + 1, totalPages))}
               sx={{
                 backgroundColor: "#F76336",
                 color: "#fff",

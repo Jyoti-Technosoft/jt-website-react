@@ -857,7 +857,7 @@
   "portfolio": [
     {
       "projectName": "Progress Maker",
-      "priority": 0,
+      "priority": 11,
       "technology": "Angular",
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["Angular", "D3"],
@@ -1001,7 +1001,7 @@
     },
     {
       "projectName": "Renacline Consultancy",
-      "priority": 8,
+      "priority": 0,
       "technology": "React",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["React"],
@@ -1105,7 +1105,7 @@
     },
     {
       "projectName": "Real Estate Web Application",
-      "priority": 6,
+      "priority": 0,
       "technology": "Angular",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["Angular"],
@@ -1239,7 +1239,7 @@
     },
     {
       "projectName": "Yacht Closer Brochure Application",
-      "priority": 4,
+      "priority": 5,
       "technology": "React",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["React", "Java"],
@@ -1294,7 +1294,7 @@
     },
     {
       "projectName": "Yacht Closer Web Application",
-      "priority": 3,
+      "priority": 5,
       "technology": "Java",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["GWT", "Java"],
@@ -1348,7 +1348,7 @@
     },
     {
       "projectName": "CX Group",
-      "priority": 2,
+      "priority": 4,
       "technology": "Java",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["GWT", "Java"],
@@ -1432,7 +1432,7 @@
     },
     {
       "projectName": "Online Chat Web Application",
-      "priority": 1,
+      "priority": 7,
       "technology": "React",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["React", "Node.js"],
@@ -1499,7 +1499,7 @@
     {
       "projectName": "Jyoti Technosoft Website",
       "technology": "Angular",
-      "priority": 0,
+      "priority": 7,
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["Angular", "D3"],
       "description": "Jyoti Technosoft's website displaying the organization's overview, achievements, projects. The website offers valuable insights into the company's expertise, showcasing its success stories.",
@@ -1567,7 +1567,7 @@
     },
     {
       "projectName": "D3 Showcase",
-      "priority": 3,
+      "priority": 12,
       "technology":"D3",
       "category": ["Visualization", "Custom Software Development"],
       "typesOfTechnologies": ["React", "D3"],
@@ -1636,7 +1636,7 @@
     },
     {
       "projectName": "Quiz Application",
-      "priority": 4,
+      "priority": 10,
       "technology":"Angular",
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["Angular", "D3"],
@@ -1700,7 +1700,7 @@
     },
     {
       "projectName": "Office Management Application",
-      "priority": 5,
+      "priority": 9,
       "technology": "React",
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["React", "Node.js"],
@@ -1762,7 +1762,7 @@
     },
     {
       "projectName": "Book Universe",
-      "priority": 0,
+      "priority": 5,
       "technology": "React",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["React", "Next"],
@@ -1815,6 +1815,7 @@
     },
     {
       "projectName": "Health Audit Management",
+      "priority": 10,
       "technology": "Angular",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["Angular", "Java"],
@@ -1863,7 +1864,7 @@
     },
     {
       "projectName": "VirtualCRM & CircleCRM",
-      "priority": 7,
+      "priority": 11,
       "technology": "Angular",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["Angular"],
@@ -1908,7 +1909,7 @@
     },
     {
       "projectName": "Property Vista",
-      "priority": 0,
+      "priority": 10,
       "technology": "GWT ",
       "category": ["Custom Software Development"],
       "typesOfTechnologies": ["GWT"],
@@ -1969,7 +1970,7 @@
     },
     {
       "projectName": "AnteThink",
-      "priority": 0,
+      "priority": 12,
       "technology": "AI",
       "category": ["Custom Software Development", "Visualization", "Generative AI"],
       "typesOfTechnologies": ["AI", "D3", "React"],
@@ -2027,7 +2028,7 @@
     },
     {
       "projectName": "BookSkill",
-      "priority": 0,
+      "priority": 9,
       "technology": "React Native",
       "category": ["Mobile App"],
       "typesOfTechnologies": ["React Native", "Node.js", "MongoDB"],
@@ -2069,7 +2070,7 @@
     },
     {
       "projectName": "QuickMart",
-      "priority": 11,
+      "priority": 9,
       "technology": "WordPress",
       "category": ["Custome Software Development"],
       "typesOfTechnologies": ["WordPress", "WooCommerce", "MySQL"],
@@ -2116,7 +2117,7 @@
     },
     {
       "projectName": "SiteSync",
-      "priority": 0,
+      "priority": 13,
       "technology": "Flutter",
       "category": ["Mobile App"],
       "typesOfTechnologies": ["Flutter", "Firebase", "Provider", "Firebase Notification"],
@@ -2159,7 +2160,7 @@
     },
     {
       "projectName": "FreshMart",
-      "priority": 0,
+      "priority": 9,
       "technology": "Flutter",
       "category": ["Mobile App"],
       "typesOfTechnologies": ["Flutter"],
@@ -2185,7 +2186,7 @@
     },
     {
       "projectName": "VisualCharts",
-      "priority": 0,
+      "priority": 13,
       "technology": "D3",
       "category": ["Custom Software Development", "Visualization"],
       "typesOfTechnologies": ["D3", "React"],
