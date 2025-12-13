@@ -59,7 +59,7 @@ const OurWork: React.FC = () => {
   }, [projects, selectedCategory]);
 
   // Get all categories from the data
-  const categories = dataArray?.portfolioCategories || ["All"];
+  const categories = useMemo(() => dataArray?.portfolioCategories || ["All"], []);
   
   // Filter and sort projects based on selected category and technologies
   const filteredProjects = useMemo(() => {
@@ -152,7 +152,7 @@ const OurWork: React.FC = () => {
     if (newPage !== page) {
       setPage(newPage);
     }
-  }, []); // Empty dependency array means this runs once on mount
+  }, [categories, page, searchParams, selectedCategory]); // Include all dependencies used in the effect
 
   // Update URL when filters change - without triggering re-renders
   useEffect(() => {
@@ -190,7 +190,7 @@ const OurWork: React.FC = () => {
     if (projectSectionRef.current && location.state?.scrollToProjects) {
       projectSectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [selectedCategory, selectedTechs, page, navigate, location.search]);
+  }, [selectedCategory, selectedTechs, page, navigate, location.search, location.state?.scrollToProjects]);
 
   const handleCategoryChange = (newCategory: string) => {
     // Only update if category is actually changing

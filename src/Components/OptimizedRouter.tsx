@@ -13,6 +13,7 @@ const Services = lazy(() => import(/* webpackChunkName: "main-pages" */ './Pages
 const Contact = lazy(() => import(/* webpackChunkName: "main-pages" */ './Pages/Contact.tsx'));
 
 const OurWork = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/OurWork.tsx'));
+const ProjectDetail = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/ProjectDetail.tsx'));
 const HireDevelopers = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/HireDevelopers.tsx'));
 const Career = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/Career.tsx'));
 
@@ -196,6 +197,10 @@ const OptimizedRouter: React.FC = () => {
         <Route 
           path="/our-work" 
           element={<RouteComponent component={OurWork} />} 
+        />
+        <Route
+          path="/our-work/:projectName"
+          element={<RouteComponent component={ProjectDetail} />}
         />
         <Route 
           path="/hire-developers" 
