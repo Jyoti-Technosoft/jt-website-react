@@ -17,6 +17,7 @@ import SiteMap from './Components/Pages/SiteMap.tsx';
 import AdminPortal from './Components/Pages/AdminPortal.tsx';
 import PrivacyPolicy from './Components/Pages/PrivacyPolicy.tsx';
 import Loader from './Components/Pages/Loader.tsx';
+import ProjectDetail from './Components/Pages/ProjectDetail.tsx';
 
 const AppContent = () => {
   const location = useLocation();
@@ -45,6 +46,7 @@ const AppContent = () => {
           <Route path="/site-map" element={<SiteMap />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/our-work" element={<OurWork />} />
+          <Route path="/our-work/:projectName" element={<ProjectDetail />} />
           <Route path="/hire-developers" element={<HireDevelopers />} />
           <Route path="/hire-developers/:id" element={<HireDevelopersDetails />} />
           <Route path="/career" element={<Career />} />

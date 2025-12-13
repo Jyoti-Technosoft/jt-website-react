@@ -48,7 +48,7 @@ const OurWork: React.FC = () => {
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const [page, setPage] = useState(1);
   const [rowsPerPage] = useState(4);
-  const [imageIndexes, setImageIndexes] = useState({});
+  const [imageIndexes, setImageIndexes] = useState<Record<string, number>>({});
 
   // Get all unique technologies from projects in the selected category
   const rawTechnologies = useMemo(() => {
@@ -622,10 +622,16 @@ const OurWork: React.FC = () => {
                           />
                         )}
                         <Typography
+                          onClick={() => navigate(`/our-work/${encodeURIComponent(project.projectName)}`)}
                           sx={{
                             fontSize: "20px",
                             color: "#333333",
                             fontWeight: 600,
+                            cursor: 'pointer',
+                            '&:hover': {
+                              color: '#F76336',
+                              textDecoration: 'underline',
+                            }
                           }}
                         >
                           {project.projectName}
