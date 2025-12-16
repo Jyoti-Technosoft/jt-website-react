@@ -46,6 +46,7 @@ const OurWork: React.FC = () => {
   const [page, setPage] = useState(1);
   const [rowsPerPage] = useState(4);
   const [imageIndexes, setImageIndexes] = useState<Record<string, number>>({});
+  const hasInitialized = React.useRef(false);
 
   // Get all unique technologies from projects in the selected category
   const rawTechnologies = useMemo(() => {
@@ -125,6 +126,8 @@ const OurWork: React.FC = () => {
 
   // Initialize state from URL on component mount - only runs once
   useEffect(() => {
+    if (hasInitialized.current) return;
+    
     const category = searchParams.get('category') || 'All';
     const techs = searchParams.getAll('tech') || [];
     const pageNum = parseInt(searchParams.get('page') || '1');
@@ -137,27 +140,26 @@ const OurWork: React.FC = () => {
     // Update technologies from URL
     if (techs.length > 0) {
       setSelectedTechs(techs);
-      
-      // Scroll to projects after a short delay
-      if (projectSectionRef.current) {
-        const timer = setTimeout(() => {
-          projectSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-        
-        return () => clearTimeout(timer);
-      }
     }
     
     const newPage = isNaN(pageNum) ? 1 : Math.max(1, pageNum);
     if (newPage !== page) {
       setPage(newPage);
     }
-  }, [categories, page, searchParams, selectedCategory]); // Include all dependencies used in the effect
+    
+    hasInitialized.current = true;
+    
+    if (projectSectionRef.current) {
+      const timer = setTimeout(() => {
+        projectSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [categories, page, searchParams, selectedCategory]);
 
-  // Update URL when filters change - without triggering re-renders
   useEffect(() => {
-    // Skip the initial render and only run when dependencies change
-    if (!projectSectionRef.current) return;
+    if (!hasInitialized.current) return;
 
     const params = new URLSearchParams();
     
@@ -177,26 +179,22 @@ const OurWork: React.FC = () => {
     const newSearch = params.toString();
     const currentSearch = location.search.slice(1);
     
-    // Only update URL if something actually changed
     if (newSearch !== currentSearch) {
-      // Use replace to avoid adding to browser history
       navigate(`?${newSearch}`, { 
         replace: true,
-        state: { preventScrollReset: true } // Prevent React Router from scrolling to top
+        state: { 
+          preventScrollReset: true,
+          fromNavigation: true
+        }
       });
     }
-    
-    // Only scroll if we're changing pages
-    if (projectSectionRef.current && location.state?.scrollToProjects) {
-      projectSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [selectedCategory, selectedTechs, page, navigate, location.search, location.state?.scrollToProjects]);
+  }, [selectedCategory, selectedTechs, page, navigate, location.search]);
 
   const handleCategoryChange = (newCategory: string) => {
     // Only update if category is actually changing
     if (newCategory !== selectedCategory) {
       setSelectedCategory(newCategory);
-      setSelectedTechs([]);
+      // Only reset page, keep selected technologies
       setPage(1);
       
       // Scroll to projects after a short delay to allow the component to update
