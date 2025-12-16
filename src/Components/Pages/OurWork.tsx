@@ -195,6 +195,7 @@ const OurWork: React.FC = () => {
     if (newCategory !== selectedCategory) {
       setSelectedCategory(newCategory);
       // Only reset page, keep selected technologies
+      setSelectedTechs([]);
       setPage(1);
       
       // Scroll to projects after a short delay to allow the component to update
