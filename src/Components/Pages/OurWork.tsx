@@ -501,7 +501,7 @@ const OurWork: React.FC = () => {
                           loading="lazy"
                           sx={{
                             maxHeight: "100%",
-                            width: "auto",
+                            maxWidth: "100%",
                             objectFit: "contain",
                             borderRadius: "10px",
                             border: "4px solid #CFCFCF",

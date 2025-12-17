@@ -27,7 +27,6 @@ type Job = {
   id: number;
   imagePath: string;
   jobName: string;
-  jobPost?: string;
   jobDescription: string;
   jobNature: string;
   address: string;
@@ -70,8 +69,8 @@ const Career: React.FC = () => {
       const searchMatch = job.jobName
         .toLowerCase()
         .includes(search.toLowerCase());
-      const techMatch = technology
-        ? job.jobName.toLowerCase().includes(technology.toLowerCase())
+      const techMatch = technology ? job.technology
+        ?.toLowerCase().trim().includes(technology.toLowerCase().trim())
         : true;
       const typeMatch = type ? job.jobNature === type : true;
       return searchMatch && techMatch && typeMatch;

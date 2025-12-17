@@ -1989,9 +1989,9 @@
     {
       "projectName": "AnteThink",
       "priority": 12,
-      "technology": "AI",
+      "technology": "AI/ML",
       "category": ["Custom Software Development", "Visualization", "Generative AI"],
-      "typesOfTechnologies": ["AI", "D3", "React"],
+      "typesOfTechnologies": ["AI/ML", "D3", "React"],
       "description": "AnteThink's Event Decision Support System is an advanced application that integrates user management, Stripe Subscription and Payment processing, and AI-driven decision-making. The system gathers input from users regarding specific events and contexts, then uses AI to generate a decision tree visualized with D3.js, displaying all possible suggestions for the given scenario. Additionally, the system allows users to interact with the decision tree, generating detailed action plans for each node they select. This dynamic and interactive tool supports informed decision- making and strategic planning for various events and contexts.",
       "detailedDescription": "It is designed to facilitate informed decision-making through the integration of user management, Stripe Subscription and Payment processing, and AI-driven insights. The system allows users to input specific events and contexts, leveraging advanced AI algorithms to generate a comprehensive decision tree that outlines all possible suggestions for the given scenario. This decision tree is visually represented using D3.js, providing an interactive and intuitive interface for users to explore various options. Users can click on individual nodes within the decision tree to generate detailed action plans, enabling them to understand the implications of each choice and make strategic decisions accordingly. By combining AI technology with dynamic visualization, AnteThink's Event Decision Support System empowers users to navigate complex situations with confidence and clarity.",
       "logo": "assets/images/portfolio/ante-think.png",
@@ -2244,6 +2244,49 @@
         {
           "images" : "assets/images/technology-badges/React.svg",
           "technologyName": "React"
+        }
+      ]
+    },
+    {
+      "projectName": "Edugenius",
+      "priority": 14,
+      "technology": "AI/ML",
+      "category": ["Custom Software Development", "Mobile App"],
+      "typesOfTechnologies": ["AI/ML", "Model Development", "Flask API", "Python", "React", "Flutter"],
+      "description": "EduGenius is an intelligent web application designed to revolutionize the way educators and students create, manage, and attempt practice tests. By leveraging AI, it simplifies the process of generating high-quality question papers and provides a seamless testing experience.",
+      "detailedDescription": "EduGenius is an advanced web application that harnesses the power of AI to streamline the creation and management of practice tests for educators and students. The platform allows educators to effortlessly generate high-quality question papers by simply inputting relevant topics or keywords, with the AI algorithm crafting well-structured and diverse questions. Students can then access these practice tests through a user-friendly interface, enabling them to attempt the tests in a simulated exam environment. EduGenius not only enhances the efficiency of test creation but also provides valuable insights into student performance through detailed analytics and feedback. By integrating cutting-edge AI technology with an intuitive design, EduGenius aims to transform the educational landscape, making test preparation more effective and accessible for all users.",
+      "logo": "assets/images/portfolio/edugenius.png",
+      "viewDemo": "https://edugenius-n679.onrender.com",
+      "Images": [
+        "assets/images/portfolio/edugenius-mockup.png",
+        "assets/images/portfolio/edugenius1.png",
+        "assets/images/portfolio/edugenius2.png",
+        "assets/images/portfolio/edugenius3.png",
+        "assets/images/portfolio/edugenius4.png",
+        "assets/images/portfolio/edugenius5.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "AI/ML"
+        },
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "React"
+        },
+        {
+          "images" : "assets/openai.png",
+          "technologyName": "Flutter"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName": "Firebase"
+        },
+        {
+          "images" : "assets/images/technology-badges/Material_UI.png",
+          "technologyName" : "Material UI"
         }
       ]
     }
