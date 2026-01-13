@@ -2248,13 +2248,13 @@
       ]
     },
     {
-      "projectName": "Edugenius",
+      "projectName": "EduGenius",
       "priority": 14,
       "technology": "AI/ML",
       "category": ["Custom Software Development", "Mobile App"],
       "typesOfTechnologies": ["AI/ML", "Model Development", "Flask API", "Python", "React", "Flutter"],
-      "description": "EduGenius is an intelligent web application designed to revolutionize the way educators and students create, manage, and attempt practice tests. By leveraging AI, it simplifies the process of generating high-quality question papers and provides a seamless testing experience.",
-      "detailedDescription": "EduGenius is an advanced web application that harnesses the power of AI to streamline the creation and management of practice tests for educators and students. The platform allows educators to effortlessly generate high-quality question papers by simply inputting relevant topics or keywords, with the AI algorithm crafting well-structured and diverse questions. Students can then access these practice tests through a user-friendly interface, enabling them to attempt the tests in a simulated exam environment. EduGenius not only enhances the efficiency of test creation but also provides valuable insights into student performance through detailed analytics and feedback. By integrating cutting-edge AI technology with an intuitive design, EduGenius aims to transform the educational landscape, making test preparation more effective and accessible for all users.",
+      "description": "EduGenius is an intelligent web application designed to revolutionize the way educators and students create, manage, and attempt practice tests. By leveraging AI, it simplifies the process of generating question papers and provides a seamless testing experience.",
+      "detailedDescription": "EduGenius is an advanced web application that harnesses the power of AI to streamline the creation and management of practice tests for educators and students. The platform allows educators to effortlessly generate question papers. Students can then access these practice tests through a user-friendly interface, enabling them to attempt the tests in a simulated exam environment. EduGenius not only enhances the efficiency of test creation but also provides valuable insights into student performance through detailed analytics and feedback. By integrating cutting-edge AI technology with an intuitive design, EduGenius aims to transform the educational landscape, making test preparation more effective and accessible for all users.",
       "logo": "assets/images/portfolio/edugenius.png",
       "viewDemo": "https://edugenius-n679.onrender.com",
       "Images": [

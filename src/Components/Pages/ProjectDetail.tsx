@@ -32,18 +32,16 @@ const StyledCard = styled(Box)(({ theme }) => ({
 }));
 
 const ProjectDetail: React.FC = () => {
-  const { projectName } = useParams<{ projectName: string }>();
+  const { projectId } = useParams<{ projectId: string }>();
   const navigate = useNavigate();
   const theme = useTheme();
   const [project, setProject] = useState<any>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    if (projectName) {
-      const decodedProjectName = decodeURIComponent(projectName);
-      const foundProject = dataArray.portfolio.find(
-        (p: any) => p.projectName === decodedProjectName
-      );
+    if (projectId) {
+      const projectIndex = parseInt(projectId);
+      const foundProject = dataArray.portfolio[projectIndex];
       
       if (foundProject) {
         setProject(foundProject);
@@ -51,10 +49,15 @@ const ProjectDetail: React.FC = () => {
         navigate('/our-work');
       }
     }
-  }, [projectName, navigate]);
+  }, [projectId, navigate]);
 
   const handleBack = () => {
-    navigate(-1);
+    // Check if user came from same page or new tab
+    if (window.history.length > 1) {
+      navigate(-1); // Go back if there's history
+    } else {
+      navigate('/our-work'); // Go to our work page if no history (opened in new tab)
+    }
   };
 
   const handleImageNavigation = useCallback((direction: 'prev' | 'next' | number, totalImages: number) => {
@@ -161,7 +164,7 @@ const ProjectDetail: React.FC = () => {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        objectFit: 'cover',
+                        objectFit: 'contain',
                         transition: 'transform 0.5s ease',
                         '&:hover': {
                           transform: 'scale(1.03)',

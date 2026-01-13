@@ -199,7 +199,7 @@ const OptimizedRouter: React.FC = () => {
           element={<RouteComponent component={OurWork} />} 
         />
         <Route
-          path="/our-work/:projectName"
+          path="/our-work/:projectId"
           element={<RouteComponent component={ProjectDetail} />}
         />
         <Route 
