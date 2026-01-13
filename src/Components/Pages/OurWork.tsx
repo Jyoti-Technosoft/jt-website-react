@@ -50,6 +50,15 @@ const OurWork: React.FC = () => {
   const [rowsPerPage] = useState(4);
   const [imageIndexes, setImageIndexes] = useState<Record<string, number>>({});
 
+  const handleProjectClick = (project: any, event: React.MouseEvent) => {
+    const projectId = dataArray.portfolio.findIndex(p => p.projectName === project.projectName);
+    if (event.ctrlKey || event.metaKey) {
+      window.open(`/our-work/${projectId}`, '_blank');
+    } else {
+      navigate(`/our-work/${projectId}`);
+    }
+  };
+
   // Get all unique technologies from projects in the selected category
   const rawTechnologies = useMemo(() => {
     const techs = new Set<string>();
@@ -621,13 +630,16 @@ const OurWork: React.FC = () => {
                             sx={{ height: 30, mr: 1 }}
                           />
                         )}
-                        <Typography
-                          onClick={() => navigate(`/our-work/${encodeURIComponent(project.projectName)}`)}
+                        <Box
+                          component="a"
+                          href={`/our-work/${dataArray.portfolio.findIndex(p => p.projectName === project.projectName)}`}
+                          onClick={(event) => handleProjectClick(project, event)}
                           sx={{
                             fontSize: "20px",
                             color: "#333333",
                             fontWeight: 600,
                             cursor: 'pointer',
+                            textDecoration: 'none',
                             '&:hover': {
                               color: '#F76336',
                               textDecoration: 'underline',
@@ -635,7 +647,7 @@ const OurWork: React.FC = () => {
                           }}
                         >
                           {project.projectName}
-                        </Typography>
+                        </Box>
                       </Box>
                       <Typography
                         sx={{

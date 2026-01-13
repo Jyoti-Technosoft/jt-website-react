@@ -46,7 +46,7 @@ const AppContent = () => {
           <Route path="/site-map" element={<SiteMap />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/our-work" element={<OurWork />} />
-          <Route path="/our-work/:projectName" element={<ProjectDetail />} />
+          <Route path="/our-work/:projectId" element={<ProjectDetail />} />
           <Route path="/hire-developers" element={<HireDevelopers />} />
           <Route path="/hire-developers/:id" element={<HireDevelopersDetails />} />
           <Route path="/career" element={<Career />} />
