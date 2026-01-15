@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link, Button } from '@mui/material';
+import { Link as RouterLink } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from 'react-helmet-async';
 import Box from "@mui/material/Box";
@@ -8,7 +10,6 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -139,7 +140,7 @@ const Career: React.FC = () => {
                   },
                 }}
               >
-                <Link to="/" className="breadcrumb-link">
+                <Link component={RouterLink} to="/" className="breadcrumb-link">
                   Home
                 </Link>
                 <ChevronRightIcon className="chevron-icon" />
@@ -368,9 +369,13 @@ const Career: React.FC = () => {
                                 <Typography className="job-title">
                                   {job.jobName}
                                 </Typography>
-                                <Link to={`/career-details?job=${job.id}`}>
-                                  <button className="apply-button">Apply</button>
-                                </Link>
+                                <Button
+                                  component={RouterLink}
+                                  to={`/career-details?job=${job.id}`}
+                                  className="apply-button"
+                                >
+                                  Apply
+                                </Button>
                               </Box>
                               <Box
                                 display="flex"

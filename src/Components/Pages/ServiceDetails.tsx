@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Link } from '@mui/material';
+import { Link as RouterLink } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
@@ -64,11 +66,11 @@ const ServiceDetails: React.FC = () => {
                 },
               }}
             >
-              <Link to="/" className="breadcrumb-link">
+              <Link component={RouterLink} to="/" className="breadcrumb-link">
                 Home
               </Link>
               <ChevronRightIcon className="chevron-icon" />
-              <Link to="/services" className="breadcrumb-link">
+              <Link component={RouterLink} to="/services" className="breadcrumb-link">
                 Services
               </Link>
               <ChevronRightIcon className="chevron-icon" />

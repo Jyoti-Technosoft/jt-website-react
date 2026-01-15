@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Link } from '@mui/material';
+import { Link as RouterLink } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -43,11 +45,11 @@ const HireDevelopersDetails = () => {
         <Container className="hire-detail-first-section">
           <Box className="hire-detail-content">
             <Box className="hire-detail-first-content">
-              <Link to="/" className="breadcrumb-link">
+              <Link component={RouterLink} to="/" className="breadcrumb-link">
                 Home
               </Link>
               <ChevronRightIcon className="chevron-icon" />
-              <Link to="/hire-developers" className="breadcrumb-link">
+              <Link component={RouterLink} to="/hire-developers" className="breadcrumb-link">
                 Hire Developer
               </Link>
               <ChevronRightIcon className="chevron-icon" />

@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from '@mui/material';
+import { Link as RouterLink } from "react-router-dom";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -34,7 +35,7 @@ const HeaderMainPage: React.FC<HeaderMainPageProps> = ({
               },
             }}
           >
-            <Link to="/" className="breadcrumb-link">
+            <Link component={RouterLink} to="/" className="breadcrumb-link">
               Home
             </Link>
             {smallTitle && (

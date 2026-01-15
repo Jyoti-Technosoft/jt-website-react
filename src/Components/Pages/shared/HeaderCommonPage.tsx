@@ -1,6 +1,7 @@
 import React from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Link } from "react-router-dom";
+import { Link } from '@mui/material';
+import { Link as RouterLink } from "react-router-dom";
 
 import "../../../styles/header-common.css";
 import Box from "@mui/material/Box";
@@ -32,7 +33,7 @@ const HeaderCommonPage: React.FC<HeaderCommonProps> = ({
     <Box className="main-header-common">
       <Box className="main-header">
         <Box className="first-content-about-header">
-          <Link to="/" className="breadcrumb-link">
+          <Link component={RouterLink} to="/" className="breadcrumb-link">
             Home
           </Link>
 
@@ -40,7 +41,7 @@ const HeaderCommonPage: React.FC<HeaderCommonProps> = ({
             <>
               <ChevronRightIcon className="chevron-icon" />
               {subTitle ? (
-                <Link to={smallTitlePath} className="breadcrumb-link">
+                <Link component={RouterLink} to={smallTitlePath} className="breadcrumb-link">
                   {smallTitle}
                 </Link>
               ) : (
