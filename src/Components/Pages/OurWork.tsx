@@ -52,11 +52,7 @@ const OurWork: React.FC = () => {
     event.preventDefault();
     event.stopPropagation();
     const projectId = dataArray.portfolio.findIndex(p => p.projectName === project.projectName);
-    if (event.ctrlKey || event.metaKey) {
-      window.open(`/our-work/${projectId}`, '_blank');
-    } else {
-      navigate(`/our-work/${projectId}`);
-    }
+    window.open(`/our-work/${projectId}`, '_blank');
   };
 
   // Get all unique technologies from projects in the selected category
