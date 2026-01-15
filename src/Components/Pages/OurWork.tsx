@@ -49,6 +49,8 @@ const OurWork: React.FC = () => {
   const hasInitialized = React.useRef(false);
 
   const handleProjectClick = (project: any, event: React.MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
     const projectId = dataArray.portfolio.findIndex(p => p.projectName === project.projectName);
     if (event.ctrlKey || event.metaKey) {
       window.open(`/our-work/${projectId}`, '_blank');
