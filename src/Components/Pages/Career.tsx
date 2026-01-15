@@ -38,6 +38,7 @@ type Job = {
   experience: string;
   briefJobDescription: string;
   jobRequirement: string;
+  status: string;
 };
 
 const Career: React.FC = () => {
@@ -67,6 +68,7 @@ const Career: React.FC = () => {
   // Memoize filtered jobs to prevent unnecessary recalculations
   const filteredJobs = useMemo(() => {
     return jobs.filter((job) => {
+      const statusMatch = job.status === 'active';
       const searchMatch = job.jobName
         .toLowerCase()
         .includes(search.toLowerCase());
@@ -74,7 +76,7 @@ const Career: React.FC = () => {
         ?.toLowerCase().trim().includes(technology.toLowerCase().trim())
         : true;
       const typeMatch = type ? job.jobNature === type : true;
-      return searchMatch && techMatch && typeMatch;
+      return statusMatch && searchMatch && techMatch && typeMatch;
     });
   }, [jobs, search, technology, type]);
 
