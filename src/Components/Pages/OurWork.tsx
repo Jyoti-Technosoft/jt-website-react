@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams, Link as RouterLink } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { keyframes } from "@mui/material/styles";
@@ -15,6 +15,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { useTheme } from "@mui/material/styles";
+import Link from "@mui/material/Link";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -47,13 +48,6 @@ const OurWork: React.FC = () => {
   const [rowsPerPage] = useState(4);
   const [imageIndexes, setImageIndexes] = useState<Record<string, number>>({});
   const hasInitialized = React.useRef(false);
-
-  const handleProjectClick = (project: any, event: React.MouseEvent) => {
-    event.preventDefault();
-    event.stopPropagation();
-    const projectId = dataArray.portfolio.findIndex(p => p.projectName === project.projectName);
-    window.open(`/our-work/${projectId}`, '_blank');
-  };
 
   // Get all unique technologies from projects in the selected category
   const rawTechnologies = useMemo(() => {
@@ -593,10 +587,9 @@ const OurWork: React.FC = () => {
                             sx={{ height: 30, mr: 1 }}
                           />
                         )}
-                        <Box
-                          component="a"
-                          href={`/our-work/${dataArray.portfolio.findIndex(p => p.projectName === project.projectName)}`}
-                          onClick={(event) => handleProjectClick(project, event)}
+                        <Link
+                          component={RouterLink}
+                          to={`/our-work/${project.projectId}`}
                           sx={{
                             fontSize: "20px",
                             color: "#333333",
@@ -610,7 +603,7 @@ const OurWork: React.FC = () => {
                           }}
                         >
                           {project.projectName}
-                        </Box>
+                        </Link>
                       </Box>
                       <Typography
                         sx={{

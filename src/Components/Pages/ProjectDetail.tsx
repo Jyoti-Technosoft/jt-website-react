@@ -40,11 +40,9 @@ const ProjectDetail: React.FC = () => {
 
   useEffect(() => {
     if (projectId) {
-      const projectIndex = parseInt(projectId);
-      const foundProject = dataArray.portfolio[projectIndex];
-      
-      if (foundProject) {
-        setProject(foundProject);
+      const projectById = dataArray.portfolio.find(p => p.projectId === parseInt(projectId)); 
+      if (projectById) {
+        setProject(projectById);
       } else {
         navigate('/our-work');
       }

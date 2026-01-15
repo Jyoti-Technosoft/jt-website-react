@@ -857,6 +857,7 @@
   "portfolio": [
     {
       "projectName": "Progress Maker",
+      "projectId": 1,
       "priority": 11,
       "technology": "Angular",
       "category": ["Custom Software Development", "Visualization"],
@@ -935,6 +936,7 @@
     },
     {
       "projectName": "Pratibha Herbal",
+      "projectId": 2,
       "priority": 8,
       "technology": "WordPress",
       "category": ["Custom Software Development"],
@@ -1003,6 +1005,7 @@
     },
     {
       "projectName": "Renacline Consultancy",
+      "projectId": 3,
       "priority": 0,
       "technology": "React",
       "category": ["Custom Software Development"],
@@ -1064,6 +1067,7 @@
     },
     {
       "projectName": "E-Commerce Web Application",
+      "projectId": 4,
       "priority": 9,
       "technology": "WordPress",
       "category": ["Custom Software Development"],
@@ -1109,6 +1113,7 @@
     },
     {
       "projectName": "Real Estate Web Application",
+      "projectId": 5,
       "priority": 0,
       "technology": "Angular",
       "category": ["Custom Software Development"],
@@ -1170,6 +1175,7 @@
     },
     {
       "projectName": "Micro-C",
+      "projectId": 6,
       "priority": 6,
       "technology": "GWT",
       "category": ["Custom Software Development", "Visualization"],
@@ -1245,6 +1251,7 @@
     },
     {
       "projectName": "Yacht Closer Brochure Application",
+      "projectId": 7,
       "priority": 5,
       "technology": "React",
       "category": ["Custom Software Development"],
@@ -1301,6 +1308,7 @@
     },
     {
       "projectName": "Yacht Closer Web Application",
+      "projectId": 8,
       "priority": 5,
       "technology": "Java",
       "category": ["Custom Software Development"],
@@ -1356,6 +1364,7 @@
     },
     {
       "projectName": "CX Group",
+      "projectId": 9,
       "priority": 4,
       "technology": "Java",
       "category": ["Custom Software Development"],
@@ -1441,6 +1450,7 @@
     },
     {
       "projectName": "Online Chat Web Application",
+      "projectId": 10,
       "priority": 7,
       "technology": "React",
       "category": ["Custom Software Development"],
@@ -1508,6 +1518,7 @@
     },
     {
       "projectName": "Jyoti Technosoft Website",
+      "projectId": 11,
       "technology": "Angular",
       "priority": 7,
       "category": ["Custom Software Development", "Visualization"],
@@ -1578,6 +1589,7 @@
     },
     {
       "projectName": "D3 Showcase",
+      "projectId": 12,
       "priority": 12,
       "technology":"D3",
       "category": ["Visualization", "Custom Software Development"],
@@ -1648,6 +1660,7 @@
     },
     {
       "projectName": "Quiz Application",
+      "projectId": 13,
       "priority": 10,
       "technology":"Angular",
       "category": ["Custom Software Development", "Visualization"],
@@ -1713,6 +1726,7 @@
     },
     {
       "projectName": "Office Management Application",
+      "projectId": 14,
       "priority": 9,
       "technology": "React",
       "category": ["Custom Software Development", "Visualization"],
@@ -1776,6 +1790,7 @@
     },
     {
       "projectName": "Book Universe",
+      "projectId": 15,
       "priority": 5,
       "technology": "React",
       "category": ["Custom Software Development"],
@@ -1830,6 +1845,7 @@
     },
     {
       "projectName": "Health Audit Management",
+      "projectId": 16,
       "priority": 10,
       "technology": "Angular",
       "category": ["Custom Software Development"],
@@ -1880,6 +1896,7 @@
     },
     {
       "projectName": "VirtualCRM & CircleCRM",
+      "projectId": 17,
       "priority": 11,
       "technology": "Angular",
       "category": ["Custom Software Development"],
@@ -1926,6 +1943,7 @@
     },
     {
       "projectName": "Property Vista",
+      "projectId": 18,
       "priority": 10,
       "technology": "GWT ",
       "category": ["Custom Software Development"],
@@ -1988,6 +2006,7 @@
     },
     {
       "projectName": "AnteThink",
+      "projectId": 19,
       "priority": 12,
       "technology": "AI/ML",
       "category": ["Custom Software Development", "Visualization", "Generative AI"],
@@ -2047,6 +2066,7 @@
     },
     {
       "projectName": "BookSkill",
+      "projectId": 20,
       "priority": 9,
       "technology": "React Native",
       "category": ["Mobile App"],
@@ -2090,6 +2110,7 @@
     },
     {
       "projectName": "QuickMart",
+      "projectId": 21,
       "priority": 9,
       "technology": "WordPress",
       "category": ["Custome Software Development"],
@@ -2138,6 +2159,7 @@
     },
     {
       "projectName": "SiteSync",
+      "projectId": 22,
       "priority": 13,
       "technology": "Flutter",
       "category": ["Mobile App"],
@@ -2182,6 +2204,7 @@
     },
     {
       "projectName": "FreshMart",
+      "projectId": 23,
       "priority": 9,
       "technology": "Flutter",
       "category": ["Mobile App"],
@@ -2209,6 +2232,7 @@
     },
     {
       "projectName": "VisualCharts",
+      "projectId": 24,
       "priority": 13,
       "technology": "D3",
       "category": ["Custom Software Development", "Visualization"],
@@ -2249,6 +2273,7 @@
     },
     {
       "projectName": "EduGenius",
+      "projectId": 25,
       "priority": 14,
       "technology": "AI/ML",
       "category": ["Custom Software Development", "Mobile App"],
