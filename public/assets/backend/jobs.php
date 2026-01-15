@@ -13,9 +13,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 function read_jobs($file) {
-    if (!file_exists($file)) return ['jobs' => []];
-    $data = file_get_contents($file);
-    return json_decode($data, true) ?: ['jobs' => []];
+    if (!file_exists($file)) {
+        return ['jobs' => []];
+    }
+
+    $data = json_decode(file_get_contents($file), true);
+    if (!$data || !isset($data['jobs'])) {
+        return ['jobs' => []];
+    }
+
+    $data['jobs'] = array_values(array_filter(
+        $data['jobs'],
+        fn($job) => isset($job['status']) && $job['status'] === 'active'
+    ));
+
+    return $data;
 }
 
 function write_jobs($file, $data) {
