@@ -2277,13 +2277,14 @@
       "logo": "assets/images/portfolio/praksis-favicon.png",
       "viewDemo": "https://praksis-n679.onrender.com",
       "Images": [
-        "assets/images/portfolio/edugenius-mockup.png",
-        "assets/images/portfolio/edugenius1.png",
-        "assets/images/portfolio/edugenius2.png",
-        "assets/images/portfolio/edugenius3.png",
-        "assets/images/portfolio/edugenius4.png",
-        "assets/images/portfolio/edugenius5.png",
-        "assets/images/portfolio/edugenius6.png"
+        "assets/images/portfolio/praksis-mockup.png",
+        "assets/images/portfolio/praksis1.png",
+        "assets/images/portfolio/praksis2.png",
+        "assets/images/portfolio/praksis3.png",
+        "assets/images/portfolio/praksis4.png",
+        "assets/images/portfolio/praksis5.png",
+        "assets/images/portfolio/praksis6.png",
+        "assets/images/portfolio/praksis7.png"
       ],
       "mainTechnology": [
         {
@@ -2381,7 +2382,9 @@
         "assets/images/portfolio/bloomwell4.png",
         "assets/images/portfolio/bloomwell5.png",
         "assets/images/portfolio/bloomwell6.png",
-        "assets/images/portfolio/bloomwell7.png"
+        "assets/images/portfolio/bloomwell7.png",
+        "assets/images/portfolio/bloomwell8.png",
+        "assets/images/portfolio/bloomwell9.png"
       ],
       "mainTechnology": [
         {
