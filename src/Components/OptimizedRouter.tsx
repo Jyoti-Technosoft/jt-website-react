@@ -13,6 +13,8 @@ const Services = lazy(() => import(/* webpackChunkName: "main-pages" */ './Pages
 const Contact = lazy(() => import(/* webpackChunkName: "main-pages" */ './Pages/Contact.tsx'));
 
 const OurWork = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/OurWork.tsx'));
+const OurProduct = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/OurProduct.tsx'));
+const ProductDetail = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/ProductDetail.tsx'));
 const ProjectDetail = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/ProjectDetail.tsx'));
 const HireDevelopers = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/HireDevelopers.tsx'));
 const Career = lazy(() => import(/* webpackChunkName: "content-pages" */ './Pages/Career.tsx'));
@@ -201,6 +203,14 @@ const OptimizedRouter: React.FC = () => {
         <Route
           path="/our-work/:projectId"
           element={<RouteComponent component={ProjectDetail} />}
+        />
+        <Route 
+          path="/products" 
+          element={<RouteComponent component={OurProduct} />} 
+        />
+        <Route 
+          path="/products/:productName" 
+          element={<RouteComponent component={ProductDetail} />} 
         />
         <Route 
           path="/hire-developers" 

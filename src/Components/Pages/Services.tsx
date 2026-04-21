@@ -51,7 +51,7 @@ const Services: React.FC = () => {
         <HeaderMainPage
           smallTitle="Services"
           page="Tailored Solutions for Every Digital Need"
-          imageSrc="/assets/services-img.png"
+          imageSrc="/assets/our-services.png"
           showGif={true}
         />
 

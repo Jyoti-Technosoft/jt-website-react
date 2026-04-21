@@ -2,7 +2,7 @@
   "home": {
     "meetSection": {
       "title": "Where imagination meets creativity",
-      "description": "At JYOTI Technosoft LLP, we transform ideas into reality with cutting-edge web, app, and product development. Our expert team delivers innovative digital solutions to help businesses grow and succeed. Let’s create something extraordinary together."
+      "description": "Expert web development, mobile app development, and AI integration services. Delivering innovative software solutions that drive business growth and digital transformation for startups to enterprises."
     },
     "WhyUs": {
       "title": "Why Us",
@@ -3143,5 +3143,110 @@
         "description": "To build hard based on tolerance, understanding and mutual co-operation, work as cohesively with our colleagues across the group and with our customers and partners."
       }
     ]
-  }
+  },
+  "products": [
+    {
+      "productName": "SiteSync",
+      "productId": 22,
+      "priority": 13,
+      "technology": "Flutter",
+      "category": ["Mobile App"],
+      "typesOfTechnologies": ["Flutter", "Firebase", "Provider", "Firebase Notification"],
+      "description": "SiteSync is a comprehensive construction project management app where builders can create construction sites, assign agencies to specific sites, and track progress in real-time. Agency heads can efficiently manage workers, allocate tasks, and log daily work activities. This ensures real-time visibility, accountability, and organized tracking of all construction activities across multiple sites.",
+      "detailedDescription": "SiteSync revolutionizes construction management by providing a centralized platform for all stakeholders. Builders gain complete oversight of their projects with intuitive dashboards showing site progress, resource allocation, and milestone completion. Agency managers benefit from streamlined worker management, task assignment capabilities, and comprehensive reporting tools. The app's real-time notification system keeps everyone informed about critical updates, while robust analytics provide insights into productivity and project performance. With features like photo documentation, issue tracking, and time logging, SiteSync eliminates paperwork and reduces miscommunication, making construction projects more efficient and transparent.",
+      "logo": "assets/images/portfolio/SiteSync.png",
+      "viewDemo": "",
+      "brochureUrl": "/assets/brochure/sitesync-brochure.pdf",
+      "Images": [
+        "assets/images/portfolio/sitesync-mockup.png",
+        "assets/images/portfolio/sitesync1.png",
+        "assets/images/portfolio/sitesync2.png",
+        "assets/images/portfolio/sitesync3.png",
+        "assets/images/portfolio/sitesync4.png"
+      ],
+      "mainTechnology": [
+        {
+          "images": "/assets/flutter.png",
+          "technologyName": "Flutter"
+        },
+        {
+          "images": "/assets/firebase.png",
+          "technologyName": "Firebase"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images": "/assets/flutter.png",
+          "technologyName": "Flutter"
+        },
+        {
+          "images": "/assets/firebase.png",
+          "technologyName": "Firebase"
+        }
+      ],
+      "keyFeatures": [
+        "Real-time project tracking",
+        "Multi-site management",
+        "Worker assignment and management",
+        "Daily work logging",
+        "Progress reporting"
+      ]
+    },
+    {
+      "productName": "Praksis",
+      "productId": 25,
+      "priority": 14,
+      "technology": "AI/ML",
+      "category": ["Custom Software Development", "Mobile App"],
+      "typesOfTechnologies": ["AI/ML", "Model Development", "Flask API", "Python", "React", "Flutter"],
+      "description": "Praksis is an intelligent web application designed to revolutionize the way educators and students create, manage, and attempt practice tests. By leveraging advanced AI technology, it simplifies the process of generating question papers and provides a seamless testing experience for educational institutions.",
+      "detailedDescription": "Praksis represents the future of educational assessment through AI-powered innovation. The platform enables educators to automatically generate customized question papers based on subject, difficulty level, and learning objectives. Students benefit from an intuitive interface for taking tests with immediate feedback and performance analytics. The AI engine continuously learns from user interactions to improve question relevance and difficulty calibration. With features like adaptive testing, plagiarism detection, and comprehensive reporting, Praksis transforms traditional assessment methods into engaging, data-driven learning experiences. The platform supports multiple question formats, including multiple choice, fill-in-the-blanks, and descriptive questions, making it versatile for various educational contexts.",
+      "logo": "assets/images/portfolio/praksis-favicon.png",
+      "viewDemo": "https://praksis-n679.onrender.com",
+      "brochureUrl": "/assets/brochure/praksis-brochure.pdf",
+      "Images": [
+        "assets/images/portfolio/praksis-mockup.png",
+        "assets/images/portfolio/praksis1.png",
+        "assets/images/portfolio/praksis2.png",
+        "assets/images/portfolio/praksis3.png",
+        "assets/images/portfolio/praksis4.png",
+        "assets/images/portfolio/praksis5.png",
+        "assets/images/portfolio/praksis6.png",
+        "assets/images/portfolio/praksis7.png"
+      ],
+      "mainTechnology": [
+        {
+          "images": "/assets/openai.png",
+          "technologyName": "AI/ML"
+        },
+        {
+          "images": "/assets/react.png",
+          "technologyName": "React"
+        },
+        {
+          "images": "/assets/flutter.png",
+          "technologyName": "Flutter"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images": "/assets/firebase.png",
+          "technologyName": "Firebase"
+        },
+        {
+          "images": "/assets/images/technology-badges/Material_UI.png",
+          "technologyName": "Material UI"
+        }
+      ],
+      "keyFeatures": [
+        "AI-powered question generation",
+        "Adaptive testing algorithms",
+        "Multi-format question support",
+        "Instant grading and feedback",
+        "Performance analytics",
+        "Customizable test templates",
+        "Mobile app support"
+      ]
+    }
+  ]
 }

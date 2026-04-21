@@ -288,7 +288,7 @@ const OurWork: React.FC = () => {
       <HeaderMainPage
         smallTitle="Our Work"
         page="Solutions That Drive Success"
-        imageSrc="/assets/our-work-img.png"
+        imageSrc="/assets/our-work.png"
         showGif={true}
       />
       <Container>

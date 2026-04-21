@@ -31,10 +31,11 @@ const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Jyoti Technosoft LLP | Home</title>
-        <meta name="description" content="Jyoti Technosoft LLP - IT solutions, web development, mobile apps, and digital transformation services." />
-        <meta property="og:title" content="Jyoti Technosoft LLP | Home" />
-        <meta property="og:description" content="Jyoti Technosoft LLP - IT solutions, web development, mobile apps, and digital transformation services." />
+        <title>Web Development & AI Solutions | Jyoti Technosoft LLP</title>
+        <meta name="description" content="Expert web development, mobile apps, and AI integration services. Transform your business with custom software solutions, API development, and digital transformation by Jyoti Technosoft LLP." />
+        <meta name="keywords" content="web development, mobile app development, AI integration, software solutions, API development, digital transformation, custom software, IT consulting" />
+        <meta property="og:title" content="Web Development & AI Solutions | Jyoti Technosoft LLP" />
+        <meta property="og:description" content="Expert web development, mobile apps, and AI integration services by Jyoti Technosoft LLP" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jyotitechnosoft.com/" />
         <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
@@ -45,7 +46,35 @@ const Home: React.FC = () => {
             "@type": "Organization",
             "name": "Jyoti Technosoft LLP",
             "url": "https://jyotitechnosoft.com/",
-            "logo": "https://jyotitechnosoft.com/assets/logo192.png"
+            "logo": "https://jyotitechnosoft.com/assets/logo192.png",
+            "description": "Professional web development, mobile app development, and AI integration services",
+            "services": [
+              {
+                "@type": "Service",
+                "name": "Web Development",
+                "description": "Custom web application development services using modern frameworks"
+              },
+              {
+                "@type": "Service", 
+                "name": "Mobile App Development",
+                "description": "Native and cross-platform mobile app development"
+              },
+              {
+                "@type": "Service",
+                "name": "AI Integration",
+                "description": "AI-powered solutions and automation services"
+              },
+              {
+                "@type": "Service",
+                "name": "API Development",
+                "description": "Custom API development and integration services"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-XXXXXXXXXX",
+              "contactType": "customer service"
+            }
           }
         `}</script>
       </Helmet>
@@ -57,7 +86,9 @@ const Home: React.FC = () => {
             loop
             muted
             playsInline
-            preload="none"
+            preload="metadata"
+            aria-label="Jyoti Technosoft web development and digital solutions showcase"
+            title="Professional software development services"
           >
             <source src="/assets/jyoti-technosoft-web-development.mp4" type="video/mp4" />
             <track
@@ -70,19 +101,128 @@ const Home: React.FC = () => {
             Your browser does not support the video tag.
           </video>
           <Box className="first-section-home-content">
-            <Typography className="first-section-title">
+            <Typography 
+              className="first-section-title"
+              variant="h1"
+              component="h1"
+            >
               {meetSection?.title}
             </Typography>
             <Typography className="first-section-description">
               {meetSection?.description}
             </Typography>
-            <Button
-              variant="contained"
-              className="build-together"
-              onClick={handleContactNavigation}
-            >
-              LET'S BUILD TOGETHER
-            </Button>
+            
+            {/* Trust Indicators */}
+            <Box sx={{ 
+              display: { xs: 'none', md: 'flex' }, 
+              gap: { md: 4 }, 
+              mt: 4, 
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}>
+              <Box textAlign="center">
+                <Typography variant="h4" sx={{ 
+                  color: '#fff', 
+                  fontWeight: 700, 
+                  fontSize: '2rem'
+                }}>
+                  22+
+                </Typography>
+                <Typography variant="body2" sx={{ 
+                  color: '#E8E8E8', 
+                  fontSize: '0.9rem'
+                }}>
+                  Happy Clients
+                </Typography>
+              </Box>
+              <Box textAlign="center">
+                <Typography variant="h4" sx={{ 
+                  color: '#fff', 
+                  fontWeight: 700, 
+                  fontSize: '2rem'
+                }}>
+                  40+
+                </Typography>
+                <Typography variant="body2" sx={{ 
+                  color: '#E8E8E8', 
+                  fontSize: '0.9rem'
+                }}>
+                  Projects Delivered
+                </Typography>
+              </Box>
+              <Box textAlign="center">
+                <Typography variant="h4" sx={{ 
+                  color: '#fff', 
+                  fontWeight: 700, 
+                  fontSize: '2rem'
+                }}>
+                  4+
+                </Typography>
+                <Typography variant="body2" sx={{ 
+                  color: '#E8E8E8', 
+                  fontSize: '0.9rem'
+                }}>
+                  Years Experience
+                </Typography>
+              </Box>
+              <Box textAlign="center">
+                <Typography variant="h4" sx={{ 
+                  color: '#fff', 
+                  fontWeight: 700, 
+                  fontSize: '2rem'
+                }}>
+                  99%
+                </Typography>
+                <Typography variant="body2" sx={{ 
+                  color: '#E8E8E8', 
+                  fontSize: '0.9rem'
+                }}>
+                  Client Satisfaction
+                </Typography>
+              </Box>
+            </Box>
+
+            {/* Enhanced CTA Buttons */}
+            <Box sx={{ 
+              display: 'flex', 
+              gap: 2, 
+              mt: 4, 
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}>
+              <Button
+                variant="contained"
+                className="build-together"
+                onClick={handleContactNavigation}
+                sx={{ 
+                  minWidth: { xs: 140, md: 231 },
+                  fontSize: { xs: '0.8rem', md: '0.875rem' }
+                }}
+              >
+                LET'S BUILD TOGETHER
+              </Button>
+              <Button
+                variant="outlined"
+                onClick={() => navigate('/our-work')}
+                sx={{
+                  display: { xs: 'none', md: 'inline-flex' },
+                  minWidth: 200,
+                  height: 47,
+                  borderRadius: '10px',
+                  border: '2px solid #FFFFFF',
+                  color: '#FFFFFF',
+                  fontWeight: 600,
+                  fontSize: '0.875rem',
+                  '&:hover': {
+                    backgroundColor: '#FFFFFF',
+                    color: '#F76336',
+                    border: '2px solid #FFFFFF'
+                  }
+                }}
+              >
+                VIEW OUR WORK
+              </Button>
+            </Box>
           </Box>
           <Box
             sx={{

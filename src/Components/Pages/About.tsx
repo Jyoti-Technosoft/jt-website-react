@@ -35,7 +35,7 @@ const About: React.FC = () => {
         <HeaderMainPage
           smallTitle="About"
           page="Innovate, Implement & Inspire"
-          imageSrc="/assets/about-img.png"
+          imageSrc="/assets/about.png"
           showGif={true}
         />
         <Container className="main-container" maxWidth="lg">

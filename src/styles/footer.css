@@ -4,22 +4,40 @@
 }
 
 .footer {
-  background-color: #212529;
   text-align: center;
-  /* position: fixed; */
+  background: linear-gradient(135deg, #1a1a2e 0%, #212529 100%);
+  color: #ffffff;
   position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   z-index: 100;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #347CCC 0%, #F76336 50%, #347CCC 100%);
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .subFooter2 {
   margin: 0 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 8px
 }
 
 .subFooter2-title1 {
@@ -27,7 +45,7 @@
   font-size: 16px;
   line-height: 18.75px;
   letter-spacing: 0px;
-  color: #E0E0E0; /* Improved contrast from #CDCDCD */
+  color: #E0E0E0;
 }
 
 .subFooter2-title2 {
@@ -36,11 +54,80 @@
   line-height: 18.75px !important;
   letter-spacing: 0px;
   text-align: right;
-  color: #E0E0E0 !important; /* Improved contrast from #CDCDCD */
+  color: #E0E0E0 !important;
 }
 
 .subFooter1 {
-  padding: 25px 0px;
+   padding: 60px 0px 40px;
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.footer-company-section {
+  max-width: 400px;
+  padding-right: 40px;
+  text-align: left;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-link:hover {
+  transform: scale(1.05);
+}
+
+.footer-description {
+  color: #b8bfc7;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.footer-social {
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.footer-menus {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  flex: 1;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-header-icon {
+  color: #347CCC;
+  font-size: 24px;
+}
+
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
 }
 
 .company-logo {
@@ -87,7 +174,6 @@
   letter-spacing: 0px;
   color: #F3F3F3;
   text-align: left;
-  margin-bottom: 0.8rem !important;
 }
 
 .footermenu {
@@ -121,46 +207,80 @@
 @media (max-width: 768px) {
   .footer {
     position: relative;
-    text-align: left;
+    text-align: center;
+  }
+
+  .subFooter1 {
+    padding: 40px 20px 30px;
+    flex-direction: column;
+    gap: 40px;
+    margin: 0 !important;
+    max-width: 100%;
+  }
+
+  .footer-company-section {
+    max-width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .footer-menus {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .footer-header {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .footermenu-header {
+    text-align: center;
+    margin: 0.5rem 0 !important;
+    font-size: 18px !important;
+  }
+
+  .footermenu {
+    font-size: 14px !important;
+    text-align: center;
+    width: 100%;
   }
 
   .company-logo {
     width: 163px;
     height: 75px;
+    margin: 0 auto 20px;
   }
 
-  .footermenu-header {
-    width: fit-content;
-    border-bottom: 2px solid #F3F3F3;
-    transition: border-color 0.3s ease-in-out;
-    margin: 1rem 0px !important;
-    font-size: 17px !important;
+  .footer-description {
+    text-align: center;
+    font-size: 14px;
   }
 
-  .footermenu {
-    font-size: 14px !important;
-  }
-
-  .footermenu:last-child {
-    margin-bottom: 0.5rem !important;
-  }
-
-  .subFooter1 {
-    margin: 0px 0px 0px 0.6rem !important;
+  .social-icons {
+    justify-content: center;
   }
 
   .subFooter2 {
-    margin: 0;
+    margin: 0 1rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 
   .subFooter2-title1 {
     font-size: 12px !important;
+    text-align: center !important;
   }
 
   .subFooter2-title2 {
     font-size: 12px !important;
+    text-align: center !important;
   }
 
   .social-media svg {
@@ -168,10 +288,11 @@
   }
 
   .social-media {
-    margin-right: 0.8rem !important;
+    margin: 0 0.3rem !important;
   }
 
   .followus {
     padding-left: 0 !important;
+    text-align: center;
   }
 }

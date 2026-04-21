@@ -41,7 +41,7 @@
   line-height: 29.05px;
   letter-spacing: 0.5px;
   color: #347CCC;
-  margin-right: 8px;
+  /* margin-right: 8px; */
 }
 
 .subTitle2 {
@@ -60,24 +60,24 @@
 
 .navLink {
   font-weight: 500;
-  font-size: 17px;
-  line-height: 21.09px;
+  font-size: 16px;
+  line-height: 20px;
   letter-spacing: 0.5px;
   color: #0F0F0F;
   text-decoration: none;
-  /* padding-bottom: 2px; */
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease-in-out;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  position: relative;
 }
 
 .navLink.active {
   color: #347CCC;
-  border-bottom: 2px solid #347CCC;
+  font-weight: 600;
 }
 
 .navLink:hover {
   color: #347CCC;
-  border-bottom: 2px solid #347CCC;
 }
 
 .menu-icon {
@@ -87,12 +87,12 @@
 @media (max-width: 768px) {
   .subTitle1 {
     font-size: 20px;
-    line-height: 19.05px;
+    line-height: 19px;
   }
 
   .subTitle2 {
-    font-size: 15px;
-    line-height: 19.05px;
+    font-size: 16px;
+    line-height: 19px;
   }
 
   .header-menu {
@@ -172,7 +172,7 @@
     font-size: 18px;
     margin-left: 8px;
     color: #1976d2;
-      transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
   }
 
   .drawer-menu .navLink,

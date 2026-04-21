@@ -3,7 +3,7 @@
 }
 
 .header-main-first-section {
-    height: 325px;
+    height: auto;
 }
 
 .header-main-first-section .breadcrumb-link {
@@ -55,6 +55,9 @@
 .header-main-first-section .header-main-image {
     width: 45%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-main-first-section .header-main-image img {
@@ -66,7 +69,6 @@
 
 @media (max-width: 768px) {
     .header-main-first-section .header-main-content .header-main-title {
-        /* padding: 1rem 0px 0px 0rem; */
         font-size: 40px;
         line-height: unset;
     }
@@ -74,7 +76,7 @@
     .header-main-first-section {
         height: 230px;
         display: flex;
-        /* align-items: center; */
+        height: auto;
         justify-content: center;
     }
 
