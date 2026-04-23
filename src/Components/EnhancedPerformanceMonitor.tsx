@@ -1,8 +1,25 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import { onCLS, onFID, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
 
+// Custom metric interface for non-web-vitals metrics
+interface CustomMetric {
+  name: string;
+  value: number;
+  delta: number;
+  id: string;
+  startTime?: number;
+  duration?: number;
+  memory?: any;
+  url?: string;
+  sources?: any[];
+  navigation?: any;
+  resourceType?: string;
+  transferSize?: number;
+  decodedBodySize?: number;
+}
+
 interface EnhancedPerformanceMonitorProps {
-  onMetric?: (metric: Metric) => void;
+  onMetric?: (metric: Metric | CustomMetric) => void;
   enableLongTaskMonitoring?: boolean;
   enableMemoryMonitoring?: boolean;
   enableResourceMonitoring?: boolean;
@@ -21,7 +38,7 @@ const EnhancedPerformanceMonitor: React.FC<EnhancedPerformanceMonitorProps> = ({
   const resourceObserverRef = useRef<PerformanceObserver | null>(null);
 
   // Enhanced metric tracking with better error handling
-  const trackMetric = useCallback((metric: Metric) => {
+  const trackMetric = useCallback((metric: Metric | CustomMetric) => {
     // Send to analytics service
     if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
       try {
@@ -94,8 +111,8 @@ const EnhancedPerformanceMonitor: React.FC<EnhancedPerformanceMonitorProps> = ({
       }
     };
 
-    // Track memory usage periodically
-    const memoryInterval = setInterval(trackMemoryUsage, 30000); // Every 30 seconds
+    // Track memory usage periodically (reduced frequency for better performance)
+    const memoryInterval = setInterval(trackMemoryUsage, 60000); // Every 60 seconds
 
     return () => clearInterval(memoryInterval);
   }, [enableMemoryMonitoring, trackMetric]);
@@ -106,31 +123,32 @@ const EnhancedPerformanceMonitor: React.FC<EnhancedPerformanceMonitorProps> = ({
 
     try {
       const observer = new PerformanceObserver((list) => {
-        list.getEntries().forEach((entry: PerformanceResourceTiming) => {
+        list.getEntries().forEach((entry) => {
+          const resourceEntry = entry as PerformanceResourceTiming;
           // Track slow resources
-          if (entry.duration > 1000) {
+          if (resourceEntry.duration > 1000) {
             trackMetric({
               name: 'Slow Resource',
-              value: entry.duration,
-              delta: entry.duration,
-              id: `slow-resource-${entry.name}`,
-              url: entry.name,
-              resourceType: entry.initiatorType,
-              transferSize: entry.transferSize,
-              decodedBodySize: entry.decodedBodySize,
+              value: resourceEntry.duration,
+              delta: resourceEntry.duration,
+              id: `slow-resource-${resourceEntry.name}`,
+              url: resourceEntry.name,
+              resourceType: resourceEntry.initiatorType,
+              transferSize: resourceEntry.transferSize,
+              decodedBodySize: resourceEntry.decodedBodySize,
             });
           }
 
           // Track large resources
-          if (entry.transferSize > 100000) { // > 100KB
+          if (resourceEntry.transferSize > 1024 * 1024) { // > 1MB
             trackMetric({
               name: 'Large Resource',
-              value: entry.transferSize,
-              delta: entry.transferSize,
-              id: `large-resource-${entry.name}`,
-              url: entry.name,
-              resourceType: entry.initiatorType,
-              duration: entry.duration,
+              value: resourceEntry.transferSize,
+              delta: resourceEntry.transferSize,
+              id: `large-resource-${resourceEntry.name}`,
+              url: resourceEntry.name,
+              resourceType: resourceEntry.initiatorType,
+              duration: resourceEntry.duration,
             });
           }
         });

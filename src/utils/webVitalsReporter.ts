@@ -1,12 +1,6 @@
 // Web Vitals reporting utility
 import { onCLS, onINP, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
 
-declare global {
-  interface Window {
-    gtag: (command: string, eventName: string, eventParams: Record<string, unknown>) => void;
-  }
-}
-
 interface WebVitalsConfig {
   debug?: boolean;
   reportToAnalytics?: boolean;

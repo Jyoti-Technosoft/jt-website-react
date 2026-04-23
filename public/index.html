@@ -3,11 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#1976d2" />
 
     <!-- ✅ SEO Meta Description -->
     <meta name="description" content="Jyoti Technosoft LLP - Innovative IT Solutions, Web & Mobile App Development, and Digital Transformation Services for your business growth." />
+
+    <!-- Cache Control Headers -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
+    <meta http-equiv="Expires" content="31536000" />
 
     <!-- ✅ Title -->
     <title>Jyoti Technosoft LLP | IT Solutions, Web & Mobile App Development</title>
@@ -49,29 +54,30 @@
         height: 100%;
         object-fit: cover;
         z-index: -1;
-        pointer-events: none;
+        transition: opacity 0.5s ease-in;
       }
       
       .first-section-home-content {
         position: relative;
         z-index: 2;
         text-align: center;
-        padding: 20px;
+        padding: 2rem 1rem;
+        min-height: 200px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
       }
       
       .first-section-title {
         font-weight: 600;
-        font-size: 55px;
-        letter-spacing: 0.5px;
-        text-align: center;
+        font-size: clamp(2rem, 5vw, 3.5rem);
         color: #FFFBFB;
       }
       
       .first-section-description {
+        font-size: clamp(1rem, 2vw, 1.25rem);
         font-weight: 500;
         font-size: 15px;
         line-height: 24px;
@@ -83,21 +89,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-      
-      .build-together {
-        min-width: 231px;
-        min-height: 47px;
-        border-radius: 10px;
-        gap: 10px;
-        background: #FFFFFF;
-        color: var(--button-color);
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 23.44px;
-        letter-spacing: 0.5px;
-        box-shadow: 3px 4px 4px 0px #B2B2B240;
-        padding: 7px 17px 6px;
       }
       
       .build-together:hover {
@@ -147,17 +138,15 @@
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     
-    <!-- ✅ Preload critical resources -->
-    <link rel="preload" href="%PUBLIC_URL%/assets/logo192.png" as="image">
     <link rel="preload" href="%PUBLIC_URL%/assets/company-logo.png" as="image">
-    <link rel="preload" href="%PUBLIC_URL%/assets/hire-us.png" as="image">
-    <link rel="preload" href="%PUBLIC_URL%/assets/our-work-img.png" as="image">
-    <link rel="preload" href="%PUBLIC_URL%/assets/career-img.png" as="image">
-    <link rel="preload" href="%PUBLIC_URL%/assets/about-img.png" as="image">
-    <link rel="preload" href="%PUBLIC_URL%/assets/contact-img.png" as="image">
-    
-    <!-- ✅ Preload critical video -->
     <link rel="preload" href="%PUBLIC_URL%/assets/jyoti-technosoft-web-development.mp4" as="video" type="video/mp4">
+    
+    <!-- Async load non-critical CSS -->
+    <link rel="preload" href="%PUBLIC_URL%/styles/header.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="%PUBLIC_URL%/styles/header.css"></noscript>
+    
+    <link rel="preload" href="%PUBLIC_URL%/styles/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="%PUBLIC_URL%/styles/home.css"></noscript>
     
     <!-- ✅ Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>

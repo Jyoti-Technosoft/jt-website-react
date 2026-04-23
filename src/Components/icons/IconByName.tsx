@@ -37,15 +37,20 @@ export type IconByNameProps = SvgIconProps & {
 };
 
 // 3) Render icon by name, with optional fallback and graceful no-op if unknown.
-const IconByName: React.FC<IconByNameProps> = ({ name, fallback = "code", ...props }) => {
+const IconByName: React.FC<IconByNameProps> = ({ name, fallback = "devices", ...props }) => {
     if (!name) return null;
 
     // normalize to lowercase to make inputs forgiving
-    const normalized = String(name).toLowerCase() as IconKey;
+    const normalized = String(name).toLowerCase();
+    
+    // Check if the normalized name is a valid IconKey
+    const isValidKey = (key: string): key is IconKey => {
+        return key in ICONS;
+    };
 
-    const Component =
-        (ICONS[normalized as IconKey] as React.ComponentType<SvgIconProps>) ||
-        ICONS[fallback];
+    const Component = isValidKey(normalized) 
+        ? ICONS[normalized] 
+        : ICONS[fallback];
 
     return <Component {...props} />;
 };

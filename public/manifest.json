@@ -1,0 +1,23 @@
+{
+  "name": "Jyoti Technosoft LLP",
+  "short_name": "Jyoti Technosoft",
+  "description": "Professional web development, mobile app development, and AI integration services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#347CCC",
+  "icons": [
+    {
+      "src": "/assets/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

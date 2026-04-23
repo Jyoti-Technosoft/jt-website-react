@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
@@ -11,15 +11,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import ChevronDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ProductsIcon from "@mui/icons-material/Category";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import CategoryIcon from "@mui/icons-material/Category";
 import WorkIcon from "@mui/icons-material/Work";
 import EngineeringIcon from "@mui/icons-material/Engineering";
-import CodeOutlined from "@mui/icons-material/CodeOutlined";
+import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
 import PeopleIcon from "@mui/icons-material/People";
 
-import { developersMenu, topLevelTabs } from "./config/menu.ts";
+import { developersMenu, topLevelTabs } from "./config/menu";
 import jtWebsiteData from "../jt-website.json";
 import "../styles/header.css";
 import "../styles/header-animations.css";
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [showShadow, setShowShadow] = useState(false);
   const [expandWhatWeDo, setExpandWhatWeDo] = useState(false);
-    const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
   };
 
   // Memoized drawer toggle to satisfy exhaustive-deps
-  const handleDrawerToggle = React.useCallback(() => {
+  const handleDrawerToggle = useCallback(() => {
     setOpenDrawer((prev) => !prev);
   }, []);
 
@@ -75,8 +75,13 @@ const Header: React.FC = () => {
     }
   }, [isDesktop, openDrawer, handleDrawerToggle]);
 
+  // Robust safeguard for module timing issues (moved after all hooks)
+  if (!developersMenu || !topLevelTabs || !Array.isArray(jtWebsiteData?.products)) {
+    return null;
+  }
+
   return (
-    <Box className={`header ${showShadow ? "header-shadow" : ""}`}>
+    <Box className={`header ${showShadow ? "header-shadow" : ""}`} role="banner">
       <Toolbar className="container">
         <div>
           <div
@@ -91,14 +96,25 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        <IconButton className="menu-icon" onClick={handleDrawerToggle}>
+        <IconButton 
+          className="menu-icon" 
+          onClick={handleDrawerToggle}
+          aria-label="Open navigation menu"
+          aria-expanded={openDrawer}
+        >
           <MenuIcon />
         </IconButton>
 
-        <Drawer anchor="right" open={openDrawer} onClose={handleDrawerToggle}>
+        <Drawer 
+          anchor="right" 
+          open={openDrawer} 
+          onClose={handleDrawerToggle}
+          aria-label="Navigation menu"
+        >
           <div
-            role="presentation"
+            role="navigation"
             className="drawer-menu"
+            aria-label="Main navigation"
             onClick={handleDrawerToggle}
             onKeyDown={handleDrawerToggle}
           >
@@ -141,13 +157,13 @@ const Header: React.FC = () => {
               <Box className="subLinks" onClick={(e) => e.stopPropagation()}>
                 {/* Products Section */}
                 <Box sx={{ mb: 1 }}>
-                  <Typography sx={{ 
-                    fontWeight: 600, 
-                    color: '#347CCC', 
+                  <Typography sx={{
+                    fontWeight: 600,
+                    color: '#347CCC',
                   }}>
                     Products
                   </Typography>
-                  {jtWebsiteData.products?.slice(0, 4).map(product => (
+                  {Array.isArray(jtWebsiteData?.products) && jtWebsiteData.products.slice(0, 4)?.map((product: any) => (
                     <Box key={product.productId} sx={{ pl: 3 }}>
                       <NavLink
                         to={`/products/${product.productName.toLowerCase()}`}
@@ -175,9 +191,9 @@ const Header: React.FC = () => {
 
                 {/* Development Section */}
                 <Box sx={{ mb: 1 }}>
-                  <Typography sx={{ 
-                    fontWeight: 600, 
-                    color: '#347CCC', 
+                  <Typography sx={{
+                    fontWeight: 600,
+                    color: '#347CCC',
                   }}>
                     Development
                   </Typography>
@@ -197,9 +213,9 @@ const Header: React.FC = () => {
                     </Box>
                   ))}
                   <Box sx={{ mt: 2 }}>
-                    <Typography sx={{ 
-                      fontWeight: 600, 
-                      color: '#347CCC', 
+                    <Typography sx={{
+                      fontWeight: 600,
+                      color: '#347CCC',
                     }}>
                       Integrations
                     </Typography>
@@ -222,9 +238,9 @@ const Header: React.FC = () => {
 
                 {/* Consulting & Support Section */}
                 <Box sx={{ mb: 1 }}>
-                  <Typography sx={{ 
-                    fontWeight: 600, 
-                    color: '#347CCC', 
+                  <Typography sx={{
+                    fontWeight: 600,
+                    color: '#347CCC',
                   }}>
                     Consulting & Support
                   </Typography>
@@ -244,13 +260,13 @@ const Header: React.FC = () => {
                     </Box>
                   ))}
                   <Box sx={{ mt: 2 }}>
-                    <Typography sx={{ 
-                      fontWeight: 600, 
-                      color: '#347CCC', 
+                    <Typography sx={{
+                      fontWeight: 600,
+                      color: '#347CCC',
                     }}>
                       Hire Experts
                     </Typography>
-                    {developersMenu.map((item) => (
+                    {developersMenu.map((item: any) => (
                       <Box key={item.path} sx={{ pl: 3 }}>
                         <NavLink
                           to={item.path}
@@ -266,20 +282,21 @@ const Header: React.FC = () => {
 
                 {/* Services Section */}
                 <Box sx={{ mb: 1 }}>
-                  <NavLink
-                    to="/our-work"
-                    className="navLink"
-                    onClick={handleDrawerToggle}
-                    style={{ 
-                      fontWeight: 600, 
-                      color: '#347CCC',
-                      display: 'flex',
-                      alignItems: 'center',
-                      textDecoration: 'none'
-                    }}
-                  >
+                  <Typography sx={{
+                    fontWeight: 600,
+                    color: '#347CCC',
+                  }}>
                     Services
-                  </NavLink>
+                  </Typography>
+                  <Box sx={{ pl: 3 }}>
+                    <NavLink
+                      to="/our-work"
+                      className="navLink"
+                      onClick={handleDrawerToggle}
+                    >
+                      Explore Our Services
+                    </NavLink>
+                  </Box>
                 </Box>
               </Box>
             )}
@@ -329,15 +346,16 @@ const Header: React.FC = () => {
             onMouseLeave={() => setIsWhatWeDoDropdownOpen(false)}
           >
             <Box
+              id="solutions-button"
+              role="button"
               className={location.pathname.startsWith('/products') || location.pathname.startsWith('/our-work') || location.pathname.startsWith('/services') ? "navLink active" : "navLink"}
-              aria-haspopup="true"
+              aria-haspopup="menu"
               aria-expanded={isWhatWeDoDropdownOpen}
               aria-controls="solutions-menu"
-              sx={{ 
+              sx={{
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 0.5,
                 transition: 'all 0.3s ease',
                 '&:hover': {
                   color: '#347CCC',
@@ -345,7 +363,7 @@ const Header: React.FC = () => {
               }}
             >
               Solutions
-              <ChevronDownIcon sx={{ fontSize: 18 }} />
+              <KeyboardArrowDownIcon sx={{ fontSize: 18 }} />
             </Box>
 
             {isWhatWeDoDropdownOpen && (
@@ -364,6 +382,8 @@ const Header: React.FC = () => {
             {isWhatWeDoDropdownOpen && (
               <Box
                 id="solutions-menu"
+                role="menu"
+                aria-labelledby="solutions-button"
                 sx={{
                   position: "absolute",
                   top: "200%",
@@ -381,42 +401,40 @@ const Header: React.FC = () => {
                   border: "1px solid rgba(52, 124, 204, 0.15)",
                 }}
               >
-                <Box sx={{ display: 'flex', gap: 1, alignItems: 'stretch' }}>
+                <Box sx={{ display: 'flex', alignItems: 'stretch' }}>
                   {/* Column 1: Products */}
-                  <Box sx={{ minWidth: 250, borderRight: '1px solid #eee', pr: 3, display: 'flex', flexDirection: 'column' }}>
-                      <Box
-                        component="a"
-                        role="menuitem"
-                        onClick={() => {
-                          setIsWhatWeDoDropdownOpen(false);
-                          navigate('/products');
-                        }}
-                        sx={{ 
-                          px: 3,
-                          color: '#347CCC', 
-                          fontSize: '18px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 1,
-                          borderRadius: 2,
-                          transition: 'all 0.3s ease',
-                          cursor: 'pointer',
-                          "&:hover": {
-                            backgroundColor: 'rgba(52, 124, 204, 0.08)',
-                            transform: 'translateX(2px)',
-                          },
-                        }}
-                      >
-                        <ProductsIcon sx={{ fontSize: 24, fontWeight: 600, color: '#347CCC' }} />
-                        Products
-                      </Box>
-                      <Typography variant="caption" sx={{ fontSize: '12px', fontWeight: 500, color: '#666', pl: 7 }}>
-                        Ready-to-use solutions
-                      </Typography>
-                      <Box sx={{ mb: 1 }} />
+                  <Box sx={{ minWidth: 270, borderRight: '1px solid #eee', pr: 3, display: 'flex', flexDirection: 'column' }}>
+                    <Box
+                      component="a"
+                      role="menuitem"
+                      onClick={() => {
+                        setIsWhatWeDoDropdownOpen(false);
+                        navigate('/products');
+                      }}
+                      sx={{
+                        px: 3,
+                        color: '#347CCC',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                        borderRadius: 2,
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer',
+                        "&:hover": {
+                          transform: 'translateX(2px)',
+                        },
+                      }}
+                    >
+                      <CategoryIcon sx={{ fontSize: 24, fontWeight: 600, color: '#347CCC' }} />
+                      Products
+                    </Box>
+                    <Typography variant="caption" sx={{ fontSize: 12, fontWeight: 500, color: '#666', pl: 7 }}>
+                      Ready-to-use solutions
+                    </Typography>
+                    <Box sx={{ mb: 1 }} />
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                       {/* Dynamic Products - Show max 4 */}
-                      {jtWebsiteData.products?.slice(0, 4).map((product: any) => (
+                      {Array.isArray(jtWebsiteData?.products) && jtWebsiteData?.products?.slice(0, 4)?.map((product: any) => (
                         <Box
                           key={product.productId}
                           component="a"
@@ -426,7 +444,7 @@ const Header: React.FC = () => {
                             navigate(`/products/${product.productName.toLowerCase()}`);
                           }}
                           sx={{
-                            px: 3,
+                            px: 7,
                             cursor: "pointer",
                             textDecoration: 'none',
                             display: 'flex',
@@ -437,7 +455,7 @@ const Header: React.FC = () => {
                             "&:hover": {
                               backgroundColor: '#eef5ff',
                               borderRadius: '8px',
-                              padding: '6px 10px',
+                              transform: 'translateX(2px)',
                               color: '#347CCC',
                             },
                           }}
@@ -445,14 +463,14 @@ const Header: React.FC = () => {
                           <Typography variant="body1" sx={{ fontWeight: 600, fontSize: '14px' }}>
                             {product.productName}
                           </Typography>
-                          <Typography variant="caption" sx={{ fontSize: '12px', fontWeight: 500, color: '#666' }}>
+                          <Typography variant="caption" sx={{ fontSize: 12, fontWeight: 500, color: '#666' }}>
                             {product.productName === 'SiteSync' ? 'Construction Management Solutions' : 'AI Powered Learning Solutions'}
                           </Typography>
                         </Box>
                       ))}
-                      
+
                       {/* View More Link - Show if more than 4 products */}
-                      {jtWebsiteData.products && jtWebsiteData.products.length > 4 && (
+                      {Array.isArray(jtWebsiteData?.products) && jtWebsiteData?.products?.length > 4 && (
                         <Typography
                           component="a"
                           role="menuitem"
@@ -490,10 +508,9 @@ const Header: React.FC = () => {
                         setIsWhatWeDoDropdownOpen(false);
                         navigate('/services');
                       }}
-                      sx={{ 
-                        px: 3, 
-                        color: '#347CCC', 
-                        fontSize: '18px',
+                      sx={{
+                        px: 3,
+                        color: '#347CCC',
                         display: 'flex',
                         alignItems: 'center',
                         gap: 1,
@@ -501,15 +518,14 @@ const Header: React.FC = () => {
                         transition: 'all 0.3s ease',
                         cursor: 'pointer',
                         "&:hover": {
-                          backgroundColor: 'rgba(52, 124, 204, 0.08)',
                           transform: 'translateX(2px)',
                         },
                       }}
                     >
-                      <CodeOutlined sx={{ fontSize: 24, color: '#347CCC', fontWeight: 600 }} />
+                      <CodeOutlinedIcon sx={{ fontSize: 24, color: '#347CCC', fontWeight: 600 }} />
                       Development
                     </Box>
-                    <Typography variant="caption" sx={{ fontSize: '12px', fontWeight: 500, color: '#666', pl: 7 }}>
+                    <Typography variant="caption" sx={{ fontSize: 12, fontWeight: 500, color: '#666', pl: 7 }}>
                       Custom software solutions
                     </Typography>
                     <Box sx={{ mb: 1 }} />
@@ -541,7 +557,7 @@ const Header: React.FC = () => {
                             "&:hover": {
                               backgroundColor: '#eef5ff',
                               borderRadius: '8px',
-                              padding: '6px 10px',
+                              transform: 'translateX(2px)',
                               color: '#347CCC',
                             },
                           }}
@@ -551,10 +567,9 @@ const Header: React.FC = () => {
                       ))}
                     </Box>
                     <Box sx={{ mb: 1 }} />
-                    <Box sx={{ 
-                      px: 3, 
-                      color: '#347CCC', 
-                      fontSize: '16px',
+                    <Box sx={{
+                      px: 3,
+                      color: '#347CCC',
                       display: 'flex',
                       alignItems: 'center',
                       gap: 1,
@@ -593,7 +608,7 @@ const Header: React.FC = () => {
                             "&:hover": {
                               backgroundColor: '#eef5ff',
                               borderRadius: '8px',
-                              padding: '6px 10px',
+                              transform: 'translateX(2px)',
                               color: '#347CCC',
                             },
                           }}
@@ -607,19 +622,18 @@ const Header: React.FC = () => {
                   {/* Column 3: Consulting & Support */}
                   <Box sx={{ minWidth: 265, borderRight: '1px solid #eee', pr: 3, display: 'flex', flexDirection: 'column' }}>
                     <Box
-                      sx={{ 
-                        px: 3, 
-                        color: '#347CCC', 
-                        fontSize: '16px',
+                      sx={{
+                        px: 3,
+                        color: '#347CCC',
                         display: 'flex',
                         alignItems: 'center',
                         gap: 1,
                       }}
                     >
-                      <EngineeringIcon sx={{ fontSize: 24, color: '#347CCC', fontWeight: 600,  }} />
+                      <EngineeringIcon sx={{ fontSize: 24, color: '#347CCC', fontWeight: 600 }} />
                       Consulting & Support
                     </Box>
-                    <Typography variant="caption" sx={{ fontSize: '12px', fontWeight: 500, color: '#666', pl: 7 }}>
+                    <Typography variant="caption" sx={{ fontSize: 12, fontWeight: 500, color: '#666', pl: 7 }}>
                       Expert guidance & assistance
                     </Typography>
                     <Box sx={{ mb: 1 }} />
@@ -651,7 +665,7 @@ const Header: React.FC = () => {
                             "&:hover": {
                               backgroundColor: '#eef5ff',
                               borderRadius: '8px',
-                              padding: '6px 10px',
+                              transform: 'translateX(2px)',
                               color: '#347CCC',
                             },
                           }}
@@ -661,10 +675,9 @@ const Header: React.FC = () => {
                       ))}
                     </Box>
                     <Box sx={{ mb: 1 }} />
-                    <Box sx={{ 
-                      px: 3, 
-                      color: '#347CCC', 
-                      fontSize: '16px',
+                    <Box sx={{
+                      px: 3,
+                      color: '#347CCC',
                       display: 'flex',
                       alignItems: 'center',
                       gap: 1,
@@ -674,7 +687,7 @@ const Header: React.FC = () => {
                       <PeopleIcon sx={{ fontSize: 24, fontWeight: 600, color: '#347CCC' }} />
                       Hire Experts
                     </Box>
-                    <Typography variant="caption" sx={{ fontSize: '12px', fontWeight: 500, color: '#666', pl: 7 }}>
+                    <Typography variant="caption" sx={{ fontSize: 12, fontWeight: 500, color: '#666', pl: 7 }}>
                       Build your dream with our team
                     </Typography>
                     <Box sx={{ mb: 1 }} />
@@ -702,7 +715,7 @@ const Header: React.FC = () => {
                             "&:hover": {
                               backgroundColor: '#eef5ff',
                               borderRadius: '8px',
-                              padding: '6px 10px',
+                              transform: 'translateX(2px)',
                               color: '#347CCC',
                             },
                           }}
@@ -710,7 +723,7 @@ const Header: React.FC = () => {
                           <span>{item.label}</span>
                         </Box>
                       ))}
-                      <Box sx={{ textAlign: 'center'}}>
+                      <Box sx={{ textAlign: 'center' }}>
                         <Box sx={{ mb: 1, borderBottom: '1px solid #eee' }}></Box>
                         <Box
                           component="a"
@@ -739,19 +752,18 @@ const Header: React.FC = () => {
                   </Box>
 
                   {/* Column 4: Our services/work */}
-                  <Box sx={{ minWidth: 265, display: 'flex', flexDirection: 'column', pl: 3, pr: 3, backgroundColor: '#f9f9f9' }}>
+                  <Box sx={{ minWidth: 265, display: 'flex', flexDirection: 'column', pl: 3, pr: 3 }}>
                     <Box
-                      sx={{ 
-                        color: '#347CCC', 
-                        fontSize: '18px',
+                      sx={{
+                        color: '#347CCC',
                         display: 'flex',
                         alignItems: 'center',
                         gap: 1,
-                    }}>
+                      }}>
                       <WorkIcon sx={{ fontSize: 24, fontWeight: 600, color: '#347CCC' }} />
                       Services
                     </Box>
-                    <Typography variant="caption" sx={{ fontSize: '12px', fontWeight: 500, color: '#666', pl: 4 }}>
+                    <Typography variant="caption" sx={{ fontSize: 12, fontWeight: 500, color: '#666', pl: 4 }}>
                       Comprehensive solutions
                     </Typography>
                     <Box sx={{ mb: 1 }} />
@@ -770,29 +782,30 @@ const Header: React.FC = () => {
                     >
                       {/* Project Images Carousel */}
                       {['/assets/images/portfolio/bloomwell-mockup.png',
-                      '/assets/images/portfolio/aqua-intel-mockup.png',
-                      '/assets/images/portfolio/ante-think-mockup.png',
-                      '/assets/images/portfolio/pvista-mockup.png', 
-                      '/assets/images/portfolio/virtualcrm-mockup.png',
-                    ].map((image, index) => (
+                        '/assets/images/portfolio/aqua-intel-mockup.png',
+                        '/assets/images/portfolio/ante-think-mockup.png',
+                        '/assets/images/portfolio/pvista-mockup.png',
+                        '/assets/images/portfolio/virtualcrm-mockup.png',
+                      ].map((image, index) => (
                         <Box
                           key={index}
                           component="img"
                           src={image}
                           alt={`Project ${index + 1}`}
+                          width={200}
+                          height={200}
+                          loading="lazy"
                           sx={{
                             position: 'absolute',
                             width: '100%',
                             height: '100%',
                             objectFit: 'contain',
                             opacity: currentProjectIndex === index ? 1 : 0,
-                            // transform: `translateX(${(index - currentProjectIndex) * 100}%)`,
-                            // transition: 'all 0.6s ease-in-out',
                           }}
                         />
                       ))}
                     </Box>
-                    
+
                     {/* Enhanced CTA Button */}
                     <Typography
                       component="a"
@@ -822,10 +835,10 @@ const Header: React.FC = () => {
               </Box>
             )}
           </Box>
-          
+
           {topLevelTabs
-            .filter((t) => !t.children && ["Career", "About", "Contact"].includes(t.label))
-            .map((t) => (
+            .filter((t: any) => !t.children && ["Career", "About", "Contact"].includes(t.label))
+            .map((t: any) => (
               <Box key={t.label}>
                 <NavLink
                   to={t.path}

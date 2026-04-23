@@ -58,6 +58,8 @@ const WeveBuilt: React.FC = () => {
                     alt={item?.title}
                     className="weveBuilt-image"
                     loading="lazy"
+                    height={50}
+                    width={75}
                   />
                   <Typography className="weveBuilt-text">
                     {item?.title}

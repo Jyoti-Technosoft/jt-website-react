@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Helmet } from 'react-helmet-async';
-
 import HomeWhyUs from "../Pages/HomeWhyUs.tsx";
 import OurTechnology from "./shared/OurTechnology.tsx";
 import WeOffer from "./shared/WeOffer.tsx";
@@ -80,15 +79,35 @@ const Home: React.FC = () => {
       </Helmet>
       <Box>
         <div className="first-section-home">
-          <video
-            className="bg-video"
+          {/* Optimized video background with poster for faster LCP */}
+          <Box
+            component="video"
             autoPlay
             loop
             muted
             playsInline
-            preload="metadata"
-            aria-label="Jyoti Technosoft web development and digital solutions showcase"
-            title="Professional software development services"
+            preload="none"
+            poster="/assets/video-ai-asset-background.png"
+            aria-label="Background video showing Jyoti Technosoft web development and digital solutions"
+            className="bg-video"
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: -1,
+              pointerEvents: 'none'
+            }}
+            onLoadStart={() => {
+              setTimeout(() => {
+                const video = document.querySelector('.bg-video') as HTMLVideoElement;
+                if (video) {
+                  video.load();
+                }
+              }, 1000);
+            }}
           >
             <source src="/assets/jyoti-technosoft-web-development.mp4" type="video/mp4" />
             <track
@@ -99,94 +118,40 @@ const Home: React.FC = () => {
               default
             />
             Your browser does not support the video tag.
-          </video>
-          <Box className="first-section-home-content">
-            <Typography 
+          </Box>
+          <div id="video-description" className="sr-only">
+            Background video showcasing Jyoti Technosoft's expertise in web development, mobile apps, and AI integration services for businesses
+          </div>
+          <Box className="first-section-home-content" role="main">
+            <Typography
               className="first-section-title"
               variant="h1"
               component="h1"
+              sx={{
+                minHeight: '4rem',
+                width: '100%',
+                maxWidth: '800px',
+                margin: '0 auto'
+              }}
             >
-              {meetSection?.title}
+              {meetSection?.title || 'Loading...'}
             </Typography>
-            <Typography className="first-section-description">
-              {meetSection?.description}
+            <Typography
+              className="first-section-description"
+              sx={{
+                minHeight: '3rem',
+                width: '100%',
+                maxWidth: '631px',
+                margin: '0.6rem auto 2rem'
+              }}
+            >
+              {meetSection?.description || 'Loading...'}
             </Typography>
-            
-            {/* Trust Indicators */}
-            <Box sx={{ 
-              display: { xs: 'none', md: 'flex' }, 
-              gap: { md: 4 }, 
-              mt: 4, 
-              justifyContent: 'center',
-              flexWrap: 'wrap'
-            }}>
-              <Box textAlign="center">
-                <Typography variant="h4" sx={{ 
-                  color: '#fff', 
-                  fontWeight: 700, 
-                  fontSize: '2rem'
-                }}>
-                  22+
-                </Typography>
-                <Typography variant="body2" sx={{ 
-                  color: '#E8E8E8', 
-                  fontSize: '0.9rem'
-                }}>
-                  Happy Clients
-                </Typography>
-              </Box>
-              <Box textAlign="center">
-                <Typography variant="h4" sx={{ 
-                  color: '#fff', 
-                  fontWeight: 700, 
-                  fontSize: '2rem'
-                }}>
-                  40+
-                </Typography>
-                <Typography variant="body2" sx={{ 
-                  color: '#E8E8E8', 
-                  fontSize: '0.9rem'
-                }}>
-                  Projects Delivered
-                </Typography>
-              </Box>
-              <Box textAlign="center">
-                <Typography variant="h4" sx={{ 
-                  color: '#fff', 
-                  fontWeight: 700, 
-                  fontSize: '2rem'
-                }}>
-                  4+
-                </Typography>
-                <Typography variant="body2" sx={{ 
-                  color: '#E8E8E8', 
-                  fontSize: '0.9rem'
-                }}>
-                  Years Experience
-                </Typography>
-              </Box>
-              <Box textAlign="center">
-                <Typography variant="h4" sx={{ 
-                  color: '#fff', 
-                  fontWeight: 700, 
-                  fontSize: '2rem'
-                }}>
-                  99%
-                </Typography>
-                <Typography variant="body2" sx={{ 
-                  color: '#E8E8E8', 
-                  fontSize: '0.9rem'
-                }}>
-                  Client Satisfaction
-                </Typography>
-              </Box>
-            </Box>
 
-            {/* Enhanced CTA Buttons */}
-            <Box sx={{ 
-              display: 'flex', 
-              gap: 2, 
-              mt: 4, 
+            <Box sx={{
+              display: 'flex',
+              gap: 2,
+              mt: 4,
               justifyContent: 'center',
               flexWrap: 'wrap'
             }}>
@@ -194,33 +159,13 @@ const Home: React.FC = () => {
                 variant="contained"
                 className="build-together"
                 onClick={handleContactNavigation}
-                sx={{ 
+                aria-label="Contact us to build your project together"
+                sx={{
                   minWidth: { xs: 140, md: 231 },
                   fontSize: { xs: '0.8rem', md: '0.875rem' }
                 }}
               >
                 LET'S BUILD TOGETHER
-              </Button>
-              <Button
-                variant="outlined"
-                onClick={() => navigate('/our-work')}
-                sx={{
-                  display: { xs: 'none', md: 'inline-flex' },
-                  minWidth: 200,
-                  height: 47,
-                  borderRadius: '10px',
-                  border: '2px solid #FFFFFF',
-                  color: '#FFFFFF',
-                  fontWeight: 600,
-                  fontSize: '0.875rem',
-                  '&:hover': {
-                    backgroundColor: '#FFFFFF',
-                    color: '#F76336',
-                    border: '2px solid #FFFFFF'
-                  }
-                }}
-              >
-                VIEW OUR WORK
               </Button>
             </Box>
           </Box>
@@ -250,6 +195,9 @@ const Home: React.FC = () => {
                 src="/assets/star-img.png"
                 alt="Star"
                 loading="lazy"
+                decoding="async"
+                width="30"
+                height="30"
                 sx={{
                   position: "absolute",
                   top: "-21px",
@@ -257,11 +205,12 @@ const Home: React.FC = () => {
                   width: "30px",
                   height: "30px",
                   display: { xs: "none", md: "block" },
+                  objectFit: "contain"
                 }}
               />
             </Box>
             <Box sx={{ position: "relative", paddingBottom: "30px" }}>
-              <Typography variant="h6" sx={{ fontWeight: 600 }}>
+              <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
                 Transform Your Business with AI
               </Typography>
               <Typography variant="body2" sx={{ mt: 1 }}>

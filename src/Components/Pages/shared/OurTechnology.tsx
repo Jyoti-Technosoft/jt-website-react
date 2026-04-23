@@ -92,11 +92,9 @@ const OurTechnology: React.FC = () => {
                 src="/assets/ai-technology.png"
                 alt="AI Agent"
                 loading="lazy"
-                width={800}
-                height={600}
+                width={150}
+                height={100}
                 sx={{
-                  height: { xs: 80, sm: 100 },
-                  width: 'auto',
                   objectFit: 'contain',
                   flexShrink: 0,
                   [theme.breakpoints.down('sm')]: {

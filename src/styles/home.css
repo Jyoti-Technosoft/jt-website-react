@@ -4,6 +4,52 @@
     --button-color: #F76336;
 }
 
+/* Accessibility Styles */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* LCP Optimization - Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Optimized Layout Shift Prevention */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CLS Prevention - Simplified for better performance */
+.first-section-home-content {
+  min-height: 200px;
+}
+
+.first-section-home .first-section-home-content .first-section-title {
+  min-height: 4rem;
+}
+
+.first-section-home .first-section-home-content .first-section-description {
+  min-height: 3rem;
+}
+
+/* Only apply to specific problematic images */
+img.company-logo {
+  width: 220px;
+  height: 100px;
+  object-fit: contain;
+}
+
 /* meet Section */
 .first-section-home {
     position: relative;
@@ -16,7 +62,7 @@
     overflow: hidden;
 }
 
-.first-section-home video.bg-video {
+.first-section-home .bg-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -46,6 +92,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 200px;
 }
 
 .first-section-home .first-section-home-content .first-section-title {
@@ -54,6 +101,9 @@
     letter-spacing: 0.5px;
     text-align: center;
     color: #FFFBFB;
+    min-height: 3.5rem;
+    width: 100%;
+    height: auto;
 }
 
 .first-section-home .first-section-home-content .first-section-description {
@@ -62,7 +112,7 @@
     line-height: 24px;
     letter-spacing: 0.3px;
     text-align: center;
-    color: #E8E8E8; /* Improved contrast from #D7D5D5 */
+    color: #FFFFFF; /* Improved contrast from #E8E8E8 */
     max-width: 631px;
     margin: 0.6rem 0px 2rem;
     display: flex;
@@ -139,21 +189,11 @@
     width: 50px;
     height: 50px;
     margin: 0px 15px;
-    image-rendering: auto;
-    image-rendering: smooth;
-    image-rendering: smooth;
-    transform: translateZ(0);
-    backface-visibility: hidden;
 }
 
 .weOffer-main-container .weOffer-card .weOffer-card-image1 {
     width: 50px;
     height: 50px;
-    image-rendering: auto;
-    image-rendering: smooth;
-    image-rendering: smooth;
-    transform: translateZ(0);
-    backface-visibility: hidden;
 }
 
 .weOffer-main-container .weOffer-card .weOffer-card-title {

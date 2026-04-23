@@ -2,6 +2,17 @@ import React, { useState, useCallback } from 'react';
 import Box from '@mui/material/Box';
 import imageManifest from '../imageManifest.json';
 
+interface ImageManifestEntry {
+  original: string;
+  webp: string;
+  avif: string | null;
+  size: number;
+}
+
+interface ImageManifest {
+  [key: string]: ImageManifestEntry;
+}
+
 interface OptimizedImageProps {
   src: string;
   alt: string;
@@ -41,8 +52,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     const cleanSrc = originalSrc.replace(/^\/assets\//, '').replace(/^\/public\//, '');
     
     // Check if WebP version exists in manifest
-    if (imageManifest[cleanSrc]) {
-      return `/assets/webp/${imageManifest[cleanSrc]}`;
+    const manifest = imageManifest as ImageManifest;
+    if (cleanSrc in manifest && manifest[cleanSrc]) {
+      return `/assets/webp/${manifest[cleanSrc].webp}`;
     }
     
     return originalSrc;

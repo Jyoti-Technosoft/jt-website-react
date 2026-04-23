@@ -27,6 +27,15 @@ const Footer: React.FC = () => {
                 className="company-logo"
                 src="/assets/company-logo.png"
                 alt="Jyoti Technosoft LLP"
+                loading="lazy"
+                decoding="async"
+                width="220"
+                height="100"
+                style={{
+                  width: '220px',
+                  height: '100px',
+                  objectFit: 'contain'
+                }}
               />
             </Link>
             <Typography className="footer-description" variant="body2">
@@ -87,7 +96,7 @@ const Footer: React.FC = () => {
             <Box className="footer-column">
               <Box className="footer-header">
                 <BusinessIcon className="footer-header-icon" />
-                <Typography className="footermenu-header" variant="h6">
+                <Typography className="footermenu-header">
                   Our Services
                 </Typography>
               </Box>
@@ -110,7 +119,7 @@ const Footer: React.FC = () => {
             <Box className="footer-column">
               <Box className="footer-header">
                 <CodeOutlined className="footer-header-icon" />
-                <Typography className="footermenu-header" variant="h6">
+                <Typography className="footermenu-header">
                   Development
                 </Typography>
               </Box>
@@ -133,7 +142,7 @@ const Footer: React.FC = () => {
             <Box className="footer-column">
               <Box className="footer-header">
                 <WorkIcon className="footer-header-icon" />
-                <Typography className="footermenu-header" variant="h6">
+                <Typography className="footermenu-header">
                   Solutions
                 </Typography>
               </Box>
@@ -156,7 +165,7 @@ const Footer: React.FC = () => {
             <Box className="footer-column">
               <Box className="footer-header">
                 <ContactSupportIcon className="footer-header-icon" />
-                <Typography className="footermenu-header" variant="h6">
+                <Typography className="footermenu-header">
                   Quick Links
                 </Typography>
               </Box>

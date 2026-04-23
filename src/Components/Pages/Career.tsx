@@ -56,12 +56,12 @@ const Career: React.FC = () => {
   
   // Memoize expensive computations
   const technologies = useMemo(() => 
-    [...new Set(jobs.map((job) => job.technology))], 
+    Array.from(new Set(jobs.map((job) => job.technology))), 
     [jobs]
   );
   
   const jobNatures = useMemo(() => 
-    [...new Set(jobs.map((job) => job.jobNature))], 
+    Array.from(new Set(jobs.map((job) => job.jobNature))), 
     [jobs]
   );
 
