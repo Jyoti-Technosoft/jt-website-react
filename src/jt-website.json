@@ -1,8 +1,22 @@
 {
   "home": {
     "meetSection": {
-      "title": "Where imagination meets creativity",
-      "description": "Expert web development, mobile app development, and AI integration services. Delivering innovative software solutions that drive business growth and digital transformation for startups to enterprises."
+      "badge": "Product engineering for ambitious teams",
+      "title": "We build revenue-ready web, mobile and AI products for growing businesses.",
+      "description": "From product strategy to launch, we design and deliver digital experiences that help teams move faster, convert better, and scale with confidence.",
+      "trustIndicators": [
+        "Discovery-to-launch delivery",
+        "Flexible engagement models",
+        "AI, web, and mobile expertise"
+      ],
+      "primaryCtaLabel": "Book a 30-min Discovery Call",
+      "primaryCtaHref": "/contact",
+      "secondaryCtaLabel": "See Case Studies",
+      "secondaryCtaHref": "/our-work",
+      "calloutTitle": "AI agents that do real work",
+      "calloutDescription": "Launch AI copilots for support, sales, and internal automation with secure integrations into your existing workflows.",
+      "calloutHref": "/services/ai-integration",
+      "calloutLinkLabel": "Explore AI integration"
     },
     "WhyUs": {
       "title": "Why Us",
@@ -10,117 +24,124 @@
       "data": [
         {
           "title": "22+",
-          "description": "Happy Clients",
+          "description": "Happy clients",
+          "supportingText": "Long-term partnerships across industries",
           "type": "Clients"
         },
         {
           "title": "40+",
-          "description": "Projects",
+          "description": "Projects delivered",
+          "supportingText": "Shipped from MVPs to production platforms",
           "type": "Projects"
         },
         {
-          "title": "3+",
-          "description": "Year Experience",
+          "title": "6+",
+          "description": "Years building products",
+          "supportingText": "Hands-on product, UI, and engineering support",
           "type": "Experience",
           "year": 2022
         },
         {
           "title": "35",
-          "description": "Achievements",
+          "description": "Delivery milestones",
+          "supportingText": "Across design, engineering, and launches",
           "type": "Achievements"
         }
       ]
     },
     "WeOffer": {
       "title": "What We Offer",
-      "description": "Comprehensive IT solutions to accelerate your business growth",
+      "description": "Cross-functional delivery teams for product design, engineering, and intelligent automation.",
       "data": [
         {
           "id": 1,
           "title": "AI Agent Integration",
-          "description": "Empowering digital experiences with intelligent, conversational AI solutions.",
+          "description": "Deploy AI copilots for support, lead capture, and internal workflows with secure model integrations.",
           "imageSrc": "/assets/ai.png"
         },
         {
           "id": 2,
           "title": "WordPress Development",
-          "description": "Crafting feature-rich and visually stunning websites with WordPress.",
+          "description": "Build scalable WordPress websites with custom themes, plugin development, and CMS optimization for content-driven businesses.",
           "imageSrc": "/assets/WordPress.png"
         },
         {
           "id": 3,
           "title": "Shopify Development",
-          "description": "Design intuitive and visually captivating user interfaces.",
+          "description": "Create high-converting e-commerce stores with custom Shopify themes, app integrations, and payment gateway solutions.",
           "imageSrc": "/assets/shopify.png"
         },
         {
           "id": 4,
-          "title": "UI/UX Designing",
-          "description": "Design intuitive and visually captivating user interfaces.",
+          "title": "UI/UX Design",
+          "description": "Design user-centered digital experiences with wireframing, prototyping, and usability testing for optimal engagement.",
           "imageSrc": "/assets/designer.png"
         },
         {
           "id": 5,
           "title": "Mobile App Development",
-          "description": "Create seamless and optimized web applications using Google Web Toolkit.",
+          "description": "Develop native and cross-platform mobile applications with offline capabilities, push notifications, and app store optimization.",
           "imageSrc": "/assets/mobile.png"
         },
         {
           "id": 6,
           "title": "Web Development",
-          "description": "Custom-built websites that are fast, responsive, and scalable.",
+          "description": "Build progressive web applications with server-side rendering, RESTful APIs, and database optimization.",
           "imageSrc": "/assets/Programming.png"
         },
         {
           "id": 7,
-          "title": "Java - GWT Development",
-          "description": "Crafting high-performance web applications with Java and GWT.",
+          "title": "Java and GWT Engineering",
+          "description": "Legacy system modernization with GWT client-side optimization, Java Spring backend, and enterprise integration patterns.",
           "imageSrc": "/assets/offersection-Java.png",
           "imageSrc1": "/assets/source-code.png"
         },
         {
           "id": 8,
-          "title": "Angular - React Development",
-          "description": "Developing modern, dynamic front-end solutions with Angular and React.",
+          "title": "Angular and React Development",
+          "description": "Enterprise SPAs with RxJS patterns, lazy loading, and component library architecture for scalability.",
           "imageSrc": "/assets/angular-js.png",
           "imageSrc1": "/assets/react-js.png"
         }
       ]
     },
     "HowWeWork": {
+      "title": "How We Work",
+      "description": "A clear, collaborative delivery rhythm that keeps scope, speed, and quality aligned.",
       "data": [
         {
           "id": 1,
-          "title": "Requirement Gathering",
-          "description1": "Understanding Your Vision",
-          "description2": "We begin by thoroughly understanding your business needs, goals, and the unique challenges you face. By engaging in detailed and collaborative discussions, we dive deep into your vision to ensure every aspect is covered. This step allows us to gather precise and comprehensive requirements, creating a strong foundation for the success of your project and ensuring alignment with your expectations and objectives.",
+          "title": "Discovery and Alignment",
+          "eyebrow": "Understand goals, risks, and user needs",
+          "details": "We start by aligning on business goals, audience expectations, and delivery priorities so the roadmap is clear before we write code.",
           "imageSrc": "/assets/computer-laptop.png"
         },
         {
           "id": 2,
-          "title": "UI/UX Development",
-          "description1": "Crafting Intuitive Designs",
-          "description2": "Our design team focuses on crafting intuitive, user-friendly, and visually appealing interfaces tailored to meet your specific needs. We ensure every design element is carefully aligned with user expectations and your brand identity. By combining functionality and aesthetics, we aim to deliver interfaces that engage users effectively and leave a lasting impression, providing a seamless and delightful experience across every platform and device.",
+          "title": "UX and Interface Design",
+          "eyebrow": "Translate ideas into clear product flows",
+          "details": "Our design team turns requirements into wireframes, UI systems, and interaction patterns that feel intuitive on every screen.",
           "imageSrc": "/assets/ui-development.png"
         },
         {
           "id": 3,
-          "title": "Development of Process",
-          "description1": "Building with Precision",
-          "description2": "Our skilled developers bring your vision to life by creating scalable, secure, and high-performance solutions tailored to your unique requirements. By leveraging the latest technologies and industry best practices, we ensure our solutions align with your goals. Every project is built with a focus on quality, reliability, and innovation, delivering exceptional results that drive success and meet your expectations.",
+          "title": "Build and Integrate",
+          "eyebrow": "Develop with quality, speed, and scalability",
+          "details": "We build the product in focused milestones, keeping architecture, APIs, performance, and maintainability aligned with your growth plans.",
           "imageSrc": "/assets/working-together.png"
         },
         {
           "id": 4,
-          "title": "Deployment of App",
-          "description1": "Launching with Confidence",
-          "description2": "Once development is complete, we deploy your app with precision. Our team ensures all components are meticulously configured, thoroughly tested, and fully optimized to guarantee seamless performance. We take extra care in ensuring the app functions flawlessly in a live environment, providing you with a smooth, efficient, and reliable experience that aligns perfectly with your business needs and goals.",
+          "title": "Test and Launch",
+          "eyebrow": "Validate before release",
+          "details": "Before launch, we test critical flows, optimize performance, and prepare deployment so releases feel steady instead of stressful.",
           "imageSrc": "/assets/deployment-of-app.png"
         },
         {
           "id": 5,
-          "title": "Review from Clients",
-          "description1": "Perfecting with Feedback",
+          "title": "Optimize and Support",
+          "eyebrow": "Improve with real feedback",
+          "details": "After launch, we keep improving through feedback loops, performance reviews, and enhancements that help the product keep delivering value.",
           "description2": "Your feedback is invaluable to us. We collaborate closely with you to review the app thoroughly, making any necessary adjustments and addressing final changes. Our goal is to ensure the solution not only meets your expectations but exceeds them, delivering an app that’s fully aligned with your vision and requirements, providing the best possible experience for both you and your users.",
           "imageSrc": "/assets/shaking-hands.png"
         },
@@ -132,10 +153,71 @@
         }
       ]
     },
+    "clientTestimonials": {
+      "title": "Trusted by Leading Teams",
+      "description": "Partnering with innovative companies to deliver exceptional digital experiences",
+      "logos": [
+        {
+          "name": "ProgressMaker",
+          "logo": "assets/images/portfolio/ProgressMaker_Logo.png",
+          "alt": "ProgressMaker logo"
+        },
+        {
+          "name": "Pratibha Herbal",
+          "logo": "assets/images/portfolio/pratibhalogo.png",
+          "alt": "Pratibha Herbal logo"
+        },
+        {
+          "name": "TLC Engineering",
+          "logo": "assets/images/portfolio/tlc_engine-removebg-preview.png",
+          "alt": "TLC Engineering logo"
+        },
+        {
+          "name": "Micro C",
+          "logo": "assets/images/portfolio/Micro_logo.png",
+          "alt": "Micro C logo"
+        },
+        {
+          "name": "Yacht Closer",
+          "logo": "assets/images/portfolio/boatsground.png",
+          "alt": "Yacht Closer logo"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Dipesh and his team have been excellent to work with. They are proactive, communicate clearly, and always keep me informed throughout the process. The quality of their work is outstanding, and they consistently go above and beyond to deliver. I highly recommend their company to anyone looking for reliable, professional, and high-quality service.",
+          "author": "Bryan F.",
+          "role": "CTO",
+          "company": "Health Audit Management",
+          "avatar": "https://via.placeholder.com/56x56/1f5795/ffffff?text=SC"
+        },
+        {
+          "quote": "Dipesh was a wonderful asset to our development team. He is a GWT expert and I would not hesitate to work with him in the future on any UI/UX front end development.",
+          "author": "Evan R.",
+          "role": "Head of Operations",
+          "company": "Property Vista", 
+          "avatar": "https://via.placeholder.com/56x56/3498db/ffffff?text=EW"
+        },
+        {
+          "quote": "The e-commerce platform they built increased our online sales by 40% within the first month. Truly impressive work!",
+          "author": "Pratibha S.",
+          "role": "Product Manager", 
+          "company": "Pratibha Herbal",
+          "avatar": "https://via.placeholder.com/56x56/2ea67d/ffffff?text=MR"
+        },
+        {
+          "quote": "Thank you so much for your help. Much appreciated.",
+          "author": "Kris G.",
+          "role": "Product Manager", 
+          "company": "VisualCharts",
+          "avatar": "https://via.placeholder.com/56x56/2ea67d/ffffff?text=MR"
+        }
+      ]
+    },
     "WeveBuilt": {
-      "title": "What We’ve Built",
-      "description1": "A showcase of our expertise and creativity.",
-      "description2": "See Projects",
+      "title": "What We've Built",
+      "description": "A selection of digital products we have designed, engineered, and launched with our clients.",
+      "ctaLabel": "See Projects",
       "data": [
         {
           "id": 1,
@@ -184,8 +266,8 @@
     "technology": [
       {
         "id": "angular",
-        "label": "Angular Developement",
-        "decription": "At Jyoti Technosoft LLP, we are dedicated to delivering exceptional Angular development solutions tailored to meet your business objectives. With a team of experienced and skilled Angular developers, we have extensive expertise in harnessing the power of Angular to build cutting-edge applications that drive business growth. Our Angular development services encompass the entire spectrum of the development process, from requirement analysis and architecture design to front-end and back-end development, testing, deployment, and ongoing support. ",
+        "label": "Angular Development",
+        "description": "At Jyoti Technosoft LLP, we are dedicated to delivering exceptional Angular development solutions tailored to meet your business objectives. With a team of experienced and skilled Angular developers, we have extensive expertise in harnessing the power of Angular to build cutting-edge applications that drive business growth. Our Angular development services encompass the entire spectrum of the development process, from requirement analysis and architecture design to front-end and back-end development, testing, deployment, and ongoing support. ",
         "image": "assets/angular.png",
         "mainImage": "/assets/angular-main-img.png",
         "chooseUs": "Why Choose Us As Your Angular Development Company",
@@ -218,36 +300,36 @@
         "servicesDescription": "At Jyoti Technosoft LLP, we are a trusted provider of comprehensive Angular services, specializing in custom development, plugin development, maintenance & support, and API integration. With our team of skilled Angular developers, we have the expertise to deliver tailored solutions that leverage Angular's power to meet your unique business requirements.",
         "services": [
           {
-            "header": "Custom Developement",
+            "header": "Custom Development",
             "icon": "assets/images/Custom-AngularJS-Web-Development.svg",
-            "decription": "We understand that every business has specific needs that off-the-shelf solutions may not address. Our custom development services for Angular enable us to create bespoke applications that align perfectly with your business goals. Our team works closely with you to analyze your requirements, design a solution architecture, and develop Angular applications that are tailored to your exact specifications. We leverage Angular's powerful features, such as component-based architecture, dependency injection, and reactive programming, to build scalable, secure, and high-performing applications.",
+            "description": "We understand that every business has specific needs that off-the-shelf solutions may not address. Our custom development services for Angular enable us to create bespoke applications that align perfectly with your business goals. Our team works closely with you to analyze your requirements, design a solution architecture, and develop Angular applications that are tailored to your exact specifications. We leverage Angular's powerful features, such as component-based architecture, dependency injection, and reactive programming, to build scalable, secure, and high-performing applications.",
             "image": "/assets/images/hire-us-details/custom-developement.png"
           },
           {
             "header": "Plugin Development",
             "icon": "assets/images/Plugin-Development.svg",
-            "decription": "We recognize the importance of extending the functionality of Angular applications. Our plugin development services for Angular allow us to create custom plugins that seamlessly integrate with your existing Angular infrastructure. Whether you need plugins to enhance user experience, integrate with external services, or add specific features, our developers can design and develop plugins that seamlessly extend the capabilities of your Angular applications.",
+            "description": "We recognize the importance of extending the functionality of Angular applications. Our plugin development services for Angular allow us to create custom plugins that seamlessly integrate with your existing Angular infrastructure. Whether you need plugins to enhance user experience, integrate with external services, or add specific features, our developers can design and develop plugins that seamlessly extend the capabilities of your Angular applications.",
             "image": "/assets/images/hire-us-details/plugin-developement.png"
           },
           {
             "header": "Maintenance & Support",
             "icon": "assets/images/Support-Maintainence.svg",
-            "decription": "We believe in establishing long-term relationships with our clients. Our maintenance and support services for Angular ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Angular applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity.",
+            "description": "We believe in establishing long-term relationships with our clients. Our maintenance and support services for Angular ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Angular applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity.",
             "image": "/assets/images/hire-us-details/maintenance&supports.png"
           },
           {
             "header": "API Integration and Development",
             "icon": "assets/images/API-Integration-and-Development.svg",
-            "decription": " In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Angular developers have expertise in API integration and can seamlessly integrate your Angular applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Angular applications.",
+            "description": " In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Angular developers have expertise in API integration and can seamlessly integrate your Angular applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Angular applications.",
             "image": "/assets/images/hire-us-details/api-integration-developement.png"
           }
         ],
-        "developmentServiceTitle": "Angular Developement Services"
+        "developmentServiceTitle": "Angular Development Services"
       },
       {
         "id": "react",
-        "label": "React Developement",
-        "decription": "Jyoti Technosoft LLP is a name to reckon with when it comes to ReactJS development. Since its launch back in 2013, ReactJS continues to be a user-friendly, developer favorite and industry preferred platform for web development. An open-source, cross-platform, JavaScript-based library, ReactJS development allows developers to build responsive web and single-page applications that fulfill the unique requirements of businesses across the globe.",
+        "label": "React Development",
+        "description": "Jyoti Technosoft LLP is a name to reckon with when it comes to ReactJS development. Since its launch back in 2013, ReactJS continues to be a user-friendly, developer favorite and industry preferred platform for web development. An open-source, cross-platform, JavaScript-based library, ReactJS development allows developers to build responsive web and single-page applications that fulfill the unique requirements of businesses across the globe.",
         "image": "assets/react.png",
         "mainImage": "/assets/react-main-img.png",
         "chooseUs": "Why Choose Us As Your ReactJS Development Company",
@@ -280,36 +362,36 @@
         "servicesDescription": "At Jyoti Technosoft LLP, we are a leading provider of comprehensive React services, specializing in custom development, plugin development, maintenance & support, and API integration. With our team of skilled React developers, we have the expertise to deliver tailored solutions that leverage React's power to meet your unique business requirements.",
         "services": [
           {
-            "header": "Custom Developement",
+            "header": "Custom Development",
             "icon": "assets/images/Custom-AngularJS-Web-Development.svg",
-            "decription": "We understand that each business has its own set of challenges and requirements. Our custom development services for React allow us to create bespoke applications that cater to your specific needs. From conceptualization to development and deployment, we work closely with you to ensure that the resulting React application aligns perfectly with your business objectives. Leveraging React's component-based architecture and reusable UI components, we build scalable, interactive, and high-performing applications tailored to your exact specifications.",
+            "description": "We understand that each business has its own set of challenges and requirements. Our custom development services for React allow us to create bespoke applications that cater to your specific needs. From conceptualization to development and deployment, we work closely with you to ensure that the resulting React application aligns perfectly with your business objectives. Leveraging React's component-based architecture and reusable UI components, we build scalable, interactive, and high-performing applications tailored to your exact specifications.",
             "image": "/assets/images/hire-us-details/custom-developement.png"
           },
           {
             "header": "Plugin Development",
             "icon": "assets/images/Plugin-Development.svg",
-            "decription": "We recognize the importance of extending the functionality of React applications. Our plugin development services for React enable us to create custom plugins that seamlessly integrate with your existing React infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your React applications.",
+            "description": "We recognize the importance of extending the functionality of React applications. Our plugin development services for React enable us to create custom plugins that seamlessly integrate with your existing React infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your React applications.",
             "image": "/assets/images/hire-us-details/plugin-developement.png"
           },
           {
             "header": "Maintenance & Support",
             "icon": "assets/images/Support-Maintainence.svg",
-            "decription": " We believe in establishing long-term partnerships with our clients. Our maintenance and support services for React ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your React applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity.",
+            "description": " We believe in establishing long-term partnerships with our clients. Our maintenance and support services for React ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your React applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity.",
             "image": "/assets/images/hire-us-details/maintenance&supports.png"
           },
           {
             "header": "API Integration and Development",
             "icon": "assets/images/API-Integration-and-Development.svg",
-            "decription": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our React developers have expertise in API integration and can seamlessly integrate your React applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your React applications.",
+            "description": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our React developers have expertise in API integration and can seamlessly integrate your React applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your React applications.",
             "image": "/assets/images/hire-us-details/api-integration-developement.png"
           }
         ],
-        "developmentServiceTitle": "React Developement Services"
+        "developmentServiceTitle": "React Development Services"
       },
       {
         "id": "java",
-        "label": "Java Developement",
-        "decription": "At Jyoti Technosoft LLP, we are a leading Java development company specializing in delivering top-notch Java-based solutions to our clients. With a team of skilled and experienced Java developers, we have a deep understanding of the Java programming language and its associated frameworks and tools. Our expertise lies in developing robust, scalable, and secure applications that meet the diverse needs of businesses across various industries.",
+        "label": "Java Development",
+        "description": "At Jyoti Technosoft LLP, we are a leading Java development company specializing in delivering top-notch Java-based solutions to our clients. With a team of skilled and experienced Java developers, we have a deep understanding of the Java programming language and its associated frameworks and tools. Our expertise lies in developing robust, scalable, and secure applications that meet the diverse needs of businesses across various industries.",
         "image": "assets/java.png",
         "mainImage": "/assets/java-main-img.png",
         "chooseUs": "Why Choose Us As Your Java Development Company",
@@ -342,31 +424,31 @@
         "servicesDescription": "At Jyoti Technosoft LLP, we are a trusted provider of comprehensive Java services, specializing in custom development, plugin development, maintenance & support, and API integration. With our team of skilled Java developers, we have the expertise to deliver tailored solutions that leverage Java's power to meet your unique business requirements.",
         "services": [
           {
-            "header": "Custom Developement",
+            "header": "Custom Development",
             "icon": "assets/images/Custom-AngularJS-Web-Development.svg",
-            "decription": " We understand that each business has its own set of challenges and requirements. Our custom development services for Java allow us to create bespoke applications that cater to your specific needs. From requirement analysis to design, development, and deployment, we work closely with you to ensure that the resulting Java application aligns perfectly with your business objectives. Leveraging Java's robustness, scalability, and platform independence, we build secure, high-performing applications tailored to your exact specifications.",
+            "description": " We understand that each business has its own set of challenges and requirements. Our custom development services for Java allow us to create bespoke applications that cater to your specific needs. From requirement analysis to design, development, and deployment, we work closely with you to ensure that the resulting Java application aligns perfectly with your business objectives. Leveraging Java's robustness, scalability, and platform independence, we build secure, high-performing applications tailored to your exact specifications.",
             "image": "/assets/images/hire-us-details/custom-developement.png"
           },
           {
             "header": "Plugin Development",
             "icon": "assets/images/Plugin-Development.svg",
-            "decription": " We recognize the importance of extending the functionality of Java applications. Our plugin development services for Java enable us to create custom plugins that seamlessly integrate with your existing Java infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your Java applications.",
+            "description": " We recognize the importance of extending the functionality of Java applications. Our plugin development services for Java enable us to create custom plugins that seamlessly integrate with your existing Java infrastructure. Whether you need plugins to enhance user experience, integrate with third-party services, or add specific features, our skilled developers can design and develop plugins that seamlessly extend the capabilities of your Java applications.",
             "image": "/assets/images/hire-us-details/plugin-developement.png"
           },
           {
             "header": "Maintenance & Support",
             "icon": "assets/images/Support-Maintainence.svg",
-            "decription": "We believe in establishing long-term partnerships with our clients. Our maintenance and support services for Java ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Java applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity.",
+            "description": "We believe in establishing long-term partnerships with our clients. Our maintenance and support services for Java ensure that your applications remain up-to-date, secure, and operate smoothly. We provide timely bug fixes, regular updates, performance optimization, and security patches to keep your Java applications running at their best. Our dedicated support team is responsive and committed to resolving any issues or concerns promptly, minimizing downtime and maximizing productivity.",
             "image": "/assets/images/hire-us-details/maintenance&supports.png"
           },
           {
             "header": "API Integration and Development",
             "icon": "assets/images/API-Integration-and-Development.svg",
-            "decription": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Java developers have expertise in API integration and can seamlessly integrate your Java applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Java applications.",
+            "description": "In today's interconnected world, integrating with external APIs is often crucial for seamless data exchange and enhanced functionality. Our Java developers have expertise in API integration and can seamlessly integrate your Java applications with various third-party APIs and services. Whether it's integrating with payment gateways, social media platforms, mapping services, or other external systems, we ensure smooth data flow and enhanced functionality, expanding the capabilities of your Java applications.",
             "image": "/assets/images/hire-us-details/api-integration-developement.png"
           }
         ],
-        "developmentServiceTitle": "Java Developement Services"
+        "developmentServiceTitle": "Java Development Services"
       }
     ]
   },
@@ -2459,17 +2541,17 @@
       {
         "id": 3,
         "imageUrl": "/assets/collobrative-work-env-img.png",
-        "title": "Collaborative work environment"
+        "title": "Collaborative Work Environment"
       },
       {
         "id": 4,
         "imageUrl": "/assets/growth-development.png",
-        "title": "Professional growth & development "
+        "title": "Professional growth & Development "
       },
       {
         "id": 5,
         "imageUrl": "/assets/celebration-img.png",
-        "title": "Celebration"
+        "title": "Celebrations"
       },
       {
         "id": 6,

@@ -38,57 +38,210 @@ const About: React.FC = () => {
           imageSrc="/assets/about.png"
           showGif={true}
         />
-        <Container className="main-container" maxWidth="lg">
-          <Grid mt={10} container spacing={4}>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <img
-                src="/assets/about-first-section.png"
-                alt="Teamwork"
-                style={{ width: "100%" }}
-                loading="lazy"
-              />
-            </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
+        <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: "#ffffff" }}>
+          <Container maxWidth="lg">
+            <Box textAlign="center" mb={4}>
               <Typography
-                component="h2"
                 variant="h2"
-                className="gettoKnowUsTitle"
-                align="left"
-                gutterBottom
+                sx={{ 
+                  fontSize: { xs: "2rem", md: "2.5rem" },
+                  fontWeight: 700,
+                  color: "#1f5795",
+                  position: "relative"
+                }}
               >
                 {aboutUs?.gettoKnowUsTitle}
               </Typography>
-              {aboutUs?.gettoKnowUs?.map((item) => (
-                <Typography className="gettoKnowUsDesc" key={item.id} paragraph>
-                  {item.description}
-                </Typography>
-              ))}
+              <Typography 
+                variant="h6" 
+                sx={{ 
+                  color: "#64748b",
+                  margin: "0 auto",
+                  lineHeight: 1.6
+                }}
+              >
+                Building innovative digital solutions with expertise, passion, and commitment to excellence
+              </Typography>
+            </Box>
+
+            {/* Main Content Section */}
+            <Grid container spacing={6} alignItems="center">
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  component="img"
+                  src="/assets/about-first-section.png"
+                  alt="Team Collaboration"
+                  sx={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "20px",
+                    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.02)"
+                    }
+                  }}
+                  loading="lazy"
+                />
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box sx={{ pl: { md: 3 } }}>
+                  {aboutUs?.gettoKnowUs?.map((item, index) => (
+                    <Box 
+                      key={item.id} 
+                      sx={{ 
+                        mb: 2,
+                        p: 3,
+                        backgroundColor: "#f8fafc",
+                        borderRadius: "16px",
+                        border: "1px solid rgba(31, 87, 149, 0.08)",
+                        transition: "all 0.3s ease",
+                        position: "relative",
+                        overflow: "hidden",
+                        animation: `fadeInUp 0.6s ease ${index * 0.2 + 0.4}s forwards`,
+                        opacity: 0,
+                        "&:hover": {
+                          backgroundColor: "white",
+                          borderColor: "#1f5795",
+                          boxShadow: "0 12px 32px rgba(31, 87, 149, 0.15)",
+                          transform: "translateY(-4px)"
+                        },
+                        "&::before": {
+                          content: '""',
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "4px",
+                          height: "100%",
+                          background: "linear-gradient(180deg, #1f5795 0%, #3f87df 100%)",
+                          borderRadius: "0",
+                          opacity: 0,
+                          transition: "opacity 0.3s ease"
+                        },
+                        "&:hover::before": {
+                          opacity: 1
+                        }
+                      }}
+                    >
+                      <Typography 
+                        variant="body1" 
+                        sx={{
+                          fontSize: "1.05rem",
+                          lineHeight: 1.8,
+                          color: "#2d3748",
+                          position: "relative",
+                          zIndex: 1,
+                          pl: 2
+                        }}
+                      >
+                        {item.description}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
+          </Container>
+        </Box>
 
         {/* Our Goal Section */}
-        <div className="ourGoal-section">
-          <Container className="main-container" maxWidth="lg">
-            <Typography component="h2" variant="h2" align="left" gutterBottom className="ourGoal-title">
-              Our Goal
-            </Typography>
-            <Grid container spacing={1} justifyContent="center">
-              {aboutUs?.ourGoal?.map((goal) => (
-                <Grid size={{ xs: 12, sm: 4 }} key={goal?.id}>
-                  <Card className="ourGoal-card">
-                    <CardMedia
-                      component="img"
-                      image={goal?.imageSrc}
-                      alt={goal?.cardHeader}
-                      className="cardMedia"
-                      loading="lazy"
-                    />
-                    <CardContent className="cardContent">
-                      <Typography component="h3" variant="h3" className="cardHeader">
+        <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: "#f8fafc" }}>
+          <Container maxWidth="lg">
+            <Box textAlign="center" mb={6}>
+              <Typography 
+                component="h2" 
+                variant="h3" 
+                align="center" 
+                gutterBottom 
+                className="ourGoal-title"
+                sx={{
+                  fontSize: { xs: "1.75rem", md: "2.25rem" },
+                  fontWeight: 700,
+                  color: "#1f5795",
+                  position: "relative"
+                }}
+              >
+                Our Goal
+              </Typography>
+              <Typography 
+                variant="h6" 
+                sx={{ 
+                  color: "#64748b",
+                  margin: "0 auto",
+                  lineHeight: 1.6
+                }}
+              >
+                The core principles that guide our mission and drive our commitment to excellence
+              </Typography>
+            </Box>
+            <Grid container spacing={4} justifyContent="center">
+              {aboutUs?.ourGoal?.map((goal, index) => (
+                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={goal?.id}>
+                  <Card 
+                    className="ourGoal-card"
+                    sx={{
+                      height: "100%",
+                      background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+                      border: "1px solid rgba(31, 87, 149, 0.08)",
+                      borderRadius: "16px",
+                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                      transform: "translateY(0)",
+                      opacity: 1,
+                      animation: `fadeInUp 0.6s ease ${index * 0.1}s forwards`,
+                      "&:hover": {
+                        transform: "translateY(-8px)",
+                        boxShadow: "0 20px 40px rgba(31, 87, 149, 0.15)",
+                        border: "1px solid rgba(31, 87, 149, 0.15)"
+                      },
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        height: "4px",
+                        background: "linear-gradient(90deg, #1f5795 0%, #3f87df 50%, #52c41a 100%)",
+                        borderRadius: "16px 16px 0 0"
+                      }
+                    }}
+                  >
+                    <CardContent sx={{ p: 3, textAlign: "center", position: "relative", zIndex: 1 }}>
+                      <CardMedia
+                        component="img"
+                        image={goal?.imageSrc}
+                        alt={goal?.cardHeader}
+                        sx={{
+                          width: 60,
+                          height: 60,
+                          objectFit: "contain",
+                          margin: "0 auto 1.5rem",
+                          p: 1,
+                          backgroundColor: "rgba(31, 87, 149, 0.05)",
+                          borderRadius: "12px"
+                        }}
+                        loading="lazy"
+                      />
+                      <Typography 
+                        component="h3" 
+                        variant="h6" 
+                        className="cardHeader"
+                        sx={{
+                          fontWeight: 600,
+                          color: "#1f5795",
+                          fontSize: "1.1rem",
+                          lineHeight: 1.3
+                        }}
+                      >
                         {goal?.cardHeader}
                       </Typography>
-                      <Typography className="cardData">
+                      <Typography 
+                        className="cardData"
+                        sx={{
+                          color: "#64748b",
+                          lineHeight: 1.6,
+                          fontSize: "0.95rem"
+                        }}
+                      >
                         {goal?.cardData}
                       </Typography>
                     </CardContent>
@@ -97,44 +250,120 @@ const About: React.FC = () => {
               ))}
             </Grid>
           </Container>
-        </div>
+        </Box>
 
         {/* Values Section */}
-        <Container className="main-container">
-          <Grid
-            container
-            className="values-section"
-            spacing={4}
-            alignItems="center"
-            sx={{ padding: 5 }}
-          >
-            <Grid className="values-second-img" size={{ xs: 12, md: 6 }}>
-              <img
-                src="/assets/about-second-section.png"
-                alt="Teamwork"
-                style={{ width: "100%" }}
-                loading="lazy"
-              />
-            </Grid>
-            <Grid className="values-data-main-section" size={{ xs: 12, md: 6 }}>
-              <Typography component="h2" variant="h2" className="values-title">Values</Typography>
-              <Grid container spacing={2}>
-                {aboutUs?.valuesAboutSection?.map((value) => (
-                  <Grid size={{ xs: 12 }} key={value?.id}>
-                    <Box className="values-data-section">
-                      <Typography component="h3" variant="h3" className="values-data-title">
+        <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: "#ffffff" }}>
+          <Container maxWidth="lg">
+            <Box textAlign="center" mb={6}>
+              <Typography 
+                component="h2" 
+                variant="h3" 
+                align="center" 
+                gutterBottom 
+                className="values-title"
+                sx={{
+                  fontSize: { xs: "1.75rem", md: "2.25rem" },
+                  fontWeight: 700,
+                  color: "#1f5795",
+                  position: "relative"
+                }}
+              >
+                Our Core Values
+              </Typography>
+              <Typography 
+                variant="h6" 
+                sx={{ 
+                  color: "#64748b",
+                  margin: "0 auto",
+                  lineHeight: 1.6
+                }}
+              >
+                The principles that define our culture and guide our decisions every day
+              </Typography>
+            </Box>
+            <Grid
+              container
+              spacing={4}
+              alignItems="center"
+            >
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  component="img"
+                  src="/assets/about-second-section.png"
+                  alt="Our Values"
+                  sx={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "20px",
+                    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.02)"
+                    }
+                  }}
+                  loading="lazy"
+                />
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box sx={{ pl: { md: 2 } }}>
+                  {aboutUs?.valuesAboutSection?.map((value, index) => (
+                    <Box 
+                      key={value?.id} 
+                      sx={{ 
+                        p: 2,
+                        backgroundColor: "#f8fafc",
+                        borderRadius: "12px",
+                        border: "1px solid rgba(31, 87, 149, 0.08)",
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          backgroundColor: "white",
+                          borderColor: "#1f5795",
+                          boxShadow: "0 8px 24px rgba(31, 87, 149, 0.15)"
+                        }
+                      }}
+                    >
+                      <Typography 
+                        component="h3" 
+                        variant="h6" 
+                        className="values-data-title"
+                        sx={{
+                          fontWeight: 600,
+                          color: "#1f5795",
+                          fontSize: "1.1rem",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: 8,
+                            height: 8,
+                            borderRadius: "50%",
+                            backgroundColor: "#1f5795"
+                          }}
+                        />
                         {value?.title}
                       </Typography>
-                      <Typography className="values-data-description">
+                      <Typography 
+                        className="values-data-description"
+                        sx={{
+                          color: "#64748b",
+                          lineHeight: 1.6,
+                          fontSize: "0.95rem",
+                          pl: 3
+                        }}
+                      >
                         {value?.description}
                       </Typography>
                     </Box>
-                  </Grid>
-                ))}
+                  ))}
+                </Box>
               </Grid>
             </Grid>
-          </Grid>
-        </Container>
+          </Container>
+        </Box>
         <FooterCommonPage
           title="Partner with Us for Your Next Big Idea"
           buttonText="Contact Now"

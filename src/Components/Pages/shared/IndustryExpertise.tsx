@@ -43,13 +43,13 @@ const industries: IndustryCardProps[] = [
 
 const IndustryExpertise: React.FC = () => {
   return (
-    <Box mb={2}>
+    <Box mb={2} mt={2}>
       <Container>
         <Box sx={{ px: 2 }} className="industry-expertise">
           <Typography variant="h2" className="industry-expertise-title">
             Our Industry Expertise
           </Typography>
-          <Typography className="industry-expertise-description" mt={1}>
+          <Typography className="section-description" mt={1}>
             Trusted by clients across a range of industries worldwide.
           </Typography>
 

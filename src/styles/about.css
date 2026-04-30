@@ -1,6 +1,14 @@
 :root {
     --text-dark: #333333;
     --text-blue: #347CCC;
+    --primary-blue: #1f5795;
+    --secondary-blue: #3f87df;
+    --accent-green: #52c41a;
+    --text-muted: #64748b;
+    --background-light: #f8fafc;
+    --border-color: rgba(31, 87, 149, 0.08);
+    --shadow-hover: 0 20px 40px rgba(31, 87, 149, 0.15);
+    --border-radius: 16px;
 }
 
 .main-container .gettoKnowUsTitle {
@@ -163,4 +171,83 @@
         width: 43px;
         height: 43px;
     }
+
+    .ourGoal-section {
+        padding: 3rem 0;
+    }
+    
+    .values-section {
+        padding: 3rem 0;
+    }
+    
+    .values-data-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .values-data-title {
+        font-size: 1rem;
+    }
+    
+    .values-data-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced card styles */
+.ourGoal-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.ourGoal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--secondary-blue) 50%, var(--accent-green) 100%);
+    border-radius: 16px 16px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ourGoal-card:hover::before {
+    opacity: 1;
+}
+
+/* Value card improvements */
+.values-data-section {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.values-data-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    border-radius: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.values-data-section:hover::before {
+    opacity: 1;
 }

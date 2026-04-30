@@ -1,9 +1,9 @@
-import React, { useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { Helmet } from 'react-helmet-async';
+import Chip from "@mui/material/Chip";
+import { Helmet } from "react-helmet-async";
+
 import HomeWhyUs from "../Pages/HomeWhyUs.tsx";
 import OurTechnology from "./shared/OurTechnology.tsx";
 import WeOffer from "./shared/WeOffer.tsx";
@@ -11,256 +11,214 @@ import WeveBuilt from "./shared/WeveBuilt.tsx";
 import OurNewsletter from "./shared/OurNewsletter.tsx";
 import IndustryExpertise from "./shared/IndustryExpertise.tsx";
 import HowWeWork from "./shared/HowWeWork.tsx";
-import dataArray from "../../jt-website.json";
+import ClientTestimonials from "./shared/ClientTestimonials.tsx";
+import CTAButton from "../shared/CTAButton.tsx";
+import { homeContent } from "../../content/homeContent";
+import { performanceMonitor } from "../../utils/performanceMonitor";
+import { performanceBudgetChecker } from "../../utils/performanceBudget";
 import "../../styles/home.css";
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
-  const { meetSection } = dataArray?.home;
-
-  // Memoize navigation handler
-  const handleContactNavigation = useCallback(() => {
-    navigate("/contact");
-  }, [navigate]);
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Log performance metrics in development
+    if (process.env.NODE_ENV === "development") {
+      setTimeout(() => {
+        console.log("🏠 Home Page Performance:");
+        performanceMonitor.logFullReport();
+        
+        console.log("💰 Performance Budget:");
+        performanceBudgetChecker.checkBudget();
+      }, 5000);
+    }
   }, []);
 
   return (
     <>
       <Helmet>
         <title>Web Development & AI Solutions | Jyoti Technosoft LLP</title>
-        <meta name="description" content="Expert web development, mobile apps, and AI integration services. Transform your business with custom software solutions, API development, and digital transformation by Jyoti Technosoft LLP." />
-        <meta name="keywords" content="web development, mobile app development, AI integration, software solutions, API development, digital transformation, custom software, IT consulting" />
-        <meta property="og:title" content="Web Development & AI Solutions | Jyoti Technosoft LLP" />
-        <meta property="og:description" content="Expert web development, mobile apps, and AI integration services by Jyoti Technosoft LLP" />
+        <meta
+          name="description"
+          content="Expert web development, mobile apps, and AI integration services. Transform your business with custom software solutions, API development, and digital transformation by Jyoti Technosoft LLP."
+        />
+        <meta
+          name="keywords"
+          content="web development, mobile app development, AI integration, software solutions, API development, digital transformation, custom software, IT consulting"
+        />
+        <meta
+          property="og:title"
+          content="Web Development & AI Solutions | Jyoti Technosoft LLP"
+        />
+        <meta
+          property="og:description"
+          content="Expert web development, mobile apps, and AI integration services by Jyoti Technosoft LLP"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jyotitechnosoft.com/" />
-        <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
+        <meta
+          property="og:image"
+          content="https://jyotitechnosoft.com/assets/logo192.png"
+        />
         <link rel="canonical" href="https://jyotitechnosoft.com/" />
-        <script type="application/ld+json">{`
-          {
-            "@context": "http://schema.org",
-            "@type": "Organization",
-            "name": "Jyoti Technosoft LLP",
-            "url": "https://jyotitechnosoft.com/",
-            "logo": "https://jyotitechnosoft.com/assets/logo192.png",
-            "description": "Professional web development, mobile app development, and AI integration services",
-            "services": [
-              {
-                "@type": "Service",
-                "name": "Web Development",
-                "description": "Custom web application development services using modern frameworks"
-              },
-              {
-                "@type": "Service", 
-                "name": "Mobile App Development",
-                "description": "Native and cross-platform mobile app development"
-              },
-              {
-                "@type": "Service",
-                "name": "AI Integration",
-                "description": "AI-powered solutions and automation services"
-              },
-              {
-                "@type": "Service",
-                "name": "API Development",
-                "description": "Custom API development and integration services"
-              }
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+91-XXXXXXXXXX",
-              "contactType": "customer service"
-            }
-          }
-        `}</script>
       </Helmet>
       <Box>
         <div className="first-section-home">
-          {/* Optimized video background with poster for faster LCP */}
-          <Box
-            component="video"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="none"
-            poster="/assets/video-ai-asset-background.png"
-            aria-label="Background video showing Jyoti Technosoft web development and digital solutions"
-            className="bg-video"
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: -1,
-              pointerEvents: 'none'
-            }}
-            onLoadStart={() => {
-              setTimeout(() => {
-                const video = document.querySelector('.bg-video') as HTMLVideoElement;
-                if (video) {
-                  video.load();
-                }
-              }, 1000);
-            }}
-          >
-            <source src="/assets/jyoti-technosoft-web-development.mp4" type="video/mp4" />
-            <track
-              kind="captions"
-              src="/assets/captions.vtt"
-              srcLang="en"
-              label="English captions"
-              default
-            />
-            Your browser does not support the video tag.
-          </Box>
-          <div id="video-description" className="sr-only">
-            Background video showcasing Jyoti Technosoft's expertise in web development, mobile apps, and AI integration services for businesses
-          </div>
           <Box className="first-section-home-content" role="main">
-            <Typography
-              className="first-section-title"
-              variant="h1"
-              component="h1"
-              sx={{
-                minHeight: '4rem',
-                width: '100%',
-                maxWidth: '800px',
-                margin: '0 auto'
-              }}
-            >
-              {meetSection?.title || 'Loading...'}
-            </Typography>
-            <Typography
-              className="first-section-description"
-              sx={{
-                minHeight: '3rem',
-                width: '100%',
-                maxWidth: '631px',
-                margin: '0.6rem auto 2rem'
-              }}
-            >
-              {meetSection?.description || 'Loading...'}
-            </Typography>
+            <Box className="hero-layout">
+              <Box className="hero-copy">
+                <Box className="hero-comparison-bar">
+                  <Chip label={homeContent.hero.badge} className="hero-badge" />
+                </Box>
 
-            <Box sx={{
-              display: 'flex',
-              gap: 2,
-              mt: 4,
-              justifyContent: 'center',
-              flexWrap: 'wrap'
-            }}>
-              <Button
-                variant="contained"
-                className="build-together"
-                onClick={handleContactNavigation}
-                aria-label="Contact us to build your project together"
-                sx={{
-                  minWidth: { xs: 140, md: 231 },
-                  fontSize: { xs: '0.8rem', md: '0.875rem' }
-                }}
-              >
-                LET'S BUILD TOGETHER
-              </Button>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              width: { xs: "80%", md: "26%" },
-              bottom: { xs: "1.5%", md: 30 },
-              right: { xs: "auto", md: 40 },
-              left: { xs: "50%", md: "auto" },
-              transform: { xs: "translateX(-50%)", md: "none" },
-              zIndex: 1,
-              display: "block",
-              backgroundImage: 'url("/assets/video-ai-asset-background.png")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              borderRadius: "12px",
-              padding: { xs: "10px", md: "20px" },
-              color: "#fff",
-              border: "1px solid #ffffff",
-              textAlign: "left",
-            }}
-          >
-            <Box>
-              <Box
-                component="img"
-                src="/assets/star-img.png"
-                alt="Star"
-                loading="lazy"
-                decoding="async"
-                width="30"
-                height="30"
-                sx={{
-                  position: "absolute",
-                  top: "-21px",
-                  right: "-28px",
-                  width: "30px",
-                  height: "30px",
-                  display: { xs: "none", md: "block" },
-                  objectFit: "contain"
-                }}
-              />
-            </Box>
-            <Box sx={{ position: "relative", paddingBottom: "30px" }}>
-              <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
-                Transform Your Business with AI
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 1 }}>
-                Now offering powerful AI Integration for smarter automation &
-                customer experience.
-              </Typography>
-              <Typography
-                component="a"
-                href="/services/ai-integration"
-                variant="body2"
-                mt={4}
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  right: 0,
-                  fontWeight: 500,
-                  fontSize: "0.9rem",
-                  textDecoration: "underline",
-                  cursor: "pointer",
-                  color: "#ffffff",
-                  transition: "color 0.3s ease",
-                  "&:hover": {
-                    color: "#F99286",
-                    // boxShadow: "0px 0px 0px 1px #A9A9A9 inset"
-                  },
-                }}
-              >
-                Explore AI Integration
-              </Typography>
+                <Typography className="first-section-title" variant="h1" component="h1">
+                  {homeContent.hero.title}
+                </Typography>
+                <Typography className="first-section-description">
+                  {homeContent.hero.description}
+                </Typography>
+
+                <Box className="hero-cta-group">
+                  <CTAButton cta={homeContent.hero.secondaryCta} variant="secondary" />
+                  {/* <Button
+                    component={RouterLink}
+                    to={homeContent.hero.primaryCta.href}
+                    variant="contained"
+                    className="build-together"
+                    aria-label="Book a discovery call with Jyoti Technosoft"
+                  >
+                    {homeContent.hero.primaryCta.label}
+                  </Button> */}
+                </Box>
+
+                <Box className="hero-trust-strip">
+                  {homeContent.hero.trustIndicators.map((item, index) => (
+                    <Typography key={index} className="hero-trust-item">
+                      {item}
+                    </Typography>
+                  ))}
+                </Box>
+              </Box>
+
+              <Box className="hero-aside">
+                <Box className="hero-media-stage">
+                  <Box className="hero-video-stage">
+                    <Box className="hero-video-container">
+                      <Box
+                        component="video"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        className="hero-video"
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          borderRadius: "16px",
+                          boxShadow: "0 24px 48px rgba(0, 0, 0, 0.24)",
+                          display: { xs: "none", md: "block" }, // Hide on mobile, show on desktop
+                        }}
+                        onLoadStart={() => {
+                          setTimeout(() => {
+                            const video = document.querySelector('.hero-video') as HTMLVideoElement;
+                            if (video) {
+                              video.load();
+                            }
+                          }, 1000);
+                        }}
+                      >
+                        <source src={homeContent.hero.videoPreview.src} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </Box>
+
+                      <Box className="hero-video-thumbnails">
+                        {homeContent.hero.videoPreview.thumbnails.map((item, index) => (
+                          <Box 
+                            key={item.title} 
+                            className="hero-video-thumb"
+                            onClick={() => {
+                              // Handle thumbnail click to potentially change main video
+                              console.log(`Clicked thumbnail: ${item.title}`);
+                            }}
+                            sx={{
+                              cursor: "pointer",
+                              transition: "all 0.3s ease",
+                              "&:hover": {
+                                transform: "scale(1.05)",
+                                boxShadow: "0 12px 40px rgba(31, 87, 149, 0.2)",
+                              },
+                            }}
+                          >
+                            <Box
+                              component="img"
+                              src={item.imageSrc}
+                              alt={item.title}
+                              className="hero-video-thumb-image"
+                              sx={{
+                                transition: "all 0.3s ease",
+                              }}
+                            />
+                            <Box className="hero-video-thumb-meta">
+                              <Typography className="hero-video-thumb-title">
+                                {item.title}
+                              </Typography>
+                              <Typography className="hero-video-thumb-label">
+                                {item.label}
+                              </Typography>
+                              {/* Add play button overlay */}
+                              <Box
+                                sx={{
+                                  position: "absolute",
+                                  top: "50%",
+                                  left: "50%",
+                                  transform: "translate(-50%, -50%)",
+                                  width: "48px",
+                                  height: "48px",
+                                  borderRadius: "50%",
+                                  backgroundColor: "rgba(31, 87, 149, 0.9)",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  opacity: 0,
+                                  transition: "all 0.3s ease",
+                                  ".hero-video-thumb:hover &": {
+                                    opacity: 1,
+                                  },
+                                }}
+                              >
+                                <Box
+                                  sx={{
+                                    width: 0,
+                                    height: 0,
+                                    borderLeft: "8px solid transparent",
+                                    borderTop: "12px solid transparent",
+                                    borderBottom: "12px solid transparent",
+                                    transform: "rotate(-90deg)",
+                                    transition: "all 0.3s ease",
+                                  }}
+                                />
+                              </Box>
+                            </Box>
+                          </Box>
+                        ))}
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
             </Box>
           </Box>
         </div>
-        {/* What We Offer */}
+
+        <ClientTestimonials data={homeContent.clientTestimonials} />
         <WeOffer />
-
-        {/* Our Technology */}
         <OurTechnology />
-
-        {/* WhyUs section  */}
         <HomeWhyUs />
-
         <IndustryExpertise />
-
-        {/* How We Work section  */}
         <HowWeWork />
-
-        {/* Join Our Newsletter */}
         <OurNewsletter />
-
-        {/* What We've Built section */}
         <WeveBuilt />
       </Box>
     </>

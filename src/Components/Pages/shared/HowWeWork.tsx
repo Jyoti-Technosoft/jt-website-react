@@ -1,62 +1,52 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import React from "react";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
-import dataArray from "../../../jt-website.json";
+import SectionIntro from "./SectionIntro.tsx";
+import { homeContent } from "../../../content/homeContent";
 import "../../../styles/home.css";
 
 const HowWeWork: React.FC = () => {
-    const { HowWeWork } = dataArray?.home;
-    const backgroundColors = ["#ECEDE4", "#FFEAEB", "#EBDDD5", "#E6D4DC", "#E2EBF7"];
+  const backgroundColors = ["#ECEDE4", "#FFEAEB", "#EBDDD5", "#E6D4DC", "#E2EBF7"];
 
-    return (
-        <Box className="howWeWork-section">
-            <Box className="howWeWork-container">
-                <Box>
-                    <Typography variant="h2" className="howWeWork-title">
-                        How We Work
-                    </Typography>
-                    <Typography className="howWeWork-description" mt={1}>
-                        Step-by-step process to deliver exceptional results
-                    </Typography>
+  return (
+    <Box className="howWeWork-section">
+      <Box className="howWeWork-container">
+        <SectionIntro
+          title={homeContent.howWeWork.title}
+          description={homeContent.howWeWork.description}
+        />
+        <Grid container className="howWeWorkMainContainer">
+          {homeContent.howWeWork.data.map((step, index) => (
+            <Box
+              className="card"
+              key={step.id}
+              style={{
+                top: "20px",
+                backgroundColor: backgroundColors[index % backgroundColors.length],
+              }}
+            >
+              <Box className="body">
+                <Box className="card-content">
+                  <Typography className="cardTitle">{step.title}</Typography>
+                  <Box className="description">
+                    <Typography className="description1">{step.eyebrow}</Typography>
+                    <Typography className="description2">{step.details}</Typography>
+                  </Box>
                 </Box>
-                <Grid container className={"howWeWorkMainContainer"}>
-                    {HowWeWork?.data?.map((step, index) => (
-                        <Box
-                            className={"card"}
-                            key={step.id}
-                            style={{
-                                opacity: index === HowWeWork?.data?.length - 1 ? 0 : 1, 
-                                pointerEvents: index === HowWeWork?.data?.length - 1 ? "none" : "auto",
-                                top: "20px",
-                                backgroundColor: backgroundColors[index % backgroundColors?.length]
-                            }}
-                        >
-                            <Box className={"body"}>
-                                <Box className="card-content">
-                                    <Typography className={"cardTitle"}>{step?.title}</Typography>
-                                    <Box className={"description"}>
-                                        <Typography className={"description1"}>{step?.description1}</Typography>
-                                        <Typography className={"description2"}>{step?.description2}</Typography>
-                                    </Box>
-                                </Box>
-                                <Box className={"imageContainer"}>
-                                    <div className={"inner"}>
-                                        <img
-                                            src={step?.imageSrc}
-                                            alt={step?.title}
-                                            loading="lazy"
-                                        />
-                                    </div>
-                                </Box>
-                            </Box>
-                        </Box>
-                    ))}
-                </Grid>
+                <Box className="imageContainer">
+                  <div className="inner">
+                    <img src={step.imageSrc} alt={step.title} loading="lazy" />
+                  </div>
+                </Box>
+              </Box>
             </Box>
-        </Box>
-    )
-}
+          ))}
+        </Grid>
+      </Box>
+    </Box>
+  );
+};
 
 export default React.memo(HowWeWork);

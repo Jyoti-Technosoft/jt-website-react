@@ -1,19 +1,19 @@
 import React, { useEffect, useState, useCallback } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { Helmet } from 'react-helmet-async';
+import axios from "axios"
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
-import ReCAPTCHA from "react-google-recaptcha";
-import axios from "axios"
-import { Helmet } from 'react-helmet-async';
 
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import { API_ENDPOINTS } from "../../config/api.ts";
@@ -191,6 +191,94 @@ const Contact: React.FC = () => {
           imageSrc="/assets/contact-img.png"
           showGif={true}
         />
+        {/* Enhanced Contact Introduction Section */}
+        <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: "#ffffff" }}>
+          <Container maxWidth="lg">
+            <Box textAlign="center" mb={4}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontSize: { xs: "2rem", md: "2.5rem" },
+                  fontWeight: 700,
+                  color: "#1f5795",
+                  mb: 2,
+                  position: "relative"
+                }}
+              >
+                Let's Build Something Amazing Together
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  color: "#64748b",
+                  maxWidth: "600px",
+                  margin: "0 auto",
+                  lineHeight: 1.6
+                }}
+              >
+                Transform your ideas into powerful digital solutions with our expert team. We're here to help you succeed.
+              </Typography>
+            </Box>
+
+            {/* Contact Stats */}
+            <Grid container spacing={3} mb={8}>
+              {[
+                { number: "24/7", label: "Support Available" },
+                { number: "100%", label: "Client Satisfaction" },
+                { number: "48h", label: "Response Time" },
+                { number: "2", label: "Office Locations" }
+              ].map((stat, index) => (
+                <Grid size={{ xs: 6, sm: 3 }} key={index}>
+                  <Box
+                    sx={{
+                      textAlign: "center",
+                      p: 3,
+                      background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+                      border: "1px solid rgba(31, 87, 149, 0.08)",
+                      borderRadius: "16px",
+                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                      transform: "translateY(0)",
+                      opacity: 1,
+                      animation: `fadeInUp 0.6s ease ${index * 0.1}s forwards`,
+                      "&:hover": {
+                        transform: "translateY(-8px)",
+                        boxShadow: "0 20px 40px rgba(31, 87, 149, 0.15)",
+                        border: "1px solid rgba(31, 87, 149, 0.15)"
+                      }
+                    }}
+                  >
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontSize: "2.5rem",
+                        fontWeight: 700,
+                        color: "#1f5795",
+                        mb: 1,
+                        background: "linear-gradient(135deg, #1f5795 0%, #3f87df 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text"
+                      }}
+                    >
+                      {stat.number}
+                    </Typography>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: "#64748b",
+                        fontWeight: 500
+                      }}
+                    >
+                      {stat.label}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+        </Box>
+
+        {/* Original Map Section */}
         <div id="contact2">
           <Box pt={isNotSmallScreen ? 1 : 3} px={{ xs: 2, md: 10, lg: 20 }}>
             <Grid
@@ -210,47 +298,65 @@ const Contact: React.FC = () => {
                   solutions for your technical problems.
                 </p>
 
-                <Box className="contact-details-section">
-                  <p className="contact-details-title">
-                    <EmailIcon /> Drop us a line
-                  </p>
-                  <p
-                    style={{ marginTop: "0px" }}
-                    className="contact-details-text"
-                  >
-                    <span className="contact-dash">-</span>{" "}
-                    <Link href="mailto:business@jyotitechnosoft.com" underline="hover" color="inherit">
-                      business@jyotitechnosoft.com
-                    </Link>
-                  </p>
-                  <p className="contact-details-text">
-                    <span className="contact-dash">-</span>{" "}
-                    <Link href="mailto:info@jyotitechnosoft.com" underline="hover" color="inherit">
-                      info@jyotitechnosoft.com
-                    </Link>
-                  </p>
-                </Box>
-
-                <Box className="contact-details-section" position={"relative"}>
-                  <div className="circle-2"></div>
-                  <Box mt={3}>
-                    <p className="contact-details-title">
-                      <CallIcon />
-                      Let's talk
-                    </p>
-                    <p
-                      style={{ marginTop: "13px" }}
-                      className="contact-details-text"
+                <Grid size={{ xs: 12, md: 6 }}>
+                  <Box>
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        fontSize: { xs: "1.5rem", md: "1.8rem" },
+                        fontWeight: 700,
+                        color: "#1f5795",
+                        mb: 3
+                      }}
                     >
-                      <span className="contact-dash">-</span>
-                      <Link href="tel:+919054551083" underline="hover" color="inherit">+91 90545 51083</Link>
-                    </p>
-                    <p className="contact-details-text">
-                      <span className="contact-dash">-</span>
-                      <Link href="tel:+919265712724" underline="hover" color="inherit">+91 92657 12724</Link>
-                    </p>
+                      Get in Touch
+                    </Typography>
+
+                    <Box sx={{ mb: 4 }}>
+                      <Box sx={{ display: "flex", alignItems: "start", mb: 3 }}>
+                        <EmailIcon sx={{ mt: 0.5, mr: 2, color: "#1f5795", fontSize: 24 }} />
+                        <Box>
+                          <Typography variant="h6" sx={{ fontWeight: 600, color: "#1f5795" }}>
+                            Email Us
+                          </Typography>
+                          <Typography variant="body2" sx={{ color: "#64748b" }}>
+                            business@jyotitechnosoft.com
+                          </Typography>
+                          <Typography variant="body2" sx={{ color: "#64748b" }}>
+                            info@jyotitechnosoft.com
+                          </Typography>
+                        </Box>
+                      </Box>
+
+                      <Box sx={{ display: "flex", alignItems: "start", mb: 3 }}>
+                        <CallIcon sx={{ mt: 0.5, mr: 2, color: "#1f5795", fontSize: 24 }} />
+                        <Box>
+                          <Typography variant="h6" sx={{ fontWeight: 600, color: "#1f5795" }}>
+                            Call Us
+                          </Typography>
+                          <Typography variant="body2" sx={{ color: "#64748b" }}>
+                            +91 9054551083
+                          </Typography>
+                          <Typography variant="body2" sx={{ color: "#64748b" }}>
+                            Mon-Fri: 9:00 AM - 6:00 PM
+                          </Typography>
+                        </Box>
+                      </Box>
+
+                      <Box sx={{ display: "flex", alignItems: "start" }}>
+                        <FmdGoodIcon sx={{ mt: 0.5, mr: 2, color: "#1f5795", fontSize: 24 }} />
+                        <Box>
+                          <Typography variant="h6" sx={{ fontWeight: 600, color: "#1f5795" }}>
+                            Visit Us
+                          </Typography>
+                          <Typography variant="body2" sx={{ color: "#64748b" }}>
+                            228, Second Floor, Green Elina, Adajan, Surat
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
                   </Box>
-                </Box>
+                </Grid>
               </Stack>
 
               <Stack position={"relative"}>

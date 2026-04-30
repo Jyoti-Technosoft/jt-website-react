@@ -67,7 +67,7 @@ const HireDevelopersDetails = () => {
                 textAlign: "justify",
               }}
             >
-              {technologyData.decription}
+              {technologyData.description}
             </Typography>
           </Box>
           <Box className="hire-detail-image">
@@ -271,7 +271,7 @@ const HireDevelopersDetails = () => {
                     textAlign: "justify",
                   }}
                 >
-                  {service.decription}
+                  {service.description}
                 </Box>
               </Box>
             ))}

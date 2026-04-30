@@ -23,7 +23,6 @@ import dataArray from "../../jt-website.json";
 import { API_ENDPOINTS } from "../../config/api.ts";
 import "../../styles/career.css";
 
-
 type Job = {
   id: number;
   imagePath: string;
@@ -119,59 +118,16 @@ const Career: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Careers | Jyoti Technosoft LLP</title>
-        <meta name="description" content="Explore career opportunities at Jyoti Technosoft LLP. Join our team of IT professionals." />
-        <meta property="og:title" content="Careers | Jyoti Technosoft LLP" />
-        <meta property="og:description" content="Explore career opportunities at Jyoti Technosoft LLP. Join our team of IT professionals." />
+        <title>Career | Jyoti Technosoft LLP</title>
+        <meta name="description" content="Join our team of IT experts. Explore career opportunities at Jyoti Technosoft LLP." />
+        <meta property="og:title" content="Career | Jyoti Technosoft LLP" />
+        <meta property="og:description" content="Join our team of IT experts. Explore career opportunities at Jyoti Technosoft LLP." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jyotitechnosoft.com/career" />
         <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
         <link rel="canonical" href="https://jyotitechnosoft.com/career" />
       </Helmet>
       <Box className="career">
-        {/* <Box className="career-first-section" sx={{ backgroundColor: "#1F5795" }}>
-          <Container sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Box className="career-content">
-              <Box
-                className="career-first-content"
-                sx={{
-                  mt: {
-                    xs: 0,
-                    sm: 0,
-                    md: 3,
-                  },
-                }}
-              >
-                <Link component={RouterLink} to="/" className="breadcrumb-link">
-                  Home
-                </Link>
-                <ChevronRightIcon className="chevron-icon" />
-                <span>{"career"}</span>
-              </Box>
-              <Typography
-                className="career-title"
-                sx={{
-                  mt: {
-                    xs: 1,
-                    sm: 4,
-                  },
-                }}
-              >
-                Shape a Future You’re Proud Of
-              </Typography>
-              <Box className="career-gif"></Box>
-            </Box>
-            <Box className="career-image" sx={{ py: 3 }}>
-              <img
-                src="/assets/career-img.png"
-                alt="Career"
-                style={{
-                  borderRadius: "10px",
-                }}
-              />
-            </Box>
-          </Container>
-        </Box> */}
         <HeaderMainPage
           smallTitle="Career"
           page="Shape a Future You’re Proud Of"
@@ -179,35 +135,149 @@ const Career: React.FC = () => {
           showGif={true}
         />
         <Box className="career-second-section">
-          <Box className="career-working-section">
-            <Container>
-              <Box className="career-title-section">
-                <Box maxWidth="lg" mb={4}>
-                  <Typography className="career-title">
-                    {careerSubTitle}
-                  </Typography>
-                  <Typography className="career-subtitle" mt={1}>
-                    A culture that supports, inspires, and helps you thrive.
-                  </Typography>
-                </Box>
+          <Box className="career-working-section" sx={{py: { xs: 6, md: 10 }}}>
+            <Container maxWidth="lg">
+              <Box textAlign="center" mb={4}>
+                <Typography 
+                  variant="h2" 
+                  sx={{ 
+                    fontSize: { xs: "2rem", md: "2.5rem" },
+                    fontWeight: 700,
+                    color: "#1f5795",
+                    mt: 2,
+                    position: "relative"
+                  }}
+                >
+                  {careerSubTitle}
+                </Typography>
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    color: "#64748b",
+                    maxWidth: "800px",
+                    margin: "0 auto",
+                    lineHeight: 1.6
+                  }}
+                >
+                  {careerSubTitleSecond}
+                </Typography>
               </Box>
-              <Box className="career-main-container" mb={4}>
-                <Grid container rowSpacing={6} columnSpacing={4}>
-                  {items.map((item, index) => (
+
+              {/* Career Stats */}
+              <Grid container spacing={3} mb={8}>
+                {[
+                  { number: "5+", label: "Open Positions" },
+                  { number: "100%", label: "Growth Opportunities" },
+                  { number: "100%", label: "Learning Environment" },
+                  { number: "5★", label: "Work Culture" }
+                ].map((stat, index) => (
+                  <Grid size={{ xs: 6, sm: 3 }} key={index}>
+                    <Box 
+                      sx={{
+                        textAlign: "center",
+                        p: 3,
+                        background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+                        border: "1px solid rgba(31, 87, 149, 0.08)",
+                        borderRadius: "16px",
+                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                        transform: "translateY(0)",
+                        opacity: 1,
+                        animation: `fadeInUp 0.6s ease ${index * 0.1}s forwards`,
+                        "&:hover": {
+                          transform: "translateY(-8px)",
+                          boxShadow: "0 20px 40px rgba(31, 87, 149, 0.15)",
+                          border: "1px solid rgba(31, 87, 149, 0.15)"
+                        }
+                      }}
+                    >
+                      <Typography 
+                        variant="h3" 
+                        sx={{ 
+                          fontSize: "2.5rem",
+                          fontWeight: 700,
+                          color: "#1f5795",
+                          mb: 1,
+                          background: "linear-gradient(135deg, #1f5795 0%, #3f87df 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text"
+                        }}
+                      >
+                        {stat.number}
+                      </Typography>
+                      <Typography 
+                        variant="h6" 
+                        sx={{ 
+                          color: "#64748b",
+                          fontWeight: 500
+                        }}
+                      >
+                        {stat.label}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+
+              {/* Career Benefits */}
+              <Box mb={8}>
+                <Typography 
+                  variant="h3" 
+                  sx={{ 
+                    fontSize: { xs: "1.75rem", md: "2rem" },
+                    fontWeight: 700,
+                    color: "#1f5795",
+                    mb: 4,
+                    textAlign: "center"
+                  }}
+                >
+                  Why Work With Us
+                </Typography>
+                <Grid container spacing={4}>
+                  {items.map((item: any, index: number) => (
                     <Grid size={{ xs: 12, sm: 6, md: 4 }} key={item.id}>
-                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box 
+                        sx={{
+                          p: 3,
+                          textAlign: "center",
+                          background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+                          border: "1px solid rgba(31, 87, 149, 0.08)",
+                          borderRadius: "16px",
+                          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                          transform: "translateY(0)",
+                          opacity: 1,
+                          animation: `fadeInUp 0.6s ease ${index * 0.1 + 0.4}s forwards`,
+                          "&:hover": {
+                            transform: "translateY(-8px)",
+                            boxShadow: "0 20px 40px rgba(31, 87, 149, 0.15)",
+                            border: "1px solid rgba(31, 87, 149, 0.15)"
+                          }
+                        }}
+                      >
                         <Box
-                          className={`career-item-container color-${index % 6}`}
+                          component="img"
+                          src={item.imageUrl}
+                          alt={item.title}
+                          sx={{
+                            width: 60,
+                            height: 60,
+                            objectFit: "contain",
+                            margin: "0 auto 1.5rem",
+                            p: 1,
+                            backgroundColor: "rgba(31, 87, 149, 0.05)",
+                            borderRadius: "12px"
+                          }}
+                          loading="lazy"
+                        />
+                        <Typography 
+                          variant="h6" 
+                          sx={{ 
+                            fontWeight: 600,
+                            color: "#1f5795",
+                            mb: 1,
+                            fontSize: "1.1rem"
+                          }}
                         >
-                          <Box
-                            component="img"
-                            src={item.imageUrl}
-                            alt={item.title}
-                            className="item-image"
-                            loading="lazy"
-                          />
-                        </Box>
-                        <Typography className="item-title">
                           {item.title}
                         </Typography>
                       </Box>
@@ -501,6 +571,11 @@ const Career: React.FC = () => {
             />
           )}
         </Box>
+        <FooterCommonPage
+          title="Ready to Start Your Journey?"
+          buttonText="Apply Now"
+          buttonLink="/contact"
+        />
       </Box>
     </>
   );
