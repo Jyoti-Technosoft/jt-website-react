@@ -2500,6 +2500,58 @@
           "technologyName": "Tailwind CSS"
         }
       ]
+    },
+    {
+      "projectName": "OrthoAI",
+      "projectId": 28,
+      "priority": 14,
+      "technology": "React",
+      "category": ["Custom Software Development"],
+      "typesOfTechnologies": ["React", "Next", "Figma", "Tailwind CSS"],
+      "description": "OrthoAI is a clinical intelligence platform designed to automate dental diagnostic reporting for clinicians and claim validation for insurance payers across the UAE and GCC.",
+      "detailedDescription": "OrthoAI is a clinical intelligence platform designed to automate dental diagnostic reporting for clinicians and claim validation for insurance payers across the UAE and GCC. Founded at MBZUAI(Mohamed bin Zayed University of Artificial Intelligence) in Abu Dhabi, OrthoAI bridges the gap between chairside dental diagnosis and administrative insurance approvals using auditable, multi-modal AI.", 
+      "logo": "assets/images/portfolio/orthoai-favicon.png",
+      "viewDemo": "",
+      "Images": [
+        "assets/images/portfolio/orthoai1.png",
+        "assets/images/portfolio/orthoai2.png",
+        "assets/images/portfolio/orthoai3.png",
+        "assets/images/portfolio/orthoai4.png",
+        "assets/images/portfolio/orthoai5.png",
+        "assets/images/portfolio/orthoai6.png"
+      ],
+      "mainTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/next.png",
+          "technologyName" : "Next"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images" : "assets/images/technology-badges/React.svg",
+          "technologyName" : "React"
+        },
+        {
+          "images" : "assets/images/technology-badges/TypeScript.svg",
+          "technologyName" : "TypeScript"
+        },
+        {
+          "images": "assets/images/technology-badges/html.svg",
+          "technologyName": "HTML"
+        },
+        {
+          "images": "assets/images/technology-badges/css.svg",
+          "technologyName": "CSS"
+        },
+        {
+          "images": "assets/images/technology-badges/tailwind.svg",
+          "technologyName": "Tailwind CSS"
+        }
+      ]
     }
   ],
   "clientlogos": [
