@@ -35,15 +35,15 @@
           "type": "Projects"
         },
         {
-          "title": "6+",
+          "title": "5+",
           "description": "Years building products",
           "supportingText": "Hands-on product, UI, and engineering support",
           "type": "Experience",
-          "year": 2022
+          "year": 2021
         },
         {
-          "title": "35",
-          "description": "Delivery milestones",
+          "title": "30+",
+          "description": "Achievements",
           "supportingText": "Across design, engineering, and launches",
           "type": "Achievements"
         }
@@ -705,6 +705,18 @@
           {
             "label": "MongoDB",
             "imgSrc": "/assets/mongodb.png",
+            "id": "",
+            "tooltip": ""
+          },
+          {
+            "label": "Supabase",
+            "imgSrc": "/assets/supabase.png",
+            "id": "",
+            "tooltip": ""
+          },
+          {
+            "label": "Neon",
+            "imgSrc": "/assets/neon.png",
             "id": "",
             "tooltip": ""
           },
@@ -2516,9 +2528,7 @@
         "assets/images/portfolio/orthoai1.png",
         "assets/images/portfolio/orthoai2.png",
         "assets/images/portfolio/orthoai3.png",
-        "assets/images/portfolio/orthoai4.png",
-        "assets/images/portfolio/orthoai5.png",
-        "assets/images/portfolio/orthoai6.png"
+        "assets/images/portfolio/orthoai4.png"
       ],
       "mainTechnology": [
         {

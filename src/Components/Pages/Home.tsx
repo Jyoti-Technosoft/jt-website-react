@@ -12,6 +12,7 @@ import OurNewsletter from "./shared/OurNewsletter.tsx";
 import IndustryExpertise from "./shared/IndustryExpertise.tsx";
 import HowWeWork from "./shared/HowWeWork.tsx";
 import ClientTestimonials from "./shared/ClientTestimonials.tsx";
+import ClientLogoCarousel from "./shared/ClientLogoCarousel.tsx";
 import CTAButton from "../shared/CTAButton.tsx";
 import { homeContent } from "../../content/homeContent";
 import { performanceMonitor } from "../../utils/performanceMonitor";
@@ -212,6 +213,7 @@ const Home: React.FC = () => {
           </Box>
         </div>
 
+        <ClientLogoCarousel />
         <ClientTestimonials data={homeContent.clientTestimonials} />
         <WeOffer />
         <OurTechnology />

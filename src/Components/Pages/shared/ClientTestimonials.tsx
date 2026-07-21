@@ -52,7 +52,7 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
     <Box className="client-testimonials-section">
       <Box sx={{ maxWidth: "1200px", mx: "auto", px: { xs: 2, md: 3 } }}>
         {/* Section Header */}
-        <Box sx={{ textAlign: "center", mb: { xs: 6, md: 8 } }}>
+        <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
           <Typography variant="h2" className="section-title" sx={{ 
             mb: 3,
             fontSize: { xs: "2rem", md: "2.5rem" }
@@ -64,74 +64,11 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
           </Typography>
         </Box>
 
-        {/* Client Logos */}
-        <Box sx={{ mb: 4, display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <Box sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: { xs: 3, md: 4 },
-            px: 2,
-            width: "100%",
-          }}>
-            {data.logos.map((logo, index) => (
-              <Box
-                key={index}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  minWidth: { xs: "calc(33.333% - 24px)", md: "auto" },
-                  maxWidth: { xs: "120px", md: "140px" },
-                  height: { xs: "60px", md: "70px" },
-                  p: 2,
-                  borderRadius: "12px",
-                  backgroundColor: "rgba(255, 255, 255, 0.8)",
-                  border: "1px solid rgba(31, 87, 149, 0.08)",
-                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.04)",
-                  transition: "all 0.3s ease",
-                  cursor: "pointer",
-                  "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.95)",
-                    borderColor: "rgba(31, 87, 149, 0.15)",
-                    boxShadow: "0 4px 16px rgba(0, 0, 0, 0.08)",
-                    transform: "translateY(-2px)",
-                    "& img": {
-                      filter: "grayscale(0%)",
-                      opacity: 1,
-                    },
-                  },
-                }}
-              >
-                <Box
-                  component="img"
-                  src={logo.logo}
-                  alt={logo.alt}
-                  onError={(e) => {
-                    // Fallback to placeholder if image fails to load
-                    const target = e.target as HTMLImageElement;
-                    target.src = `https://via.placeholder.com/120x60/1f5795/ffffff?text=${encodeURIComponent(logo.name)}`;
-                  }}
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    filter: "grayscale(100%)",
-                    opacity: 0.6,
-                    transition: "all 0.3s ease",
-                  }}
-                />
-              </Box>
-            ))}
-          </Box>
-        </Box>
-
         {/* Testimonials */}
-        <Box sx={{ mt: { xs: 4, md: 6 }, position: "relative" }}>
+        <Box sx={{ position: "relative" }}>
           <Typography variant="h5" sx={{ 
             textAlign: "center", 
-            mb: 6, 
+            mb: 4, 
             color: "var(--text-blue)", 
             fontWeight: 600,
             fontSize: { xs: "1.3rem", md: "1.5rem" }

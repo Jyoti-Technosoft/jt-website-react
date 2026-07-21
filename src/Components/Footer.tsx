@@ -201,7 +201,7 @@ const Footer: React.FC = () => {
         <Container maxWidth="xl">
           <Box className="subFooter2">
             <Typography className="subFooter2-title1" variant="body2">
-              2025 Jyoti Technosoft LLP. All Rights Reserved.
+              2026 Jyoti Technosoft LLP. All Rights Reserved.
             </Typography>
             <Typography className="subFooter2-title2" variant="body2">
               Innovating Digital Solutions Since 2021

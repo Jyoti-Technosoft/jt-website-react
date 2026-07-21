@@ -2,7 +2,6 @@ import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { useLocation, useNavigate, useSearchParams, Link as RouterLink } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { keyframes } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -26,11 +25,6 @@ import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/career.css";
 
-const scroll = keyframes`
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-`;
-
 const OurWork: React.FC = () => {
   const theme = useTheme();
   const projectSectionRef = React.useRef<HTMLDivElement>(null);
@@ -38,7 +32,6 @@ const OurWork: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const logos = dataArray?.clientlogos || [];
   const projects = (dataArray?.portfolio.filter((p) => p.projectName) || []).sort((a, b) => (b.priority || 0) - (a.priority || 0));
   
   // Initialize state from URL params or use defaults
@@ -292,42 +285,7 @@ const OurWork: React.FC = () => {
         showGif={true}
       />
       <Container>
-        <Box className="our-work" sx={{ pt: 8, overflow: "hidden" }}>
-          <Box sx={{ width: "100%", display: "flex" }}>
-            <Box
-              sx={{
-                display: "flex",
-                width: "max-content",
-                animation: `${scroll} ${logos.length * 3}s linear infinite`,
-              }}
-            >
-              {[...logos, ...logos].map((logo, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    minWidth: "120px",
-                    flexShrink: 0,
-                    mx: 2,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Box
-                    component="img"
-                    src={logo.imagePath}
-                    alt={`Client Logo ${index}`}
-                    sx={{
-                      width: "180px",
-                      height: "60px",
-                      objectFit: "contain",
-                    }}
-                  />
-                </Box>
-              ))}
-            </Box>
-          </Box>
-        </Box>
+        <Box className="our-work" sx={{ overflow: "hidden" }}>
         <Typography sx={{ textAlign: "center", mt: 8, color: "#1a1a1a" }} ref={projectSectionRef}>
           Some of our work is protected by NDAs, but we've prepared demo
           projects to showcase our expertise and quality.
@@ -768,6 +726,7 @@ const OurWork: React.FC = () => {
             </IconButton>
           </Box>
         )}
+      </Box>
       </Container>
       <FooterCommonPage
         title="Inspired by Our Work? Let's Create Yours!"
