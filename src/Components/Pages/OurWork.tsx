@@ -47,7 +47,7 @@ const OurWork: React.FC = () => {
     const techs = new Set<string>();
     projects.forEach(project => {
       if (selectedCategory === "All" || project.category.includes(selectedCategory)) {
-        project.typesOfTechnologies?.forEach(tech => techs.add(tech));
+        (project.mainTechnology || []).forEach(t => techs.add(t.technologyName));
       }
     });
     return Array.from(techs).sort();
@@ -70,9 +70,13 @@ const OurWork: React.FC = () => {
 
     // For each project, count how many selected technologies it matches
     const projectsWithMatchCount = categoryFiltered.map(project => {
+      const projectTechNames = [
+        ...(project.mainTechnology || []).map(t => t.technologyName)
+      ];
+
       const matchedTechs = selectedTechs.filter(selectedTech => 
-        project.typesOfTechnologies?.some(
-          tech => tech.toLowerCase() === selectedTech.toLowerCase()
+        projectTechNames.some(
+          techName => techName.toLowerCase() === selectedTech.toLowerCase()
         )
       );
       
@@ -84,8 +88,8 @@ const OurWork: React.FC = () => {
         matchesAll: matchedTechs.length === selectedTechs.length,
         // Check if it matches the most recently selected technology
         matchesLatest: selectedTechs.length > 0 && 
-          project.typesOfTechnologies?.some(
-            tech => tech.toLowerCase() === selectedTechs[selectedTechs.length - 1].toLowerCase()
+          projectTechNames.some(
+            techName => techName.toLowerCase() === selectedTechs[selectedTechs.length - 1].toLowerCase()
           )
       };
     });
@@ -421,7 +425,7 @@ const OurWork: React.FC = () => {
               // const totalImages = project.Images?.length || 1;
 
               return (
-                <Grid size={{ xs: 12 }} key={index}>
+                <Grid size={{ xs: 12 }} key={project.projectId || index}>
                   <Box
                     sx={{
                       display: "flex",
@@ -585,53 +589,45 @@ const OurWork: React.FC = () => {
                         Technologies
                       </Typography>
                       <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                        {[
-                          ...(project.mainTechnology || []),
-                          ...(project.useTechnology || []),
-                        ]
-                          .filter(
-                            (tech, index, self) =>
-                              index ===
-                              self.findIndex(
-                                (t) => t.technologyName === tech.technologyName
-                              )
-                          )
-                          .map((tech, idx) => (
-                            <Tooltip
-                              title={tech.technologyName}
-                              key={idx}
-                              slotProps={{
-                                popper: {
-                                  modifiers: [
-                                    {
-                                      name: "offset",
-                                      options: {
-                                        offset: [0, -12],
-                                      },
+                        {(project.mainTechnology || [])
+                          .slice()
+                          .sort((a, b) => a.technologyName.localeCompare(b.technologyName))
+                          .map((tech) => (
+                          <Tooltip
+                            title={tech.technologyName}
+                            key={tech.technologyName}
+                            slotProps={{
+                              popper: {
+                                modifiers: [
+                                  {
+                                    name: "offset",
+                                    options: {
+                                      offset: [0, -12],
                                     },
-                                  ],
-                                },
+                                  },
+                                ],
+                              },
+                            }}
+                          >
+                            <Chip
+                              label={tech.technologyName}
+                              size="small"
+                              sx={{
+                                px: 1,
+                                py: 2,
+                                border: "1px solid #D9D9D9",
+                                width: "calc(25% - 8px)",
+                                minWidth: "100px",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap",
+                                cursor: "pointer",
+                                color: "#333333",
+                                backgroundColor: "#F7F7F7",
                               }}
-                            >
-                              <Chip
-                                label={tech.technologyName}
-                                size="small"
-                                sx={{
-                                  px: 1,
-                                  py: 2,
-                                  border: "1px solid #D9D9D9",
-                                  width: "calc(25% - 8px)",
-                                  minWidth: "100px",
-                                  overflow: "hidden",
-                                  textOverflow: "ellipsis",
-                                  whiteSpace: "nowrap",
-                                  cursor: "pointer",
-                                  color: "#333333",
-                                  backgroundColor: "#F7F7F7",
-                                }}
-                              />
-                            </Tooltip>
-                          ))}
+                            />
+                          </Tooltip>
+                        ))}
                       </Box>
                       {project.viewDemo && (
                         <Box

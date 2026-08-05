@@ -306,12 +306,14 @@ const About: React.FC = () => {
                 />
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
-                <Box sx={{ pl: { md: 2 } }}>
+                <Box sx={{ pl: { md: 2 }, display: 'flex', flexDirection: 'column', gap: 2 }}>
                   {aboutUs?.valuesAboutSection?.map((value, index) => (
                     <Box 
                       key={value?.id} 
                       sx={{ 
-                        p: 2,
+                        p: 3,
+                        pl: 4,
+                        position: 'relative',
                         backgroundColor: "#f8fafc",
                         borderRadius: "12px",
                         border: "1px solid rgba(31, 87, 149, 0.08)",
@@ -319,7 +321,24 @@ const About: React.FC = () => {
                         "&:hover": {
                           backgroundColor: "white",
                           borderColor: "#1f5795",
-                          boxShadow: "0 8px 24px rgba(31, 87, 149, 0.15)"
+                          boxShadow: "0 8px 24px rgba(31, 87, 149, 0.15)",
+                          transform: 'translateY(-4px)'
+                        },
+                        "&::before": {
+                          content: '""',
+                          position: 'absolute',
+                          top: '5%',
+                          bottom: '5%',
+                          left: 0,
+                          height: '90%',
+                          width: 4,
+                          background: 'linear-gradient(180deg, #1f5795 0%, #3f87df 100%)',
+                          borderRadius: '0 4px 4px 0',
+                          opacity: 0,
+                          transition: 'opacity 0.25s ease'
+                        },
+                        "&:hover::before": {
+                          opacity: 1
                         }
                       }}
                     >
@@ -328,31 +347,19 @@ const About: React.FC = () => {
                         variant="h6" 
                         className="values-data-title"
                         sx={{
-                          fontWeight: 600,
+                          fontWeight: 700,
                           color: "#1f5795",
-                          fontSize: "1.1rem",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 1
+                          fontSize: "1.15rem",
                         }}
                       >
-                        <Box
-                          sx={{
-                            width: 8,
-                            height: 8,
-                            borderRadius: "50%",
-                            backgroundColor: "#1f5795"
-                          }}
-                        />
                         {value?.title}
                       </Typography>
                       <Typography 
                         className="values-data-description"
                         sx={{
-                          color: "#64748b",
-                          lineHeight: 1.6,
-                          fontSize: "0.95rem",
-                          pl: 3
+                          color: "#475569",
+                          lineHeight: 1.75,
+                          fontSize: "0.975rem"
                         }}
                       >
                         {value?.description}

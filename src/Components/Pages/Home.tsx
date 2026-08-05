@@ -168,39 +168,6 @@ const Home: React.FC = () => {
                               <Typography className="hero-video-thumb-label">
                                 {item.label}
                               </Typography>
-                              {/* Add play button overlay */}
-                              <Box
-                                sx={{
-                                  position: "absolute",
-                                  top: "50%",
-                                  left: "50%",
-                                  transform: "translate(-50%, -50%)",
-                                  width: "48px",
-                                  height: "48px",
-                                  borderRadius: "50%",
-                                  backgroundColor: "rgba(31, 87, 149, 0.9)",
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "center",
-                                  opacity: 0,
-                                  transition: "all 0.3s ease",
-                                  ".hero-video-thumb:hover &": {
-                                    opacity: 1,
-                                  },
-                                }}
-                              >
-                                <Box
-                                  sx={{
-                                    width: 0,
-                                    height: 0,
-                                    borderLeft: "8px solid transparent",
-                                    borderTop: "12px solid transparent",
-                                    borderBottom: "12px solid transparent",
-                                    transform: "rotate(-90deg)",
-                                    transition: "all 0.3s ease",
-                                  }}
-                                />
-                              </Box>
                             </Box>
                           </Box>
                         ))}

@@ -343,17 +343,6 @@ const Contact: React.FC = () => {
                         </Box>
                       </Box>
 
-                      <Box sx={{ display: "flex", alignItems: "start" }}>
-                        <FmdGoodIcon sx={{ mt: 0.5, mr: 2, color: "#1f5795", fontSize: 24 }} />
-                        <Box>
-                          <Typography variant="h6" sx={{ fontWeight: 600, color: "#1f5795" }}>
-                            Visit Us
-                          </Typography>
-                          <Typography variant="body2" sx={{ color: "#64748b" }}>
-                            228, Second Floor, Green Elina, Adajan, Surat
-                          </Typography>
-                        </Box>
-                      </Box>
                     </Box>
                   </Box>
                 </Grid>

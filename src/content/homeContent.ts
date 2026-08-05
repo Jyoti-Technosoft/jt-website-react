@@ -162,7 +162,7 @@ export const homeContent: HomePageContent = {
               author: toString(testimonialData.author, `Client ${index + 1}`),
               role: toString(testimonialData.role, "Client"),
               company: toString(testimonialData.company, "Company"),
-              avatar: toString(testimonialData.avatar, `https://via.placeholder.com/56x56/1f5795/ffffff?text=${toString(testimonialData.author, `C${index + 1}`).substring(0, 2).toUpperCase()}`),
+              avatar: toString(testimonialData.avatar, ""),
             };
           })
         : [],

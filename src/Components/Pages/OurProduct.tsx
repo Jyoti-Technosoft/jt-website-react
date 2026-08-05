@@ -34,7 +34,6 @@ interface Product {
   priority: number;
   technology: string;
   category: string[];
-  typesOfTechnologies: string[];
   description: string;
   detailedDescription: string;
   logo: string;

@@ -48,6 +48,21 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .filter(Boolean)
+      .map((part) => part[0].toUpperCase())
+      .slice(0, 2)
+      .join("");
+  };
+
+  const getAvatarSrc = (avatar?: string) => {
+    if (!avatar) return undefined;
+    if (avatar.includes("via.placeholder.com")) return undefined;
+    return avatar;
+  };
+
   return (
     <Box className="client-testimonials-section">
       <Box sx={{ maxWidth: "1200px", mx: "auto", px: { xs: 2, md: 3 } }}>
@@ -210,14 +225,16 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
                     mt: "auto"
                   }}>
                     <Avatar
-                      src={testimonial.avatar}
+                      src={getAvatarSrc(testimonial.avatar)}
                       alt={testimonial.author}
                       sx={{ 
                         width: 56, 
                         height: 56,
                         border: "2px solid rgba(31, 87, 149, 0.1)"
                       }}
-                    />
+                    >
+                      {!getAvatarSrc(testimonial.avatar) ? getInitials(testimonial.author) : null}
+                    </Avatar>
                     <Box>
                       <Typography variant="subtitle2" sx={{ 
                         fontWeight: 700, 

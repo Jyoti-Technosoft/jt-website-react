@@ -164,14 +164,13 @@ const Career: React.FC = () => {
               </Box>
 
               {/* Career Stats */}
-              <Grid container spacing={3} mb={8}>
+              <Grid container spacing={4} mb={8}>
                 {[
-                  { number: "5+", label: "Open Positions" },
                   { number: "100%", label: "Growth Opportunities" },
                   { number: "100%", label: "Learning Environment" },
                   { number: "5★", label: "Work Culture" }
                 ].map((stat, index) => (
-                  <Grid size={{ xs: 6, sm: 3 }} key={index}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
                     <Box 
                       sx={{
                         textAlign: "center",
