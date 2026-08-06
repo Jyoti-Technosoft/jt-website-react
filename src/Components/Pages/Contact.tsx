@@ -223,9 +223,9 @@ const Contact: React.FC = () => {
             {/* Contact Stats */}
             <Grid container spacing={3} mb={8}>
               {[
-                { number: "24/7", label: "Support Available" },
-                { number: "100%", label: "Client Satisfaction" },
-                { number: "48h", label: "Response Time" },
+                { number: "9 AM – 8 PM", label: "Mon–Sat Support" },
+                { number: "98%", label: "Client Satisfaction" },
+                { number: "< 24h", label: "Response" },
                 { number: "2", label: "Office Locations" }
               ].map((stat, index) => (
                 <Grid size={{ xs: 6, sm: 3 }} key={index}>
@@ -248,9 +248,8 @@ const Contact: React.FC = () => {
                     }}
                   >
                     <Typography
-                      variant="h3"
+                      variant="h4"
                       sx={{
-                        fontSize: "2.5rem",
                         fontWeight: 700,
                         color: "#1f5795",
                         mb: 1,
