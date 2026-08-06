@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -16,6 +17,8 @@ interface ClientTestimonialsProps {
 
 const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [expandedTestimonials, setExpandedTestimonials] = useState<number[]>([]);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
@@ -47,6 +50,22 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const toggleExpanded = (index: number) => {
+    setExpandedTestimonials((current) => {
+      const next = current.includes(index)
+        ? current.filter((item) => item !== index)
+        : [...current, index];
+
+      if (current.includes(index) && contentRefs.current[index]) {
+        contentRefs.current[index].scrollTop = 0;
+      }
+
+      return next;
+    });
+  };
+
+  const isExpanded = (index: number) => expandedTestimonials.includes(index);
 
   const getInitials = (name: string) => {
     return name
@@ -162,6 +181,7 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
                 sx={{
                   minWidth: { xs: "280px", md: "350px" },
                   maxWidth: { xs: "280px", md: "350px" },
+                  minHeight: "300px",
                   flexShrink: 0,
                   border: "1px solid rgba(31, 87, 149, 0.1)",
                   borderRadius: "16px",
@@ -195,28 +215,73 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
                   justifyContent: "space-between"
                 }}>
                   <Box sx={{ mb: 3, flex: 1 }}>
-                    <Typography
-                      variant="body1"
+                    <Box
+                      ref={(el: HTMLDivElement | null) => {
+                        contentRefs.current[index] = el;
+                      }}
                       sx={{
-                        fontStyle: "italic",
-                        color: "var(--text-dark)",
-                        lineHeight: 1.7,
-                        fontSize: "1rem",
+                        maxHeight: isExpanded(index) ? 230 : 160,
+                        overflowY: isExpanded(index) ? "auto" : "hidden",
+                        pr: 0.5,
                         position: "relative",
-                        pl: 3,
-                        "&::before": {
-                          content: '""',
-                          position: "absolute",
-                          left: 0,
-                          top: -8,
-                          fontSize: "3rem",
-                          color: "rgba(31, 87, 149, 0.2)",
-                          fontFamily: "serif",
+                        scrollbarWidth: isExpanded(index) ? "thin" : "none",
+                        scrollbarColor: isExpanded(index) ? "#1f5795 transparent" : "transparent transparent",
+                        "&::-webkit-scrollbar": {
+                          width: isExpanded(index) ? "8px" : 0,
+                        },
+                        "&::-webkit-scrollbar-track": {
+                          background: "transparent",
+                        },
+                        "&::-webkit-scrollbar-thumb": {
+                          backgroundColor: isExpanded(index) ? "#1f5795" : "transparent",
+                          borderRadius: "999px",
+                          border: isExpanded(index) ? "2px solid rgba(255,255,255,0.8)" : "none",
+                        },
+                        "&::-webkit-scrollbar-corner": {
+                          background: "transparent",
                         },
                       }}
                     >
-                      {testimonial.quote}
-                    </Typography>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          fontStyle: "italic",
+                          color: "var(--text-dark)",
+                          lineHeight: 1.7,
+                          fontSize: "1rem",
+                          position: "relative",
+                          pl: 3,
+                          "&::before": {
+                            content: '""',
+                            position: "absolute",
+                            left: 0,
+                            top: -8,
+                            fontSize: "3rem",
+                            color: "rgba(31, 87, 149, 0.2)",
+                            fontFamily: "serif",
+                          },
+                        }}
+                      >
+                        {testimonial.quote}
+                      </Typography>
+                    </Box>
+
+                    {testimonial.quote.split(" ").length > 40 && (
+                      <Button
+                        onClick={() => toggleExpanded(index)}
+                        size="small"
+                        sx={{
+                          mt: 2,
+                          textTransform: "none",
+                          color: "#1f5795",
+                          fontWeight: 700,
+                          p: 0,
+                          minWidth: 0,
+                        }}
+                      >
+                        {isExpanded(index) ? "Read less" : "Read more"}
+                      </Button>
+                    )}
                   </Box>
                   <Box sx={{ 
                     display: "flex", 
