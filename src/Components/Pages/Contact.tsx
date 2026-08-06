@@ -337,7 +337,7 @@ const Contact: React.FC = () => {
                             +91 9054551083
                           </Typography>
                           <Typography variant="body2" sx={{ color: "#64748b" }}>
-                            Mon-Fri: 9:00 AM - 6:00 PM
+                            Mon-Sat: 9:00 AM - 8:00 PM
                           </Typography>
                         </Box>
                       </Box>
