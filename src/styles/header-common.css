@@ -24,6 +24,12 @@
     align-items: center;
 }
 
+.main-header .first-content-about-header span,
+.main-header .first-content-about-header .breadcrumb-link,
+.main-header .first-content-about-header .chevron-icon {
+    color: var(--text-white);
+}
+
 .main-header .header-pageName {
     padding: 1.4rem 0px 0rem;
     display: flex;

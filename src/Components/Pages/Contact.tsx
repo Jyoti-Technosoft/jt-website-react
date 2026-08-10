@@ -12,33 +12,22 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
-import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import { API_ENDPOINTS } from "../../config/api.ts";
 import "../../styles/contact.css";
 
-const branches = [
-    {
-        id: "main",
-        name: "Main Branch",
-        icon: <FmdGoodIcon />,
-        address: "228, Second Floor, Green Elina, Nr. Sneh Sankul's Vadi, Anand Mahal Rd, Giriraj Society, Adajan, Surat, Gujarat 395009",
-        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.849950595389!2d72.79385851529051!3d21.19811888590681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3ad62b2491a66dc4!2sJyoti%20Technosoft!5e0!3m2!1sen!2sin!4v1586443823071!5m2!1sen!2sin"
-    },
-    {
-        id: "pal",
-        name: "Pal Branch",
-        icon: <AddLocationAltIcon />,
-        address: "Rajhans Multiplex, 417, Sumerru Business Corner, Nr. Somchintamani Appt, B/H, Pal Gam, Surat, Gujarat 395009",
-        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.1278184068738!2d72.78305117595066!3d21.18708078232079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dbae1416371%3A0x3345ded92523ceb6!2sJyoti%20Technosoft%20LLP!5e0!3m2!1sen!2sin!4v1682142289891!5m2!1sen!2sin"
-    },
-];
+const officeLocation = {
+    id: "pal",
+    name: "Office Location",
+    icon: <AddLocationAltIcon />,
+    address: "Rajhans Multiplex, 417, Sumerru Business Corner, Nr. Somchintamani Appt, B/H, Pal Gam, Surat, Gujarat 395009",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.1278184068738!2d72.78305117529066!3d21.18708078232079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dbae1416371%3A0x3345ded92523ceb6!2sJyoti%20Technosoft%20LLP!5e0!3m2!1sen!2sin!4v1682142289891!5m2!1sen!2sin"
+};
 
 const Contact: React.FC = () => {
     const isNotSmallScreen = useMediaQuery("(min-width: 768px)");
-    const [activeBranch, setActiveBranch] = useState(branches[1]);
     const [captchaValue, setCaptchaValue] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
     const [submitMessage, setSubmitMessage] = useState<string | null>(null);
@@ -226,9 +215,8 @@ const Contact: React.FC = () => {
                 { number: "9 AM – 8 PM", label: "Mon–Sat Support" },
                 { number: "98%", label: "Client Satisfaction" },
                 { number: "< 24h", label: "Response" },
-                { number: "2", label: "Office Locations" }
               ].map((stat, index) => (
-                <Grid size={{ xs: 6, sm: 3 }} key={index}>
+                <Grid size={{ xs: 6, sm: 4 }} key={index}>
                   <Box
                     sx={{
                       textAlign: "center",
@@ -567,7 +555,7 @@ const Contact: React.FC = () => {
           <div>
             <iframe
               title="Jyoti Technosoft LLP Location"
-              src={activeBranch?.mapUrl}
+              src={officeLocation.mapUrl}
               width="100%"
               height="450"
               style={{
@@ -582,36 +570,16 @@ const Contact: React.FC = () => {
           <Grid
             p={2}
             maxWidth={"1040px"}
-            spacing={isNotSmallScreen ? 16 : 6}
-            display={"flex"}
-            flexDirection={{ xs: "column", md: "row" }}
-            justifyContent={"space-between"}
-            columns={[1, 1, 2]}
             mx="auto"
           >
-            {branches?.map((branch, index) => (
-              <div
-                key={branch.id}
-                className={`office-address ${index === 1 ? "relative" : ""}`}
-                onClick={() => setActiveBranch(branch)}
-              >
-                {index === 1 && <div className="circle-3"></div>}
-                <p
-                  className={`office-branch ${
-                    activeBranch?.id === branch?.id ? "active" : ""
-                  }`}
-                >
-                  {branch?.icon} {branch?.name}
-                </p>
-                <p
-                  className={`branch-address ${
-                    activeBranch?.id === branch?.id ? "active" : ""
-                  }`}
-                >
-                  {branch?.address}
-                </p>
-              </div>
-            ))}
+            <div className="office-address">
+              <p className="office-branch">
+                {officeLocation.icon} {officeLocation.name}
+              </p>
+              <p className="branch-address">
+                {officeLocation.address}
+              </p>
+            </div>
           </Grid>
         </div>
       </>

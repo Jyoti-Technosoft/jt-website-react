@@ -106,7 +106,7 @@ export const homeContent: HomePageContent = {
       {
         title: "SiteSync",
         label: "Construction product",
-        imageSrc: "/assets/images/portfolio/sitesync-mockup.png",
+        imageSrc: "/assets/images/portfolio/SiteSync-mockup.png",
       },
       {
         title: "Yacht Brochure",
@@ -133,7 +133,7 @@ export const homeContent: HomePageContent = {
         {
           title: "SiteSync",
           label: "Mobile operations",
-          imageSrc: "/assets/images/portfolio/sitesync-mockup.png",
+          imageSrc: "/assets/images/portfolio/SiteSync-mockup.png",
         },
       ],
     },

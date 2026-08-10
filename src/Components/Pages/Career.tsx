@@ -570,11 +570,11 @@ const Career: React.FC = () => {
             />
           )}
         </Box>
-        <FooterCommonPage
+        {/* <FooterCommonPage
           title="Ready to Start Your Journey?"
           buttonText="Apply Now"
           buttonLink="/contact"
-        />
+        /> */}
       </Box>
     </>
   );

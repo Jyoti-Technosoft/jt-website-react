@@ -837,7 +837,7 @@ video {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 530px;
+    height: 480px;
     width: 100%;
     position: relative;
     overflow-y: auto;

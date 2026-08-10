@@ -24,7 +24,7 @@
 .career-details-container .address {
   font-weight: 400;
   font-size: 15px;
-  letter-spacing: 100%;
+  letter-spacing: normal;
   color: var(--text-dark);
 }
 

@@ -80,9 +80,9 @@ const PrivacyPolicy: React.FC = () => {
               <Typography className="header-description">
                 <strong>Company</strong> (referred to as either "the Company",
                 "We", "Us" or "Our" in this Agreement) refers to Jyoti
-                Technosoft LLP, 228, Second Floor, Green Elina, Nr. Sneh
-                Sankul's Vadi, Anand Mahal Rd, Giriraj Society, Adajan, Surat
-                395009, Gujarat, India.
+                Technosoft LLP, Rajhans Multiplex, 417, Sumerru Business
+                Corner, Nr. Somchintamani Appt, B/H, Pal Gam, Surat,
+                Gujarat 395009, India.
               </Typography>
             </Box>
           </ListItem>
@@ -620,7 +620,7 @@ const PrivacyPolicy: React.FC = () => {
               <Box display="flex" alignItems="flex-start" gap={1}>
                 <GamepadIcon sx={{ fontSize: 14, color: "#347CCC", mt: "4px" }} />
                 <Typography className="header-description">
-                Through our website: by visiting the <Link href="https://jyotitechnosoft.com/contact">Contact Us</Link> page
+                  Through our website: by visiting the <Link href="https://jyotitechnosoft.com/contact">Contact Us</Link> page
                 </Typography>
               </Box>
           </ListItem>
@@ -628,7 +628,7 @@ const PrivacyPolicy: React.FC = () => {
               <Box display="flex" alignItems="flex-start" gap={1}>
                 <GamepadIcon sx={{ fontSize: 14, color: "#347CCC", mt: "4px" }} />
                 <Typography className="header-description">
-                By phone number: <Link href="tel:+919265712724" underline="hover" color="inherit">+91 92657 12724</Link>
+                  By phone number: <Link href="tel:+91 9054551083" underline="hover" color="inherit">+91 92657 12724</Link>
                 </Typography>
               </Box>
           </ListItem>
@@ -636,7 +636,7 @@ const PrivacyPolicy: React.FC = () => {
               <Box display="flex" alignItems="flex-start" gap={1}>
                 <GamepadIcon sx={{ fontSize: 14, color: "#347CCC", mt: "4px" }} />
                 <Typography className="header-description">
-                By mail: 228, Second Floor, Green Elina, Nr. Sneh Sankul's Vadi, Anand Mahal Rd, Giriraj Society, Adajan, Surat 395009, Gujarat, India
+                  By mail: Rajhans Multiplex, 417, Sumerru Business Corner, Nr. Somchintamani Appt, B/H, Pal Gam, Surat 395009, Gujarat, India
                 </Typography>
               </Box>
           </ListItem>

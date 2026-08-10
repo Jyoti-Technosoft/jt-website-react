@@ -1907,11 +1907,11 @@
       "logo": "assets/images/portfolio/SiteSync.png",
       "viewDemo": "",
       "Images": [
-        "assets/images/portfolio/sitesync-mockup.png",
-        "assets/images/portfolio/sitesync1.png",
-        "assets/images/portfolio/sitesync2.png",
-        "assets/images/portfolio/sitesync3.png",
-        "assets/images/portfolio/sitesync4.png"
+        "assets/images/portfolio/SiteSync-mockup.png",
+        "assets/images/portfolio/SiteSync1.png",
+        "assets/images/portfolio/SiteSync2.png",
+        "assets/images/portfolio/SiteSync3.png",
+        "assets/images/portfolio/SiteSync4.png"
       ],
       "mainTechnology": [
         {
@@ -1923,7 +1923,7 @@
           "technologyName": "Firebase"
         },
         {
-          "images": "/assets/provider.png",
+          "images": "/assets/provider.svg",
           "technologyName": "Provider"
         }
       ],
@@ -2035,7 +2035,7 @@
           "technologyName": "Flutter"
         },
         {
-          "images": "/assets/flask.png",
+          "images": "/assets/flask.svg",
           "technologyName": "Flask API"
         },
         {
@@ -2929,11 +2929,11 @@
       "viewDemo": "",
       "brochureUrl": "/assets/brochure/sitesync-brochure.pdf",
       "Images": [
-        "assets/images/portfolio/sitesync-mockup.png",
-        "assets/images/portfolio/sitesync1.png",
-        "assets/images/portfolio/sitesync2.png",
-        "assets/images/portfolio/sitesync3.png",
-        "assets/images/portfolio/sitesync4.png"
+        "assets/images/portfolio/SiteSync-mockup.png",
+        "assets/images/portfolio/SiteSync1.png",
+        "assets/images/portfolio/SiteSync2.png",
+        "assets/images/portfolio/SiteSync3.png",
+        "assets/images/portfolio/SiteSync4.png"
       ],
       "mainTechnology": [
         {
@@ -2945,7 +2945,7 @@
           "technologyName": "Firebase"
         },
         {
-          "images": "/assets/provider.png",
+          "images": "/assets/provider.svg",
           "technologyName": "Provider"
         }
       ],
@@ -2972,7 +2972,7 @@
       "description": "Praksis is an intelligent web application designed to revolutionize the way educators and students create, manage, and attempt practice tests. By leveraging advanced AI technology, it simplifies the process of generating question papers and provides a seamless testing experience for educational institutions.",
       "detailedDescription": "Praksis represents the future of educational assessment through AI-powered innovation. The platform enables educators to automatically generate customized question papers based on subject, difficulty level, and learning objectives. Students benefit from an intuitive interface for taking tests with immediate feedback and performance analytics. The AI engine continuously learns from user interactions to improve question relevance and difficulty calibration. With features like adaptive testing, plagiarism detection, and comprehensive reporting, Praksis transforms traditional assessment methods into engaging, data-driven learning experiences. The platform supports multiple question formats, including multiple choice, fill-in-the-blanks, and descriptive questions, making it versatile for various educational contexts.",
       "logo": "assets/images/portfolio/praksis-favicon.png",
-      "viewDemo": "https://praksis-n679.onrender.com",
+      "viewDemo": "https://edugenius-n679.onrender.com",
       "brochureUrl": "/assets/brochure/praksis-brochure.pdf",
       "Images": [
         "assets/images/portfolio/praksis-mockup.png",
@@ -2998,7 +2998,7 @@
           "technologyName": "Flutter"
         },
         {
-          "images": "/assets/flask.png",
+          "images": "/assets/flask.svg",
           "technologyName": "Flask API"
         },
         {
@@ -3014,10 +3014,6 @@
         {
           "images": "/assets/images/technology-badges/Material_UI.png",
           "technologyName": "Material UI"
-        },
-        {
-          "images": "/assets/model-development.png",
-          "technologyName": "Model Development"
         }
       ],
       "keyFeatures": [
