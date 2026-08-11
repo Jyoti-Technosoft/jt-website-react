@@ -13,7 +13,7 @@ import "../../styles/privacy-policy.css";
 const PrivacyPolicy: React.FC = () => {
   return (
     <Box className="privacy-policy" mb={4}>
-      <HeaderCommonPage smallTitle="Privacy Policy" page="Privacy Policy" subHeader="Here’s how we handle your info  clearly and responsibly." />
+      <HeaderCommonPage smallTitle="Privacy Policy" page="Privacy Policy" subHeader="Here’s how we handle your info clearly and responsibly." />
       <Container className="privacy-policy-container">
         <Typography className="last-updated-date" mt={4}>
           Last updated: April 02, 2024
@@ -628,7 +628,7 @@ const PrivacyPolicy: React.FC = () => {
               <Box display="flex" alignItems="flex-start" gap={1}>
                 <GamepadIcon sx={{ fontSize: 14, color: "#347CCC", mt: "4px" }} />
                 <Typography className="header-description">
-                  By phone number: <Link href="tel:+91 9054551083" underline="hover" color="inherit">+91 92657 12724</Link>
+                  By phone number: <Link href="tel:+91 9054551083" underline="hover" color="inherit">+91 9054551083</Link>
                 </Typography>
               </Box>
           </ListItem>
