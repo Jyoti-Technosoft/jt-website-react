@@ -369,10 +369,12 @@ const OurProduct: React.FC = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               sx={{ flex: 1 }}
+                              onClick={(e) => e.stopPropagation()}
                             >
                               <ActionButton
                                 variant="contained"
                                 sx={{ width: '100%' }}
+                                onClick={(e) => e.stopPropagation()}
                               >
                                 Live Demo
                               </ActionButton>
@@ -384,10 +386,12 @@ const OurProduct: React.FC = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               sx={{ flex: 1 }}
+                              onClick={(e) => e.stopPropagation()}
                             >
                               <ActionButton
                                 variant="outlined"
                                 sx={{ width: '100%' }}
+                                onClick={(e) => e.stopPropagation()}
                               >
                                 Brochure
                               </ActionButton>
