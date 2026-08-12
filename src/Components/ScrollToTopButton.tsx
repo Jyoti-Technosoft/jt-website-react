@@ -39,7 +39,7 @@ const ScrollToTopButton = () => {
           color: "white",
           border: "none",
           cursor: "pointer",
-          zIndex: 9999,
+          zIndex: 99,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -49,7 +49,7 @@ const ScrollToTopButton = () => {
       >
         <ArrowUpwardIcon
           style={{
-           fontSize: "20px"
+            fontSize: "20px"
           }}
         />
       </button>

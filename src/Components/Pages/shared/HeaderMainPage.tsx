@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
+import OptimizedImage from "../../OptimizedImageV2.tsx";
 import "../../../styles/header-main.css";
 
 interface HeaderMainPageProps {
@@ -65,12 +66,16 @@ const HeaderMainPage: React.FC<HeaderMainPageProps> = ({
 
         {imageSrc && (
           <Box className="header-main-image" sx={{ py: 3 }}>
-            <img
+            <OptimizedImage
               src={imageSrc}
               alt={smallTitle || "Header"}
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
+              sizes="(max-width: 768px) 0px, 45vw"
               style={{
                 borderRadius: "10px",
+                width: "100%",
+                height: "278px",
               }}
             />
           </Box>

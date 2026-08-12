@@ -168,7 +168,7 @@
 }
 
 .footermenu-header {
-  font-weight: 600;
+  font-weight: bold !important;
   font-size: 24px;
   line-height: 28.13px;
   letter-spacing: 0px;

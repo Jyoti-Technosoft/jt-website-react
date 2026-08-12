@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 
+import OptimizedImage from "../../OptimizedImageV2.tsx";
 import { API_ENDPOINTS } from "../../../config/api.ts";
 import "../../../styles/hire-us.css";
 
@@ -199,9 +200,9 @@ const BuildVision: React.FC = () => {
                 display: { xs: "none", md: "block" },
               }}
             >
-              <img
+              <OptimizedImage
                 src="/assets/hire-us-contact-img.png"
-                alt="placeholder"
+                alt="Build your vision"
                 loading="lazy"
                 style={{
                   width: "740px",
@@ -408,7 +409,7 @@ const BuildVision: React.FC = () => {
                     },
                   }}
                 />
-                <Box my={2}>
+                <Box className="recaptcha-wrapper">
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     sitekey="6LfmNKMZAAAAAKrDxRn2_NcHoRPW9-uFuWs98XCx"

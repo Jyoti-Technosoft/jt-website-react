@@ -10,3 +10,27 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+/* Responsive reCAPTCHA container */
+.recaptcha-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+@media (max-width: 480px) {
+  .recaptcha-wrapper > div {
+    transform: scale(0.85);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 360px) {
+  .recaptcha-wrapper > div {
+    transform: scale(0.75);
+    transform-origin: center center;
+  }
+}

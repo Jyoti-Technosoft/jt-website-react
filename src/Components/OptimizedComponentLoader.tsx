@@ -1,25 +1,9 @@
 import React, { lazy, Suspense, memo, ComponentType } from 'react';
-import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import Loader from './Pages/Loader.tsx';
 
 // Optimized loading component
-const LoadingSpinner = memo(() => (
-  <Box
-    sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '200px',
-      flexDirection: 'column',
-      gap: 2,
-    }}
-  >
-    <CircularProgress size={40} />
-    <Box sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
-      Loading...
-    </Box>
-  </Box>
-));
+const LoadingSpinner = memo(() => <Loader />);
 
 LoadingSpinner.displayName = 'LoadingSpinner';
 

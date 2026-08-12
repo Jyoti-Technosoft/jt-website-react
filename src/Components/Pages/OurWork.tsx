@@ -3,7 +3,6 @@ import { useLocation, useNavigate, useSearchParams, Link as RouterLink } from "r
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Chip from "@mui/material/Chip";
 import Tooltip from "@mui/material/Tooltip";
@@ -22,6 +21,7 @@ import { Helmet } from 'react-helmet-async';
 
 import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
+import OptimizedImage from "../OptimizedImageV2.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/career.css";
 
@@ -454,15 +454,15 @@ const OurWork: React.FC = () => {
                           overflow: "hidden",
                         }}
                       >
-                        <CardMedia
-                          component="img"
-                          image={
+                        <OptimizedImage
+                          src={
                             project.Images?.[currentImageIndex] ||
                             "assets/images/portfolio/default.png"
                           }
                           alt={project.projectName}
                           loading="lazy"
-                          sx={{
+                          sizes="(max-width: 900px) 100vw, 50vw"
+                          style={{
                             maxHeight: "100%",
                             maxWidth: "100%",
                             objectFit: "contain",

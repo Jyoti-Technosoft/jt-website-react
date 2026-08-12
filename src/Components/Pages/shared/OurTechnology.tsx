@@ -11,6 +11,7 @@ import { useTheme } from "@mui/material/styles";
 import ChevronLeft from "@mui/icons-material/ChevronLeft";
 import ChevronRight from "@mui/icons-material/ChevronRight";
 
+import OptimizedImage from "../../OptimizedImageV2.tsx";
 import dataArray from "../../../jt-website.json";
 import "../../../styles/home.css";
 
@@ -63,14 +64,15 @@ const OurTechnology: React.FC = () => {
                   From copilots to internal tools, we blend AI into practical product workflows.
                 </Typography>
               </Box>
-              <Box
-                component="img"
+              <OptimizedImage
                 src="/assets/ai-technology.png"
                 alt="AI Agent"
                 loading="lazy"
-                width={132}
-                height={88}
-                className="ourTechnology-ai-image"
+                style={{
+                  width: "132px",
+                  height: "88px",
+                  objectFit: "contain",
+                }}
               />
             </Box>
 
@@ -147,11 +149,16 @@ const OurTechnology: React.FC = () => {
                               key={techIndex}
                             >
                               <Box className="tech-item" textAlign="center">
-                                <img
-                                  className="tech-img"
+                                <OptimizedImage
                                   src={tech?.imgSrc}
                                   alt={tech?.label}
                                   loading="lazy"
+                                  style={{
+                                    width: "48px",
+                                    height: "48px",
+                                    objectFit: "contain",
+                                    margin: "0 auto",
+                                  }}
                                 />
                                 <Typography className="tech-label" variant="body2">
                                   {tech?.label}

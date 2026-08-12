@@ -409,9 +409,9 @@ const Contact: React.FC = () => {
                   ) : ( 
                   <Stack
                     mt={isNotSmallScreen ? 14 : 5}
-                    px={isNotSmallScreen ? 12 : 8}
-                    pb={8}
-                    pt={8}
+                    px={isNotSmallScreen ? 12 : { xs: 3, sm: 5, md: 12 }}
+                    pb={{ xs: 4, md: 8 }}
+                    pt={{ xs: 4, md: 8 }}
                     className="contact-card"
                     component="form"
                     onSubmit={handleSubmit}
@@ -527,7 +527,7 @@ const Contact: React.FC = () => {
                       },
                     }}
                   />
-                  <Box my={2}>
+                  <Box className="recaptcha-wrapper">
                     <ReCAPTCHA
                       sitekey="6LfmNKMZAAAAAKrDxRn2_NcHoRPW9-uFuWs98XCx"
                       onChange={handleCaptchaChange}

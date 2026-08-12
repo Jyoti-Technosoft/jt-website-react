@@ -17,61 +17,61 @@ const toStringArray = (value: unknown): string[] =>
 const toOfferItems = (value: unknown): OfferItem[] =>
   Array.isArray(value)
     ? value.map((item, index) => {
-        const entry = (item ?? {}) as Record<string, unknown>;
-        return {
-          id: typeof entry.id === "number" ? entry.id : index + 1,
-          title: toString(entry.title, "Service"),
-          description: toString(entry.description),
-          imageSrc: toString(entry.imageSrc) || undefined,
-          imageSrc1: toString(entry.imageSrc1) || undefined,
-        };
-      })
+      const entry = (item ?? {}) as Record<string, unknown>;
+      return {
+        id: typeof entry.id === "number" ? entry.id : index + 1,
+        title: toString(entry.title, "Service"),
+        description: toString(entry.description),
+        imageSrc: toString(entry.imageSrc) || undefined,
+        imageSrc1: toString(entry.imageSrc1) || undefined,
+      };
+    })
     : [];
 
 const toMetrics = (value: unknown): MetricItem[] =>
   Array.isArray(value)
     ? value.map((item) => {
-        const entry = (item ?? {}) as Record<string, unknown>;
-        return {
-          value: toString(entry.title, "0"),
-          label: toString(entry.description, "Metric"),
-          supportingText: toString(entry.supportingText),
-        };
-      })
+      const entry = (item ?? {}) as Record<string, unknown>;
+      return {
+        value: toString(entry.title, "0"),
+        label: toString(entry.description, "Metric"),
+        supportingText: toString(entry.supportingText),
+      };
+    })
     : [];
 
 const toProcessSteps = (value: unknown): ProcessStep[] =>
   Array.isArray(value)
     ? value
-        .map((item, index) => {
-          const entry = (item ?? {}) as Record<string, unknown>;
-          const details = toString(entry.details || entry.description2);
+      .map((item, index) => {
+        const entry = (item ?? {}) as Record<string, unknown>;
+        const details = toString(entry.details || entry.description2);
 
-          if (!details) {
-            return null;
-          }
+        if (!details) {
+          return null;
+        }
 
-          return {
-            id: typeof entry.id === "number" ? entry.id : index + 1,
-            title: toString(entry.title, `Step ${index + 1}`),
-            eyebrow: toString(entry.eyebrow || entry.description1),
-            details,
-            imageSrc: toString(entry.imageSrc),
-          };
-        })
-        .filter((item): item is ProcessStep => item !== null)
+        return {
+          id: typeof entry.id === "number" ? entry.id : index + 1,
+          title: toString(entry.title, `Step ${index + 1}`),
+          eyebrow: toString(entry.eyebrow || entry.description1),
+          details,
+          imageSrc: toString(entry.imageSrc),
+        };
+      })
+      .filter((item): item is ProcessStep => item !== null)
     : [];
 
 const toBuiltProjects = (value: unknown): BuiltProject[] =>
   Array.isArray(value)
     ? value.map((item, index) => {
-        const entry = (item ?? {}) as Record<string, unknown>;
-        return {
-          id: typeof entry.id === "number" ? entry.id : index + 1,
-          title: toString(entry.title, `Project ${index + 1}`),
-          imageSrc: toString(entry.imageSrc),
-        };
-      })
+      const entry = (item ?? {}) as Record<string, unknown>;
+      return {
+        id: typeof entry.id === "number" ? entry.id : index + 1,
+        title: toString(entry.title, `Project ${index + 1}`),
+        imageSrc: toString(entry.imageSrc),
+      };
+    })
     : [];
 
 const home = (rawData.home ?? {}) as Record<string, unknown>;
@@ -101,70 +101,70 @@ export const homeContent: HomePageContent = {
       {
         title: "Praksis",
         label: "AI learning platform",
-        imageSrc: "/assets/images/portfolio/praksis-mockup.png",
+        imageSrc: "/assets/webp/images/portfolio/praksis-mockup.webp",
       },
       {
         title: "SiteSync",
         label: "Construction product",
-        imageSrc: "/assets/images/portfolio/SiteSync-mockup.png",
+        imageSrc: "/assets/webp/images/portfolio/SiteSync-mockup.webp",
       },
       {
         title: "Yacht Brochure",
         label: "Brochure workflow",
-        imageSrc: "/assets/images/portfolio/yatch-brochure-mockup.png",
+        imageSrc: "/assets/webp/images/portfolio/yatch-brochure-mockup.webp",
       },
     ],
     videoPreview: {
       src: "/assets/JT-website-video.mp4",
-      poster: "/assets/images/portfolio/jt-website-mockup.png",
+      poster: "/assets/webp/video-ai-asset-background.webp",
       label: "Project reel",
       caption: "Use motion only inside the product stage so the hero stays clear and conversion-focused.",
       thumbnails: [
         {
           title: "D3 Showcase",
           label: "Analytics dashboard",
-          imageSrc: "/assets/images/portfolio/d3-showcase-mockup.png",
+          imageSrc: "/assets/webp/images/portfolio/d3-showcase-mockup.webp",
         },
         {
           title: "Property Vista",
           label: "Real-estate platform",
-          imageSrc: "/assets/images/portfolio/pvista-mockup.png",
+          imageSrc: "/assets/webp/images/portfolio/pvista-mockup.webp",
         },
         {
           title: "SiteSync",
           label: "Mobile operations",
-          imageSrc: "/assets/images/portfolio/SiteSync-mockup.png",
+          imageSrc: "/assets/webp/images/portfolio/SiteSync-mockup.webp",
         },
       ],
     },
   },
   clientTestimonials: (() => {
     const clientTestimonials = (home.clientTestimonials ?? {}) as Record<string, unknown>;
-    
+
     return {
       title: toString(clientTestimonials.title, "Trusted by Leading Teams"),
       description: toString(clientTestimonials.description, "Partnering with innovative companies to deliver exceptional digital experiences"),
-      logos: Array.isArray(clientTestimonials.logos) 
+      logos: Array.isArray(clientTestimonials.logos)
         ? clientTestimonials.logos.map((logo, index) => {
-            const logoData = (logo ?? {}) as Record<string, unknown>;
-            return {
-              name: toString(logoData.name, `Client ${index + 1}`),
-              logo: toString(logoData.logo, ""),
-              alt: toString(logoData.alt, `${toString(logoData.name, `Client ${index + 1}`)} logo`),
-            };
-          })
+          const logoData = (logo ?? {}) as Record<string, unknown>;
+          return {
+            name: toString(logoData.name, `Client ${index + 1}`),
+            logo: toString(logoData.logo, ""),
+            alt: toString(logoData.alt, `${toString(logoData.name, `Client ${index + 1}`)} logo`),
+          };
+        })
         : [],
       testimonials: Array.isArray(clientTestimonials.testimonials)
         ? clientTestimonials.testimonials.map((testimonial, index) => {
-            const testimonialData = (testimonial ?? {}) as Record<string, unknown>;
-            return {
-              quote: toString(testimonialData.quote, "Excellent service and delivery."),
-              author: toString(testimonialData.author, `Client ${index + 1}`),
-              role: toString(testimonialData.role, "Client"),
-              company: toString(testimonialData.company, "Company"),
-              avatar: toString(testimonialData.avatar, ""),
-            };
-          })
+          const testimonialData = (testimonial ?? {}) as Record<string, unknown>;
+          return {
+            quote: toString(testimonialData.quote, "Excellent service and delivery."),
+            author: toString(testimonialData.author, `Client ${index + 1}`),
+            role: toString(testimonialData.role, "Client"),
+            company: toString(testimonialData.company, "Company"),
+            avatar: toString(testimonialData.avatar, ""),
+          };
+        })
         : [],
     };
   })(),

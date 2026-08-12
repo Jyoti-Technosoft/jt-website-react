@@ -1,68 +1,62 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
-import { Helmet } from "react-helmet-async";
-
-import HomeWhyUs from "../Pages/HomeWhyUs.tsx";
-import OurTechnology from "./shared/OurTechnology.tsx";
-import WeOffer from "./shared/WeOffer.tsx";
-import WeveBuilt from "./shared/WeveBuilt.tsx";
-import OurNewsletter from "./shared/OurNewsletter.tsx";
-import IndustryExpertise from "./shared/IndustryExpertise.tsx";
-import HowWeWork from "./shared/HowWeWork.tsx";
-import ClientTestimonials from "./shared/ClientTestimonials.tsx";
-import ClientLogoCarousel from "./shared/ClientLogoCarousel.tsx";
+import SEO from "../SEO.tsx";
 import CTAButton from "../shared/CTAButton.tsx";
+import OptimizedImage from "../OptimizedImageV2.tsx";
 import { homeContent } from "../../content/homeContent";
 import { performanceMonitor } from "../../utils/performanceMonitor";
 import { performanceBudgetChecker } from "../../utils/performanceBudget";
 import "../../styles/home.css";
 
+// Lazy load below-the-fold components to minimize initial execution time
+const ClientLogoCarousel = React.lazy(() => import("./shared/ClientLogoCarousel.tsx"));
+const ClientTestimonials = React.lazy(() => import("./shared/ClientTestimonials.tsx"));
+const WeOffer = React.lazy(() => import("./shared/WeOffer.tsx"));
+const OurTechnology = React.lazy(() => import("./shared/OurTechnology.tsx"));
+const HomeWhyUs = React.lazy(() => import("../Pages/HomeWhyUs.tsx"));
+const IndustryExpertise = React.lazy(() => import("./shared/IndustryExpertise.tsx"));
+const HowWeWork = React.lazy(() => import("./shared/HowWeWork.tsx"));
+const OurNewsletter = React.lazy(() => import("./shared/OurNewsletter.tsx"));
+const WeveBuilt = React.lazy(() => import("./shared/WeveBuilt.tsx"));
+
 const Home: React.FC = () => {
+  const [shouldLoadHeroVideo, setShouldLoadHeroVideo] = useState(false);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    
+
     // Log performance metrics in development
     if (process.env.NODE_ENV === "development") {
       setTimeout(() => {
         console.log("🏠 Home Page Performance:");
         performanceMonitor.logFullReport();
-        
+
         console.log("💰 Performance Budget:");
         performanceBudgetChecker.checkBudget();
       }, 5000);
     }
   }, []);
 
+  useEffect(() => {
+    // Only load video source on desktop to save bandwidth on mobile
+    const isDesktop = window.matchMedia("(min-width: 900px)").matches;
+    const isSaveData = (navigator as any).connection?.saveData === true;
+    
+    if (isDesktop && !isSaveData) {
+      setShouldLoadHeroVideo(true);
+    }
+  }, []);
+
   return (
     <>
-      <Helmet>
-        <title>Web Development & AI Solutions | Jyoti Technosoft LLP</title>
-        <meta
-          name="description"
-          content="Expert web development, mobile apps, and AI integration services. Transform your business with custom software solutions, API development, and digital transformation by Jyoti Technosoft LLP."
-        />
-        <meta
-          name="keywords"
-          content="web development, mobile app development, AI integration, software solutions, API development, digital transformation, custom software, IT consulting"
-        />
-        <meta
-          property="og:title"
-          content="Web Development & AI Solutions | Jyoti Technosoft LLP"
-        />
-        <meta
-          property="og:description"
-          content="Expert web development, mobile apps, and AI integration services by Jyoti Technosoft LLP"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jyotitechnosoft.com/" />
-        <meta
-          property="og:image"
-          content="https://jyotitechnosoft.com/assets/logo192.png"
-        />
-        <link rel="canonical" href="https://jyotitechnosoft.com/" />
-      </Helmet>
+      <SEO
+        title="Web Development & AI Solutions | Jyoti Technosoft LLP"
+        description="Expert web development, mobile apps, and AI integration services. Transform your business with custom software solutions, API development, and digital transformation by Jyoti Technosoft LLP."
+        keywords="web development, mobile app development, AI integration, software solutions, API development, digital transformation, custom software, IT consulting"
+        url="https://jyotitechnosoft.com/"
+      />
       <Box>
         <div className="first-section-home">
           <Box className="first-section-home-content" role="main">
@@ -107,11 +101,12 @@ const Home: React.FC = () => {
                     <Box className="hero-video-container">
                       <Box
                         component="video"
-                        autoPlay
+                        autoPlay={shouldLoadHeroVideo}
                         loop
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
+                        poster={homeContent.hero.videoPreview.poster}
                         className="hero-video"
                         sx={{
                           width: "100%",
@@ -121,23 +116,17 @@ const Home: React.FC = () => {
                           boxShadow: "0 24px 48px rgba(0, 0, 0, 0.24)",
                           display: { xs: "none", md: "block" }, // Hide on mobile, show on desktop
                         }}
-                        onLoadStart={() => {
-                          setTimeout(() => {
-                            const video = document.querySelector('.hero-video') as HTMLVideoElement;
-                            if (video) {
-                              video.load();
-                            }
-                          }, 1000);
-                        }}
                       >
-                        <source src={homeContent.hero.videoPreview.src} type="video/mp4" />
+                        {shouldLoadHeroVideo && (
+                          <source src={homeContent.hero.videoPreview.src} type="video/mp4" />
+                        )}
                         Your browser does not support the video tag.
                       </Box>
 
                       <Box className="hero-video-thumbnails">
                         {homeContent.hero.videoPreview.thumbnails.map((item, index) => (
-                          <Box 
-                            key={item.title} 
+                          <Box
+                            key={item.title}
                             className="hero-video-thumb"
                             onClick={() => {
                               // Handle thumbnail click to potentially change main video
@@ -152,12 +141,13 @@ const Home: React.FC = () => {
                               },
                             }}
                           >
-                            <Box
-                              component="img"
+                            <OptimizedImage
                               src={item.imageSrc}
                               alt={item.title}
                               className="hero-video-thumb-image"
-                              sx={{
+                              loading="lazy"
+                              sizes="(max-width: 900px) 0px, 160px"
+                              style={{
                                 transition: "all 0.3s ease",
                               }}
                             />
@@ -180,15 +170,17 @@ const Home: React.FC = () => {
           </Box>
         </div>
 
-        <ClientLogoCarousel />
-        <ClientTestimonials data={homeContent.clientTestimonials} />
-        <WeOffer />
-        <OurTechnology />
-        <HomeWhyUs />
-        <IndustryExpertise />
-        <HowWeWork />
-        <OurNewsletter />
-        <WeveBuilt />
+        <Suspense fallback={null}>
+          <Box sx={{ minHeight: "120px" }}><ClientLogoCarousel /></Box>
+          <Box sx={{ minHeight: "380px" }}><ClientTestimonials data={homeContent.clientTestimonials} /></Box>
+          <Box sx={{ minHeight: "450px" }}><WeOffer /></Box>
+          <Box sx={{ minHeight: "450px" }}><OurTechnology /></Box>
+          <Box sx={{ minHeight: "380px" }}><HomeWhyUs /></Box>
+          <Box sx={{ minHeight: "400px" }}><IndustryExpertise /></Box>
+          <Box sx={{ minHeight: "520px" }}><HowWeWork /></Box>
+          <Box sx={{ minHeight: "280px" }}><OurNewsletter /></Box>
+          <Box sx={{ minHeight: "500px" }}><WeveBuilt /></Box>
+        </Suspense>
       </Box>
     </>
   );

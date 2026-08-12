@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { SxProps } from "@mui/material/styles";
 
+import OptimizedImage from "../OptimizedImageV2.tsx";
 import { appTheme } from "../../theme/theme";
 import { borderRadius, shadows, spacing } from "../../theme/designTokens";
 
@@ -51,15 +52,15 @@ const BaseCard: React.FC<BaseCardProps> = ({
     >
       <CardContent sx={{ p: spacing.lg, height: "100%" }}>
         {image && (
-          <Box
-            component="img"
+          <OptimizedImage
             src={image}
-            alt={title}
-            sx={{
-              width: 44,
-              height: 44,
+            alt={title || "Icon"}
+            loading="lazy"
+            style={{
+              width: "44px",
+              height: "44px",
               objectFit: "contain",
-              mb: spacing.sm,
+              marginBottom: "8px",
             }}
           />
         )}

@@ -232,7 +232,7 @@
         {
           "id": 3,
           "title": "SiteSync",
-          "imageSrc":  "/assets/images/portfolio/SiteSync-mockup.png"
+          "imageSrc": "/assets/images/portfolio/SiteSync-mockup.png"
         }
       ]
     }
@@ -1423,52 +1423,6 @@
       ]
     },
     {
-      "projectName": "Jyoti Technosoft Website",
-      "projectId": 11,
-      "technology": "Angular",
-      "priority": 7,
-      "category": ["Custom Software Development", "Visualization"],
-      "description": "Jyoti Technosoft's website displaying the organization's overview, achievements, projects. The website offers valuable insights into the company's expertise, showcasing its success stories.",
-      "detailedDescription": "The Jyoti Technosoft Website is a comprehensive online platform that showcases the organization's expertise, achievements, and projects. Built using Angular and D3.js, the website offers an engaging and interactive user experience, allowing visitors to explore the company's offerings in detail. The site features various sections highlighting Jyoti Technosoft's services, case studies, client testimonials, and industry insights. With its modern design and intuitive navigation, the website serves as a valuable resource for potential clients and partners seeking to learn more about Jyoti Technosoft's capabilities and success stories in the field of technology solutions.",
-      "logo": "assets/images/portfolio/favicon.png",
-      "viewDemo": "https://www.jyotitechnosoft.com/",
-      "Images": [
-        "assets/images/portfolio/jt-website-mockup.png",
-        "assets/images/portfolio/jt-main.png",
-        "assets/images/portfolio/jt-website1.png",
-        "assets/images/portfolio/jt-website2.png",
-        "assets/images/portfolio/jt-website3.png",
-        "assets/images/portfolio/jt-website4.png",
-        "assets/images/portfolio/jt-website5.png",
-        "assets/images/portfolio/jt-website6.png",
-        "assets/images/portfolio/jt-website7.png"
-      ],
-      "mainTechnology": [
-        {
-          "images" : "assets/images/technology-badges/Angular.svg",
-          "technologyName" : "Angular"
-        },
-        {
-          "images" : "assets/images/technology-badges/nodejs.svg",
-          "technologyName" : "Node.js"
-        },
-        {
-          "images" : "assets/images/technology-badges/D3.svg",
-          "technologyName" : "D3"
-        }
-      ],
-      "useTechnology": [
-        {
-          "images" : "assets/images/technology-badges/Typescript.svg",
-          "technologyName" : "TypeScript"
-        },
-        {
-          "images" : "assets/images/technology-badges/bootstrap.svg",
-          "technologyName" : "Bootstrap"
-        }
-      ]
-    },
-    {
       "projectName": "D3 Showcase",
       "projectId": 12,
       "priority": 12,
@@ -1901,25 +1855,27 @@
       "projectId": 22,
       "priority": 13,
       "technology": "Flutter",
-      "category": ["Mobile App"],
+      "category": [
+        "Mobile App"
+      ],
       "description": "SiteSync is a construction project management app where builders create sites, assign agencies, and track progress. Agency heads manage workers, allocate tasks, and log daily work. This ensures real-time visibility, accountability, and organized tracking of all construction activities across multiple sites.",
       "detailedDescription": "It is designed to streamline construction project management for builders and agencies. The app allows builders to create and manage construction sites, assign agencies to specific projects, and monitor progress in real-time. Agency heads can efficiently manage their workforce by allocating tasks, tracking daily work logs, and ensuring accountability among workers. With its user-friendly interface and robust features, SiteSync provides a comprehensive solution for organizing and tracking all construction activities across multiple sites, enhancing communication and collaboration between builders and agencies. By leveraging Firebase for backend services and Provider for state management, SiteSync ensures a seamless and efficient experience for all users involved in the construction process.",
-      "logo": "assets/images/portfolio/SiteSync.png",
+      "logo": "assets/images/portfolio/sitesync.png",
       "viewDemo": "",
       "Images": [
         "assets/images/portfolio/SiteSync-mockup.png",
-        "assets/images/portfolio/SiteSync1.png",
-        "assets/images/portfolio/SiteSync2.png",
-        "assets/images/portfolio/SiteSync3.png",
-        "assets/images/portfolio/SiteSync4.png"
+        "assets/images/portfolio/sitesync1.png",
+        "assets/images/portfolio/sitesync2.png",
+        "assets/images/portfolio/sitesync3.png",
+        "assets/images/portfolio/sitesync4.png"
       ],
       "mainTechnology": [
         {
-          "images" : "assets/flutter.png",
+          "images": "assets/flutter.png",
           "technologyName": "Flutter"
         },
         {
-          "images" : "assets/firebase.png",
+          "images": "assets/firebase.png",
           "technologyName": "Firebase"
         },
         {
@@ -2922,18 +2878,20 @@
       "productId": 22,
       "priority": 13,
       "technology": "Flutter",
-      "category": ["Mobile App"],
+      "category": [
+        "Mobile App"
+      ],
       "description": "SiteSync is a comprehensive construction project management app where builders can create construction sites, assign agencies to specific sites, and track progress in real-time. Agency heads can efficiently manage workers, allocate tasks, and log daily work activities. This ensures real-time visibility, accountability, and organized tracking of all construction activities across multiple sites.",
       "detailedDescription": "SiteSync revolutionizes construction management by providing a centralized platform for all stakeholders. Builders gain complete oversight of their projects with intuitive dashboards showing site progress, resource allocation, and milestone completion. Agency managers benefit from streamlined worker management, task assignment capabilities, and comprehensive reporting tools. The app's real-time notification system keeps everyone informed about critical updates, while robust analytics provide insights into productivity and project performance. With features like photo documentation, issue tracking, and time logging, SiteSync eliminates paperwork and reduces miscommunication, making construction projects more efficient and transparent.",
-      "logo": "assets/images/portfolio/SiteSync.png",
+      "logo": "assets/images/portfolio/sitesync.png",
       "viewDemo": "",
       "brochureUrl": "/assets/brochure/sitesync-brochure.pdf",
       "Images": [
         "assets/images/portfolio/SiteSync-mockup.png",
-        "assets/images/portfolio/SiteSync1.png",
-        "assets/images/portfolio/SiteSync2.png",
-        "assets/images/portfolio/SiteSync3.png",
-        "assets/images/portfolio/SiteSync4.png"
+        "assets/images/portfolio/sitesync1.png",
+        "assets/images/portfolio/sitesync2.png",
+        "assets/images/portfolio/sitesync3.png",
+        "assets/images/portfolio/sitesync4.png"
       ],
       "mainTechnology": [
         {

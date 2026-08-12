@@ -11,6 +11,7 @@ import Container from "@mui/material/Container";
 import GamepadIcon from "@mui/icons-material/Gamepad";
 
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
+import OptimizedImage from "../OptimizedImageV2.tsx";
 import { API_ENDPOINTS } from "../../config/api.ts";
 import "../../styles/career-details.css";
 interface Job {
@@ -408,17 +409,15 @@ const CareerDetails: React.FC = () => {
               zIndex: 2,
             }}
           >
-            <Box
-              component="img"
+            <OptimizedImage
               src="/assets/career-details-img.png"
               alt="Career Related Contact"
               loading="lazy"
-              sx={{
+              style={{
                 width: "100%",
                 height: "100%",
-                borderTopLeftRadius: { md: 20, xs: 0 },
-                borderBottomLeftRadius: { md: 20, xs: 0 },
-                borderBottomRightRadius: 0,
+                borderTopLeftRadius: "20px",
+                borderBottomLeftRadius: "20px",
                 objectFit: "cover",
               }}
             />
@@ -619,7 +618,7 @@ const CareerDetails: React.FC = () => {
                         />
                       </Button>
                     </Box>
-                    <Box my={2} textAlign="center">
+                    <Box className="recaptcha-wrapper">
                       <ReCAPTCHA
                         sitekey="6LfmNKMZAAAAAKrDxRn2_NcHoRPW9-uFuWs98XCx"
                         onChange={handleCaptchaChange}

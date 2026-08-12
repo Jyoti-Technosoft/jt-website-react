@@ -7,18 +7,31 @@ module.exports = function override(config, env) {
     // Optimized code splitting - balance between size and file count
     config.optimization.splitChunks = {
       chunks: 'all',
-      minSize: 50000, // Increased to 50KB to prevent too many small chunks
-      maxSize: 200000, // 200KB max - allows reasonable splitting without too many files
-      maxAsyncRequests: 5, // Reduced to limit async chunks (routes)
-      maxInitialRequests: 4, // Reduced to limit initial chunks
+      minSize: 30000,
+      maxSize: 244000,
       cacheGroups: {
-        // All vendor libraries in one chunk (highest priority)
+        // Material UI chunk
+        mui: {
+          test: /[\\/]node_modules[\\/](@mui|@emotion)[\\/]/,
+          name: 'framework-mui',
+          chunks: 'all',
+          priority: 30,
+          reuseExistingChunk: true,
+        },
+        // React core chunk
+        react: {
+          test: /[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|react-helmet-async)[\\/]/,
+          name: 'framework-react',
+          chunks: 'all',
+          priority: 25,
+          reuseExistingChunk: true,
+        },
+        // General vendor libraries
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
-          priority: 20,
-          enforce: true,
+          priority: 15,
           reuseExistingChunk: true,
         },
         // Common chunk for shared application code
@@ -28,7 +41,14 @@ module.exports = function override(config, env) {
           chunks: 'all',
           priority: 10,
           reuseExistingChunk: true,
+        },
+        // Consolidated CSS
+        styles: {
+          name: 'styles',
+          test: /\.(css|scss|sass)$/,
+          chunks: 'all',
           enforce: true,
+          priority: 50,
         },
         // Default - merge remaining small chunks
         default: {
@@ -36,14 +56,13 @@ module.exports = function override(config, env) {
           priority: -10,
           reuseExistingChunk: true,
         },
-        // Prevent default splitting for very small chunks
         defaultVendors: false,
       },
     };
 
     // Enable tree shaking
     config.optimization.usedExports = true;
-    config.optimization.sideEffects = false;
+    config.optimization.sideEffects = true;
     
     // Module concatenation for better minification
     config.optimization.concatenateModules = true;
@@ -53,20 +72,18 @@ module.exports = function override(config, env) {
       name: 'runtime',
     };
     
-    // Minimize bundle size with aggressive settings
+    // Minimize bundle size with memory-safe settings
     if (config.optimization.minimizer) {
       config.optimization.minimizer.forEach((minimizer) => {
         if (minimizer.constructor.name === 'TerserPlugin') {
+          minimizer.options.parallel = false;
           minimizer.options.terserOptions = {
             ...minimizer.options.terserOptions,
             compress: {
               ...minimizer.options.terserOptions?.compress,
-              drop_console: true, // Remove console.log in production
+              drop_console: true,
               drop_debugger: true,
-              pure_funcs: ['console.log', 'console.info', 'console.debug'], // Remove specific console methods
-            },
-            mangle: {
-              ...minimizer.options.terserOptions?.mangle,
+              pure_funcs: ['console.log', 'console.info', 'console.debug'],
             },
           };
         }

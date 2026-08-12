@@ -1,9 +1,9 @@
 import React, { Suspense, lazy, memo, useCallback, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import CircularProgress from '@mui/material/CircularProgress';
 import Header from './Header.tsx';
 import Footer from './Footer.tsx';
+import Loader from './Pages/Loader.tsx';
 
 // Lazy load components with better error boundaries
 // Group related routes to reduce chunk count
@@ -30,23 +30,7 @@ const NotFound = lazy(() => import(/* webpackChunkName: "utility-pages" */ './Pa
 const AdminPortal = lazy(() => import(/* webpackChunkName: "admin" */ './Pages/AdminPortal.tsx'));
 
 // Optimized loading component
-const LoadingSpinner = memo(() => (
-  <Box
-    sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '50vh',
-      flexDirection: 'column',
-      gap: 2,
-    }}
-  >
-    <CircularProgress size={40} />
-    <Box sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
-      Loading...
-    </Box>
-  </Box>
-));
+const LoadingSpinner = memo(() => <Loader />);
 
 LoadingSpinner.displayName = 'LoadingSpinner';
 

@@ -307,7 +307,9 @@
     #contact2 .contact-card {
         position: relative;
         z-index: 2;
-        width: 82%;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         height: 100%;
         bottom: 0;
         margin-bottom: 3rem;

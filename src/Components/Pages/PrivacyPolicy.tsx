@@ -193,6 +193,11 @@ const PrivacyPolicy: React.FC = () => {
             </Box>
           </ListItem>
         </List>
+        <Typography mt={2} className="header-description">
+          Data Controller: Jyoti Technosoft LLP is the data controller for the
+          purposes of applicable data protection laws. You can contact us at
+          info.jyotitechnosoft@gmail.com for privacy-related requests.
+        </Typography>
         <Typography className="privacy-first-section-header" mt={4}>Collecting and Using Your Personal Data</Typography>
         <Typography mt={2} className="privacy-first-section-sub-header">Types of Data Collected</Typography>
         <Typography mt={3} className="privacy-first-section-sub-header">Personal Data</Typography>
@@ -262,11 +267,11 @@ const PrivacyPolicy: React.FC = () => {
         </Typography>
         <Typography mt={4} className="privacy-first-section-sub-header">Tracking Technologies and Cookies</Typography>
         <Typography mt={2} className="header-description">
-          We use Cookies and similar tracking technologies to track the activity
-          on Our Service and store certain information. Tracking technologies
-          used are beacons, tags, and scripts to collect and track information
-          and to improve and analyze Our Service. The technologies We use may
-          include:
+          We use Cookies and similar tracking technologies to collect and store
+          information about Your use of Our Service. Tracking technologies we
+          use include beacons, tags, and scripts to collect and store
+          information and to improve and analyze Our Service. These
+          technologies may include:
         </Typography>
         <List>
         <ListItem disableGutters>
@@ -354,7 +359,9 @@ const PrivacyPolicy: React.FC = () => {
         <Typography mt={2} className="header-description">
           For more information about the cookies we use and your choices
           regarding cookies, please visit our Cookies Policy or the Cookies
-          section of our Privacy Policy.
+          section of our Privacy Policy. You can control cookies through your
+          browser settings and may opt out of certain analytics using the
+          analytics provider's opt-out mechanisms.
         </Typography>
         <Typography mt={4} className="privacy-first-section-sub-header">Use of Your Personal Data</Typography>
         <Typography mt={2} className="header-description">The Company may use Personal Data for the following purposes:</Typography>
@@ -492,11 +499,12 @@ const PrivacyPolicy: React.FC = () => {
         <Typography mt={2} className="privacy-first-section-sub-header">Retention of Your Personal Data</Typography>
         <Typography mt={2} className="header-description">
           The Company will retain Your Personal Data only for as long as is
-          necessary for the purposes set out in this Privacy Policy. We will
-          retain and use Your Personal Data to the extent necessary to comply
-          with our legal obligations (for example, if we are required to retain
-          your data to comply with applicable laws), resolve disputes, and
-          enforce our legal agreements and policies.
+          necessary for the purposes set out in this Privacy Policy. Retention
+          periods vary by the type of data; for example, account information
+          is typically retained while Your account exists or as required by
+          applicable law. We will retain and use Your Personal Data to the
+          extent necessary to comply with our legal obligations, resolve
+          disputes, and enforce our legal agreements and policies.
         </Typography>
         <Typography mt={2} className="header-description">
           The Company will also retain Usage Data for internal analysis
@@ -540,7 +548,9 @@ const PrivacyPolicy: React.FC = () => {
           signing in to Your Account, if you have one, and visiting the account
           settings section that allows you to manage Your personal information.
           You may also contact Us to request access to, correct, or delete any
-          personal information that You have provided to Us.
+          personal information that You have provided to Us. We will respond to
+          such requests in accordance with applicable law, typically within 30
+          days.
         </Typography>
         <Typography mt={2} className="header-description">
           Please note, however, that We may need to retain certain information
@@ -564,19 +574,22 @@ const PrivacyPolicy: React.FC = () => {
         </Typography>
         <Typography className="privacy-first-section-header" mt={4}>Children's Privacy</Typography>
         <Typography mt={2} className="header-description">
-          Our Service does not address anyone under the age of 13. We do not
-          knowingly collect personally identifiable information from anyone
-          under the age of 13. If You are a parent or guardian and You are aware
-          that Your child has provided Us with Personal Data, please contact Us.
-          If We become aware that We have collected Personal Data from anyone
-          under the age of 13 without verification of parental consent, We take
-          steps to remove that information from Our servers.
+          Our Service is not directed to children under the age of 18, and we
+          do not knowingly collect Personal Data from children under 18. If we
+          learn that we have collected Personal Data from a person under 18
+          without verified parental or guardian consent, we will take prompt
+          steps to delete that information.
         </Typography>
         <Typography mt={2} className="header-description">
-          If We need to rely on consent as a legal basis for processing Your
-          information and Your country requires consent from a parent, We may
-          require Your parent's consent before We collect and use that
-          information.
+          If you are a parent or guardian and believe that your minor (under
+          18) has provided Personal Data to us, please contact us at
+          info.jyotitechnosoft@gmail.com with the minor's name, the data you
+          believe was provided, and proof of parental or guardian
+          relationship. We will investigate and respond promptly, normally
+          within 30 days. If your users are subject to a different legal age
+          for consent in their jurisdiction, please let us know so we can
+          consider any necessary updates to our age thresholds and consent
+          procedures.
         </Typography>
         <Typography className="privacy-first-section-header" mt={4}>Links to Other Websites</Typography>
         <Typography mt={2} className="header-description">
@@ -595,9 +608,9 @@ const PrivacyPolicy: React.FC = () => {
           of any changes by posting the new Privacy Policy on this page.
         </Typography>
         <Typography mt={2} className="header-description">
-          We will let You know via email and/or a prominent notice on Our
-          Service, prior to the change becoming effective and update the
-          &quot;April 02, 2024 &quot; date at the top of this Privacy Policy.
+          We will notify You by email and/or a prominent notice on Our Service
+          before changes take effect, and will update the "Last updated" date
+          above.
         </Typography>
         <Typography mt={2} className="header-description">
           You are advised to review this Privacy Policy periodically for any

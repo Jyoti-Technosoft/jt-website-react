@@ -6,12 +6,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
-import { Helmet } from 'react-helmet-async';
 
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
+import HeaderMainPage from "./shared/HeaderMainPage.tsx";
+import SEO from "../SEO.tsx";
+import OptimizedImage from "../OptimizedImageV2.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/about.css";
-import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 
 const About: React.FC = () => {
     // Memoize data access to prevent recalculation
@@ -22,16 +23,11 @@ const About: React.FC = () => {
     }, []);
     return (
       <>
-        <Helmet>
-          <title>About Us | Jyoti Technosoft LLP</title>
-          <meta name="description" content="Learn more about Jyoti Technosoft LLP, our mission, vision, and team of IT experts." />
-          <meta property="og:title" content="About Us | Jyoti Technosoft LLP" />
-          <meta property="og:description" content="Learn more about Jyoti Technosoft LLP, our mission, vision, and team of IT experts." />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://jyotitechnosoft.com/about" />
-          <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
-          <link rel="canonical" href="https://jyotitechnosoft.com/about" />
-        </Helmet>
+        <SEO
+          title="About Us | Jyoti Technosoft LLP"
+          description="Learn more about Jyoti Technosoft LLP, our mission, vision, and team of IT experts."
+          url="https://jyotitechnosoft.com/about"
+        />
         <HeaderMainPage
           smallTitle="About"
           page="Innovate, Implement & Inspire"
@@ -67,19 +63,14 @@ const About: React.FC = () => {
             {/* Main Content Section */}
             <Grid container spacing={6} alignItems="center">
               <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  component="img"
+                <OptimizedImage
                   src="/assets/about-first-section.png"
                   alt="Team Collaboration"
-                  sx={{
+                  style={{
                     width: "100%",
                     height: "auto",
                     borderRadius: "20px",
                     boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "scale(1.02)"
-                    }
                   }}
                   loading="lazy"
                 />
@@ -288,19 +279,14 @@ const About: React.FC = () => {
               alignItems="center"
             >
               <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  component="img"
+                <OptimizedImage
                   src="/assets/about-second-section.png"
                   alt="Our Values"
-                  sx={{
+                  style={{
                     width: "100%",
                     height: "auto",
                     borderRadius: "20px",
                     boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "scale(1.02)"
-                    }
                   }}
                   loading="lazy"
                 />

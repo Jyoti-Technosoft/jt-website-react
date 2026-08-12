@@ -1,127 +1,187 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require("fs");
+const path = require("path");
+const sharp = require("sharp");
 
-// Check if sharp is available, if not, install it
-function ensureSharp() {
-  try {
-    require('sharp');
-    console.log('✅ Sharp is available');
-  } catch (error) {
-    console.log('📦 Installing sharp for image optimization...');
-    try {
-      execSync('npm install sharp --save-dev', { stdio: 'inherit' });
-      console.log('✅ Sharp installed successfully');
-    } catch (installError) {
-      console.error('❌ Failed to install sharp. Please install manually: npm install sharp --save-dev');
-      process.exit(1);
+const rootDir = path.join(__dirname, "..");
+const assetsDir = path.join(rootDir, "public", "assets");
+const webpDir = path.join(assetsDir, "webp");
+const avifDir = path.join(assetsDir, "avif");
+const manifestPath = path.join(rootDir, "src", "imageManifest.json");
+const reportPath = path.join(rootDir, "image-optimization-report.json");
+
+const IMAGE_EXTENSIONS = /\.(png|jpe?g)$/i;
+const SKIP_SEGMENTS = new Set(["webp", "avif"]);
+const RESPONSIVE_WIDTHS = [360, 640, 960, 1280, 1600];
+const RESPONSIVE_MIN_SIZE = 80 * 1024;
+
+function ensureDir(dir) {
+  fs.mkdirSync(dir, { recursive: true });
+}
+
+function getImages(dir, images = []) {
+  for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
+    const fullPath = path.join(dir, item.name);
+    const relativePath = path.relative(assetsDir, fullPath);
+    const firstSegment = relativePath.split(path.sep)[0];
+
+    if (item.isDirectory()) {
+      if (!SKIP_SEGMENTS.has(item.name.toLowerCase())) {
+        getImages(fullPath, images);
+      }
+      continue;
+    }
+
+    if (item.isFile() && IMAGE_EXTENSIONS.test(item.name) && !SKIP_SEGMENTS.has(firstSegment)) {
+      images.push({
+        fullPath,
+        relativePath,
+        originalSize: fs.statSync(fullPath).size,
+      });
     }
   }
+
+  return images;
 }
 
-function convertImagesToWebP() {
-  const sharp = require('sharp');
-  const assetsDir = path.join(__dirname, 'public', 'assets');
-  const outputDir = path.join(__dirname, 'public', 'assets', 'webp');
-  
-  // Create output directory
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
-
-  function processDirectory(dir) {
-    const items = fs.readdirSync(dir);
-    
-    items.forEach(item => {
-      const itemPath = path.join(dir, item);
-      const stat = fs.statSync(itemPath);
-      
-      if (stat.isDirectory()) {
-        // Create corresponding directory in webp folder
-        const relativePath = path.relative(assetsDir, itemPath);
-        const webpDir = path.join(outputDir, relativePath);
-        if (!fs.existsSync(webpDir)) {
-          fs.mkdirSync(webpDir, { recursive: true });
-        }
-        processDirectory(itemPath);
-      } else if (stat.isFile() && /\.(png|jpg|jpeg)$/i.test(item)) {
-        const relativePath = path.relative(assetsDir, itemPath);
-        const webpPath = path.join(outputDir, relativePath.replace(/\.(png|jpg|jpeg)$/i, '.webp'));
-        
-        try {
-          console.log(`Converting: ${relativePath} → ${path.relative(outputDir, webpPath)}`);
-          
-          sharp(itemPath)
-            .webp({ 
-              quality: 80,
-              effort: 6,
-              lossless: false
-            })
-            .toFile(webpPath)
-            .then(() => {
-              const originalSize = fs.statSync(itemPath).size;
-              const webpSize = fs.statSync(webpPath).size;
-              const savings = ((originalSize - webpSize) / originalSize * 100).toFixed(1);
-              console.log(`✅ Saved ${savings}% (${originalSize} → ${webpSize} bytes)`);
-            })
-            .catch(error => {
-              console.error(`❌ Failed to convert ${relativePath}:`, error.message);
-            });
-        } catch (error) {
-          console.error(`❌ Error processing ${relativePath}:`, error.message);
-        }
-      }
-    });
-  }
-
-  console.log('🖼️  Starting image conversion to WebP...');
-  processDirectory(assetsDir);
-  console.log('✅ Image conversion completed!');
+function toAssetPath(filePath) {
+  return filePath.split(path.sep).join("/");
 }
 
-function generateImageManifest() {
-  const assetsDir = path.join(__dirname, 'public', 'assets');
-  const webpDir = path.join(__dirname, 'public', 'assets', 'webp');
+async function convertImage(image) {
+  const outputRelative = image.relativePath.replace(IMAGE_EXTENSIONS, "");
+  const webpRelative = `${outputRelative}.webp`;
+  const avifRelative = `${outputRelative}.avif`;
+  const webpPath = path.join(webpDir, webpRelative);
+  const avifPath = path.join(avifDir, avifRelative);
+
+  ensureDir(path.dirname(webpPath));
+  ensureDir(path.dirname(avifPath));
+
+  const source = sharp(image.fullPath, { failOn: "none" }).rotate();
+  const metadata = await source.metadata();
+
+  await Promise.all([
+    source.clone().webp({ quality: 78, effort: 6 }).toFile(webpPath),
+    source.clone().avif({ quality: 50, effort: 6 }).toFile(avifPath),
+  ]);
+
+  const webpSize = fs.statSync(webpPath).size;
+  const avifSize = fs.statSync(avifPath).size;
+  const srcSet = {
+    webp: [],
+    avif: [],
+  };
+
+  if (image.originalSize >= RESPONSIVE_MIN_SIZE && metadata.width) {
+    const widths = RESPONSIVE_WIDTHS.filter((width) => width < metadata.width);
+
+    for (const width of widths) {
+      const webpVariantRelative = `${outputRelative}-${width}w.webp`;
+      const avifVariantRelative = `${outputRelative}-${width}w.avif`;
+      const webpVariantPath = path.join(webpDir, webpVariantRelative);
+      const avifVariantPath = path.join(avifDir, avifVariantRelative);
+
+      ensureDir(path.dirname(webpVariantPath));
+      ensureDir(path.dirname(avifVariantPath));
+
+      await Promise.all([
+        source
+          .clone()
+          .resize({ width, withoutEnlargement: true })
+          .webp({ quality: 76, effort: 5 })
+          .toFile(webpVariantPath),
+        source
+          .clone()
+          .resize({ width, withoutEnlargement: true })
+          .avif({ quality: 48, effort: 5 })
+          .toFile(avifVariantPath),
+      ]);
+
+      srcSet.webp.push(`/assets/webp/${toAssetPath(webpVariantRelative)} ${width}w`);
+      srcSet.avif.push(`/assets/avif/${toAssetPath(avifVariantRelative)} ${width}w`);
+    }
+  }
+
+  srcSet.webp.push(`/assets/webp/${toAssetPath(webpRelative)} ${metadata.width || 1600}w`);
+  srcSet.avif.push(`/assets/avif/${toAssetPath(avifRelative)} ${metadata.width || 1600}w`);
+
+  return {
+    original: toAssetPath(image.relativePath),
+    webp: `webp/${toAssetPath(webpRelative)}`,
+    avif: `avif/${toAssetPath(avifRelative)}`,
+    webpSrcSet: srcSet.webp.join(", "),
+    avifSrcSet: srcSet.avif.join(", "),
+    width: metadata.width || null,
+    height: metadata.height || null,
+    size: image.originalSize,
+    webpSize,
+    avifSize,
+  };
+}
+
+async function main() {
+  ensureDir(webpDir);
+  ensureDir(avifDir);
+
+  const images = getImages(assetsDir);
   const manifest = {};
-  
-  function scanDirectory(dir, baseDir) {
-    const items = fs.readdirSync(dir);
-    
-    items.forEach(item => {
-      const itemPath = path.join(dir, item);
-      const stat = fs.statSync(itemPath);
-      
-      if (stat.isDirectory()) {
-        scanDirectory(itemPath, baseDir);
-      } else if (stat.isFile() && /\.(png|jpg|jpeg)$/i.test(item)) {
-        const relativePath = path.relative(baseDir, itemPath);
-        const webpPath = relativePath.replace(/\.(png|jpg|jpeg)$/i, '.webp');
-        
-        // Check if WebP version exists
-        const webpFullPath = path.join(webpDir, webpPath);
-        if (fs.existsSync(webpFullPath)) {
-          manifest[relativePath] = webpPath;
-        }
-      }
-    });
+  const stats = {
+    total: images.length,
+    processed: 0,
+    webpCreated: 0,
+    avifCreated: 0,
+    errors: 0,
+    originalSize: images.reduce((total, image) => total + image.originalSize, 0),
+    optimizedSize: 0,
+  };
+
+  console.log(`Found ${images.length} PNG/JPEG images.`);
+
+  for (const image of images) {
+    try {
+      const entry = await convertImage(image);
+      manifest[entry.original] = entry;
+      stats.processed += 1;
+      stats.webpCreated += 1;
+      stats.avifCreated += 1;
+      stats.optimizedSize += Math.min(entry.webpSize, entry.avifSize);
+
+      const bestSize = Math.min(entry.webpSize, entry.avifSize);
+      const savings = ((image.originalSize - bestSize) / image.originalSize) * 100;
+      console.log(`${entry.original}: ${savings.toFixed(1)}% smaller`);
+    } catch (error) {
+      stats.errors += 1;
+      console.warn(`Failed to optimize ${image.relativePath}: ${error.message}`);
+    }
   }
-  
-  scanDirectory(assetsDir, assetsDir);
-  
-  const manifestPath = path.join(__dirname, 'src', 'imageManifest.json');
-  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
-  console.log('📋 Image manifest generated:', manifestPath);
+
+  const totalSavings = stats.originalSize - stats.optimizedSize;
+  const savingsPercent = stats.originalSize ? (totalSavings / stats.originalSize) * 100 : 0;
+
+  fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  fs.writeFileSync(
+    reportPath,
+    `${JSON.stringify(
+      {
+        timestamp: new Date().toISOString(),
+        stats,
+        savings: {
+          total: totalSavings,
+          percent: Number(savingsPercent.toFixed(1)),
+        },
+      },
+      null,
+      2
+    )}\n`
+  );
+
+  console.log(`Manifest written to ${path.relative(rootDir, manifestPath)}`);
+  console.log(`Best-format savings: ${savingsPercent.toFixed(1)}%`);
 }
 
-// Main execution
-console.log('🚀 Starting image optimization process...');
-ensureSharp();
-convertImagesToWebP();
-
-// Wait a bit for async operations to complete
-setTimeout(() => {
-  generateImageManifest();
-  console.log('🎉 Image optimization completed!');
-}, 2000);
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

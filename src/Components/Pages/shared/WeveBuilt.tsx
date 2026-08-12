@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import SectionIntro from "./SectionIntro.tsx";
+import OptimizedImage from "../../OptimizedImageV2.tsx";
 import { homeContent } from "../../../content/homeContent";
 import "../../../styles/home.css";
 
@@ -50,13 +51,14 @@ const WeveBuilt: React.FC = () => (
             className="weveBuilt-grid-item"
           >
             <Box className="weveBuilt-card">
-              <img
+              <OptimizedImage
                 src={item.imageSrc}
                 alt={item.title}
                 className="weveBuilt-image"
                 loading="lazy"
                 height={50}
                 width={75}
+                sizes="(max-width: 600px) 100vw, 33vw"
               />
               <Typography className="weveBuilt-text">{item.title}</Typography>
             </Box>
@@ -66,7 +68,11 @@ const WeveBuilt: React.FC = () => (
       <Box
         sx={{
           display: { xs: "flex", sm: "none" },
-          justifyContent: "flex-start",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          mt: 3,
+          mb: 1,
         }}
         className="weveBuilt-description-container"
       >
@@ -77,6 +83,10 @@ const WeveBuilt: React.FC = () => (
           className="seemore-button"
           sx={{
             display: { xs: "flex", sm: "none" },
+            px: 4,
+            py: 1.2,
+            borderRadius: "10px",
+            gap: 1,
           }}
         >
           {homeContent.weveBuilt.ctaLabel}

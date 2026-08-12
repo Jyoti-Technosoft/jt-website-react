@@ -1,4 +1,4 @@
-import React, { useEffect, memo, lazy, Suspense } from 'react';
+import React, { useEffect, memo } from 'react';
 
 import ErrorBoundary from './Components/ErrorBoundary.tsx';
 import EnhancedPerformanceMonitor from './Components/EnhancedPerformanceMonitor.tsx';
@@ -7,23 +7,23 @@ import { initializeAdvancedOptimizations } from './utils/advancedOptimizations.t
 import webVitalsReporter from './utils/webVitalsReporter.ts';
 import { monitorBundleSize } from './utils/bundleAnalyzer.ts';
 import { setupImageOptimization } from './utils/imageOptimizationSetup.ts';
-
-// Lazy load the router component
-const OptimizedRouter = lazy(() => import('./Components/OptimizedRouter.tsx'));
+import OptimizedRouter from './Components/OptimizedRouter.tsx';
 
 const AppContent = memo(() => {
+  // Initialize global optimizations
   // Initialize global optimizations
   useEffect(() => {
     // Initialize image optimization
     setupImageOptimization();
-    // Initialize advanced optimizations
-    initializeAdvancedOptimizations();
-    
+
     // Start Web Vitals reporting
     webVitalsReporter.startReporting();
-    
+
     // Start bundle size monitoring in development
     if (process.env.NODE_ENV === 'development') {
+      // Only initialize these in development to avoid main thread blocking in production
+      initializeAdvancedOptimizations();
+      
       const stopMonitoring = monitorBundleSize((analysis) => {
         console.log('Bundle Analysis:', analysis);
         if (analysis.performanceScore < 70) {
@@ -31,7 +31,7 @@ const AppContent = memo(() => {
           console.log('Recommendations:', analysis.recommendations);
         }
       });
-      
+
       return () => stopMonitoring();
     }
   }, []);
@@ -39,17 +39,17 @@ const AppContent = memo(() => {
   return (
     <>
       <AccessibilityEnhancer />
-      <EnhancedPerformanceMonitor 
-        enableLongTaskMonitoring={true}
-        enableMemoryMonitoring={true}
-        enableResourceMonitoring={true}
-        enableLayoutShiftMonitoring={true}
-      />
+      {process.env.NODE_ENV === 'development' && (
+        <EnhancedPerformanceMonitor
+          enableLongTaskMonitoring={true}
+          enableMemoryMonitoring={true}
+          enableResourceMonitoring={true}
+          enableLayoutShiftMonitoring={true}
+        />
+      )}
       <main id="main-content" role="main">
         <ErrorBoundary>
-          <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>Loading...</div>}>
-            <OptimizedRouter />
-          </Suspense>
+          <OptimizedRouter />
         </ErrorBoundary>
       </main>
     </>

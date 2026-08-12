@@ -6,6 +6,10 @@ interface ImageManifestEntry {
   original: string;
   webp: string;
   avif: string | null;
+  webpSrcSet?: string;
+  avifSrcSet?: string;
+  width?: number | null;
+  height?: number | null;
   size: number;
 }
 
@@ -26,6 +30,8 @@ interface OptimizedImageProps {
   onError?: () => void;
   placeholder?: string;
   blurDataURL?: string;
+  sizes?: string;
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -40,24 +46,21 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   onLoad,
   onError,
   placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjVmNWY1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxvYWRpbmcuLi48L3RleHQ+PC9zdmc+',
+  sizes = '100vw',
   ...props
 }) => {
   const [imageSrc, setImageSrc] = useState<string>(src);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
-  // Get WebP version if available
-  const getWebPSrc = useCallback((originalSrc: string): string => {
-    // Remove leading slash and public path
-    const cleanSrc = originalSrc.replace(/^\/assets\//, '').replace(/^\/public\//, '');
-    
-    // Check if WebP version exists in manifest
+  const getManifestEntry = useCallback((originalSrc: string): ImageManifestEntry | null => {
+    const cleanSrc = originalSrc
+      .replace(/^\/assets\//, '')
+      .replace(/^assets\//, '')
+      .replace(/^\/public\/assets\//, '');
+
     const manifest = imageManifest as ImageManifest;
-    if (cleanSrc in manifest && manifest[cleanSrc]) {
-      return `/assets/webp/${manifest[cleanSrc].webp}`;
-    }
-    
-    return originalSrc;
+    return manifest[cleanSrc] || null;
   }, []);
 
   const handleLoad = useCallback(() => {
@@ -80,9 +83,11 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     }
   }, [fallbackSrc, imageSrc, onError]);
 
-  // Try WebP first, fallback to original
-  const webpSrc = getWebPSrc(src);
-  const finalSrc = webpSrc !== src ? webpSrc : src;
+  const manifestEntry = getManifestEntry(src);
+  const avifSrc = manifestEntry?.avif ? `/assets/${manifestEntry.avif}` : null;
+  const webpSrc = manifestEntry?.webp ? `/assets/${manifestEntry.webp}` : null;
+  const imageWidth = width || manifestEntry?.width || undefined;
+  const imageHeight = height || manifestEntry?.height || undefined;
 
   return (
     <Box
@@ -113,24 +118,43 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         />
       )}
       
-      <Box
-        component="img"
-        src={finalSrc}
-        alt={alt}
-        loading={loading}
-        onLoad={handleLoad}
-        onError={handleError}
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          opacity: isLoading ? 0 : 1,
-          transition: 'opacity 0.3s ease-in-out',
-          zIndex: 2,
-          position: 'relative',
-        }}
-        {...props}
-      />
+      <picture>
+        {avifSrc && (
+          <source
+            srcSet={manifestEntry?.avifSrcSet || avifSrc}
+            sizes={sizes}
+            type="image/avif"
+          />
+        )}
+        {webpSrc && (
+          <source
+            srcSet={manifestEntry?.webpSrcSet || webpSrc}
+            sizes={sizes}
+            type="image/webp"
+          />
+        )}
+        <Box
+          component="img"
+          src={imageSrc}
+          alt={alt}
+          loading={loading}
+          decoding="async"
+          width={imageWidth}
+          height={imageHeight}
+          onLoad={handleLoad}
+          onError={handleError}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: (loading === 'eager' || props.fetchPriority === 'high' || !isLoading) ? 1 : 0,
+            transition: (loading === 'eager' || props.fetchPriority === 'high') ? 'none' : 'opacity 0.3s ease-in-out',
+            zIndex: 2,
+            position: 'relative',
+          }}
+          {...props}
+        />
+      </picture>
       
       {hasError && (
         <Box

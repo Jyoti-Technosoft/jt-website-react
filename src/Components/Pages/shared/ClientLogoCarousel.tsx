@@ -2,6 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import { keyframes } from "@mui/material/styles";
 
+import OptimizedImage from "../../OptimizedImageV2.tsx";
 import dataArray from "../../../jt-website.json";
 
 const scroll = keyframes`
@@ -38,11 +39,11 @@ const ClientLogoCarousel: React.FC = () => {
                 alignItems: "center",
               }}
             >
-              <Box
-                component="img"
+              <OptimizedImage
                 src={logo.imagePath}
                 alt={`Client Logo ${index + 1}`}
-                sx={{
+                loading="lazy"
+                style={{
                   width: "180px",
                   height: "60px",
                   objectFit: "contain",
