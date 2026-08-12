@@ -129,7 +129,7 @@ const ProductDetail: React.FC = () => {
         <Box sx={{ position: 'relative', mb: 6, maxWidth: 800, mx: 'auto' }}>
           <Box
             component="img"
-            src={product.Images?.[currentImageIndex] ? `/${product.Images[currentImageIndex]}` : "/assets/images/portfolio/default.png"}
+            src={product.Images?.[currentImageIndex] ? `/${product.Images[currentImageIndex].replace(/^\/+/, '')}` : "/assets/images/portfolio/default.png"}
             alt={product.productName}
             sx={{
               width: '100%',

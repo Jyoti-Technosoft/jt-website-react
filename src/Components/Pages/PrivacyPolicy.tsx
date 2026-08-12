@@ -437,6 +437,15 @@ const PrivacyPolicy: React.FC = () => {
             </Typography>
             </Box>
         </ListItem>
+
+        <ListItem disableGutters>
+            <Box display="flex" alignItems="flex-start" gap={1}>
+            <GamepadIcon sx={{ fontSize: 14, color: "#347CCC", mt: "4px" }} />
+            <Typography className="header-description">
+                <strong>For marketing and newsletters:</strong> We may use Your email address to send You our newsletter, marketing or promotional materials and other information that may be of interest to You. You may opt-out of receiving any, or all, of these communications from Us by following the unsubscribe link or instructions provided in any email We send.
+            </Typography>
+            </Box>
+        </ListItem>
         </List>
         <Typography mt={2} className="header-description">
           We may share Your personal information in the following situations:

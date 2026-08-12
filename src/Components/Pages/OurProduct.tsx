@@ -200,7 +200,7 @@ const OurProduct: React.FC = () => {
                       <Box sx={{ position: 'relative', overflow: 'hidden' }}>
                         <CardMedia
                           component="img"
-                          image={ product.Images?.[currentImageIndex] || "assets/images/portfolio/default.png" }
+                          image={ product.Images?.[currentImageIndex] ? `/${product.Images[currentImageIndex].replace(/^\/+/, '')}` : "/assets/images/portfolio/default.png" }
                           alt={product.productName}
                           loading="lazy"
                           sx={{
