@@ -58,7 +58,7 @@ const OurNewsletter: React.FC = () => {
 
             if (response.data.success) {
                 setSubscribed(true);
-                setMessage({ text: response.data.message || 'Thanks for subscribing! Please check your inbox.', type: 'success' });
+                setMessage({ text: response.data.message || 'Thanks for subscribing! You will receive further emails whenever we publish a new blog.', type: 'success' });
             } else {
                 setMessage({ text: response.data.message || 'Failed to subscribe.', type: 'error' });
             }

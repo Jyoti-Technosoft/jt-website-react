@@ -97,19 +97,17 @@ if ($existing && $existing['status'] === 'subscribed') {
     exit();
 }
 
-// Generate tokens
-$token = bin2hex(random_bytes(32));
+// Generate unsubscribe token for future newsletter/blog emails.
 $unsubscribeToken = bin2hex(random_bytes(32));
-$expiresAt = date('Y-m-d H:i:s', time() + (24 * 60 * 60)); // 24 hours
 
 if ($existing) {
     // Update existing pending/unsubscribed record
-    $stmt = $conn->prepare("UPDATE " . NEWSLETTER_TABLE . " SET status='pending', confirmation_token=?, unsubscribe_token=?, token_expires_at=?, subscribed_at=NOW(), confirmed_at=NULL, unsubscribed_at=NULL WHERE email=?");
-    $stmt->bind_param("ssss", $token, $unsubscribeToken, $expiresAt, $email);
+    $stmt = $conn->prepare("UPDATE " . NEWSLETTER_TABLE . " SET status='subscribed', confirmation_token=NULL, unsubscribe_token=?, token_expires_at=NULL, subscribed_at=NOW(), confirmed_at=NOW(), unsubscribed_at=NULL WHERE email=?");
+    $stmt->bind_param("ss", $unsubscribeToken, $email);
 } else {
     // Insert new subscriber
-    $stmt = $conn->prepare("INSERT INTO " . NEWSLETTER_TABLE . " (email, status, confirmation_token, unsubscribe_token, token_expires_at) VALUES (?, 'pending', ?, ?, ?)");
-    $stmt->bind_param("ssss", $email, $token, $unsubscribeToken, $expiresAt);
+    $stmt = $conn->prepare("INSERT INTO " . NEWSLETTER_TABLE . " (email, status, confirmation_token, unsubscribe_token, token_expires_at, confirmed_at) VALUES (?, 'subscribed', NULL, ?, NULL, NOW())");
+    $stmt->bind_param("ss", $email, $unsubscribeToken);
 }
 
 if (!$stmt->execute()) {
@@ -122,13 +120,15 @@ if (!$stmt->execute()) {
 $stmt->close();
 $conn->close();
 
-// Send confirmation email
-$frontendUrl = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : 'https://jyotitechnosoft.com';
-$confirmUrl = $frontendUrl . '/newsletter/confirm?token=' . $token;
-
-$to = $email;
 $from = CONTACT_US_MAIL_FROM;
 $subject = "Confirm your newsletter subscription - Jyoti Technosoft";
+$message = '
+<html>
+<body>
+    <p>Thanks for subscribing to the Jyoti Technosoft newsletter.</p>
+    <p>Your newsletter subscription is confirmed. You will receive further emails whenever we publish a new blog.</p>
+</body>
+</html>';
 
 $headers  = 'From: ' . $from . "\r\n";
 $headers .= 'Reply-To: ' . $from . "\r\n";
@@ -136,30 +136,8 @@ $headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8";
 
-$templatePath = __DIR__ . '/newsletter_confirm.html';
-$contents = file_exists($templatePath) ? file_get_contents($templatePath) : '';
-if (!$contents) {
-    $contents = '<p>Please confirm your subscription by clicking: <a href="{confirm_url}">{confirm_url}</a></p>';
-}
-$message = str_replace('{confirm_url}', $confirmUrl, $contents);
+@mail($email, $subject, $message, $headers);
 
-// Suppress warning if mail fails (common on localhost without SMTP)
-$success = @mail($to, $subject, $message, $headers);
-
-$isLocalhost = isset($_SERVER['HTTP_HOST']) && (
-    strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ||
-    strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== false
-);
-
-if ($success || $isLocalhost) {
-    http_response_code(201);
-    $msg = 'Thanks for subscribing! Please check your inbox to confirm your subscription.';
-    if (!$success && $isLocalhost) {
-        $msg .= ' (Localhost: email queued but not actually sent)';
-    }
-    echo json_encode(['success' => true, 'message' => $msg]);
-} else {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Subscription saved but failed to send confirmation email. Please try again.']);
-}
+http_response_code(201);
+echo json_encode(['success' => true, 'message' => 'Thanks for subscribing! You will receive an email whenever we publish a new blog.']);
 ?>
