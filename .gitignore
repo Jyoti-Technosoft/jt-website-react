@@ -90,6 +90,9 @@ web_modules/
 .env.production.local
 .env.local
 
+# Local backend credentials
+public/assets/backend/database.properties
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
