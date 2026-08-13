@@ -86,7 +86,7 @@ export const homeContent: HomePageContent = {
     badge: toString(meetSection.badge, "Product engineering for ambitious teams"),
     title: toString(
       meetSection.title,
-      "We build revenue-ready web, mobile and AI products for growing businesses."
+      "We Build Revenue-Ready Web, Mobile & AI Products That Drive Growth."
     ),
     description: toString(
       meetSection.description,

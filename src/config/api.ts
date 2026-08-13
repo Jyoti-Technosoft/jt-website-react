@@ -1,6 +1,6 @@
 const BASE_URL = process.env.NODE_ENV === 'production'
-    ? process.env.REACT_APP_API_BASE_URL_PROD
-    : process.env.REACT_APP_API_BASE_URL_DEV;
+  ? process.env.REACT_APP_API_BASE_URL_PROD
+  : process.env.REACT_APP_API_BASE_URL_DEV;
 
 // Safety fallback (optional but smart)
 export const SAFE_BASE_URL = BASE_URL || "http://localhost:8000";
@@ -10,4 +10,7 @@ export const API_ENDPOINTS = {
   career: `${SAFE_BASE_URL}/career.php`,
   contactUs: `${SAFE_BASE_URL}/contactus.php`,
   business: `${SAFE_BASE_URL}/business.php`,
+  newsletterSubscribe: `${SAFE_BASE_URL}/newsletter_subscribe.php`,
+  newsletterConfirm: `${SAFE_BASE_URL}/newsletter_confirm.php`,
+  newsletterUnsubscribe: `${SAFE_BASE_URL}/newsletter_unsubscribe.php`,
 };

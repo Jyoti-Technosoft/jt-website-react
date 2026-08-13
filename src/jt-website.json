@@ -2,7 +2,7 @@
   "home": {
     "meetSection": {
       "badge": "Product engineering for ambitious teams",
-      "title": "We build revenue-ready web, mobile and AI products for growing businesses.",
+      "title": "We Build Revenue-Ready Web, Mobile & AI Products That Drive Growth.",
       "description": "From product strategy to launch, we design and deliver digital experiences that help teams move faster, convert better, and scale with confidence.",
       "trustIndicators": [
         "Discovery-to-launch delivery",
@@ -221,7 +221,7 @@
       "data": [
         {
           "id": 1,
-          "title": "Office Management Application",
+          "title": "Office Management System",
           "imageSrc": "/assets/images/portfolio/officemanagemnt-mockup.png"
         },
         {
@@ -1526,13 +1526,16 @@
       ]
     },
     {
-      "projectName": "Office Management Application",
+      "projectName": "Office Management System",
       "projectId": 14,
       "priority": 9,
       "technology": "React",
-      "category": ["Custom Software Development", "Visualization"],
-      "description": "The Office Management Application is a comprehensive office management web application designed to streamline various administrative tasks within an organization. It provides functionalities for managing employee data, tracking employee activities, and handling attendance, leave of the employees along with Tasks Management feature.",
-      "detailedDescription": "It is a robust web-based platform developed using React for the frontend and Node.js for the backend. This application is designed to enhance organizational efficiency by providing a centralized system for managing various office-related tasks. Key features of the application include employee management, where administrators can add, update, and view employee details; activity tracking, which allows monitoring of employee activities and performance; attendance management, enabling employees to mark their attendance and request leaves; and task management, facilitating the assignment and tracking of tasks among team members. With its user-friendly interface and powerful functionalities, the Office Management Application aims to simplify administrative processes and improve overall productivity within the workplace.",
+      "category": [
+        "Custom Software Development",
+        "Visualization"
+      ],
+      "description": "The Office Management System is a comprehensive office management web application designed to streamline various administrative tasks within an organization. It provides functionalities for managing employee data, tracking employee activities, and handling attendance, leave of the employees along with Tasks Management feature.",
+      "detailedDescription": "It is a robust web-based platform developed using React for the frontend and Node.js for the backend. This application is designed to enhance organizational efficiency by providing a centralized system for managing various office-related tasks. Key features of the application include employee management, where administrators can add, update, and view employee details; activity tracking, which allows monitoring of employee activities and performance; attendance management, enabling employees to mark their attendance and request leaves; and task management, facilitating the assignment and tracking of tasks among team members. With its user-friendly interface and powerful functionalities, the Office Management System aims to simplify administrative processes and improve overall productivity within the workplace.",
       "logo": "assets/images/portfolio/favicon.png",
       "viewDemo": "",
       "Images": [

@@ -26,6 +26,8 @@ const CareerDetails = lazy(() => import(/* webpackChunkName: "detail-pages" */ '
 const SiteMap = lazy(() => import(/* webpackChunkName: "utility-pages" */ './Pages/SiteMap.tsx'));
 const PrivacyPolicy = lazy(() => import(/* webpackChunkName: "utility-pages" */ './Pages/PrivacyPolicy.tsx'));
 const NotFound = lazy(() => import(/* webpackChunkName: "utility-pages" */ './Pages/NotFound.tsx'));
+const NewsletterConfirm = lazy(() => import(/* webpackChunkName: "utility-pages" */ './Pages/NewsletterConfirm.tsx'));
+const NewsletterUnsubscribe = lazy(() => import(/* webpackChunkName: "utility-pages" */ './Pages/NewsletterUnsubscribe.tsx'));
 
 const AdminPortal = lazy(() => import(/* webpackChunkName: "admin" */ './Pages/AdminPortal.tsx'));
 
@@ -90,11 +92,11 @@ const RouteErrorBoundary = memo(({ children }: { children: React.ReactNode }) =>
 RouteErrorBoundary.displayName = 'RouteErrorBoundary';
 
 // Route component with optimized loading
-const RouteComponent = memo(({ 
-  component: Component, 
-  fallback 
-}: { 
-  component: React.ComponentType; 
+const RouteComponent = memo(({
+  component: Component,
+  fallback
+}: {
+  component: React.ComponentType;
   fallback?: React.ReactNode;
 }) => (
   <Suspense fallback={fallback || <LoadingSpinner />}>
@@ -152,73 +154,81 @@ const OptimizedRouter: React.FC = () => {
       <Header />
       <ScrollToTop />
       <Routes>
-        <Route 
-          path="/" 
-          element={<RouteComponent component={Home} />} 
+        <Route
+          path="/"
+          element={<RouteComponent component={Home} />}
         />
-        <Route 
-          path="/about" 
-          element={<RouteComponent component={About} />} 
+        <Route
+          path="/about"
+          element={<RouteComponent component={About} />}
         />
-        <Route 
-          path="/services" 
-          element={<RouteComponent component={Services} />} 
+        <Route
+          path="/services"
+          element={<RouteComponent component={Services} />}
         />
-        <Route 
-          path="/services/:id" 
-          element={<RouteComponent component={ServiceDetails} />} 
+        <Route
+          path="/services/:id"
+          element={<RouteComponent component={ServiceDetails} />}
         />
-        <Route 
-          path="/contact" 
-          element={<RouteComponent component={Contact} />} 
+        <Route
+          path="/contact"
+          element={<RouteComponent component={Contact} />}
         />
-        <Route 
-          path="/site-map" 
-          element={<RouteComponent component={SiteMap} />} 
+        <Route
+          path="/site-map"
+          element={<RouteComponent component={SiteMap} />}
         />
-        <Route 
-          path="/privacy-policy" 
-          element={<RouteComponent component={PrivacyPolicy} />} 
+        <Route
+          path="/privacy-policy"
+          element={<RouteComponent component={PrivacyPolicy} />}
         />
-        <Route 
-          path="/our-work" 
-          element={<RouteComponent component={OurWork} />} 
+        <Route
+          path="/our-work"
+          element={<RouteComponent component={OurWork} />}
         />
         <Route
           path="/our-work/:projectId"
           element={<RouteComponent component={ProjectDetail} />}
         />
-        <Route 
-          path="/products" 
-          element={<RouteComponent component={OurProduct} />} 
+        <Route
+          path="/products"
+          element={<RouteComponent component={OurProduct} />}
         />
-        <Route 
-          path="/products/:productName" 
-          element={<RouteComponent component={ProductDetail} />} 
+        <Route
+          path="/products/:productName"
+          element={<RouteComponent component={ProductDetail} />}
         />
-        <Route 
-          path="/hire-developers" 
-          element={<RouteComponent component={HireDevelopers} />} 
+        <Route
+          path="/hire-developers"
+          element={<RouteComponent component={HireDevelopers} />}
         />
-        <Route 
-          path="/hire-developers/:id" 
-          element={<RouteComponent component={HireDevelopersDetails} />} 
+        <Route
+          path="/hire-developers/:id"
+          element={<RouteComponent component={HireDevelopersDetails} />}
         />
-        <Route 
-          path="/career" 
-          element={<RouteComponent component={Career} />} 
+        <Route
+          path="/career"
+          element={<RouteComponent component={Career} />}
         />
-        <Route 
-          path="/career-details" 
-          element={<RouteComponent component={CareerDetails} />} 
+        <Route
+          path="/career-details"
+          element={<RouteComponent component={CareerDetails} />}
         />
-        <Route 
-          path="/jt-admin" 
-          element={<RouteComponent component={AdminPortal} />} 
+        <Route
+          path="/jt-admin"
+          element={<RouteComponent component={AdminPortal} />}
         />
-        <Route 
-          path="*" 
-          element={<RouteComponent component={NotFound} />} 
+        <Route
+          path="/newsletter/confirm"
+          element={<RouteComponent component={NewsletterConfirm} />}
+        />
+        <Route
+          path="/newsletter/unsubscribe"
+          element={<RouteComponent component={NewsletterUnsubscribe} />}
+        />
+        <Route
+          path="*"
+          element={<RouteComponent component={NotFound} />}
         />
       </Routes>
       <Footer />

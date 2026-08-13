@@ -22,6 +22,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "server:php": "php -S localhost:8000 -t public/assets/backend",
     "build:with-images": "npm run optimize:images && react-app-rewired build",
     "build:analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "build:performance": "npm run build && npx lighthouse http://localhost:3000 --view",
