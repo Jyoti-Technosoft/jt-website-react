@@ -2110,7 +2110,7 @@
       "description": "OrthoAI is a clinical intelligence platform designed to automate dental diagnostic reporting for clinicians and claim validation for insurance payers across the UAE and GCC.",
       "detailedDescription": "OrthoAI is a clinical intelligence platform designed to automate dental diagnostic reporting for clinicians and claim validation for insurance payers across the UAE and GCC. Founded at MBZUAI(Mohamed bin Zayed University of Artificial Intelligence) in Abu Dhabi, OrthoAI bridges the gap between chairside dental diagnosis and administrative insurance approvals using auditable, multi-modal AI.", 
       "logo": "assets/images/portfolio/orthoai-favicon.png",
-      "viewDemo": "",
+      "viewDemo": "https://www.orthoai.co",
       "Images": [
         "assets/images/portfolio/orthoai1.png",
         "assets/images/portfolio/orthoai2.png",
@@ -2129,8 +2129,58 @@
       ],
       "useTechnology": [
         {
-          "images" : "assets/images/technology-badges/TypeScript.svg",
-          "technologyName" : "TypeScript"
+          "images": "assets/images/technology-badges/TypeScript.svg",
+          "technologyName": "TypeScript"
+        },
+        {
+          "images": "assets/images/technology-badges/tailwind.svg",
+          "technologyName": "Tailwind CSS"
+        },
+        {
+          "images": "assets/images/technology-badges/figma.svg",
+          "technologyName": "Figma"
+        },
+        {
+          "images": "assets/images/technology-badges/dynamics.svg",
+          "technologyName": "Microsoft Dynamics 365"
+        },
+        {
+          "images": "assets/images/technology-badges/analytics.svg",
+          "technologyName": "Analytics"
+        }
+      ]
+    },
+    {
+      "projectName": "Aelos",
+      "projectId": 29,
+      "priority": 14,
+      "technology": "React",
+      "category": [
+        "Custom Software Development"
+      ],
+      "description": "Aelos is a sun-inspired healthy café that celebrates fresh ingredients, vibrant flavors, and mindful eating.",
+      "detailedDescription": "Aelos is a sun-inspired healthy café that celebrates fresh ingredients, vibrant flavors, and mindful eating. Its website reflects the brand’s warm, inviting personality through elegant visuals, clean design, and a seamless experience that captures the essence of dining with love from the sun.",
+      "logo": "assets/images/portfolio/aelos-logo.png",
+      "viewDemo": "https://www.aelosuae.com",
+      "Images": [
+        "assets/images/portfolio/aelos-mockup.png",
+        "assets/images/portfolio/aelos-mockup2.png",
+        "assets/images/portfolio/aelos-mockup3.png"
+      ],
+      "mainTechnology": [
+        {
+          "images": "assets/images/technology-badges/React.svg",
+          "technologyName": "React"
+        },
+        {
+          "images": "assets/images/technology-badges/vite.png",
+          "technologyName": "Vite"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images": "assets/images/technology-badges/TypeScript.svg",
+          "technologyName": "TypeScript"
         },
         {
           "images": "assets/images/technology-badges/tailwind.svg",
