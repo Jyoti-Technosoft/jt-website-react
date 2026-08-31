@@ -18,12 +18,13 @@ const ClientLogoCarousel: React.FC = () => {
   }
 
   return (
-    <Box sx={{ py: 6, overflow: "hidden", bgcolor: "#f7fbff" }}>
+    <Box sx={{ py: { xs: 3.5, md: 4.25 }, overflow: "hidden", bgcolor: "#f7fbff" }}>
       <Box sx={{ width: "100%", display: "flex", alignItems: "center" }}>
         <Box
           sx={{
             display: "flex",
             width: "max-content",
+            alignItems: "center",
             animation: `${scroll} ${logos.length * 3}s linear infinite`,
           }}
         >
@@ -31,24 +32,42 @@ const ClientLogoCarousel: React.FC = () => {
             <Box
               key={index}
               sx={{
-                minWidth: "120px",
+                width: { xs: 160, sm: 190, md: 215 },
+                minWidth: { xs: 160, sm: 190, md: 215 },
                 flexShrink: 0,
-                mx: 2,
+                mx: { xs: 2, md: 3 },
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <OptimizedImage
-                src={logo.imagePath}
-                alt={`Client Logo ${index + 1}`}
-                loading="lazy"
-                style={{
-                  width: "180px",
-                  height: "60px",
-                  objectFit: "contain",
+              <Box
+                sx={{
+                  width: "100%",
+                  height: { xs: 58, md: 70 },
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  "& > div": {
+                    width: "100% !important",
+                    height: "100% !important",
+                  },
+                  "& img": {
+                    objectFit: "contain !important",
+                  },
                 }}
-              />
+              >
+                <OptimizedImage
+                  src={logo.imagePath}
+                  alt={`Client Logo ${index + 1}`}
+                  loading="lazy"
+                  sizes="(max-width: 600px) 160px, (max-width: 900px) 190px, 215px"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              </Box>
             </Box>
           ))}
         </Box>

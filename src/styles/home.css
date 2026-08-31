@@ -1028,8 +1028,8 @@ video {
 
 .weveBuilt-main-container .weveBuilt-grid-item .weveBuilt-card {
   width: 100%;
-  max-width: 360px;
-  padding: 0.8rem;
+  max-width: 390px;
+  padding: 0.65rem;
   border-radius: 24px;
   border: 1px solid var(--border-soft);
   background: #ffffff;
@@ -1044,7 +1044,7 @@ video {
 
 .weveBuilt-grid-item .weveBuilt-card .weveBuilt-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 11;
   object-fit: cover;
   border-radius: 16px;
 }
