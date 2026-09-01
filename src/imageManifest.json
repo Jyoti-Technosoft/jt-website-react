@@ -791,6 +791,78 @@
     "webpSize": 1088,
     "avifSize": 971
   },
+  "images/portfolio/aelos-logo.png": {
+    "original": "images/portfolio/aelos-logo.png",
+    "webp": "webp/images/portfolio/aelos-logo.webp",
+    "avif": "avif/images/portfolio/aelos-logo.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/aelos-logo-360w.webp 360w, /assets/webp/images/portfolio/aelos-logo-640w.webp 640w, /assets/webp/images/portfolio/aelos-logo.webp 704w",
+    "avifSrcSet": "/assets/avif/images/portfolio/aelos-logo-360w.avif 360w, /assets/avif/images/portfolio/aelos-logo-640w.avif 640w, /assets/avif/images/portfolio/aelos-logo.avif 704w",
+    "width": 704,
+    "height": 552,
+    "size": 167936,
+    "webpSize": 36160,
+    "avifSize": 17634
+  },
+  "images/portfolio/aelos-mockup.png": {
+    "original": "images/portfolio/aelos-mockup.png",
+    "webp": "webp/images/portfolio/aelos-mockup.webp",
+    "avif": "avif/images/portfolio/aelos-mockup.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/aelos-mockup-360w.webp 360w, /assets/webp/images/portfolio/aelos-mockup-640w.webp 640w, /assets/webp/images/portfolio/aelos-mockup-960w.webp 960w, /assets/webp/images/portfolio/aelos-mockup-1280w.webp 1280w, /assets/webp/images/portfolio/aelos-mockup.webp 1448w",
+    "avifSrcSet": "/assets/avif/images/portfolio/aelos-mockup-360w.avif 360w, /assets/avif/images/portfolio/aelos-mockup-640w.avif 640w, /assets/avif/images/portfolio/aelos-mockup-960w.avif 960w, /assets/avif/images/portfolio/aelos-mockup-1280w.avif 1280w, /assets/avif/images/portfolio/aelos-mockup.avif 1448w",
+    "width": 1448,
+    "height": 1086,
+    "size": 1563721,
+    "webpSize": 89068,
+    "avifSize": 58706
+  },
+  "images/portfolio/aelos-mockup2.png": {
+    "original": "images/portfolio/aelos-mockup2.png",
+    "webp": "webp/images/portfolio/aelos-mockup2.webp",
+    "avif": "avif/images/portfolio/aelos-mockup2.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/aelos-mockup2-360w.webp 360w, /assets/webp/images/portfolio/aelos-mockup2-640w.webp 640w, /assets/webp/images/portfolio/aelos-mockup2-960w.webp 960w, /assets/webp/images/portfolio/aelos-mockup2-1280w.webp 1280w, /assets/webp/images/portfolio/aelos-mockup2.webp 1448w",
+    "avifSrcSet": "/assets/avif/images/portfolio/aelos-mockup2-360w.avif 360w, /assets/avif/images/portfolio/aelos-mockup2-640w.avif 640w, /assets/avif/images/portfolio/aelos-mockup2-960w.avif 960w, /assets/avif/images/portfolio/aelos-mockup2-1280w.avif 1280w, /assets/avif/images/portfolio/aelos-mockup2.avif 1448w",
+    "width": 1448,
+    "height": 1086,
+    "size": 1729896,
+    "webpSize": 80762,
+    "avifSize": 51121
+  },
+  "images/portfolio/aelos-mockup3.png": {
+    "original": "images/portfolio/aelos-mockup3.png",
+    "webp": "webp/images/portfolio/aelos-mockup3.webp",
+    "avif": "avif/images/portfolio/aelos-mockup3.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/aelos-mockup3-360w.webp 360w, /assets/webp/images/portfolio/aelos-mockup3-640w.webp 640w, /assets/webp/images/portfolio/aelos-mockup3-960w.webp 960w, /assets/webp/images/portfolio/aelos-mockup3-1280w.webp 1280w, /assets/webp/images/portfolio/aelos-mockup3.webp 1448w",
+    "avifSrcSet": "/assets/avif/images/portfolio/aelos-mockup3-360w.avif 360w, /assets/avif/images/portfolio/aelos-mockup3-640w.avif 640w, /assets/avif/images/portfolio/aelos-mockup3-960w.avif 960w, /assets/avif/images/portfolio/aelos-mockup3-1280w.avif 1280w, /assets/avif/images/portfolio/aelos-mockup3.avif 1448w",
+    "width": 1448,
+    "height": 1086,
+    "size": 1650925,
+    "webpSize": 61032,
+    "avifSize": 41257
+  },
+  "images/portfolio/aelos-mockup4.png": {
+    "original": "images/portfolio/aelos-mockup4.png",
+    "webp": "webp/images/portfolio/aelos-mockup4.webp",
+    "avif": "avif/images/portfolio/aelos-mockup4.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/aelos-mockup4-360w.webp 360w, /assets/webp/images/portfolio/aelos-mockup4-640w.webp 640w, /assets/webp/images/portfolio/aelos-mockup4-960w.webp 960w, /assets/webp/images/portfolio/aelos-mockup4-1280w.webp 1280w, /assets/webp/images/portfolio/aelos-mockup4.webp 1448w",
+    "avifSrcSet": "/assets/avif/images/portfolio/aelos-mockup4-360w.avif 360w, /assets/avif/images/portfolio/aelos-mockup4-640w.avif 640w, /assets/avif/images/portfolio/aelos-mockup4-960w.avif 960w, /assets/avif/images/portfolio/aelos-mockup4-1280w.avif 1280w, /assets/avif/images/portfolio/aelos-mockup4.avif 1448w",
+    "width": 1448,
+    "height": 1086,
+    "size": 1718113,
+    "webpSize": 75650,
+    "avifSize": 48875
+  },
+  "images/portfolio/aelos-mockup5.png": {
+    "original": "images/portfolio/aelos-mockup5.png",
+    "webp": "webp/images/portfolio/aelos-mockup5.webp",
+    "avif": "avif/images/portfolio/aelos-mockup5.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/aelos-mockup5-360w.webp 360w, /assets/webp/images/portfolio/aelos-mockup5-640w.webp 640w, /assets/webp/images/portfolio/aelos-mockup5-960w.webp 960w, /assets/webp/images/portfolio/aelos-mockup5-1280w.webp 1280w, /assets/webp/images/portfolio/aelos-mockup5.webp 1536w",
+    "avifSrcSet": "/assets/avif/images/portfolio/aelos-mockup5-360w.avif 360w, /assets/avif/images/portfolio/aelos-mockup5-640w.avif 640w, /assets/avif/images/portfolio/aelos-mockup5-960w.avif 960w, /assets/avif/images/portfolio/aelos-mockup5-1280w.avif 1280w, /assets/avif/images/portfolio/aelos-mockup5.avif 1536w",
+    "width": 1536,
+    "height": 1024,
+    "size": 2025248,
+    "webpSize": 108698,
+    "avifSize": 62384
+  },
   "images/portfolio/aqua-intel-mockup.png": {
     "original": "images/portfolio/aqua-intel-mockup.png",
     "webp": "webp/images/portfolio/aqua-intel-mockup.webp",
