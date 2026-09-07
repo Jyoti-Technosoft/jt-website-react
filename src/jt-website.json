@@ -7,7 +7,7 @@
       "trustIndicators": [
         "Discovery-to-launch delivery",
         "Flexible engagement models",
-        "AI, web, and mobile expertise"
+        "AI, web and mobile expertise"
       ],
       "primaryCtaLabel": "Book a 30-min Discovery Call",
       "primaryCtaHref": "/contact",
@@ -2205,22 +2205,50 @@
   ],
   "clientlogos": [
     {
-      "imagePath": "assets/images/portfolio/ProgressMaker_Logo.svg"
+      "name": "ProgressMaker",
+      "imagePath": "/assets/images/portfolio/ProgressMaker_Logo.svg",
+      "aspectRatio": 3.5
     },
     {
-      "imagePath": "assets/images/portfolio/CX-Group-Logo-Color.png"
+      "name": "CX Group",
+      "imagePath": "/assets/images/portfolio/CX-Group-Logo-Color.png",
+      "aspectRatio": 3.5
     },
     {
-      "imagePath": "assets/images/portfolio/tlc_engine-removebg-preview.png"
+      "name": "TLC Engine",
+      "imagePath": "/assets/images/portfolio/tlc_engine-removebg-preview.png",
+      "aspectRatio": 3.5
     },
     {
-      "imagePath": "assets/images/portfolio/eneros-removebg-preview.png"
+      "name": "Enteros",
+      "imagePath": "/assets/images/portfolio/eneros-removebg-preview.png",
+      "aspectRatio": 3.5
     },
     {
-      "imagePath": "assets/images/portfolio/boatsground.png"
+      "name": "Boats Group",
+      "imagePath": "/assets/images/portfolio/boatsground.png",
+      "aspectRatio": 3.5
     },
     {
-      "imagePath": "assets/images/portfolio/pratibhalogo.png"
+      "name": "Pratibha Herbal",
+      "imagePath": "/assets/images/portfolio/pratibhalogo.png",
+      "aspectRatio": 2.3
+    },
+    {
+      "name": "PubAudit",
+      "imagePath": "/assets/images/portfolio/pubaudit-logo.png",
+      "aspectRatio": 3.5
+    },
+    {
+      "name": "Virtual Contact",
+      "imagePath": "/assets/images/portfolio/virtualcontact-logo.png",
+      "aspectRatio": 4,
+      "heightScale": 1.4
+    },
+    {
+      "name": "Property Vista",
+      "imagePath": "/assets/images/portfolio/propertyvista-logo.png",
+      "aspectRatio": 4
     }
   ],
   "careers": {

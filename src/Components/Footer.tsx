@@ -12,7 +12,6 @@ import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import CodeOutlined from '@mui/icons-material/CodeOutlined';
 
 import ScrollToTopButton from './ScrollToTopButton.tsx';
-import OptimizedImage from './OptimizedImageV2.tsx';
 import { servicesMenu, developersMenu, solutionsMenu } from "./config/menu.ts";
 import "../styles/footer.css";
 
@@ -23,8 +22,8 @@ const Footer: React.FC = () => {
         <Box className="subFooter1">
           {/* Company Info & Social Media */}
           <Box className="footer-company-section">
-            <Link href="/" className="footer-logo-link">
-              <OptimizedImage
+            <Link href="/" className="footer-logo-link" style={{ textDecoration: 'none' }}>
+              <img
                 className="company-logo"
                 src="/assets/company-logo.png"
                 alt="Jyoti Technosoft LLP"

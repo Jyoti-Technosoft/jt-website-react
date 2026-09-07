@@ -291,13 +291,13 @@
     "original": "company-logo.png",
     "webp": "webp/company-logo.webp",
     "avif": "avif/company-logo.avif",
-    "webpSrcSet": "/assets/webp/company-logo.webp 250w",
-    "avifSrcSet": "/assets/avif/company-logo.avif 250w",
-    "width": 250,
-    "height": 109,
-    "size": 34025,
-    "webpSize": 9246,
-    "avifSize": 5469
+    "webpSrcSet": "/assets/webp/company-logo.webp 190w",
+    "avifSrcSet": "/assets/avif/company-logo.avif 190w",
+    "width": 190,
+    "height": 77,
+    "size": 6406,
+    "webpSize": 6328,
+    "avifSize": 4897
   },
   "computer-laptop.png": {
     "original": "computer-laptop.png",
@@ -755,42 +755,6 @@
     "webpSize": 596,
     "avifSize": 707
   },
-  "images/portfolio/ante-think-1.png": {
-    "original": "images/portfolio/ante-think-1.png",
-    "webp": "webp/images/portfolio/ante-think-1.webp",
-    "avif": "avif/images/portfolio/ante-think-1.avif",
-    "webpSrcSet": "/assets/webp/images/portfolio/ante-think-1.webp 560w",
-    "avifSrcSet": "/assets/avif/images/portfolio/ante-think-1.avif 560w",
-    "width": 560,
-    "height": 311,
-    "size": 38320,
-    "webpSize": 6942,
-    "avifSize": 5302
-  },
-  "images/portfolio/ante-think-mockup.png": {
-    "original": "images/portfolio/ante-think-mockup.png",
-    "webp": "webp/images/portfolio/ante-think-mockup.webp",
-    "avif": "avif/images/portfolio/ante-think-mockup.avif",
-    "webpSrcSet": "/assets/webp/images/portfolio/ante-think-mockup.webp 560w",
-    "avifSrcSet": "/assets/avif/images/portfolio/ante-think-mockup.avif 560w",
-    "width": 560,
-    "height": 385,
-    "size": 66161,
-    "webpSize": 4600,
-    "avifSize": 4284
-  },
-  "images/portfolio/ante-think.png": {
-    "original": "images/portfolio/ante-think.png",
-    "webp": "webp/images/portfolio/ante-think.webp",
-    "avif": "avif/images/portfolio/ante-think.avif",
-    "webpSrcSet": "/assets/webp/images/portfolio/ante-think.webp 225w",
-    "avifSrcSet": "/assets/avif/images/portfolio/ante-think.avif 225w",
-    "width": 225,
-    "height": 225,
-    "size": 5891,
-    "webpSize": 1088,
-    "avifSize": 971
-  },
   "images/portfolio/aelos-logo.png": {
     "original": "images/portfolio/aelos-logo.png",
     "webp": "webp/images/portfolio/aelos-logo.webp",
@@ -862,6 +826,42 @@
     "size": 2025248,
     "webpSize": 108698,
     "avifSize": 62384
+  },
+  "images/portfolio/ante-think-1.png": {
+    "original": "images/portfolio/ante-think-1.png",
+    "webp": "webp/images/portfolio/ante-think-1.webp",
+    "avif": "avif/images/portfolio/ante-think-1.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/ante-think-1.webp 560w",
+    "avifSrcSet": "/assets/avif/images/portfolio/ante-think-1.avif 560w",
+    "width": 560,
+    "height": 311,
+    "size": 38320,
+    "webpSize": 6942,
+    "avifSize": 5302
+  },
+  "images/portfolio/ante-think-mockup.png": {
+    "original": "images/portfolio/ante-think-mockup.png",
+    "webp": "webp/images/portfolio/ante-think-mockup.webp",
+    "avif": "avif/images/portfolio/ante-think-mockup.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/ante-think-mockup.webp 560w",
+    "avifSrcSet": "/assets/avif/images/portfolio/ante-think-mockup.avif 560w",
+    "width": 560,
+    "height": 385,
+    "size": 66161,
+    "webpSize": 4600,
+    "avifSize": 4284
+  },
+  "images/portfolio/ante-think.png": {
+    "original": "images/portfolio/ante-think.png",
+    "webp": "webp/images/portfolio/ante-think.webp",
+    "avif": "avif/images/portfolio/ante-think.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/ante-think.webp 225w",
+    "avifSrcSet": "/assets/avif/images/portfolio/ante-think.avif 225w",
+    "width": 225,
+    "height": 225,
+    "size": 5891,
+    "webpSize": 1088,
+    "avifSize": 971
   },
   "images/portfolio/aqua-intel-mockup.png": {
     "original": "images/portfolio/aqua-intel-mockup.png",
@@ -2243,6 +2243,18 @@
     "webpSize": 1150,
     "avifSize": 954
   },
+  "images/portfolio/propertyvista-logo.png": {
+    "original": "images/portfolio/propertyvista-logo.png",
+    "webp": "webp/images/portfolio/propertyvista-logo.webp",
+    "avif": "avif/images/portfolio/propertyvista-logo.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/propertyvista-logo.webp 297w",
+    "avifSrcSet": "/assets/avif/images/portfolio/propertyvista-logo.avif 297w",
+    "width": 297,
+    "height": 79,
+    "size": 5367,
+    "webpSize": 3490,
+    "avifSize": 2620
+  },
   "images/portfolio/pub-audit-1.png": {
     "original": "images/portfolio/pub-audit-1.png",
     "webp": "webp/images/portfolio/pub-audit-1.webp",
@@ -2302,6 +2314,18 @@
     "size": 72532,
     "webpSize": 6240,
     "avifSize": 5041
+  },
+  "images/portfolio/pubaudit-logo.png": {
+    "original": "images/portfolio/pubaudit-logo.png",
+    "webp": "webp/images/portfolio/pubaudit-logo.webp",
+    "avif": "avif/images/portfolio/pubaudit-logo.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/pubaudit-logo-360w.webp 360w, /assets/webp/images/portfolio/pubaudit-logo-640w.webp 640w, /assets/webp/images/portfolio/pubaudit-logo-960w.webp 960w, /assets/webp/images/portfolio/pubaudit-logo-1280w.webp 1280w, /assets/webp/images/portfolio/pubaudit-logo.webp 1520w",
+    "avifSrcSet": "/assets/avif/images/portfolio/pubaudit-logo-360w.avif 360w, /assets/avif/images/portfolio/pubaudit-logo-640w.avif 640w, /assets/avif/images/portfolio/pubaudit-logo-960w.avif 960w, /assets/avif/images/portfolio/pubaudit-logo-1280w.avif 1280w, /assets/avif/images/portfolio/pubaudit-logo.avif 1520w",
+    "width": 1520,
+    "height": 332,
+    "size": 83311,
+    "webpSize": 30618,
+    "avifSize": 16517
   },
   "images/portfolio/pubaudit.png": {
     "original": "images/portfolio/pubaudit.png",
@@ -2807,24 +2831,24 @@
     "webpSize": 1406,
     "avifSize": 1195
   },
-  "images/portfolio/SiteSync1.png": {
-    "original": "images/portfolio/SiteSync1.png",
-    "webp": "webp/images/portfolio/SiteSync1.webp",
-    "avif": "avif/images/portfolio/SiteSync1.avif",
-    "webpSrcSet": "/assets/webp/images/portfolio/SiteSync1-360w.webp 360w, /assets/webp/images/portfolio/SiteSync1-640w.webp 640w, /assets/webp/images/portfolio/SiteSync1-960w.webp 960w, /assets/webp/images/portfolio/SiteSync1-1280w.webp 1280w, /assets/webp/images/portfolio/SiteSync1-1600w.webp 1600w, /assets/webp/images/portfolio/SiteSync1.webp 1680w",
-    "avifSrcSet": "/assets/avif/images/portfolio/SiteSync1-360w.avif 360w, /assets/avif/images/portfolio/SiteSync1-640w.avif 640w, /assets/avif/images/portfolio/SiteSync1-960w.avif 960w, /assets/avif/images/portfolio/SiteSync1-1280w.avif 1280w, /assets/avif/images/portfolio/SiteSync1-1600w.avif 1600w, /assets/avif/images/portfolio/SiteSync1.avif 1680w",
+  "images/portfolio/sitesync1.png": {
+    "original": "images/portfolio/sitesync1.png",
+    "webp": "webp/images/portfolio/sitesync1.webp",
+    "avif": "avif/images/portfolio/sitesync1.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/sitesync1-360w.webp 360w, /assets/webp/images/portfolio/sitesync1-640w.webp 640w, /assets/webp/images/portfolio/sitesync1-960w.webp 960w, /assets/webp/images/portfolio/sitesync1-1280w.webp 1280w, /assets/webp/images/portfolio/sitesync1-1600w.webp 1600w, /assets/webp/images/portfolio/sitesync1.webp 1680w",
+    "avifSrcSet": "/assets/avif/images/portfolio/sitesync1-360w.avif 360w, /assets/avif/images/portfolio/sitesync1-640w.avif 640w, /assets/avif/images/portfolio/sitesync1-960w.avif 960w, /assets/avif/images/portfolio/sitesync1-1280w.avif 1280w, /assets/avif/images/portfolio/sitesync1-1600w.avif 1600w, /assets/avif/images/portfolio/sitesync1.avif 1680w",
     "width": 1680,
     "height": 1158,
     "size": 557940,
     "webpSize": 54622,
     "avifSize": 36712
   },
-  "images/portfolio/SiteSync2.png": {
-    "original": "images/portfolio/SiteSync2.png",
-    "webp": "webp/images/portfolio/SiteSync2.webp",
-    "avif": "avif/images/portfolio/SiteSync2.avif",
-    "webpSrcSet": "/assets/webp/images/portfolio/SiteSync2-360w.webp 360w, /assets/webp/images/portfolio/SiteSync2-640w.webp 640w, /assets/webp/images/portfolio/SiteSync2-960w.webp 960w, /assets/webp/images/portfolio/SiteSync2-1280w.webp 1280w, /assets/webp/images/portfolio/SiteSync2-1600w.webp 1600w, /assets/webp/images/portfolio/SiteSync2.webp 1680w",
-    "avifSrcSet": "/assets/avif/images/portfolio/SiteSync2-360w.avif 360w, /assets/avif/images/portfolio/SiteSync2-640w.avif 640w, /assets/avif/images/portfolio/SiteSync2-960w.avif 960w, /assets/avif/images/portfolio/SiteSync2-1280w.avif 1280w, /assets/avif/images/portfolio/SiteSync2-1600w.avif 1600w, /assets/avif/images/portfolio/SiteSync2.avif 1680w",
+  "images/portfolio/sitesync2.png": {
+    "original": "images/portfolio/sitesync2.png",
+    "webp": "webp/images/portfolio/sitesync2.webp",
+    "avif": "avif/images/portfolio/sitesync2.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/sitesync2-360w.webp 360w, /assets/webp/images/portfolio/sitesync2-640w.webp 640w, /assets/webp/images/portfolio/sitesync2-960w.webp 960w, /assets/webp/images/portfolio/sitesync2-1280w.webp 1280w, /assets/webp/images/portfolio/sitesync2-1600w.webp 1600w, /assets/webp/images/portfolio/sitesync2.webp 1680w",
+    "avifSrcSet": "/assets/avif/images/portfolio/sitesync2-360w.avif 360w, /assets/avif/images/portfolio/sitesync2-640w.avif 640w, /assets/avif/images/portfolio/sitesync2-960w.avif 960w, /assets/avif/images/portfolio/sitesync2-1280w.avif 1280w, /assets/avif/images/portfolio/sitesync2-1600w.avif 1600w, /assets/avif/images/portfolio/sitesync2.avif 1680w",
     "width": 1680,
     "height": 1158,
     "size": 399078,
@@ -2962,6 +2986,18 @@
     "size": 2719,
     "webpSize": 1320,
     "avifSize": 950
+  },
+  "images/portfolio/virtualcontact-logo.png": {
+    "original": "images/portfolio/virtualcontact-logo.png",
+    "webp": "webp/images/portfolio/virtualcontact-logo.webp",
+    "avif": "avif/images/portfolio/virtualcontact-logo.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/virtualcontact-logo.webp 501w",
+    "avifSrcSet": "/assets/avif/images/portfolio/virtualcontact-logo.avif 501w",
+    "width": 501,
+    "height": 104,
+    "size": 4801,
+    "webpSize": 5090,
+    "avifSize": 3563
   },
   "images/portfolio/virtualcrm-1.png": {
     "original": "images/portfolio/virtualcrm-1.png",
