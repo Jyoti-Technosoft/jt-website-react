@@ -1080,7 +1080,7 @@
     {
       "projectName": "Progress Maker",
       "projectId": 1,
-      "priority": 11,
+      "priority": 7,
       "technology": "Angular",
       "category": ["Custom Software Development", "Visualization"],
       "description": "Enterprise Resource Planning (ERP) systems using a powerful technology stack that includes Angular with NGXS Store for frontend development, D3 for data visualization, Pptgenx for dynamic presentations.",
@@ -1142,7 +1142,7 @@
     {
       "projectName": "Pratibha Herbal",
       "projectId": 2,
-      "priority": 8,
+      "priority": 11,
       "technology": "WordPress",
       "category": ["Custom Software Development"],
       "description": "Our expertise in building e-commerce websites using WordPress and MySQL. Our team of skilled developers has successfully created feature-rich and scalable online stores that drive business growth and enhance customer experiences.",
@@ -1231,7 +1231,7 @@
     {
       "projectName": "E-Commerce Web Application",
       "projectId": 4,
-      "priority": 9,
+      "priority": 0,
       "technology": "WordPress",
       "category": ["Custom Software Development"],
       "description": "Our expertise in designing and developing e-commerce websites specifically tailored for the textile industry using WordPress. We have successfully created visually stunning and highly functional online stores that cater to the unique requirements of textile businesses.",
@@ -1313,7 +1313,7 @@
     {
       "projectName": "Micro-C",
       "projectId": 6,
-      "priority": 6,
+      "priority": 0,
       "technology": "GWT",
       "category": ["Custom Software Development", "Visualization"],
       "description": "We developed a web-based photo browser for a client, specifically focusing on the UI for an X-ray machine. Users can view X-ray images captured by the machine and perform operations such as zooming, panning, and adjusting brightness, contrast, and sharpness",
@@ -1368,7 +1368,7 @@
     {
       "projectName": "Yacht Closer Brochure Application",
       "projectId": 7,
-      "priority": 5,
+      "priority": 0,
       "technology": "React",
       "category": ["Custom Software Development"],
       "description": "Yacht Closer Brochure App' is one of the modules for the 'Yacht closer Web Application' of Boats Group. The purpose of this app is to generate brochures for the Yacht Brokers.",
@@ -1408,7 +1408,7 @@
     {
       "projectName": "Yacht Closer Web Application",
       "projectId": 8,
-      "priority": 5,
+      "priority": 0,
       "technology": "Java",
       "category": ["Custom Software Development"],
       "description": "Yacht Closer Web Application is the SaaS Platform to manage Yacht Sales/Purchase/Rent Deal with Yacht Brocker and the Customer.",
@@ -1451,7 +1451,7 @@
     {
       "projectName": "CX Group",
       "projectId": 9,
-      "priority": 4,
+      "priority": 0,
       "technology": "Java",
       "category": ["Custom Software Development"],
       "description": "We have successfully integrated the insignia theme and its plugin into the GWT framework. Our expertise with GWT native, JavaScript native, JQuery, Jasper Reports, Google Charts, chart.js, and Bootstrap has allowed us to build and improve the user experience.",
@@ -1510,7 +1510,7 @@
     {
       "projectName": "Online Chat Web Application",
       "projectId": 10,
-      "priority": 7,
+      "priority": 0,
       "technology": "React",
       "category": ["Custom Software Development"],
       "description": "Big Data Customer Retention & Experience Management SaaS",
@@ -1553,7 +1553,7 @@
     {
       "projectName": "D3 Showcase",
       "projectId": 12,
-      "priority": 12,
+      "priority": 2,
       "technology":"D3",
       "category": ["Visualization", "Custom Software Development"],
       "description": "D3 Showcase is a data visualization project built with HTML, SCSS, React, and D3.js. It features six chart types: Pie Chart, Stacked Chart, Donut Chart, Bar Chart, India Map Chart, and Candlestick Chart. The user can perform CRUD operations, making it an interactive and dynamic data exploration tool.",
@@ -1611,7 +1611,7 @@
     {
       "projectName": "Quiz Application",
       "projectId": 13,
-      "priority": 10,
+      "priority": 0,
       "technology":"Angular",
       "category": ["Custom Software Development", "Visualization"],
       "description": "Technical Assistant is a cutting-edge test app built using Angular, TypeScript, and Laravel. It leverages D3.js for captivating data visualization, offering dynamic questions, real-time leaderboards, and rich multimedia support for an engaging your experience. At the heart of Technical Assistant is Laravel, our robust backend ensuring secure user authentication, efficient database management, and scalability for future enhancements. Track your progress, compete with others, and dive into a world of knowledge and fun with Technical Assistant",
@@ -1656,7 +1656,7 @@
     {
       "projectName": "Office Management System",
       "projectId": 14,
-      "priority": 9,
+      "priority": 1,
       "technology": "React",
       "category": [
         "Custom Software Development",
@@ -1710,7 +1710,7 @@
     {
       "projectName": "Book Universe",
       "projectId": 15,
-      "priority": 5,
+      "priority": 0,
       "technology": "React",
       "category": ["Custom Software Development"],
       "description": "The Book Universe application gives platform to share the content of any books to users. It contains book name, category, author name, date of published, link to the content or attached pdf. One can save the books to the saved list and explore the books via categories. Also one can add the book and its details in order to share to any users.",
@@ -1752,7 +1752,7 @@
     {
       "projectName": "Health Audit Management",
       "projectId": 16,
-      "priority": 10,
+      "priority": 12,
       "technology": "Angular",
       "category": ["Custom Software Development"],
       "description": "Developed the Quality module to enhance the quality of Audited reports for equipment. implemented steps to improve quality and manage notifications for doctors/authors.",
@@ -1794,7 +1794,7 @@
     {
       "projectName": "VirtualCRM & CircleCRM",
       "projectId": 17,
-      "priority": 11,
+      "priority": 10,
       "technology": "Angular",
       "category": ["Custom Software Development"],
       "description": "It is a Customer Relationship Management System. Developed interactive components such as execution dashboards, drag-and-drop features, etc. Focused on creating responsive UI. It is a sales and customer management tool used for tracking business transactions, customer interactions and analytics, useful for businesses managing customer relationships, orders and communication.",
@@ -1828,7 +1828,7 @@
     {
       "projectName": "Property Vista",
       "projectId": 18,
-      "priority": 10,
+      "priority": 9,
       "technology": "GWT ",
       "category": ["Custom Software Development"],
       "description": "The application is tenant-related, serving as a single portal to manage tenant-related tasks such as rent, insurances, payment module etc. Project involves a complete reskin of an existing application built with Google Web Toolkit (GWT) using Figma for design updates. Sass is introduced for custom styles, and a toggle switch allows users to switch between the legacy and new themes. The project includes bug fixes for both themes and the development of new functionalities to improve the application.",
@@ -1878,7 +1878,7 @@
     {
       "projectName": "AnteThink",
       "projectId": 19,
-      "priority": 12,
+      "priority": 8,
       "technology": "AI/ML",
       "category": ["Custom Software Development", "Visualization", "Generative AI"],
       "description": "AnteThink's Event Decision Support System is an advanced application that integrates user management, Stripe Subscription and Payment processing, and AI-driven decision-making. The system gathers input from users regarding specific events and contexts, then uses AI to generate a decision tree visualized with D3.js, displaying all possible suggestions for the given scenario. Additionally, the system allows users to interact with the decision tree, generating detailed action plans for each node they select. This dynamic and interactive tool supports informed decision- making and strategic planning for various events and contexts.",
@@ -1917,7 +1917,7 @@
     {
       "projectName": "BookSkill",
       "projectId": 20,
-      "priority": 9,
+      "priority": 0,
       "technology": "React Native",
       "category": ["Mobile App"],
       "description": "Our expertise in mobile application development is reflected in BookSkill, a dynamic React Native app that connects users with professional trainers for a variety of skills. Users can browse trainer profiles, view and leave ratings, and book appointments seamlessly. With an intuitive interface and smooth navigation, the app ensures a hassle-free booking experience and fosters better engagement between trainers and learners.",
@@ -1948,7 +1948,7 @@
     {
       "projectName": "QuickMart",
       "projectId": 21,
-      "priority": 9,
+      "priority": 0,
       "technology": "WordPress",
       "category": ["Custome Software Development"],
       "description": "Our expertise in creating modern e-commerce platforms is showcased in QuickMart, a sleek shopping application built using WordPress and WooCommerce. Designed for a smooth and engaging customer journey, QuickMart offers a complete shopping experience with intuitive navigation, a responsive mega-menu. The store is optimized for speed, scalability, and mobile responsiveness, ensuring customers can browse and purchase effortlessly.",
@@ -1984,7 +1984,7 @@
     {
       "projectName": "SiteSync",
       "projectId": 22,
-      "priority": 13,
+      "priority": 6,
       "technology": "Flutter",
       "category": [
         "Mobile App"
@@ -2024,7 +2024,7 @@
     {
       "projectName": "FreshMart",
       "projectId": 23,
-      "priority": 9,
+      "priority": 0,
       "technology": "Flutter",
       "category": ["Mobile App"],
       "description": "FreshMart is a core Flutter-based grocery store app designed for seamless shopping experiences. It offers a clean, responsive interface, optimized performance, and cross-platform support, making it easy for customers to browse, order, and manage groceries on the go.",
@@ -2051,7 +2051,7 @@
     {
       "projectName": "VisualCharts",
       "projectId": 24,
-      "priority": 13,
+      "priority": 0,
       "technology": "D3",
       "category": ["Custom Software Development", "Visualization"],
       "description": "VisualCharts is a responsive React + D3-based charting dashboard that includes Histogram, Gauge, Gantt, S-Curve, and Bar charts. It supports both dark and light themes, adapts seamlessly to different screen sizes, and provides interactive visuals for effective project tracking and analysis.",
@@ -2091,7 +2091,7 @@
     {
       "projectName": "Praksis",
       "projectId": 25,
-      "priority": 14,
+      "priority": 4,
       "technology": "AI/ML",
       "category": ["Custom Software Development", "Mobile App"],
       "description": "Praksis is an intelligent web application designed to revolutionize the way educators and students create, manage, and attempt practice tests. By leveraging AI, it simplifies the process of generating question papers and provides a seamless testing experience.",
@@ -2148,7 +2148,7 @@
     {
       "projectName": "Aqua Intel",
       "projectId": 26,
-      "priority": 14,
+      "priority": 3,
       "technology": "React",
       "category": ["Custom Software Development"],
       "description": "Aqua Intel is a Next.js App Router dashboard for executive monitoring of water-impact initiatives",
@@ -2187,7 +2187,7 @@
     {
       "projectName": "BloomWell",
       "projectId": 27,
-      "priority": 14,
+      "priority": 5,
       "technology": "React",
       "category": ["Custom Software Development"],
       "description": "BloomWell is a comprehensive digital health platform focused on weight management and wellness treatments",
@@ -2281,7 +2281,7 @@
     {
       "projectName": "Aelos",
       "projectId": 29,
-      "priority": 14,
+      "priority": 13,
       "technology": "React",
       "category": [
         "Custom Software Development"
