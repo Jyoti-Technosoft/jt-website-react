@@ -19,6 +19,7 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [expandedTestimonials, setExpandedTestimonials] = useState<number[]>([]);
+  const [overflowingTestimonials, setOverflowingTestimonials] = useState<number[]>([]);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
@@ -50,6 +51,23 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    const measureOverflow = () => {
+      const overflowingIndexes = contentRefs.current.reduce<number[]>((indexes, content, index) => {
+        if (content && content.scrollHeight > content.clientHeight + 1) {
+          indexes.push(index);
+        }
+        return indexes;
+      }, []);
+
+      setOverflowingTestimonials(overflowingIndexes);
+    };
+
+    measureOverflow();
+    window.addEventListener("resize", measureOverflow);
+    return () => window.removeEventListener("resize", measureOverflow);
+  }, [data.testimonials]);
 
   const toggleExpanded = (index: number) => {
     setExpandedTestimonials((current) => {
@@ -266,7 +284,7 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
                       </Typography>
                     </Box>
 
-                    {testimonial.quote.length > 160 && (
+                    {overflowingTestimonials.includes(index) && (
                       <Button
                         onClick={() => toggleExpanded(index)}
                         size="small"
