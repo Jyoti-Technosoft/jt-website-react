@@ -11,13 +11,127 @@
       ],
       "primaryCtaLabel": "Book a 30-min Discovery Call",
       "primaryCtaHref": "/contact",
-      "secondaryCtaLabel": "See Case Studies",
+      "secondaryCtaLabel": "Explore Case Studies",
       "secondaryCtaHref": "/our-work",
       "calloutTitle": "AI agents that do real work",
       "calloutDescription": "Launch AI copilots for support, sales, and internal automation with secure integrations into your existing workflows.",
       "calloutHref": "/services/ai-integration",
       "calloutLinkLabel": "Explore AI integration"
     },
+    "industryExpertise": [
+      {
+        "image": "/assets/ecommerce-img.png",
+        "title": "E-commerce",
+        "description": "Conversion-focused e-commerce websites and mobile commerce apps with smooth shopping journeys.",
+        "expertise": ["E-commerce Development", "Mobile Commerce", "Product Catalogs"],
+        "projects": ["QuickMart", "FreshMart", "Pratibha Herbal", "E-Commerce Web Application"],
+        "featured": true
+      },
+      {
+        "image": "/assets/real-estate-img.png",
+        "title": "Real Estate",
+        "description": "Custom real estate software that simplifies property listings, tenant services, transactions, and leasing workflows.",
+        "expertise": ["Property Listings", "Real Estate Software", "Tenant Portals"],
+        "projects": ["Real Estate Web Application", "Property Vista", "TLC Engine"],
+        "featured": true
+      },
+      {
+        "image": "/assets/health-care-img.png",
+        "title": "Healthcare",
+        "description": "Secure healthcare software and digital health platforms for clinical operations, records, reporting, and patient services.",
+        "expertise": ["Healthcare Software", "Health Records", "Digital Health"],
+        "projects": ["Health Audit Management", "Micro-C", "BloomWell"],
+        "featured": true
+      },
+      {
+        "image": "/assets/education-img.png",
+        "title": "Education",
+        "description": "Education technology platforms for digital learning, AI-assisted assessment, practice tests, and student progress.",
+        "expertise": ["Learning Platforms", "Online Assessments", "AI-assisted Learning"],
+        "projects": ["Praksis", "Quiz Application", "BookSkill"],
+        "featured": true
+      },
+      {
+        "image": "/assets/development.svg",
+        "title": "Business & Operations",
+        "description": "Custom business software that streamlines ERP workflows, workforce management, task tracking, and internal operations.",
+        "expertise": ["Custom Business Software", "ERP Workflows", "Task Management"],
+        "projects": ["Progress Maker", "Office Management System"],
+        "featured": true
+      },
+      {
+        "image": "/assets/consulting.svg",
+        "title": "CRM & Customer Experience",
+        "description": "CRM software and customer experience platforms that connect sales, communication, retention, and service workflows.",
+        "expertise": ["CRM Software", "Customer Portals", "Real-time Communication"],
+        "projects": ["VirtualCRM & CircleCRM", "CX Group", "Online Chat Web Application"],
+        "category": "capability"
+      },
+      {
+        "image": "/assets/d3-showcase.svg",
+        "title": "Data & Analytics",
+        "description": "Data analytics dashboards and business intelligence tools that turn complex information into clear decisions.",
+        "expertise": ["Data Analytics", "Interactive Dashboards", "Data Visualization"],
+        "projects": ["Progress Maker", "D3 Showcase", "VisualCharts", "AnteThink", "Aqua Intel"],
+        "category": "capability"
+      },
+      {
+        "image": "/assets/ai.png",
+        "title": "AI & Intelligent Products",
+        "description": "AI product development for learning, decision support, healthcare intelligence, and smarter business workflows.",
+        "expertise": ["AI Product Development", "Intelligent Automation", "Clinical Intelligence"],
+        "projects": ["AnteThink", "Praksis", "OrthoAI"],
+        "category": "capability"
+      },
+      {
+        "image": "/assets/construction.svg",
+        "title": "Construction & Field Operations",
+        "description": "Construction management apps for site coordination, workforce management, progress tracking, and field reporting.",
+        "expertise": ["Construction Software", "Workforce Management", "Progress Tracking"],
+        "projects": ["SiteSync"],
+        "featured": true
+      },
+      {
+        "image": "/assets/travel-marine.svg",
+        "title": "Travel & Marine",
+        "description": "Digital platforms for marine sales, yacht rentals, broker workflows, customer inquiries, and online brochures.",
+        "expertise": ["Marine Software", "Sales & Rentals", "Digital Brochures"],
+        "projects": ["Yacht Closer Web Application", "Yacht Closer Brochure Application"],
+        "featured": true
+      },
+      {
+        "image": "/assets/food-wellness.svg",
+        "title": "Food, Wellness & Lifestyle",
+        "description": "E-commerce and digital brand experiences for natural products, healthy dining, wellness, and lifestyle businesses.",
+        "expertise": ["Wellness E-commerce", "Brand Experiences", "Consumer Platforms"],
+        "projects": ["Pratibha Herbal", "Aelos"],
+        "featured": true
+      },
+      {
+        "image": "/assets/publishing.svg",
+        "title": "Publishing & Content",
+        "description": "Digital publishing and content platforms that help people discover, organize, share, and learn online.",
+        "expertise": ["Content Libraries", "Digital Publishing", "Skill Development"],
+        "projects": ["Book Universe", "BookSkill"],
+        "category": "industry"
+      },
+      {
+        "image": "/assets/consulting.svg",
+        "title": "Astrology & Advisory",
+        "description": "Personalized web applications for advisory, consultation, and decision-support services.",
+        "expertise": ["Consultation Workflows", "Personalized Guidance", "Decision Support"],
+        "projects": ["Renacline Consultancy", "AnteThink"],
+        "category": "industry"
+      },
+      {
+        "image": "/assets/development.svg",
+        "title": "Business Operations",
+        "description": "Product engineering capabilities for process automation, operational reporting, and team productivity.",
+        "expertise": ["Process Automation", "Operational Dashboards", "Team Productivity"],
+        "projects": [],
+        "category": "capability"
+      }
+    ],
     "WhyUs": {
       "title": "Why Us",
       "description": "The numbers speak for themselves",
@@ -203,6 +317,20 @@
           "author": "Pratibha S.",
           "role": "Product Manager", 
           "company": "Pratibha Herbal",
+          "avatar": "https://via.placeholder.com/56x56/2ea67d/ffffff?text=MR"
+        },
+        {
+          "quote": "Dipesh has been a pleasure to work with. He has completed each task on time and without conflict. Extremely happy to work with him. He is a tech person, so job don't have take time to complete. Highly recommended and will definitely work with him in future.",
+          "author": "",
+          "role": "CTO", 
+          "company": "ProgressMaker",
+          "avatar": "https://via.placeholder.com/56x56/2ea67d/ffffff?text=MR"
+        },
+        {
+          "quote": "I have been working with Dipesh since many months. His skills, hard-work, patience, preserverance, tolerance to accommodate change requests make him a star studded performer in my team. Waiting to hire him back again on my next project.",
+          "author": "Jason",
+          "role": "CEO", 
+          "company": "TLC Engine",
           "avatar": "https://via.placeholder.com/56x56/2ea67d/ffffff?text=MR"
         },
         {

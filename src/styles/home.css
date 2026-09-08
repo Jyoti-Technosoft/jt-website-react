@@ -190,30 +190,17 @@ video {
 }
 
 .hero-secondary-cta {
-  border: 2px solid #1f5795 !important;
-  color: #1f5795 !important;
+  border: none !important;
+  color: #f76336 !important;
   background: #ffffff !important;
-  backdrop-filter: blur(10px);
   border-radius: 14px !important;
   font-weight: 600 !important;
-  letter-spacing: 0.02em !important;
-  text-transform: none !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  position: relative !important;
-  overflow: hidden !important;
 }
 
 .hero-secondary-cta:hover {
-  border-color: #3f87df !important;
-  background: #f8fafc !important;
-  color: #3f87df !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 32px rgba(31, 87, 149, 0.2) !important;
-}
-
-.hero-secondary-cta:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 4px 16px rgba(31, 87, 149, 0.1) !important;
+  border-color: #f76336 !important;
+  background: #ffffff !important;
+  color: #f76336 !important;
 }
 
 /* .hero-cta-helperText {
@@ -819,6 +806,90 @@ video {
 .industry-expertise .industry-expertise-card .industry-expertise-card-title,
 .industry-expertise .industry-expertise-card .industry-expertise-card-description {
   line-height: 1.4;
+}
+
+.industry-expertise-card-title {
+  color: var(--text-dark);
+  font-weight: 700 !important;
+}
+
+.industry-expertise-card-description {
+  color: var(--text-muted);
+  line-height: 1.65 !important;
+}
+
+.industry-expertise-card .MuiChip-root {
+  border-color: rgba(31, 87, 149, 0.2);
+  color: var(--text-blue);
+  background: #fbfdff;
+}
+
+.industry-expertise-card-projects {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.industry-expertise-card-projects strong {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.industry-expertise-card-cta {
+  color: var(--text-blue) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  min-width: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.industry-expertise-card-cta:hover {
+  background: transparent !important;
+  color: #154173 !important;
+}
+
+.industry-expertise-proof {
+  color: var(--text-blue);
+  font-size: 0.82rem !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.industry-capabilities {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 2.5rem;
+}
+
+.industry-capabilities-title {
+  color: var(--text-blue) !important;
+  font-size: 1.45rem !important;
+  font-weight: 700 !important;
+}
+
+.industry-capabilities-description {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.industry-capability-item {
+  min-height: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: var(--surface-secondary);
+}
+
+.industry-capability-item .MuiTypography-subtitle1 {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.industry-capability-item .MuiTypography-body2 {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  line-height: 1.55;
 }
 
 .howWeWork-section {

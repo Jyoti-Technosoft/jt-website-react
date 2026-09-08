@@ -3,6 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 import { HomeHeroCta } from "../../types/content";
 
@@ -89,6 +90,9 @@ const CTAButton: React.FC<CTAButtonProps> = ({ cta, variant = "primary", classNa
         <Box sx={{ position: "relative", zIndex: 1 }}>
           {cta.label}
         </Box>
+        {!isPrimary && (
+          <ArrowOutwardIcon className="hero-secondary-cta-icon" sx={{ fontSize: 18 }} />
+        )}
       </Button>
       {cta.helperText && (
         <Typography

@@ -1,6 +1,7 @@
 import type {
   BuiltProject,
   HomePageContent,
+  IndustryExpertiseItem,
   MetricItem,
   OfferItem,
   ProcessStep,
@@ -74,6 +75,24 @@ const toBuiltProjects = (value: unknown): BuiltProject[] =>
     })
     : [];
 
+const toIndustryExpertise = (value: unknown): IndustryExpertiseItem[] =>
+  Array.isArray(value)
+    ? value.map((item) => {
+      const entry = (item ?? {}) as Record<string, unknown>;
+      const category = entry.category === "capability" ? "capability" : "industry";
+
+      return {
+        image: toString(entry.image),
+        title: toString(entry.title, "Industry expertise"),
+        description: toString(entry.description),
+        expertise: toStringArray(entry.expertise),
+        projects: toStringArray(entry.projects),
+        featured: entry.featured === true,
+        category,
+      };
+    })
+    : [];
+
 const home = (rawData.home ?? {}) as Record<string, unknown>;
 const meetSection = (home.meetSection ?? {}) as Record<string, unknown>;
 const whyUs = (home.WhyUs ?? {}) as Record<string, unknown>;
@@ -138,6 +157,7 @@ export const homeContent: HomePageContent = {
       ],
     },
   },
+  industryExpertise: toIndustryExpertise(home.industryExpertise),
   clientTestimonials: (() => {
     const clientTestimonials = (home.clientTestimonials ?? {}) as Record<string, unknown>;
 

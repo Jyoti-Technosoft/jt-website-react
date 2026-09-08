@@ -266,10 +266,11 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ data }) => {
                       </Typography>
                     </Box>
 
-                    {testimonial.quote.split(" ").length > 40 && (
+                    {testimonial.quote.length > 160 && (
                       <Button
                         onClick={() => toggleExpanded(index)}
                         size="small"
+                        aria-expanded={isExpanded(index)}
                         sx={{
                           mt: 2,
                           textTransform: "none",

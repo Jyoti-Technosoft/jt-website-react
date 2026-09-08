@@ -89,8 +89,19 @@ export interface BuiltProject {
   imageSrc: string;
 }
 
+export interface IndustryExpertiseItem {
+  image: string;
+  title: string;
+  description: string;
+  expertise: string[];
+  projects: string[];
+  featured?: boolean;
+  category?: "industry" | "capability";
+}
+
 export interface HomePageContent {
   hero: HomeHeroContent;
+  industryExpertise: IndustryExpertiseItem[];
   clientTestimonials: ClientTestimonials;
   metrics: MetricItem[];
   weOffer: SectionIntroContent & {
