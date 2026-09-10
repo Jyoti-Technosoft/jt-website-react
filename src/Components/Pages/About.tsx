@@ -24,8 +24,9 @@ const About: React.FC = () => {
     return (
       <>
         <SEO
-          title="About Us | Jyoti Technosoft LLP"
-          description="Learn more about Jyoti Technosoft LLP, our mission, vision, and team of IT experts."
+          title="About Us | IT & Software Development Company in Surat | Jyoti Technosoft"
+          description="Learn about Jyoti Technosoft LLP, a trusted digital product engineering agency and software development company based in Surat, Gujarat."
+          keywords="about jyoti technosoft, IT company in surat, software development company in surat, tech agency surat, web developers surat"
           url="https://jyotitechnosoft.com/about"
         />
         <HeaderMainPage

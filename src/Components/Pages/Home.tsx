@@ -52,9 +52,9 @@ const Home: React.FC = () => {
   return (
     <>
       <SEO
-        title="Web Development & AI Solutions | Jyoti Technosoft LLP"
-        description="Expert web development, mobile apps, and AI integration services. Transform your business with custom software solutions, API development, and digital transformation by Jyoti Technosoft LLP."
-        keywords="web development, mobile app development, AI integration, software solutions, API development, digital transformation, custom software, IT consulting"
+        title="Jyoti Technosoft LLP | Web Development & AI Solutions"
+        description="Top-rated global software development company based in Surat, India. We deliver custom web applications, mobile apps, AI solutions, and digital transformation for clients worldwide."
+        keywords="jyoti technosoft, global software development company, top rated IT company in surat, web development, mobile app development, AI solutions, custom software engineering"
         url="https://jyotitechnosoft.com/"
       />
       <Box>

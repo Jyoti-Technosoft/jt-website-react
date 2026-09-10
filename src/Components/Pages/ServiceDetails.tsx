@@ -8,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
+import SEO from "../SEO.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/service-details.css";
 
@@ -49,7 +50,14 @@ const ServiceDetails: React.FC = () => {
   }
 
   return (
-    <Box className="service-details">
+    <>
+      <SEO
+        title={`${selectedService.technology} Services in Surat | Jyoti Technosoft`}
+        description={`Expert ${selectedService.technology} services by Jyoti Technosoft LLP in Surat, Gujarat. Custom software engineering tailored for growing businesses.`}
+        keywords={`${selectedService.technology.toLowerCase()}, ${selectedService.technology.toLowerCase()} surat, software development company in surat, jyoti technosoft`}
+        url={`https://jyotitechnosoft.com/services/${id}`}
+      />
+      <Box className="service-details">
       <Box
         className="service-details-first-section"
         sx={{ backgroundColor: "#1F5795" }}
@@ -266,6 +274,7 @@ const ServiceDetails: React.FC = () => {
         </Container>
       </Box>
     </Box>
+    </>
   );
 };
 

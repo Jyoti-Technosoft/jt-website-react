@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-12-03T13:06:36.679Z",
+  "timestamp": "2026-09-10T05:30:36.893Z",
   "buildSuccess": true,
   "bundleAnalysis": {
-    "totalSize": 1184876,
-    "jsFileCount": 32,
+    "totalSize": 1422355,
+    "jsFileCount": 35,
     "cssFileCount": 1,
-    "imageFileCount": 127,
+    "imageFileCount": 141,
     "fontFileCount": 0,
     "bundleSizePassed": false,
     "jsCountPassed": false,
@@ -15,9 +15,9 @@
     "allPassed": false
   },
   "optimizationCheck": {
-    "optimizationsFound": 4,
+    "optimizationsFound": 3,
     "totalChecks": 4,
-    "score": 100
+    "score": 75
   },
   "overall": false
 }

@@ -8,6 +8,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import GamepadIcon from '@mui/icons-material/Gamepad';
+import SEO from "../SEO.tsx";
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import dataArray from "../../jt-website.json";
 import "../../styles/site-map.css";
@@ -25,6 +26,11 @@ const SiteMap: React.FC = () => {
 
   return (
     <Box className="site-map-main">
+      <SEO
+        title="HTML Sitemap | Jyoti Technosoft LLP"
+        description="Site map of Jyoti Technosoft LLP featuring all page links, services, products, and career opportunities."
+        url="https://jyotitechnosoft.com/site-map"
+      />
       <HeaderCommon smallTitle="Site Map" page="Site Map" />
 
       <Box

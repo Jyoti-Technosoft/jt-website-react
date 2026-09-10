@@ -8,6 +8,7 @@ import Paper from "@mui/material/Paper";
 import Container from "@mui/material/Container";
 import dataArray from "../../jt-website.json";
 
+import SEO from "../SEO.tsx";
 import BuildVision from "./shared/BuildVision.tsx";
 import IconByName from "../icons/IconByName.tsx";
 import "../../styles/hire-us.css";
@@ -114,6 +115,12 @@ const HireDevelopers: React.FC = () => {
 
   return (
     <>
+      <SEO
+        title="Hire Dedicated Software Developers in Surat | React, Mobile & AI Experts"
+        description="Hire top-tier dedicated software developers in Surat for web development, mobile apps, and AI integration. Flexible engagement models by Jyoti Technosoft LLP."
+        keywords="hire software developers surat, hire react developer surat, hire mobile app developer surat, dedicated developers surat, jyoti technosoft"
+        url="https://jyotitechnosoft.com/hire-developers"
+      />
       <HeaderMainPage
         smallTitle="Hire Developer"
         page="Hire Our Dedicated Developers"

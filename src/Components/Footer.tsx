@@ -42,6 +42,9 @@ const Footer: React.FC = () => {
               Transform your business with cutting-edge web development, mobile apps, and AI solutions. 
               We deliver innovative technology solutions that drive growth and success.
             </Typography>
+            <Typography className="footer-description" variant="body2" style={{ marginTop: '8px', fontSize: '13px', color: '#64748b' }}>
+              📍 417, Sumerru Business Corner, Rajhans Multiplex, Pal Gam, Surat, Gujarat 395009 | 📞 +91 9054551083
+            </Typography>
             <Box className="footer-social">
               <Typography className="followus" variant="body2">
                 Connect With Us
@@ -52,6 +55,7 @@ const Footer: React.FC = () => {
                   aria-label="facebook"
                   href="https://www.facebook.com/info.jyotitechnosoft/?ref=py_c"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FacebookIcon />
                 </IconButton>
@@ -60,6 +64,7 @@ const Footer: React.FC = () => {
                   aria-label="instagram"
                   href="https://www.instagram.com/jyoti_technosoft_llp/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <InstagramIcon />
                 </IconButton>
@@ -68,6 +73,7 @@ const Footer: React.FC = () => {
                   aria-label="linkedin"
                   href="https://in.linkedin.com/company/jyoti-technosoft"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <LinkedInIcon />
                 </IconButton>
@@ -76,6 +82,7 @@ const Footer: React.FC = () => {
                   aria-label="twitter"
                   href="https://twitter.com/JyotiTechnosoft"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <XIcon />
                 </IconButton>
@@ -84,6 +91,7 @@ const Footer: React.FC = () => {
                   aria-label="github"
                   href="https://github.com/Jyoti-Technosoft"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <GitHubIcon />
                 </IconButton>

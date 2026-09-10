@@ -273,10 +273,11 @@ const OurWork: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Our Work | Jyoti Technosoft LLP</title>
-        <meta name="description" content="See our portfolio of successful IT projects and digital solutions delivered by Jyoti Technosoft LLP." />
-        <meta property="og:title" content="Our Work | Jyoti Technosoft LLP" />
-        <meta property="og:description" content="See our portfolio of successful IT projects and digital solutions delivered by Jyoti Technosoft LLP." />
+        <title>Software Portfolio & Case Studies | Jyoti Technosoft Surat</title>
+        <meta name="description" content="Explore successful web, mobile app, and AI software engineering projects developed by Jyoti Technosoft LLP for clients in Surat and worldwide." />
+        <meta name="keywords" content="software portfolio surat, web development projects surat, software case studies, jyoti technosoft work" />
+        <meta property="og:title" content="Software Portfolio & Case Studies | Jyoti Technosoft Surat" />
+        <meta property="og:description" content="Explore successful web, mobile app, and AI software engineering projects developed by Jyoti Technosoft LLP for clients in Surat and worldwide." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jyotitechnosoft.com/our-work" />
         <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />

@@ -151,9 +151,14 @@ const OurProduct: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Our Products - Jyoti Technosoft LLP</title>
-        <meta name="description" content="Explore our innovative products including SiteSync construction management app and Praksis AI-powered educational platform." />
-        <meta name="keywords" content="products, software solutions, SiteSync, Praksis, construction management, educational platform" />
+        <title>SaaS Products & Digital Tools | Jyoti Technosoft Surat</title>
+        <meta name="description" content="Explore innovative software products and SaaS solutions built by Jyoti Technosoft LLP, including SiteSync and Praksis." />
+        <meta name="keywords" content="SaaS products surat, software applications surat, SiteSync, Praksis, digital products, jyoti technosoft" />
+        <meta property="og:title" content="SaaS Products & Digital Tools | Jyoti Technosoft Surat" />
+        <meta property="og:description" content="Explore innovative software products and SaaS solutions built by Jyoti Technosoft LLP, including SiteSync and Praksis." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jyotitechnosoft.com/products" />
+        <link rel="canonical" href="https://jyotitechnosoft.com/products" />
       </Helmet>
 
       <HeaderMainPage 

@@ -7,12 +7,18 @@ import ListItem from "@mui/material/ListItem";
 import Link from "@mui/material/Link";
 import GamepadIcon from '@mui/icons-material/Gamepad'
 
+import SEO from "../SEO.tsx";
 import HeaderCommonPage from "./shared/HeaderCommonPage.tsx";
 import "../../styles/privacy-policy.css";
 
 const PrivacyPolicy: React.FC = () => {
   return (
     <Box className="privacy-policy" mb={4}>
+      <SEO
+        title="Privacy Policy | Jyoti Technosoft LLP"
+        description="Privacy policy for Jyoti Technosoft LLP detailing data collection, processing, and privacy guidelines."
+        url="https://jyotitechnosoft.com/privacy-policy"
+      />
       <HeaderCommonPage smallTitle="Privacy Policy" page="Privacy Policy" subHeader="Here’s how we handle your info clearly and responsibly." />
       <Container className="privacy-policy-container">
         <Typography className="last-updated-date" mt={4}>

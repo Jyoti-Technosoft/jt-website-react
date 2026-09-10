@@ -82,9 +82,14 @@ const ProductDetail: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{product.productName} - Jyoti Technosoft LLP</title>
-        <meta name="description" content={product.description} />
-        <meta name="keywords" content={`${product.productName}, ${product.technology}, ${product.category?.join(', ')}`} />
+        <title>{`${product.productName} - Product Details | Jyoti Technosoft Surat`}</title>
+        <meta name="description" content={product.description?.substring(0, 160)} />
+        <meta name="keywords" content={`${product.productName}, ${product.technology}, ${product.category?.join(', ')}, jyoti technosoft`} />
+        <meta property="og:title" content={`${product.productName} | Jyoti Technosoft Surat`} />
+        <meta property="og:description" content={product.description?.substring(0, 160)} />
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content={`https://jyotitechnosoft.com/products/${encodeURIComponent(product.productName)}`} />
+        <link rel="canonical" href={`https://jyotitechnosoft.com/products/${encodeURIComponent(product.productName)}`} />
       </Helmet>
 
       <Container maxWidth="lg" sx={{ py: 6 }}>
@@ -307,6 +312,7 @@ const ProductDetail: React.FC = () => {
                     startIcon={<LaunchIcon />}
                     href={product.viewDemo}
                     target="_blank"
+                    rel="noopener noreferrer"
                     sx={{
                       background: 'linear-gradient(135deg, #347CCC 0%, #2a5ca8 100%)',
                       color: 'white',

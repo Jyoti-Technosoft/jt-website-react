@@ -118,10 +118,11 @@ const Career: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Career | Jyoti Technosoft LLP</title>
-        <meta name="description" content="Join our team of IT experts. Explore career opportunities at Jyoti Technosoft LLP." />
-        <meta property="og:title" content="Career | Jyoti Technosoft LLP" />
-        <meta property="og:description" content="Join our team of IT experts. Explore career opportunities at Jyoti Technosoft LLP." />
+        <title>Careers & IT Jobs in Surat | Join Jyoti Technosoft LLP</title>
+        <meta name="description" content="Explore software engineering jobs, web developer careers, and IT opportunities in Surat with Jyoti Technosoft LLP. Apply online today!" />
+        <meta name="keywords" content="IT jobs in surat, software engineer jobs surat, web developer jobs surat, tech careers surat, jyoti technosoft careers" />
+        <meta property="og:title" content="Careers & IT Jobs in Surat | Join Jyoti Technosoft LLP" />
+        <meta property="og:description" content="Explore software engineering jobs, web developer careers, and IT opportunities in Surat with Jyoti Technosoft LLP. Apply online today!" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jyotitechnosoft.com/career" />
         <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />

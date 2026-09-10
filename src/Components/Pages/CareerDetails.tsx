@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import GamepadIcon from "@mui/icons-material/Gamepad";
 
+import SEO from "../SEO.tsx";
 import HeaderCommon from "./shared/HeaderCommonPage.tsx";
 import OptimizedImage from "../OptimizedImageV2.tsx";
 import { API_ENDPOINTS } from "../../config/api.ts";
@@ -279,6 +280,12 @@ const CareerDetails: React.FC = () => {
 
   return (
     <Box>
+      <SEO
+        title={`${job.jobName} Job Opening in Surat | Jyoti Technosoft`}
+        description={`Apply for ${job.jobName} position at Jyoti Technosoft LLP in Surat, Gujarat. Learn about roles, responsibilities, and requirements.`}
+        keywords={`${job.jobName.toLowerCase()} job surat, IT jobs surat, jyoti technosoft careers`}
+        url={`https://jyotitechnosoft.com/career-details?job=${job.id}`}
+      />
       <HeaderCommon
         smallTitle="Career"
         subTitle={job.jobName}

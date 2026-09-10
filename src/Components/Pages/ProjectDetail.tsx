@@ -81,8 +81,13 @@ const ProjectDetail: React.FC = () => {
   return (
     <Box sx={{ backgroundColor: 'background.default', minHeight: '100vh' }}>
       <Helmet>
-        <title>{project.projectName} | Jyoti Technosoft LLP</title>
+        <title>{`${project.projectName} - Case Study | Jyoti Technosoft Surat`}</title>
         <meta name="description" content={`${project.description?.substring(0, 160)}...`} />
+        <meta property="og:title" content={`${project.projectName} - Case Study | Jyoti Technosoft Surat`} />
+        <meta property="og:description" content={`${project.description?.substring(0, 160)}...`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://jyotitechnosoft.com/our-work/${project.projectId}`} />
+        <link rel="canonical" href={`https://jyotitechnosoft.com/our-work/${project.projectId}`} />
       </Helmet>
 
       <Box

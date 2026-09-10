@@ -8,34 +8,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#1976d2" />
 
-  <!-- ✅ SEO Meta Description -->
-  <meta name="description"
-    content="Jyoti Technosoft LLP - Innovative IT Solutions, Web & Mobile App Development, and Digital Transformation Services for your business growth." />
-
   <!-- Cache Control Headers -->
   <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
   <meta http-equiv="Expires" content="31536000" />
 
-  <!-- ✅ Title -->
-  <title>Jyoti Technosoft LLP | IT Solutions, Web & Mobile App Development</title>
+  <!-- ✅ Google Analytics (GA4) -->
+  <script>
+    (function() {
+      var gaId = "%REACT_APP_GA_MEASUREMENT_ID%";
+      if (gaId && gaId.indexOf("G-") === 0) {
+        var gscript = document.createElement("script");
+        gscript.async = true;
+        gscript.src = "https://www.googletagmanager.com/gtag/js?id=" + gaId;
+        document.head.appendChild(gscript);
 
-  <!-- ✅ Canonical Tag -->
-  <link rel="canonical" href="https://jyotitechnosoft.com/" />
-
-  <!-- ✅ Open Graph Tags (Social Media) -->
-  <meta property="og:title" content="Jyoti Technosoft LLP | IT Solutions, Web & Mobile App Development" />
-  <meta property="og:description"
-    content="We provide cutting-edge IT solutions, mobile app & web development, and digital services. Empower your business with Jyoti Technosoft LLP." />
-  <meta property="og:image" content="https://jyotitechnosoft.com/og-image.jpg" />
-  <meta property="og:url" content="https://jyotitechnosoft.com/" />
-  <meta property="og:type" content="website" />
-
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jyoti Technosoft LLP | IT Solutions, Web & Mobile App Development" />
-  <meta name="twitter:description"
-    content="Empower your business with web, mobile and digital solutions by Jyoti Technosoft LLP." />
-  <meta name="twitter:image" content="https://jyotitechnosoft.com/og-image.jpg" />
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', gaId);
+      }
+    })();
+  </script>
 
   <!-- ✅ Critical CSS inline -->
   <style>

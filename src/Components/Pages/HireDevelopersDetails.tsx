@@ -8,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
+import SEO from "../SEO.tsx";
 import BuildVision from "./shared/BuildVision.tsx";
 import dataArray from "../../jt-website.json";
 
@@ -40,7 +41,14 @@ const HireDevelopersDetails = () => {
   }
 
   return (
-    <Box className="hire-detail-section">
+    <>
+      <SEO
+        title={`Hire Dedicated ${technologyData.label} Developers in Surat | Jyoti Technosoft`}
+        description={`Hire expert dedicated ${technologyData.label} developers in Surat, Gujarat. Scalable software engineering hiring solutions by Jyoti Technosoft LLP.`}
+        keywords={`hire ${technologyData.label.toLowerCase()} developer surat, dedicated ${technologyData.label.toLowerCase()} developer, jyoti technosoft`}
+        url={`https://jyotitechnosoft.com/hire-developers/${id}`}
+      />
+      <Box className="hire-detail-section">
       <Box sx={{ backgroundColor: "#1F5795" }}>
         <Container className="hire-detail-first-section">
           <Box className="hire-detail-content">
@@ -280,6 +288,7 @@ const HireDevelopersDetails = () => {
       </Box>
       <BuildVision />
     </Box>
+    </>
   );
 };
 

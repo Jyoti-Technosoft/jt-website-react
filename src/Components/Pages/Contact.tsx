@@ -165,10 +165,11 @@ const Contact: React.FC = () => {
     return (
       <>
         <Helmet>
-          <title>Contact Us | Jyoti Technosoft LLP</title>
-          <meta name="description" content="Contact Jyoti Technosoft LLP for IT solutions, web development, and digital transformation services." />
-          <meta property="og:title" content="Contact Us | Jyoti Technosoft LLP" />
-          <meta property="og:description" content="Contact Jyoti Technosoft LLP for IT solutions, web development, and digital transformation services." />
+          <title>Contact Software Developers in Surat | Jyoti Technosoft LLP</title>
+          <meta name="description" content="Contact Jyoti Technosoft LLP in Surat, Gujarat. Visit our office at Sumerru Business Corner, Pal Gam, Surat or call +91 9054551083 for software development inquiries." />
+          <meta name="keywords" content="contact jyoti technosoft, IT company in surat address, software development company in surat contact, software developers surat" />
+          <meta property="og:title" content="Contact Software Developers in Surat | Jyoti Technosoft LLP" />
+          <meta property="og:description" content="Contact Jyoti Technosoft LLP in Surat, Gujarat. Visit our office at Sumerru Business Corner, Pal Gam, Surat or call +91 9054551083 for software development inquiries." />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://jyotitechnosoft.com/contact" />
           <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />

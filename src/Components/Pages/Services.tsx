@@ -39,10 +39,11 @@ const Services: React.FC = () => {
     return (
       <>
         <Helmet>
-          <title>Services | Jyoti Technosoft LLP</title>
-          <meta name="description" content="Explore IT services by Jyoti Technosoft LLP: web development, mobile apps, AI integration, and more." />
-          <meta property="og:title" content="Services | Jyoti Technosoft LLP" />
-          <meta property="og:description" content="Explore IT services by Jyoti Technosoft LLP: web development, mobile apps, AI integration, and more." />
+          <title>Custom Software & Web Development Services in Surat | Jyoti Technosoft</title>
+          <meta name="description" content="Comprehensive software development services in Surat, Gujarat: Custom Web Apps, Mobile App Development, AI Integration, and API Development." />
+          <meta name="keywords" content="software development services surat, web development services surat, mobile app development surat, AI integration services surat, IT services company surat" />
+          <meta property="og:title" content="Custom Software & Web Development Services in Surat | Jyoti Technosoft" />
+          <meta property="og:description" content="Comprehensive software development services in Surat, Gujarat: Custom Web Apps, Mobile App Development, AI Integration, and API Development." />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://jyotitechnosoft.com/services" />
           <meta property="og:image" content="https://jyotitechnosoft.com/assets/logo192.png" />
