@@ -23,7 +23,6 @@ const IndustryExpertise: React.FC = () => {
   const visibleIndustries = showAllIndustries
     ? [...featuredIndustries, ...additionalIndustries]
     : featuredIndustries;
-  const capabilities = industries.filter((industry) => industry.category === "capability");
 
   const renderCard = (industry: IndustryExpertiseItem) => (
     <Box
@@ -32,7 +31,6 @@ const IndustryExpertise: React.FC = () => {
       sx={{
         p: { xs: 2, md: 2.5 },
         height: "100%",
-        minHeight: { md: 360 },
         display: "flex",
         flexDirection: "column",
         border: "1px solid #D9D9D9",
@@ -77,7 +75,7 @@ const IndustryExpertise: React.FC = () => {
         <Typography
           className="industry-expertise-card-projects"
           variant="body2"
-          sx={{ mt: "auto", pt: 2 }}
+          sx={{ pt: 2 }}
         >
           {industry.projects.join(" · ")}
         </Typography>
@@ -105,7 +103,7 @@ const IndustryExpertise: React.FC = () => {
               gridTemplateColumns: {
                 xs: "1fr",
                 sm: "1fr 1fr",
-                md: "repeat(3, 1fr)",
+                md: "repeat(4, 1fr)",
               },
               gap: 3,
               mt: 4,
@@ -126,30 +124,6 @@ const IndustryExpertise: React.FC = () => {
               </Button>
             </Box>
           )}
-
-          <Box className="industry-capabilities" sx={{ mt: 6 }}>
-            <Typography variant="h3" className="industry-capabilities-title">
-              Technology &amp; Product Expertise
-            </Typography>
-            <Typography className="industry-capabilities-description" sx={{ mt: 1 }}>
-              The capabilities we bring across every sector and product engagement.
-            </Typography>
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "repeat(3, 1fr)" },
-                gap: 2,
-                mt: 2.5,
-              }}
-            >
-              {capabilities.map((industry) => (
-                <Box key={industry.title} className="industry-capability-item">
-                  <Typography variant="subtitle1">{industry.title}</Typography>
-                  <Typography variant="body2">{industry.expertise.join(" · ")}</Typography>
-                </Box>
-              ))}
-            </Box>
-          </Box>
         </Box>
       </Container>
     </Box>

@@ -21,33 +21,25 @@
     "industryExpertise": [
       {
         "image": "/assets/health-care-img.png",
-        "title": "Healthcare & Digital Health",
+        "title": "HealthCare",
         "description": "Secure healthcare software and digital health platforms for clinical operations, records, reporting, and patient services.",
-        "expertise": ["Healthcare Software", "Health Records", "Digital Health"],
+        "expertise": ["Health Records", "Digital Health"],
         "projects": ["Health Audit Management", "Micro-C", "BloomWell", "Medico", "OrthoAI"],
-        "featured": true
-      },
-      {
-        "image": "/assets/ecommerce-img.png",
-        "title": "E-commerce & Retail",
-        "description": "Conversion-focused commerce platforms and retail experiences with smooth shopping journeys.",
-        "expertise": ["E-commerce Development", "Mobile Commerce", "Product Catalogs"],
-        "projects": ["QuickMart", "FreshMart", "Pratibha Herbal", "E-Commerce Web Application"],
         "featured": true
       },
       {
         "image": "/assets/real-estate-img.png",
         "title": "Real Estate & Property",
         "description": "Custom real estate software that simplifies property listings, tenant services, transactions, and leasing workflows.",
-        "expertise": ["Property Listings", "Real Estate Software", "Tenant Portals"],
-        "projects": ["Real Estate Web Application", "Property Vista", "TLC Engine"],
+        "expertise": ["Property", "Tenant Portal"],
+        "projects": ["SiteSync", "Real Estate Web Application", "Property Vista", "TLC Engine"],
         "featured": true
       },
       {
         "image": "/assets/education-img.png",
         "title": "Education & EdTech",
         "description": "Education technology platforms for digital learning, AI-assisted assessment, practice tests, and student progress.",
-        "expertise": ["Learning Platforms", "Online Assessments", "AI-assisted Learning"],
+        "expertise": ["AI Learning", "Assessments"],
         "projects": ["Praksis", "Quiz Application", "BookSkill"],
         "featured": true
       },
@@ -55,65 +47,9 @@
         "image": "/assets/development.svg",
         "title": "Business & Operations",
         "description": "Custom business software that streamlines ERP workflows, workforce management, task tracking, and internal operations.",
-        "expertise": ["Custom Business Software", "ERP Workflows", "Task Management"],
+        "expertise": ["ERP", "Task Management"],
         "projects": ["Progress Maker", "Office Management System"],
         "featured": true
-      },
-      {
-        "image": "/assets/construction.svg",
-        "title": "Construction & Field Operations",
-        "description": "Construction management apps for site coordination, workforce management, progress tracking, and field reporting.",
-        "expertise": ["Construction Software", "Workforce Management", "Progress Tracking"],
-        "projects": ["SiteSync"],
-        "featured": true
-      },
-      {
-        "image": "/assets/ai.png",
-        "title": "AI & Intelligent Products",
-        "description": "AI product development for learning, decision support, healthcare intelligence, and smarter business workflows.",
-        "expertise": ["AI Product Development", "Intelligent Automation", "Clinical Intelligence"],
-        "projects": ["AnteThink", "Praksis", "OrthoAI"],
-        "category": "capability"
-      },
-      {
-        "image": "/assets/d3-showcase.svg",
-        "title": "Data & Analytics",
-        "description": "Data analytics dashboards and business intelligence tools that turn complex information into clear decisions.",
-        "expertise": ["Data Analytics", "Interactive Dashboards", "Data Visualization"],
-        "projects": ["Progress Maker", "D3 Showcase", "VisualCharts", "AnteThink", "Aqua Intel"],
-        "category": "capability"
-      },
-      {
-        "image": "/assets/consulting.svg",
-        "title": "CRM & Customer Experience",
-        "description": "CRM software and customer experience platforms that connect sales, communication, retention, and service workflows.",
-        "expertise": ["CRM Software", "Customer Portals", "Real-time Communication"],
-        "projects": ["VirtualCRM & CircleCRM", "CX Group", "Online Chat Web Application"],
-        "category": "capability"
-      },
-      {
-        "image": "/assets/api.png",
-        "title": "Cloud & API Development",
-        "description": "Reliable cloud platforms and API integrations that connect products, services, data, and operational workflows.",
-        "expertise": ["Cloud Applications", "API Integration", "Scalable Architecture"],
-        "projects": ["Aqua Intel", "VirtualCRM & CircleCRM", "Medico"],
-        "category": "capability"
-      },
-      {
-        "image": "/assets/development.svg",
-        "title": "Custom Software Development",
-        "description": "Purpose-built software that turns complex business requirements into maintainable, production-ready products.",
-        "expertise": ["Web Applications", "Mobile Applications", "Enterprise Software"],
-        "projects": ["Progress Maker", "SiteSync", "Medico", "Aqua Intel"],
-        "category": "capability"
-      },
-      {
-        "image": "/assets/ui-development.png",
-        "title": "UI/UX & Product Engineering",
-        "description": "Thoughtful product design and engineering that make digital experiences clear, useful, and ready to scale.",
-        "expertise": ["Product Strategy", "UX Design", "Frontend Engineering"],
-        "projects": ["Praksis", "Property Vista", "Aelos"],
-        "category": "capability"
       }
     ],
     "WhyUs": {
@@ -1700,7 +1636,7 @@
       "description": "The Book Universe application gives platform to share the content of any books to users. It contains book name, category, author name, date of published, link to the content or attached pdf. One can save the books to the saved list and explore the books via categories. Also one can add the book and its details in order to share to any users.",
       "detailedDescription": "It is an innovative web application designed to create a comprehensive platform for book enthusiasts to share and explore a vast collection of books. Built using React and Next.js, the application offers a user-friendly interface that allows users to easily navigate through various book categories, authors, and publication dates. Users can contribute to the platform by adding new books along with their details, including book name, category, author name, publication date, and links to the content or attached PDFs. The application also features a 'Saved List' functionality, enabling users to bookmark their favorite books for easy access later. With its dynamic features and seamless user experience, Book Universe aims to foster a vibrant community of readers and promote the sharing of literary knowledge.", 
       "logo": "assets/images/portfolio/favicon.png",
-      "viewDemo": "https://books-universe.vercel.app",
+      "viewDemo": "",
       "Images": [
         "assets/images/portfolio/booksite-mockup.png",
         "assets/images/portfolio/book1.png",
@@ -2035,7 +1971,7 @@
     {
       "projectName": "VisualCharts",
       "projectId": 24,
-      "priority": 0,
+      "priority": 1.5,
       "technology": "D3",
       "category": ["Custom Software Development", "Visualization"],
       "description": "VisualCharts is a responsive React + D3-based charting dashboard that includes Histogram, Gauge, Gantt, S-Curve, and Bar charts. It supports both dark and light themes, adapts seamlessly to different screen sizes, and provides interactive visuals for effective project tracking and analysis.",
