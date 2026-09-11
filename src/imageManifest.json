@@ -4150,5 +4150,77 @@
     "size": 420531,
     "webpSize": 27628,
     "avifSize": 15465
+  },
+  "images/portfolio/medico-logo.png": {
+    "original": "images/portfolio/medico-logo.png",
+    "webp": "webp/images/portfolio/medico-logo.webp",
+    "avif": "avif/images/portfolio/medico-logo.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/medico-logo.webp 28w",
+    "avifSrcSet": "/assets/avif/images/portfolio/medico-logo.avif 28w",
+    "width": 28,
+    "height": 28,
+    "size": 1336,
+    "webpSize": 362,
+    "avifSize": 627
+  },
+  "images/portfolio/medico-mockup1.png": {
+    "original": "images/portfolio/medico-mockup1.png",
+    "webp": "webp/images/portfolio/medico-mockup1.webp",
+    "avif": "avif/images/portfolio/medico-mockup1.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/medico-mockup1.webp 1671w",
+    "avifSrcSet": "/assets/avif/images/portfolio/medico-mockup1.avif 1671w",
+    "width": 1671,
+    "height": 941,
+    "size": 1225905,
+    "webpSize": 55518,
+    "avifSize": 36343
+  },
+  "images/portfolio/medico-mockup.png": {
+    "original": "images/portfolio/medico-mockup.png",
+    "webp": "webp/images/portfolio/medico-mockup.webp",
+    "avif": "avif/images/portfolio/medico-mockup.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/medico-mockup.webp 1672w",
+    "avifSrcSet": "/assets/avif/images/portfolio/medico-mockup.avif 1672w",
+    "width": 1672,
+    "height": 941,
+    "size": 1272173,
+    "webpSize": 60110,
+    "avifSize": 41659
+  },
+  "images/portfolio/medico-mockup2.png": {
+    "original": "images/portfolio/medico-mockup2.png",
+    "webp": "webp/images/portfolio/medico-mockup2.webp",
+    "avif": "avif/images/portfolio/medico-mockup2.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/medico-mockup2.webp 1672w",
+    "avifSrcSet": "/assets/avif/images/portfolio/medico-mockup2.avif 1672w",
+    "width": 1672,
+    "height": 941,
+    "size": 1160512,
+    "webpSize": 50356,
+    "avifSize": 32135
+  },
+  "images/portfolio/medico-mockup3.png": {
+    "original": "images/portfolio/medico-mockup3.png",
+    "webp": "webp/images/portfolio/medico-mockup3.webp",
+    "avif": "avif/images/portfolio/medico-mockup3.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/medico-mockup3.webp 1671w",
+    "avifSrcSet": "/assets/avif/images/portfolio/medico-mockup3.avif 1671w",
+    "width": 1671,
+    "height": 941,
+    "size": 1209092,
+    "webpSize": 53540,
+    "avifSize": 36984
+  },
+  "images/portfolio/medico-mockup4.png": {
+    "original": "images/portfolio/medico-mockup4.png",
+    "webp": "webp/images/portfolio/medico-mockup4.webp",
+    "avif": "avif/images/portfolio/medico-mockup4.avif",
+    "webpSrcSet": "/assets/webp/images/portfolio/medico-mockup4.webp 1671w",
+    "avifSrcSet": "/assets/avif/images/portfolio/medico-mockup4.avif 1671w",
+    "width": 1671,
+    "height": 941,
+    "size": 1247918,
+    "webpSize": 60544,
+    "avifSize": 40877
   }
 }

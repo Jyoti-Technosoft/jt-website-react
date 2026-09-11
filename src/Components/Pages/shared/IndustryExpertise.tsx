@@ -105,7 +105,7 @@ const IndustryExpertise: React.FC = () => {
               gridTemplateColumns: {
                 xs: "1fr",
                 sm: "1fr 1fr",
-                md: "1fr 1fr 1fr 1fr",
+                md: "repeat(3, 1fr)",
               },
               gap: 3,
               mt: 4,
@@ -137,7 +137,7 @@ const IndustryExpertise: React.FC = () => {
             <Box
               sx={{
                 display: "grid",
-                gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "repeat(4, 1fr)" },
+                gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "repeat(3, 1fr)" },
                 gap: 2,
                 mt: 2.5,
               }}
