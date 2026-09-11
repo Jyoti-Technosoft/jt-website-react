@@ -32,7 +32,7 @@
         "title": "Real Estate & Property",
         "description": "Custom real estate software that simplifies property listings, tenant services, transactions, and leasing workflows.",
         "expertise": ["Property", "Tenant Portal"],
-        "projects": ["SiteSync", "Real Estate Web Application", "Property Vista", "TLC Engine"],
+        "projects": ["SiteSync", "Real Estate Web Application", "Property Vista"],
         "featured": true
       },
       {

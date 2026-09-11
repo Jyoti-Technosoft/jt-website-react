@@ -23,6 +23,7 @@ import HeaderMainPage from "./shared/HeaderMainPage.tsx";
 import FooterCommonPage from "./shared/FooterCommonPage.tsx";
 import OptimizedImage from "../OptimizedImageV2.tsx";
 import dataArray from "../../jt-website.json";
+import { homeContent } from "../../content/homeContent";
 import "../../styles/career.css";
 
 const OurWork: React.FC = () => {
@@ -37,10 +38,17 @@ const OurWork: React.FC = () => {
   // Initialize state from URL params or use defaults
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
+  const [selectedIndustry, setSelectedIndustry] = useState("");
   const [page, setPage] = useState(1);
   const [rowsPerPage] = useState(4);
   const [imageIndexes, setImageIndexes] = useState<Record<string, number>>({});
   const hasInitialized = React.useRef(false);
+
+  const selectedIndustryData = homeContent.industryExpertise.find((item) => {
+    const queryName = searchParams.get("industry")?.trim().toLowerCase() || "";
+    const title = item.title.toLowerCase();
+    return queryName === title || title.startsWith(queryName);
+  });
 
   // Get all unique technologies from projects in the selected category
   const rawTechnologies = useMemo(() => {
@@ -58,8 +66,23 @@ const OurWork: React.FC = () => {
   
   // Filter and sort projects based on selected category and technologies
   const filteredProjects = useMemo(() => {
+    const industry = homeContent.industryExpertise.find((item) => {
+      const queryName = selectedIndustry.toLowerCase();
+      const title = item.title.toLowerCase();
+      return queryName === title || title.startsWith(queryName);
+    });
+    const industryProjectNames = new Set(
+      (industry?.projects || []).map((projectName) => projectName.toLowerCase())
+    );
+
+    const industryFiltered = selectedIndustry && industry
+      ? projects.filter((project) =>
+        industryProjectNames.has(project.projectName.toLowerCase())
+      )
+      : projects;
+
     // First filter by category
-    const categoryFiltered = projects.filter(project => 
+    const categoryFiltered = industryFiltered.filter(project =>
       selectedCategory === "All" || project.category.includes(selectedCategory)
     );
 
@@ -120,7 +143,7 @@ const OurWork: React.FC = () => {
       // Finally, maintain original order (by priority) for projects with same match count
       return (b.priority || 0) - (a.priority || 0);
     });
-  }, [projects, selectedCategory, selectedTechs]);
+  }, [projects, selectedCategory, selectedTechs, selectedIndustry]);
 
   // Initialize state from URL on component mount - only runs once
   useEffect(() => {
@@ -128,6 +151,7 @@ const OurWork: React.FC = () => {
     
     const category = searchParams.get('category') || 'All';
     const techs = searchParams.getAll('tech') || [];
+    const industry = searchParams.get('industry') || '';
     const pageNum = parseInt(searchParams.get('page') || '1');
     
     // Only update state if the URL values are different from current state
@@ -138,6 +162,10 @@ const OurWork: React.FC = () => {
     // Update technologies from URL
     if (techs.length > 0) {
       setSelectedTechs(techs);
+    }
+
+    if (industry) {
+      setSelectedIndustry(industry);
     }
     
     const newPage = isNaN(pageNum) ? 1 : Math.max(1, pageNum);
@@ -164,6 +192,10 @@ const OurWork: React.FC = () => {
     if (selectedCategory !== 'All') {
       params.set('category', selectedCategory);
     }
+
+    if (selectedIndustry) {
+      params.set('industry', selectedIndustry);
+    }
     
     // Add all selected technologies to the URL
     selectedTechs.forEach(tech => {
@@ -186,7 +218,7 @@ const OurWork: React.FC = () => {
         }
       });
     }
-  }, [selectedCategory, selectedTechs, page, navigate, location.search]);
+  }, [selectedCategory, selectedTechs, selectedIndustry, page, navigate, location.search]);
 
   const handleCategoryChange = (newCategory: string) => {
     // Only update if category is actually changing
@@ -223,6 +255,11 @@ const OurWork: React.FC = () => {
       
       return newTechs;
     });
+  };
+
+  const handleIndustryClear = () => {
+    setSelectedIndustry("");
+    setPage(1);
   };
 
   // Memoize paginated projects
@@ -295,6 +332,50 @@ const OurWork: React.FC = () => {
           Some of our work is protected by NDAs, but we've prepared demo
           projects to showcase our expertise and quality.
         </Typography>
+
+        {selectedIndustry && selectedIndustryData && (
+          <Box
+            className="our-work-industry-filter"
+            sx={{
+              mt: 3,
+              px: { xs: 2, md: 4 },
+              py: { xs: 2, md: 2.5 },
+              textAlign: "center",
+              borderTop: "1px solid rgba(31, 87, 149, 0.14)",
+              borderBottom: "1px solid rgba(31, 87, 149, 0.14)",
+            }}
+          >
+            <Typography
+              component="p"
+              sx={{
+                mb: 0.5,
+                color: "#f76336",
+                fontSize: "0.72rem",
+                fontWeight: 800,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+              }}
+            >
+              Industry showcase
+            </Typography>
+            <Typography
+              component="h1"
+              sx={{ color: "#1f5795", fontSize: { xs: "1.65rem", md: "2rem" }, fontWeight: 800 }}
+            >
+              {selectedIndustryData.title} Projects
+            </Typography>
+            <Typography sx={{ mt: 0.75, color: "#5d6b82" }}>
+              Selected work and capabilities delivered for this industry.
+            </Typography>
+            <Button
+              onClick={handleIndustryClear}
+              size="small"
+              sx={{ mt: 1, color: "#1f5795", fontWeight: 700, textTransform: "none" }}
+            >
+              View all projects
+            </Button>
+          </Box>
+        )}
 
         <Box sx={{ mt: 4, mb: 3 }}>
           {/* Category Tabs */}

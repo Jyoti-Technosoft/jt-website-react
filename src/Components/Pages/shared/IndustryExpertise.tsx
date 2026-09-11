@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Chip from "@mui/material/Chip";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Link as RouterLink } from "react-router-dom";
 import type { IndustryExpertiseItem } from "../../../types/content";
 import { homeContent } from "../../../content/homeContent";
 
@@ -24,62 +25,35 @@ const IndustryExpertise: React.FC = () => {
     ? [...featuredIndustries, ...additionalIndustries]
     : featuredIndustries;
 
-  const renderCard = (industry: IndustryExpertiseItem) => (
+  const renderCard = (industry: IndustryExpertiseItem, index: number) => (
     <Box
       key={industry.title}
       className="industry-expertise-card"
+      data-accent={index % 4}
       sx={{
-        p: { xs: 2, md: 2.5 },
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        border: "1px solid #D9D9D9",
-        borderRadius: "10px",
-        transition: "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease",
-        "&:hover": {
-          borderColor: "#254682",
-          boxShadow: "0 8px 22px rgba(37, 70, 130, 0.1)",
-          transform: "translateY(-2px)",
-          "& .industry-expertise-card-icon": { transform: "translateY(-2px)" },
-        },
       }}
     >
-      <Box
-        className="industry-expertise-card-icon"
-        sx={{
-          mb: 2,
-          width: 50,
-          height: 50,
-          transition: "transform 0.25s ease",
-        }}
-      >
+      <Box className="industry-expertise-card-icon">
         <img
           src={industry.image}
           alt={`${industry.title} expertise`}
           loading="lazy"
-          style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
       </Box>
       <Typography className="industry-expertise-card-title" variant="h6">
         {industry.title}
       </Typography>
-      <Typography className="industry-expertise-card-description" variant="body2" sx={{ mt: 1.25 }}>
+      <Typography className="industry-expertise-card-description" variant="body2">
         {industry.description}
       </Typography>
-      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75, mt: 2 }}>
-        {industry.expertise.map((item) => (
-          <Chip key={item} label={item} variant="outlined" size="small" />
-        ))}
-      </Box>
-      {industry.projects.length > 0 && (
-        <Typography
-          className="industry-expertise-card-projects"
-          variant="body2"
-          sx={{ pt: 2 }}
-        >
-          {industry.projects.join(" · ")}
-        </Typography>
-      )}
+      <Button
+        component={RouterLink}
+        to={`/our-work?industry=${encodeURIComponent(industry.title)}`}
+        className="industry-expertise-card-cta"
+        endIcon={<ArrowForwardIcon />}
+      >
+        Explore projects
+      </Button>
     </Box>
   );
 
