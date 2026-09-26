@@ -70,15 +70,8 @@ const RouteErrorBoundary = memo(({ children }: { children: React.ReactNode }) =>
           Please refresh the page or try again later.
         </Box>
         <button
+          className="button-utility-outlined"
           onClick={() => window.location.reload()}
-          style={{
-            padding: '8px 16px',
-            backgroundColor: '#1976d2',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
         >
           Refresh Page
         </button>

@@ -243,18 +243,22 @@
 
 .submit-btn {
     max-width: 410px;
-    padding: 9px 0px;
+  padding: 12px 16px;
     width: 100%;
-    border-radius: 4px;
-    background-color: var(--button-color);
+  min-height: var(--button-height);
+  border-radius: var(--button-radius);
+  background-color: var(--color-cta-orange);
     color: var(--text-white);
-    font-weight: 700;
-    font-size: 18px;
+  font-weight: 600;
+  font-size: 16px;
     border: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .submit-btn:hover {
     cursor: pointer;
+  background-color: var(--color-cta-orange-hover);
+  transform: translateY(-1px);
 }
 
 .services-section {

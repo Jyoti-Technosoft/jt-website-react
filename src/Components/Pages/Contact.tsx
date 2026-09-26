@@ -393,14 +393,10 @@ const Contact: React.FC = () => {
                       <Box mt={3} textAlign="center">
                         <Button 
                           variant="outlined" 
+                          className="button-secondary"
                           onClick={resetForm}
                           sx={{ 
-                            borderColor: "#333333", 
-                            color: "#333333",
-                            '&:hover': {
-                              borderColor: "#333333",
-                              backgroundColor: "rgba(51, 51, 51, 0.04)"
-                            }
+                            minWidth: 180,
                           }}
                         >
                           Send Another Message

@@ -30,22 +30,25 @@
 
 .main-footer .footer-btn {
     margin: 1rem 0px 0px;
-    border-radius: 10px;
+    border-radius: var(--button-radius);
     gap: 10px;
     background: #FFFFFF;
-    color: var(--button-color);
+    color: var(--color-cta-orange);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 23.44px;
     letter-spacing: 0.5px;
-    box-shadow: 3px 4px 4px 0px #B2B2B240;
-    padding: 8px 17px 7px;
-    min-height: 52px;
+    border: none;
+    box-shadow: none;
+    padding: 12px 16px;
+    min-height: var(--button-height);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .main-footer .footer-btn:hover {
     color: #FFFFFF;
-    background-color: var(--button-color);
+    background-color: var(--color-cta-orange);
+    transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {

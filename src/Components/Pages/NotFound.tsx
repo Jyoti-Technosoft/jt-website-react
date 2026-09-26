@@ -38,6 +38,7 @@ const NotFound: React.FC = () => {
               variant="contained"
               color="primary"
               size="large"
+              className="button-primary"
             >
               Go Home
             </Button>
@@ -47,6 +48,7 @@ const NotFound: React.FC = () => {
               variant="outlined"
               color="primary"
               size="large"
+              className="button-secondary"
             >
               Contact Us
             </Button>

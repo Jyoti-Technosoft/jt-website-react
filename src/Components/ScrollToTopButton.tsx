@@ -27,23 +27,7 @@ const ScrollToTopButton = () => {
   return (
     isVisible && (
       <button
-        style={{
-          position: "fixed",
-          width: "40px",
-          height: "40px",
-          bottom: "45px",
-          right: "20px",
-          padding: "0",
-          borderRadius: "50%",
-          backgroundColor: "#347CCC",
-          color: "white",
-          border: "none",
-          cursor: "pointer",
-          zIndex: 99,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        className="scroll-to-top-button"
         onClick={scrollToTop}
         aria-label="Scroll to top"
       >

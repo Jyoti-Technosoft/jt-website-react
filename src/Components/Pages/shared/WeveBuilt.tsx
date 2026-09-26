@@ -33,7 +33,7 @@ const WeveBuilt: React.FC = () => (
             component={Link}
             to="/our-work"
             variant="contained"
-            className="seemore-button"
+            className="seemore-button button-primary"
             sx={{
               display: { xs: "none", sm: "flex" },
             }}
@@ -78,13 +78,9 @@ const WeveBuilt: React.FC = () => (
           component={Link}
           to="/our-work"
           variant="contained"
-          className="seemore-button"
+          className="seemore-button button-primary"
           sx={{
             display: { xs: "flex", sm: "none" },
-            px: 4,
-            py: 1.2,
-            borderRadius: "10px",
-            gap: 1,
           }}
         >
           {homeContent.weveBuilt.ctaLabel}

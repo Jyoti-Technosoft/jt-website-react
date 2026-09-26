@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
@@ -34,6 +34,30 @@ const Header: React.FC = () => {
   const [showShadow, setShowShadow] = useState(false);
   const [expandWhatWeDo, setExpandWhatWeDo] = useState(false);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const dropdownCloseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleSolutionsMouseEnter = () => {
+    if (dropdownCloseTimeout.current) {
+      clearTimeout(dropdownCloseTimeout.current);
+      dropdownCloseTimeout.current = null;
+    }
+    setIsWhatWeDoDropdownOpen(true);
+  };
+
+  const handleSolutionsMouseLeave = () => {
+    dropdownCloseTimeout.current = setTimeout(() => {
+      setIsWhatWeDoDropdownOpen(false);
+      dropdownCloseTimeout.current = null;
+    }, 200);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (dropdownCloseTimeout.current) {
+        clearTimeout(dropdownCloseTimeout.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -341,9 +365,8 @@ const Header: React.FC = () => {
           </Box>
           <Box
             className="menu-item"
-            sx={{ position: "relative" }}
-            onMouseEnter={() => setIsWhatWeDoDropdownOpen(true)}
-            onMouseLeave={() => setIsWhatWeDoDropdownOpen(false)}
+            onMouseEnter={handleSolutionsMouseEnter}
+            onMouseLeave={handleSolutionsMouseLeave}
           >
             <Box
               id="solutions-button"
@@ -384,9 +407,11 @@ const Header: React.FC = () => {
                 id="solutions-menu"
                 role="menu"
                 aria-labelledby="solutions-button"
+                onMouseEnter={handleSolutionsMouseEnter}
+                onMouseLeave={handleSolutionsMouseLeave}
                 sx={{
                   position: "absolute",
-                  top: "200%",
+                  top: "100%",
                   left: "50%",
                   transform: isWhatWeDoDropdownOpen
                     ? "translateX(-50%) translateY(0)"
@@ -394,16 +419,19 @@ const Header: React.FC = () => {
                   background: "white",
                   boxShadow: "0 12px 48px rgba(31, 38, 135, 0.15)",
                   borderRadius: 3,
-                  zIndex: 1,
-                  minWidth: 1000,
+                  zIndex: 1300,
+                  width: "min(1100px, calc(100vw - 32px))",
+                  minWidth: 0,
+                  maxWidth: "calc(100vw - 32px)",
+                  boxSizing: "border-box",
                   py: 2,
                   px: 2,
                   border: "1px solid rgba(52, 124, 204, 0.15)",
                 }}
               >
-                <Box sx={{ display: 'flex', alignItems: 'stretch' }}>
+                <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', alignItems: 'stretch', width: '100%', minWidth: 0 }}>
                   {/* Column 1: Products */}
-                  <Box sx={{ minWidth: 270, borderRight: '1px solid #eee', pr: 3, display: 'flex', flexDirection: 'column' }}>
+                  <Box sx={{ minWidth: 0, borderRight: '1px solid #eee', pr: 3, display: 'flex', flexDirection: 'column' }}>
                     <Box
                       component="a"
                       role="menuitem"
@@ -500,7 +528,7 @@ const Header: React.FC = () => {
                   </Box>
 
                   {/* Column 2: Development */}
-                  <Box sx={{ minWidth: 265, borderRight: '1px solid #eee', pr: 3, display: 'flex', flexDirection: 'column' }}>
+                  <Box sx={{ minWidth: 0, borderRight: '1px solid #eee', pr: 3, display: 'flex', flexDirection: 'column' }}>
                     <Box
                       component="a"
                       role="menuitem"
@@ -620,7 +648,7 @@ const Header: React.FC = () => {
                   </Box>
 
                   {/* Column 3: Consulting & Support */}
-                  <Box sx={{ minWidth: 265, borderRight: '1px solid #eee', pr: 3, display: 'flex', flexDirection: 'column' }}>
+                  <Box sx={{ minWidth: 0, borderRight: '1px solid #eee', pr: 3, display: 'flex', flexDirection: 'column' }}>
                     <Box
                       sx={{
                         px: 3,
@@ -752,7 +780,7 @@ const Header: React.FC = () => {
                   </Box>
 
                   {/* Column 4: Our services/work */}
-                  <Box sx={{ minWidth: 265, display: 'flex', flexDirection: 'column', pl: 3, pr: 3 }}>
+                  <Box sx={{ minWidth: 0, display: 'flex', flexDirection: 'column', pl: 3, pr: 3 }}>
                     <Box
                       sx={{
                         color: '#347CCC',

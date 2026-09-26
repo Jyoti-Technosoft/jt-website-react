@@ -68,7 +68,7 @@ const ProductCard = styled(Box)(({ theme }) => ({
 }));
 
 const ActionButton = styled(Button)(({ theme }) => ({
-  borderRadius: theme.spacing(3),
+  borderRadius: '8px',
   padding: theme.spacing(1.5, 3),
   fontWeight: 600,
   textTransform: 'none',
@@ -378,6 +378,7 @@ const OurProduct: React.FC = () => {
                             >
                               <ActionButton
                                 variant="contained"
+                                className="button-primary"
                                 sx={{ width: '100%' }}
                                 onClick={(e) => e.stopPropagation()}
                               >
@@ -395,6 +396,7 @@ const OurProduct: React.FC = () => {
                             >
                               <ActionButton
                                 variant="outlined"
+                                className="button-secondary"
                                 sx={{ width: '100%' }}
                                 onClick={(e) => e.stopPropagation()}
                               >

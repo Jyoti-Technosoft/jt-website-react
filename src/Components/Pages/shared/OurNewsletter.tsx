@@ -93,7 +93,7 @@ const OurNewsletter: React.FC = () => {
                 {showInput ? (
                     subscribed ? (
                         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <Button variant="contained" className="ourNewsletter-button youreIn-btn" sx={{ mb: 2 }}>
+                            <Button variant="contained" className="ourNewsletter-button button-primary" sx={{ mb: 2 }}>
                                 You're in!
                             </Button>
                             {message && (
@@ -162,7 +162,7 @@ const OurNewsletter: React.FC = () => {
                 ) : (
                     <Button
                         variant="contained"
-                        className="ourNewsletter-button"
+                        className="ourNewsletter-button button-secondary"
                         onClick={handleSubscribeClick}
                     >
                         Subscribe

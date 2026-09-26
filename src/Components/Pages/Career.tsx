@@ -317,8 +317,8 @@ const Career: React.FC = () => {
                     </Typography>
                     <Button 
                       variant="contained" 
+                      className="button-primary"
                       onClick={fetchJobs}
-                      sx={{ backgroundColor: '#F76336', '&:hover': { backgroundColor: '#d94d24' } }}
                     >
                       Retry
                     </Button>

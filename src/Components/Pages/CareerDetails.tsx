@@ -269,8 +269,9 @@ const CareerDetails: React.FC = () => {
           </Typography>
           <Button 
             variant="contained" 
+            className="button-utility-outlined"
             onClick={() => navigate('/career')}
-            sx={{ backgroundColor: '#F76336', '&:hover': { backgroundColor: '#d94d24' } }}>
+          >
             Back to career page
           </Button>
         </Container>
@@ -599,13 +600,11 @@ const CareerDetails: React.FC = () => {
 
                       <Button
                         component="label"
+                        className="button-primary"
                         sx={{
                           ml: 1,
                           textTransform: "none",
-                          borderRadius: "10px",
-                          backgroundColor: "#F76336",
-                          color: "white",
-                          px: 3,
+                          minHeight: 40,
                           py: 1,
                         }}
                       >
