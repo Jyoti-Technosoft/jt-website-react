@@ -40,7 +40,7 @@
         "title": "Education & EdTech",
         "description": "Education technology platforms for digital learning, AI-assisted assessment, practice tests, and student progress.",
         "expertise": ["AI Learning", "Assessments"],
-        "projects": ["Praksis", "Quiz Application", "BookSkill"],
+        "projects": ["Praksis", "Quiz Application", "BookSkill", "VoxelCore"],
         "featured": true
       },
       {
@@ -2247,6 +2247,55 @@
         {
           "images": "assets/images/technology-badges/analytics.svg",
           "technologyName": "Analytics"
+        }
+      ]
+    },
+    {
+      "projectName": "VoxelCore",
+      "projectId": 31,
+      "priority": 12.5,
+      "technology": "HTML5, CSS3, JavaScript, WebGL, Docker, NGINX",
+      "category": [
+        "Custom Software Development",
+        "Generative AI",
+        "Visualization"
+      ],
+      "description": "VoxelCore is a marketing site for a company that builds AI-native platforms for mission-critical technical training.",
+      "detailedDescription": "VoxelCore is a single-page pitch site for a company building AI-native platforms for mission-critical technical training. They sell private, sovereign AI systems that turn complex technical knowledge into interactive training using multimodal AI, immersive 3D, and private compute under client control. Aimed at Defense & mission-critical, Energy & industrial, and Technical education sectors, the site features a scroll-driven WebGL core animation and a Request a Briefing form.",
+      "logo": "assets/images/portfolio/voxelcore-logo.png",
+      "viewDemo": "https://voxelcore-platform.vercel.app",
+      "Images": [
+        "assets/images/portfolio/voxelcore-mockup.png",
+        "assets/images/portfolio/voxelcore1.png",
+        "assets/images/portfolio/voxelcore2.png",
+        "assets/images/portfolio/voxelcore3.png"
+      ],
+      "mainTechnology": [
+        {
+          "images": "assets/html.png",
+          "technologyName": "HTML5"
+        },
+        {
+          "images": "assets/js.svg",
+          "technologyName": "JavaScript"
+        },
+        {
+          "images": "assets/images/technology-badges/figma.svg",
+          "technologyName": "WebGL"
+        }
+      ],
+      "useTechnology": [
+        {
+          "images": "assets/css.png",
+          "technologyName": "CSS3"
+        },
+        {
+          "images": "assets/deployment.png",
+          "technologyName": "Docker"
+        },
+        {
+          "images": "assets/web-services.png",
+          "technologyName": "NGINX"
         }
       ]
     },
